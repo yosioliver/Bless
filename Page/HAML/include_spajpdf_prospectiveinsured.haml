@@ -1,0 +1,240 @@
+%h2 A. Data Calon Tertanggung
+%br
+
+%h3 1. Perorangan
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderCIN" } 1. Nomor CIN
+%table#BoxInsuranceHolderCIN.BoxSquare.PositionerLeft
+%span.Note.Single.PositionerLeft (Dilengkapi oleh bank)
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderFullName" } 2. Nama Lengkap
+%table#BoxInsuranceHolderFullName.BoxSquare.PositionerLeft
+%br
+%span.Description.PositionerLeft (sesuai dengan identitas diri)
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderIDType" } 3. Jenis Identifikasi Diri
+%div#BoxInsuranceHolderKTP.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderKTP" } KTP
+%div#BoxInsuranceHolderSIM.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderSIM" } SIM
+%div#BoxInsuranceHolderPaspor.BoxRound.PositionerLeft
+%span.Separator.PositionerLeft{ :for => "BoxInsuranceHolderPaspor" } Paspor
+%div#BoxInsuranceHolderKIMSKITAS.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderKIMSKITAS" } KIMS / KITAS
+%div#BoxInsuranceHolderOtherID.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderOtherID" } Lainnya, sebutkan
+%div#LineInsuranceHolderOtherID.LineDot.PositionerLeft
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderID" } 4. Nomor Identitas Diri
+%table#BoxInsuranceHolderID.BoxSquare.PositionerLeft
+%table#BoxInsuranceHolderActiveDateYear.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "BoxInsuranceHolderActiveDateYear" } /
+%table#BoxInsuranceHolderActiveDateMonth.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "BoxInsuranceHolderActiveDateMonth" } /
+%table#BoxInsuranceHolderActiveDateDay.BoxSquare.PositionerRight
+%label.Wrap.Single.PositionerRight{ :for => "BoxInsuranceHolderActiveDateDay" } Masa Berlaku
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderDateOfBirth" } 5. Tempat Tanggal Lahir
+%div#LineInsuranceHolderPlace.LineStraight.PositionerLeft
+%table#BoxInsuranceHolderDateOfBirthDay.BoxSquare.PositionerLeft
+%span.Separator.Single.PositionerLeft{ :for => "BoxInsuranceHolderDateOfBirthMonth" } /
+%table#BoxInsuranceHolderDateOfBirthMonth.BoxSquare.PositionerLeft
+%label.Separator.Single.PositionerLeft{ :for => "BoxInsuranceHolderDateOfBirthYear" } /
+%table#BoxInsuranceHolderDateOfBirthYear.BoxSquare.PositionerLeft
+%label.Separator.Single.PositionerLeft{ :for => "BoxInsuranceHolderAge" } Age
+%table#BoxInsuranceHolderAge.BoxSquare.PositionerLeft
+%span.Separator.Single.PositionerLeft Tahun
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderWNI" } 6. Kewarganegaraan
+%div#BoxInsuranceHolderWNI.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderWNI" } WNI
+%div#BoxInsuranceHolderWNA.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderWNA" } WNA, sebutkan
+%div#LineInsuranceHolderWNA.LineDot.PositionerLeft
+%span.Note.PositionerLeft (Jika jawaban "WNA" mohon melampirkan fotokopi KITAS & Paspor dan melengkapi kuesioner WNA)
+%br
+
+%label.Wrap.Single.PositionerLeft{ :for => "BoxInsuranceHolderUSACitizenNo" } 7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?
+%div#BoxInsuranceHolderUSACitizenYes.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderUSACitizenYes" } YA
+%div#BoxInsuranceHolderUSACitizenNo.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderUSACitizenNo" } TIDAK
+%span.Note.PositionerLeft (Jika jawaban "YA" mohon lampirkan formulir W8 / W9)
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderMale" } 8. Jenis Kelamin
+%div#BoxInsuranceHolderMale.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "BoxInsuranceHolderMale" } Laki Laki
+%div#BoxInsuranceHolderFemale.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "BoxInsuranceHolderFemale" } Wanita
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderSingle" } 9. Status Pernikahan
+%div#BoxInsuranceHolderSingle.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "BoxInsuranceHolderSingle" } Belum Menikah
+%div#BoxInsuranceHolderMarried.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "BoxInsuranceHolderMarried" } Menikah
+%div#BoxInsuranceHolderWasMarried.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "BoxInsuranceHolderWasMarried" } Janda / Duda
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderIslam" } 10. Agama
+%div#BoxInsuranceHolderIslam.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "BoxInsuranceHolderIslam" } Islam
+%div#BoxInsuranceHolderCatholic.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "BoxInsuranceHolderChatolic" } Kristen Katolik
+%div#BoxInsuranceHolderProtestan.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderProtestan" } Kristen Protestan
+%div#BoxInsuranceHolderHindu.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderHindu" } Hindu
+%div#BoxInsuranceHolderBudha.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderBudha" } Budha
+%div#BoxInsuranceHolderKongHuChu.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderKongHuChu" } Kong Hu Chu
+%br
+
+%label.Wrap.Single.PositionerLeft{ :for => "BoxInsuranceHolderCompany" }11. a. Nama Perusahaan/Instansi/Sekolah
+%table#BoxInsuranceHolderCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 4px" }
+%br
+
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxInsuranceHolderMainJob" } Pekerjaan Utama
+%table#BoxInsuranceHolderMainJob.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxInsuranceHolderWorkScope" } Bidang Usaha
+%table#BoxInsuranceHolderWorkScope.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxInsuranceHolderPosition" } Jabatan
+%table#BoxInsuranceHolderPosition.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxInsuranceHolderJobDescription" } Uraian Pekerjaan
+%table#BoxInsuranceHolderJobDescription.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "BoxInsuranceHolderSideJob" } b. Pekerjaan Tambahan
+%table#BoxInsuranceHolderSideJob.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.Multi.PositionerLeft{ :for => "BoxInsuranceHolderHomeAddress1", :style => "height: 112px" } 12. Alamat Tempat Tinggal
+%table#BoxInsuranceHolderHomeAddress1.BoxSquare.PositionerLeft
+%table#BoxInsuranceHolderHomeAddress2.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderHomeCity.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderHomeCity" } Kota
+%table#BoxInsuranceHolderHomeCity.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderHomePostalCode.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderHomePostalCode" } Kode Pos
+%table#BoxInsuranceHolderHomePostalCode.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderHomeTelephonePrefix.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderHomeTelephonePrefix" } Telp
+%table#BoxInsuranceHolderHomeTelephonePrefix.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderHomeTeleponeInfix.Box.Plain.Single.PositionerLeft{ :for => "BoxInsuranceHolderHomeTelephoneInfix" } -
+%table#BoxInsuranceHolderHomeTelephoneInfix.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderTelephone1" } 13. Nomor Ponsel
+%label#LabelInsuranceHolderTelephone1.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderTelephone1" } 1. 
+%table#BoxInsuranceHolderTelephone1.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderTelephone2.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderTelephone2" } 2. 
+%table#BoxInsuranceHolderTelephone2.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderEmail" } 14. Alamat Email
+%table#BoxInsuranceHolderEmail.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.Multi.PositionerLeft{ :for => "BoxInsuranceHolderAddress1", :style => "height: 112px" } 15. Alamat Kantor
+%table#BoxInsuranceHolderOfficeAddress1.BoxSquare.PositionerLeft
+%table#BoxInsuranceHolderOfficeAddress2.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderOfficeCity.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderOfficeCity" } Kota
+%table#BoxInsuranceHolderOfficeCity.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderOfficePostalCode.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderOfficePostalCode" } Kode Pos
+%table#BoxInsuranceHolderOfficePostalCode.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderOfficeTelephonePrefix.Box.Single.PositionerLeft{ :for => "BoxInsuranceHolderOfficeTelephonePrefix" } Telp
+%table#BoxInsuranceHolderOfficeTelephonePrefix.BoxSquare.PositionerLeft
+%label#LabelInsuranceHolderOfficeTeleponeInfix.Box.Plain.Single.PositionerLeft{ :for => "BoxInsuranceHolderOfficeTelephoneInfix" } -
+%table#BoxInsuranceHolderOfficeTelephoneInfix.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderCorrespondanceHomeAddress" } 16. Alamat Korespondensi
+%div#BoxInsuranceHolderCorrespondanceHomeAddress.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderCorrespondanceHomeAddress" } Alamat Tempat Tinggal
+%div#BoxInsuranceHolderCorrespondanceOfficeAddress.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderCorrespondanceOfficeAddress" } Alamat Kantor
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderSelf" } 17. Hubungan dengan Calon Tertangung
+%div#BoxInsuranceHolderSelf.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderSelf" } Diri Sendiri
+%div#BoxInsuranceHolderSpouse.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderSpouse" } Suami / Istri
+%div#BoxInsuranceHolderFamily.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderFamily" } Orang Tua / Anak
+%div#BoxInsuranceHolderColleague.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderColleague" } Perusahaan / Karyawan
+%div#BoxInsuranceHolderOtherRelationship.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderOtherRelationship" } Lainnya, sebutkan
+%div#LineInsuranceHolderOtherRelationship.LineDot.PositionerLeft
+%br
+
+%label.Wrap.Single.PositionerLeft{ :for => "BoxInsuranceHolderSaving" } 18. Tujuan Pembelian Asuransi
+%div#BoxInsuranceHolderSaving.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderSaving" } Tabungan
+%div#BoxInsuranceHolderProtection.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderProtection" } Proteksi
+%div#BoxInsuranceHolderInvestation.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderInvestation" } Investasi
+%div#BoxInsuranceHolderEducation.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "BoxInsuranceHolderEducation" } Edukasi
+%div#BoxInsuranceHolderOtherPurpose.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderOtherPurpose" } Lainnya, sebutkan
+%div#LineInsuranceHolderOtherPurpose.LineDot.PositionerLeft
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderNPWP" } 19. Nomor NPWP (jika ada)
+%table#BoxInsuranceHolderNPWP.BoxSquare.PositionerLeft
+%table#BoxInsuranceHolderNPWPActiveDateYear.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "BoxInsuranceHolderNPWPActiveDateYear" } /
+%table#BoxInsuranceHolderNPWPActiveDateMonth.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "BoxInsuranceHolderNPWPActiveDateMonth" } /
+%table#BoxInsuranceHolderNPWPActiveDateDay.BoxSquare.PositionerRight
+%label.Wrap.Single.PositionerRight{ :for => "BoxInsuranceHolderNPWPActiveDateDay" } Masa Berlaku
+%br
+
+%label.Wrap.Single.PositionerLeft{ :for => "BoxInsuranceHolderSalaryIDR" } 20. Penghasilan Kotor Per Tahun
+%br
+
+%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "BoxInsuranceHolderSalaryIDR" } Gaji
+%div#BoxInsuranceHolderSalaryIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderSalaryIDR" } Rp
+%div#BoxInsuranceHolderSalaryUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderSalaryUSD" } USD
+%label.Wrap.Single.PositionerLeft{ :for => "BoxInsuranceHolderSalary" } Jumlah Penghasilan / tahun
+%table#BoxInsuranceHolderSalary.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "BoxInsuranceHolderRevenueIDR" } Hasil Usaha
+%div#BoxInsuranceHolderRevenueIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderrRevenueIDR" } Rp
+%div#BoxInsuranceHolderRevenueUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderRevenueUSD" } USD
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderRevenue" } Jumlah Penghasilan / tahun
+%table#BoxInsuranceHolderRevenue.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "BoxInsuranceHolderOtherIncomeIDR" } Penghasilan Lainnya
+%div#BoxInsuranceHolderOtherIncomeIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderOtherIncomeIDR" } Rp
+%div#BoxInsuranceHolderOtherIncomeUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderOtherIncomeUSD" } USD
+%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderOtherIncome" } Jumlah Penghasilan / tahun
+%table#BoxInsuranceHolderOtherIncome.BoxSquare.PositionerLeft
+%br
+
+%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "BoxInsuranceHolderSource" } Jelaskan Sumbernya
+%table#BoxInsuranceHolderSource.BoxSquare.PositionerLeft
+%br

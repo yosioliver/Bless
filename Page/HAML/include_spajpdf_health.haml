@@ -1,0 +1,593 @@
+%h2 Data Kesehatan
+
+%table.Square
+    %thead
+        %tr
+            %th Pertanyaan Kesehatan
+            %th Calon Tertanggung
+            %th Calon Pemegang Polis
+    %tbody
+        %tr
+            %td
+                1.  a. Tinggi Badan
+                %br
+                b. Berat Badan
+                %br
+                Apakah berat badan Anda mengalami penurunan atau kenaikan drastis (≥ 10% dalam 1 (satu) bulan) dalam 6 (enam) bulan terakhir?
+            %td
+                %table#BoxProspectiveInsuredHeight.BoxSquare.PositionerCenter
+                %span.PositionerCenter Cm
+                %br
+                %table#BoxProspectiveInsuredWeight.BoxSquare.PositionerCenter
+                %span.PositionerCenter Kg
+                %br
+                %div#BoxProspectiveInsuredWeightChangeYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredWeightChangeYes" } Ya
+                %div#BoxProspectiveInsuredWeightChangeNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspeciveInsuredWeightChangeNo" } Tidak
+            %td
+                %table#BoxPolicyHolderHeight.BoxSquare.PositionerCenter
+                %span.PositionerCenter Cm
+                %br
+                %table#BoxPolicyHolderWeight.BoxSquare.PositionerCenter
+                %span.PositionerCenter Kg
+                %br
+                %div#BoxPolicyHolderWeightChangeYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderWeightChangeYes" } Ya
+                %div#BoxPolicyHolderWeightChangeNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderWeightChangeNo" } Tidak
+        %tr
+            %td
+                2. Apakah Anda merokok dalam 12 (dua belas) bulan terakhir (termasuk rokok elektronik atau produk tembakau lainnya)?
+                %br
+                Jika “Ya”, berapa batang per hari?
+            %td
+                %div#BoxProspectiveInsuredSmokeActivityYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredSmokeActivityYes" } Ya
+                %div#BoxProspectiveInsuredSmokeActivityNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredSmokeActivityYes" } Tidak
+                %br
+                %table#BoxProspectiveInsuredSmokeAmount.BoxSquare.PositionerCenter
+                %span.PositionerCenter Batang
+            %td
+                %div#BoxPolicyHolderSmokeAcivityYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderSmokeActivityYes" } Ya
+                %div#BoxPolicyHolderSmokeActivityNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderSmokeActivityNo" } Tidak
+                %br
+                %table#BoxPolicyHolderSmokeAmount.BoxSquare.PositionerCenter
+                %span.PositionerCenter Batang
+        %tr
+            %td
+                3. Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
+            %td
+                %div#BoxProspectiveInsuredJunkieYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredJunkieYes" } Ya
+                %div#BoxProspectiveInsuredJunkieNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredJunkieNo" } Tidak
+            %td
+                %div#BoxPolicyHolderJunkieYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderJunkieYes" } Ya
+                %div#BoxPolicyHolderJunkieNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderJunkieNo" } Tidak
+        %tr
+            %td
+                4. Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))? (Jika jawaban “Ya” mohon melengkapi kuesioner yang sesuai hobi/kegiatan/peker- jaan tersebut dan dilampirkan bersama SPAJ ini).
+            %td
+                %div#BoxProspectiveInsuredExtremeSportYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredExtremeSportYes" } Ya
+                %div#BoxProspectiveInsuredExtremeSportNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredExtremeSportNo" } Tidak
+            %td
+                %div#BoxPolicyHolderExtremeSportYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderExtremeSportYes" } Ya
+                %div#BoxPolicyHolderExtremeSportNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderExtremeSportNo" } Tidak
+        %tr
+            %td
+                5. Apakah Anda dalam 12 bulan terakhir ini/mendatang Anda pernah/memiliki rencana bepergian/tinggal di luar negeri? Jika “Ya”, jelaskan kapan waktu bepergiannya, negara tujuan, lama tinggal, serta kepentingannya.
+            %td
+                %div#BoxProspectiveInsuredAbroadYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredAbroadYes" } Ya
+                %div#BoxProspectiveInsuredAbroadNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredAbroadNo" } Tidak
+            %td
+                %div#BoxPolicyHolderAbroadYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderAbroadYes" } Ya
+                %div#BoxPolicyHolderAbroadNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderAbroadNo" } Tidak
+        %tr
+            %td
+                6. Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
+            %td
+                %div#BoxProspectiveInsuredMedicalTreatmentYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredMedicalTreatmentYes" } Ya
+                %div#BoxProspectiveInsuredMedicalTreatmentNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredMedicalTreatmentNo" } Tidak
+            %td
+                %div#BoxPolicyHolderMedicalTreatmentYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderMedicalTreatmentYes" } Ya
+                %div#BoxPolicyHolderMedicalTreatmentNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderMedicalTreatmentNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent a. Gangguan fungsi/sistem penglihatan dan gangguan pada mata lainnya?
+            %td
+                %div#BoxProspectiveInsuredVisionYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredVisionYes" } Ya
+                %div#BoxProspectiveInsuredVisionNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredVisionNo" } Tidak
+            %td
+                %div#BoxPolicyHolderVisionYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderVisionYes" } Ya
+                %div#BoxPolicyHolderMedicalVisionNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderVisionNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent b. Gangguan fungsi/sistem pada Telinga, Hidung, Tenggorokan (THT)?
+            %td
+                %div#BoxProspectiveInsuredENTYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredENTYes" } Ya
+                %div#BoxProspectiveInsuredENTNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredENTNo" } Tidak
+            %td
+                %div#BoxPolicyHolderENTYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderENTYes" } Ya
+                %div#BoxPolicyHolderENTNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderENTNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent c. Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
+            %td
+                %div#BoxProspectiveInsuredRespiratoryYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredRespiratoryYes" } Ya
+                %div#BoxProspectiveInsuredMedicalTreatmentNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredResoiratoryNo" } Tidak
+            %td
+                %div#BoxPolicyHolderRespiratoryYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderRespiratoryYes" } Ya
+                %div#BoxPolicyHolderRespiratoryNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderRespiratoryNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent d. Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
+            %td
+                %div#BoxProspectiveInsuredCardiacYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredCardiacYes" } Ya
+                %div#BoxProspectiveInsuredCardiacNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredCardiacNo" } Tidak
+            %td
+                %div#BoxPolicyHolderCardiacYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderCardiacYes" } Ya
+                %div#BoxPolicyHolderCardiacNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderCardiacNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent e. Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
+            %td
+                %div#BoxProspectiveInsuredDigestYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredDigestYes" } Ya
+                %div#BoxProspectiveInsuredDigestNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredDigestNo" } Tidak
+            %td
+                %div#BoxPolicyHolderDigestYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderDigestYes" } Ya
+                %div#BoxPolicyHolderDigestNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderDigestNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent f. Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
+            %td
+                %div#BoxProspectiveInsuredNerveYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredNerveYes" } Ya
+                %div#BoxProspectiveInsuredNerveNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredNerveNo" } Tidak
+            %td
+                %div#BoxPolicyHolderNerveYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderNerveYes" } Ya
+                %div#BoxPolicyHolderNerveNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderNerveNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent g. Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
+            %td
+                %div#BoxProspectiveInsuredLiverYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredLiverYes" } Ya
+                %div#BoxProspectiveInsuredLiverNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredLiverNo" } Tidak
+            %td
+                %div#BoxPolicyHolderLiverYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderLiverYes" } Ya
+                %div#BoxPolicyHolderLiverNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderLiverNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent h. Gangguan fungsi/sistem Kemih, Batu Ginjal, Gangguan Prostat, Gagal Ginjal, Organ Kelamin dan penyakit akibat hubungan seksual?
+            %td
+                %div#BoxProspectiveInsuredReproductionYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredRedproductionYes" } Ya
+                %div#BoxProspectiveInsuredReproductionNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredReproductionNo" } Tidak
+            %td
+                %div#BoxPolicyHolderReproductionYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderReproductionYes" } Ya
+                %div#BoxPolicyHolderReproductionNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderReproductionNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent i. Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
+            %td
+                %div#BoxProspectiveInsuredMotionYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredMotionYes" } Ya
+                %div#BoxProspectiveInsuredMotionNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredMotionNo" } Tidak
+            %td
+                %div#BoxPolicyHolderMotionYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderMotionYes" } Ya
+                %div#BoxPolicyHolderMotionNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderMotionNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent j. Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
+            %td
+                %div#BoxProspectiveInsuredBloodYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredBloodYes" } Ya
+                %div#BoxProspectiveInsuredBloodNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredBloodNo" } Tidak
+            %td
+                %div#BoxPolicyHolderBloodYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderBloodYes" } Ya
+                %div#BoxPolicyHolderBloodNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderBloodNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent k. Gangguan fungsi/sistem Kekebalan Tubuh,HIV/AIDS atau segala gejala yang berhubungan dengan AIDS (demam, diare kronis, penurunan berat badan yang tidak diketahui penyebabnya), Malaria, Lupus dan lainnya?
+            %td
+                %div#BoxProspectiveInsuredImmuneYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredImmuneYes" } Ya
+                %div#BoxProspectiveInsuredImmuneNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredImmuneNo" } Tidak
+            %td
+                %div#BoxPolicyHolderImmuneYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderImmuneYes" } Ya
+                %div#BoxPolicyHolderImmuneNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderImmuneNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent l. Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
+            %td
+                %div#BoxProspectiveInsuredCancerYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredCancerYes" } Ya
+                %div#BoxProspectiveInsuredCancerNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredCancerNo" } Tidak
+            %td
+                %div#BoxPolicyHolderCancerYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderCanceYes" } Ya
+                %div#BoxPolicyHolderCanceNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderCancerNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent m. Gangguan Kesehatan lainnya yang tidak/belum dinyatakan diatas termasuk namun tidak terbatas pada kelainan bentuk tubuh, kelainan/cacat fisik, kelainan/cacat bawaan dan lainnya?
+            %td
+                %div#BoxProspectiveInsuredOtherIllnessYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredOtherIllnessYes" } Ya
+                %div#BoxProspectiveInsuredOtherIllnessNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredOtherIllnessNo" } Tidak
+            %td
+                %div#BoxPolicyHolderOtherIllnessYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderOtherIllnessYes" } Ya
+                %div#BoxPolicyHolderOtherIllnessNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderOtherIllnessNo" } Tidak
+        %tr
+            %td.Child{ :colspan => "3" }
+                Jika pertanyaan nomor 6 dijawab "Ya" maka mohon agar melengkapi kolom dibawah ini
+                Apabila diperlukan dapat memberikan keterangan pada lembar tambahan. Lembar tambahan tersebut harus ditandatangani oleh Calon Pemegang Polis/Calon Tertanggung dan menjadi bagian yang tidak terpisahkan dari SPAJ ini.
+                %br
+                %h3 Calon Tertanggung
+                %table#TableProspectiveInsuredIllness.Space
+                    %thead
+                        %tr
+                            %th No. 
+                            %th Nama Penyakit 
+                            %th Kapan Mulai Sakit
+                            %th Lama Sakit
+                            %th Nama Dokter
+                            %th Rumah Sakit / Klinik / Laboratorium / Puskesmas
+                            %th Alamat dan Nomor Telepon
+                    %tbody
+                        %tr
+                            %td
+                            %td
+                            %td
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxProspectiveInsured1Month" } Bulan
+                                %table#BoxProspectiveInsured1Month.BoxSquare.PositionerCenter
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxProspectiveInsured1Year" } Tahun
+                                %table#BoxProspectiveInsured1Year.BoxSquare.PositionerCenter
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxProspectiveInsured2Month" } Bulan
+                                %table#BoxProspectiveInsured2Month.BoxSquare.PositionerCenter
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxProspectiveInsured2Year" } Tahun
+                                %table#BoxProspectiveInsured2Year.BoxSquare.PositionerCenter
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxProspectiveInsured3Month" } Bulan
+                                %table#BoxProspectiveInsured3Month.BoxSquare.PositionerCenter
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxProspectiveInsured3Year" } Tahun
+                                %table#BoxProspectiveInsured3Year.BoxSquare.PositionerCenter
+                            %td
+                            %td
+                            %td
+                            %td
+                %h3 Calon Pemegang Polis
+                %table#TablePolicyHolderIllness.Space
+                    %thead
+                        %tr
+                            %th No. 
+                            %th Nama Penyakit 
+                            %th Kapan Mulai Sakit
+                            %th Lama Sakit
+                            %th Nama Dokter
+                            %th Rumah Sakit / Klinik / Laboratorium / Puskesmas
+                            %th Alamat dan Nomor Telepon
+                    %tbody
+                        %tr
+                            %td
+                            %td
+                            %td
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxPolicyHolder1Month" } Bulan
+                                %table#BoxPolicyHolder1Month.BoxSquare.PositionerCenter
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxPolicyHolder1Year" } Tahun
+                                %table#BoxPolicyHolder1Year.BoxSquare.PositionerCenter
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxPolicyHolder2Month" } Bulan
+                                %table#BoxPolicyHolder2Month.BoxSquare.PositionerCenter
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxPolicyHolder2Year" } Tahun
+                                %table#BoxPolicyHolder2Year.BoxSquare.PositionerCenter
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxPolicyHolder3Month" } Bulan
+                                %table#BoxPolicyHolder3Month.BoxSquare.PositionerCenter
+                                %label.Single.Wrap.PositionerCenter{ :for => "#BoxPolicyHolder3Year" } Tahun
+                                %table#BoxPolicyHolder3Year.BoxSquare.PositionerCenter
+                            %td
+                            %td
+                            %td
+                            %td
+        %tr
+            %td.Child
+                7. Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
+                Apabila jawaban “Ya” maka mohon agar melengkapi kolom dibawah ini.
+            %td
+                %div#BoxProspectiveInsuredSPAJProposalYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredSPAJProposalYes" } Ya
+                %div#BoxProspectiveInsuredSPAJProposalNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredSPAJProposalNo" } Tidak
+            %td
+                %div#BoxPolicyHolderSPAJProposalYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderSPAJProposalYes" } Ya
+                %div#BoxPolicyHolderSPAJProposalNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderSPAJProposalNo" } Tidak
+        %tr
+            %td.Child{ :colspan => "3" }
+                Jika pertanyaan nomor 6 dijawab "Ya" maka mohon agar melengkapi kolom dibawah ini
+                Apabila diperlukan dapat memberikan keterangan pada lembar tambahan. Lembar tambahan tersebut harus ditandatangani oleh Calon Pemegang Polis/Calon Tertanggung dan menjadi bagian yang tidak terpisahkan dari SPAJ ini.
+                %br
+                %h3 Calon Tertanggung
+                %table#TableProspectiveInsuredSPAJProposal.Space
+                    %thead
+                        %tr
+                            %th No. 
+                            %th Nama Perusahaan
+                            %th Nomor Polis
+                            %th Tanggal Diterbitkan
+                            %th Uang Pertanggungan
+                            %th Hasil Keputusan
+                    %tbody
+                        %tr
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                %h3 Calon Pemegang Polis
+                %table#TablePolicyHolderSPAJProposal.Space
+                    %thead
+                        %tr
+                            %th No. 
+                            %th Nama Perusahaan
+                            %th Nomor Polis
+                            %th Tanggal Diterbitkan
+                            %th Uang Pertanggungan
+                            %th Hasil Keputusan
+                    %tbody
+                        %tr
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                        %tr
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+                            %td
+        %tr
+            %td
+                8. Apakah Anda pernah mengajukan klaim ke perusahaan Asuransi Jiwa? Jika “Ya, mohon jelaskan alasannya.
+            %td
+                %div#BoxProspectiveInsuredClaimYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredClaimYes" } Ya
+                %div#BoxProspectiveInsuredClaimNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredClaimNo" } Tidak
+            %td
+                %div#BoxPolicyHolderClaimYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderClaimYes" } Ya
+                %div#BoxPolicyHolderClaimNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderClaimNo" } Tidak
+        %tr
+            %td
+                9. Apakah Anda pernah mendapatkan atau bermaksud menjalani pemeriksaan kesehatan diagnostik, seperti Sinar-X, USG, CT-scan, MRI, EKG, Treadmill, pemeriksaan darah, pemeriksaan urin, dan lain-lain?
+            %td
+                %div#BoxProspectiveInsuredDiagnosticYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredDiagnosticYes" } Ya
+                %div#BoxProspectiveInsuredDiagnosticNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredDiagnosticNo" } Tidak
+            %td
+                %div#BoxPolicyHolderOtherIllnessYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderOtherIllnessYes" } Ya
+                %div#BoxPolicyHolderOtherIllnessNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderOtherIllnessNo" } Tidak
+        %tr
+            %td
+                10. Khusus Calon Tertanggung anak-anak (usia ≤ 5 (lima) tahun):
+                %br
+                %label.FirstIndent.PositionerLeft Waktu lahir
+                %div#BoxProspectiveInsuredNormalPregnancy.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredNormalPregnancy" } Ya
+                %div#BoxProspectiveInsuredPrematurPregnancy.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPrematurPregnancy" } Tidak
+                %br
+                %label.FirstIndent.PositionerLeft Panjang dan berat saat lahir
+                %table#BoxProspectiveInsuredBabyHeight.BoxSquare.PositionerLeft
+                %span.PositionerLeft Cm
+                %table#BoxProspectiveInsuredBabyWeight.BoxSquare.PositionerLeft
+                %span.PositionerLeft Kg
+            %td
+            %td
+        %tr
+            %td
+                11. Pertanyaan khusus untuk wanita:
+            %td
+            %td
+        %tr
+            %td
+                %span.FirstIndent.PositionerLeft a. Apakah Anda sedang hamil? Usia kehamilan
+                %table#BoxProspectiveInsuredPregnancyAge.BoxSquare.PositionerLeft
+                %span.PositionerLeft Minggu
+            %td
+                %div#BoxProspectiveInsuredPregnantYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPregnantYes" } Ya
+                %div#BoxProspectiveInsuredPregnantNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPregmantNo" } Tidak
+            %td
+                %div#BoxPolicyHolderPregnantYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderPregnantYes" } Ya
+                %div#BoxPolicyHolderPregnantNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderPregnantNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent b. Adakah komplikasi pada kehamilan termasuk persalinan secara sectio caesaria yang dilakukan karena menderita suatu penyakit (Darah Tinggi, Hepatitis, Diabetes dan lain-lain)?
+            %td
+                %div#BoxProspectiveInsuredPregnancyIllnessYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPregnancyIllnessYes" } Ya
+                %div#BoxProspectiveInsuredPregnancyIllnessNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPregnancyIllnessNo" } Tidak
+            %td
+                %div#BoxPolicyHolderPregnancyIllnessYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderPregnancyIllnessYes" } Ya
+                %div#BoxPolicyHolderPregnancyIllnessNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderPregnancyIllnessNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent c. Apakah Anda mempunyai kelainan payudara/organ kewanitaan lainnya termasuk haid yang tidak teratur? Jika “Ya” jelaskan nama kelainan atau komplikasi dan nama dokter yang merawat pada kolom (Siapa, Apa, Kapan, Dimana, Pengobatan yang dilakukan, Bagaimana).
+            %td
+                %div#BoxProspectiveInsuredFemaleAbnormalityYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredFemaleAbnormalityYes" } Ya
+                %div#BoxProspectiveInsuredFemaleAbnormalityNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredFemaleAbnormalityNo" } Tidak
+            %td
+                %div#BoxPolicyHolderFemaleAbnormalityYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderFemaleAbnormalityYes" } Ya
+                %div#BoxPolicyHolderFemaleAbnormalityNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderFemaleAbnormailtyNo" } Tidak
+        %tr
+            %td
+                %span.FirstIndent d. Apakah Anda pernah melakukan pemeriksaan Pap Smear dalam 1 (satu) tahun terakhir? Jika “Ya” jelaskan bagaimana hasilnya dan kapan dilakukan pemeriksaan tersebut?
+            %td
+                %div#BoxProspectiveInsuredPapSmearYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPapSmearYes" } Ya
+                %div#BoxProspectiveInsuredPapSmearNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPapSmearNo" } Tidak
+            %td
+                %div#BoxPolicyHolderPapSmearYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderPapSmearYes" } Ya
+                %div#BoxPolicyHolderPapSmearNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderPapSmearNo" } Tidak
+        %tr
+            %td
+                12. Apakah ada anggota keluarga Anda (orang tua, anak, saudara kandung) yang menderita/dinyatakan terdiagnosa mengidap kelainan Jantung Koroner, Stroke, Kencing Manis (Diabetes Melitus), Kanker atau penyakit keturunan lainnya? (Jika “Ya” mohon agar dijelaskan pada kolom dibawah ini)
+            %td
+                %div#BoxProspectiveInsuredHeartDissorderYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredHeartDissorderYes" } Ya
+                %div#BoxProspectiveInsuredHeartDissorderNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredHeartDissorderNo" } Tidak
+            %td
+                %div#BoxPolicyHolderHeartDissorderYes.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderHeartDissorderYes" } Ya
+                %div#BoxPolicyHolderHeartDissorderNo.BoxRound.PositionerCenter
+                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxPolicyHolderHeartDissorderNo" } Tidak
+
+%table.SignatureMedium.PositionerCenter{ :style => "height: 240px;"}
+    %thead
+        %tr
+            %th Kolom penjelasan jawaban "Ya" untuk seluruh pertanyaan pada bagian Data Kesehatan (Siapa, Apa, Kapan, Bagaimana, Di mana, Pengobatan yang dilakukan)
+    %tbody
+        %tr
+            %td
+    %tfoot
+        %tr
+            %td
+
+%br
+%span.Wrap.PositionerCenter Apabila diperlukan dapat memberikan keterangan pada lembar tambahan. Lembar tambahan tersebut harus ditandatangani oleh Calon Pemegang Polis/Calon Tertanggung dan menjadi bagian yang tidak terpisahkan dari SPAJ ini.

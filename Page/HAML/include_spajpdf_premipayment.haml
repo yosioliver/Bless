@@ -1,0 +1,78 @@
+%h2 E. Data Pembayaran Premi
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxPremiPaymentKurs" } 1. Mata Uang
+%div#BoxPremiPaymentKursIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentKursIDR" } Rupiah
+%div#BoxPremiPaymentKursUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentKursUSD" } USD
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxPremiPaymentFrequency" } 2. Frekuensi Pembayaran
+%div#BoxPremiPaymentFrequencyThn.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyYear.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentFrequencyThn" } Tahunan
+%div#BoxPremiPaymentFrequencySemester.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencySemester.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentFrequencySemester" } Semesteran
+%div#BoxPremiPaymentFrequencyTriwulan.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyTriwulan.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentFrequencyTriwulan" } Triwulan
+%div#BoxPremiPaymentFrequencyMonth.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyMonth.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentFrequencyMonth" } Bulanan
+%div#BoxPremiPaymentFrequencyFull.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyFull.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentFrequencyFull" } Sekaligus
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxPremiPaymentPayor" } 3. Pembayar Premi
+%div#BoxPremiPaymentPolicyHolder.BoxRound.PositionerLeft
+%label#LabelPremiPaymentPolicyHolder.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentPolicyHolder" } Pemegang Polis
+%div#BoxPremiPaymentPolicyHolderCompany.BoxRound.PositionerLeft
+%label#LabelPremiPaymentPolicyHolderCompany.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentPolicyHolderCompany" } Pemegang Polis Perusahaan/Badan Hukum
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxPremiPaymentPayor2" }
+%div#BoxPremiPaymentPolicyHolderTertanggung.BoxRound.PositionerLeft
+%label#LabelPremiPaymentPolicyHolderTertanggung.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentPolicyHolderTertanggung" } Tertanggung
+
+%div#BoxPremiPaymentPolicyHolderThirdParty.BoxRound.PositionerLeft
+%label#LabelPremiPaymentPolicyHolderThirdParty.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentPolicyHolderThirdParty" } Pihak ketiga (selain Pemegang Polis dan Tertanggung)
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "BoxPremiPaymentWay" } 4. Cara Pembayaran Premi
+%div#BoxPremiPaymentDebitAccount.BoxRound.PositionerLeft
+%label#LabelPremiPaymentDebitAccount.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentDebitAccount" } Debit Rekening
+%div#BoxPremiPaymentCreditCardAccount.BoxRound.PositionerLeft
+%label#LabelPremiPaymentCreditCardAccount.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentCreditCardAccount" } Debit Kartu Kredit
+%div#BoxPremiPaymentOtherAccount.BoxRound.PositionerLeft
+%label#LabelPremiPaymentOtherAccount.RadioButton.PositionerLeft{ :for => "BoxPremiPaymentOtherAccount" } Lainnya, Sebutkan
+%div#LinePremiPaymentOtherAccount.LineDot.PositionerLeft
+%br
+
+%label.Wrap.Single.PositionerLeft{ :for => "BoxPremiDescription" } 5. Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit
+%br
+
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "BoxPremiDescriptionCreditCardHolderName" } Nama Pemilik Rekening/Kartu Kredit
+%table#BoxPremiDescriptionCreditCardHolderName.BoxSquare.PositionerLeft
+%br
+
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "BoxPremiDescriptionDebitCreditNumber" } Nomor Rekening/Kartu Kredit
+%table#BoxPremiDescriptionDebitCreditNumber.BoxSquare.PositionerLeft
+%br
+
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "BoxPremiDescriptionBankName" } Nama Bank
+%table#BoxPremiDescriptionBankName.BoxSquare.PositionerLeft
+%br
+
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "BoxPremiDescriptionBankBranch" } Nama Cabang
+%table#BoxPremiDescriptionBankBranch.BoxSquare.PositionerLeft
+%br
+
+%label.Wrap.Single.PositionerLeft{ :for => "BoxPremiDescription2" } 6. Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini,
+%br
+
+%label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "BoxPremiDescription3" } menjadi pembayar Premi meminta hak atas manfaat Polis?
+
+%div#BoxPremiDescription3YesBox.BoxRound.PositionerLeft
+%label#LabelPremiDescription3YesBox.RadioButton.PositionerLeft{ :for => "BoxPremiDescription3YesBox" } Ya
+%div#BoxPremiDescription3NoBox.BoxRound.PositionerLeft
+%label#LabelPremiDescription3NoBox.RadioButton.PositionerLeft{ :for => "BoxPremiDescription3NoBox" } Tidak
+%label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "BoxPremiDescriptionYesStatement" } Bila jawaban Anda “Ya”, mohon isi dan lengkapi Formulir Keterangan Tambahan untuk Pihak ketiga.
+%br

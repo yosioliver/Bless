@@ -1,0 +1,76 @@
+!!! 5
+
+%html
+
+    / HEAD
+    
+    %head
+        = Haml::Engine.new(File.read("include_healthquestionnaire_header.haml")).render
+        %title BCA Life - BLESS, Health Questionnaire 1 Form
+
+        / JQUERY
+        
+        :javascript
+            $(document).ready(function()
+            {
+                // SETTER
+                
+                // radioButtonSetter("WeightChange", true);
+                
+                // GETTER
+                
+                // radioButtonGetter("WeightChange");
+            });
+
+
+    / BODY
+
+    %body#Main
+
+        / HEADER
+
+        %header
+            %h1 Data Kesehatan
+            
+            %div.Highlighted
+                %label.Medium.Single Calon
+                %div.RadioButton{ :style => "margin-left: 80px" }
+                    %input#ProspectiveInsured{ :type => "radio", :name => "UserType" }
+                    %label.RadioButton{ :for => "ProspectiveInsured" } Tertanggung
+                    %div.Separator
+                    %input#PolicyHolder{ :type => "radio", :name => "UserType" }
+                    %label.RadioButton{ :for => "PolicyHolder" } Pemegang Polis
+            
+            %h2 Pertanyaan Kesehatan
+
+        / MAIN
+
+        %main
+            %form.SPAJForm
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredFullName" } Nama Lengkap
+                %input#ProspectiveInsuredFullName.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "ProspectiveInsuredCIN" } Nomor CIN
+                %input#ProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %br

@@ -1,0 +1,10 @@
+%form#FormAdditionalQuestion
+    %header
+        %input#ButtonAdditionalQuestionCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+        %input#ButtonAdditionalQuestionDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+        %h2 Pertanyaan Kesehatan
+
+    %fieldset
+        %label#LabelAdditionalQuestion.Wrap{ :for => "TextAdditionalQuestion" }
+        %label#LabelAdditionalNote.Wrap{ :for => "TextAdditionalQuestion" } silahkan memberikan rincian lebih lanjut
+        %input#TextAdditionalQuestion.Full.Multi{ :type => "text" }

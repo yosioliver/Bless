@@ -1,0 +1,416 @@
+!!! 5
+
+%html
+
+    / HEAD
+    
+    %head
+        = Haml::Engine.new(File.read("include_healthquestionnaire_header.haml")).render
+        %title BCA Life - BLESS, Health Questionnaire 1 Form
+
+        / JQUERY
+        
+        :javascript
+            $(document).ready(function()
+            {
+                // SETTER
+                
+                radioButtonSetter("WeightChange", true);
+                
+                // GETTER
+                
+                
+                
+                // GENERATOR
+                
+                additionalQuestionGenerator("WeightChange");
+                additionalQuestionGenerator("Smoker");
+                additionalQuestionGenerator("Junkie");
+                additionalQuestionGenerator("ExtremeSport");
+                additionalQuestionGenerator("Abroad");
+                additionalQuestionGenerator("HealthDissorder");
+                additionalQuestionGenerator("Vision");
+                additionalQuestionGenerator("ENT");
+                additionalQuestionGenerator("Respiratory");
+                additionalQuestionGenerator("Cardiac");
+                additionalQuestionGenerator("Digest");
+                additionalQuestionGenerator("Nerve");
+                additionalQuestionGenerator("Liver");
+                additionalQuestionGenerator("Reproduction");
+                additionalQuestionGenerator("Motion");
+                additionalQuestionGenerator("Blood");
+                additionalQuestionGenerator("Immune");
+                additionalQuestionGenerator("Cancer");
+                additionalQuestionGenerator("OtherIllness");
+                additionalQuestionGenerator("SPAJProposal");
+                additionalQuestionGenerator("Claim");
+                additionalQuestionGenerator("Diagnostic");
+                additionalQuestionGenerator("Pregnant");
+                additionalQuestionGenerator("Pregnancy");
+                additionalQuestionGenerator("PregnancyIllness");
+                additionalQuestionGenerator("FemaleAbnormality");
+                additionalQuestionGenerator("PapSmear");
+                additionalQuestionGenerator("HeartDissorder");
+                
+                // BUTTON
+    
+                buttonAdditionalQuestionGenerator("#PopUpAdditionalQuestion", "#TextAdditionalQuestion")
+                
+                $("#ButtonXML").click(function()
+                {
+                    textGetter("#Height");
+                    textGetter("#Weight");
+                    radioButtonGetter("WeightChange");
+                    radioButtonGetter("Smoker");
+                    
+                    validationMessage("Harap lengkapi form terlebih dahulu !.", "Form sukses diinput !.");
+                });
+            });
+
+
+    / BODY
+
+    %body#Main
+
+        / HEADER
+
+        %header
+            %h1 Data Kesehatan
+            %input#ButtonXML.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+            
+            %div.Highlighted
+                %label.Medium.Single Calon
+                %div.RadioButton{ :style => "margin-left: 80px" }
+                    %input#ProspectiveInsured{ :type => "radio", :name => "UserType" }
+                    %label.RadioButton{ :for => "ProspectiveInsured" } Tertanggung
+                    %div.Separator
+                    %input#PolicyHolder{ :type => "radio", :name => "UserType" }
+                    %label.RadioButton{ :for => "PolicyHolder" } Pemegang Polis
+            
+            %h2 Pertanyaan Kesehatan
+
+        / MAIN
+
+        %main
+            %form#HealthQuestionnaireMain
+                %ol
+                    %li
+                        %ol
+                            %li
+                                %div.Container
+                                    %label.Item{ :for => "Height" } Tinggi Badan
+                                    %div.Item
+                                        %input#Height.Short.Single{ :type => "text" }
+                                        %label.Suffix.Single{ :for => "Height" } Cm
+                            %li
+                                %div.Container
+                                    %label.Item{ :for => "Weight" } Berat Badan
+                                    %div.Item
+                                        %input#Weight.Short.Single{ :type => "text" }
+                                        %label.Suffix.Single{ :for => "Weight" } Kg
+                            %li
+                                %div.Container
+                                    %label#LabelWeightChange.Item{ :for => "WeightChangeYes" }Adakah berat badan Anda mengalami penurunan atau kenaikan drastis (> 10% dalam 1 (satu) bulan) dalam 6 (enam) bulan terakhir?
+                                    %div.RadioButton.Item
+                                        %input#WeightChangeYes{ :type => "radio", :name => "WeightChange", :value => "true" }
+                                        %label.RadioButton{ :for => "WeightChangeYes" } Ya
+                                        %div.Separator
+                                        %input#WeightChangeNo{ :type => "radio", :name => "WeightChange", :value => "false" }
+                                        %label.RadioButton{ :for => "WeightChangeNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelSmoker.Item{ :for => "SmokerYes" }
+                                Apakah Anda merokok dalam 12 (dua belas) bulan terakhir (termasuk rokok elektronik atau produk tembakau lainnya)?
+                            %div.RadioButton.Item
+                                %input#SmokerYes{ :type => "radio", :name => "Smoker", :value => "true" }
+                                %label.RadioButton{ :for => "SmokerYes" } Ya
+                                %div.Separator
+                                %input#SmokerNo{ :type => "radio", :name => "Smoker", :value => "false" }
+                                %label.RadioButton{ :for => "SmokerNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelJunkie.Item{ :for => "JunkieYes" }
+                                Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
+                            %div.RadioButton.Item
+                                %input#JunkieYes{ :type => "radio", :name => "Junkie", :value => "true" }
+                                %label.RadioButton{ :for => "JunkieYes" } Ya
+                                %div.Separator | 
+                                %input#JunkieNo{ :type => "radio", :name => "Junkie", :value => "false" }
+                                %label.RadioButton{ :for => "JunkieNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelExtremeSport.Item{ :for => "ExtremeSportYes" }
+                                Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))? (Jika jawaban “Ya” mohon melengkapi kuesioner yang sesuai hobi/kegiatan/pekerjaan tersebut dan dilampirkan bersama SPAJ ini).
+                            %div.RadioButton.Item
+                                %input#ExtremeSportYes{ :type => "radio", :name => "ExtremeSport", :value => "true" }
+                                %label.RadioButton{ :for => "ExtremeSportYes" } Ya
+                                %div.Separator | 
+                                %input#ExtremeSportNo{ :type => "radio", :name => "ExtremeSport", :value => "false" }
+                                %label.RadioButton{ :for => "ExtremeSportNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelAbroad.Item{ :for => "AbroadYes" }
+                                Apakah Anda dalam 12 bulan terakhir ini/mendatang Anda pernah/memiliki rencana bepergian/tinggal di luar negeri? Jika “Ya”, jelaskan kapan waktu bepergiannya, negara tujuan, lama tinggal, serta kepentingannya.
+                            %div.RadioButton.Item
+                                %input#AbroadYes{ :type => "radio", :name => "Abroad", :value => "true" }
+                                %label.RadioButton{ :for => "AbroadYes" } Ya
+                                %div.Separator | 
+                                %input#AbroadNo{ :type => "radio", :name => "Abroad", :value => "false" }
+                                %label.RadioButton{ :for => "AbroadNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelHealthDissorder.Item{ :for => "HealthDissorderYes" }
+                                Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
+                            %div.RadioButton.Item
+                                %input#HealthDissorderYes{ :type => "radio", :name => "HealthDissorder", :value => "true" }
+                                %label.RadioButton{ :for => "HealthDissorderYes" } Ya
+                                %div.Separator | 
+                                %input#HealthDissorderNo{ :type => "radio", :name => "HealthDissorder", :value => "false" }
+                                %label.RadioButton{ :for => "HealthDissorderNo" } Tidak
+                        %ol
+                            %li
+                                %div.Container
+                                    %label.Item{ :for => "VisionYes" }
+                                        Gangguan fungsi/sistem penglihatan dan gangguan pada mata lainnya?
+                                    %div#LabelVision.RadioButton.Item
+                                        %input#VisionYes{ :type => "radio", :name => "Vision", :value => "true" }
+                                        %label.RadioButton{ :for => "VisionYes" } Ya
+                                        %div.Separator | 
+                                        %input#VisionNo{ :type => "radio", :name => "Vision", :value => "false" }
+                                        %label.RadioButton{ :for => "VisionNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelENT.Item{ :for => "ENTYes" }
+                                        Gangguan fungsi/sistem pada Telinga, Hidung, Tenggorokan (THT)?
+                                    %div.RadioButton.Item
+                                        %input#ENTYes{ :type => "radio", :name => "ENT", :value => "true" }
+                                        %label.RadioButton{ :for => "ENTYes" } Ya
+                                        %div.Separator | 
+                                        %input#ENTNo{ :type => "radio", :name => "ENT", :value => "false" }
+                                        %label.RadioButton{ :for => "ENTNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelRespiratory.Item{ :for => "RespiratoryYes" }
+                                        Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
+                                    %div.RadioButton.Item
+                                        %input#RespiratoryYes{ :type => "radio", :name => "Respiratory", :value => "true" }
+                                        %label.RadioButton{ :for => "RespiratoryYes" } Ya
+                                        %div.Separator | 
+                                        %input#RespiratoryNo{ :type => "radio", :name => "Respiratory", :value => "false" }
+                                        %label.RadioButton{ :for => "RespiratoryNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelCardiac.Item{ :for => "CardiacYes" }
+                                        Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
+                                    %div.RadioButton.Item
+                                        %input#CardiacYes{ :type => "radio", :name => "Cardiac", :value => "true" }
+                                        %label.RadioButton{ :for => "CardiacYes" } Ya
+                                        %div.Separator | 
+                                        %input#CardiacNo{ :type => "radio", :name => "Caridac", :value => "false" }
+                                        %label.RadioButton{ :for => "CardiacNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelDigest.Item{ :for => "DigestYes" }
+                                        Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
+                                    %div.RadioButton.Item
+                                        %input#DigestYes{ :type => "radio", :name => "Digest", :value => "true" }
+                                        %label.RadioButton{ :for => "DigestYes" } Ya
+                                        %div.Separator | 
+                                        %input#DigestNo{ :type => "radio", :name => "Digest", :value => "false" }
+                                        %label.RadioButton{ :for => "DigestNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelNerve.Item{ :for => "NerveYes" }
+                                        Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
+                                    %div.RadioButton.Item
+                                        %input#NerveYes{ :type => "radio", :name => "Nerve", :value => "true" }
+                                        %label.RadioButton{ :for => "NerveYes" } Ya
+                                        %div.Separator | 
+                                        %input#NerveNo{ :type => "radio", :name => "Nerve", :value => "false" }
+                                        %label.RadioButton{ :for => "NerveNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelLiver.Item{ :for => "LiverYes" }
+                                        Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
+                                    %div.RadioButton.Item
+                                        %input#LiverYes{ :type => "radio", :name => "Liver", :value => "true" }
+                                        %label.RadioButton{ :for => "LiverYes" } Ya
+                                        %div.Separator | 
+                                        %input#LiverNo{ :type => "radio", :name => "Liver", :value => "false" }
+                                        %label.RadioButton{ :for => "LiverNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelReproduction.Item{ :for => "ReproductionYes" }
+                                        Gangguan fungsi/sistem Kemih, Batu Ginjal, Gangguan Prostat, Gagal Ginjal, Organ Kelamin dan penyakit akibat hubungan seksual?
+                                    %div.RadioButton.Item
+                                        %input#ReproductionYes{ :type => "radio", :name => "Reproduction", :value => "true" }
+                                        %label.RadioButton{ :for => "ReproductionYes" } Ya
+                                        %div.Separator | 
+                                        %input#ReproductionNo{ :type => "radio", :name => "Reproduction", :value => "false" }
+                                        %label.RadioButton{ :for => "ReproductionNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelMotion.Item{ :for => "MotionYes" }
+                                        Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
+                                    %div.RadioButton.Item
+                                        %input#MotionYes{ :type => "radio", :name => "Motion", :value => "true" }
+                                        %label.RadioButton{ :for => "MotionYes" } Ya
+                                        %div.Separator | 
+                                        %input#MotionNo{ :type => "radio", :name => "Motion", :value => "false" }
+                                        %label.RadioButton{ :for => "MotionNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelBlood.Item{ :for => "BloodYes" }
+                                        Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
+                                    %div.RadioButton.Item
+                                        %input#BloodYes{ :type => "radio", :name => "Blood", :value => "true" }
+                                        %label.RadioButton{ :for => "BloodYes" } Ya
+                                        %div.Separator | 
+                                        %input#BloodNo{ :type => "radio", :name => "Blood", :value => "false" }
+                                        %label.RadioButton{ :for => "BloodNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelImmune.Item{ :for => "ImmuneYes" }
+                                        Gangguan fungsi/sistem Kekebalan Tubuh,HIV/AIDS atau segala gejala yang berhubungan dengan AIDS (demam, diare kronis, penurunan berat badan yang tidak diketahui penyebabnya), Malaria, Lupus dan lainnya?
+                                    %div.RadioButton.Item
+                                        %input#ImmuneYes{ :type => "radio", :name => "Immune", :value => "true" }
+                                        %label.RadioButton{ :for => "ImmuneYes" } Ya
+                                        %div.Separator | 
+                                        %input#ImmuneNo{ :type => "radio", :name => "Immune", :value => "false" }
+                                        %label.RadioButton{ :for => "ImmuneNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelCancer.Item{ :for => "CancerYes" }
+                                        Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
+                                    %div.RadioButton.Item
+                                        %input#CancerYes{ :type => "radio", :name => "Cancer", :value => "true" }
+                                        %label.RadioButton{ :for => "CancerYes" } Ya
+                                        %div.Separator | 
+                                        %input#CancerNo{ :type => "radio", :name => "Cancer", :value => "false" }
+                                        %label.RadioButton{ :for => "CancerNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelOtherIllness.Item{ :for => "OtherIllnessYes" }
+                                        Gangguan Kesehatan lainnya yang tidak/belum dinyatakan diatas termasuk namun tidak terbatas pada kelainan bentuk tubuh, kelainan/cacat fisik, kelainan/cacat bawaan dan lainnya?
+                                    %div.RadioButton.Item
+                                        %input#OtherIllnessYes{ :type => "radio", :name => "OtherIllness", :value => "true" }
+                                        %label.RadioButton{ :for => "OtherIllnessYes" } Ya
+                                        %div.Separator | 
+                                        %input#OtherIllnessNo{ :type => "radio", :name => "OtherIllness", :value => "false" }
+                                        %label.RadioButton{ :for => "OtherIllnessNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelSPAJProposal.Item{ :for => "SPAJProposalYes" }
+                                Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
+                            %div.RadioButton.Item
+                                %input#SPAJProposalYes{ :type => "radio", :name => "SPAJProposal", :value => "true" }
+                                %label.RadioButton{ :for => "SPAJProposalYes" } Ya
+                                %div.Separator | 
+                                %input#SPAJProposalNo{ :type => "radio", :name => "SPAJProposal" }
+                                %label.RadioButton{ :for => "SPAJProposalNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelClaim.Item{ :for => "ClaimYes" }
+                                Apakah Anda pernah mengajukan klaim ke perusahaan Asuransi Jiwa? Jika “Ya, mohon jelaskan alasannya.
+                            %div.RadioButton.Item
+                                %input#ClaimYes{ :type => "radio", :name => "Claim", :value => "true" }
+                                %label.RadioButton{ :for => "ClaimYes" } Ya
+                                %div.Separator | 
+                                %input#ClaimNo{ :type => "radio", :name => "Claim", :value => "false" }
+                                %label.RadioButton{ :for => "ClaimNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelDiagnostic.Item{ :for => "DiagnosticYes" }
+                                Apakah Anda pernah mendapatkan atau bermaksud menjalani pemeriksaan kesehatan diagnostik, seperti Sinar-X, USG, CT-scan, MRI, EKG, Treadmill, pemeriksaan darah, pemeriksaan urin, dan lain-lain?
+                            %div.RadioButton.Item
+                                %input#DiagnosticYes{ :type => "radio", :name => "Diagnostic", :value => "true" }
+                                %label.RadioButton{ :for => "DiagnosticYes" } Ya
+                                %div.Separator | 
+                                %input#DiagnosticNo{ :type => "radio", :name => "Diagnostic" }
+                                %label.RadioButton{ :for => "DiagnosticNo", :value => "false" } Tidak
+                    %hr
+                    %li
+                        %label.PositionerLeft{ :for => "PregnancyYes" } Khusus Calon Tertanggung anak-anak (usia ≤ 5 (lima) tahun): 
+                        %br
+                        %label.PositionerLeft{ :for => "PregnancyYes" } Waktu lahir
+                        %div.RadioButton.PositionerLeft
+                            %input#PregnancyNormal{ :type => "radio", :name => "Pregnancy", :value => "true" }
+                            %label.RadioButton{ :for => "PregnancyNormal" } Cukup Bulan
+                            %div.Separator | 
+                            %input#PregnancyPrematur{ :type => "radio", :name => "Pregnancy", :value => "false" }
+                            %label.RadioButton{ :for => "PregnancyPrematur" } Prematur
+                        %br
+                        %label.PositionerLeft{ :for => "BabyHeight" } Panjang dan berat saat lahir
+                        %br
+                        %br
+                        %input#BabyHeight.Short.PositionerLeft{ :type => "text", :style => "margin-right: 10px;" }
+                        %label.PositionerLeft{ :for => "BabyHeight" } Cm
+                        %input#BabyWeight.Short.PositionerLeft{ :type => "text", :style => "margin-left: 10px; margin-right: 10px;" }
+                        %label.PositionerLeft{ :for => "BabyWeight" } Kg
+                    %hr
+                    %li
+                        %label.Item{ :for => "HealthDissorderYes" }
+                            Pertanyaan khusus untuk wanita:
+                        %ol
+                            %li
+                                %div.Container
+                                    %label#LabelPregnant.Item{ :for => "Pregnant" }
+                                        Apakah Anda sedang hamil?
+                                    %div.RadioButton.Item
+                                        %input#PregnantStateYes{ :type => "radio", :name => "Pregnant", :value => "true" }
+                                        %label.RadioButton{ :for => "PregnantStateYes" } Ya
+                                        %div.Separator | 
+                                        %input#PregnantStateNo{ :type => "radio", :name => "PregnantS", :value => "false" }
+                                        %label.RadioButton{ :for => "PregnantStateNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelPregnancyIllness.Item{ :for => "PregnancyIllnessYes" }
+                                        Adakah komplikasi pada kehamilan termasuk persalinan secara sectio caesaria yang dilakukan karena menderita suatu penyakit (Darah Tinggi, Hepatitis, Diabetes dan lain-lain)?
+                                    %div.RadioButton.Item
+                                        %input#PregnancyIllnessYes{ :type => "radio", :name => "PregnancyIllness", :value => "true" }
+                                        %label.RadioButton{ :for => "PregnantIllnessYes" } Ya
+                                        %div.Separator | 
+                                        %input#PregnancyIllnessNo{ :type => "radio", :name => "PregnancyIllness", :value => "false" }
+                                        %label.RadioButton{ :for => "PregnantIllnessNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelFemaleAbnormality.Item{ :for => "FemaleAbnormalityYes" }
+                                        Apakah Anda mempunyai kelainan payudara/organ kewanitaan lainnya termasuk haid yang tidak teratur? Jika “Ya” jelaskan nama kelainan atau komplikasi dan nama dokter yang merawat pada kolom (Siapa, Apa, Kapan, Dimana, Pengobatan yang dilakukan, Bagaimana).
+                                    %div.RadioButton.Item
+                                        %input#FemaleAbnormalityYes{ :type => "radio", :name => "FemaleAbnormality", :value => "true" }
+                                        %label.RadioButton{ :for => "HealthDissorderYes" } Ya
+                                        %div.Separator | 
+                                        %input#FemaleAbnormalityNo{ :type => "radio", :name => "FemaleAbnormality", :value => "false" }
+                                        %label.RadioButton{ :for => "FemaleAbnormalityNo" } Tidak
+                            %li
+                                %div.Container
+                                    %label#LabelPapSmear.Item{ :for => "PapSmearYes" }
+                                        Apakah Anda pernah melakukan pemeriksaan Pap Smear dalam 1 (satu) tahun terakhir? Jika “Ya” jelaskan bagaimana hasilnya dan kapan dilakukan pemeriksaan tersebut?
+                                    %div.RadioButton.Item
+                                        %input#PapSmearYes{ :type => "radio", :name => "PapSmear", :value => "true" }
+                                        %label.RadioButton{ :for => "PapSmearYes" } Ya
+                                        %div.Separator | 
+                                        %input#PapSmearNo{ :type => "radio", :name => "PapSmear", :value => "false" }
+                                        %label.RadioButton{ :for => "PapSmearNo" } Tidak
+                    %hr
+                    %li
+                        %div.Container
+                            %label#LabelHeartDissorder.Item{ :for => "HeartDissorderYes" }
+                                Apakah ada anggota keluarga Anda (orang tua, anak, saudara kandung) yang menderita/dinyatakan terdiagnosa mengidap kelainan Jantung Koroner, Stroke, Kencing Manis (Diabetes Melitus), Kanker atau penyakit keturunan lainnya? (Jika “Ya” mohon agar dijelaskan pada kolom dibawah ini)
+                            %div.RadioButton.Item
+                                %input#HealthDissorderYes{ :type => "radio", :name => "HeartDissorder", :value => "true" }
+                                %label.RadioButton{ :for => "HeartDissorderYes" } Ya
+                                %div.Separator | 
+                                %input#HealthDissorderNo{ :type => "radio", :name => "HeartDissorder", :value => "false" }
+                                %label.RadioButton{ :for => "HeartDissorderNo" } Tidak
+                    %hr
+            %section#PopUpAdditionalQuestion
+                = Haml::Engine.new(File.read("include_healthquestionnaire_popup.haml")).render
