@@ -4,42 +4,47 @@
 %h3 1. Perorangan
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderCIN" } 1. Nomor CIN
-%table#BoxInsuranceHolderCIN.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextInsuranceHolderCIN" } 1. Nomor CIN
+%table#TextInsuranceHolderCIN.BoxSquare.PositionerLeft
 %span.Note.Single.PositionerLeft (Dilengkapi oleh bank)
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderFullName" } 2. Nama Lengkap
-%table#BoxInsuranceHolderFullName.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextInsuranceHolderFullName" } 2. Nama Lengkap
+%table#TextInsuranceHolderFullName.BoxSquare.PositionerLeft
 %br
 %span.Description.PositionerLeft (sesuai dengan identitas diri)
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderIDType" } 3. Jenis Identifikasi Diri
-%div#BoxInsuranceHolderKTP.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderKTP" } KTP
-%div#BoxInsuranceHolderSIM.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderSIM" } SIM
-%div#BoxInsuranceHolderPaspor.BoxRound.PositionerLeft
-%span.Separator.PositionerLeft{ :for => "BoxInsuranceHolderPaspor" } Paspor
-%div#BoxInsuranceHolderKIMSKITAS.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderKIMSKITAS" } KIMS / KITAS
-%div#BoxInsuranceHolderOtherID.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxInsuranceHolderOtherID" } Lainnya, sebutkan
-%div#LineInsuranceHolderOtherID.LineDot.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonInsuranceHolderIDTypeKTP" } 3. Jenis Identifikasi Diri
+%input#RadioButtonInsuranceHolderIDTypeKTP{ :type => "radio", :name => "RadioButtonInsuranceHolderIDType", :value => "KTP" }
+%div#RadioButtonInsuranceHolderIDTypeKTP.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonInsuranceHolderIDTypeKTP" } KTP
+%input#RadioButtonInsuranceHolderIDTypeSIM{ :type => "radio", :name => "RadioButtonInsuranceHolderIDType", :value => "SIM" }
+%div#RadioButtonInsuranceHolderIDTypeSIM.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonInsuranceHolderIDTypeSIM" } SIM
+%input#RadioButtonInsuranceHolderIDTypePaspor{ :type => "radio", :name => "RadioButtonInsuranceHolderIDType", :value => "Paspor" }
+%div#RadioButtonInsuranceHolderIDTypePaspor.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonInsuranceHolderIDTypePaspor" } Paspor
+%input#RadioButtonInsuranceHolderIDTypeKIMSKITAS{ :type => "radio", :name => "RadioButtonInsuranceHolderIDType", :value => "KIMSKITAS" }
+%div#RadioButtonInsuranceHolderIDTypeKIMS.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonInsuranceHolderIDTypeKIMSKITAS" } KIMS / KITAS
+%input#RadioButtonInsuranceHolderIDTypeOther{ :type => "radio", :name => "RadioButtonInsuranceHolderIDType", :value => "Other" }
+%div#RadioButtonInsuranceHolderIDTypeOther.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonInsuranceHolderIDTypeOther" } Lainnya, sebutkan
+%div#LineInsuranceHolderIDTypeOther.LineDot.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderID" } 4. Nomor Identitas Diri
-%table#BoxInsuranceHolderID.BoxSquare.PositionerLeft
-%table#BoxInsuranceHolderActiveDateYear.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "BoxInsuranceHolderActiveDateYear" } /
-%table#BoxInsuranceHolderActiveDateMonth.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "BoxInsuranceHolderActiveDateMonth" } /
-%table#BoxInsuranceHolderActiveDateDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "BoxInsuranceHolderActiveDateDay" } Masa Berlaku
+%label.Medium.Single.PositionerLeft{ :for => "TextInsuranceHolderID" } 4. Nomor Identitas Diri
+%table#TextInsuranceHolderID.BoxSquare.PositionerLeft
+%table#TextInsuranceHolderActiveDateYear.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "TextInsuranceHolderActiveDateYear" } /
+%table#TextInsuranceHolderActiveDateMonth.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "TextInsuranceHolderActiveDateMonth" } /
+%table#TextInsuranceHolderActiveDateDay.BoxSquare.PositionerRight
+%label.Wrap.Single.PositionerRight{ :for => "TextInsuranceHolderActiveDateDay" } Masa Berlaku
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxInsuranceHolderDateOfBirth" } 5. Tempat Tanggal Lahir
+%label.Medium.Single.PositionerLeft{ :for => "InsuranceHolderDateOfBirth" } 5. Tempat Tanggal Lahir
 %div#LineInsuranceHolderPlace.LineStraight.PositionerLeft
 %table#BoxInsuranceHolderDateOfBirthDay.BoxSquare.PositionerLeft
 %span.Separator.Single.PositionerLeft{ :for => "BoxInsuranceHolderDateOfBirthMonth" } /
