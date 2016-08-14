@@ -513,7 +513,7 @@ function getTextForm(stringID)
 
 function getTextPDF(stringID)
 {
-    var stringTextValue = $(textID).val();
+    var stringTextValue = $(stringID).val();
     var stringJQueryID = stringKres + stringID;
     var stringContent = "";
     
