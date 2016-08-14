@@ -172,9 +172,9 @@
       {
           // SECTION GENERAL
       
-          boxGenerator("#BoxSPAJNumber", 11, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyNumber", 11, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxVANumber", 16, boxTypeWithoutLabel, null);
+          boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPolicyNumber", 11, boxTypeWithoutLabel, null);
+          boxGenerator("#TextVANumber", 16, boxTypeWithoutLabel, null);
       
           // SECTION AGENT PROFILE
       
@@ -415,13 +415,13 @@
       
           // SET TEXT
       
-          boxSetter("SPAJNumber", "Andy Phan", boxTypeStraight);
-          boxSetter("Active", "13-08-2016", boxTypeDate);
-          boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);
+          //boxSetter("TextSPAJNumber", "Andy Phan", boxTypeStraight);
+          //boxSetter("Active", "13-08-2016", boxTypeDate);
+          //boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);
       
           // GET TEXT
       
-          alert(boxGetter("#BoxSPAJNumber", 11));
+          //alert(boxGetter("TextSPAJNumber", 11));
       });
     </script>
   </head>
@@ -436,13 +436,13 @@
     <!-- MAIN -->
     <main>
       <section id='SectionGeneral'>
-        <label class='Medium Single PositionerLeft' for='BoxSPAJNumber'>Nomor SPAJ</label>
-        <table class='BoxSquare PositionerLeft' id='BoxSPAJNumber'></table>
-        <table class='BoxSquare PositionerRight' id='BoxPolicyNumber'></table>
-        <label class='Wrap Single PositionerRight' for='BoxPolicyNumber'>Nomor Polis</label>
+        <label class='Medium Single PositionerLeft' for='TextSPAJNumber'>Nomor SPAJ</label>
+        <table class='BoxSquare PositionerLeft' id='TextSPAJNumber'></table>
+        <table class='BoxSquare PositionerRight' id='TextPolicyNumber'></table>
+        <label class='Wrap Single PositionerRight' for='TextPolicyNumber'>Nomor Polis</label>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxVANumber'>Nomor VA</label>
-        <table class='BoxSquare PositionerLeft' id='BoxVANumber'></table>
+        <label class='Medium Single PositionerLeft' for='TextVANumber'>Nomor VA</label>
+        <table class='BoxSquare PositionerLeft' id='TextVANumber'></table>
         <br>
       </section>
       <section id='SectionAgentProfile'>
