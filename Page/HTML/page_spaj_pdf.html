@@ -309,37 +309,38 @@
           boxGenerator("#TextInsuranceHolderSalary", 17, boxTypeWithoutLabel, null);
           boxGenerator("#TextInsuranceHolderRevenue", 17, boxTypeWithoutLabel, null);
           boxGenerator("#TextInsuranceHolderOtherIncome", 17, boxTypeWithoutLabel, null);
-          boxGenerator("#TextInsuranceHolderSource", 30, boxTypeWithoutLabel, null); 
+          boxGenerator("#TextInsuranceHolderSource", 30, boxTypeWithoutLabel, null);
           
           // SUB B
           
           boxGenerator("#TextPolicyHolderCompanyName", 30, boxTypeWithoutLabel, null);
           lineGenerator("#LinePolicyHolderCompanyTypeOther", 11);
+          lineGenerator("#LinePolicyHolderComanyIDTypeOther", 11);
           boxGenerator("#TextPolicyHolderCompanyNoAnggaranDasar", 21, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyHolderCompanyAnggaranDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-          boxGenerator("#BoxPolicyHolderCompanyAnggaranDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-          boxGenerator("#BoxPolicyHolderCompanyAnggaranDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear); 
-          boxGenerator("#BoxPolicyHolderCompanyNoSuratIjinUsaha", 21, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyHolderCompanySIUPDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-          boxGenerator("#BoxPolicyHolderCompanySIUPDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-          boxGenerator("#BoxPolicyHolderCompanySIUPDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
-          boxGenerator("#BoxPolicyHolderCompanyNoTDP", 21, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyHolderCompanyTDPDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-          boxGenerator("#BoxPolicyHolderCompanyTDPDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-          boxGenerator("#BoxPolicyHolderCompanyTDPDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
-          boxGenerator("#BoxPolicyHolderCompanyNoSKDP", 21, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyHolderCompanySKDPDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-          boxGenerator("#BoxPolicyHolderCompanySKDPDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-          boxGenerator("#BoxPolicyHolderCompanySKDPDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
-          boxGenerator("#BoxPolicyHolderCompanyNoNPWP", 16, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyHolderCompanyNoNPWPDateDay", 2, boxTypeWithBottomLabel, labelDay);
-          boxGenerator("#BoxPolicyHolderCompanyNoNPWPDateMonth", 2, boxTypeWithBottomLabel, labelMonth);
-          boxGenerator("#BoxPolicyHolderCompanyNoNPWPDateYear", 4, boxTypeWithBottomLabel, labelYear);
-          boxGenerator("#BoxPolicyHolderCompanySector", 30, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyHolderCompanyAddress", 30, boxTypeWithoutLabel, null);
-          boxGenerator("#BoxPolicyHolderCompanyCity", 19, boxTypeWithoutLabel, null);
+          boxGenerator("#DatePolicyHolderCompanyDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+          boxGenerator("#DatePolicyHolderCompanyDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+          boxGenerator("#DatePolicyHolderCompanyDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear); 
+          boxGenerator("#TextPolicyHolderCompanyNoSuratIjinUsaha", 21, boxTypeWithoutLabel, null);
+          boxGenerator("#DatePolicyHolderCompanySIUPDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+          boxGenerator("#DatePolicyHolderCompanySIUPDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+          boxGenerator("#DatePolicyHolderCompanySIUPDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+          boxGenerator("#TextPolicyHolderCompanyNoTDP", 21, boxTypeWithoutLabel, null);
+          boxGenerator("#DatePolicyHolderCompanyTDPDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+          boxGenerator("#DatePolicyHolderCompanyTDPDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+          boxGenerator("#DatePolicyHolderCompanyTDPDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+          boxGenerator("#TextPolicyHolderCompanyNoSKDP", 21, boxTypeWithoutLabel, null);
+          boxGenerator("#DatePolicyHolderCompanySKDPDateOfExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+          boxGenerator("#DatePolicyHolderCompanySKDPDateOfExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+          boxGenerator("#DatePolicyHolderCompanySKDPDateOfExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+          boxGenerator("#TextPolicyHolderCompanyNoNPWP", 16, boxTypeWithoutLabel, null);
+          boxGenerator("#DatePolicyHolderCompanyNoNPWPDay", 2, boxTypeWithBottomLabel, labelDay);
+          boxGenerator("#DatePolicyHolderCompanyNoNPWPMonth", 2, boxTypeWithBottomLabel, labelMonth);
+          boxGenerator("#DatePolicyHolderCompanyNoNPWPYear", 4, boxTypeWithBottomLabel, labelYear);
+          boxGenerator("#TextPolicyHolderCompanySector", 30, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPolicyHolderCompanyAddress", 30, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPolicyHolderCompanyCity", 19, boxTypeWithoutLabel, null);
           labelGenerator("#LabelPolicyHolderCompanyPostalCode", 3);
-          boxGenerator("#BoxPolicyHolderCompanyPostalCode", 6, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPolicyHolderCompanyPostalCode", 6, boxTypeWithoutLabel, null);
           
           // SECTION COMPANY REPRESENTATIVE
           boxGenerator("#BoxPolicyHolderCompanyRepresentativeFullName", 30, boxTypeWithoutLabel, null);
@@ -593,7 +594,7 @@
         <input id='RadioButtonPolicyHolderWNA' name='RadioButtonPolicyHolderNationality' type='radio' value='wna'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderNationalityWNA'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderNationalityWNA'>WNA, sebutkan</label>
-        <div class='LineDot PositionerLeft' id='TextPolicyHolderNationalityWNA'></div>
+        <div class='LineDot PositionerLeft' id='LinePolicyHolderWNA'></div>
         <span class='Note PositionerLeft'>(Jika jawaban "WNA" mohon melampirkan fotokopi KITAS & Paspor dan melengkapi kuesioner WNA)</span>
         <br>
         <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderUSACitizenYes'>7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?</label>
@@ -789,23 +790,23 @@
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyName'>1. Nama Perusahaan</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyName'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderIDType'>3. Jenis Identitas Diri</label>
-        <input id='RadioButtonPolicyHolderKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='ktp'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderKTP'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderKTP'>KTP</label>
-        <input id='RadioButtonPolicyHolderSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='sim'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderSIM'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderSIM'>SIM</label>
-        <input id='RadioButtonPolicyHolderPaspor' name='RadioButtonPolicyHolderIDType' type='radio' value='paspor'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderPaspor'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderPaspor'>Paspor</label>
-        <input id='RadioButtonPolicyHolderKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='kimskitas'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderKIMSKITAS'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderKIMSKITAS'>KIMS / KITAS</label>
-        <input id='RadioButtonPolicyHolderOtherID' name='RadioButtonPolicyHolderIDType' type='radio' value='other'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderOtherID'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderOtherID'>Lainnya, sebutkan</label>
-        <div class='LineDot PositionerLeft' id='TextPolicyHolderOtherID'></div>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderComanyIDTypeKTP'>3. Jenis Identitas Diri</label>
+        <input id='RadioButtonPolicyHolderComanyIDTypeKTP' name='RadioButtonPolicyHolderComanyIDType' type='radio' value='ktp'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderComanyIDTypeKTP'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderComanyIDTypeKTP'>KTP</label>
+        <input id='RadioButtonPolicyHolderComanyIDTypeSIM' name='RadioButtonPolicyHolderComanyIDType' type='radio' value='sim'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderComanyIDTypeSIM'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderComanyIDTypeSIM'>SIM</label>
+        <input id='RadioButtonPolicyHolderComanyIDTypePassport' name='RadioButtonPolicyHolderComanyIDType' type='radio' value='paspor'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderComanyIDTypePassport'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderComanyIDTypePassport'>Paspor</label>
+        <input id='RadioButtonPolicyHolderComanyIDTypeKIMKITAS' name='RadioButtonPolicyHolderComanyIDType' type='radio' value='kimskitas'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderComanyIDTypeKIMKITAS'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderComanyIDTypeKIMKITAS'>KIMS / KITAS</label>
+        <input id='RadioButtonPolicyHolderComanyIDTypeOther' name='RadioButtonPolicyHolderComanyIDType' type='radio' value='other'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderComanyIDTypeOther'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderComanyIDTypeOther'>Lainnya, sebutkan</label>
+        <div class='LineDot PositionerLeft' id='LinePolicyHolderComanyIDTypeOther'></div>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyTypePT'>2. Jenis Perusahaan</label>
         <input id='RadioButtonPolicyHolderCompanyTypePT' name='RadioButtonPolicyHolderCompanyType' type='radio' value='pt'>
@@ -825,89 +826,99 @@
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyNoAnggaranDasar'>3. Nomor Anggaran Dasar/Akta Pendirian</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyNoAnggaranDasar'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='DatePolicyHolderCompanyOfExpired'></label>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyDateOfExpiredTitle'>Tanggal Berlaku</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyAnggaranDateOfExpiredDay'></table>
-        <span class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanyAnggaranDateOfExpiredMonth'>/</span>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyAnggaranDateOfExpiredMonth'></table>
-        <label class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanyAnggaranDateOfExpiredYear'>/</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyAnggaranDateOfExpiredYear'></table>
+        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyAnggaranDateOfExpired'></label>
+        <label class='Medium Single PositionerLeft' for='DatePolicyHolderCompanyDateOfExpiredDay'>Tanggal Berlaku</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanyDateOfExpiredDay'></table>
+        <span class='Separator Single PositionerLeft' for='DatePolicyHolderCompanyDateOfExpiredMonth'>/</span>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanyDateOfExpiredMonth'></table>
+        <label class='Separator Single PositionerLeft' for='DatePolicyHolderCompanyDateOfExpiredYear'>/</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanyDateOfExpiredYear'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyNoSuratIjinUsaha'>4. Nomor Surat Ijin Usaha</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyNoSuratIjinUsaha'></table>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyNoSuratIjinUsaha'>4. Nomor Surat Ijin Usaha</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyNoSuratIjinUsaha'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanySIUPDateOfExpired'></label>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanySIUPDateOfExpiredTitle'>Tanggal Berlaku</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanySIUPDateOfExpiredDay'></table>
-        <span class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanySIUPDateOfExpiredMonth'>/</span>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanySIUPDateOfExpiredMonth'></table>
-        <label class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanySIUPDateOfExpiredYear'>/</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanySIUPDateOfExpiredYear'></table>
+        <label class='Medium Single PositionerLeft' for='DatePolicyHolderCompanySIUPDateOfExpiredDay'>Tanggal Berlaku</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanySIUPDateOfExpiredDay'></table>
+        <span class='Separator Single PositionerLeft' for='DatePolicyHolderCompanySIUPDateOfExpiredMonth'>/</span>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanySIUPDateOfExpiredMonth'></table>
+        <label class='Separator Single PositionerLeft' for='DatePolicyHolderCompanySIUPDateOfExpiredYear'>/</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanySIUPDateOfExpiredYear'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyNoTDP'>5. Nomor TDP</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyNoTDP'></table>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyNoTDP'>5. Nomor TDP</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyNoTDP'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyTDPDateOfExpired'></label>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyTDPDateOfExpiredTitle'>Tanggal Berlaku</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyTDPDateOfExpiredDay'></table>
-        <span class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanyTDPDateOfExpiredMonth'>/</span>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyTDPDateOfExpiredMonth'></table>
-        <label class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanyTDPDateOfExpiredYear'>/</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyTDPDateOfExpiredYear'></table>
+        <label class='Medium Single PositionerLeft' for='DatePolicyHolderCompanyTDPDateOfExpiredDay'>Tanggal Berlaku</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanyTDPDateOfExpiredDay'></table>
+        <span class='Separator Single PositionerLeft' for='DatePolicyHolderCompanyTDPDateOfExpiredMonth'>/</span>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanyTDPDateOfExpiredMonth'></table>
+        <label class='Separator Single PositionerLeft' for='DatePolicyHolderCompanyTDPDateOfExpiredYear'>/</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanyTDPDateOfExpiredYear'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyNoSKDP'>6. Nomor SKDP (Domisili)</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyNoSKDP'></table>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyNoSKDP'>6. Nomor SKDP (Domisili)</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyNoSKDP'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanySKDPDateOfExpired'></label>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanySKDPDateOfExpiredTitle'>Tanggal Berlaku</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanySKDPDateOfExpiredDay'></table>
-        <span class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanySKDPDateOfExpiredMonth'>/</span>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanySKDPDateOfExpiredMonth'></table>
-        <label class='Separator Single PositionerLeft' for='BoxPolicyHolderCompanySKDPDateOfExpiredYear'>/</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanySKDPDateOfExpiredYear'></table>
+        <label class='Medium Single PositionerLeft' for='DatePolicyHolderCompanySKDPDateOfExpiredDay'>Tanggal Berlaku</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanySKDPDateOfExpiredDay'></table>
+        <span class='Separator Single PositionerLeft' for='DatePolicyHolderCompanySKDPDateOfExpiredMonth'>/</span>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanySKDPDateOfExpiredMonth'></table>
+        <label class='Separator Single PositionerLeft' for='DatePolicyHolderCompanySKDPDateOfExpiredYear'>/</label>
+        <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanySKDPDateOfExpiredYear'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyNoNPWP'>7. Nomor NPWP (jika ada)</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyNoNPWP'></table>
-        <table class='BoxSquare PositionerRight' id='BoxPolicyHolderCompanyNoNPWPDateYear'></table>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyNoNPWP'>7. Nomor NPWP (jika ada)</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyNoNPWP'></table>
+        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyNoNPWPYear'></table>
         <span class='Separator PositionerRight'>/</span>
-        <table class='BoxSquare PositionerRight' id='BoxPolicyHolderCompanyNoNPWPDateMonth'></table>
+        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyNoNPWPMonth'></table>
         <span class='Separator PositionerRight'>/</span>
-        <table class='BoxSquare PositionerRight' id='BoxPolicyHolderCompanyNoNPWPDateDay'></table>
+        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyNoNPWPDay'></table>
         <label class='Wrap Single PositionerRight'>Tanggal Berlaku</label>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanySector'>8. Bidang Usaha</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanySector'></table>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanySector'>8. Bidang Usaha</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanySector'></table>
         <br>
-        <label class='Medium Multi PositionerLeft' for='BoxPolicyHolderCompanyAddress'>9. Alamat Perusahaan (sesuai SKDP)</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyAddress'></table>
-        <label class='Box Single PositionerLeft' for='BoxPolicyHolderCompanyCity' id='LabelPolicyHolderCompanyCity'>Kota</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyCity'></table>
-        <label class='Box Single PositionerLeft' for='BoxPolicyHolderCompanyPostalCode' id='LabelPolicyHolderCompanyPostalCode'>Kode Pos</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyPostalCode'></table>
+        <label class='Medium Multi PositionerLeft' for='TextPolicyHolderCompanyAddress'>9. Alamat Perusahaan (sesuai SKDP)</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyAddress'></table>
+        <label class='Box Single PositionerLeft' for='TextPolicyHolderCompanyCity' id='LabelPolicyHolderCompanyCity'>Kota</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyCity'></table>
+        <label class='Box Single PositionerLeft' for='TextPolicyHolderCompanyPostalCode' id='LabelPolicyHolderCompanyPostalCode'>Kode Pos</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyPostalCode'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyAsset'>10. Aset Perusahaan (Rp)</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset'><100 Juta</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset2'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset2'>100 Juta - 1 Miliar</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset3'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset3'>>1 Miliar - 10 Miliar</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset4'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset4'>>10 Miliar - 100 Miliar</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset5'></div>
-        <label class='RadioButton PositionerLeft' for='BoxPolicyHolderCompanyAsset5'>>100 Miliar</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyAsset1'>10. Aset Perusahaan (Rp)</label>
+        <input id='RadioButtonPolicyHolderCompanyAsset1' name='RadioButtonPolicyHolderCompanyAsset' type='radio' value='100juta'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyAsset1'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyAsset1'><100 Juta</label>
+        <input id='RadioButtonPolicyHolderCompanyAsset2' name='RadioButtonPolicyHolderCompanyAsset' type='radio' value='100juta1miliar'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyAsset2'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyAsset2'>100 Juta - 1 Miliar</label>
+        <input id='RadioButtonPolicyHolderCompanyAsset3' name='RadioButtonPolicyHolderCompanyAsset' type='radio' value='1miliar10miliar'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyAsset3'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyAsset3'>>1 Miliar - 10 Miliar</label>
+        <input id='RadioButtonPolicyHolderCompanyAsset4' name='RadioButtonPolicyHolderCompanyAsset' type='radio' value='10miliar100miliar'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyAsset4'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyAsset4'>>10 Miliar - 100 Miliar</label>
+        <input id='RadioButtonPolicyHolderCompanyAsset5' name='RadioButtonPolicyHolderCompanyAsset' type='radio' value='100miliarlebih'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyAsset5'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderCompanyAsset5'>>100 Miliar</label>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyAsset6'>11. Aset Perusahaan (Rp)</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset6'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset6'><100 Juta</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset7'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset7'>100 Juta - 500 Juta</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset8'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset8'>>500 Juta - 1 Miliar</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset9'></div>
-        <label class='RadioButton Wrap PositionerLeft' for='BoxPolicyHolderCompanyAsset9'>>1 Miliar - 10 Miliar</label>
-        <div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyAsset10'></div>
-        <label class='RadioButton PositionerLeft' for='BoxPolicyHolderCompanyAsset10'>>10 Miliar</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyRevenue1'>11. Aset Perusahaan (Rp)</label>
+        <input id='RadioButtonPolicyHolderCompanyRevenue1' name='RadioButtonPolicyHolderCompanyRevenue' type='radio' value='100juta'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyRevenue1'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyRevenue1'><100 Juta</label>
+        <input id='RadioButtonPolicyHolderCompanyRevenue2' name='RadioButtonPolicyHolderCompanyRevenue' type='radio' value='100juta500juta'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyRevenue2'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyRevenue2'>100 Juta - 500 Juta</label>
+        <input id='RadioButtonPolicyHolderCompanyRevenue3' name='RadioButtonPolicyHolderCompanyRevenue' type='radio' value='500juta1miliar'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyRevenue3'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyRevenue3'>>500 Juta - 1 Miliar</label>
+        <input id='RadioButtonPolicyHolderCompanyRevenue4' name='RadioButtonPolicyHolderCompanyRevenue' type='radio' value='1miliar10miliar'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyRevenue4'></div>
+        <label class='RadioButton Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyRevenue4'>>1 Miliar - 10 Miliar</label>
+        <input id='RadioButtonPolicyHolderCompanyRevenue5' name='RadioButtonPolicyHolderCompanyRevenue' type='radio' value='10miliar'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyRevenue5'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderCompanyRevenue5'>>10 Miliar</label>
         <br>
       </section>
       <section id='SectionCompanyRepresentative'>
