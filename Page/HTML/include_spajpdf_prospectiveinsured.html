@@ -38,178 +38,211 @@
 <table class='BoxSquare PositionerRight' id='TextInsuranceHolderActiveDateDay'></table>
 <label class='Wrap Single PositionerRight' for='TextInsuranceHolderActiveDateDay'>Masa Berlaku</label>
 <br>
-<label class='Medium Single PositionerLeft' for='InsuranceHolderDateOfBirth'>5. Tempat Tanggal Lahir</label>
+<label class='Medium Single PositionerLeft' for='TextInsuranceHolderDateOfBirth'>5. Tempat Tanggal Lahir</label>
 <div class='LineStraight PositionerLeft' id='LineInsuranceHolderPlace'></div>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderDateOfBirthDay'></table>
-<span class='Separator Single PositionerLeft' for='BoxInsuranceHolderDateOfBirthMonth'>/</span>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderDateOfBirthMonth'></table>
-<label class='Separator Single PositionerLeft' for='BoxInsuranceHolderDateOfBirthYear'>/</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderDateOfBirthYear'></table>
-<label class='Separator Single PositionerLeft' for='BoxInsuranceHolderAge'>Age</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderAge'></table>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderDateOfBirthDay'></table>
+<span class='Separator Single PositionerLeft' for='TextInsuranceHolderDateOfBirthMonth'>/</span>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderDateOfBirthMonth'></table>
+<label class='Separator Single PositionerLeft' for='TextInsuranceHolderDateOfBirthYear'>/</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderDateOfBirthYear'></table>
+<label class='Separator Single PositionerLeft' for='TextInsuranceHolderAge'>Age</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderAge'></table>
 <span class='Separator Single PositionerLeft'>Tahun</span>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderWNI'>6. Kewarganegaraan</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderWNI'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderWNI'>WNI</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderWNA'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderWNA'>WNA, sebutkan</label>
-<div class='LineDot PositionerLeft' id='LineInsuranceHolderWNA'></div>
+<label class='Medium Single PositionerLeft' for='RadioButtonInsuranceHolderNationalityWNI'>6. Kewarganegaraan</label>
+<input id='RadioButtonInsuranceHolderNationalityWNI' name='RadioButtonInsuranceHolderNationality' type='radio' value='wni'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderNationalityWNI'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderNationalityWNI'>WNI</label>
+<input id='RadioButtonInsuranceHolderNationalityWNA' name='RadioButtonInsuranceHolderNationality' type='radio' value='wna'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderNationalityWNA'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderNationalityWNA'>WNA, sebutkan</label>
+<div class='LineDot PositionerLeft' id='LineInsuranceHolderNationalityWNA'></div>
 <span class='Note PositionerLeft'>(Jika jawaban "WNA" mohon melampirkan fotokopi KITAS & Paspor dan melengkapi kuesioner WNA)</span>
 <br>
-<label class='Wrap Single PositionerLeft' for='BoxInsuranceHolderUSACitizenNo'>7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderUSACitizenYes'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderUSACitizenYes'>YA</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderUSACitizenNo'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderUSACitizenNo'>TIDAK</label>
+<label class='Wrap Single PositionerLeft' for='RadioButtonInsuranceHolderUSACitizenNo'>7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?</label>
+<input id='RadioButtonInsuranceHolderUSACitizenYes' name='RadioButtonInsuranceHolderUSACitizen' type='radio' value='yes'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderUSACitizenYes'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderUSACitizenYes'>YA</label>
+<input id='RadioButtonInsuranceHolderUSACitizenNo' name='RadioButtonInsuranceHolderUSACitizen' type='radio' value='no'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderUSACitizenNo'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderUSACitizenNo'>TIDAK</label>
 <span class='Note PositionerLeft'>(Jika jawaban "YA" mohon lampirkan formulir W8 / W9)</span>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderMale'>8. Jenis Kelamin</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderMale'></div>
-<label class='RadioButton Medium PositionerLeft' for='BoxInsuranceHolderMale'>Laki Laki</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderFemale'></div>
-<label class='RadioButton Medium PositionerLeft' for='BoxInsuranceHolderFemale'>Wanita</label>
+<label class='Medium Single PositionerLeft' for='RadioButtonInsuranceHolderSexMale'>8. Jenis Kelamin</label>
+<input id='RadioButtonInsuranceHolderSexMale' name='RadioButtonInsuranceHolderSex' type='radio' value='male'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderSexMale'></div>
+<label class='RadioButton Medium PositionerLeft' for='RadioButtonInsuranceHolderSexMale'>Laki Laki</label>
+<input id='RadioButtonInsuranceHolderSexFemale' name='RadioButtonInsuranceHolderSex' type='radio' value='female'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderSexFemale'></div>
+<label class='RadioButton Medium PositionerLeft' for='RadioButtonInsuranceHolderSexFemale'>Wanita</label>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderSingle'>9. Status Pernikahan</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderSingle'></div>
-<label class='RadioButton Medium PositionerLeft' for='BoxInsuranceHolderSingle'>Belum Menikah</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderMarried'></div>
-<label class='RadioButton Medium PositionerLeft' for='BoxInsuranceHolderMarried'>Menikah</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderWasMarried'></div>
-<label class='RadioButton Medium PositionerLeft' for='BoxInsuranceHolderWasMarried'>Janda / Duda</label>
+<label class='Medium Single PositionerLeft' for='RadioButtonInsuranceHolderStatusSingle'>9. Status Pernikahan</label>
+<input id='RadioButtonInsuranceHolderStatusSingle' name='RadioButtonInsuranceHolderStatus' type='radio' value='single'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderStatusSingle'></div>
+<label class='RadioButton Medium PositionerLeft' for='RadioButtonInsuranceHolderStatusSingle'>Belum Menikah</label>
+<input id='RadioButtonInsuranceHolderStatusMarried' name='RadioButtonInsuranceHolderStatus' type='radio' value='married'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderStatusMarried'></div>
+<label class='RadioButton Medium PositionerLeft' for='RadioButtonInsuranceHolderStatusMarried'>Menikah</label>
+<input id='RadioButtonInsuranceHolderStatusWidower' name='RadioButtonInsuranceHolderStatus' type='radio' value='widower'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderStatusWidower'></div>
+<label class='RadioButton Medium PositionerLeft' for='RadioButtonInsuranceHolderStatusWidower'>Janda / Duda</label>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderIslam'>10. Agama</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderIslam'></div>
-<label class='RadioButton Medium PositionerLeft' for='BoxInsuranceHolderIslam'>Islam</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderCatholic'></div>
-<label class='RadioButton Medium PositionerLeft' for='BoxInsuranceHolderChatolic'>Kristen Katolik</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderProtestan'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderProtestan'>Kristen Protestan</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderHindu'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderHindu'>Hindu</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderBudha'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderBudha'>Budha</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderKongHuChu'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderKongHuChu'>Kong Hu Chu</label>
+<label class='Medium Single PositionerLeft' for='RadioBoxInsuranceHolderReligionIslam'>10. Agama</label>
+<input id='RadioBoxInsuranceHolderReligionIslam' name='RadioBoxInsuranceHolderReligion' type='radio' value='islam'>
+<div class='BoxRound PositionerLeft' id='RadioBoxInsuranceHolderReligionIslam'></div>
+<label class='RadioButton Medium PositionerLeft' for='RadioBoxInsuranceHolderReligionIslam'>Islam</label>
+<input id='RadioBoxInsuranceHolderReligionCatholic' name='RadioBoxInsuranceHolderReligion' type='radio' value='catholic'>
+<div class='BoxRound PositionerLeft' id='RadioBoxInsuranceHolderReligionCatholic'></div>
+<label class='RadioButton Medium PositionerLeft' for='RadioBoxInsuranceHolderReligionCatholic'>Kristen Katolik</label>
+<input id='RadioBoxInsuranceHolderReligionProtestant' name='RadioBoxInsuranceHolderReligion' type='radio' value='protestant'>
+<div class='BoxRound PositionerLeft' id='RadioBoxInsuranceHolderReligionProtestant'></div>
+<label class='RadioButton PositionerLeft' for='RadioBoxInsuranceHolderReligionProtestant'>Kristen Protestan</label>
+<input id='RadioBoxInsuranceHolderReligionHindu' name='RadioBoxInsuranceHolderReligion' type='radio' value='hindu'>
+<div class='BoxRound PositionerLeft' id='RadioBoxInsuranceHolderReligionHindu'></div>
+<label class='RadioButton PositionerLeft' for='RadioBoxInsuranceHolderReligionHindu'>Hindu</label>
+<input id='RadioBoxInsuranceHolderReligionBudha' name='RadioBoxInsuranceHolderReligion' type='radio' value='budha'>
+<div class='BoxRound PositionerLeft' id='RadioBoxInsuranceHolderReligionBudha'></div>
+<label class='RadioButton PositionerLeft' for='RadioBoxInsuranceHolderReligionBudha'>Budha</label>
+<input id='RadioBoxInsuranceHolderReligionKongHuCu' name='RadioBoxInsuranceHolderReligion' type='radio' value='konghucu'>
+<div class='BoxRound PositionerLeft' id='RadioBoxInsuranceHolderReligionKongHuCu'></div>
+<label class='RadioButton PositionerLeft' for='RadioBoxInsuranceHolderReligionKongHuCu'>Kong Hu Chu</label>
 <br>
-<label class='Wrap Single PositionerLeft' for='BoxInsuranceHolderCompany'>11. a. Nama Perusahaan/Instansi/Sekolah</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderCompany' style='margin-left: 4px'></table>
+<label class='Wrap Single PositionerLeft' for='TextInsuranceHolderCompany'>11. a. Nama Perusahaan/Instansi/Sekolah</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderCompany' style='margin-left: 4px'></table>
 <br>
-<label class='Medium SecondIndent Single PositionerLeft' for='BoxInsuranceHolderMainJob'>Pekerjaan Utama</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderMainJob'></table>
+<label class='Medium SecondIndent Single PositionerLeft' for='TextInsuranceHolderMainJob'>Pekerjaan Utama</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderMainJob'></table>
 <br>
-<label class='Medium SecondIndent Single PositionerLeft' for='BoxInsuranceHolderWorkScope'>Bidang Usaha</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderWorkScope'></table>
+<label class='Medium SecondIndent Single PositionerLeft' for='TextInsuranceHolderWorkScope'>Bidang Usaha</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderWorkScope'></table>
 <br>
-<label class='Medium SecondIndent Single PositionerLeft' for='BoxInsuranceHolderPosition'>Jabatan</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderPosition'></table>
+<label class='Medium SecondIndent Single PositionerLeft' for='TextInsuranceHolderPosition'>Jabatan</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderPosition'></table>
 <br>
-<label class='Medium SecondIndent Single PositionerLeft' for='BoxInsuranceHolderJobDescription'>Uraian Pekerjaan</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderJobDescription'></table>
+<label class='Medium SecondIndent Single PositionerLeft' for='TextInsuranceHolderJobDescription'>Uraian Pekerjaan</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderJobDescription'></table>
 <br>
-<label class='Medium FirstIndent Single PositionerLeft' for='BoxInsuranceHolderSideJob'>b. Pekerjaan Tambahan</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderSideJob'></table>
+<label class='Medium FirstIndent Single PositionerLeft' for='TextInsuranceHolderSideJob'>b. Pekerjaan Tambahan</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderSideJob'></table>
 <br>
-<label class='Medium Multi PositionerLeft' for='BoxInsuranceHolderHomeAddress1' style='height: 112px'>12. Alamat Tempat Tinggal</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderHomeAddress1'></table>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderHomeAddress2'></table>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderHomeCity' id='LabelInsuranceHolderHomeCity'>Kota</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderHomeCity'></table>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderHomePostalCode' id='LabelInsuranceHolderHomePostalCode'>Kode Pos</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderHomePostalCode'></table>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderHomeTelephonePrefix' id='LabelInsuranceHolderHomeTelephonePrefix'>Telp</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderHomeTelephonePrefix'></table>
-<label class='Box Plain Single PositionerLeft' for='BoxInsuranceHolderHomeTelephoneInfix' id='LabelInsuranceHolderHomeTeleponeInfix'>-</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderHomeTelephoneInfix'></table>
+<label class='Medium Multi PositionerLeft' for='TextInsuranceHolderHomeAddress1' style='height: 112px'>12. Alamat Tempat Tinggal</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderHomeAddress1'></table>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderHomeAddress2'></table>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderHomeCity' id='LabelInsuranceHolderHomeCity'>Kota</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderHomeCity'></table>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderHomePostalCode' id='LabelInsuranceHolderHomePostalCode'>Kode Pos</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderHomePostalCode'></table>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderHomeTelephonePrefix' id='LabelInsuranceHolderHomeTelephonePrefix'>Telp</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderHomeTelephonePrefix'></table>
+<label class='Box Plain Single PositionerLeft' for='TextInsuranceHolderHomeTelephoneInfix' id='LabelInsuranceHolderHomeTeleponeInfix'>-</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderHomeTelephoneInfix'></table>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderTelephone1'>13. Nomor Ponsel</label>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderTelephone1' id='LabelInsuranceHolderTelephone1'>1.</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderTelephone1'></table>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderTelephone2' id='LabelInsuranceHolderTelephone2'>2.</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderTelephone2'></table>
+<label class='Medium Single PositionerLeft' for='TextInsuranceHolderTelephone1'>13. Nomor Ponsel</label>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderTelephone1' id='LabelInsuranceHolderTelephone1'>1.</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderTelephone1'></table>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderTelephone2' id='LabelInsuranceHolderTelephone2'>2.</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderTelephone2'></table>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderEmail'>14. Alamat Email</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderEmail'></table>
+<label class='Medium Single PositionerLeft' for='TextInsuranceHolderEmail'>14. Alamat Email</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderEmail'></table>
 <br>
-<label class='Medium Multi PositionerLeft' for='BoxInsuranceHolderAddress1' style='height: 112px'>15. Alamat Kantor</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderOfficeAddress1'></table>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderOfficeAddress2'></table>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderOfficeCity' id='LabelInsuranceHolderOfficeCity'>Kota</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderOfficeCity'></table>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderOfficePostalCode' id='LabelInsuranceHolderOfficePostalCode'>Kode Pos</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderOfficePostalCode'></table>
-<label class='Box Single PositionerLeft' for='BoxInsuranceHolderOfficeTelephonePrefix' id='LabelInsuranceHolderOfficeTelephonePrefix'>Telp</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderOfficeTelephonePrefix'></table>
-<label class='Box Plain Single PositionerLeft' for='BoxInsuranceHolderOfficeTelephoneInfix' id='LabelInsuranceHolderOfficeTeleponeInfix'>-</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderOfficeTelephoneInfix'></table>
+<label class='Medium Multi PositionerLeft' for='TextInsuranceHolderOfficeAddress1' style='height: 112px'>15. Alamat Kantor</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderOfficeAddress1'></table>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderOfficeAddress2'></table>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderOfficeCity' id='LabelInsuranceHolderOfficeCity'>Kota</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderOfficeCity'></table>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderOfficePostalCode' id='LabelInsuranceHolderOfficePostalCode'>Kode Pos</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderOfficePostalCode'></table>
+<label class='Box Single PositionerLeft' for='TextInsuranceHolderOfficeTelephonePrefix' id='LabelInsuranceHolderOfficeTelephonePrefix'>Telp</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderOfficeTelephonePrefix'></table>
+<label class='Box Plain Single PositionerLeft' for='TextInsuranceHolderOfficeTelephoneInfix' id='LabelInsuranceHolderOfficeTeleponeInfix'>-</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderOfficeTelephoneInfix'></table>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderCorrespondanceHomeAddress'>16. Alamat Korespondensi</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderCorrespondanceHomeAddress'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderCorrespondanceHomeAddress'>Alamat Tempat Tinggal</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderCorrespondanceOfficeAddress'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderCorrespondanceOfficeAddress'>Alamat Kantor</label>
+<label class='Medium Single PositionerLeft' for='RadioButtonInsuranceHolderCorrespondanceHomeAddress'>16. Alamat Korespondensi</label>
+<input id='RadioButtonInsuranceHolderCorrespondanceHomeAddress' name='RadioButtonPolicyHolderCorrespondanceAddress' type='radio' value='home'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderCorrespondanceHomeAddress'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderCorrespondanceHomeAddress'>Alamat Tempat Tinggal</label>
+<input id='RadioButtonInsuranceHolderCorrespondanceOfficeAddress' name='RadioButtonPolicyHolderCorrespondanceAddress' type='radio' value='office'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderCorrespondanceOfficeAddress'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderCorrespondanceOfficeAddress'>Alamat Kantor</label>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderSelf'>17. Hubungan dengan Calon Tertangung</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderSelf'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderSelf'>Diri Sendiri</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderSpouse'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderSpouse'>Suami / Istri</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderFamily'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderFamily'>Orang Tua / Anak</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderColleague'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderColleague'>Perusahaan / Karyawan</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderOtherRelationship'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderOtherRelationship'>Lainnya, sebutkan</label>
+<label class='Medium Single PositionerLeft' for='RadioButtonInsuranceHolderRelationAssuredSelf'>17. Hubungan dengan Calon Tertangung</label>
+<input id='RadioButtonInsuranceHolderRelationAssuredSelf' name='RadioButtonInsuranceHolderRelationAssured' type='radio' value='self'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderRelationAssuredSelf'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderRelationAssuredSelf'>Diri Sendiri</label>
+<input id='RadioButtonInsuranceHolderRelationAssuredSpouse' name='RadioButtonInsuranceHolderRelationAssured' type='radio' value='spouse'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderRelationAssuredSpouse'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderRelationAssuredSpouse'>Suami / Istri</label>
+<input id='RadioButtonInsuranceHolderRelationAssuredFamily' name='RadioButtonInsuranceHolderRelationAssured' type='radio' value='family'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderRelationAssuredFamily'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderRelationAssuredFamily'>Orang Tua / Anak</label>
+<input id='RadioButtonInsuranceHolderRelationAssuredColleague' name='RadioButtonInsuranceHolderRelationAssured' type='radio' value='colleague'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderRelationAssuredColleague'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderRelationAssuredColleague'>Perusahaan / Karyawan</label>
+<input id='RadioButtonInsuranceHolderRelationAssuredOther' name='RadioButtonInsuranceHolderRelationAssured' type='radio' value='other'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderRelationAssuredOther'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderRelationAssuredOther'>Lainnya, sebutkan</label>
 <div class='LineDot PositionerLeft' id='LineInsuranceHolderOtherRelationship'></div>
 <br>
-<label class='Wrap Single PositionerLeft' for='BoxInsuranceHolderSaving'>18. Tujuan Pembelian Asuransi</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderSaving'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderSaving'>Tabungan</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderProtection'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderProtection'>Proteksi</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderInvestation'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderInvestation'>Investasi</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderEducation'></div>
-<label class='RadioButton Short PositionerLeft' for='BoxInsuranceHolderEducation'>Edukasi</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderOtherPurpose'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderOtherPurpose'>Lainnya, sebutkan</label>
+<label class='Wrap Single PositionerLeft' for='RadioButtonInsuranceHolderInsurancePurposeSavings'>18. Tujuan Pembelian Asuransi</label>
+<input id='RadioButtonInsuranceHolderInsurancePurposeSavings' name='RadioButtonInsuranceHolderInsurancePurpose' type='radio' value='savings'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderInsurancePurposeSavings'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderInsurancePurposeSavings'>Tabungan</label>
+<input id='RadioButtonInsuranceHolderInsurancePurposeProtection' name='RadioButtonInsuranceHolderInsurancePurpose' type='radio' value='protection'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderInsurancePurposeProtection'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderInsurancePurposeProtection'>Proteksi</label>
+<input id='RadioButtonInsuranceHolderInsurancePurposeInvestment' name='RadioButtonInsuranceHolderInsurancePurpose' type='radio' value='investment'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderInsurancePurposeInvestment'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderInsurancePurposeInvestment'>Investasi</label>
+<input id='RadioButtonInsuranceHolderInsurancePurposeEducation' name='RadioButtonInsuranceHolderInsurancePurpose' type='radio' value='education'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderInsurancePurposeEducation'></div>
+<label class='RadioButton Short PositionerLeft' for='RadioButtonInsuranceHolderInsurancePurposeEducation'>Edukasi</label>
+<input id='RadioButtonInsuranceHolderInsurancePurposeOther' name='RadioButtonInsuranceHolderInsurancePurpose' type='radio' value='other'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderInsurancePurposeOther'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderInsurancePurposeOther'>Lainnya, sebutkan</label>
 <div class='LineDot PositionerLeft' id='LineInsuranceHolderOtherPurpose'></div>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxInsuranceHolderNPWP'>19. Nomor NPWP (jika ada)</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderNPWP'></table>
-<table class='BoxSquare PositionerRight' id='BoxInsuranceHolderNPWPActiveDateYear'></table>
-<label class='Separator Single PositionerRight' for='BoxInsuranceHolderNPWPActiveDateYear'>/</label>
-<table class='BoxSquare PositionerRight' id='BoxInsuranceHolderNPWPActiveDateMonth'></table>
-<label class='Separator Single PositionerRight' for='BoxInsuranceHolderNPWPActiveDateMonth'>/</label>
-<table class='BoxSquare PositionerRight' id='BoxInsuranceHolderNPWPActiveDateDay'></table>
-<label class='Wrap Single PositionerRight' for='BoxInsuranceHolderNPWPActiveDateDay'>Masa Berlaku</label>
+<label class='Medium Single PositionerLeft' for='TextInsuranceHolderNPWP'>19. Nomor NPWP (jika ada)</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderNPWP'></table>
+<table class='BoxSquare PositionerRight' id='TextInsuranceHolderNPWPActiveDateYear'></table>
+<label class='Separator Single PositionerRight' for='TextInsuranceHolderNPWPActiveDateYear'>/</label>
+<table class='BoxSquare PositionerRight' id='TextInsuranceHolderNPWPActiveDateMonth'></table>
+<label class='Separator Single PositionerRight' for='TextInsuranceHolderNPWPActiveDateMonth'>/</label>
+<table class='BoxSquare PositionerRight' id='TextInsuranceHolderNPWPActiveDateDay'></table>
+<label class='Wrap Single PositionerRight' for='TextInsuranceHolderNPWPActiveDateDay'>Masa Berlaku</label>
 <br>
 <label class='Wrap Single PositionerLeft' for='BoxInsuranceHolderSalaryIDR'>20. Penghasilan Kotor Per Tahun</label>
 <br>
 <label class='Medium Single FirstIndent PositionerLeft' for='BoxInsuranceHolderSalaryIDR'>Gaji</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderSalaryIDR'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderSalaryIDR'>Rp</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderSalaryUSD'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderSalaryUSD'>USD</label>
-<label class='Wrap Single PositionerLeft' for='BoxInsuranceHolderSalary'>Jumlah Penghasilan / tahun</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderSalary'></table>
+<input id='RadioButtonInsuranceHolderSalaryIDR' name='RadioButtonPolicyHolderSalary' type='radio' value='idr'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderSalaryIDR'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderSalaryIDR'>Rp</label>
+<input id='RadioButtonInsuranceHolderSalaryUSD' name='RadioButtonPolicyHolderSalary' type='radio' value='USD'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderSalaryUSD'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderSalaryUSD'>USD</label>
+<label class='Wrap Single PositionerLeft' for='TextInsuranceHolderSalary'>Jumlah Penghasilan / tahun</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderSalary'></table>
 <br>
-<label class='Medium Single FirstIndent PositionerLeft' for='BoxInsuranceHolderRevenueIDR'>Hasil Usaha</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderRevenueIDR'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderrRevenueIDR'>Rp</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderRevenueUSD'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderRevenueUSD'>USD</label>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderRevenue'>Jumlah Penghasilan / tahun</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderRevenue'></table>
+<label class='Medium Single FirstIndent PositionerLeft' for='RadioButtonInsuranceHolderRevenueIDR'>Hasil Usaha</label>
+<input id='RadioButtonInsuranceHolderRevenueIDR' name='RadioButtonInsuranceHolderRevenue' type='radio' value='idr'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderRevenueIDR'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderRevenueIDR'>Rp</label>
+<input id='RadioButtonInsuranceHolderRevenueUSD' name='RadioButtonInsuranceHolderRevenue' type='radio' value='USD'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderRevenueUSD'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderRevenueUSD'>USD</label>
+<label class='RadioButton PositionerLeft' for='TextInsuranceHolderRevenue'>Jumlah Penghasilan / tahun</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderRevenue'></table>
 <br>
-<label class='Medium FirstIndent Single PositionerLeft' for='BoxInsuranceHolderOtherIncomeIDR'>Penghasilan Lainnya</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderOtherIncomeIDR'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderOtherIncomeIDR'>Rp</label>
-<div class='BoxRound PositionerLeft' id='BoxInsuranceHolderOtherIncomeUSD'></div>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderOtherIncomeUSD'>USD</label>
-<label class='RadioButton PositionerLeft' for='BoxInsuranceHolderOtherIncome'>Jumlah Penghasilan / tahun</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderOtherIncome'></table>
+<label class='Medium FirstIndent Single PositionerLeft' for='RadioButtonInsuranceHolderOtherIncomeIDR'>Penghasilan Lainnya</label>
+<input id='RadioButtonInsuranceHolderOtherIncomeIDR' name='RadioButtonInsuranceHolderOtherIncome' type='radio' value='idr'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderOtherIncomeIDR'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderOtherIncomeIDR'>Rp</label>
+<input id='RadioButtonInsuranceHolderOtherIncomeUSD' name='RadioButtonInsuranceHolderOtherIncome' type='radio' value='USD'>
+<div class='BoxRound PositionerLeft' id='RadioButtonInsuranceHolderOtherIncomeUSD'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonInsuranceHolderOtherIncomeUSD'>USD</label>
+<label class='RadioButton PositionerLeft' for='TextInsuranceHolderOtherIncome'>Jumlah Penghasilan / tahun</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderOtherIncome'></table>
 <br>
-<label class='Medium Single FirstIndent PositionerLeft' for='BoxInsuranceHolderSource'>Jelaskan Sumbernya</label>
-<table class='BoxSquare PositionerLeft' id='BoxInsuranceHolderSource'></table>
+<label class='Medium Single FirstIndent PositionerLeft' for='TextInsuranceHolderSource'>Jelaskan Sumbernya</label>
+<table class='BoxSquare PositionerLeft' id='TextInsuranceHolderSource'></table>
 <br>
