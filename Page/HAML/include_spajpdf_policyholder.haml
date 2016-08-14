@@ -15,18 +15,23 @@
 %span.Description.PositionerLeft (sesuai dengan identitas diri)
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderIDType" } 3. Jenis Identifikasi Diri
-%div#BoxPolicyHolderKTP.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderKTP" } KTP
-%div#BoxPolicyHolderSIM.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderSIM" } SIM
-%div#BoxPolicyHolderPaspor.BoxRound.PositionerLeft
-%span.Separator.PositionerLeft{ :for => "BoxPolicyHolderPaspor" } Paspor
-%div#BoxPolicyHolderKIMSKITAS.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderKIMSKITAS" } KIMS / KITAS
-%div#BoxPolicyHolderOtherID.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderOtherID" } Lainnya, sebutkan
-%div#LinePolicyHolderOtherID.LineDot.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } 3. Jenis Identifikasi Diri
+%input#RadioButtonPolicyHolderKTP{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "ktp" }
+%div#RadioButtonPolicyHolderKTP.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKTP" } KTP
+%input#RadioButtonPolicyHolderSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "sim" }
+%div#RadioButtonPolicyHolderSIM.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderSIM" } SIM
+%input#RadioButtonPolicyHolderPaspor{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "paspor" }
+%div#RadioButtonPolicyHolderPaspor.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderPaspor" } Paspor
+%input#RadioButtonPolicyHolderKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "kimskitas" }
+%div#RadioButtonPolicyHolderKIMSKITAS.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKIMSKITAS" } KIMS / KITAS
+%input#RadioButtonPolicyHolderOtherID{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "other" }
+%div#RadioButtonPolicyHolderOtherID.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherID" } Lainnya, sebutkan
+%div#TextPolicyHolderOtherID.LineDot.PositionerLeft
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderID" } 4. Nomor Identitas Diri

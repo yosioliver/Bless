@@ -251,47 +251,26 @@ function validateRadioButtonGeneral(radioButtonName)
 
 // SETTER
 
-function boxSetter(tableID, stringContent, stringType)
+function setBoxGeneral(stringID, stringValue)
 {
-    var stringID = boxIDBox + tableID;
+    var stringJQueryID = stringKres + stringID;
     
-    function boxPlacer(tableID, stringContent)
+    for (var i = 0; i < stringContent.length; i++)
     {
-        for (var i = 0; i < stringContent.length; i++)
-        {
-            $(tableID + " tbody tr " + tableID + i).append(stringContent[i]);
-        }
-    }
-    
-    if (stringType == boxTypeStraight)
-    {
-        boxPlacer(stringID, stringContent);
-    }
-    else if (stringType == boxTypeDate)
-    {
-        var arrayDateID = [boxIDDay, boxIDMonth, boxIDYear];
-        var arrayDateString = stringContent.split(separatorDate);
-        
-        for (var i = 0; i < arrayDateString.length; i++)
-        {
-            boxPlacer(stringID + arrayDateID[i], arrayDateString[i]);
-        }
-    }
-    else
-    {
-        var arrayTelephoneString = stringContent.split(separatorTelephone);
-        var arrayTelephoneID = [boxIDPrefix, boxIDInfix];
-        
-        for(var i = 0; i < arrayTelephoneString.length; i++)
-        {
-            boxPlacer(stringID + arrayTelephoneID[i], arrayTelephoneString[i]);
-        } 
+        $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringContent[i]);
     }
 }
 
-function radioButtonSetter(radioButtonName, stringValue)
+function setTextGeneral(stringID, stringValue)
 {
-    var radioButton = $("input:radio[name=" + radioButtonName + "]");
+    var stringJQueryID = stringKres + stringID;
+    
+    $(stringJQueryID).val(stringValue);
+}
+
+function setRadioButtonGeneral(stringName, stringValue)
+{
+    var radioButton = $("input:radio[name=" + stringName + "]");
     
     if (radioButton.is(":checked") == false) 
     {
@@ -303,19 +282,108 @@ function radioButtonSetter(radioButtonName, stringValue)
     }
 }
 
+function setSelectForm(stringID, stringValue)
+{
+    stringTextGeneral(stringID, stringValue);
+}
+
+function setSelectPDF(stringID, stringValue)
+{
+    setterBoxGeneral(stringID, stringValue);
+}
+
+function setCheckboxGeneral(stringName, stringValue)
+{
+    var radioButton = $("input:checkbox[name=" + stringName + "]");
+    
+    if (radioButton.is(":checked") == false) 
+    {
+        radioButton.filter("[value=" + stringValue + "]").prop("checked", true);
+    }
+    else
+    {
+        
+    }
+}
+
+function setTextForm(stringID, stringValue)
+{
+    stringTextGeneral(stringID, stringValue);
+}
+
+function boxSetter(tableID, stringContent, stringType)
+{
+    if (stringContent.indexOf(separatorTelephone) > 0)
+    {
+        var arrayTelephoneString = stringContent.split(separatorTelephone);
+        var arrayTelephoneID = [boxIDPrefix, boxIDInfix];
+        
+        for(var i = 0; i < arrayTelephoneString.length; i++)
+        {
+            setBoxGeneral(stringID + arrayTelephoneID[i], arrayTelephoneString[i]);
+        } 
+    }
+    else
+    {
+        var stringJQueryID = stringKres + stringIDLine + stringID;
+        
+        if ($(stringJQueryID).length == 0)
+        {
+            stringTextGeneral(stringID, stringValue);
+        }
+        else
+        {
+            setBoxGeneral(stringID, stringValue);
+        }
+    }
+}
+
+function setDateForm()
+{
+    stringTextGeneral(stringID, stringValue);
+}
+
+function setDatePDF(stringID, stringContent)
+{
+    var arrayDateID = [boxIDDay, boxIDMonth, boxIDYear];
+    var arrayDateString = stringContent.split(separatorDate);
+
+    for (var i = 0; i < arrayDateString.length; i++)
+    {
+        setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);
+    }
+}
+
 
 // GETTER
 
-function boxGetter(tableID, boxAmount)
+function getBoxGeneral(stringID)
 {
+    var stringJQueryID = stringKres + stringID;
     var stringContent = "";
     
-    for (var i = 0; i < boxAmount; i++)
+    $(stringJQueryID + " tbody tr " + stringJQueryID + i).each(function(index)
     {
-        stringContent += $(tableID + " tbody tr " + tableID + i).text();
-    }
+        var stringText = $(this).text();
+        
+        if (stringText.length > 0)
+        {
+            stringContent += stringText;
+        }
+        else
+        {
+            
+        }
+    });
     
     return stringContent;
+}
+
+function getTextGeneral(stringID)
+{
+    var stringJQueryID = stringKres + stringID;
+    
+    return $(stringJQueryID).val();
 }
 
 function radioButtonGetter(radioButtonName)
