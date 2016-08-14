@@ -249,18 +249,40 @@
 <br>
 <h3>A2. PERUSAHAAN/BERBADAN HUKUM</h3>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyName'>1. Nama Perusahaan</label>
-<table class='BoxSquare PositionerLeft' id='BoxPolicyHolderCompanyName'></table>
+<label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyName'>1. Nama Perusahaan</label>
+<table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyName'></table>
 <br>
-<label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyType'>2. Jenis Perusahaan</label>
-<div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyPT'></div>
-<label class='RadioButton PositionerLeft' for='BoxPolicyHolderCompanyPT'>Perseroan Terbatas</label>
-<div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyYayasan'></div>
-<label class='RadioButton PositionerLeft' for='BoxPolicyHolderCompanyYayasan'>Yayasan</label>
-<div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyBUMN'></div>
-<label class='RadioButton PositionerLeft' for='BoxPolicyHolderCompanyBUMN'>BUMN</label>
-<div class='BoxRound PositionerLeft' id='BoxPolicyHolderCompanyBUMN'></div>
-<label class='RadioButton PositionerLeft' for='BoxPolicyHolderCompanyOther'>Lainnya, sebutkan</label>
+<label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderIDType'>3. Jenis Identitas Diri</label>
+<input id='RadioButtonPolicyHolderKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='ktp'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderKTP'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderKTP'>KTP</label>
+<input id='RadioButtonPolicyHolderSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='sim'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderSIM'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderSIM'>SIM</label>
+<input id='RadioButtonPolicyHolderPaspor' name='RadioButtonPolicyHolderIDType' type='radio' value='paspor'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderPaspor'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderPaspor'>Paspor</label>
+<input id='RadioButtonPolicyHolderKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='kimskitas'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderKIMSKITAS'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderKIMSKITAS'>KIMS / KITAS</label>
+<input id='RadioButtonPolicyHolderOtherID' name='RadioButtonPolicyHolderIDType' type='radio' value='other'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderOtherID'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderOtherID'>Lainnya, sebutkan</label>
+<div class='LineDot PositionerLeft' id='TextPolicyHolderOtherID'></div>
+<br>
+<label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyTypePT'>2. Jenis Perusahaan</label>
+<input id='RadioButtonPolicyHolderCompanyTypePT' name='RadioButtonPolicyHolderCompanyType' type='radio' value='pt'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyTypePT'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderCompanyTypePT'>Perseroan Terbatas</label>
+<input id='RadioButtonPolicyHolderCompanyTypeYayasan' name='RadioButtonPolicyHolderCompanyType' type='radio' value='yayasan'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyTypeYayasan'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderCompanyTypeYayasan'>Yayasan</label>
+<input id='RadioButtonPolicyHolderCompanyTypeBUMN' name='RadioButtonPolicyHolderCompanyType' type='radio' value='bumn'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyTypeBUMN'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderCompanyTypeBUMN'>BUMN</label>
+<input id='RadioButtonPolicyHolderCompanyTypeOther' name='RadioButtonPolicyHolderCompanyType' type='radio' value='lainnya'>
+<div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderCompanyTypeOther'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderCompanyTypeOther'>Lainnya, sebutkan</label>
 <div class='LineDot PositionerLeft' id='LinePolicyHolderCompanyOther'></div>
 <br>
 <label class='Medium Single PositionerLeft' for='BoxPolicyHolderCompanyNoAnggaranDasar'>3. Nomor Anggaran Dasar/Akta Pendirian</label>

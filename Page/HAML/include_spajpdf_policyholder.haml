@@ -269,7 +269,6 @@
 %input#RadioButtonHolderOtherIncomeUSD{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "usd" }
 %div#RadioButtonHolderOtherIncomeUSD.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeUSD" } USD
-
 %label.RadioButton.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Jumlah Penghasilan / tahun
 %table#TextPolicyHolderOtherIncome.BoxSquare.PositionerLeft
 %br
@@ -282,19 +281,47 @@
 %h3 A2. PERUSAHAAN/BERBADAN HUKUM
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCompanyName" } 1. Nama Perusahaan
-%table#BoxPolicyHolderCompanyName.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyName" } 1. Nama Perusahaan
+%table#TextPolicyHolderCompanyName.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCompanyType" } 2. Jenis Perusahaan
-%div#BoxPolicyHolderCompanyPT.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyPT" } Perseroan Terbatas
-%div#BoxPolicyHolderCompanyYayasan.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyYayasan" } Yayasan
-%div#BoxPolicyHolderCompanyBUMN.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyBUMN" } BUMN
-%div#BoxPolicyHolderCompanyBUMN.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyOther" } Lainnya, sebutkan
+
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } 3. Jenis Identitas Diri
+%input#RadioButtonPolicyHolderKTP{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "ktp" }
+%div#RadioButtonPolicyHolderKTP.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKTP" } KTP
+%input#RadioButtonPolicyHolderSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "sim" }
+%div#RadioButtonPolicyHolderSIM.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderSIM" } SIM
+%input#RadioButtonPolicyHolderPaspor{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "paspor" }
+%div#RadioButtonPolicyHolderPaspor.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderPaspor" } Paspor
+%input#RadioButtonPolicyHolderKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "kimskitas" }
+%div#RadioButtonPolicyHolderKIMSKITAS.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKIMSKITAS" } KIMS / KITAS
+%input#RadioButtonPolicyHolderOtherID{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "other" }
+%div#RadioButtonPolicyHolderOtherID.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherID" } Lainnya, sebutkan
+%div#TextPolicyHolderOtherID.LineDot.PositionerLeft
+%br
+
+
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypePT" } 2. Jenis Perusahaan
+%input#RadioButtonPolicyHolderCompanyTypePT{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "pt" }
+%div#RadioButtonPolicyHolderCompanyTypePT.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypePT" } Perseroan Terbatas
+
+%input#RadioButtonPolicyHolderCompanyTypeYayasan{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yayasan" }
+%div#RadioButtonPolicyHolderCompanyTypeYayasan.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypeYayasan" } Yayasan
+
+%input#RadioButtonPolicyHolderCompanyTypeBUMN{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "bumn" }
+%div#RadioButtonPolicyHolderCompanyTypeBUMN.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypeBUMN" } BUMN
+
+%input#RadioButtonPolicyHolderCompanyTypeOther{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "lainnya" }
+%div#RadioButtonPolicyHolderCompanyTypeOther.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypeOther" } Lainnya, sebutkan
 %div#LinePolicyHolderCompanyOther.LineDot.PositionerLeft
 %br
 
