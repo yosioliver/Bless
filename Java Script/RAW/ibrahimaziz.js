@@ -28,9 +28,9 @@ var boxIDYear = "DateYear";
 var boxIDPrefix = "Prefix";
 var boxIDInfix = "Infix";
 var boxIDSuffix = "Suffix";
-var boxIDBox = "#Box";
-var separatorDate = "-";
-var separatorTelephone = "-";
+var stringKres = "#";
+var stringSeparatorDate = "/";
+var stringSeparatorTelephone = "-";
 var stateValidation = true;
 
 
@@ -311,11 +311,11 @@ function setTextForm(stringID, stringValue)
     stringTextGeneral(stringID, stringValue);
 }
 
-function boxSetter(tableID, stringContent, stringType)
+function setTextPDF(stringID, stringContent, stringType)
 {
-    if (stringContent.indexOf(separatorTelephone) > 0)
+    if (stringContent.indexOf(stringSeparatorTelephone) > 0)
     {
-        var arrayTelephoneString = stringContent.split(separatorTelephone);
+        var arrayTelephoneString = stringContent.split(stringSeparatorTelephone);
         var arrayTelephoneID = [boxIDPrefix, boxIDInfix];
         
         for(var i = 0; i < arrayTelephoneString.length; i++)
@@ -346,7 +346,7 @@ function setDateForm()
 function setDatePDF(stringID, stringContent)
 {
     var arrayDateID = [boxIDDay, boxIDMonth, boxIDYear];
-    var arrayDateString = stringContent.split(separatorDate);
+    var arrayDateString = stringContent.split(stringSeparatorDate);
 
     for (var i = 0; i < arrayDateString.length; i++)
     {
@@ -362,7 +362,7 @@ function getBoxGeneral(stringID)
     var stringJQueryID = stringKres + stringID;
     var stringContent = "";
     
-    $(stringJQueryID + " tbody tr " + stringJQueryID + i).each(function(index)
+    $(stringJQueryID + " tbody tr td").each(function(index)
     {
         var stringText = $(this).text();
         
@@ -386,10 +386,40 @@ function getTextGeneral(stringID)
     return $(stringJQueryID).val();
 }
 
-function radioButtonGetter(radioButtonName)
+//var booleanPushState = true;
+//        
+//        if (arrayAdditionalQuestion.length > 0)
+//        {
+//            for (var i = 0; i < arrayAdditionalQuestion.length; i++)
+//            {
+//                if (arrayAdditionalQuestion[i].key == stringName)
+//                {
+//                    arrayAdditionalQuestion[i].value = stringRadioButtonValue;
+//                    booleanPushState = false;
+//                }
+//                else
+//                {
+//
+//                }
+//            }
+//
+//            if (booleanPushState == true)
+//            {
+//                arrayAdditionalQuestion.push({ key: stringName, value: stringRadioButtonValue});
+//            }
+//            else
+//            {
+//
+//            }
+//        }
+//        else
+//        {
+//            arrayAdditionalQuestion.push({ key: stringName, value: stringRadioButtonValue});
+//        }
+
+function getRadioButtonGeneral(stringName)
 {
-    var stringRadioButtonValue = $("input:radio[name=" + radioButtonName + "]:checked").val();
-    var stringRadioButtonKey = radioButtonName + stringRadioButtonSuffix;
+    var stringRadioButtonValue;
     
     if (validateRadioButtonGeneral(radioButtonName) == false)
     {
@@ -397,101 +427,251 @@ function radioButtonGetter(radioButtonName)
     }
     else
     {
-        var booleanPushState = true;
-        
-        if (arrayAdditionalQuestion.length > 0)
-        {
-            for (var i = 0; i < arrayAdditionalQuestion.length; i++)
-            {
-                if (arrayAdditionalQuestion[i].key == stringRadioButtonKey)
-                {
-                    arrayAdditionalQuestion[i].value = stringRadioButtonValue;
-                    booleanPushState = false;
-                }
-                else
-                {
-
-                }
-            }
-
-            if (booleanPushState == true)
-            {
-                arrayAdditionalQuestion.push({ key: stringRadioButtonKey, value: stringRadioButtonValue});
-            }
-            else
-            {
-
-            }
-        }
-        else
-        {
-            arrayAdditionalQuestion.push({ key: stringRadioButtonKey, value: stringRadioButtonValue});
-        }
+        stringRadioButtonValue = $("input:radio[name=" + stringName + "]:checked").val()
     }
     
     return stringRadioButtonValue;
 }
 
-function textGetter(textID)
+function getSelectForm(stringID)
 {
-    var stringTextValue = $(textID).val();
-    var stringTextKey = textID.substring(1, textID.length);
+    return getTextGeneral(stringID);
+}
+
+function getSelectPDF(stringID)
+{
+    return getBoxGeneral(stringID);
+}
+
+function getCheckboxGeneral(stringName)
+{
+    var stringCheckboxValue;
     
-    if (validateTextGeneral(textID) == false)
+    if (validateCheckboxGeneral(stringName) == false)
     {
-        // alert("Harap isi kolom di bawah ini !.");
+        // alert("Harap pilih radio button di bawah ini !.");
     }
     else
     {
-        var booleanPushState = true;
-         
-        if (arrayAdditionalQuestion.length > 0)
-        {
-            for (var i = 0; i < arrayAdditionalQuestion.length; i++)
-            {
-                if (arrayAdditionalQuestion[i].key == stringTextKey)
-                {
-                    arrayAdditionalQuestion[i].value = stringTextValue;
-                    booleanPushState = false;
-                }
-                else
-                {
-                    
-                }
-            }
+        stringCheckboxValue = $("input:checkbox[name=" + stringName + "]:checked").val()
+    }
+    
+    return stringCheckboxValue;
+}
 
-            if (booleanPushState == true)
+//var booleanPushState = true;
+//         
+//        if (arrayAdditionalQuestion.length > 0)
+//        {
+//            for (var i = 0; i < arrayAdditionalQuestion.length; i++)
+//            {
+//                if (arrayAdditionalQuestion[i].key == stringTextKey)
+//                {
+//                    arrayAdditionalQuestion[i].value = stringTextValue;
+//                    booleanPushState = false;
+//                }
+//                else
+//                {
+//                    
+//                }
+//            }
+//
+//            if (booleanPushState == true)
+//            {
+//                arrayAdditionalQuestion.push({ key: stringTextKey, value: stringTextValue});
+//            }
+//            else
+//            {
+//
+//            }
+//        }
+//        else
+//        {
+//            arrayAdditionalQuestion.push({ key: stringTextKey, value: stringTextValue});
+//        }
+
+function getTextForm(stringID)
+{
+    return getTextGeneral(stringID);
+}
+
+//if (validateTextGeneral(stringID) == false)
+//    {
+//        // alert("Harap isi kolom di bawah ini !.");
+//    }
+//    else
+//    {
+//        
+//    }
+
+function getTextPDF(stringID)
+{
+    var stringTextValue = $(textID).val();
+    var stringJQueryID = stringKres + stringID;
+    var stringContent = "";
+    
+    if (stringJQueryID.is("table") == true)
+    {
+        if ((stringJQueryID + "Prefix").length > 0)
+        {
+            stringContent += getBoxGeneral(stringJQueryID + "Prefix");
+            stringContent += stringSeparatorTelephone;
+            stringContent += getBoxGeneral(stringJQueryID + "Infix");
+        }
+        else
+        {
+            stringContent += getBoxGeneral(stringJQueryID);
+        }
+    }
+    else
+    {
+        stringContent = $(stringJQueryID).text();
+    }
+    
+    return stringContent;
+}
+    
+function getDateForm(stringID)
+{
+    return getTextGeneral(stringID);
+}
+
+function setDatePDF(stringID)
+{
+    return getBoxGeneral(stringID);
+}
+
+
+// GET FROM DATABASE
+
+function getFromDatabase(objectContent, stringPageType)
+{
+    for (var i = 0; i < objectContent.length; i++)
+    {
+        var stringKey = objectContent[i].key;
+        var stringValue = objectContent[i].value;
+        
+        if (stringKey.substring(0, 4) == stringPrefixText)
+        {
+            if (stringPageType == stringPageTypePDF)
             {
-                arrayAdditionalQuestion.push({ key: stringTextKey, value: stringTextValue});
+                setTextForm(stringKey, stringValue);
             }
             else
             {
-
+                setTextPDF(stringKey, stringValue);
+            }
+        }
+        else if (stringKey.substring(0, 11) == stringPrefixRadioButton)
+        {
+            setRadioButtonGeneral(stringKey, stringValue);
+        }
+        else if (stringKey.substring(0, 8) == stringPrefixCheckbox)
+        {
+            setRadioCheckboxGeneral(stringKey, stringValue);
+        }
+        else if (stringKey.substring(0, 6) == stringPrefixSelect)
+        {
+            if (stringPageType == stringPageTypePDF)
+            {
+                setSelectForm(stringKey, stringValue);
+            }
+            else
+            {
+                setSelectPDF(stringKey, stringValue);
+            }
+        }
+        else if (stringKey.substring(0, 4) == stringPrefixDate)
+        {
+            if (stringPageType == stringPageTypePDF)
+            {
+                setDateForm(stringKey, stringValue);
+            }
+            else
+            {
+                setDatePDF(stringKey, stringValue);
             }
         }
         else
         {
-            arrayAdditionalQuestion.push({ key: stringTextKey, value: stringTextValue});
+            
         }
     }
-    
-    return stringTextValue;
 }
-    
-function suffixGetter(stringKey)
+
+
+// SET TO DATABASE
+
+function setToDatabase(stringPageType)
 {
-    if (stringKey.substring(stringKey.length - stringRadioButtonSuffix.length, stringKey.length) == stringRadioButtonSuffix)
+    var objectContent = [];
+    
+    $("input").each(function()
     {
-        return stringRadioButtonSuffix;
-    }
-    else if (stringKey.substring(stringKey.length - stringCheckboxSuffix, stringKey.length) == stringCheckboxSuffix)
+        var stringKey = $(this).attr("id");
+        var stringValue;
+        
+        if ($(this).attr("type") == "text")
+        {
+            if (stringPageType == stringPageTypePDF)
+            {
+                stringValue = getTextForm(stringKey);
+            }
+            else
+            {
+                stringValue = getTextPDF(stringKey);
+            }
+            
+            objectContent.push({ key: stringKey, value: stringValue });
+        }
+        else if ($(this).attr("type") == "radio")
+        {
+            stringValue = getRadioButtonGeneral(stringKey);
+            
+            objectContent.push({ key: stringKey, value: stringValue });
+        }
+        else if ($(this).attr("type") == "checkbox")
+        {
+            stringValue = setCheckboxGeneral(stringKey);
+            
+            objectContent.push({ key: stringKey, value: stringValue });
+        }
+        else if ($(this).attr("type") == "date")
+        {
+            if (stringPageType == stringPageTypePDF)
+            {
+                getDateForm(stringKey, stringValue);
+            }
+            else
+            {
+                getDatePDF(stringKey, stringValue);
+            }
+            
+            objectContent.push({ key: stringKey, value: stringValue });
+        }
+        else
+        {
+            
+        }
+    });
+    
+    $("select").each(function()
     {
-        return stringCheckboxSuffix;
-    }
-    else
-    {
-        return stringTextSuffix;
-    }
+        var stringID = $(this).attr("id");
+        
+        if (stringPageType == stringPageTypePDF)
+        {
+            getSelectPDF(stringID);
+        }
+        else
+        {
+            getSelectForm(stringID);
+        }
+        
+        objectContent.push({ key: stringKey, value: stringValue });
+    });
+    
+    return objectContent;
 }
 
 
