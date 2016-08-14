@@ -22,16 +22,23 @@ var stringCheckboxSuffix = "Checkbox";
 var boxTypeStraight = "Text";
 var boxTypeDate = "Date";
 var boxTypeTelephone = "Telephone";
-var boxIDDay = "DateDay";
-var boxIDMonth = "DateMonth";
-var boxIDYear = "DateYear";
-var boxIDPrefix = "Prefix";
-var boxIDInfix = "Infix";
-var boxIDSuffix = "Suffix";
+var stringIDDay = "DateDay";
+var stringIDMonth = "DateMonth";
+var stringIDYear = "DateYear";
+var stringIDPrefix = "Prefix";
+var stringIDInfix = "Infix";
+var stringIDSuffix = "Suffix";
 var stringKres = "#";
 var stringSeparatorDate = "/";
 var stringSeparatorTelephone = "-";
 var stateValidation = true;
+var stringPageTypePDF = "PDF";
+var stringPageTypeForm = "Form";
+var stringPrefixText = "Text";
+var stringPrefixRadioButton = "RadioButton";
+var stringPrefixCheckbox = "Checkbox";
+var stringPrefixDate = "Date";
+var stringPrefixSelect = "Select";
 
 
 // GENERATOR
@@ -155,21 +162,21 @@ function buttonAdditionalQuestionGenerator(popUpID, textID)
     });
 }
 
-function inputSetter(stringKey, stringValue)
-{
-    if (suffixGetter(stringKey) == stringRadioButtonSuffix)
-    {
-        radioButtonSetter(stringKey.substring(stringKey.length - stringRadioButtonSuffix.length, stringKey.length), stringValue);
-    }
-    else if (suffixGetter(stringValue) == stringRadioButtonSuffix)
-    {
-        checkboxSetter(stringKey.substring(stringKey.length - stringRadioButtonSuffix.length, stringKey.length), stringValue)
-    }
-    else
-    {
-        $("#" + stringKey).val(stringValue);
-    }
-}
+//function inputSetter(stringKey, stringValue)
+//{
+//    if (suffixGetter(stringKey) == stringRadioButtonSuffix)
+//    {
+//        radioButtonSetter(stringKey.substring(stringKey.length - stringRadioButtonSuffix.length, stringKey.length), stringValue);
+//    }
+//    else if (suffixGetter(stringValue) == stringRadioButtonSuffix)
+//    {
+//        checkboxSetter(stringKey.substring(stringKey.length - stringRadioButtonSuffix.length, stringKey.length), stringValue)
+//    }
+//    else
+//    {
+//        $("#" + stringKey).val(stringValue);
+//    }
+//}
 
 
 // VALIDATE
@@ -316,7 +323,7 @@ function setTextPDF(stringID, stringContent, stringType)
     if (stringContent.indexOf(stringSeparatorTelephone) > 0)
     {
         var arrayTelephoneString = stringContent.split(stringSeparatorTelephone);
-        var arrayTelephoneID = [boxIDPrefix, boxIDInfix];
+        var arrayTelephoneID = [stringIDPrefix, stringIDInfix];
         
         for(var i = 0; i < arrayTelephoneString.length; i++)
         {
@@ -338,14 +345,14 @@ function setTextPDF(stringID, stringContent, stringType)
     }
 }
 
-function setDateForm()
+function setDateForm(stringID, stringValue)
 {
     stringTextGeneral(stringID, stringValue);
 }
 
 function setDatePDF(stringID, stringContent)
 {
-    var arrayDateID = [boxIDDay, boxIDMonth, boxIDYear];
+    var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
     var arrayDateString = stringContent.split(stringSeparatorDate);
 
     for (var i = 0; i < arrayDateString.length; i++)
@@ -421,7 +428,7 @@ function getRadioButtonGeneral(stringName)
 {
     var stringRadioButtonValue;
     
-    if (validateRadioButtonGeneral(radioButtonName) == false)
+    if (validateRadioButtonGeneral(stringName) == false)
     {
         // alert("Harap pilih radio button di bawah ini !.");
     }
