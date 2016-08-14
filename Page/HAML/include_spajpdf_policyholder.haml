@@ -4,18 +4,22 @@
 %h3 A1. Perorangan
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCIN" } 1. Nomor CIN
-%table#BoxPolicyHolderCIN.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } 1. Nomor CIN
+%table#TextPolicyHolderCIN.BoxSquare.PositionerLeft
 %span.Note.Single.PositionerLeft (Dilengkapi oleh bank)
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderFullName" } 2. Nama Lengkap
-%table#BoxPolicyHolderFullName.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } 2. Nama Lengkap
+%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
 %br
 %span.Description.PositionerLeft (sesuai dengan identitas diri)
 %br
 
+<<<<<<< HEAD
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } 3. Jenis Identifikasi Diri
+=======
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } 3. Jenis Identitas Diri
+>>>>>>> origin/master
 %input#RadioButtonPolicyHolderKTP{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "ktp" }
 %div#RadioButtonPolicyHolderKTP.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKTP" } KTP
@@ -34,6 +38,7 @@
 %div#TextPolicyHolderOtherID.LineDot.PositionerLeft
 %br
 
+<<<<<<< HEAD
 %label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderID" } 4. Nomor Identitas Diri
 %table#BoxPolicyHolderID.BoxSquare.PositionerLeft
 %table#BoxPolicyHolderActiveDateYear.BoxSquare.PositionerRight
@@ -51,216 +56,296 @@
 %table#BoxPolicyHolderDateOfBirthMonth.BoxSquare.PositionerLeft
 %label.Separator.Single.PositionerLeft{ :for => "BoxPolicyHolderDateOfBirthYear" } /
 %table#BoxPolicyHolderDateOfBirthYear.BoxSquare.PositionerLeft
+=======
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderID" } 4. Nomor Identitas Diri
+%table#TextPolicyHolderID.BoxSquare.PositionerLeft
+%table#DatePolicyHolderActiveYear.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderActiveYear" } /
+%table#DatePolicyHolderActiveMonth.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderActiveMonth" } /
+%table#DatePolicyHolderActiveDay.BoxSquare.PositionerRight
+%label.Wrap.Single.PositionerRight{ :for => "DatePolicyHolderActiveDay" } Masa Berlaku
+%br
+
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDateOfBirth" } 5. Tempat Tanggal Lahir
+%div#TextPolicyHolderPlace.LineStraight.PositionerLeft
+%table#DateHolderOfBirthDay.BoxSquare.PositionerLeft
+%span.Separator.Single.PositionerLeft{ :for => "DateHolderOfBirthMonth" } /
+%table#DateHolderOfBirthMonth.BoxSquare.PositionerLeft
+%label.Separator.Single.PositionerLeft{ :for => "DateHolderOfBirthYear" } /
+%table#DateHolderOfBirthYear.BoxSquare.PositionerLeft
+>>>>>>> origin/master
 %label.Separator.Single.PositionerLeft{ :for => "BoxPolicyHolderAge" } Age
 %table#BoxPolicyHolderAge.BoxSquare.PositionerLeft
 %span.Separator.Single.PositionerLeft Tahun
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderWNI" } 6. Kewarganegaraan
-%div#BoxPolicyHolderWNI.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderWNI" } WNI
-%div#BoxPolicyHolderWNA.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderWNA" } WNA, sebutkan 
-%div#LinePolicyHolderWNA.LineDot.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderNationalityWNI" } 6. Kewarganegaraan
+%input#RadioButtonPolicyHolderWNI{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wni" }
+%div#RadioButtonPolicyHolderNationalityWNI.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderNationalityWNI" } WNI
+%input#RadioButtonPolicyHolderWNA{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wna" }
+%div#RadioButtonPolicyHolderNationalityWNA.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA, sebutkan 
+%div#TextPolicyHolderNationalityWNA.LineDot.PositionerLeft
 %span.Note.PositionerLeft (Jika jawaban "WNA" mohon melampirkan fotokopi KITAS & Paspor dan melengkapi kuesioner WNA)
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "BoxPolicyHolderUSACitizenNo" } 7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?
-%div#BoxPolicyHolderUSACitizenYes.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderUSACitizenYes" } YA
-%div#BoxPolicyHolderUSACitizenNo.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderUSACitizenNo" } TIDAK
+%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } 7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?
+%input#RadioButtonPolicyHolderUSACitizenYes{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "yes" }
+%div#RadioButtonPolicyHolderUSACitizenNo.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } YA 
+%input#RadioButtonPolicyHolderUSACitizenNo{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "no" }
+%div#RadioButtonPolicyHolderUSACitizenNo.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenNo" } TIDAK
 %span.Note.PositionerLeft (Jika jawaban "YA" mohon lampirkan formulir W8 / W9)
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderMale" } 8. Jenis Kelamin
-%div#BoxPolicyHolderMale.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "BoxPolicyHolderMale" } Laki Laki
-%div#BoxPolicyHolderFemale.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "BoxPolicyHolderFemale" } Wanita
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSexMale" } 8. Jenis Kelamin
+%input#RadioButtonPolicyHolderSexMale{ :type => "radio", :name => "RadioButtonPolicyHolderSex", :value => "male" }
+%div#RadioButtonPolicyHolderSexMale.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderSexMale" } Laki Laki
+%input#RadioButtonPolicyHolderSexFemale{ :type => "radio", :name => "RadioButtonPolicyHolderSex", :value => "female" }
+%div#RadioButtonPolicyHolderSexFemale.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderSexFemale" } Wanita
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderSingle" } 9. Status Pernikahan
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusSingle" } 9. Status Pernikahan
+%input#RadioButtonPolicyHolderStatusSingle{ :type => "radio", :name => "RadioButtonPolicyHolderStatus", :value => "single" }
 %div#BoxPolicyHolderSingle.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "BoxPolicyHolderSingle" } Belum Menikah
-%div#BoxPolicyHolderMarried.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "BoxPolicyHolderMarried" } Menikah
-%div#BoxPolicyHolderWasMarried.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "BoxPolicyHolderWasMarried" } Janda / Duda
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusSingle" } Belum Menikah
+%input#RadioButtonPolicyHolderStatusMarried{ :type => "radio", :name => "RadioButtonPolicyHolderStatus", :value => "married" }
+%div#RadioButtonPolicyHolderStatusMarried.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusMarried" } Menikah
+%input#RadioButtonPolicyHolderStatusWidower{ :type => "radio", :name => "RadioButtonPolicyHolderStatus", :value => "widower" }
+%div#RadioButtonPolicyHolderStatusWidower.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusWidower" } Janda / Duda
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderIslam" } 10. Agama
-%div#BoxPolicyHolderIslam.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "BoxPolicyHolderIslam" } Islam
-%div#BoxPolicyHolderCatholic.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "BoxPolicyHolderChatolic" } Kristen Katolik
-%div#BoxPolicyHolderProtestan.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderProtestan" } Kristen Protestan
-%div#BoxPolicyHolderHindu.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderHindu" } Hindu
-%div#BoxPolicyHolderBudha.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderBudha" } Budha
-%div#BoxPolicyHolderKongHuChu.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderKongHuChu" } Kong Hu Chu
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionIslam" } 10. Agama
+%input#RadioButtonPolicyHolderReligionIslam{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "islam" }
+%div#RadioButtonPolicyHolderReligionIslam.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionIslam" } Islam
+%input#RadioButtonPolicyHolderReligionCatholic{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "katolik" }
+%div#RadioButtonPolicyHolderReligionCatholic.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionCatholic" } Kristen Katolik
+%input#RadioButtonPolicyHolderReligionProtestan{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "kristen" }
+%div#RadioButtonPolicyHolderReligionProtestan.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionProtestan" } Kristen Protestan
+%input#RadioButtonPolicyHolderReligionHindu{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "hindu" }
+%div#RadioButtonPolicyHolderReligionHindu.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionHindu" } Hindu
+%input#RadioButtonPolicyHolderReligionBudha{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "budha" }
+%div#RadioButtonPolicyHolderReligionBudha.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionBudha" } Budha
+%input#RadioButtonPolicyHolderReligionKongHuChu{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "konghuchu" }
+%div#RadioButtonPolicyHolderReligionKongHuChu.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionKongHuChu" } Kong Hu Chu
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "BoxPolicyHolderCompany" }11. a. Nama Perusahaan/Instansi/Sekolah
-%table#BoxPolicyHolderCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 4px" }
+%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderCompany" }11. a. Nama Perusahaan/Instansi/Sekolah
+%table#TextPolicyHolderCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 4px" }
 %br
 
-%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxPolicyHolderMainJob" } Pekerjaan Utama
-%table#BoxPolicyHolderMainJob.BoxSquare.PositionerLeft
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "TextPolicyHolderMainJob" } Pekerjaan Utama
+%table#TextPolicyHolderMainJob.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxPolicyHolderWorkScope" } Bidang Usaha
-%table#BoxPolicyHolderWorkScope.BoxSquare.PositionerLeft
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "TextPolicyHolderWorkScope" } Bidang Usaha
+%table#TextPolicyHolderWorkScope.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxPolicyHolderPosition" } Jabatan
-%table#BoxPolicyHolderPosition.BoxSquare.PositionerLeft
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "TextPolicyHolderPosition" } Jabatan
+%table#TextPolicyHolderPosition.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "BoxPolicyHolderJobDescription" } Uraian Pekerjaan
-%table#BoxPolicyHolderJobDescription.BoxSquare.PositionerLeft
+%label.Medium.SecondIndent.Single.PositionerLeft{ :for => "TextPolicyHolderJobDescription" } Uraian Pekerjaan
+%table#TextPolicyHolderJobDescription.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "BoxPolicyHolderSideJob" } b. Pekerjaan Tambahan
-%table#BoxPolicyHolderSideJob.BoxSquare.PositionerLeft
+%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "TextPolicyHolderSideJob" } b. Pekerjaan Tambahan
+%table#TextPolicyHolderSideJob.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Multi.PositionerLeft{ :for => "BoxPolicyHolderHomeAddress1", :style => "height: 112px" } 12. Alamat Tempat Tinggal
-%table#BoxPolicyHolderHomeAddress1.BoxSquare.PositionerLeft
-%table#BoxPolicyHolderHomeAddress2.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderHomeCity.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderHomeCity" } Kota
-%table#BoxPolicyHolderHomeCity.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderHomePostalCode.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderHomePostalCode" } Kode Pos
-%table#BoxPolicyHolderHomePostalCode.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderHomeTelephonePrefix.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderHomeTelephonePrefix" } Telp
-%table#BoxPolicyHolderHomeTelephonePrefix.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderHomeTeleponeInfix.Box.Plain.Single.PositionerLeft{ :for => "BoxPolicyHolderHomeTelephoneInfix" } -
-%table#BoxPolicyHolderHomeTelephoneInfix.BoxSquare.PositionerLeft
+%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderHomeAddress1", :style => "height: 112px" } 12. Alamat Tempat Tinggal
+%table#TextPolicyHolderHomeAddress1.BoxSquare.PositionerLeft
+%table#TextPolicyHolderHomeAddress2.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderHomeCity.Box.Single.PositionerLeft{ :for => "TextPolicyHolderHomeCity" } Kota
+%table#TextPolicyHolderHomeCity.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderHomePostalCode.Box.Single.PositionerLeft{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
+%table#TextPolicyHolderHomePostalCode.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderHomeTelephonePrefix.Box.Single.PositionerLeft{ :for => "TextPolicyHolderHomeTelephonePrefix" } Telp
+%table#TextPolicyHolderHomeTelephonePrefix.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderHomeTeleponeInfix.Box.Plain.Single.PositionerLeft{ :for => "TextPolicyHolderHomeTelephoneInfix" } -
+%table#TextPolicyHolderHomeTelephoneInfix.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderTelephone1" } 13. Nomor Ponsel
-%label#LabelPolicyHolderTelephone1.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderTelephone1" } 1. 
-%table#BoxPolicyHolderTelephone1.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderTelephone2.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderTelephone2" } 2. 
-%table#BoxPolicyHolderTelephone2.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderTelephone1" } 13. Nomor Ponsel
+%label#LabelPolicyHolderTelephone1.Box.Single.PositionerLeft{ :for => "TextPolicyHolderTelephone1" } 1. 
+%table#TextPolicyHolderTelephone1.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderTelephone2.Box.Single.PositionerLeft{ :for => "TextPolicyHolderTelephone2" } 2. 
+%table#TextPolicyHolderTelephone2.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderEmail" } 14. Alamat Email
-%table#BoxPolicyHolderEmail.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderEmail" } 14. Alamat Email
+%table#TextPolicyHolderEmail.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Multi.PositionerLeft{ :for => "BoxPolicyHolderAddress1", :style => "height: 112px" } 15. Alamat Kantor
-%table#BoxPolicyHolderOfficeAddress1.BoxSquare.PositionerLeft
-%table#BoxPolicyHolderOfficeAddress2.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderOfficeCity.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderOfficeCity" } Kota
-%table#BoxPolicyHolderOfficeCity.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderOfficePostalCode.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderOfficePostalCode" } Kode Pos
-%table#BoxPolicyHolderOfficePostalCode.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderOfficeTelephonePrefix.Box.Single.PositionerLeft{ :for => "BoxPolicyHolderOfficeTelephonePrefix" } Telp
-%table#BoxPolicyHolderOfficeTelephonePrefix.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderOfficeTeleponeInfix.Box.Plain.Single.PositionerLeft{ :for => "BoxPolicyHolderOfficeTelephoneInfix" } -
-%table#BoxPolicyHolderOfficeTelephoneInfix.BoxSquare.PositionerLeft
+%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderOfficeAddress1", :style => "height: 112px" } 15. Alamat Kantor
+%table#TextPolicyHolderOfficeAddress1.BoxSquare.PositionerLeft
+%table#TextPolicyHolderOfficeAddress2.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderOfficeCity.Box.Single.PositionerLeft{ :for => "TextPolicyHolderOfficeCity" } Kota
+%table#TextPolicyHolderOfficeCity.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderOfficePostalCode.Box.Single.PositionerLeft{ :for => "TextPolicyHolderOfficePostalCode" } Kode Pos
+%table#TextPolicyHolderOfficePostalCode.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderOfficeTelephonePrefix.Box.Single.PositionerLeft{ :for => "TextPolicyHolderOfficeTelephonePrefix" } Telp
+%table#TextPolicyHolderOfficeTelephonePrefix.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderOfficeTeleponeInfix.Box.Plain.Single.PositionerLeft{ :for => "TextPolicyHolderOfficeTelephoneInfix" } -
+%table#TextPolicyHolderOfficeTelephoneInfix.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCorrespondanceHomeAddress" } 16. Alamat Korespondensi
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceHomeAddress" } 16. Alamat Korespondensi
+%input#RadioButtonPolicyHolderCorrespondanceHomeAddress{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "rumah" }
 %div#BoxPolicyHolderCorrespondanceHomeAddress.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCorrespondanceHomeAddress" } Alamat Tempat Tinggal
-%div#BoxPolicyHolderCorrespondanceOfficeAddress.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCorrespondanceOfficeAddress" } Alamat Kantor
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceHomeAddress" } Alamat Tempat Tinggal
+%input#RadioButtonPolicyHolderCorrespondanceOfficeAddress{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "kantor" }
+%div#RadioButtonPolicyHolderCorrespondanceOfficeAddress.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceOfficeAddress" } Alamat Kantor
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderSelf" } 17. Hubungan dengan Calon Tertangung
-%div#BoxPolicyHolderSelf.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderSelf" } Diri Sendiri
-%div#BoxPolicyHolderSpouse.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderSpouse" } Suami / Istri
-%div#BoxPolicyHolderFamily.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderFamily" } Orang Tua / Anak
-%div#BoxPolicyHolderColleague.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderColleague" } Perusahaan / Karyawan
-%div#BoxPolicyHolderOtherRelationship.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderOtherRelationship" } Lainnya, sebutkan
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } 17. Hubungan dengan Calon Tertangung
+%input#RadioButtonPolicyHolderRelationAssuredSelf{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "dirisendiri" }
+%div#RadioButtonPolicyHolderRelationAssuredSelf.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } Diri Sendiri
+%input#RadioButtonPolicyHolderRelationAssuredSpouse{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "suamiistri" }
+%div#RadioButtonPolicyHolderRelationAssuredSpouse.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSpouse" } Suami / Istri
+%input#RadioButtonPolicyHolderRelationAssuredFamily{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "orangtuaanak" }
+%div#RadioButtonPolicyHolderRelationAssuredFamily.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredFamily" } Orang Tua / Anak
+%input#RadioButtonPolicyHolderRelationAssuredColleague{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "perusahaankaryawan" }
+%div#RadioButtonPolicyHolderRelationAssuredColleague.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredColleague" } Perusahaan / Karyawan
+%input#RadioButtonPolicyHolderRelationAssuredOther{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "lainnya" }
+%div#RadioButtonPolicyHolderRelationAssuredOther.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredOther" } Lainnya, sebutkan
 %div#LinePolicyHolderOtherRelationship.LineDot.PositionerLeft
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "BoxPolicyHolderSaving" } 18. Tujuan Pembelian Asuransi
-%div#BoxPolicyHolderSaving.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderSaving" } Tabungan
-%div#BoxPolicyHolderProtection.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderProtection" } Proteksi
-%div#BoxPolicyHolderInvestation.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderInvestation" } Investasi
-%div#BoxPolicyHolderEducation.BoxRound.PositionerLeft
-%label.RadioButton.Short.PositionerLeft{ :for => "BoxPolicyHolderEducation" } Edukasi
-%div#BoxPolicyHolderOtherPurpose.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderOtherPurpose" } Lainnya, sebutkan
+%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeSavings" } 18. Tujuan Pembelian Asuransi
+%input#RadioButtonPolicyHolderInsurancePurposeSavings{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "tabungan" }
+%div#RadioButtonPolicyHolderInsurancePurposeSavings.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeSavings" } Tabungan
+%input#RadioButtonPolicyHolderInsurancePurposeProtection{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "proteksi" }
+%div#RadioButtonPolicyHolderInsurancePurposeProtection.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeProtection" } Proteksi
+%input#RadioButtonPolicyHolderInsurancePurposeInvestation{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "investasi" }
+%div#RadioButtonPolicyHolderInsurancePurposeInvestation.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeInvestation" } Investasi
+%input#RadioButtonPolicyHolderInsurancePurposeEducation{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "edukasi" }
+%div#RadioButtonPolicyHolderInsurancePurposeEducation.BoxRound.PositionerLeft
+%label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeEducation" } Edukasi
+%input#RadioButtonPolicyHolderInsurancePurposeOther{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "lainnya" }
+%div#RadioButtonPolicyHolderInsurancePurposeOther.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeOther" } Lainnya, sebutkan
 %div#LinePolicyHolderOtherPurpose.LineDot.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderNPWP" } 19. Nomor NPWP (jika ada)
-%table#BoxPolicyHolderNPWP.BoxSquare.PositionerLeft
-%table#BoxPolicyHolderNPWPActiveDateYear.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "BoxPolicyHolderNPWPActiveDateYear" } /
-%table#BoxPolicyHolderNPWPActiveDateMonth.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "BoxPolicyHolderNPWPActiveDateMonth" } /
-%table#BoxPolicyHolderNPWPActiveDateDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "BoxPolicyHolderNPWPActiveDateDay" } Masa Berlaku
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderNPWP" } 19. Nomor NPWP (jika ada)
+%table#TextPolicyHolderNPWP.BoxSquare.PositionerLeft
+%table#DatePolicyHolderNPWPActiveYear.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderNPWPActiveYear" } /
+%table#DatePolicyHolderNPWPActiveMonth.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderNPWPActiveMonth" } /
+%table#DatePolicyHolderNPWPActiveDay.BoxSquare.PositionerRight
+%label.Wrap.Single.PositionerRight{ :for => "DatePolicyHolderNPWPActiveDay" } Masa Berlaku
 %br
 
 %label.Wrap.Single.PositionerLeft{ :for => "BoxPolicyHolderSalaryIDR" } 20. Penghasilan Kotor Per Tahun
 %br
 
-%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "BoxPolicyHolderSalaryIDR" } Gaji
-%div#BoxPolicyHolderSalaryIDR.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderSalaryIDR" } Rp
-%div#BoxPolicyHolderSalaryUSD.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderSalaryUSD" } USD
-%label.Wrap.Single.PositionerLeft{ :for => "BoxPolicyHolderSalary" } Jumlah Penghasilan / tahun
-%table#BoxPolicyHolderSalary.BoxSquare.PositionerLeft
+%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryIDR" } Gaji
+%input#RadioButtonPolicyHolderSalaryIDR{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "idr" }
+%div#RadioButtonPolicyHolderSalaryIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryIDR" } Rp
+%input#RadioButtonPolicyHolderSalaryUSD{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "usd" }
+%div#RadioButtonPolicyHolderSalaryUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryUSD" } USD
+%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderSalary" } Jumlah Penghasilan / tahun
+%table#TextPolicyHolderSalary.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "BoxPolicyHolderRevenueIDR" } Hasil Usaha
-%div#BoxPolicyHolderRevenueIDR.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderrRevenueIDR" } Rp
-%div#BoxPolicyHolderRevenueUSD.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderRevenueUSD" } USD
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderRevenue" } Jumlah Penghasilan / tahun
-%table#BoxPolicyHolderRevenue.BoxSquare.PositionerLeft
+%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderRevenueIDR" } Hasil Usaha
+%input#RadioButtonPolicyHolderRevenueIDR{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "idr" }
+%div#RadioButtonPolicyHolderRevenueIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderRevenueIDR" } Rp
+%input#RadioButtonPolicyHolderRevenueUSD{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "usd" }
+%div#RadioButtonPolicyHolderRevenueUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderRevenueUSD" } USD
+%label.RadioButton.PositionerLeft{ :for => "TextPolicyHolderRevenue" } Jumlah Penghasilan / tahun
+%table#TextPolicyHolderRevenue.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "BoxPolicyHolderOtherIncomeIDR" } Penghasilan Lainnya
-%div#BoxPolicyHolderOtherIncomeIDR.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderOtherIncomeIDR" } Rp
-%div#BoxPolicyHolderOtherIncomeUSD.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderOtherIncomeUSD" } USD
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderOtherIncome" } Jumlah Penghasilan / tahun
-%table#BoxPolicyHolderOtherIncome.BoxSquare.PositionerLeft
+%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeIDR" } Penghasilan Lainnya
+%input#RadioButtonHolderOtherIncomeIDR{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "idr" }
+%div#RadioButtonHolderOtherIncomeIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeIDR" } Rp
+%input#RadioButtonHolderOtherIncomeUSD{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "usd" }
+%div#RadioButtonHolderOtherIncomeUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeUSD" } USD
+%label.RadioButton.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Jumlah Penghasilan / tahun
+%table#TextPolicyHolderOtherIncome.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "BoxPolicyHolderSource" } Jelaskan Sumbernya
-%table#BoxPolicyHolderSource.BoxSquare.PositionerLeft
+%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "TextPolicyHolderSource" } Jelaskan Sumbernya
+%table#TextPolicyHolderSource.BoxSquare.PositionerLeft
 %br
 %br
 
 %h3 A2. PERUSAHAAN/BERBADAN HUKUM
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCompanyName" } 1. Nama Perusahaan
-%table#BoxPolicyHolderCompanyName.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyName" } 1. Nama Perusahaan
+%table#TextPolicyHolderCompanyName.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCompanyType" } 2. Jenis Perusahaan
-%div#BoxPolicyHolderCompanyPT.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyPT" } Perseroan Terbatas
-%div#BoxPolicyHolderCompanyYayasan.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyYayasan" } Yayasan
-%div#BoxPolicyHolderCompanyBUMN.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyBUMN" } BUMN
-%div#BoxPolicyHolderCompanyBUMN.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "BoxPolicyHolderCompanyOther" } Lainnya, sebutkan
+
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } 3. Jenis Identitas Diri
+%input#RadioButtonPolicyHolderKTP{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "ktp" }
+%div#RadioButtonPolicyHolderKTP.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKTP" } KTP
+%input#RadioButtonPolicyHolderSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "sim" }
+%div#RadioButtonPolicyHolderSIM.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderSIM" } SIM
+%input#RadioButtonPolicyHolderPaspor{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "paspor" }
+%div#RadioButtonPolicyHolderPaspor.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderPaspor" } Paspor
+%input#RadioButtonPolicyHolderKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "kimskitas" }
+%div#RadioButtonPolicyHolderKIMSKITAS.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKIMSKITAS" } KIMS / KITAS
+%input#RadioButtonPolicyHolderOtherID{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "other" }
+%div#RadioButtonPolicyHolderOtherID.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherID" } Lainnya, sebutkan
+%div#TextPolicyHolderOtherID.LineDot.PositionerLeft
+%br
+
+
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypePT" } 2. Jenis Perusahaan
+%input#RadioButtonPolicyHolderCompanyTypePT{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "pt" }
+%div#RadioButtonPolicyHolderCompanyTypePT.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypePT" } Perseroan Terbatas
+
+%input#RadioButtonPolicyHolderCompanyTypeYayasan{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yayasan" }
+%div#RadioButtonPolicyHolderCompanyTypeYayasan.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypeYayasan" } Yayasan
+
+%input#RadioButtonPolicyHolderCompanyTypeBUMN{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "bumn" }
+%div#RadioButtonPolicyHolderCompanyTypeBUMN.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypeBUMN" } BUMN
+
+%input#RadioButtonPolicyHolderCompanyTypeOther{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "lainnya" }
+%div#RadioButtonPolicyHolderCompanyTypeOther.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypeOther" } Lainnya, sebutkan
 %div#LinePolicyHolderCompanyOther.LineDot.PositionerLeft
 %br
 
