@@ -1,0 +1,78 @@
+!!! 5
+
+%html
+
+    / HEAD
+    
+    %head
+        = Haml::Engine.new(File.read("include_spajform_header.haml")).render
+        %title BCA Life - BLESS, Health Questionnaire 1 Form
+
+        / JQUERY
+        
+        :javascript
+            $(document).ready(function()
+            {
+                // SETTER
+                
+                // radioButtonSetter("WeightChange", true);
+                
+                // GETTER
+                 
+                // radioButtonGetter("WeightChange");
+            });
+
+
+    / BODY
+
+    %body#Main
+
+        / HEADER
+
+        %header
+            %h1 Data Perusahaan / Badan Hukum
+
+        / MAIN
+
+        %main
+            %form
+                %div.ContainerLeft
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyName" } Nama Perusahaan
+                    %input#TextPolicyHolderCompanyName.Full.Single.Item{ :type => "text" }
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderCompanyType" } Jenis Perusahaan
+                    %input#TextProspectiveInsuredFullName.Full.Single.Item{ :type => "text" }
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "SelectProspectiveInsuredIDType" } Jenis Identitas Diri
+                    %select#SelectProspectiveInsuredIDType.Medium.Single.Item
+                        %option{ :value => "ktp" } KTP
+                        %option{ :value => "sim" } SIM
+                        %option{ :value => "paspor" } Paspor
+                        %option{ :value => "kimskitas" } KIMS / KITAS
+                        %option{ :value => "other" } Lainnya
+                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredID" } Nomor Identitas Diri
+                    %input#TextProspectiveInsuredID.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredActive" } Masa berlaku
+                    %input#DateProspectiveInsuredActive.Medium.Single.Item{ :type => "text" }
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredPlace" } Tempat lahir
+                    %input#TextProspectiveInsuredPlace.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredBirthday" } Tanggal lahir
+                    %input#ProspectiveInsuredBirthday.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredAge" } Umur
+                    %input#DateProspectiveInsuredAge.Medium.Single.Item{ :type => "text" }
+                %div.ContainerLeft                      
+                    %label.Medium.Single.Item{ :for => "RadioButtonProspectiveInsuredNationality" } Kewarganegaraan
+                    %div.RadioButton.Item
+                        %input#RadioButtonProspectiveInsuredNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wni" }
+                        %label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNI" } WNI
+                        %div.Separator
+                        %input#RadioButtonProspectiveInsuredNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wna" }
+                        %label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNA" } WNA
+                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredNatioanlity" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
+                %div.RadioButton.PositionerLeft
+                    %input#RadioButtonProspectiveInsuredAmericanYes.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredAmerican", :value => "wni" }
+                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredAmericanYes" } Ya
+                    %div.Separator
+                    %input#RadioButtonProspectiveInsuredAmericanNo.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wna" }
+                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredAmericanNo" } Tidak
