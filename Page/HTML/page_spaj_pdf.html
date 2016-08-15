@@ -209,7 +209,7 @@
           boxGenerator("#DateHolderOfBirthYear", 4, boxTypeWithBottomLabel, labelYear);
           lineGenerator("#LinePolicyHolderPlace", 8);                                     
           boxGenerator("#BoxPolicyHolderAge", 2, boxTypeWithoutLabel, null);
-          lineGenerator("#LinePolicyHolderWNA", 4);
+          lineGenerator("#TextPolicyHolderWNA", 4);
           boxGenerator("#TextPolicyHolderCompany", 25, boxTypeWithoutLabel, null);
           boxGenerator("#TextPolicyHolderMainJob", 30, boxTypeWithoutLabel, null);
           boxGenerator("#TextPolicyHolderWorkScope", 30, boxTypeWithoutLabel, null);
@@ -420,6 +420,12 @@
           //boxSetter("Active", "13-08-2016", boxTypeDate);
           //boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);
       
+          //setRadioButtonGeneral("RadioButtonPolicyHolderIDType", "SIM");
+          //setSelectPDF("TextPolicyHolderCIN", "1234567");                
+          //setCheckboxGeneral("RadioButtonPolicyHolderIDType", "SIM");
+          //setTextPDF("TextPolicyHolderWNA", "KWAAK");
+          //setDatePDF("DatePolicyHolderActive", "12/12/2016");
+          
           // GET TEXT
       
           //alert(boxGetter("TextSPAJNumber", 11));
@@ -550,19 +556,19 @@
         <span class='Description PositionerLeft'>(sesuai dengan identitas diri)</span>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderIDType'>3. Jenis Identitas Diri</label>
-        <input id='RadioButtonPolicyHolderKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='ktp'>
+        <input id='RadioButtonPolicyHolderKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='KTP'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderKTP'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderKTP'>KTP</label>
-        <input id='RadioButtonPolicyHolderSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='sim'>
+        <input id='RadioButtonPolicyHolderSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='SIM'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderSIM'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderSIM'>SIM</label>
-        <input id='RadioButtonPolicyHolderPaspor' name='RadioButtonPolicyHolderIDType' type='radio' value='paspor'>
+        <input id='RadioButtonPolicyHolderPaspor' name='RadioButtonPolicyHolderIDType' type='radio' value='Paspor'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderPaspor'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderPaspor'>Paspor</label>
-        <input id='RadioButtonPolicyHolderKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='kimskitas'>
+        <input id='RadioButtonPolicyHolderKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='KIMSKITAS'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderKIMSKITAS'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderKIMSKITAS'>KIMS / KITAS</label>
-        <input id='RadioButtonPolicyHolderOtherID' name='RadioButtonPolicyHolderIDType' type='radio' value='other'>
+        <input id='RadioButtonPolicyHolderOtherID' name='RadioButtonPolicyHolderIDType' type='radio' value='Other'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderOtherID'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderOtherID'>Lainnya, sebutkan</label>
         <div class='LineDot PositionerLeft' id='TextPolicyHolderOtherID'></div>
@@ -594,7 +600,7 @@
         <input id='RadioButtonPolicyHolderWNA' name='RadioButtonPolicyHolderNationality' type='radio' value='wna'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderNationalityWNA'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderNationalityWNA'>WNA, sebutkan</label>
-        <div class='LineDot PositionerLeft' id='LinePolicyHolderWNA'></div>
+        <div class='LineDot PositionerLeft' id='TextPolicyHolderWNA'></div>
         <span class='Note PositionerLeft'>(Jika jawaban "WNA" mohon melampirkan fotokopi KITAS & Paspor dan melengkapi kuesioner WNA)</span>
         <br>
         <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderUSACitizenYes'>7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?</label>

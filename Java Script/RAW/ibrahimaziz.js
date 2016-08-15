@@ -22,12 +22,13 @@ var stringCheckboxSuffix = "Checkbox";
 var boxTypeStraight = "Text";
 var boxTypeDate = "Date";
 var boxTypeTelephone = "Telephone";
-var stringIDDay = "DateDay";
-var stringIDMonth = "DateMonth";
-var stringIDYear = "DateYear";
+var stringIDDay = "Day";
+var stringIDMonth = "Month";
+var stringIDYear = "Year";
 var stringIDPrefix = "Prefix";
 var stringIDInfix = "Infix";
 var stringIDSuffix = "Suffix";
+var stringIDLine = "Line";
 var stringKres = "#";
 var stringSeparatorDate = "/";
 var stringSeparatorTelephone = "-";
@@ -262,9 +263,9 @@ function setBoxGeneral(stringID, stringValue)
 {
     var stringJQueryID = stringKres + stringID;
     
-    for (var i = 0; i < stringContent.length; i++)
+    for (var i = 0; i < stringValue.length; i++)
     {
-        $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringContent[i]);
+        $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringValue[i]);
     }
 }
 
@@ -273,6 +274,14 @@ function setTextGeneral(stringID, stringValue)
     var stringJQueryID = stringKres + stringID;
     
     $(stringJQueryID).val(stringValue);
+}
+
+function setLineGeneral(stringID, stringValue)
+{
+    var stringJQueryID = stringKres + stringID;
+    
+    $(stringJQueryID).empty();
+    $(stringJQueryID).append(stringValue);
 }
 
 function setRadioButtonGeneral(stringName, stringValue)
@@ -291,12 +300,12 @@ function setRadioButtonGeneral(stringName, stringValue)
 
 function setSelectForm(stringID, stringValue)
 {
-    stringTextGeneral(stringID, stringValue);
+    setTextGeneral(stringID, stringValue);
 }
 
 function setSelectPDF(stringID, stringValue)
 {
-    setterBoxGeneral(stringID, stringValue);
+    setBoxGeneral(stringID, stringValue);
 }
 
 function setCheckboxGeneral(stringName, stringValue)
@@ -315,14 +324,14 @@ function setCheckboxGeneral(stringName, stringValue)
 
 function setTextForm(stringID, stringValue)
 {
-    stringTextGeneral(stringID, stringValue);
+    setTextGeneral(stringID, stringValue);
 }
 
-function setTextPDF(stringID, stringContent, stringType)
+function setTextPDF(stringID, stringValue)
 {
-    if (stringContent.indexOf(stringSeparatorTelephone) > 0)
+    if (stringValue.indexOf(stringSeparatorTelephone) > 0)
     {
-        var arrayTelephoneString = stringContent.split(stringSeparatorTelephone);
+        var arrayTelephoneString = stringValue.split(stringSeparatorTelephone);
         var arrayTelephoneID = [stringIDPrefix, stringIDInfix];
         
         for(var i = 0; i < arrayTelephoneString.length; i++)
@@ -332,11 +341,11 @@ function setTextPDF(stringID, stringContent, stringType)
     }
     else
     {
-        var stringJQueryID = stringKres + stringIDLine + stringID;
+        var stringJQueryID = stringKres + stringID;
         
-        if ($(stringJQueryID).length == 0)
+        if ($(stringJQueryID).is("div") == true)
         {
-            stringTextGeneral(stringID, stringValue);
+            setLineGeneral(stringID, stringValue);
         }
         else
         {
@@ -347,16 +356,16 @@ function setTextPDF(stringID, stringContent, stringType)
 
 function setDateForm(stringID, stringValue)
 {
-    stringTextGeneral(stringID, stringValue);
+    setTextGeneral(stringID, stringValue);
 }
 
 function setDatePDF(stringID, stringContent)
 {
     var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
     var arrayDateString = stringContent.split(stringSeparatorDate);
-
+    
     for (var i = 0; i < arrayDateString.length; i++)
-    {
+    {        
         setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);
     }
 }
@@ -513,7 +522,7 @@ function getTextForm(stringID)
 
 function getTextPDF(stringID)
 {
-    var stringTextValue = $(textID).val();
+    var stringTextValue = $(stringID).val();
     var stringJQueryID = stringKres + stringID;
     var stringContent = "";
     
@@ -543,7 +552,7 @@ function getDateForm(stringID)
     return getTextGeneral(stringID);
 }
 
-function setDatePDF(stringID)
+function getDatePDF(stringID)
 {
     return getBoxGeneral(stringID);
 }
