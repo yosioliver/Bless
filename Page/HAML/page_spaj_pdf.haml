@@ -394,22 +394,50 @@
 
                 //boxSetter("TextSPAJNumber", "Andy Phan", boxTypeStraight);
                 //boxSetter("Active", "13-08-2016", boxTypeDate);
-                //boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);
-
-                //setRadioButtonGeneral("RadioButtonPolicyHolderIDType", "SIM");
-                //setSelectPDF("TextPolicyHolderCIN", "1234567");                
-                //setCheckboxGeneral("RadioButtonPolicyHolderIDType", "SIM");
-                //setTextPDF("TextPolicyHolderWNA", "KWAAK");
-                //setDatePDF("DatePolicyHolderActive", "12/12/2016");
+                //boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);                
                 
                 // GET TEXT
 
                 //alert(boxGetter("TextSPAJNumber", 11));
+                
+                // BUTTON
+                
+                
+                
+                $("#ButtonRead").click(function()
+                {                                                            
+                    var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"SelectPolicyHolderReligion","Value":"budha"}]}}'
+                                         
+                    var objectContent = JSON.parse(jsonPolicyHolder);                                        
+
+                    theTypeIs = Object.keys(objectContent.result)[0];
+                                        
+                    getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+                });
+                
+                 $("#ButtonAutoPopulate").click(function()
+                {
+                    
+                });
+                
+                 $("#ButtonWrite").click(function()
+                {
+                    alert(getTextForm("TextPolicyHolderFullName")); 
+                    alert(getRadioButtonGeneral("RadioButtonPolicyHolderAmerican")); 
+                    alert(getSelectForm("SelectPolicyHolderReligion"));
+                    alert(getDateForm("DatePolicyHolderActive"));
+                    
+                    //checkbox and date in progress.
+                });
+                
+                 $("#ButtonXML").click(function()
+                {
+                    
+                });                
             });
 
 
     / BODY
-
     %body#A4
 
         / HEADER
@@ -418,10 +446,15 @@
             %h1 SURAT PENGAJUAN ASURANSI JIWA (SPAJ)
             %img{:src => "../../Resource/Logo/logo_bcalife.svg"}
             %br
+            
 
         / MAIN
 
         %main
+            %input#ButtonRead.ButtonPrimary{ :type => "button" } Read
+            %input#ButtonAutoPopulate.ButtonPrimary{ :type => "button" } Auto populate
+            %input#ButtonWrite.ButtonPrimary{ :type => "button" } Write
+            %input#ButtonXML.ButtonPrimary{ :type => "button" } XML
             %section#SectionGeneral
                 = Haml::Engine.new(File.read("include_spajpdf_general.haml")).render
             %section#SectionAgentProfile

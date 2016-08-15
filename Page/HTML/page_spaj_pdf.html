@@ -418,17 +418,46 @@
       
           //boxSetter("TextSPAJNumber", "Andy Phan", boxTypeStraight);
           //boxSetter("Active", "13-08-2016", boxTypeDate);
-          //boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);
-      
-          //setRadioButtonGeneral("RadioButtonPolicyHolderIDType", "SIM");
-          //setSelectPDF("TextPolicyHolderCIN", "1234567");                
-          //setCheckboxGeneral("RadioButtonPolicyHolderIDType", "SIM");
-          //setTextPDF("TextPolicyHolderWNA", "KWAAK");
-          //setDatePDF("DatePolicyHolderActive", "12/12/2016");
+          //boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);                
           
           // GET TEXT
       
           //alert(boxGetter("TextSPAJNumber", 11));
+          
+          // BUTTON
+          
+          
+          
+          $("#ButtonRead").click(function()
+          {                                                            
+              var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"SelectPolicyHolderReligion","Value":"budha"}]}}'
+                                   
+              var objectContent = JSON.parse(jsonPolicyHolder);                                        
+      
+              theTypeIs = Object.keys(objectContent.result)[0];
+                                  
+              getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+          });
+          
+           $("#ButtonAutoPopulate").click(function()
+          {
+              
+          });
+          
+           $("#ButtonWrite").click(function()
+          {
+              alert(getTextForm("TextPolicyHolderFullName")); 
+              alert(getRadioButtonGeneral("RadioButtonPolicyHolderAmerican")); 
+              alert(getSelectForm("SelectPolicyHolderReligion"));
+              alert(getDateForm("DatePolicyHolderActive"));
+              
+              //checkbox and date in progress.
+          });
+          
+           $("#ButtonXML").click(function()
+          {
+              
+          });                
       });
     </script>
   </head>
@@ -442,6 +471,10 @@
     </header>
     <!-- MAIN -->
     <main>
+      <input class='ButtonPrimary' id='ButtonRead' type='button'>Read</input>
+      <input class='ButtonPrimary' id='ButtonAutoPopulate' type='button'>Auto populate</input>
+      <input class='ButtonPrimary' id='ButtonWrite' type='button'>Write</input>
+      <input class='ButtonPrimary' id='ButtonXML' type='button'>XML</input>
       <section id='SectionGeneral'>
         <label class='Medium Single PositionerLeft' for='TextSPAJNumber'>Nomor SPAJ</label>
         <table class='BoxSquare PositionerLeft' id='TextSPAJNumber'></table>

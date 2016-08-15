@@ -561,21 +561,23 @@ function getDatePDF(stringID)
 // GET FROM DATABASE
 
 function getFromDatabase(objectContent, stringPageType)
-{
+{    
     for (var i = 0; i < objectContent.length; i++)
-    {
-        var stringKey = objectContent[i].key;
-        var stringValue = objectContent[i].value;
+    {        
+        var stringKey = objectContent[i].elementID;
+        var stringValue = objectContent[i].Value;
+        
+        alert(stringKey + " " + stringValue);
         
         if (stringKey.substring(0, 4) == stringPrefixText)
-        {
+        {            
             if (stringPageType == stringPageTypePDF)
             {
-                setTextForm(stringKey, stringValue);
+                setTextPDF(stringKey, stringValue);        
             }
             else
             {
-                setTextPDF(stringKey, stringValue);
+                setTextForm(stringKey, stringValue);
             }
         }
         else if (stringKey.substring(0, 11) == stringPrefixRadioButton)
