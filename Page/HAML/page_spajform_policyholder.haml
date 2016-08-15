@@ -20,6 +20,54 @@
                 // GETTER
                 
                 // radioButtonGetter("WeightChange");
+                
+                
+                // BUTTON
+                
+                $("#ButtonRead").click(function()
+                {
+                    var dummyAll = '{"result":{"readFromDB":[{"NamaLengkap":"Yosi Oliver","JenisIdentitas":"KTP","NomorIdentitasDiri":"1234567890","MasaBerlaku":"12-02-2019","TempatLahir":"Lhokseumawe","TanggalLahir":"09-01-1987","Usia":"29","Kewarganegaraan":"Indonesia","JenisKelamin":"P","Agama":"Kristen","PekerjaanUtama":"Karyawan Swasta","AlamatTinggal1":"Jalan","AlamatTinggal2":"Apa aja","AlamatTinggal3":"Disini Juga bisa","KotaTinggal":"Bekasi","KodePosTinggal":"17114","NomorTeleponPribadi":"021-299388171","NomorHPUtama":"08122234567","Email":"yosioliver@gmail.com","AlamatKantor1":"Thamrin Residence Office Park","AlamatKantor2":"Ruko A.12","KotaKantor":"Jakarta","KodePosKantor":"13776","TelpKantor":"021-12345654","HubunganDenganCalonTertanggung":"Suami","NomorNPWP":"1223334444"}]}}'
+
+                    var obj = JSON.parse(dummyAll);
+
+                    theTypeIs = Object.keys(obj.result)[0];
+
+                    if (theTypeIs == 'readFromDB')
+                    {                          
+                        setTextForm("TextPolicyHolderFullName", "YOSI OLIVER");
+                        setRadioButtonGeneral("RadioButtonPolicyHolderAmerican", "no");
+                        setSelectForm("SelectPolicyHolderReligion", "budha");
+                        //setDateForm("DatePolicyHolderActive", "01/02/2016"); in progress.
+                        //checkbox in progress.
+                        
+                        //contoh untuk terima object json dari ios.
+                        //$("#TextNomorIdentitasDiri").val(obj.result.readFromDB[0].NomorIdentitasDiri);                      
+                    }
+                    else
+                    {
+                        alert('bukan');
+                    }
+                });
+                
+                 $("#ButtonAutoPopulate").click(function()
+                {
+                    
+                });
+                
+                 $("#ButtonWrite").click(function()
+                {
+                    alert(getTextForm("TextPolicyHolderFullName")); 
+                    alert(getRadioButtonGeneral("RadioButtonPolicyHolderAmerican")); 
+                    alert(getSelectForm("SelectPolicyHolderReligion"));
+                    alert(getDateForm("DatePolicyHolderActive"));
+                    
+                    //checkbox and date in progress.
+                });
+                
+                 $("#ButtonXML").click(function()
+                {
+                    
+                });
             });
 
 
@@ -30,75 +78,80 @@
         / HEADER
 
         %header
-            %h1 Data Calon Pemegang Polis
+            %h1
+                Data Calon Pemegang Polis
+                %input#ButtonRead.ButtonPrimary{ :type => "button" } Read
+                %input#ButtonAutoPopulate.ButtonPrimary{ :type => "button" } Auto populate
+                %input#ButtonWrite.ButtonPrimary{ :type => "button" } Write
+                %input#ButtonXML.ButtonPrimary{ :type => "button" } XML
 
         / MAIN
 
         %main
             %form
-                %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredCIN" } Nomor CIN
-                %input#TextProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
+                %input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text" }
                 %br
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredFullName" } Nama Lengkap
-                    %input#TextProspectiveInsuredFullName.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderFullName" } Nama Lengkap
+                    %input#TextPolicyHolderFullName.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "SelectProspectiveInsuredIDType" } Jenis Identitas Diri
-                    %select#SelectProspectiveInsuredIDType.Medium.Single.Item
+                    %label.Medium.Single.Item{ :for => "SelectPolicyHolderIDType" } Jenis Identitas Diri
+                    %select#SelectPolicyHolderIDType.Medium.Single.Item
                         %option{ :value => "KTP" } KTP
                         %option{ :value => "SIM" } SIM
                         %option{ :value => "paspor" } Paspor
                         %option{ :value => "KIMSKITAS" } KIMS / KITAS
                         %option{ :value => "other" } Lainnya
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredID" } Nomor Identitas Diri
-                    %input#TextProspectiveInsuredID.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredActive" } Masa berlaku
-                    %input#DateProspectiveInsuredActive.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderID" } Nomor Identitas Diri
+                    %input#TextPolicyHolderID.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "DatePolicyHolderActive" } Masa berlaku
+                    %input#DatePolicyHolderActive.Medium.Single.Item{ :type => "date" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredPlace" } Tempat lahir
-                    %input#TextProspectiveInsuredPlace.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredBirthday" } Tanggal lahir
-                    %input#ProspectiveInsuredBirthday.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredAge" } Umur
-                    %input#DateProspectiveInsuredAge.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderPlace" } Tempat lahir
+                    %input#TextPolicyHolderPlace.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "DatePolicyHolderBirthday" } Tanggal lahir
+                    %input#PolicyHolderBirthday.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "DatePolicyHolderAge" } Umur
+                    %input#DatePolicyHolderAge.Medium.Single.Item{ :type => "text" }
                 %div.ContainerLeft
-                    %label.Medium.Single.Item{ :for => "RadioButtonProspectiveInsuredNatioanlity" } Kewarganegaraan
+                    %label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderNatioanlity" } Kewarganegaraan
                     %div.RadioButton.Item
-                        %input#RadioButtonProspectiveInsuredNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "WNI" }
-                        %label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNI" } WNI
+                        %input#RadioButtonPolicyHolderNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "WNI" }
+                        %label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNI" } WNI
                         %div.Separator
-                        %input#RadioButtonProspectiveInsuredNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "WNA" }
-                        %label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNA" } WNA
-                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredAmericanYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
+                        %input#RadioButtonPolicyHolderNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "WNA" }
+                        %label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
+                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAmericanYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonProspectiveInsuredAmericanYes.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredAmerican", :value => "yes" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredAmericanYes" } Ya
+                    %input#RadioButtonPolicyHolderAmericanYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderAmerican", :value => "yes" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderAmericanYes" } Ya
                     %div.Separator
-                    %input#RadioButtonProspectiveInsuredAmericanNo.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredAmerican", :value => "no" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredAmericanNo" } Tidak
-                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredAmericanYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
+                    %input#RadioButtonPolicyHolderAmericanNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderAmerican", :value => "no" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderAmericanNo" } Tidak
+                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAmericanYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
                 %br
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSex" } Jenis Kelamin
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSex" } Jenis Kelamin
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonProspectiveInsuredSexMale.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredSex", :value => "male" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredSexMale" } Pria
+                    %input#RadioButtonPolicyHolderSexMale.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSex", :value => "male" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderSexMale" } Pria
                     %div.Separator
-                    %input#RadioButtonProspectiveInsuredSexFemale.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredSex", :value => "female" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredSexFemale" } Wanita
+                    %input#RadioButtonPolicyHolderSexFemale.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSex", :value => "female" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderSexFemale" } Wanita
                 %br
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredStatusSingle" } Status Pernikahan
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusSingle" } Status Pernikahan
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonProspectiveInsuredStatusSingle.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredStatus", :value => "single" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredStatusSingle" } Belum Menikah
+                    %input#RadioButtonPolicyHolderMaritalStatusSingle.Medium.Single{ :type => "checkbox", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "single" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusSingle" } Belum Menikah
                     %div.Separator
-                    %input#RadioButtonProspectiveInsuredStatusMarried.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredStates", :value => "married" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredStatusMarried" } Menikah
+                    %input#RadioButtonPolicyHolderMaritalStatusMarried.Medium.Single{ :type => "checkbox", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "married" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusMarried" } Menikah
                     %div.Separator
-                    %input#RadioButtonProspectiveInsuredStatusDivorced.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredStatus", :value => "divorced" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredStatusDivorced" } Bercerai
+                    %input#RadioButtonPolicyHolderMaritalStatusDivorced.Medium.Single{ :type => "checkbox", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "divorced" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusDivorced" } Bercerai
                 %br
-                %label.Medium.Single.PositionerLeft{ :for => "SelectProspectiveInsuredIDType" } Agama
-                %select#SelectProspectiveInsuredIDType.Medium.Single.PositionerLeft
+                %label.Medium.Single.PositionerLeft{ :for => "SelectPolicyHolderReligion" } Agama
+                %select#SelectPolicyHolderReligion.Medium.Single.PositionerLeft
                     %option{ :value => "islam" } Islam
                     %option{ :value => "kristenprotestan" } Kristen Protestan
                     %option{ :value => "kristenkatolik" } Kristen Katolik
@@ -107,65 +160,67 @@
                     %option{ :value => "konghucu" } Kong Hu Cu
                 %br
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredCompany" } Nama Perusahaan / Instansi / Sekolah
-                    %input#TextProspectiveInsuredCompany.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompany" } Nama Perusahaan / Instansi / Sekolah
+                    %input#TextPolicyHolderCompany.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredMainJob" } Pekerjaan Utama
-                    %input#TextProspectiveInsuredMainJob.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderMainJob" } Pekerjaan Utama
+                    %input#TextPolicyHolderMainJob.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredScopeWork" } Bidang Usaha
-                    %input#TextProspectiveInsuredScopeWork.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderScopeWork" } Bidang Usaha
+                    %input#TextPolicyHolderScopeWork.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredPosition" } Jabatan
-                    %input#TextProspectiveInsuredPosition.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderPosition" } Jabatan
+                    %input#TextPolicyHolderPosition.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredJobDescription" } Uraian Pekerjaan
-                    %input#TextProspectiveInsuredJobDescription.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderJobDescription" } Uraian Pekerjaan
+                    %input#TextPolicyHolderJobDescription.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredSideJob" } Pekerjaan Tambahan
-                    %input#TextProspectiveInsuredSideJob.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderSideJob" } Pekerjaan Tambahan
+                    %input#TextPolicyHolderSideJob.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress1" } Alamat Tempat Tinggal
-                    %input#TextProspectiveInsuredHomeAddress1.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress1" } Alamat Tempat Tinggal
+                    %input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress2" }
-                    %input#TextProspectiveInsuredHomeAddress2.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress2" }
+                    %input#TextPolicyHolderHomeAddress2.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress3" }
-                    %input#TextProspectiveInsuredHomeAddress3.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress3" }
+                    %input#TextPolicyHolderHomeAddress3.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeCity" }
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeCity" } City
-                    %input#TextProspectiveInsuredHomeCity.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomePostalCode" } Postal Code
-                    %input#TextProspectiveInsuredPostalCode.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" } Kota
+                    %input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
+                    %input#TextPolicyHolderPostalCode.Medium.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeTelephone" }
-                    %label.MediumFix.Single.Item{ :for => "TextProspectiveInsuredHomeTelephone" } Telephone
-                    %input#TextProspectiveInsuredHomeTelephone.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeTelephone" }
+                    %label.MediumFix.Single.Item{ :for => "TextPolicyHolderHomeTelephone" } Nomor telepon
+                    %input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text" }
                 %br
-                %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredHandphone" } Nomor Handphone
-                %input#TextProspectiveInsuredCIN.Long.Single.PositionerLeft{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } Nomor HP Utama
+                %input#TextPolicyHolderHandphone1.Long.Single.PositionerLeft{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } Nomor HP 2
+                %input#TextPolicyHolderHandphone2.Long.Single.PositionerLeft{ :type => "text" }
                 %br
-                %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredEmail" } Alamat Email
-                %input#TextProspectiveInsuredEmail.Long.Single.PositionerLeft{ :type => "text" }
-                %br
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress1" } Alamat Tempat Tinggal
-                    %input#TextProspectiveInsuredHomeAddress1.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderEmail" } Email
+                    %input#TextPolicyHolderEmail.Full.Single.Item{ :type => "text" }                
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress2" }
-                    %input#TextProspectiveInsuredHomeAddress2.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress1" } Alamat kantor
+                    %input#TextPolicyHolderOfficeAddress1.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress3" }
-                    %input#TextProspectiveInsuredHomeAddress3.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress2" }
+                    %input#TextPolicyHolderOfficeAddress2.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeCity" }
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeCity" } City
-                    %input#TextProspectiveInsuredHomeCity.Medium.Single.Item{ :type => "text" }
-                    %label.Medum.Single.Item{ :for => "TextProspectiveInsuredHomePostalCode" } Postal Code
-                    %input#TextProspectiveInsuredPostalCode.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress3" }
+                    %input#TextPolicyHolderHomeAddress3.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeTelephone" }
-                    %label.MediumFix.Single.Item{ :for => "TextProspectiveInsuredHomeTelephone" } Telephone
-                    %input#TextProspectiveInsuredHomeTelephone.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" } City
+                    %input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text" }
+                    %label.Medum.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Postal Code
+                    %input#TextPolicyHolderPostalCode.Medium.Single.Item{ :type => "text" }
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeTelephone" }
+                    %label.MediumFix.Single.Item{ :for => "TextPolicyHolderHomeTelephone" } Telephone
+                    %input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text" }
