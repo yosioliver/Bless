@@ -21,31 +21,25 @@
                 
                 // radioButtonGetter("WeightChange");
                 
+                // INITIALIZATION
+                
+                var jsonPolicyHolder = '{"result":{"readFromDB":[{"TextPolicyHolderFullName":"Yosi Oliver","RadioButtonPolicyHolderAmerican":"true","DatePolicyHolderActive":"01/02/2016","SelectPolicyHolderReligion":"budha"}]}}'
                 
                 // BUTTON
                 
                 $("#ButtonRead").click(function()
                 {
-                    var dummyAll = '{"result":{"readFromDB":[{"NamaLengkap":"Yosi Oliver","JenisIdentitas":"KTP","NomorIdentitasDiri":"1234567890","MasaBerlaku":"12-02-2019","TempatLahir":"Lhokseumawe","TanggalLahir":"09-01-1987","Usia":"29","Kewarganegaraan":"Indonesia","JenisKelamin":"P","Agama":"Kristen","PekerjaanUtama":"Karyawan Swasta","AlamatTinggal1":"Jalan","AlamatTinggal2":"Apa aja","AlamatTinggal3":"Disini Juga bisa","KotaTinggal":"Bekasi","KodePosTinggal":"17114","NomorTeleponPribadi":"021-299388171","NomorHPUtama":"08122234567","Email":"yosioliver@gmail.com","AlamatKantor1":"Thamrin Residence Office Park","AlamatKantor2":"Ruko A.12","KotaKantor":"Jakarta","KodePosKantor":"13776","TelpKantor":"021-12345654","HubunganDenganCalonTertanggung":"Suami","NomorNPWP":"1223334444"}]}}'
+                    var objectContent = JSON.parse(jsonPolicyHolder);
 
-                    var obj = JSON.parse(dummyAll);
+                    var stringType = Object.keys(objectContent.result)[0];
 
-                    theTypeIs = Object.keys(obj.result)[0];
-
-                    if (theTypeIs == 'readFromDB')
-                    {                          
-                        setTextForm("TextPolicyHolderFullName", "YOSI OLIVER");
-                        setRadioButtonGeneral("RadioButtonPolicyHolderAmerican", "no");
-                        setSelectForm("SelectPolicyHolderReligion", "budha");
-                        //setDateForm("DatePolicyHolderActive", "01/02/2016"); in progress.
-                        //checkbox in progress.
-                        
-                        //contoh untuk terima object json dari ios.
-                        //$("#TextNomorIdentitasDiri").val(obj.result.readFromDB[0].NomorIdentitasDiri);                      
+                    if (stringType == "readFromDB")
+                    {
+                        getFromDatabase(Object.keys(objectContent.result.readFromDB)[0], stringPageTypeForm);
                     }
                     else
                     {
-                        alert('bukan');
+                        alert("Not read from database method !.");
                     }
                 });
                 
