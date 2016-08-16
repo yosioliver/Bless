@@ -36,43 +36,55 @@
 
         %main
             %form
-                %div.ContainerLeft
-                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyName" } Nama Perusahaan
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyName" } Nama Lengkap
                     %input#TextPolicyHolderCompanyName.Full.Single.Item{ :type => "text" }
-                %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderCompanyType" } Jenis Perusahaan
-                    %input#TextProspectiveInsuredFullName.Full.Single.Item{ :type => "text" }
-                %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "SelectProspectiveInsuredIDType" } Jenis Identitas Diri
-                    %select#SelectProspectiveInsuredIDType.Medium.Single.Item
-                        %option{ :value => "ktp" } KTP
-                        %option{ :value => "sim" } SIM
-                        %option{ :value => "paspor" } Paspor
-                        %option{ :value => "kimskitas" } KIMS / KITAS
-                        %option{ :value => "other" } Lainnya
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredID" } Nomor Identitas Diri
-                    %input#TextProspectiveInsuredID.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredActive" } Masa berlaku
-                    %input#DateProspectiveInsuredActive.Medium.Single.Item{ :type => "text" }
-                %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredPlace" } Tempat lahir
-                    %input#TextProspectiveInsuredPlace.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredBirthday" } Tanggal lahir
-                    %input#ProspectiveInsuredBirthday.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "DateProspectiveInsuredAge" } Umur
-                    %input#DateProspectiveInsuredAge.Medium.Single.Item{ :type => "text" }
-                %div.ContainerLeft                      
-                    %label.Medium.Single.Item{ :for => "RadioButtonProspectiveInsuredNationality" } Kewarganegaraan
-                    %div.RadioButton.Item
-                        %input#RadioButtonProspectiveInsuredNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wni" }
-                        %label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNI" } WNI
-                        %div.Separator
-                        %input#RadioButtonProspectiveInsuredNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wna" }
-                        %label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNA" } WNA
-                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredNatioanlity" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyName" } Jenis Perusahaan
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonProspectiveInsuredAmericanYes.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredAmerican", :value => "wni" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredAmericanYes" } Ya
+                    %input#RadioButtonPolicyHolderCompanyTypePT.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypePT" } Perseroan Terbatas
                     %div.Separator
-                    %input#RadioButtonProspectiveInsuredAmericanNo.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wna" }
-                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredAmericanNo" } Tidak
+                    %input#RadioButtonPolicyHolderCompanyTypeYayasan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypeYayasan" } Yayasan
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyTypeBUMN.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypeBUMN" } BUMN
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderLainnya.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypeOther" } Lainnya
+                    %input#RadioButtonPolicyHolderCompanyTypeOther.Medium.Single.PositionerRight{ :type => "text" }
+                %br
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoAnggaranDasar" } Nomor Anggaran Dasar/Akta Pendirian
+                    %input#TextPolicyHolderCompanyNoAnggaranDasar.Full.Single.Item{ :type => "text" }
+                
+                %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyDateOfExpired" } Tanggal Berlaku
+                %input#DatePolicyHolderCompanyDateOfExpired.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoSuratIjinUsaha" } Nomor Surat Ijin Usaha
+                    %input#TextPolicyHolderCompanyNoSuratIjinUsaha.Full.Single.Item{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderTanggalBerlaku" } Tanggal Berlaku
+                %input#TextPolicyHolderTanggalBerlaku.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoTDP" } Nomor TDP
+                    %input#TextPolicyHolderTanggalBerlaku.Full.Single.Item{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyTDPDateOfExpired" } Tanggal Berlaku
+                %input#DatePolicyHolderCompanyTDPDateOfExpired.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoSKDP" } Nomor SDKP (Domisili)
+                    %input#DatePolicyHolderCompanySKDPDateOfExpired.Full.Single.Item{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySKDPDateOfExpired" } Tanggal Berlaku
+                %input#DatePolicyHolderCompanySKDPDateOfExpired.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderTanggalBerlaku" } Nomor NPWP (Jika ada)
+                    %input#TextPolicyHolderTanggalBerlaku.Full.Single.Item{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderTanggalBerlaku" } Tanggal Berlaku
+                %input#TextPolicyHolderTanggalBerlaku.Medium.Single.PositionerLeft{ :type => "text" }
+                %br
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanySector" } Bidang Usaha
+                    %input#TextPolicyHolderCompanySector.Full.Single.Item{ :type => "text" }
