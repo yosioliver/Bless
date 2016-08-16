@@ -15,7 +15,14 @@
             {
                 // INITIALIZATION
                 
-                var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderUSACitizen","Value":"yes"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"},{"elementID":"TextPolicyHolderOfficeTelephone","Value":"021-1234567"},{"elementID":"TextPolicyHolderPlace","Value":"ZIMBABWE"}]}}'
+                var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderUSACitizen","Value":"true"},{"elementID":"DatePolicyHolderBirthday","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"},{"elementID":"TextPolicyHolderOfficeTelephone","Value":"021-1234567"},{"elementID":"TextPolicyHolderPlace","Value":"ZIMBABWE"}]}}'
+                
+                $("#BoxDate").DateTimePicker(
+                {
+                    mode: "date", 
+                    dateSeparator: "/", 
+                    dateFormat: "dd/MM/yyyy"
+                });
                 
                 
                 // BUTTON
@@ -42,7 +49,9 @@
                 
                  $("#ButtonWrite").click(function()
                 {
-                    
+                    var objectContent = setToDatabase(stringPageTypeForm);
+                    console.log(objectContent);
+                    alert(objectContent);
                 });
                 
                  $("#ButtonXML").click(function()
@@ -87,12 +96,12 @@
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderID" } Nomor Identitas Diri
                     %input#TextPolicyHolderID.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderActive" } Masa berlaku
-                    %input#DatePolicyHolderActive.Medium.Single.Item{ :type => "date" }
+                    %input#DatePolicyHolderActive.Medium.Single.Item{ :type => "text", "data-field" => "date" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderPlace" } Tempat lahir
                     %input#TextPolicyHolderPlace.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderBirthday" } Tanggal lahir
-                    %input#PolicyHolderBirthday.Medium.Single.Item{ :type => "text" }
+                    %input#DatePolicyHolderBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderAge" } Umur
                     %input#DatePolicyHolderAge.Medium.Single.Item{ :type => "text" }
                 %div.ContainerLeft
@@ -105,10 +114,10 @@
                         %label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
                 %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAmericanYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPolicyHolderUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "yes" }
+                    %input#RadioButtonPolicyHolderUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "true" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Ya
                     %div.Separator
-                    %input#RadioButtonPolicyHolderUSACitizenNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "no" }
+                    %input#RadioButtonPolicyHolderUSACitizenNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "false" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenNo" } Tidak
                 %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
                 %br
@@ -205,3 +214,4 @@
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeTelephone" }
                     %label.MediumFix.Single.Item{ :for => "TextPolicyHolderHomeTelephone" } Telephone
                     %input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text" }
+        %div#BoxDate
