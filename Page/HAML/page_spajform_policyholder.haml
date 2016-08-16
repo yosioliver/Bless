@@ -29,17 +29,7 @@
                 
                 $("#ButtonRead").click(function()
                 {
-                    var objectContent = JSON.parse(jsonPolicyHolder);
-                    var stringType = Object.keys(objectContent.result)[0];
-
-                    if (stringType == "readFromDB")
-                    {
-                        getFromDatabase(objectContent.result.readFromDB, stringPageTypeForm);
-                    }
-                    else
-                    {
-                        alert("Not read from database method !.");
-                    }
+                    
                 });
                 
                  $("#ButtonAutoPopulate").click(function()
@@ -49,9 +39,8 @@
                 
                  $("#ButtonWrite").click(function()
                 {
-                    var objectContent = setToDatabase(stringPageTypeForm);
-                    console.log(objectContent);
-                    alert(objectContent);
+                    
+
                 });
                 
                  $("#ButtonXML").click(function()

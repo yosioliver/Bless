@@ -679,20 +679,30 @@ function setToDatabase(stringPageType)
     {
         var stringKey = $(this).attr("name");
         var stringValue;
+        var booleanDuplicate = false;
         
         for (var i = 0; i < objectContent.length; i++)
         {
-            alert("key : " + stringKey + ", value : " + stringValue);
             if (objectContent[i].elementID == stringKey)
             {
+                booleanDuplicate = true;
                 i = objectContent.length;
             }
             else
             {
-                stringValue = getRadioButtonGeneral(stringKey);
-
-                validatePush(objectContent, stringKey, stringValue);
+                booleanDuplicate = false;
             }
+        }
+        
+        if (booleanDuplicate == true)
+        {
+            
+        }
+        else
+        {
+            stringValue = getRadioButtonGeneral(stringKey);
+
+            validatePush(objectContent, stringKey, stringValue);
         }
     });
     
@@ -714,6 +724,22 @@ function setToDatabase(stringPageType)
     });
     
     return objectContent;
+}
+
+function JSONGenerator(objectContent) 
+{
+    var callInfo = {};
+    callInfo.data = {};
+    callInfo.data.SPAJAnswers = [];
+
+    for (var i = 0; i < objectContent.length; i++)
+    {
+        callInfo.data.SPAJAnswers.push({ elementID : objectContent[i].elementID, Value : objectContent[i].Value, SPAJID : "1", CustomerID : "1" });
+    }
+
+    console.log(JSON.stringify(callInfo));
+    
+    return callInfo;
 }
 
 
