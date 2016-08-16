@@ -176,6 +176,7 @@
                 boxGenerator("#TextPolicyHolderCIN", 7, boxTypeWithoutLabel, null);
                 boxGenerator("#TextPolicyHolderFullName", 30, boxTypeWithoutLabel, null);
                 boxGenerator("#TextPolicyHolderID", 16, boxTypeWithoutLabel, null);
+                lineGenerator("#TextPolicyHolderOtherID", 11);
                 boxGenerator("#DatePolicyHolderActiveDay", 2, boxTypeWithBottomLabel, labelDay);
                 boxGenerator("#DatePolicyHolderActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
                 boxGenerator("#DatePolicyHolderActiveYear", 4, boxTypeWithBottomLabel, labelYear);
@@ -406,16 +407,23 @@
                 
                 $("#ButtonRead").click(function()
                 {                                                            
-                    var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"SelectPolicyHolderReligion","Value":"budha"}]}}'
+                    var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderUSACitizen","Value":"yes"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"},{"elementID":"TextPolicyHolderOfficeTelephone","Value":"021-1234567"},{"elementID":"TextPolicyHolderPlace","Value":"ZIMBABWE"}]}}'
                                          
                     var objectContent = JSON.parse(jsonPolicyHolder);                                        
 
                     theTypeIs = Object.keys(objectContent.result)[0];
-                                        
-                    getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+                    
+                    if (theTypeIs == 'readFromDB')
+                    {
+                        getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);    
+                    }
+                    else
+                    {
+                        alert("No data found.");                    
+                    }
                 });
                 
-                 $("#ButtonAutoPopulate").click(function()
+                $("#ButtonAutoPopulate").click(function()
                 {
                     
                 });
@@ -430,7 +438,7 @@
                     //checkbox and date in progress.
                 });
                 
-                 $("#ButtonXML").click(function()
+                $("#ButtonXML").click(function()
                 {
                     
                 });                

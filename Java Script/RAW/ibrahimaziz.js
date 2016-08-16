@@ -565,9 +565,7 @@ function getFromDatabase(objectContent, stringPageType)
     for (var i = 0; i < objectContent.length; i++)
     {        
         var stringKey = objectContent[i].elementID;
-        var stringValue = objectContent[i].Value;
-        
-        alert(stringKey + " " + stringValue);
+        var stringValue = objectContent[i].Value;               
         
         if (stringKey.substring(0, 4) == stringPrefixText)
         {            
@@ -581,33 +579,33 @@ function getFromDatabase(objectContent, stringPageType)
             }
         }
         else if (stringKey.substring(0, 11) == stringPrefixRadioButton)
-        {
+        {            
             setRadioButtonGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, 8) == stringPrefixCheckbox)
-        {
+        {            
             setRadioCheckboxGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, 6) == stringPrefixSelect)
-        {
+        {            
             if (stringPageType == stringPageTypePDF)
-            {
-                setSelectForm(stringKey, stringValue);
-            }
-            else
             {
                 setSelectPDF(stringKey, stringValue);
             }
+            else
+            {
+                setSelectForm(stringKey, stringValue);
+            }
         }
         else if (stringKey.substring(0, 4) == stringPrefixDate)
-        {
+        {            
             if (stringPageType == stringPageTypePDF)
             {
-                setDateForm(stringKey, stringValue);
+                setDatePDF(stringKey, stringValue);
             }
             else
             {
-                setDatePDF(stringKey, stringValue);
+                setDateForm(stringKey, stringValue);
             }
         }
         else
