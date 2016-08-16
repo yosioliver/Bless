@@ -13,29 +13,21 @@
         :javascript
             $(document).ready(function()
             {
-                // SETTER
-                
-                // radioButtonSetter("WeightChange", true);
-                
-                // GETTER
-                
-                // radioButtonGetter("WeightChange");
-                
                 // INITIALIZATION
                 
-                var jsonPolicyHolder = '{"result":{"readFromDB":[{"TextPolicyHolderFullName":"Yosi Oliver","RadioButtonPolicyHolderAmerican":"true","DatePolicyHolderActive":"01/02/2016","SelectPolicyHolderReligion":"budha"}]}}'
+                var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderUSACitizen","Value":"yes"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"},{"elementID":"TextPolicyHolderOfficeTelephone","Value":"021-1234567"},{"elementID":"TextPolicyHolderPlace","Value":"ZIMBABWE"}]}}'
+                
                 
                 // BUTTON
                 
                 $("#ButtonRead").click(function()
                 {
                     var objectContent = JSON.parse(jsonPolicyHolder);
-
                     var stringType = Object.keys(objectContent.result)[0];
 
                     if (stringType == "readFromDB")
                     {
-                        getFromDatabase(Object.keys(objectContent.result.readFromDB)[0], stringPageTypeForm);
+                        getFromDatabase(objectContent.result.readFromDB, stringPageTypeForm);
                     }
                     else
                     {
@@ -50,12 +42,7 @@
                 
                  $("#ButtonWrite").click(function()
                 {
-                    alert(getTextForm("TextPolicyHolderFullName")); 
-                    alert(getRadioButtonGeneral("RadioButtonPolicyHolderAmerican")); 
-                    alert(getSelectForm("SelectPolicyHolderReligion"));
-                    alert(getDateForm("DatePolicyHolderActive"));
                     
-                    //checkbox and date in progress.
                 });
                 
                  $("#ButtonXML").click(function()
@@ -118,12 +105,12 @@
                         %label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
                 %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAmericanYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPolicyHolderAmericanYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderAmerican", :value => "yes" }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderAmericanYes" } Ya
+                    %input#RadioButtonPolicyHolderUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "yes" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Ya
                     %div.Separator
-                    %input#RadioButtonPolicyHolderAmericanNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderAmerican", :value => "no" }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderAmericanNo" } Tidak
-                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAmericanYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
+                    %input#RadioButtonPolicyHolderUSACitizenNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "no" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenNo" } Tidak
+                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
                 %br
                 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSex" } Jenis Kelamin
                 %div.RadioButton.PositionerLeft

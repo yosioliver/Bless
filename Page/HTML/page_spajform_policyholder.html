@@ -40,29 +40,21 @@
     <script>
       $(document).ready(function()
       {
-          // SETTER
-          
-          // radioButtonSetter("WeightChange", true);
-          
-          // GETTER
-          
-          // radioButtonGetter("WeightChange");
-          
           // INITIALIZATION
           
-          var jsonPolicyHolder = '{"result":{"readFromDB":[{"TextPolicyHolderFullName":"Yosi Oliver","RadioButtonPolicyHolderAmerican":"true","DatePolicyHolderActive":"01/02/2016","SelectPolicyHolderReligion":"budha"}]}}'
+          var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderUSACitizen","Value":"yes"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"},{"elementID":"TextPolicyHolderOfficeTelephone","Value":"021-1234567"},{"elementID":"TextPolicyHolderPlace","Value":"ZIMBABWE"}]}}'
+          
           
           // BUTTON
           
           $("#ButtonRead").click(function()
           {
               var objectContent = JSON.parse(jsonPolicyHolder);
-      
               var stringType = Object.keys(objectContent.result)[0];
       
               if (stringType == "readFromDB")
               {
-                  getFromDatabase(Object.keys(objectContent.result.readFromDB)[0], stringPageTypeForm);
+                  getFromDatabase(objectContent.result.readFromDB, stringPageTypeForm);
               }
               else
               {
@@ -77,12 +69,7 @@
           
            $("#ButtonWrite").click(function()
           {
-              alert(getTextForm("TextPolicyHolderFullName")); 
-              alert(getRadioButtonGeneral("RadioButtonPolicyHolderAmerican")); 
-              alert(getSelectForm("SelectPolicyHolderReligion"));
-              alert(getDateForm("DatePolicyHolderActive"));
               
-              //checkbox and date in progress.
           });
           
            $("#ButtonXML").click(function()
@@ -148,13 +135,13 @@
         </div>
         <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderAmericanYes'>Apakah anda merupakan warga negara atau wajib pajak amerika ?</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderAmericanYes' name='RadioButtonPolicyHolderAmerican' type='radio' value='yes'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderAmericanYes'>Ya</label>
+          <input class='Medium Single' id='RadioButtonPolicyHolderUSACitizenYes' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='yes'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderUSACitizenYes'>Ya</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderAmericanNo' name='RadioButtonPolicyHolderAmerican' type='radio' value='no'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderAmericanNo'>Tidak</label>
+          <input class='Medium Single' id='RadioButtonPolicyHolderUSACitizenNo' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='no'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderUSACitizenNo'>Tidak</label>
         </div>
-        <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderAmericanYes'>(Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).</label>
+        <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderUSACitizenYes'>(Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).</label>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderSex'>Jenis Kelamin</label>
         <div class='RadioButton PositionerLeft'>
