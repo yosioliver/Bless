@@ -52,8 +52,14 @@
           // radioButtonGetter("WeightChange");
           
           // INITIALIZATION
-                                 
+          
           // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
+          
+          $("#BoxDate").DateTimePicker(
+          {
+              dateSeparator: "/",
+              dateFormat: "dd/MM/yyyy"
+          });
           
           // BUTTON
           
@@ -64,7 +70,7 @@
           
           $("#ButtonWrite").click(function()
           {
-      
+              savetoDB();
           });
           
           $("#ButtonXML").click(function()
@@ -107,13 +113,13 @@
           <label class='Medium Single Item' for='TextPolicyHolderID'>Nomor Identitas Diri</label>
           <input class='Medium Single Item' id='TextPolicyHolderID' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderActive'>Masa berlaku</label>
-          <input class='Medium Single Item' id='DatePolicyHolderActive' type='date'>
+          <input class='Medium Single Item' data-field='date' id='DatePolicyHolderActive' readonly='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderPlace'>Tempat lahir</label>
           <input class='Medium Single Item' id='TextPolicyHolderPlace' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderBirthday'>Tanggal lahir</label>
-          <input class='Medium Single Item' id='PolicyHolderBirthday' type='text'>
+          <input class='Medium Single Item' data-field='date' id='PolicyHolderBirthday' readonly='true' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderAge'>Umur</label>
           <input class='Medium Single Item' id='DatePolicyHolderAge' type='text'>
         </div>
@@ -351,6 +357,7 @@
           <input class='Full Single Item' id='TextPolicyHolderSource' type='text'>
         </div>
         <br>
+        <div id='BoxDate'></div>
       </form>
     </main>
   </body>

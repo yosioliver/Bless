@@ -22,8 +22,14 @@
                 // radioButtonGetter("WeightChange");
                 
                 // INITIALIZATION
-                                       
+                
                 // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
+                
+                $("#BoxDate").DateTimePicker(
+                {
+                    dateSeparator: "/",
+                    dateFormat: "dd/MM/yyyy"
+                });
                 
                 // BUTTON
                 
@@ -34,7 +40,7 @@
                 
                 $("#ButtonWrite").click(function()
                 {
-
+                    savetoDB();
                 });
                 
                 $("#ButtonXML").click(function()
@@ -79,12 +85,12 @@
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderID" } Nomor Identitas Diri
                     %input#TextPolicyHolderID.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderActive" } Masa berlaku
-                    %input#DatePolicyHolderActive.Medium.Single.Item{ :type => "date" }
+                    %input#DatePolicyHolderActive.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderPlace" } Tempat lahir
                     %input#TextPolicyHolderPlace.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderBirthday" } Tanggal lahir
-                    %input#PolicyHolderBirthday.Medium.Single.Item{ :type => "text" }
+                    %input#PolicyHolderBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderAge" } Umur
                     %input#DatePolicyHolderAge.Medium.Single.Item{ :type => "text" }
                 %div.ContainerLeft
@@ -301,3 +307,5 @@
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderSource" } Jelaskan Sumbernya
                     %input#TextPolicyHolderSource.Full.Single.Item{ :type => "text" }
                 %br
+                
+                %div#BoxDate

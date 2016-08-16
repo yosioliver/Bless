@@ -763,3 +763,8 @@ function radioButtonMonitoring(radioButtonName)
         return stringValue;
     });
 }
+
+function test1()
+{
+    alert("1");
+}

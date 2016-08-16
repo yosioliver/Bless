@@ -105,12 +105,19 @@ function onError (ret)
     }
 }
 
+function readfromDB()
+{
+    
+}
+
 function savetoDB() 
-{ 
+{
+    alert("b");
     var objectContent = setToDatabase(stringPageTypeForm);
     var jsonToDatabase = JSONGenerator(objectContent);
 
     calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
+    alert("c")
 }
 
 function PrintData()
@@ -136,4 +143,9 @@ function AutoPopulate(jsonObject)
 function ReadData()
 {
     readfromDB();
+}
+
+function test2()
+{
+    alert("2");
 }
