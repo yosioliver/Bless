@@ -256,6 +256,18 @@ function validateRadioButtonGeneral(radioButtonName)
     }
 }
 
+function validatePush(objectContent, stringKey, stringValue)
+{
+    if (stringValue == undefined | stringValue == "")
+    {
+        
+    }
+    else
+    {
+        objectContent.push({ elementID: stringKey, Value: stringValue });
+    }
+}
+
 
 // SETTER
 
@@ -561,51 +573,51 @@ function getDatePDF(stringID)
 // GET FROM DATABASE
 
 function getFromDatabase(objectContent, stringPageType)
-{
+{    
     for (var i = 0; i < objectContent.length; i++)
-    {
-        var stringKey = objectContent[i].key;
-        var stringValue = objectContent[i].value;
+    {        
+        var stringKey = objectContent[i].elementID;
+        var stringValue = objectContent[i].Value;               
         
         if (stringKey.substring(0, 4) == stringPrefixText)
-        {
+        {            
             if (stringPageType == stringPageTypePDF)
+            {
+                setTextPDF(stringKey, stringValue);        
+            }
+            else
             {
                 setTextForm(stringKey, stringValue);
             }
-            else
-            {
-                setTextPDF(stringKey, stringValue);
-            }
         }
         else if (stringKey.substring(0, 11) == stringPrefixRadioButton)
-        {
+        {            
             setRadioButtonGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, 8) == stringPrefixCheckbox)
-        {
+        {            
             setRadioCheckboxGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, 6) == stringPrefixSelect)
-        {
+        {            
             if (stringPageType == stringPageTypePDF)
-            {
-                setSelectForm(stringKey, stringValue);
-            }
-            else
             {
                 setSelectPDF(stringKey, stringValue);
             }
+            else
+            {
+                setSelectForm(stringKey, stringValue);
+            }
         }
         else if (stringKey.substring(0, 4) == stringPrefixDate)
-        {
+        {            
             if (stringPageType == stringPageTypePDF)
             {
-                setDateForm(stringKey, stringValue);
+                setDatePDF(stringKey, stringValue);
             }
             else
             {
-                setDatePDF(stringKey, stringValue);
+                setDateForm(stringKey, stringValue);
             }
         }
         else
@@ -622,72 +634,112 @@ function setToDatabase(stringPageType)
 {
     var objectContent = [];
     
-    $("input").each(function()
+    $("input[type=text]").each(function()
     {
         var stringKey = $(this).attr("id");
         var stringValue;
         
-        if ($(this).attr("type") == "text")
+        if (stringPageType == stringPageTypePDF)
         {
-            if (stringPageType == stringPageTypePDF)
-            {
-                stringValue = getTextForm(stringKey);
-            }
-            else
-            {
-                stringValue = getTextPDF(stringKey);
-            }
-            
-            objectContent.push({ key: stringKey, value: stringValue });
-        }
-        else if ($(this).attr("type") == "radio")
-        {
-            stringValue = getRadioButtonGeneral(stringKey);
-            
-            objectContent.push({ key: stringKey, value: stringValue });
-        }
-        else if ($(this).attr("type") == "checkbox")
-        {
-            stringValue = setCheckboxGeneral(stringKey);
-            
-            objectContent.push({ key: stringKey, value: stringValue });
-        }
-        else if ($(this).attr("type") == "date")
-        {
-            if (stringPageType == stringPageTypePDF)
-            {
-                getDateForm(stringKey, stringValue);
-            }
-            else
-            {
-                getDatePDF(stringKey, stringValue);
-            }
-            
-            objectContent.push({ key: stringKey, value: stringValue });
+            stringValue = getTextPDF(stringKey);
         }
         else
         {
+            stringValue = getTextForm(stringKey);
+        }
+
+        validatePush(objectContent, stringKey, stringValue);
+    });
+    
+//    $("input[type=checkbox]").each(function()
+//    {
+//        stringValue = setCheckboxGeneral(stringKey);
+//            
+//        validatePush(objectContent, stringKey, stringValue);
+//    });
+    
+    $("input[type=date]").each(function()
+    {
+        var stringKey = $(this).attr("id");
+        var stringValue;
+        
+        if (stringPageType == stringPageTypePDF)
+        {
+            stringValue = getDatePDF(stringKey);
+        }
+        else
+        {
+            stringValue = getDateForm(stringKey);
+        }
+
+        validatePush(objectContent, stringKey, stringValue);
+    });
+    
+    $("input[type=radio]").each(function()
+    {
+        var stringKey = $(this).attr("name");
+        var stringValue;
+        var booleanDuplicate = false;
+        
+        for (var i = 0; i < objectContent.length; i++)
+        {
+            if (objectContent[i].elementID == stringKey)
+            {
+                booleanDuplicate = true;
+                i = objectContent.length;
+            }
+            else
+            {
+                booleanDuplicate = false;
+            }
+        }
+        
+        if (booleanDuplicate == true)
+        {
             
+        }
+        else
+        {
+            stringValue = getRadioButtonGeneral(stringKey);
+
+            validatePush(objectContent, stringKey, stringValue);
         }
     });
     
     $("select").each(function()
     {
-        var stringID = $(this).attr("id");
+        var stringKey = $(this).attr("id");
+        var stringValue;
         
         if (stringPageType == stringPageTypePDF)
         {
-            getSelectPDF(stringID);
+            stringValue = getSelectPDF(stringKey);
         }
         else
         {
-            getSelectForm(stringID);
+            stringValue = getSelectForm(stringKey);
         }
         
-        objectContent.push({ key: stringKey, value: stringValue });
+        validatePush(objectContent, stringKey, stringValue);
     });
     
     return objectContent;
+}
+
+function JSONGenerator(objectContent) 
+{
+    var callInfo = {};
+    callInfo.data = {};
+    callInfo.data.SPAJAnswers = [];
+
+    for (var i = 0; i < objectContent.length; i++)
+    {
+        callInfo.data.SPAJAnswers.push({ elementID : objectContent[i].elementID, Value : objectContent[i].Value, SPAJID : "1", CustomerID : "1" });
+    }
+
+    console.log(JSON.stringify(callInfo));
+    
+    return callInfo;
 }
 
 
