@@ -39,7 +39,11 @@ var stringPrefixText = "Text";
 var stringPrefixRadioButton = "RadioButton";
 var stringPrefixCheckbox = "Checkbox";
 var stringPrefixDate = "Date";
+var stringPrefixLabel = "Label";
 var stringPrefixSelect = "Select";
+var stringPopUpTypeGeneral = "general";
+var stringPopUpTypeHealth = "health";
+var stringPopUpTypeSPAJProposal = "spajproposal";
 
 
 // GENERATOR
@@ -80,34 +84,83 @@ function lineGenerator(lineID, lineAmount)
     $(lineID).css("width", ((sizeBox * lineAmount) + 2) + "px");
 }
 
-function additionalQuestionGenerator(radioButtonName)
+function additionalQuestionGenerator()
 {
-    $("input:radio[name=" + radioButtonName + "]").change(function()
+    $("input[type=radio]").each(function()
     {
-        if($(this).val() == "true")
+        console.log("radioButtonName : " + $(this).attr("name") + ", data type : " + $(this).data("popup-type"));
+        
+        if ($(this).data("popup-type") == stringPopUpTypeGeneral)
         {
-            $("#PopUpAdditionalQuestion").css("display", "block");
-            $("#LabelAdditionalQuestion").append($("#Label" + radioButtonName).text());
-            $("#TextAdditionalQuestion").empty();
+            $("input:radio[name='" + $(this).attr("name") + "']").change(function()
+            {
+                if ($(this).val() == "true")
+                {
+                    $("#PopUpGeneral").css("display", "block");
+                    $("#LabelDetail").append($(stringKres + stringPrefixLabel + $(this).attr("name").substring(11, $(this).attr("name").length)).text());
+                    $("#TextDetail").empty();
+                }
+                else
+                {
+                    $("#PopUpGeneral").css("display", "none");
+                    $("#LabelDetail").empty();
+                }
+
+                stringKey = $(this).attr("name");
+            });
+        }
+        else if ($(this).data("popup-type") == stringPopUpTypeHealth)
+        {
+            $("input:radio[name='" + $(this).attr("name") + "']").change(function()
+            {
+                if ($(this).val() == "true")
+                {
+                    $("#PopUpHealth").css("display", "block");
+                    $("#TextAdditionalQuestion").empty();
+                }
+                else
+                {
+                    $("#PopUpHealth").css("display", "none");
+                }
+                
+                stringKey = $(this).attr("name");
+            });
+        }
+        else if ($(this).data("popup-type") == stringPopUpTypeSPAJProposal)
+        {
+            $("input:radio[name='" + $(this).attr("name") + "']").change(function()
+            {
+                if ($(this).val() == "true")
+                {
+                    $("#PopUpSPAJProposal").css("display", "block");
+                    // $("#LabelAdditionalQuestion").append($("#Label" + radioButtonName).text());
+                    // $("#TextAdditionalQuestion").empty();
+                }
+                else
+                {
+                    $("#PopUpSPAJProposal").css("display", "none");
+                    // $("#LabelAdditionalQuestion").empty();
+                }
+
+                stringKey = $(this).attr("name");
+            });
         }
         else
         {
-            $("#PopUpAdditionalQuestion").css("display", "none");
-            $("#LabelAdditionalQuestion").empty();
+            
         }
-        
-        stringKey = radioButtonName;
     });
 }
 
-function buttonAdditionalQuestionGenerator(popUpID, textID)
+function buttonAdditionalQuestionGenerator()
 {
-    $("#ButtonAdditionalQuestionCancel").click(function()
+    $("#PopUpGeneral #ButtonCancel").click(function()
     {
-        $(popUpID).css("display", "none");
+        setRadioButtonGeneral(stringKey, "false");
+        $("#PopUpGeneral").css("display", "none");
     });
 
-    $("#ButtonAdditionalQuestionDone").click(function()
+    $("#ButtonGeneral #ButtonDone").click(function()
     {
         var booleanPushState = true;
         var stringTextKey = stringKey + stringAdditionalQuestionSuffix;
@@ -359,6 +412,10 @@ function setTextPDF(stringID, stringValue)
         {
             setLineGeneral(stringID, stringValue);
         }
+        else if ($(stringJQueryID).is("td") == true)
+        {
+            setTextGeneral(stringID, stringValue);
+        }
         else
         {
             setBoxGeneral(stringID, stringValue);
@@ -550,6 +607,10 @@ function getTextPDF(stringID)
         {
             stringContent += getBoxGeneral(stringJQueryID);
         }
+    }
+    else if (stringJQueryID.is("td") == true)
+    {
+        stringContent = $(stringJQueryID).text();
     }
     else
     {

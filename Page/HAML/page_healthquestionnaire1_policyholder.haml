@@ -23,34 +23,8 @@
                 
                 // GENERATOR
                 
-                additionalQuestionGenerator("RadioButtonPolicyHolderWeightChange");
-                additionalQuestionGenerator("RadioButtonPolicyHolderSmoker");
-                additionalQuestionGenerator("RadioButtonPolicyHolderJunkie");
-                additionalQuestionGenerator("RadioButtonPolicyHolderExtremeSport");
-                additionalQuestionGenerator("RadioButtonPolicyHolderAbroad");
-                additionalQuestionGenerator("RadioButtonPolicyHolderHealthDissorder");
-                additionalQuestionGenerator("RadioButtonPolicyHolderVision");
-                additionalQuestionGenerator("RadioButtonPolicyHolderENT");
-                additionalQuestionGenerator("RadioButtonPolicyHolderRespiratory");
-                additionalQuestionGenerator("RadioButtonPolicyHolderCardiac");
-                additionalQuestionGenerator("RadioButtonPolicyHolderDigest");
-                additionalQuestionGenerator("RadioButtonPolicyHolderNerve");
-                additionalQuestionGenerator("RadioButtonPolicyHolderLiver");
-                additionalQuestionGenerator("RadioButtonPolicyHolderReproduction");
-                additionalQuestionGenerator("RadioButtonPolicyHolderMotion");
-                additionalQuestionGenerator("RadioButtonPolicyHolderBlood");
-                additionalQuestionGenerator("RadioButtonPolicyHolderImmune");
-                additionalQuestionGenerator("RadioButtonPolicyHolderCancer");
-                additionalQuestionGenerator("RadioButtonPolicyHolderOtherIllness");
-                additionalQuestionGenerator("RadioButtonPolicyHolderSPAJProposal");
-                additionalQuestionGenerator("RadioButtonPolicyHolderClaim");
-                additionalQuestionGenerator("RadioButtonPolicyHolderDiagnostic");
-                additionalQuestionGenerator("RadioButtonPolicyHolderPregnant");
-                additionalQuestionGenerator("RadioButtonPolicyHolderPregnancy");
-                additionalQuestionGenerator("RadioButtonPolicyHolderPregnancyIllness");
-                additionalQuestionGenerator("RadioButtonPolicyHolderFemaleAbnormality");
-                additionalQuestionGenerator("RadioButtonPolicyHolderPapSmear");
-                additionalQuestionGenerator("RadioButtonPolicyHolderHeartDissorder");
+                additionalQuestionGenerator();
+                
                 
                 // BUTTON
     
@@ -110,7 +84,7 @@
                                         %label.Suffix.Single{ :for => "Weight" } Kg
                             %li
                                 %div.Container
-                                    %label#LabelWeightChange.Item{ :for => "WeightChangeYes" }Adakah berat badan Anda mengalami penurunan atau kenaikan drastis (> 10% dalam 1 (satu) bulan) dalam 6 (enam) bulan terakhir?
+                                    %label#LabelWeightChange.Item{ :for => "RadioButtonWeightChangeYes" }Adakah berat badan Anda mengalami penurunan atau kenaikan drastis (> 10% dalam 1 (satu) bulan) dalam 6 (enam) bulan terakhir?
                                     %div.RadioButton.Item
                                         %input#RadioButtonPolicyHolderWeightChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderWeightChange", :value => "true" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderWeightChangeYes" } Ya
@@ -120,46 +94,46 @@
                     %hr
                     %li
                         %div.Container
-                            %label#LabelSmoker.Item{ :for => "SmokerYes" }
+                            %label#LabelPolicyHolderSmoker.Item{ :for => "RadioButtonPolicyHolderSmokerYes" }
                                 Apakah Anda merokok dalam 12 (dua belas) bulan terakhir (termasuk rokok elektronik atau produk tembakau lainnya)?
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderSmokerYes{ :type => "radio", :name => "RadioButtonPolicyHolderSmoker", :value => "true" }
+                                %input#RadioButtonPolicyHolderSmokerYes{ :type => "radio", :name => "RadioButtonPolicyHolderSmoker", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderSmokerYes" } Ya
                                 %div.Separator
-                                %input#RadioButtonPolicyHolderSmokerNo{ :type => "radio", :name => "RadioButtonPolicyHolderSmoker", :value => "false" }
+                                %input#RadioButtonPolicyHolderSmokerNo{ :type => "radio", :name => "RadioButtonPolicyHolderSmoker", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderSmokerNo" } Tidak
                     %hr
                     %li
                         %div.Container
-                            %label#LabelJunkie.Item{ :for => "JunkieYes" }
+                            %label#LabelJunkie.Item{ :for => "RadioButtonJunkieYes" }
                                 Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderJunkieYes{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "true" }
+                                %input#RadioButtonPolicyHolderJunkieYes{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderJunkieYes" } Ya
                                 %div.Separator | 
-                                %input#RadioButtonPolicyHolderJunkieNo{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "false" }
+                                %input#RadioButtonPolicyHolderJunkieNo{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderJunkieNo" } Tidak
                     %hr
                     %li
                         %div.Container
-                            %label#LabelExtremeSport.Item{ :for => "ExtremeSportYes" }
+                            %label#LabelExtremeSport.Item{ :for => "RadioButtonExtremeSportYes" }
                                 Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))? (Jika jawaban “Ya” mohon melengkapi kuesioner yang sesuai hobi/kegiatan/pekerjaan tersebut dan dilampirkan bersama SPAJ ini).
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderExtremeSportYes{ :type => "radio", :name => "RadioButtonPolicyHolderExtremeSport", :value => "true" }
+                                %input#RadioButtonPolicyHolderExtremeSportYes{ :type => "radio", :name => "RadioButtonPolicyHolderExtremeSport", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderExtremeSportYes" } Ya
                                 %div.Separator | 
-                                %input#RadioButtonPolicyHolderExtremeSportNo{ :type => "radio", :name => "RadioButtonPolicyHolderExtremeSport", :value => "false" }
+                                %input#RadioButtonPolicyHolderExtremeSportNo{ :type => "radio", :name => "RadioButtonPolicyHolderExtremeSport", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderExtremeSportNo" } Tidak
                     %hr
                     %li
                         %div.Container
-                            %label#LabelAbroad.Item{ :for => "AbroadYes" }
+                            %label#LabelAbroad.Item{ :for => "RadioButtonAbroadYes" }
                                 Apakah Anda dalam 12 bulan terakhir ini/mendatang Anda pernah/memiliki rencana bepergian/tinggal di luar negeri? Jika “Ya”, jelaskan kapan waktu bepergiannya, negara tujuan, lama tinggal, serta kepentingannya.
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderAbroadYes{ :type => "radio", :name => "RadioButtonPolicyHolderAbroad", :value => "true" }
+                                %input#RadioButtonPolicyHolderAbroadYes{ :type => "radio", :name => "RadioButtonPolicyHolderAbroad", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderAbroadYes" } Ya
                                 %div.Separator | 
-                                %input#RadioButtonPolicyHolderAbroadNo{ :type => "radio", :name => "RadioButtonPolicyHolderAbroad", :value => "false" }
+                                %input#RadioButtonPolicyHolderAbroadNo{ :type => "radio", :name => "RadioButtonPolicyHolderAbroad", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderAbroadNo" } Tidak
                     %hr
                     %li
@@ -167,10 +141,10 @@
                             %label#LabelHealthDissorder.Item{ :for => "HealthDissorderYes" }
                                 Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderHealthDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHealthDissorder", :value => "true" }
+                                %input#RadioButtonPolicyHolderHealthDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHealthDissorder", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderHealthDissorderYes" } Ya
                                 %div.Separator | 
-                                %input#RadioButtonPolicyHolderHealthDissorderNo{ :type => "radio", :name => "RadioButtonPolicyHolderHealthDissorder", :value => "false" }
+                                %input#RadioButtonPolicyHolderHealthDissorderNo{ :type => "radio", :name => "RadioButtonPolicyHolderHealthDissorder", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderHealthDissorderNo" } Tidak
                         %ol
                             %li
@@ -178,130 +152,130 @@
                                     %label.Item{ :for => "VisionYes" }
                                         Gangguan fungsi/sistem penglihatan dan gangguan pada mata lainnya?
                                     %div#LabelVision.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderVisionYes{ :type => "radio", :name => "RadioButtonPolicyHolderVision", :value => "true" }
+                                        %input#RadioButtonPolicyHolderVisionYes{ :type => "radio", :name => "RadioButtonPolicyHolderVision", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderVisionYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderVisionNo{ :type => "radio", :name => "RadioButtonPolicyHolderVision", :value => "false" }
+                                        %input#RadioButtonPolicyHolderVisionNo{ :type => "radio", :name => "RadioButtonPolicyHolderVision", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderVisionNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelENT.Item{ :for => "ENTYes" }
                                         Gangguan fungsi/sistem pada Telinga, Hidung, Tenggorokan (THT)?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderENTYes{ :type => "radio", :name => "RadioButtonPolicyHolderENT", :value => "true" }
+                                        %input#RadioButtonPolicyHolderENTYes{ :type => "radio", :name => "RadioButtonPolicyHolderENT", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderENTYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderENTNo{ :type => "radio", :name => "RadioButtonPolicyHolderENT", :value => "false" }
+                                        %input#RadioButtonPolicyHolderENTNo{ :type => "radio", :name => "RadioButtonPolicyHolderENT", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderENTNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelRespiratory.Item{ :for => "RespiratoryYes" }
                                         Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true" }
+                                        %input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false" }
+                                        %input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelCardiac.Item{ :for => "CardiacYes" }
                                         Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true" }
+                                        %input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCaridac", :value => "false" }
+                                        %input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCaridac", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelDigest.Item{ :for => "DigestYes" }
                                         Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderDigestYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "true" }
+                                        %input#RadioButtonPolicyHolderDigestYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderDigestYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderDigestNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "false" }
+                                        %input#RadioButtonPolicyHolderDigestNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelNerve.Item{ :for => "NerveYes" }
                                         Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true" }
+                                        %input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderNerveYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false" }
+                                        %input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderNerveNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelLiver.Item{ :for => "LiverYes" }
                                         Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true" }
+                                        %input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderLiverYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false" }
+                                        %input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderLiverNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelReproduction.Item{ :for => "ReproductionYes" }
                                         Gangguan fungsi/sistem Kemih, Batu Ginjal, Gangguan Prostat, Gagal Ginjal, Organ Kelamin dan penyakit akibat hubungan seksual?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderReproductionYes{ :type => "radio", :name => "RadioButtonPolicyHolderReproduction", :value => "true" }
+                                        %input#RadioButtonPolicyHolderReproductionYes{ :type => "radio", :name => "RadioButtonPolicyHolderReproduction", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderReproductionYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderReproductionNo{ :type => "radio", :name => "RadioButtonPolicyHolderReproduction", :value => "false" }
+                                        %input#RadioButtonPolicyHolderReproductionNo{ :type => "radio", :name => "RadioButtonPolicyHolderReproduction", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderReproductionNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelMotion.Item{ :for => "MotionYes" }
                                         Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true" }
+                                        %input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false" }
+                                        %input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelBlood.Item{ :for => "BloodYes" }
                                         Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderBloodYes{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "true" }
+                                        %input#RadioButtonPolicyHolderBloodYes{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderBloodYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderBloodNo{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "false" }
+                                        %input#RadioButtonPolicyHolderBloodNo{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderBloodNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelImmune.Item{ :for => "ImmuneYes" }
                                         Gangguan fungsi/sistem Kekebalan Tubuh,HIV/AIDS atau segala gejala yang berhubungan dengan AIDS (demam, diare kronis, penurunan berat badan yang tidak diketahui penyebabnya), Malaria, Lupus dan lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderImmuneYes{ :type => "radio", :name => "RadioButtonPolicyHolderImmune", :value => "true" }
+                                        %input#RadioButtonPolicyHolderImmuneYes{ :type => "radio", :name => "RadioButtonPolicyHolderImmune", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderImmuneYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderImmuneNo{ :type => "radio", :name => "RadioButtonPolicyHolderImmune", :value => "false" }
+                                        %input#RadioButtonPolicyHolderImmuneNo{ :type => "radio", :name => "RadioButtonPolicyHolderImmune", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderImmuneNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelCancer.Item{ :for => "CancerYes" }
                                         Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderCancerYes{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "true" }
+                                        %input#RadioButtonPolicyHolderCancerYes{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderCancerYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderCancerNo{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "false" }
+                                        %input#RadioButtonPolicyHolderCancerNo{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderCancerNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelOtherIllness.Item{ :for => "OtherIllnessYes" }
                                         Gangguan Kesehatan lainnya yang tidak/belum dinyatakan diatas termasuk namun tidak terbatas pada kelainan bentuk tubuh, kelainan/cacat fisik, kelainan/cacat bawaan dan lainnya?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderOtherIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIllness", :value => "true" }
+                                        %input#RadioButtonPolicyHolderOtherIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIllness", :value => "true", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIllnessYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderOtherIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIllness", :value => "false" }
+                                        %input#RadioButtonPolicyHolderOtherIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIllness", :value => "false", "data-popup-type" => "health" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIllnessNo" } Tidak
                     %hr
                     %li
@@ -309,10 +283,10 @@
                             %label#LabelSPAJProposal.Item{ :for => "SPAJProposalYes" }
                                 Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderSPAJProposalYes{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", :value => "true" }
+                                %input#RadioButtonPolicyHolderSPAJProposalYes{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", :value => "true", "data-popup-type" => "spajproposal" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderSPAJProposalYes" } Ya
                                 %div.Separator | 
-                                %input#RadioButtonPolicyHolderSPAJProposalNo{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal" }
+                                %input#RadioButtonPolicyHolderSPAJProposalNo{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", "data-popup-type" => "spajproposal" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderSPAJProposalNo" } Tidak
                     %hr
                     %li
@@ -320,10 +294,10 @@
                             %label#LabelClaim.Item{ :for => "ClaimYes" }
                                 Apakah Anda pernah mengajukan klaim ke perusahaan Asuransi Jiwa? Jika “Ya, mohon jelaskan alasannya.
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderClaimYes{ :type => "radio", :name => "RadioButtonPolicyHolderClaim", :value => "true" }
+                                %input#RadioButtonPolicyHolderClaimYes{ :type => "radio", :name => "RadioButtonPolicyHolderClaim", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderClaimYes" } Ya
                                 %div.Separator | 
-                                %input#RadioButtonPolicyHolderClaimNo{ :type => "radio", :name => "RadioButtonPolicyHolderClaim", :value => "false" }
+                                %input#RadioButtonPolicyHolderClaimNo{ :type => "radio", :name => "RadioButtonPolicyHolderClaim", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderClaimNo" } Tidak
                     %hr
                     %li
@@ -331,11 +305,11 @@
                             %label#LabelDiagnostic.Item{ :for => "DiagnosticYes" }
                                 Apakah Anda pernah mendapatkan atau bermaksud menjalani pemeriksaan kesehatan diagnostik, seperti Sinar-X, USG, CT-scan, MRI, EKG, Treadmill, pemeriksaan darah, pemeriksaan urin, dan lain-lain?
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderDiagnosticYes{ :type => "radio", :name => "RadioButtonPolicyHolderDiagnostic", :value => "true" }
+                                %input#RadioButtonPolicyHolderDiagnosticYes{ :type => "radio", :name => "RadioButtonPolicyHolderDiagnostic", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderDiagnosticYes" } Ya
                                 %div.Separator | 
                                 %input#RadioButtonPolicyHolderDiagnosticNo{ :type => "radio", :name => "RadioButtonPolicyHolderDiagnostic" }
-                                %label.RadioButton{ :for => "RadioButtonPolicyHolderDiagnosticNo", :value => "false" } Tidak
+                                %label.RadioButton{ :for => "RadioButtonPolicyHolderDiagnosticNo", :value => "false", "data-popup-type" => "general", "data-popup-type" => "general" } Tidak
                     %hr
                     %li
                         %label.PositionerLeft{ :for => "PregnancyYes" } Khusus Calon Tertanggung anak-anak (usia ≤ 5 (lima) tahun): 
@@ -365,40 +339,40 @@
                                     %label#LabelPregnant.Item{ :for => "Pregnant" }
                                         Apakah Anda sedang hamil?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderPregnantStateYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "true" }
+                                        %input#RadioButtonPolicyHolderPregnantStateYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "true", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderPregnantStateYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderPregnantStateNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "false" }
+                                        %input#RadioButtonPolicyHolderPregnantStateNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "false", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderPregnantStateNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelPregnancyIllness.Item{ :for => "PregnancyIllnessYes" }
                                         Adakah komplikasi pada kehamilan termasuk persalinan secara sectio caesaria yang dilakukan karena menderita suatu penyakit (Darah Tinggi, Hepatitis, Diabetes dan lain-lain)?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderPregnancyIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "true" }
+                                        %input#RadioButtonPolicyHolderPregnancyIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "true", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyIllnessYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderPregnancyIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "false" }
+                                        %input#RadioButtonPolicyHolderPregnancyIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "false", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyIllnessNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelFemaleAbnormality.Item{ :for => "FemaleAbnormalityYes" }
                                         Apakah Anda mempunyai kelainan payudara/organ kewanitaan lainnya termasuk haid yang tidak teratur? Jika “Ya” jelaskan nama kelainan atau komplikasi dan nama dokter yang merawat pada kolom (Siapa, Apa, Kapan, Dimana, Pengobatan yang dilakukan, Bagaimana).
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderFemaleAbnormalityYes{ :type => "radio", :name => "RadioButtonPolicyHolderFemaleAbnormality", :value => "true" }
+                                        %input#RadioButtonPolicyHolderFemaleAbnormalityYes{ :type => "radio", :name => "RadioButtonPolicyHolderFemaleAbnormality", :value => "true", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderFemaleAbnormalityYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderFemaleAbnormalityNo{ :type => "radio", :name => "RadioButtonPolicyHolderFemaleAbnormality", :value => "false" }
+                                        %input#RadioButtonPolicyHolderFemaleAbnormalityNo{ :type => "radio", :name => "RadioButtonPolicyHolderFemaleAbnormality", :value => "false", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderFemaleAbnormalityNo" } Tidak
                             %li
                                 %div.Container
                                     %label#LabelPapSmear.Item{ :for => "PapSmearYes" }
                                         Apakah Anda pernah melakukan pemeriksaan Pap Smear dalam 1 (satu) tahun terakhir? Jika “Ya” jelaskan bagaimana hasilnya dan kapan dilakukan pemeriksaan tersebut?
                                     %div.RadioButton.Item
-                                        %input#RadioButtonPolicyHolderPapSmearYes{ :type => "radio", :name => "RadioButtonPolicyHolderPapSmear", :value => "true" }
+                                        %input#RadioButtonPolicyHolderPapSmearYes{ :type => "radio", :name => "RadioButtonPolicyHolderPapSmear", :value => "true", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderPapSmearYes" } Ya
                                         %div.Separator | 
-                                        %input#RadioButtonPolicyHolderPapSmearNo{ :type => "radio", :name => "RadioButtonPolicyHolderPapSmear", :value => "false" }
+                                        %input#RadioButtonPolicyHolderPapSmearNo{ :type => "radio", :name => "RadioButtonPolicyHolderPapSmear", :value => "false", "data-popup-type" => "general" }
                                         %label.RadioButton{ :for => "RadioButtonPolicyHolderPapSmearNo" } Tidak
                     %hr
                     %li
@@ -406,11 +380,15 @@
                             %label#LabelHeartDissorder.Item{ :for => "HeartDissorderYes" }
                                 Apakah ada anggota keluarga Anda (orang tua, anak, saudara kandung) yang menderita/dinyatakan terdiagnosa mengidap kelainan Jantung Koroner, Stroke, Kencing Manis (Diabetes Melitus), Kanker atau penyakit keturunan lainnya? (Jika “Ya” mohon agar dijelaskan pada kolom dibawah ini)
                             %div.RadioButton.Item
-                                %input#RadioButtonPolicyHolderHeartDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHeartDissorder", :value => "true" }
+                                %input#RadioButtonPolicyHolderHeartDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHeartDissorder", :value => "true", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderYes" } Ya
                                 %div.Separator | 
-                                %input#RadioButtonPolicyHolderHeartDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHeartDissorder", :value => "false" }
+                                %input#RadioButtonPolicyHolderHeartDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHeartDissorder", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderNo" } Tidak
                     %hr
-            %section#PopUpAdditionalQuestion
-                = Haml::Engine.new(File.read("include_healthquestionnaire_popup.haml")).render
+            %section#PopUpGeneral
+                = Haml::Engine.new(File.read("popup_healthquestionnaire_general.haml")).render
+            %section#PopUpHealth
+                = Haml::Engine.new(File.read("popup_healthquestionnaire_health.haml")).render
+            %section#PopUpSPAJProposal
+                = Haml::Engine.new(File.read("popup_healthquestionnaire_spajproposal.haml")).render
