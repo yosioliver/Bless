@@ -1,0 +1,21 @@
+%form#FormAdditionalQuestion
+    %header
+        %input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+        %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+        %h2 Pertanyaan Kesehatan
+
+    %fieldset
+        %label#LabelCompanyName.Wrap{ :for => "TextCompanyName" } Nama Perusahaan
+        %input#TextCompanyName.Full.Single{ :type => "text" }
+        
+        %label#LabelPolicyNumber.Wrap{ :for => "TextPolicyNumber" } Nomor Polix
+        %input#TextPolicyNumber.Full.Single{ :type => "text" }
+        
+        %label#LabelDatePubliched.Wrap{ :for => "DatePublished" } Tanggal Diterbitkan
+        %input#DatePublished.Full.Single{ :type => "text" }
+        
+        %label#LabelBasicSumAssured.Wrap{ :for => "TextBasicSumAssured" } Uang Pertanggungan
+        %input#TextBasicSumAssured.Full.Single{ :type => "text" }
+        
+        %label#LabelDecision.Wrap{ :for => "TextDecision" } Hasil Keputusan
+        %input#TextDecision.Full.Multi{ :type => "text" }
