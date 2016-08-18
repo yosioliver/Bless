@@ -53,7 +53,8 @@
           
           // BUTTON
       
-          buttonAdditionalQuestionGenerator("#PopUpAdditionalQuestion", "#TextAdditionalQuestion")
+          buttonPopUpGeneralGenerator();
+          buttonPopUpHealthGenerator();
           
           $("#ButtonXML").click(function()
           {
@@ -93,18 +94,18 @@
             <ol>
               <li>
                 <div class='Container'>
-                  <label class='Item' for='Height'>Tinggi Badan</label>
+                  <label class='Item' for='TextPolicyHolderHeight'>Tinggi Badan</label>
                   <div class='Item'>
-                    <input class='Short Single' id='Height' type='text'>
-                    <label class='Suffix Single' for='Height'>Cm</label>
+                    <input class='Short Single' id='TextPolicyHolderHeight' type='text'>
+                    <label class='Suffix Single' for='TextPolicyHolderHeight'>Cm</label>
                   </div>
                 </div>
               </li>
               <li>
                 <div class='Container'>
-                  <label class='Item' for='Weight'>Berat Badan</label>
+                  <label class='Item' for='TextPolicyHolderWeight'>Berat Badan</label>
                   <div class='Item'>
-                    <input class='Short Single' id='Weight' type='text'>
+                    <input class='Short Single' id='TextPolicyHolderWeight' type='text'>
                     <label class='Suffix Single' for='Weight'>Kg</label>
                   </div>
                 </div>
@@ -141,7 +142,7 @@
           <hr>
           <li>
             <div class='Container'>
-              <label class='Item' for='RadioButtonJunkieYes' id='LabelJunkie'>
+              <label class='Item' for='RadioButtonPolicyHolderJunkieYes' id='LabelJunkie'>
                 Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
               </label>
               <div class='RadioButton Item'>
@@ -156,7 +157,7 @@
           <hr>
           <li>
             <div class='Container'>
-              <label class='Item' for='RadioButtonExtremeSportYes' id='LabelExtremeSport'>
+              <label class='Item' for='RadioButtonPolicyHolderExtremeSportYes' id='LabelExtremeSport'>
                 Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))? (Jika jawaban “Ya” mohon melengkapi kuesioner yang sesuai hobi/kegiatan/pekerjaan tersebut dan dilampirkan bersama SPAJ ini).
               </label>
               <div class='RadioButton Item'>
@@ -171,7 +172,7 @@
           <hr>
           <li>
             <div class='Container'>
-              <label class='Item' for='RadioButtonAbroadYes' id='LabelAbroad'>
+              <label class='Item' for='RadioButtonPolicyHolderAbroadYes' id='LabelAbroad'>
                 Apakah Anda dalam 12 bulan terakhir ini/mendatang Anda pernah/memiliki rencana bepergian/tinggal di luar negeri? Jika “Ya”, jelaskan kapan waktu bepergiannya, negara tujuan, lama tinggal, serta kepentingannya.
               </label>
               <div class='RadioButton Item'>
@@ -186,7 +187,7 @@
           <hr>
           <li>
             <div class='Container'>
-              <label class='Item' for='HealthDissorderYes' id='LabelHealthDissorder'>
+              <label class='Item' for='RadioButtonPolicyHolderHealthDissorderYes' id='LabelHealthDissorder'>
                 Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
               </label>
               <div class='RadioButton Item'>
@@ -200,7 +201,7 @@
             <ol>
               <li>
                 <div class='Container'>
-                  <label class='Item' for='VisionYes'>
+                  <label class='Item' for='RadioButtonPolicyHolderVisionYes'>
                     Gangguan fungsi/sistem penglihatan dan gangguan pada mata lainnya?
                   </label>
                   <div class='RadioButton Item' id='LabelVision'>
@@ -214,7 +215,7 @@
               </li>
               <li>
                 <div class='Container'>
-                  <label class='Item' for='ENTYes' id='LabelENT'>
+                  <label class='Item' for='RadioButtonPolicyHolderENTYes' id='LabelENT'>
                     Gangguan fungsi/sistem pada Telinga, Hidung, Tenggorokan (THT)?
                   </label>
                   <div class='RadioButton Item'>
@@ -228,7 +229,7 @@
               </li>
               <li>
                 <div class='Container'>
-                  <label class='Item' for='RespiratoryYes' id='LabelRespiratory'>
+                  <label class='Item' for='RadioButtonPolicyHolderRespiratoryYes' id='LabelRespiratory'>
                     Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
                   </label>
                   <div class='RadioButton Item'>
@@ -242,7 +243,7 @@
               </li>
               <li>
                 <div class='Container'>
-                  <label class='Item' for='CardiacYes' id='LabelCardiac'>
+                  <label class='Item' for='RadioButtonPolicyHolderCardiacYes' id='LabelCardiac'>
                     Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
                   </label>
                   <div class='RadioButton Item'>
