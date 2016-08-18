@@ -107,17 +107,24 @@ function onError (ret)
 
 function readfromDB()
 {
+    alert("read from db");
     
+    var callInfo = {};
+    callInfo.data = {};
+    callInfo.data.SPAJAnswers = {};
+    callInfo.data.SPAJAnswers.columns = 'elementID,Value,SPAJID,CustomerID';
+    callInfo.data.SPAJAnswers.where = '';
+    calliOSFunction('readfromDB:',onSuccess,onError, callInfo);
 }
 
 function savetoDB() 
 {
-    alert("b");
+    alert("masuk save to db");
+    
     var objectContent = setToDatabase(stringPageTypeForm);
     var jsonToDatabase = JSONGenerator(objectContent);
 
-    calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
-    alert("c")
+    calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);    
 }
 
 function PrintData()
@@ -127,6 +134,8 @@ function PrintData()
 
 function AutoPopulate(jsonObject)
 {
+    alert("masuk auto populate");
+    
     var objectContent = JSON.parse(jsonObject);
     var stringType = Object.keys(objectContent.result)[0];
 
@@ -143,9 +152,4 @@ function AutoPopulate(jsonObject)
 function ReadData()
 {
     readfromDB();
-}
-
-function test2()
-{
-    alert("2");
 }

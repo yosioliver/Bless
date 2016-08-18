@@ -35,12 +35,12 @@
                 
                 $("#read").click(function()
                 {
-                    readFromDB();
+                    
                 });
                 
                 $("#save").click(function()
                 {
-                    savetoDB();
+                    
                 });
                 
                 $("#ButtonXML").click(function()
@@ -59,9 +59,9 @@
         %header
             %h1
                 / Data Calon Pemegang Polis
-                %input#read.ButtonPrimary{ :type => "button" } Read                
-                %input#save.ButtonPrimary{ :type => "button" } Write
-                %input#ButtonXML.ButtonPrimary{ :type => "button" } XML
+                %input#read.ButtonPrimary{ :type => "button", :style => "display: none;", :value => "Read" }       
+                %input#save.ButtonPrimary{ :type => "button", :style => "display: none;", :value => "Write" }
+                %input#ButtonXML.ButtonPrimary{ :type => "button", :style => "display: none;", :value => "XML" } 
 
         / MAIN
 
@@ -292,13 +292,13 @@
                 %input#TextPolicyHolderRevenue.Long.Single.PositionerLeft{ :type => "text" }
                 %br
                 
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeIDR" } Penghasilan Lainnya
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } Penghasilan Lainnya
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "idr" }
-                    %label.RadioButton{ :for => "RadioButtonHolderOtherIncomeIDR" } RP
+                    %input#RadioButtonPolicyHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "idr" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } RP
                     %div.Separator
-                    %input#RadioButtonHolderOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "usd" }
-                    %label.RadioButton{ :for => "RadioButtonHolderOtherIncomeUSD" } USD                
+                    %input#RadioButtonPolicyHolderOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "usd" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIncomeUSD" } USD                
                 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Penghasilan / Tahun
                 %input#TextPolicyHolderOtherIncome.Long.Single.PositionerLeft{ :type => "text" }
                 %br

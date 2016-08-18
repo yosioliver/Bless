@@ -87,7 +87,7 @@ function onSuccess (ret)
 
         if (stringType == "readFromDB")
         {
-            getFromDatabase(objectContent.result.readFromDB, stringPageTypeForm);
+            getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
         }
         else
         {
@@ -107,6 +107,8 @@ function onError (ret)
 
 function readfromDB()
 {
+    alert("read from db");
+    
     var callInfo = {};
     callInfo.data = {};
     callInfo.data.SPAJAnswers = {};
@@ -117,12 +119,12 @@ function readfromDB()
 
 function savetoDB() 
 {
-    alert("b");
-    var objectContent = setToDatabase(stringPageTypeForm);
+    alert("masuk save to db");
+    
+    var objectContent = setToDatabase(stringPageTypeCurrent);
     var jsonToDatabase = JSONGenerator(objectContent);
 
-    calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
-    alert("c")
+    calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);    
 }
 
 function PrintData()
@@ -132,12 +134,14 @@ function PrintData()
 
 function AutoPopulate(jsonObject)
 {
+    alert("masuk auto populate");
+    
     var objectContent = JSON.parse(jsonObject);
     var stringType = Object.keys(objectContent.result)[0];
 
     if (stringType == "readFromDB")
     {
-        getFromDatabase(objectContent.result.readFromDB, stringPageTypeForm);
+        getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
     }
     else
     {
