@@ -63,12 +63,12 @@
           
           // BUTTON
           
-          $("#ButtonRead").click(function()
+          $("#read").click(function()
           {
-      
+              readFromDB();
           });
           
-          $("#ButtonWrite").click(function()
+          $("#save").click(function()
           {
               savetoDB();
           });
@@ -86,8 +86,8 @@
     <header>
       <h1>
         <!-- Data Calon Pemegang Polis -->
-        <input class='ButtonPrimary' id='ButtonRead' type='button'>Read</input>
-        <input class='ButtonPrimary' id='ButtonWrite' type='button'>Write</input>
+        <input class='ButtonPrimary' id='read' type='button'>Read</input>
+        <input class='ButtonPrimary' id='save' type='button'>Write</input>
         <input class='ButtonPrimary' id='ButtonXML' type='button'>XML</input>
       </h1>
     </header>

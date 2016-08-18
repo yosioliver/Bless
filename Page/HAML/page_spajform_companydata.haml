@@ -88,3 +88,93 @@
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanySector" } Bidang Usaha
                     %input#TextPolicyHolderCompanySector.Full.Single.Item{ :type => "text" }
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyAddress" } Alamat Perusahaan (sesuai SKDP)
+                    %input#TextPolicyHolderCompanyAddress.Full.Single.Item{ :type => "text" }
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" } Kota
+                    %input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
+                    %input#TextPolicyHolderPostalCode.Medium.Single.Item{ :type => "text" }
+                    
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyAsset1" } Aset Perusahaan(Rp)
+                %div.RadioButton.PositionerLeft
+                    %input#RadioButtonPolicyHolderCompanyAsset1.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyAsset", :value => "100juta" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyAsset1" } < 100 Juta
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyAsset2.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyAsset", :value => "100juta1miliar"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyAsset2" } 100 Juta - 1 Miliar
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyAsset3.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyAsset", :value => "1miliar10miliar" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyAsset3" } >1 Miliar - 10 Miliar
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyAsset4.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyAsset", :value => "10miliar100miliar" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyAsset4" } >10 Miliar - 100 Miliar
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyAsset5.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyAsset", :value => "100miliarlebih" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyAsset5" } >100 Miliar
+                %br
+                
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRevenue1" } Jumlah Penghasilan(Rp)
+                %div.RadioButton.PositionerLeft
+                    %input#RadioButtonPolicyHolderCompanyRevenue1.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRevenue", :value => "100juta" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRevenue1" } < 100 Juta
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyRevenue2.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRevenue", :value => "100juta1500juta"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRevenue2" } 100 Juta - 500 Juta
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyRevenue3.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRevenue", :value => "500juta1miliar" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRevenue3" } > 500 Juta1 - 1 Miliar
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyRevenue4.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRevenue", :value => "1miliar10miliar" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRevenue4" } > 1 Miliar - 10 Miliar
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderCompanyRevenue5.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRevenue", :value => "10miliarlebih" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRevenue5" } > 10 Miliar
+                %br
+                
+                %div.RadioButton.PositionerLeft Pihak yang ditunjuk untuk menerima kuasa dan berwenang untuk bertindak untuk dan atas nama perusahaan
+                %br
+                
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyAddress" } Nama lengkap (sesuai dengan identitas)
+                    %input#TextPolicyHolderCompanyAddress.Full.Single.Item{ :type => "text" }
+                %div.ContainerFit
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyAddress" } Jabatan / Pangkat / Golongan
+                    %input#TextPolicyHolderCompanyAddress.Full.Single.Item{ :type => "text" }
+                    
+                %label.Medium.Single.PositionerLeft{ :for =>"TextPolicyHolderCIN" } Nomor Identitas Diri
+                %input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text" }
+                
+                %input#TextPolicyHolderCIN.Medium.Single.PositionerRight{ :type => "text" }
+                %label.Medium.Single.PositionerRight{ :for =>"TextPolicyHolderCIN" } Masa Berlaku
+                %br
+                
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHubunganDenganCalonTertanggung" } Hubungan dengan Calon tertanggung
+                %div.RadioButton.PositionerLeft
+                    %input#RadioButtonPolicyHolderHubunganKaryawan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTertanggungRelationship", :value => "100juta" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderHubunganKaryawan" } Perusahaan / Karyawan
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderHubunganLainnya.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTertanggungRelationship", :value => "100juta1miliar"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderHubunganLainnya" } Lainnya
+                    %input#TextPolicyHolderCIN.Medium.Single.PositionerRight{ :type => "text" }
+                %br
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHubunganDenganCalonTertanggung" } Tujuan Pembelian Asuransi
+                %div.RadioButton.PositionerLeft
+                    %input#RadioButtonPolicyHolderTujuanTabungan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanTabungan" } Tabungan
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderTujuanProteksi.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanProteksi" } Proteksi
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderTujuanInvestasi.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanInvestasi" } Investasi
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderTujuanPendidikan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanPendidikan" } Pendidikan
+                    %div.Separator
+                    %input#RadioButtonPolicyHolderTujuanLainnya.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanLainnya" } Lainnya
+                    %input#TextPolicyHolderCIN.Medium.Single.PositionerRight{ :type => "text" }
+                    
