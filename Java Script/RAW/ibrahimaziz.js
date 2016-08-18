@@ -106,7 +106,7 @@ function additionalQuestionGenerator()
                     $("#LabelDetail").empty();
                 }
 
-                stringKey = $(this).attr("name");
+                stringRadioButtonName = $(this).attr("name");
             });
         }
         else if ($(this).data("popup-type") == stringPopUpTypeHealth)
@@ -123,7 +123,7 @@ function additionalQuestionGenerator()
                     $("#PopUpHealth").css("display", "none");
                 }
                 
-                stringKey = $(this).attr("name");
+                stringRadioButtonName = $(this).attr("name");
             });
         }
         else if ($(this).data("popup-type") == stringPopUpTypeSPAJProposal)
@@ -142,7 +142,7 @@ function additionalQuestionGenerator()
                     // $("#LabelAdditionalQuestion").empty();
                 }
 
-                stringKey = $(this).attr("name");
+                stringRadioButtonName = $(this).attr("name");
             });
         }
         else
@@ -163,18 +163,18 @@ function buttonAdditionalQuestionGenerator()
     $("#ButtonGeneral #ButtonDone").click(function()
     {
         var booleanPushState = true;
-        var stringTextKey = stringKey + stringAdditionalQuestionSuffix;
-        var stringTextValue = $(textID).val();
+        var stringKey = string;
+        var stringValue = $(textID).val();
 
-        if (validateTextGeneral(textID) == true)
+        if (validateTextGeneral("#TextDetail") == true)
         {
             if (arrayAdditionalQuestion.length > 0)
             {
                 for (var i = 0; i < arrayAdditionalQuestion.length; i++)
                 {
-                    if (arrayAdditionalQuestion[i].key == stringTextKey)
+                    if (arrayAdditionalQuestion[i].elementID == stringTextKey)
                     {
-                        arrayAdditionalQuestion[i].value = stringTextValue;
+                        arrayAdditionalQuestion[i].Value = stringTextValue;
                         booleanPushState = false;
                     }
                     else
