@@ -52,16 +52,7 @@
 
     / BODY
 
-    %body#Main
-
-        / HEADER
-        
-        %header
-            %h1
-                / Data Calon Pemegang Polis
-                %input#read.ButtonPrimary{ :type => "button", :style => "display: none;", :value => "Read" }       
-                %input#save.ButtonPrimary{ :type => "button", :style => "display: none;", :value => "Write" }
-                %input#ButtonXML.ButtonPrimary{ :type => "button", :style => "display: none;", :value => "XML" } 
+    %body#Main     
 
         / MAIN
 
@@ -90,7 +81,7 @@
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderPlace" } Tempat lahir
                     %input#TextPolicyHolderPlace.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderBirthday" } Tanggal lahir
-                    %input#PolicyHolderBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
+                    %input#DatePolicyHolderBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderAge" } Umur
                     %input#DatePolicyHolderAge.Medium.Single.Item{ :type => "text" }
                 %div.ContainerLeft
