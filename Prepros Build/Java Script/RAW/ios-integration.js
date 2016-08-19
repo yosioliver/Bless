@@ -87,7 +87,7 @@ function onSuccess (ret)
 
         if (stringType == "readFromDB")
         {
-            getFromDatabase(objectContent.result.readFromDB, stringPageTypeForm);
+            getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
         }
         else
         {
@@ -119,11 +119,21 @@ function readfromDB()
 
 function savetoDB() 
 {
-    alert("masuk save to db");
+    var objectContent;
     
-    var objectContent = setToDatabase(stringPageTypeForm);
+    if (arrayHealthQuestionnaire.length > 0)
+    {
+        alert("no getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
+        objectContent = arrayHealthQuestionnaire;
+    }
+    else
+    {
+        alert("with getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
+        objectContent = setToDatabase(stringPageTypeCurrent);
+    }
+    
     var jsonToDatabase = JSONGenerator(objectContent);
-
+    
     calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);    
 }
 
@@ -141,7 +151,7 @@ function AutoPopulate(jsonObject)
 
     if (stringType == "readFromDB")
     {
-        getFromDatabase(objectContent.result.readFromDB, stringPageTypeForm);
+        getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
     }
     else
     {
