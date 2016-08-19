@@ -31,11 +31,14 @@
     <link href='../../Style/CSS/spajpdf-theme-turqoise-svg.css' id='csstheme' rel='stylesheet' type='text/css'>
     <!-- %link{ :id => "cssresponsive", :href => "#{urlCSS}#{urlCSSSectionPrefix}-responsive-general.css", :rel => "stylesheet", :type => "text/css" } -->
     <!-- JAVA SCRIPT -->
-    <script src='../../Java Script/Minimized/jquery-1.11.1.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/jquery-migrate-1.2.1.min.js' type='text/javascript'></script>
-    <!-- %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery.mobile-1.4.5.min.js" } -->
-    <script src='../../Java Script/Minimized/ibrahimaziz.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/ios-integration.min.js' type='text/javascript'></script>
+    <script src='../../JavaScript/Minimized/jquery.mobile-1.4.5.min.js' type='text/javascript'></script>
+    <script src='../../JavaScript/Minimized/jquery-1.11.1.min.js' type='text/javascript'></script>
+    <!-- %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery-migrate-1.2.1.min.js" } -->
+    <script src='../../JavaScript/Minimized/ibrahimaziz.min.js' type='text/javascript'></script>
+    <script>
+      var stringPageTypeCurrent = stringPageTypePDF;
+    </script>
+    <script src='../../JavaScript/Minimized/ios-integration.min.js' type='text/javascript'></script>
     <title>BCA Life - BLESS, SPAJ PDF</title>
     <!-- JQUERY -->
     <script>
@@ -251,10 +254,10 @@
           labelGenerator("#LabelPremiPaymentCreditCardAccount", 9)  
           labelGenerator("#LabelPremiPaymentOtherAccount", 5)
           lineGenerator("#LinePremiPaymentOtherAccount", 9);
-          boxGenerator("#TextPremiDescriptionCreditCardHolderName", 27, boxTypeWithoutLabel, null);
-          boxGenerator("#TextPremiDescriptionDebitCreditNumber", 27, boxTypeWithoutLabel, null);
-          boxGenerator("#TextPremiDescriptionBankName", 27, boxTypeWithoutLabel, null);
-          boxGenerator("#TextPremiDescriptionBankBranch", 27, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPremiPaymentDescriptionCreditCardHolderName", 27, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPremiPaymentDescriptionDebitCreditNumber", 27, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPremiPaymentDescriptionBankName", 27, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPremiPaymentDescriptionBankBranch", 27, boxTypeWithoutLabel, null);
       
           // SECTION HEALTH
           
@@ -287,61 +290,7 @@
           lineGenerator("#LineSignedPlace", 8);
           lineGenerator("#LineSignedDateDay", 2);
           lineGenerator("#LineSignedDateMonth", 2);
-          lineGenerator("#LineSignedDateYear", 4);
-      
-          // SET TEXT
-      
-          //boxSetter("TextSPAJNumber", "Andy Phan", boxTypeStraight);
-          //boxSetter("Active", "13-08-2016", boxTypeDate);
-          //boxSetter("PolicyHolderOfficeTelephone", "021-7358326", boxTypeTelephone);                
-          
-          // GET TEXT
-      
-          //alert(boxGetter("TextSPAJNumber", 11));
-          
-          // BUTTON
-          
-          
-          
-          $("#ButtonRead").click(function()
-          {                                                            
-              // var jsonPolicyHolder = '{"result":{ "readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"YOSI OLIVER"},{"elementID":"RadioButtonPolicyHolderUSACitizen","Value":"yes"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"},{"elementID":"TextPolicyHolderOfficeTelephone","Value":"021-1234567"},{"elementID":"TextPolicyHolderPlace","Value":"ZIMBABWE"}]}}'
-              
-              // var objectContent = JSON.parse(jsonPolicyHolder);                                      
-      
-              // theTypeIs = Object.keys(objectContent.result)[0];
-              
-              // if (theTypeIs == 'readFromDB')
-              // {
-                  // getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);    
-              // }
-              // else
-              // {
-                  // alert("No data found.");                    
-              // }
-          });
-          
-          $("#ButtonAutoPopulate").click(function()
-          {
-              
-          });
-          
-           $("#ButtonWrite").click(function()
-          {
-              // alert(getTextForm("TextPolicyHolderFullName")); 
-              // alert(getRadioButtonGeneral("RadioButtonPolicyHolderAmerican")); 
-              // alert(getSelectForm("SelectPolicyHolderReligion"));
-              // alert(getDateForm("DatePolicyHolderActive"));
-              
-              
-              
-              // checkbox and date in progress.
-          });
-          
-          $("#ButtonXML").click(function()
-          {
-              
-          });                
+          lineGenerator("#LineSignedDateYear", 4);                            
       });
     </script>
   </head>
@@ -355,10 +304,6 @@
     </header>
     <!-- MAIN -->
     <main>
-      <input class='ButtonPrimary' id='ButtonRead' type='button'>Read</input>
-      <input class='ButtonPrimary' id='ButtonAutoPopulate' type='button'>Auto populate</input>
-      <input class='ButtonPrimary' id='ButtonWrite' type='button'>Write</input>
-      <input class='ButtonPrimary' id='ButtonXML' type='button'>XML</input>
       <section id='SectionGeneral'>
         <label class='Medium Single PositionerLeft' for='TextSPAJNumber'>Nomor SPAJ</label>
         <table class='BoxSquare PositionerLeft' id='TextSPAJNumber'></table>
@@ -1069,10 +1014,10 @@
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredOfficeTelephoneInfix'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'>16. Alamat Korespondensi</label>
-        <input id='RadioButtonProspectiveInsuredCorrespondanceHomeAddress' name='RadioButtonPolicyHolderCorrespondanceAddress' type='radio' value='home'>
+        <input id='RadioButtonProspectiveInsuredCorrespondanceHomeAddress' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='home'>
         <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'>Alamat Tempat Tinggal</label>
-        <input id='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress' name='RadioButtonPolicyHolderCorrespondanceAddress' type='radio' value='office'>
+        <input id='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='office'>
         <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress'>Alamat Kantor</label>
         <br>
@@ -1124,10 +1069,10 @@
         <label class='Wrap Single PositionerLeft' for='BoxProspectiveInsuredSalaryIDR'>20. Penghasilan Kotor Per Tahun</label>
         <br>
         <label class='Medium Single FirstIndent PositionerLeft' for='BoxProspectiveInsuredSalaryIDR'>Gaji</label>
-        <input id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonPolicyHolderSalary' type='radio' value='idr'>
+        <input id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonProspectiveInsuredSalary' type='radio' value='idr'>
         <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredSalaryIDR'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredSalaryIDR'>Rp</label>
-        <input id='RadioButtonProspectiveInsuredSalaryUSD' name='RadioButtonPolicyHolderSalary' type='radio' value='USD'>
+        <input id='RadioButtonProspectiveInsuredSalaryUSD' name='RadioButtonProspectiveInsuredSalary' type='radio' value='USD'>
         <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredSalaryUSD'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredSalaryUSD'>USD</label>
         <label class='Wrap Single PositionerLeft' for='TextProspectiveInsuredSalary'>Jumlah Penghasilan / tahun</label>
@@ -1286,18 +1231,18 @@
         <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentPayorHolder'>3. Pembayar Premi</label>
         <input id='RadioButtonPremiPaymentPayorHolder' name='RadioButtonPremiPaymentPayor' type='radio' value='holder'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPremiPaymentPayorHolder'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayorHolder' id='LabelPremiPaymentPolicyHolder'>Pemegang Polis</label>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayorHolder' id='LabelPremiPaymentProspectiveInsured'>Pemegang Polis</label>
         <input id='RadioButtonPremiPaymentPayorHolderCompany' name='RadioButtonPremiPaymentPayor' type='radio' value='holderCompany'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPremiPaymentPayorHolderCompany'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayorHolderCompany' id='LabelPremiPaymentPolicyHolderCompany'>Pemegang Polis Perusahaan/Badan Hukum</label>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayorHolderCompany' id='LabelPremiPaymentProspectiveInsuredCompany'>Pemegang Polis Perusahaan/Badan Hukum</label>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentPayorHolder2Insured'></label>
         <input id='RadioButtonPremiPaymentPayor2HolderInsured' name='RadioButtonPremiPaymentPayorHolder2' type='radio' value='insured'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPremiPaymentPayor2HolderInsured'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayor2HolderInsured' id='LabelPremiPaymentPolicyHolderTertanggung'>Tertanggung</label>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayor2HolderInsured' id='LabelPremiPaymentProspectiveInsuredTertanggung'>Tertanggung</label>
         <input id='RadioButtonPremiPaymentPayor2HolderThirdParty' name='RadioButtonPremiPaymentPayorHolder2' type='radio' value='thirdParty'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPremiPaymentPayor2HolderThirdParty'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayor2HolderThirdParty' id='LabelPremiPaymentPolicyHolderThirdParty'>Pihak ketiga (selain Pemegang Polis dan Tertanggung)</label>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentPayor2HolderThirdParty' id='LabelPremiPaymentProspectiveInsuredThirdParty'>Pihak ketiga (selain Pemegang Polis dan Tertanggung)</label>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentWayDebit'>4. Cara Pembayaran Premi</label>
         <input id='RadioButtonPremiPaymentWayDebit' name='RadioButtonPremiPaymentWay' type='radio' value='debit'>
@@ -1311,30 +1256,30 @@
         <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentWayOther' id='LabelPremiPaymentOtherAccount'>Lainnya, Sebutkan</label>
         <div class='LineDot PositionerLeft' id='LinePremiPaymentOtherAccount'></div>
         <br>
-        <label class='Wrap Single PositionerLeft' for='BoxPremiDescription'>5. Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit</label>
+        <label class='Wrap Single PositionerLeft' for='TextPremiPaymentDescription'>5. Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit</label>
         <br>
-        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiDescriptionCreditCardHolderName'>Nama Pemilik Rekening/Kartu Kredit</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPremiDescriptionCreditCardHolderName'></table>
+        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiPaymentDescriptionCreditCardHolderName'>Nama Pemilik Rekening/Kartu Kredit</label>
+        <table class='BoxSquare PositionerLeft' id='TextPremiPaymentDescriptionCreditCardHolderName'></table>
         <br>
-        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiDescriptionDebitCreditNumber'>Nomor Rekening/Kartu Kredit</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPremiDescriptionDebitCreditNumber'></table>
+        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiPaymentDescriptionDebitCreditNumber'>Nomor Rekening/Kartu Kredit</label>
+        <table class='BoxSquare PositionerLeft' id='TextPremiPaymentDescriptionDebitCreditNumber'></table>
         <br>
-        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiDescriptionBankName'>Nama Bank</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPremiDescriptionBankName'></table>
+        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiPaymentDescriptionBankName'>Nama Bank</label>
+        <table class='BoxSquare PositionerLeft' id='TextPremiPaymentDescriptionBankName'></table>
         <br>
-        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiDescriptionBankBranch'>Nama Cabang</label>
-        <table class='BoxSquare PositionerLeft' id='BoxPremiDescriptionBankBranch'></table>
+        <label class='Long Single FirstIndent PositionerLeft' for='TextPremiPaymentDescriptionBankBranch'>Nama Cabang</label>
+        <table class='BoxSquare PositionerLeft' id='TextPremiPaymentDescriptionBankBranch'></table>
         <br>
-        <label class='Wrap Single PositionerLeft' for='BoxPremiDescription2'>6. Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini,</label>
+        <label class='Wrap Single PositionerLeft' for='TextPremiPaymentDescription2'>6. Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini,</label>
         <br>
-        <label class='Wrap Single FirstIndent PositionerLeft' for='BoxPremiDescription3'>menjadi pembayar Premi meminta hak atas manfaat Polis?</label>
-        <input id='BoxPremiDescription3BoxYes' name='BoxPremiDescription3Box' type='radio' value='yes'>
-        <div class='BoxRound PositionerLeft' id='BoxPremiDescription3BoxYes'></div>
-        <label class='RadioButton PositionerLeft' for='BoxPremiDescription3BoxYes' id='LabelPremiDescription3YesBox'>Ya</label>
-        <input id='BoxPremiDescription3BoxNo' name='BoxPremiDescription3Box' type='radio' value='no'>
-        <div class='BoxRound PositionerLeft' id='BoxPremiDescription3BoxNo'></div>
-        <label class='RadioButton PositionerLeft' for='BoxPremiDescription3BoxNo' id='LabelPremiDescription3NoBox'>Tidak</label>
-        <label class='Wrap Single FirstIndent PositionerLeft' for='BoxPremiDescriptionYesStatement'>Bila jawaban Anda “Ya”, mohon isi dan lengkapi Formulir Keterangan Tambahan untuk Pihak ketiga.</label>
+        <label class='Wrap Single FirstIndent PositionerLeft' for='RadioButtonPremiPaymentDescription3Yes'>menjadi pembayar Premi meminta hak atas manfaat Polis?</label>
+        <input id='RadioButtonPremiPaymentDescription3Yes' name='RadioButtonPremiPaymentDescription3' type='radio' value='yes'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPremiPaymentDescription3Yes'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentDescription3Yes' id='LabelPremiPaymentDescription3Yes'>Ya</label>
+        <input id='RadioButtonPremiPaymentDescription3No' name='RadioButtonPremiPaymentDescription3' type='radio' value='no'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPremiPaymentDescription3No'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentDescription3No' id='LabelPremiPaymentDescription3No'>Tidak</label>
+        <label class='Wrap Single FirstIndent PositionerLeft' for='TextPremiDescriptionYesStatement'>Bila jawaban Anda “Ya”, mohon isi dan lengkapi Formulir Keterangan Tambahan untuk Pihak ketiga.</label>
         <br>
       </section>
       <section id='SectionProspectiveHealth'>
@@ -1371,18 +1316,18 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredWeightChangeNo'>Tidak</label>
               </td>
               <td>
-                <table class='BoxSquare PositionerCenter' id='TextPolicyHolderHeight'></table>
+                <table class='BoxSquare PositionerCenter' id='TextProspectiveInsuredHeight'></table>
                 <span class='PositionerCenter'>Cm</span>
                 <br>
-                <table class='BoxSquare PositionerCenter' id='TextPolicyHolderWeight'></table>
+                <table class='BoxSquare PositionerCenter' id='TextProspectiveInsuredWeight'></table>
                 <span class='PositionerCenter'>Kg</span>
                 <br>
-                <input id='RadioButtonPolicyHolderWeightChangeYes' name='RadioButtonPolicyHolderWeightChange' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderWeightChangeYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderWeightChangeYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderWeightChangeNo' name='RadioButtonPolicyHolderWeightChange' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderWeightChangeNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderWeightChangeNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredWeightChangeYes' name='RadioButtonProspectiveInsuredWeightChange' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredWeightChangeYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredWeightChangeYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredWeightChangeNo' name='RadioButtonProspectiveInsuredWeightChange' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredWeightChangeNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredWeightChangeNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1403,14 +1348,14 @@
                 <span class='PositionerCenter'>Batang</span>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderSmokeActivityYes' name='RadioButtonPolicyHolderSmokeActivity' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderSmokeActivityYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderSmokeActivityYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderSmokeActivityNo' name='RadioButtonPolicyHolderSmokeActivity' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderSmokeActivityNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderSmokeActivityNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredSmokeActivityYes' name='RadioButtonProspectiveInsuredSmokeActivity' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredSmokeActivityYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredSmokeActivityYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredSmokeActivityNo' name='RadioButtonProspectiveInsuredSmokeActivity' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredSmokeActivityNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredSmokeActivityNo'>Tidak</label>
                 <br>
-                <table class='BoxSquare PositionerCenter' id='TextPolicyHolderSmokeAmount'></table>
+                <table class='BoxSquare PositionerCenter' id='TextProspectiveInsuredSmokeAmount'></table>
                 <span class='PositionerCenter'>Batang</span>
               </td>
             </tr>
@@ -1427,12 +1372,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredJunkieNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderJunkieYes' name='RadioButtonPolicyHolderJunkie' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderJunkieYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderJunkieYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderJunkieNo' name='RadioButtonPolicyHolderJunkie' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderJunkieNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderJunkieNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredJunkieYes' name='RadioButtonProspectiveInsuredJunkie' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredJunkieYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredJunkieYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredJunkieNo' name='RadioButtonProspectiveInsuredJunkie' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredJunkieNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredJunkieNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1448,12 +1393,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredExtremeSportNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderExtremeSportYes' name='RadioButtonPolicyHolderExtremeSport' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderExtremeSportYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderExtremeSportYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderExtremeSportNo' name='RadioButtonPolicyHolderExtremeSport' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderExtremeSportNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderExtremeSportNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredExtremeSportYes' name='RadioButtonProspectiveInsuredExtremeSport' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredExtremeSportYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredExtremeSportYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredExtremeSportNo' name='RadioButtonProspectiveInsuredExtremeSport' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredExtremeSportNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredExtremeSportNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1469,12 +1414,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredAbroadNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderAbroadYes' name='RadioButtonPolicyHolderAbroad' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderAbroadYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderAbroadYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderAbroadNo' name='RadioButtonPolicyHolderAbroad' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderAbroadNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderAbroadNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredAbroadYes' name='RadioButtonProspectiveInsuredAbroad' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredAbroadYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredAbroadYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredAbroadNo' name='RadioButtonProspectiveInsuredAbroad' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredAbroadNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredAbroadNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1490,12 +1435,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredMedicalTreatmentNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderMedicalTreatmentYes' name='RadioButtonPolicyHolderMedicalTreatment' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderMedicalTreatmentYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderMedicalTreatmentYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderMedicalTreatmentNo' name='RadioButtonPolicyHolderMedicalTreatment' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderMedicalTreatmentNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderMedicalTreatmentNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredMedicalTreatmentYes' name='RadioButtonProspectiveInsuredMedicalTreatment' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredMedicalTreatmentYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredMedicalTreatmentYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredMedicalTreatmentNo' name='RadioButtonProspectiveInsuredMedicalTreatment' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredMedicalTreatmentNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredMedicalTreatmentNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1511,12 +1456,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredVisionNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderVisionYes' name='RadioButtonPolicyHolderVision' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderVisionYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderVisionYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderVisionNo' name='RadioButtonPolicyHolderVision' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderVisionNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderVisionNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredVisionYes' name='RadioButtonProspectiveInsuredVision' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredVisionYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredVisionYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredVisionNo' name='RadioButtonProspectiveInsuredVision' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredVisionNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredVisionNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1532,10 +1477,10 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredENTNo'>Tidak</label>
               </td>
               <td>
-                <div class='BoxRound PositionerCenter' id='BoxPolicyHolderENTYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='BoxPolicyHolderENTYes'>Ya</label>
-                <div class='BoxRound PositionerCenter' id='BoxPolicyHolderENTNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='BoxPolicyHolderENTNo'>Tidak</label>
+                <div class='BoxRound PositionerCenter' id='BoxProspectiveInsuredENTYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='BoxProspectiveInsuredENTYes'>Ya</label>
+                <div class='BoxRound PositionerCenter' id='BoxProspectiveInsuredENTNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='BoxProspectiveInsuredENTNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1551,12 +1496,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredResoiratoryNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderRespiratoryYes' name='RadioButtonPolicyHolderRespiratory' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderRespiratoryYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderRespiratoryYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderRespiratoryNo' name='RadioButtonPolicyHolderRespiratory' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderRespiratoryNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderRespiratoryNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredRespiratoryYes' name='RadioButtonProspectiveInsuredRespiratory' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredRespiratoryYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredRespiratoryYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredRespiratoryNo' name='RadioButtonProspectiveInsuredRespiratory' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredRespiratoryNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredRespiratoryNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1572,12 +1517,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredCardiacNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderCardiacYes' name='RadioButtonPolicyHolderCardiac' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderCardiacYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderCardiacYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderCardiacNo' name='RadioButtonPolicyHolderCardiac' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderCardiacNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderCardiacNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredCardiacYes' name='RadioButtonProspectiveInsuredCardiac' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredCardiacYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredCardiacYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredCardiacNo' name='RadioButtonProspectiveInsuredCardiac' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredCardiacNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredCardiacNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1593,12 +1538,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredDigestNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderDigestYes' name='RadioButtonPolicyHolderDigest' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderDigestYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderDigestYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderDigestNo' name='RadioButtonPolicyHolderDigest' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderDigestNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderDigestNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredDigestYes' name='RadioButtonProspectiveInsuredDigest' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredDigestYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredDigestYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredDigestNo' name='RadioButtonProspectiveInsuredDigest' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredDigestNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredDigestNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1614,12 +1559,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredNerveNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderNerveYes' name='RadioButtonPolicyHolderNerve' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='BoxPolicyHolderNerveYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderNerveYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderNerveNo' name='RadioButtonPolicyHolderNerve' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderNerveNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderNerveNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredNerveYes' name='RadioButtonProspectiveInsuredNerve' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='BoxProspectiveInsuredNerveYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredNerveYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredNerveNo' name='RadioButtonProspectiveInsuredNerve' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredNerveNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredNerveNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1634,12 +1579,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredLiverNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderLiverYes' name='RadioButtonPolicyHolderLiver' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderLiverYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderLiverYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderLiverNo' name='RadioButtonPolicyHolderLiver' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderLiverNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderLiverNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredLiverYes' name='RadioButtonProspectiveInsuredLiver' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredLiverYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredLiverYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredLiverNo' name='RadioButtonProspectiveInsuredLiver' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredLiverNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredLiverNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1655,12 +1600,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredReproductionNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderReproductionYes' name='RadioButtonPolicyHolderReproduction' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderReproductionYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderReproductionYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderReproductionNo' name='RadioButtonPolicyHolderReproduction' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderReproductionNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderReproductionNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredReproductionYes' name='RadioButtonProspectiveInsuredReproduction' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredReproductionYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredReproductionYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredReproductionNo' name='RadioButtonProspectiveInsuredReproduction' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredReproductionNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredReproductionNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1676,12 +1621,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredMotionNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderMotionYes' name='RadioButtonPolicyHolderMotion' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderMotionYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderMotionYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderMotionNo' name='RadioButtonPolicyHolderMotion' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderMotionNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderMotionNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredMotionYes' name='RadioButtonProspectiveInsuredMotion' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredMotionYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredMotionYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredMotionNo' name='RadioButtonProspectiveInsuredMotion' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredMotionNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredMotionNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1697,12 +1642,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredBloodNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderBloodYes' name='RadioButtonPolicyHolderBlood' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderBloodYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderBloodYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderBloodNo' name='RadioButtonPolicyHolderBlood' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderBloodNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderBloodNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredBloodYes' name='RadioButtonProspectiveInsuredBlood' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredBloodYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredBloodYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredBloodNo' name='RadioButtonProspectiveInsuredBlood' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredBloodNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredBloodNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1718,12 +1663,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredImmuneNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderImmuneYes' name='RadioButtonPolicyHolderImmune' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderImmuneYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderImmuneYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderImmuneNo' name='RadioButtonPolicyHolderImmune' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderImmuneNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderImmuneNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredImmuneYes' name='RadioButtonProspectiveInsuredImmune' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredImmuneYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredImmuneYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredImmuneNo' name='RadioButtonProspectiveInsuredImmune' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredImmuneNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredImmuneNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1739,12 +1684,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredCancerNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderCanceYes' name='RadioButtonPolicyHolderCance' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderCanceYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderCanceYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderCancerNo' name='RadioButtonPolicyHolderCance' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderCancerNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderCancerNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredCanceYes' name='RadioButtonProspectiveInsuredCance' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredCanceYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredCanceYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredCancerNo' name='RadioButtonProspectiveInsuredCance' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredCancerNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredCancerNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1760,12 +1705,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredOtherIllnessNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderOtherIllnessYes' name='RadioButtonPolicyHolderOtherIllness' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderOtherIllnessYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderOtherIllnessYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderOtherIllnessNo' name='RadioButtonPolicyHolderOtherIllness' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderOtherIllnessNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderOtherIllnessNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredOtherIllnessYes' name='RadioButtonProspectiveInsuredOtherIllness' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredOtherIllnessYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredOtherIllnessYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredOtherIllnessNo' name='RadioButtonProspectiveInsuredOtherIllness' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredOtherIllnessNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredOtherIllnessNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1832,7 +1777,7 @@
                   </tbody>
                 </table>
                 <h3>Calon Pemegang Polis</h3>
-                <table class='Space' id='TablePolicyHolderIllness'>
+                <table class='Space' id='TableProspectiveInsuredIllness'>
                   <thead>
                     <tr>
                       <th>No.</th>
@@ -1849,10 +1794,10 @@
                       <td></td>
                       <td></td>
                       <td>
-                        <label class='Single Wrap PositionerCenter' for='#BoxPolicyHolder1Month'>Bulan</label>
-                        <table class='BoxSquare PositionerCenter' id='BoxPolicyHolder1Month'></table>
-                        <label class='Single Wrap PositionerCenter' for='#BoxPolicyHolder1Year'>Tahun</label>
-                        <table class='BoxSquare PositionerCenter' id='BoxPolicyHolder1Year'></table>
+                        <label class='Single Wrap PositionerCenter' for='#BoxProspectiveInsured1Month'>Bulan</label>
+                        <table class='BoxSquare PositionerCenter' id='BoxProspectiveInsured1Month'></table>
+                        <label class='Single Wrap PositionerCenter' for='#BoxProspectiveInsured1Year'>Tahun</label>
+                        <table class='BoxSquare PositionerCenter' id='BoxProspectiveInsured1Year'></table>
                       </td>
                       <td></td>
                       <td></td>
@@ -1863,10 +1808,10 @@
                       <td></td>
                       <td></td>
                       <td>
-                        <label class='Single Wrap PositionerCenter' for='#BoxPolicyHolder2Month'>Bulan</label>
-                        <table class='BoxSquare PositionerCenter' id='BoxPolicyHolder2Month'></table>
-                        <label class='Single Wrap PositionerCenter' for='#BoxPolicyHolder2Year'>Tahun</label>
-                        <table class='BoxSquare PositionerCenter' id='BoxPolicyHolder2Year'></table>
+                        <label class='Single Wrap PositionerCenter' for='#BoxProspectiveInsured2Month'>Bulan</label>
+                        <table class='BoxSquare PositionerCenter' id='BoxProspectiveInsured2Month'></table>
+                        <label class='Single Wrap PositionerCenter' for='#BoxProspectiveInsured2Year'>Tahun</label>
+                        <table class='BoxSquare PositionerCenter' id='BoxProspectiveInsured2Year'></table>
                       </td>
                       <td></td>
                       <td></td>
@@ -1877,10 +1822,10 @@
                       <td></td>
                       <td></td>
                       <td>
-                        <label class='Single Wrap PositionerCenter' for='#BoxPolicyHolder3Month'>Bulan</label>
-                        <table class='BoxSquare PositionerCenter' id='BoxPolicyHolder3Month'></table>
-                        <label class='Single Wrap PositionerCenter' for='#BoxPolicyHolder3Year'>Tahun</label>
-                        <table class='BoxSquare PositionerCenter' id='BoxPolicyHolder3Year'></table>
+                        <label class='Single Wrap PositionerCenter' for='#BoxProspectiveInsured3Month'>Bulan</label>
+                        <table class='BoxSquare PositionerCenter' id='BoxProspectiveInsured3Month'></table>
+                        <label class='Single Wrap PositionerCenter' for='#BoxProspectiveInsured3Year'>Tahun</label>
+                        <table class='BoxSquare PositionerCenter' id='BoxProspectiveInsured3Year'></table>
                       </td>
                       <td></td>
                       <td></td>
@@ -1905,12 +1850,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredSPAJProposalNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderSPAJProposalYes' name='RadioButtonPolicyHolderSPAJProposal' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderSPAJProposalYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderSPAJProposalYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderSPAJProposalNo' name='RadioButtonPolicyHolderSPAJProposal' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderSPAJProposalNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderSPAJProposalNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredSPAJProposalYes' name='RadioButtonProspectiveInsuredSPAJProposal' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredSPAJProposalYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredSPAJProposalYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredSPAJProposalNo' name='RadioButtonProspectiveInsuredSPAJProposal' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredSPAJProposalNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredSPAJProposalNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -1958,7 +1903,7 @@
                   </tbody>
                 </table>
                 <h3>Calon Pemegang Polis</h3>
-                <table class='Space' id='TablePolicyHolderSPAJProposal'>
+                <table class='Space' id='TableProspectiveInsuredSPAJProposal'>
                   <thead>
                     <tr>
                       <th>No.</th>
@@ -2011,12 +1956,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredClaimNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderClaimYes' name='RadioButtonPolicyHolderClaim' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderClaimYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderClaimYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderClaimNo' name='RadioButtonPolicyHolderClaim' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderClaimNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderClaimNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredClaimYes' name='RadioButtonProspectiveInsuredClaim' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredClaimYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredClaimYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredClaimNo' name='RadioButtonProspectiveInsuredClaim' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredClaimNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredClaimNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -2032,12 +1977,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioBoxProspectiveInsuredDiagnosticNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioBoxPolicyHolderOtherIllnessYes' name='RadioBoxPolicyHolderOtherIllness' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioBoxPolicyHolderOtherIllnessYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioBoxPolicyHolderOtherIllnessYes'>Ya</label>
-                <input id='RadioBoxPolicyHolderOtherIllnessNo' name='RadioBoxPolicyHolderOtherIllness' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioBoxPolicyHolderOtherIllnessNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioBoxPolicyHolderOtherIllnessNo'>Tidak</label>
+                <input id='RadioBoxProspectiveInsuredOtherIllnessYes' name='RadioBoxProspectiveInsuredOtherIllness' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioBoxProspectiveInsuredOtherIllnessYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioBoxProspectiveInsuredOtherIllnessYes'>Ya</label>
+                <input id='RadioBoxProspectiveInsuredOtherIllnessNo' name='RadioBoxProspectiveInsuredOtherIllness' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioBoxProspectiveInsuredOtherIllnessNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioBoxProspectiveInsuredOtherIllnessNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -2083,12 +2028,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnantNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderPregnantYes' name='RadioButtonPolicyHolderPregnant' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderPregnantYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderPregnantYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderPregnantNo' name='RadioButtonPolicyHolderPregnant' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderPregnantNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderPregnantNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredPregnantYes' name='RadioButtonProspectiveInsuredPregnant' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredPregnantYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnantYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredPregnantNo' name='RadioButtonProspectiveInsuredPregnant' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredPregnantNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnantNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -2104,12 +2049,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnancyIllnessNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderPregnancyIllnessYes' name='RadioButtonPolicyHolderPregnancyIllness' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderPregnancyIllnessYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderPregnancyIllnessYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderPregnancyIllnessNo' name='RadioButtonPolicyHolderPregnancyIllness' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderPregnancyIllnessNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderPregnancyIllnessNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredPregnancyIllnessYes' name='RadioButtonProspectiveInsuredPregnancyIllness' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredPregnancyIllnessYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnancyIllnessYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredPregnancyIllnessNo' name='RadioButtonProspectiveInsuredPregnancyIllness' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredPregnancyIllnessNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnancyIllnessNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -2125,12 +2070,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredFemaleAbnormalityNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderFemaleAbnormalityYes' name='RadioButtonPolicyHolderFemaleAbnormality' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderFemaleAbnormalityYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderFemaleAbnormalityYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderFemaleAbnormailtyNo' name='RadioButtonPolicyHolderFemaleAbnormality' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderFemaleAbnormailtyNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderFemaleAbnormailtyNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredFemaleAbnormalityYes' name='RadioButtonProspectiveInsuredFemaleAbnormality' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredFemaleAbnormalityYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredFemaleAbnormalityYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredFemaleAbnormailtyNo' name='RadioButtonProspectiveInsuredFemaleAbnormality' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredFemaleAbnormailtyNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredFemaleAbnormailtyNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -2146,12 +2091,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPapSmearNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderPapSmearYes' name='RadioButtonPolicyHolderPapSmear' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderPapSmearYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderPapSmearYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderPapSmearNo' name='RadioButtonPolicyHolderPapSmear' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderPapSmearNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderPapSmearNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredPapSmearYes' name='RadioButtonProspectiveInsuredPapSmear' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredPapSmearYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPapSmearYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredPapSmearNo' name='RadioButtonProspectiveInsuredPapSmear' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredPapSmearNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPapSmearNo'>Tidak</label>
               </td>
             </tr>
             <tr>
@@ -2167,12 +2112,12 @@
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredHeartDissorderNo'>Tidak</label>
               </td>
               <td>
-                <input id='RadioButtonPolicyHolderHeartDissorderYes' name='RadioButtonPolicyHolderHeartDissorder' type='radio' value='yes'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderHeartDissorderYes'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderHeartDissorderYes'>Ya</label>
-                <input id='RadioButtonPolicyHolderHeartDissorderNo' name='RadioButtonPolicyHolderHeartDissorder' type='radio' value='no'>
-                <div class='BoxRound PositionerCenter' id='RadioButtonPolicyHolderHeartDissorderNo'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonPolicyHolderHeartDissorderNo'>Tidak</label>
+                <input id='RadioButtonProspectiveInsuredHeartDissorderYes' name='RadioButtonProspectiveInsuredHeartDissorder' type='radio' value='yes'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredHeartDissorderYes'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredHeartDissorderYes'>Ya</label>
+                <input id='RadioButtonProspectiveInsuredHeartDissorderNo' name='RadioButtonProspectiveInsuredHeartDissorder' type='radio' value='no'>
+                <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredHeartDissorderNo'></div>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredHeartDissorderNo'>Tidak</label>
               </td>
             </tr>
           </tbody>
