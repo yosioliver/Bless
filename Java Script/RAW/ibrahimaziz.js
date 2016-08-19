@@ -18,6 +18,7 @@ var arrayHealthQuestionnaire = [];
 var stringRadioButtonName;
 var stringDetailSuffix = "Detail";
 var stringCheckboxSuffix = "Checkbox";
+var stringButtonPreviewPrefix = "ButtonPreview";
 var boxTypeStraight = "Text";
 var boxTypeDate = "Date";
 var boxTypeTelephone = "Telephone";
@@ -84,26 +85,120 @@ function lineGenerator(lineID, lineAmount)
     $(lineID).css("width", ((sizeBox * lineAmount) + 2) + "px");
 }
 
+function radioButtonHealthQuestionnaireDefault()
+{
+    $("input:radio[^='RadioButton']").each(function()
+    {
+        setRadioButtonGeneral($(this).attr("name"), "false");
+    });
+}
+
+function buttonPreviewGenerator(stringRadioButtonName, booleanState)
+{
+    var stringButtonPreviewJQueryID = stringKres + stringButtonPreviewPrefix + stringRadioButtonName.substring(stringPrefixRadioButton.length, stringRadioButtonName.length);
+    
+    if (booleanState == true)
+    {
+        $(stringButtonPreviewJQueryID).css("display", "block");
+    }
+    else
+    {
+        $(stringButtonPreviewJQueryID).css("display", "none");
+    }           
+}
+
+function buttonCancelGenerator(stringPopUpID, booleanState)
+{
+    var stringButtonCancelJQueryID = stringKres + stringPopUpID + " " + stringKres + "ButtonCancel";
+    
+    if (booleanState == true)
+    {
+        $(stringButtonCancelJQueryID).css("display", "block");
+    }
+    else
+    {
+        $(stringButtonCancelJQueryID).css("display", "none");
+    }           
+}
+
+function popUpGeneralShow(stringName, booleanInputState)
+{
+    var stringID = "PopUpGeneral";
+    var stringJQueryID = stringKres + stringID;
+    var stringInfixName = stringName.substring(stringPrefixRadioButton.length, stringName.length);
+    
+    $(stringJQueryID).css("display", "block");
+    
+    if ($("#LabelDetail").text().length > 0)
+    {
+        
+    }
+    else
+    {
+        $("#LabelDetail").append($(stringKres + stringPrefixLabel + stringInfixName).text());
+    }
+
+    var stringDetailValue = arrayFind(arrayHealthQuestionnaire, stringName + stringDetailSuffix);
+    
+    if (stringDetailValue == null || stringDetailValue == undefined)
+    {
+        $("#TextDetail").empty();
+    }
+    else
+    {
+        setTextForm("TextDetail", stringDetailValue);
+    }
+    
+    buttonCancelGenerator(stringID, booleanInputState)
+}
+
+function popUpHealthShow(stringName, booleanInputState)
+{
+    var stringID = "PopUpHealth";
+    var stringJQueryID = stringKres + stringID;
+    var stringInfixName = stringName.substring(stringPrefixRadioButton.length, stringName.length);
+    
+    $(stringJQueryID).css("display", "block");
+    
+    var stringDetailValue = arrayFind(arrayHealthQuestionnaire, stringName + stringHealthSuffix);
+    
+    $(stringJQueryID + "input:text").each(function()
+    {
+        
+    });
+    
+    if (stringDetailValue == null || stringDetailValue == undefined)
+    {
+        $("#TextDetail").empty();
+    }
+    else
+    {
+        setTextForm("TextDetail", stringDetailValue);
+    }
+    
+    buttonCancelGenerator(stringID, booleanInputState)
+}
+
 function additionalQuestionGenerator()
 {
-    $("input[type=radio]").each(function()
+    $("input:radio[name^='RadioButton']").each(function()
     {
-        // console.log("radioButtonName : " + $(this).attr("name") + ", data type : " + $(this).data("popup-type"));
-        
         if ($(this).data("popup-type") == stringPopUpTypeGeneral)
         {
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
                 if ($(this).val() == "true")
                 {
-                    $("#PopUpGeneral").css("display", "block");
-                    $("#LabelDetail").append($(stringKres + stringPrefixLabel + $(this).attr("name").substring(11, $(this).attr("name").length)).text());
-                    $("#TextDetail").empty();
+                    popUpGeneralShow($(this).attr("name"), true);
                 }
                 else
                 {
                     $("#PopUpGeneral").css("display", "none");
                     $("#LabelDetail").empty();
+                    buttonPreviewGenerator($(this).attr("name"), false);
+                    
+                    var stringDetailKey = $(this).attr("name") + stringDetailSuffix;
+                    arrayDelete(arrayHealthQuestionnaire, stringDetailKey);
                 }
 
                 stringRadioButtonName = $(this).attr("name");
@@ -186,6 +281,42 @@ function arrayAdd(arrayObject, stringKey, stringValue)
     }
 }
 
+function arrayDelete(arrayObject, stringKey)
+{
+    for (var i = 0; i < arrayObject.length; i++)
+    {
+        if (arrayObject[i].elementID === stringKey) 
+        {
+            arrayObject.splice(i,1);
+            break;
+        }
+        else
+        {
+            
+        }
+    }
+}
+
+function arrayFind(arrayObject, stringKey)
+{
+    var stringValue = null;
+    
+    for (var i = 0; i < arrayObject.length; i++)
+    {
+        if (arrayObject[i].elementID === stringKey) 
+        {
+            stringValue = arrayObject[i].Value;
+            break;
+        }
+        else
+        {
+            
+        }
+    }
+    
+    return stringValue;
+}
+
 function buttonPopUpGeneralGenerator()
 {
     var stringRadioButtonKey;
@@ -193,22 +324,38 @@ function buttonPopUpGeneralGenerator()
     var stringDetailKey;
     var stringDetailValue;
     
+    $("input:button[id^='ButtonPreview']").each(function()
+    {
+        if ($(this).data("popup-type") == stringPopUpTypeGeneral)
+        {
+            var stringButtonPreviewJQueryID = stringKres + $(this).attr("id");
+            var stringButtonPreviewName = $(this).attr("name");
+            
+            $(stringButtonPreviewJQueryID).click(function()
+            {
+                stringRadioButtonName = stringButtonPreviewName;
+                popUpGeneralShow(stringButtonPreviewName, false);
+            });
+        }
+        else
+        {
+            
+        }
+    });
+    
     $("#PopUpGeneral #ButtonCancel").click(function()
     {
-        setRadioButtonGeneral(stringRadioButtonKey, "false");
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
-        stringDetailkey = stringRadioButtonName + stringDetailSuffix;
-        stringDetailValue = $("#TextDetail").val();
         
+        setRadioButtonGeneral(stringRadioButtonKey, "false");
         arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
+        
         $("#PopUpGeneral").css("display", "none");
     });
 
     $("#PopUpGeneral #ButtonDone").click(function()
     {
-        alert("general");
-        
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
         stringDetailKey = stringRadioButtonName + stringDetailSuffix;
@@ -218,6 +365,7 @@ function buttonPopUpGeneralGenerator()
         {
             arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
             arrayAdd(arrayHealthQuestionnaire, stringDetailKey, stringDetailValue);
+            buttonPreviewGenerator(stringRadioButtonKey, true);
 
             $("#PopUpGeneral").css("display", "none");
             $("#TextDetail").empty();
@@ -270,8 +418,6 @@ function buttonPopUpHealthGenerator()
 
     $("#PopUpHealth #ButtonDone").click(function()
     {
-        alert("health");
-        
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
         arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
@@ -430,14 +576,7 @@ function setRadioButtonGeneral(stringName, stringValue)
 {
     var radioButton = $("input:radio[name=" + stringName + "]");
     
-    if (radioButton.is(":checked") == false) 
-    {
-        radioButton.filter("[value=" + stringValue + "]").prop("checked", true);
-    }
-    else
-    {
-        
-    }
+    radioButton.filter("[value='" + stringValue + "']").prop("checked", true);
 }
 
 function setSelectForm(stringID, stringValue)
@@ -728,7 +867,7 @@ function getFromDatabase(objectContent, stringPageType)
                 setTextForm(stringKey, stringValue);
             }
         }
-        else if (stringKey.substring(0, 11) == stringPrefixRadioButton)
+        else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
         {            
             setRadioButtonGeneral(stringKey, stringValue);
         }

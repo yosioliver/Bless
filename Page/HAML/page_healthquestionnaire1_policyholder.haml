@@ -11,6 +11,11 @@
         / JQUERY
         
         :javascript
+            $(document).load(function()
+            {
+                radioButtonHealthQuestionnaireDefault();
+            });
+        
             $(document).ready(function()
             {
                 // GENERATOR
@@ -90,6 +95,7 @@
                                 %div.Separator
                                 %input#RadioButtonPolicyHolderSmokerNo{ :type => "radio", :name => "RadioButtonPolicyHolderSmoker", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderSmokerNo" } Tidak
+                        %input#ButtonPreviewPolicyHolderSmoker.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderSmoker", "data-popup-type" => "general" }
                     %hr
                     %li
                         %div.Container
@@ -101,6 +107,7 @@
                                 %div.Separator | 
                                 %input#RadioButtonPolicyHolderJunkieNo{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderJunkieNo" } Tidak
+                        %input#ButtonPreviewPolicyHolderJunkie.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderSmoker", "data-popup-type" => "general" }
                     %hr
                     %li
                         %div.Container
@@ -112,6 +119,7 @@
                                 %div.Separator | 
                                 %input#RadioButtonPolicyHolderExtremeSportNo{ :type => "radio", :name => "RadioButtonPolicyHolderExtremeSport", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderExtremeSportNo" } Tidak
+                        %input#ButtonPreviewPolicyHolderExtremeSport.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderSmoker", "data-popup-type" => "general" }
                     %hr
                     %li
                         %div.Container
@@ -123,6 +131,7 @@
                                 %div.Separator | 
                                 %input#RadioButtonPolicyHolderAbroadNo{ :type => "radio", :name => "RadioButtonPolicyHolderAbroad", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderAbroadNo" } Tidak
+                        %input#ButtonPreviewPolicyHolderAbroad.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderSmoker", "data-popup-type" => "general" }
                     %hr
                     %li
                         %div.Container
