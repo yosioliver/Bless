@@ -13,14 +13,6 @@
         :javascript
             $(document).ready(function()
             {
-                // SETTER
-                
-                //radioButtonSetter("WeightChange", true);
-                
-                // GETTER
-                
-                
-                
                 // GENERATOR
                 
                 additionalQuestionGenerator();
@@ -31,14 +23,9 @@
                 buttonPopUpGeneralGenerator();
                 buttonPopUpHealthGenerator();
                 
-                $("#ButtonXML").click(function()
+                $("#Main header #ButtonDone").click(function()
                 {
-                    textGetter("#Height");
-                    textGetter("#Weight");
-                    radioButtonGetter("WeightChange");
-                    radioButtonGetter("Smoker");
                     
-                    validationMessage("Harap lengkapi form terlebih dahulu !.", "Form sukses diinput !.");
                 });
             });
 
@@ -51,7 +38,7 @@
 
         %header
             %h1
-            %input#ButtonXML.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+            %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
             
             %div.Highlighted
                 %label.Medium.Single Calon

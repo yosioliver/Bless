@@ -302,7 +302,6 @@ function buttonPopUpHealthGenerator()
         }
 
         alert(stringObjectPreview);
-        
     });
 }
 

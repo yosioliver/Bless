@@ -38,14 +38,6 @@
     <script>
       $(document).ready(function()
       {
-          // SETTER
-          
-          //radioButtonSetter("WeightChange", true);
-          
-          // GETTER
-          
-          
-          
           // GENERATOR
           
           additionalQuestionGenerator();
@@ -56,14 +48,9 @@
           buttonPopUpGeneralGenerator();
           buttonPopUpHealthGenerator();
           
-          $("#ButtonXML").click(function()
+          $("#Main header #ButtonDone").click(function()
           {
-              textGetter("#Height");
-              textGetter("#Weight");
-              radioButtonGetter("WeightChange");
-              radioButtonGetter("Smoker");
               
-              validationMessage("Harap lengkapi form terlebih dahulu !.", "Form sukses diinput !.");
           });
       });
     </script>
@@ -73,7 +60,7 @@
     <!-- HEADER -->
     <header>
       <h1></h1>
-      <input class='ButtonPrimary PositionerRight' id='ButtonXML' type='button' value='Done'>
+      <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>
       <div class='Highlighted'>
         <label class='Medium Single'>Calon</label>
         <div class='RadioButton' style='margin-left: 80px'>
