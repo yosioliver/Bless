@@ -119,11 +119,21 @@ function readfromDB()
 
 function savetoDB() 
 {
-    alert("masuk save to db");
+    var objectContent;
     
-    var objectContent = setToDatabase(stringPageTypeCurrent);
+    if (arrayHealthQuestionnaire.length > 0)
+    {
+        alert("no getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
+        objectContent = arrayHealthQuestionnaire;
+    }
+    else
+    {
+        alert("with getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
+        objectContent = setToDatabase(stringPageTypeCurrent);
+    }
+    
     var jsonToDatabase = JSONGenerator(objectContent);
-
+    
     calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);    
 }
 

@@ -40,10 +40,11 @@
 
 / CSS
 
+/ %link{ :id => "csslayout", :href => "#{urlCSS}#{urlCSSSectionPrefix}-layout-general.css", :rel => "stylesheet", :type => "text/css" }
 %link{ :id => "csslayout", :href => "#{urlCSS}#{urlCSSSectionPrefix}-layout-general.css", :rel => "stylesheet", :type => "text/css" }
 %link{ :id => "cssfont", :href => "#{urlCSS}#{urlCSSSectionPrefix}-font-general.css", :rel => "stylesheet", :type => "text/css" }
 %link{ :id => "cssinput", :href => "#{urlCSS}#{urlCSSSectionPrefix}-input-general.css", :rel => "stylesheet", :type => "text/css" }
-/ %link{ :id => "csslink", :href => "#{urlCSS}#{urlCSSSectionPrefix}-link-general.css", :rel => "stylesheet", :type => "text/css" }
+%link{ :id => "csslink", :href => "#{urlCSS}#{urlCSSSectionPrefix}-link-general.css", :rel => "stylesheet", :type => "text/css" }
 %link{ :id => "cssfontsize", :href => "#{urlCSS}#{urlCSSGeneralPrefix}-fontsize-medium.css", :rel => "stylesheet", :type => "text/css" }
 %link{ :id => "cssfontfamily", :href => "#{urlCSS}#{urlCSSSectionPrefix}-fontfamily-bpreplay.css", :rel => "stylesheet", :type => "text/css" }
 %link{ :id => "csstheme", :href => "#{urlCSS}#{urlCSSSectionPrefix}-theme-turqoise-svg.css", :rel => "stylesheet", :type => "text/css" }
@@ -51,6 +52,10 @@
 
 / JAVA SCRIPT
 
+/ %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery.mobile-1.4.5.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery-1.11.1.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery-migrate-1.2.1.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ibrahimaziz.min.js" }
+:javascript
+    var stringPageTypeCurrent = stringPageTypeForm;
+%script{ :type => "text/javascript", :src => "#{urlJavaScript}ios-integration.min.js" }

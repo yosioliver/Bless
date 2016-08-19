@@ -23,9 +23,9 @@
                 buttonPopUpGeneralGenerator();
                 buttonPopUpHealthGenerator();
                 
-                $("#Main header #ButtonDone").click(function()
+                $("#MainForm #ButtonDone").click(function()
                 {
-                    
+                    savetoDB();
                 });
             });
 
@@ -36,7 +36,7 @@
 
         / HEADER
 
-        %header
+        %header#MainForm
             %h1
             %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
             
