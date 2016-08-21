@@ -67,13 +67,13 @@
 
         %main
             %form
-                %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredCIN" } Nomor CIN
+                %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredCIN", :required => "true" } Nomor CIN
                 %input#TextProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text" }                          
                 %br
                 
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextProspectiveInsuredFullName" } Nama Lengkap
-                    %input#TextProspectiveInsuredFullName.Full.Single.Item{ :type => "text" }
+                    %input#TextProspectiveInsuredFullName.Full.Single.Item{ :type => "text", :required => "true" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "SelectProspectiveInsuredIDType" } Jenis Identitas Diri
                     %select#SelectProspectiveInsuredIDType.Medium.Single.Item
@@ -82,15 +82,15 @@
                         %option{ :value => "paspor" } Paspor
                         %option{ :value => "KIMSKITAS" } KIMS / KITAS
                         %option{ :value => "other" } Lainnya
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredID" } Nomor Identitas Diri
-                    %input#TextProspectiveInsuredID.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredIDNumber" } Nomor Identitas Diri
+                    %input#TextProspectiveInsuredIDNumber.Medium.Single.Item{ :type => "text", :required => "true" }
                     %label.Medium.Single.Item{ :for => "DateProspectiveInsuredActive" } Masa berlaku
-                    %input#DateProspectiveInsuredActive.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
+                    %input#DateProspectiveInsuredActive.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date", :required => "true" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextProspectiveInsuredPlace" } Tempat lahir
                     %input#TextProspectiveInsuredPlace.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DateProspectiveInsuredBirthday" } Tanggal lahir
-                    %input#ProspectiveInsuredBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
+                    %input#DateProspectiveInsuredBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date", :required => "true" }
                     %label.Medium.Single.Item{ :for => "DateProspectiveInsuredAge" } Umur
                     %input#DateProspectiveInsuredAge.Medium.Single.Item{ :type => "text" }
                 %div.ContainerLeft
@@ -171,7 +171,7 @@
                     %input#TextProspectiveInsuredSideJob.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress1" } Alamat Tempat Tinggal
-                    %input#TextProspectiveInsuredHomeAddress1.Full.Single.Item{ :type => "text" }
+                    %input#TextProspectiveInsuredHomeAddress1.Full.Single.Item{ :type => "text", :required => "true" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress2" }
                     %input#TextProspectiveInsuredHomeAddress2.Full.Single.Item{ :type => "text" }
@@ -181,8 +181,8 @@
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeCity" }
                     %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeCity" } Kota
-                    %input#TextProspectiveInsuredHomeCity.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomePostalCode" } Kode Pos
+                    %input#TextProspectiveInsuredHomeCity.Medium.Single.Item{ :type => "text", :required => "true" }
+                    %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomePostalCode", :required => "true" } Kode Pos
                     %input#TextProspectiveInsuredPostalCode.Medium.Single.Item{ :type => "text" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeTelephone" }
@@ -190,7 +190,7 @@
                     %input#TextProspectiveInsuredHomeTelephone.Medium.Single.Item{ :type => "text" }
                 %br
                 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredHandphone1" } Nomor HP Utama
-                %input#TextProspectiveInsuredHandphone1.Long.Single.PositionerLeft{ :type => "text" }
+                %input#TextProspectiveInsuredHandphone1.Long.Single.PositionerLeft{ :type => "text", :required => "true" }
                 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredHandphone2" } Nomor HP 2
                 %input#TextProspectiveInsuredHandphone2.Long.Single.PositionerLeft{ :type => "text" }
                 %br

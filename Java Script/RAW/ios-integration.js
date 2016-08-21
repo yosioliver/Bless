@@ -149,9 +149,9 @@ function AutoPopulate(jsonObject)
     var objectContent = JSON.parse(jsonObject);
     var stringType = Object.keys(objectContent.result)[0];
 
-    if (stringType == "readFromDB")
+    if (stringType == "autopopulateFromDB")
     {
-        getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+        getFromDatabase(objectContent.result.autopopulateFromDB, stringPageTypeCurrent);
     }
     else
     {

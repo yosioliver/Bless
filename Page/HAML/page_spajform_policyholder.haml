@@ -29,26 +29,8 @@
                 {
                     dateSeparator: "/",
                     dateFormat: "dd/MM/yyyy"
-                });
-                
-                // BUTTON
-                
-                $("#read").click(function()
-                {
-                    
-                });
-                
-                $("#save").click(function()
-                {
-                    
-                });
-                
-                $("#ButtonXML").click(function()
-                {
-                    
-                });
+                });                            
             });
-
 
     / BODY
 
@@ -58,30 +40,40 @@
 
         %main
             %form
-                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
+                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN", :required => "true" } Nomor CIN
                 %input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text" }                          
                 %br
                 
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderFullName" } Nama Lengkap
-                    %input#TextPolicyHolderFullName.Full.Single.Item{ :type => "text" }
+                    %input#TextPolicyHolderFullName.Full.Single.Item{ :type => "text", :required => "true" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "SelectPolicyHolderIDType" } Jenis Identitas Diri
-                    %select#SelectPolicyHolderIDType.Medium.Single.Item
-                        %option{ :value => "KTP" } KTP
-                        %option{ :value => "SIM" } SIM
-                        %option{ :value => "paspor" } Paspor
-                        %option{ :value => "KIMSKITAS" } KIMS / KITAS
-                        %option{ :value => "other" } Lainnya
-                    %label.Medium.Single.Item{ :for => "TextPolicyHolderID" } Nomor Identitas Diri
-                    %input#TextPolicyHolderID.Medium.Single.Item{ :type => "text" }
-                    %label.Medium.Single.Item{ :for => "DatePolicyHolderActive" } Masa berlaku
-                    %input#DatePolicyHolderActive.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
+                    %label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderIDTypeKTP" } Jenis Identitas Diri
+                    %div.RadioButton.Item
+                        %input#RadioButtonPolicyHolderIDTypeKTP.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP" }
+                        %label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP
+                        %div.Separator
+                        %input#RadioButtonPolicyHolderIDTypeSIM.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
+                        %label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM
+                        %div.Separator
+                        %input#RadioButtonPolicyHolderIDTypePassport.Medium.Single{ :type => "radio", :name=>"RadioButtonPolicyHolderIDType", :value => "PASPOR" }
+                        %label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor
+                        %div.Separator
+                        %input#RadioButtonPolicyHolderIDTypeKIMSKITAS.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
+                        %label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS/KITAS
+                        %div.Separator
+                        %input#RadioButtonPolicyHolderIDTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "LAINNYA" }
+                        %label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeOther" } Lainnya
+                    %input#TextPolicyHolderIDTypeOther.Long.Single.PositionerLeft{ :type => "text" }
+                        %label.Medium.Single.Item{ :for => "TextPolicyHolderIDNumber" } Nomor Identitas Diri
+                        %input#TextPolicyHolderIDNumber.Medium.Single.Item{ :type => "text", :required => "true" }
+                        %label.Medium.Single.Item{ :for => "DatePolicyHolderActive" } Masa berlaku
+                        %input#DatePolicyHolderActive.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date", :required => "true" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderPlace" } Tempat lahir
                     %input#TextPolicyHolderPlace.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderBirthday" } Tanggal lahir
-                    %input#DatePolicyHolderBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date" }
+                    %input#DatePolicyHolderBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date", :required => "true" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderAge" } Umur
                     %input#DatePolicyHolderAge.Medium.Single.Item{ :type => "text" }
                 %div.ContainerLeft
@@ -162,7 +154,7 @@
                     %input#TextPolicyHolderSideJob.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress1" } Alamat Tempat Tinggal
-                    %input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text" }
+                    %input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text", :required => "true" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress2" }
                     %input#TextPolicyHolderHomeAddress2.Full.Single.Item{ :type => "text" }
@@ -172,16 +164,16 @@
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" }
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" } Kota
-                    %input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text" }
+                    %input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text", :required => "true" }
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
-                    %input#TextPolicyHolderPostalCode.Medium.Single.Item{ :type => "text" }
+                    %input#TextPolicyHolderPostalCode.Medium.Single.Item{ :type => "text", :required => "true" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeTelephone" }
                     %label.MediumFix.Single.Item{ :for => "TextPolicyHolderHomeTelephone" } Nomor telepon
                     %input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text" }
                 %br
                 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } Nomor HP Utama
-                %input#TextPolicyHolderHandphone1.Long.Single.PositionerLeft{ :type => "text" }
+                %input#TextPolicyHolderHandphone1.Long.Single.PositionerLeft{ :type => "text", :required => "true"}
                 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } Nomor HP 2
                 %input#TextPolicyHolderHandphone2.Long.Single.PositionerLeft{ :type => "text" }
                 %br

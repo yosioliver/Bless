@@ -15,27 +15,27 @@
 %span.Description.PositionerLeft (sesuai dengan identitas diri)
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } 3. Jenis Identitas Diri
-%input#RadioButtonPolicyHolderKTP{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP" }
-%div#RadioButtonPolicyHolderKTP.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKTP" } KTP
-%input#RadioButtonPolicyHolderSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
-%div#RadioButtonPolicyHolderSIM.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderSIM" } SIM
-%input#RadioButtonPolicyHolderPaspor{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "Paspor" }
-%div#RadioButtonPolicyHolderPaspor.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderPaspor" } Paspor
-%input#RadioButtonPolicyHolderKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
-%div#RadioButtonPolicyHolderKIMSKITAS.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderKIMSKITAS" } KIMS / KITAS
-%input#RadioButtonPolicyHolderOtherID{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "Other" }
-%div#RadioButtonPolicyHolderOtherID.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherID" } Lainnya, sebutkan
-%div#TextPolicyHolderOtherID.LineDot.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKTP" } 3. Jenis Identitas Diri
+%input#RadioButtonPolicyHolderIDTypeKTP{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP" }
+%div#RadioButtonPolicyHolderIDTypeKTP.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP
+%input#RadioButtonPolicyHolderIDTypeSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
+%div#RadioButtonPolicyHolderIDTypeSIM.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM
+%input#RadioButtonPolicyHolderIDTypePassport{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "Paspor" }
+%div#RadioButtonPolicyHolderIDTypePassport.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor
+%input#RadioButtonPolicyHolderIDTypeKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
+%div#RadioButtonPolicyHolderIDTypeKIMSKITAS.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS / KITAS
+%input#RadioButtonPolicyHolderIDTypeOther{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "Other" }
+%div#RadioButtonPolicyHolderIDTypeOther.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeOther" } Lainnya, sebutkan
+%div#TextPolicyHolderIDTypeOther.LineDot.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderID" } 4. Nomor Identitas Diri
-%table#TextPolicyHolderID.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderIDNumber" } 4. Nomor Identitas Diri
+%table#TextPolicyHolderIDNumber.BoxSquare.PositionerLeft
 %table#DatePolicyHolderActiveYear.BoxSquare.PositionerRight
 %label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderActiveYear" } /
 %table#DatePolicyHolderActiveMonth.BoxSquare.PositionerRight
@@ -44,15 +44,15 @@
 %label.Wrap.Single.PositionerRight{ :for => "DatePolicyHolderActiveDay" } Masa Berlaku
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDateOfBirth" } 5. Tempat Tanggal Lahir
-%div#TextPolicyHolderPlace.LineStraight.PositionerLeft
-%table#DateHolderOfBirthDay.BoxSquare.PositionerLeft
-%span.Separator.Single.PositionerLeft{ :for => "DateHolderOfBirthMonth" } /
-%table#DateHolderOfBirthMonth.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "DateHolderOfBirthYear" } /
-%table#DateHolderOfBirthYear.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "BoxPolicyHolderAge" } Age
-%table#BoxPolicyHolderAge.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBirthPlace" } 5. Tempat Tanggal Lahir
+%div#TextPolicyHolderBirthPlace.LineStraight.PositionerLeft
+%table#DatePolicyHolderBirthDay.BoxSquare.PositionerLeft
+%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderBirthMonth" } /
+%table#DatePolicyHolderBirthMonth.BoxSquare.PositionerLeft
+%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderBirthYear" } /
+%table#DatePolicyHolderBirthYear.BoxSquare.PositionerLeft
+%label.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderAge" } Usia
+%table#TextPolicyHolderAge.BoxSquare.PositionerLeft
 %span.Separator.Single.PositionerLeft Tahun
 %br
 
@@ -324,28 +324,28 @@
 %table#TextPolicyHolderCompanyNoAnggaranDasar.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCompanyAnggaranDateOfExpired" }
+%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpired" }
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyDateOfExpiredDay" } Tanggal Berlaku
-%table#DatePolicyHolderCompanyDateOfExpiredDay.BoxSquare.PositionerLeft
-%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyDateOfExpiredMonth" } /
-%table#DatePolicyHolderCompanyDateOfExpiredMonth.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyDateOfExpiredYear" } /
-%table#DatePolicyHolderCompanyDateOfExpiredYear.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpired" } Tanggal Berlaku
+%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredDay.BoxSquare.PositionerLeft
+%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth" } /
+%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth.BoxSquare.PositionerLeft
+%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredYear" } /
+%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredYear.BoxSquare.PositionerLeft
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoSuratIjinUsaha" } 4. Nomor Surat Ijin Usaha
 %table#TextPolicyHolderCompanyNoSuratIjinUsaha.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "BoxPolicyHolderCompanySIUPDateOfExpired" } 
+%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpired" } 
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPDateOfExpiredDay" } Tanggal Berlaku
-%table#DatePolicyHolderCompanySIUPDateOfExpiredDay.BoxSquare.PositionerLeft
-%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPDateOfExpiredMonth" } /
-%table#DatePolicyHolderCompanySIUPDateOfExpiredMonth.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPDateOfExpiredYear" } /
-%table#DatePolicyHolderCompanySIUPDateOfExpiredYear.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredDay" } Tanggal Berlaku
+%table#DatePolicyHolderCompanySIUPExpiredDay.BoxSquare.PositionerLeft
+%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredMonth" } /
+%table#DatePolicyHolderCompanySIUPExpiredMonth.BoxSquare.PositionerLeft
+%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredYear" } /
+%table#DatePolicyHolderCompanySIUPExpiredYear.BoxSquare.PositionerLeft
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoTDP" } 5. Nomor TDP

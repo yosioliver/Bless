@@ -29,21 +29,20 @@
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } 3. Pembayar Premi
-%input#RadioButtonPremiPaymentPayorHolder{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "holder" }
+%input#RadioButtonPremiPaymentPayorHolder{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "dirisendiri" }
 %div#RadioButtonPremiPaymentPayorHolder.BoxRound.PositionerLeft
-%label#LabelPremiPaymentProspectiveInsured.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } Pemegang Polis
-%input#RadioButtonPremiPaymentPayorHolderCompany{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "holderCompany" }
-%div#RadioButtonPremiPaymentPayorHolderCompany.BoxRound.PositionerLeft
-%label#LabelPremiPaymentProspectiveInsuredCompany.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolderCompany" } Pemegang Polis Perusahaan/Badan Hukum
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } Pemegang Polis
+%input#RadioButtonPremiPaymentPayorCompany{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "perusahaan" }
+%div#RadioButtonPremiPaymentPayorCompany.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorCompany" } Pemegang Polis Perusahaan/Badan Hukum
 %br
-
-%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder2Insured" }
-%input#RadioButtonPremiPaymentPayor2HolderInsured{ :type => "radio", :name => "RadioButtonPremiPaymentPayorHolder2", :value => "insured" }
-%div#RadioButtonPremiPaymentPayor2HolderInsured.BoxRound.PositionerLeft
-%label#LabelPremiPaymentProspectiveInsuredTertanggung.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayor2HolderInsured" } Tertanggung
-%input#RadioButtonPremiPaymentPayor2HolderThirdParty{ :type => "radio", :name => "RadioButtonPremiPaymentPayorHolder2", :value => "thirdParty" }
-%div#RadioButtonPremiPaymentPayor2HolderThirdParty.BoxRound.PositionerLeft
-%label#LabelPremiPaymentProspectiveInsuredThirdParty.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayor2HolderThirdParty" } Pihak ketiga (selain Pemegang Polis dan Tertanggung)
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorInsured" }
+%input#RadioButtonPremiPaymentPayorInsured{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "tertanggung" }
+%div#RadioButtonPremiPaymentPayorInsured.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorInsured" } Tertanggung
+%input#RadioButtonPremiPaymentPayorThirdParty{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "pihakketiga" }
+%div#RadioButtonPremiPaymentPayorThirdParty.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorThirdParty" } Pihak ketiga (selain Pemegang Polis dan Tertanggung)
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentWayDebit" } 4. Cara Pembayaran Premi
@@ -59,36 +58,36 @@
 %div#LinePremiPaymentOtherAccount.LineDot.PositionerLeft
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "TextPremiPaymentDescription" } 5. Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit
+%label.Wrap.Single.PositionerLeft{ :for => "TextPremiPaymentBankAccountDetails" } 5. Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit
 %br
 
-%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentDescriptionCreditCardHolderName" } Nama Pemilik Rekening/Kartu Kredit
-%table#TextPremiPaymentDescriptionCreditCardHolderName.BoxSquare.PositionerLeft
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentBankAccountDetailsName" } Nama Pemilik Rekening/Kartu Kredit
+%table#TextPremiPaymentBankAccountDetailsName.BoxSquare.PositionerLeft
 %br
 
-%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentDescriptionDebitCreditNumber" } Nomor Rekening/Kartu Kredit
-%table#TextPremiPaymentDescriptionDebitCreditNumber.BoxSquare.PositionerLeft
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentBankAccountDetailsNumber" } Nomor Rekening/Kartu Kredit
+%table#TextPremiPaymentBankAccountDetailsNumber.BoxSquare.PositionerLeft
 %br
 
-%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentDescriptionBankName" } Nama Bank
-%table#TextPremiPaymentDescriptionBankName.BoxSquare.PositionerLeft
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentBankAccountDetailsBankName" } Nama Bank
+%table#TextPremiPaymentBankAccountDetailsBankName.BoxSquare.PositionerLeft
 %br
 
-%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentDescriptionBankBranch" } Nama Cabang
-%table#TextPremiPaymentDescriptionBankBranch.BoxSquare.PositionerLeft
+%label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentBankAccountDetailsBankBranch" } Nama Cabang
+%table#TextPremiPaymentBankAccountDetailsBankBranch.BoxSquare.PositionerLeft
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "TextPremiPaymentDescription2" } 6. Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini,
+%label.Wrap.Single.PositionerLeft{ :for => "TextPremiPaymentThirdPartyAnswer" } 6. Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini,
 %br
 
-%label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "RadioButtonPremiPaymentDescription3Yes" } menjadi pembayar Premi meminta hak atas manfaat Polis?
+%label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } menjadi pembayar Premi meminta hak atas manfaat Polis?
 
-%input#RadioButtonPremiPaymentDescription3Yes{ :type => "radio", :name => "RadioButtonPremiPaymentDescription3", :value => "yes" }
-%div#RadioButtonPremiPaymentDescription3Yes.BoxRound.PositionerLeft
-%label#LabelPremiPaymentDescription3Yes.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentDescription3Yes" } Ya
-%input#RadioButtonPremiPaymentDescription3No{ :type => "radio", :name => "RadioButtonPremiPaymentDescription3", :value => "no" }
-%div#RadioButtonPremiPaymentDescription3No.BoxRound.PositionerLeft
-%label#LabelPremiPaymentDescription3No.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentDescription3No" } Tidak
+%input#RadioButtonPremiPaymentThirdPartyAnswerYes{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "yes" }
+%div#RadioButtonPremiPaymentThirdPartyAnswerYes.BoxRound.PositionerLeft
+%label#LabelPremiPaymentThirdPartyAnswerYes.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
+%input#RadioButtonPremiPaymentThirdPartyAnswerNo{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "no" }
+%div#RadioButtonPremiPaymentThirdPartyAnswerNo.BoxRound.PositionerLeft
+%label#LabelPremiPaymentThirdPartyAnswerNo.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak
 
-%label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "TextPremiDescriptionYesStatement" } Bila jawaban Anda “Ya”, mohon isi dan lengkapi Formulir Keterangan Tambahan untuk Pihak ketiga.
+%label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentThirdPartyAnswerYesStatement" } Bila jawaban Anda “Ya”, mohon isi dan lengkapi Formulir Keterangan Tambahan untuk Pihak ketiga.
 %br
