@@ -106,15 +106,28 @@
           <label class='Medium Single Item' for='TextProspectiveInsuredFullName'>Nama Lengkap</label>
           <input class='Full Single Item' id='TextProspectiveInsuredFullName' required='true' type='text'>
         </div>
+        <div class='ContainerLeft'>
+          <label class='Medium Single Item' for='RadioButtonProspectiveInsuredIDTypeKTP'>Jenis Identitas Diri</label>
+          <div class='RadioButton Item'>
+            <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeKTP' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KTP'>
+            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKTP'>KTP</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeSIM' name='RadioButtonProspectiveInsuredIDType' type='radio' value='SIM'>
+            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeSIM'>SIM</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypePassport' name='RadioButtonProspectiveInsuredIDType' type='radio' value='PASPOR'>
+            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypePassport'>Paspor</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeKIMSKITAS' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KIMSKITAS'>
+            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKIMSKITAS'>KIMS/KITAS</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeOther' name='RadioButtonProspectiveInsuredIDType' type='radio' value='LAINNYA'>
+            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeOther'>Lainnya</label>
+          </div>
+          <input class='Long Single PositionerLeft' id='TextProspectiveInsuredIDTypeOther' type='text'>
+          <br>
+        </div>
         <div class='ContainerFit'>
-          <label class='Medium Single Item' for='SelectProspectiveInsuredIDType'>Jenis Identitas Diri</label>
-          <select class='Medium Single Item' id='SelectProspectiveInsuredIDType'>
-            <option value='KTP'>KTP</option>
-            <option value='SIM'>SIM</option>
-            <option value='paspor'>Paspor</option>
-            <option value='KIMSKITAS'>KIMS / KITAS</option>
-            <option value='other'>Lainnya</option>
-          </select>
           <label class='Medium Single Item' for='TextProspectiveInsuredIDNumber'>Nomor Identitas Diri</label>
           <input class='Medium Single Item' id='TextProspectiveInsuredIDNumber' required='true' type='text'>
           <label class='Medium Single Item' for='DateProspectiveInsuredActive'>Masa berlaku</label>
