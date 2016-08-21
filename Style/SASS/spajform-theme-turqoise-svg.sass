@@ -177,9 +177,13 @@ main
         
 /* INPUT */
 
-input[type="text"]
+input[type="text"], input[type="password"]
     border-color: $theme_primary_color
     color: $theme_senary_color
+    background-color: transparent
+    
+input[type="text"]:disabled, input[type="password"]:disabled
+    background-color: $theme_quaternary_color
 
 .RadioButton
     .Separator
@@ -193,8 +197,13 @@ input[type="text"]
     color: $theme_quaternary_color
 
 select
+    background-image: url("../../Resource/Input/input_select_enable.svg")
     border-color: $theme_primary_color
+    background-color: transparent
     +BorderRadius(0)
+
+select:disabled
+    background-color: $theme_quaternary_color
 
 
 /* BUTTON */
