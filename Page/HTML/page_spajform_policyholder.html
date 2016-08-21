@@ -64,7 +64,9 @@
           {
               dateSeparator: "/",
               dateFormat: "dd/MM/yyyy"
-          });                            
+          });     
+          $("#DatePolicyHolderBirthday").val("01/02/1990");
+          calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       });
     </script>
   </head>
@@ -112,8 +114,8 @@
           <input class='Medium Single Item' id='TextPolicyHolderPlace' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderBirthday'>Tanggal lahir</label>
           <input class='Medium Single Item' data-field='date' id='DatePolicyHolderBirthday' readonly='true' required='true' type='text'>
-          <label class='Medium Single Item' for='DatePolicyHolderAge'>Umur</label>
-          <input class='Medium Single Item' id='DatePolicyHolderAge' type='text'>
+          <label class='Medium Single Item' for='TextPolicyHolderAge'>Umur</label>
+          <input class='Medium Single Item' id='TextPolicyHolderAge' type='text'>
         </div>
         <div class='ContainerLeft'>
           <label class='Medium Single Item' for='RadioButtonPolicyHolderNationalityWNI'>Kewarganegaraan</label>

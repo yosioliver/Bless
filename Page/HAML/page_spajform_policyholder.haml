@@ -29,7 +29,9 @@
                 {
                     dateSeparator: "/",
                     dateFormat: "dd/MM/yyyy"
-                });                            
+                });     
+                $("#DatePolicyHolderBirthday").val("01/02/1990");
+                calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
             });
 
     / BODY
@@ -77,8 +79,8 @@
                     %input#TextPolicyHolderPlace.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "DatePolicyHolderBirthday" } Tanggal lahir
                     %input#DatePolicyHolderBirthday.Medium.Single.Item{ :type => "text", :readonly => "true", "data-field" => "date", :required => "true" }
-                    %label.Medium.Single.Item{ :for => "DatePolicyHolderAge" } Umur
-                    %input#DatePolicyHolderAge.Medium.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderAge" } Umur
+                    %input#TextPolicyHolderAge.Medium.Single.Item{ :type => "text" }
                 %div.ContainerLeft
                     %label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderNationalityWNI" } Kewarganegaraan
                     %div.RadioButton.Item
