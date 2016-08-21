@@ -197,7 +197,7 @@
           boxGenerator("#DatePolicyHolderCompanyNoAnggaranDasarExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
           boxGenerator("#DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
           boxGenerator("#DatePolicyHolderCompanyNoAnggaranDasarExpiredYear", 4, boxTypeWithBottomLabel, labelYear); 
-          boxGenerator("#TextPolicyHolderCompanyNoSuratIjinUsaha", 21, boxTypeWithoutLabel, null);
+          boxGenerator("#TextPolicyHolderCompanyNoSIUP", 21, boxTypeWithoutLabel, null);
           boxGenerator("#DatePolicyHolderCompanySIUPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
           boxGenerator("#DatePolicyHolderCompanySIUPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
           boxGenerator("#DatePolicyHolderCompanySIUPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
@@ -223,10 +223,10 @@
           
           boxGenerator("#TextPolicyHolderCompanyRepresentativeFullName", 30, boxTypeWithoutLabel, null);
           boxGenerator("#TextPolicyHolderCompanyRepresentativePosition", 28, boxTypeWithoutLabel, null);
-          boxGenerator("#TextPolicyHolderCompanyRepresentativeID", 16, boxTypeWithoutLabel, null);
-          boxGenerator("#DatePolicyHolderCompanyRepresentativeActiveDay", 2, boxTypeWithBottomLabel, labelDay);
-          boxGenerator("#DatePolicyHolderCompanyRepresentativeActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
-          boxGenerator("#DatePolicyHolderCompanyRepresentativeActiveYear", 4, boxTypeWithBottomLabel, labelYear);
+          boxGenerator("#TextPolicyHolderCompanyRepresentativeIDNumber", 16, boxTypeWithoutLabel, null);
+          boxGenerator("#DatePolicyHolderCompanyRepresentativeIDExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+          boxGenerator("#DatePolicyHolderCompanyRepresentativeIDExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+          boxGenerator("#DatePolicyHolderCompanyRepresentativeIDExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
           lineGenerator("#TextPolicyHolderCompanyRepresentativeRelationshipOther", 19);
           lineGenerator("#TextPolicyHolderCompanyRepresentativeInsurancePurposeOther", 5);
       
@@ -456,10 +456,10 @@
         <span class='Separator Single PositionerLeft'>Tahun</span>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderNationalityWNI'>6. Kewarganegaraan</label>
-        <input id='RadioButtonPolicyHolderWNI' name='RadioButtonPolicyHolderNationality' type='radio' value='wni'>
+        <input id='RadioButtonPolicyHolderNationalityWNI' name='RadioButtonPolicyHolderNationality' type='radio' value='wni'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderNationalityWNI'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderNationalityWNI'>WNI</label>
-        <input id='RadioButtonPolicyHolderWNA' name='RadioButtonPolicyHolderNationality' type='radio' value='wna'>
+        <input id='RadioButtonPolicyHolderNationalityWNA' name='RadioButtonPolicyHolderNationality' type='radio' value='wna'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderNationalityWNA'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderNationalityWNA'>WNA, sebutkan</label>
         <div class='LineDot PositionerLeft' id='TextPolicyHolderWNA'></div>
@@ -467,7 +467,7 @@
         <br>
         <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderUSACitizenYes'>7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?</label>
         <input id='RadioButtonPolicyHolderUSACitizenYes' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='yes'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderUSACitizenNo'></div>
+        <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderUSACitizenYes'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderUSACitizenYes'>YA</label>
         <input id='RadioButtonPolicyHolderUSACitizenNo' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='no'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderUSACitizenNo'></div>
@@ -702,8 +702,8 @@
         <label class='Separator Single PositionerLeft' for='DatePolicyHolderCompanyNoAnggaranDasarExpiredYear'>/</label>
         <table class='BoxSquare PositionerLeft' id='DatePolicyHolderCompanyNoAnggaranDasarExpiredYear'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyNoSuratIjinUsaha'>4. Nomor Surat Ijin Usaha</label>
-        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyNoSuratIjinUsaha'></table>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyNoSIUP'>4. Nomor Surat Ijin Usaha</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyNoSIUP'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='DatePolicyHolderCompanySIUPExpired'></label>
         <label class='Medium Single PositionerLeft' for='DatePolicyHolderCompanySIUPExpiredDay'>Tanggal Berlaku</label>
@@ -799,14 +799,14 @@
         <label class='Wrap Single PositionerLeft' for='TextPolicyHolderCompanyRepresentativePosition'>2. Jabatan/Pangkat/Golongan</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyRepresentativePosition'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyRepresentativeID'>3. Nomor Identitas Diri</label>
-        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyRepresentativeID'></table>
-        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyRepresentativeActiveYear'></table>
-        <label class='Separator Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeActiveYear'>/</label>
-        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyRepresentativeActiveMonth'></table>
-        <label class='Separator Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeActiveMonth'>/</label>
-        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyRepresentativeActiveDay'></table>
-        <label class='Wrap Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeActiveDay'>Masa Berlaku</label>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyRepresentativeIDNumber'>3. Nomor Identitas Diri</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyRepresentativeIDNumber'></table>
+        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyRepresentativeIDExpiredYear'></table>
+        <label class='Separator Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeIDExpiredYear'>/</label>
+        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyRepresentativeIDExpiredMonth'></table>
+        <label class='Separator Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeIDExpiredMonth'>/</label>
+        <table class='BoxSquare PositionerRight' id='DatePolicyHolderCompanyRepresentativeIDExpiredDay'></table>
+        <label class='Wrap Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeIDExpiredDay'>Masa Berlaku</label>
         <br>
         <label class='Medium Wrap PositionerLeft' for='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague'>4. Hubungan dengan Calon Tertanggung</label>
         <input id='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague' name='RadioButtonPolicyHolderCompanyRepresentativeRelationship' type='radio' value='perusahaankaryawan'>

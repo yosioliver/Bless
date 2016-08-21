@@ -68,10 +68,10 @@
     <main>
       <form>
         <div class='ContainerFit'>
-          <label class='Medium Single Item' for='TextPolicyHolderCompanyName'>Nama Lengkap</label>
+          <label class='Medium Single Item' for='TextPolicyHolderCompanyName'>Nama Perusahaan</label>
           <input class='Full Single Item' id='TextPolicyHolderCompanyName' required='true' type='text'>
         </div>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyName'>Jenis Perusahaan</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyTypePT'>Jenis Perusahaan</label>
         <div class='RadioButton PositionerLeft'>
           <input class='Medium Single' id='RadioButtonPolicyHolderCompanyTypePT' name='RadioButtonPolicyHolderCompanyType' type='radio' value='yes'>
           <label class='RadioButton' for='RadioButtonPolicyHolderCompanyTypePT'>Perseroan Terbatas</label>
@@ -173,29 +173,29 @@
           <label class='RadioButton' for='RadioButtonPolicyHolderCompanyRevenue5'>> 10 Miliar</label>
         </div>
         <br>
-        <label class='Long PositionerLeft Medium Single Item' for='TextPolicyHolderCompanyChossenPIC'>Pihak Yang Ditunjuk Untuk Menerima Kuasa dan Berwenang Untuk Bertindak Untuk dan Atas Nama Perusahaan</label>
+        <label class='Long PositionerLeft Medium Single Item' for='TextPolicyHolderCompanyRepresentativeChossenPIC'>Pihak Yang Ditunjuk Untuk Menerima Kuasa dan Berwenang Untuk Bertindak Untuk dan Atas Nama Perusahaan</label>
         <br>
         <div class='ContainerFit'>
-          <label class='Medium Single Item' for='TextPolicyHolderCompanyAddress'>Nama lengkap (sesuai dengan identitas)</label>
-          <input class='Full Single Item' id='TextPolicyHolderCompanyAddress' type='text'>
+          <label class='Medium Single Item' for='TextPolicyHolderCompanyRepresentativeFullName'>Nama lengkap (sesuai dengan identitas)</label>
+          <input class='Full Single Item' id='TextPolicyHolderCompanyRepresentativeFullName' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
-          <label class='Medium Single Item' for='TextPolicyHolderCompanyAddress'>Jabatan / Pangkat / Golongan</label>
-          <input class='Full Single Item' id='TextPolicyHolderCompanyAddress' type='text'>
+          <label class='Medium Single Item' for='TextPolicyHolderCompanyRepresentativePosition'>Jabatan / Pangkat / Golongan</label>
+          <input class='Full Single Item' id='TextPolicyHolderCompanyRepresentativePosition' required='true' type='text'>
         </div>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN'>Nomor Identitas Diri</label>
-        <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' type='text'>
-        <input class='Medium Single PositionerRight' id='TextPolicyHolderCIN' type='text'>
-        <label class='Medium Single PositionerRight' for='TextPolicyHolderCIN'>Masa Berlaku</label>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanyRepresentativeIDNumber'>Nomor Identitas Diri</label>
+        <input class='Medium Single PositionerLeft' id='TextPolicyHolderCompanyRepresentativeIDNumber' required='true' type='text'>
+        <input class='Medium Single PositionerRight' id='DatePolicyHolderCompanyRepresentativeIDExpired' type='text'>
+        <label class='Medium Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeIDExpired'>Masa Berlaku</label>
         <br>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderHubunganDenganCalonTertanggung'>Hubungan dengan Calon tertanggung</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague'>Hubungan dengan Calon tertanggung</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderHubunganKaryawan' name='RadioButtonPolicyHolderTertanggungRelationship' type='radio' value='100juta'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderHubunganKaryawan'>Perusahaan / Karyawan</label>
+          <input class='Medium Single' id='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague' name='RadioButtonPolicyHolderCompanyRepresentativeRelationship' type='radio' value='perusahaankaryawan'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague'>Perusahaan / Karyawan</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderHubunganLainnya' name='RadioButtonPolicyHolderTertanggungRelationship' type='radio' value='100juta1miliar'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderHubunganLainnya'>Lainnya</label>
-          <input class='Medium Single PositionerRight' id='TextPolicyHolderCIN' type='text'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderCompanyRepresentativeRelationshipOther' name='RadioButtonPolicyHolderCompanyRepresentativeRelationship' type='radio' value='lainnya'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderCompanyRepresentativeRelationshipOther'>Lainnya</label>
+          <input class='Medium Single PositionerRight' id='TextPolicyHolderCompanyRepresentativeRelationshipOther' type='text'>
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderHubunganDenganCalonTertanggung'>Tujuan Pembelian Asuransi</label>
