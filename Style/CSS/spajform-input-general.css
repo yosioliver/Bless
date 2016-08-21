@@ -89,6 +89,17 @@ input[type="text"].Multi, input[type="password"].Multi {
   height: 60px;
 }
 
+input[type="text"]:required, input[type="password"]:required {
+  background-image: url("../../Resource/Input/input_text_required.svg");
+  background-size: 3em 2em;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+input[type="text"]:disabled, input[type="password"]:disabled {
+  background-image: none;
+}
+
 /* RADIO BUTTON */
 .ContainerLeft .RadioButton {
   text-align: left;

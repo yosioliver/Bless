@@ -121,9 +121,14 @@ main section form header {
 }
 
 /* INPUT */
-input[type="text"] {
+input[type="text"], input[type="password"] {
   border-color: #00a6b3;
   color: #000000;
+  background-color: transparent;
+}
+
+input[type="text"]:disabled, input[type="password"]:disabled {
+  background-color: #ebecec;
 }
 
 .RadioButton .Separator {
@@ -141,11 +146,17 @@ input[type="text"] {
 }
 
 select {
+  background-image: url("../../Resource/Input/input_select_enable.svg");
   border-color: #00a6b3;
+  background-color: transparent;
   border-radius: 0;
   -ms-border-radius: 0;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
+}
+
+select:disabled {
+  background-color: #ebecec;
 }
 
 /* BUTTON */
