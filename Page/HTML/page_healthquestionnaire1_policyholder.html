@@ -58,10 +58,10 @@
           buttonPopUpGeneralGenerator();
           buttonPopUpHealthGenerator();
           
-          $("#MainForm #ButtonDone").click(function()
+          /* $("#MainForm #ButtonDone").click(function()
           {
               savetoDB();
-          });
+          }); */
       });
     </script>
   </head>
@@ -70,16 +70,14 @@
     <!-- HEADER -->
     <header id='MainForm'>
       <h1></h1>
-      <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>
+      <!-- %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" } -->
       <div class='Highlighted'>
         <label class='Medium Single'>Calon</label>
-        <div class='RadioButton' style='margin-left: 80px'>
-          <input id='ProspectiveInsured' name='UserType' type='radio'>
-          <label class='RadioButton' for='ProspectiveInsured'>Tertanggung</label>
+        <nav class='RadioButton' style='margin-left: 80px'>
+          <a class='Clear Selected' href='../../Page/HTML/page_healthquestionnaire1_policyholder.html'>Pemegang Polis</a>
           <div class='Separator'></div>
-          <input id='PolicyHolder' name='UserType' type='radio'>
-          <label class='RadioButton' for='PolicyHolder'>Pemegang Polis</label>
-        </div>
+          <a class='Clear' href='../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html'>Tertanggung</a>
+        </nav>
       </div>
       <h2>Pertanyaan Kesehatan</h2>
     </header>

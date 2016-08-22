@@ -15,19 +15,15 @@ a.Clear
 	text-decoration: none
 
 a.Clear:link
-	color: inherit
 	text-decoration: none
 
 a.Clear:visited
-	color: inherit
 	text-decoration: none
 
 a.Clear:hover
-	color: inherit
 	text-decoration: none
 
 a.Clear:active
-	color: inherit
 	text-decoration: none
 
 /* Underline Hyperlink */
@@ -51,7 +47,19 @@ a.Underline:active
 	color: inherit
 	text-decoration: underline
 
-	
+
+/* NAVIGATION */
+
+nav
+    a
+        padding-top: $input_padding_edge
+        padding-right: $input_padding_side
+        padding-left: $input_padding_side
+        padding-bottom: $input_padding_edge
+        font-size: $fontsize_input_radiobutton
+        +BorderRadius($general_borderradius_thick)
+
+
 /* BUTTON BY TEXT */
 
 .ButtonPrimary, .ButtonSecondary, .ButtonPreview

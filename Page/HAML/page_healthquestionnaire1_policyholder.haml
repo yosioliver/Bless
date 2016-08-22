@@ -27,10 +27,10 @@
                 buttonPopUpGeneralGenerator();
                 buttonPopUpHealthGenerator();
                 
-                $("#MainForm #ButtonDone").click(function()
+                /* $("#MainForm #ButtonDone").click(function()
                 {
                     savetoDB();
-                });
+                }); */
             });
 
 
@@ -42,16 +42,14 @@
 
         %header#MainForm
             %h1
-            %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+            / %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
             
             %div.Highlighted
                 %label.Medium.Single Calon
-                %div.RadioButton{ :style => "margin-left: 80px" }
-                    %input#ProspectiveInsured{ :type => "radio", :name => "UserType" }
-                    %label.RadioButton{ :for => "ProspectiveInsured" } Tertanggung
+                %nav.RadioButton{ :style => "margin-left: 80px" }
+                    %a.Clear.Selected{ :href => "../../Page/HTML/page_healthquestionnaire1_policyholder.html" }  Pemegang Polis
                     %div.Separator
-                    %input#PolicyHolder{ :type => "radio", :name => "UserType" }
-                    %label.RadioButton{ :for => "PolicyHolder" } Pemegang Polis
+                    %a.Clear{ :href => "../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html" } Tertanggung
             
             %h2 Pertanyaan Kesehatan
 

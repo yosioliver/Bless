@@ -45,6 +45,11 @@ var stringPrefixSelect = "Select";
 var stringPopUpTypeGeneral = "general";
 var stringPopUpTypeHealth = "health";
 var stringPopUpTypeSPAJProposal = "spajproposal";
+var arrayTableHeader = ["DiseaseName", "SickFrom", "SickDuration", "DoctorName", "Hospital", "Address", "Telephone"];
+var stringRowPrefix = "Row";
+var stringCellPrefix = "Cell";
+var stringTablePrefix = "Table";
+var stringBodyPrefix = "Body";
 
 
 // GENERATOR
@@ -61,13 +66,17 @@ function spanGenerator(spanID, spanAmount)
 
 function boxGenerator(tableID, boxAmount, boxType, boxLabel)
 {
-    $(tableID).append("<tbody></tbody>");
-    $(tableID + " tbody").append("<tr></tr>");
+	var stringInfixName = tableID.substring(5, tableID.length);
+	var stringBodyJavaScriptID = stringBodyPrefix + stringInfixName;
+	var stringBodyJQueryID = stringKres + stringBodyJavaScriptID;
+	
+    $(tableID).append("<tbody id='" + stringBodyJavaScriptID + "'></tbody>");
+    $(tableID + " " + stringBodyJQueryID).append("<tr></tr>");
     var stringTableID = tableID.substring(1, tableID.length);
     
     for (var i = 0; i < boxAmount; i++)
     {
-        $(tableID + " tbody tr").append("<td id=" + stringTableID + i + "></td>");
+        $(tableID + " " + stringBodyJQueryID + " tr").append("<td id=" + stringTableID + i + "></td>");
     }
     
     if (boxType == boxTypeWithBottomLabel)
@@ -83,6 +92,83 @@ function boxGenerator(tableID, boxAmount, boxType, boxLabel)
 function lineGenerator(lineID, lineAmount)
 {
     $(lineID).css("width", ((sizeBox * lineAmount) + 2) + "px");
+}
+
+function tableHealthGenerator(stringTableID, intRow)
+{
+	var stringInfixName = stringTableID.substring(stringTablePrefix.length, stringTableID.length);
+	var stringTableJQueryID = stringKres + stringTableID;
+	var stringRowJavaScriptID;
+	var stringRowJQueryID;
+	var stringCellJavaScriptID;
+	var stringCellJQueryID;
+	var stringMonthJavaScriptID;
+	var stringMonthJQueryID;
+	var stringYearJavaScriptID;
+	var stringYearJQueryID;
+	var stringBodyJavaScriptID = stringBodyPrefix + stringInfixName;
+	var stringBodyJQueryID = stringKres + stringBodyJavaScriptID;
+	
+	$(stringTableJQueryID).append("<tbody id='" + stringBodyJavaScriptID + "'></tbody>");
+	
+	for (var i = 0; i < intRow; i++)
+	{
+		stringRowJavaScriptID = stringRowPrefix + stringInfixName + i;
+		stringRowJQueryID = stringKres + stringRowJavaScriptID;
+		
+		$(stringTableJQueryID + " " + stringBodyJQueryID).append("<tr id='" + stringRowJavaScriptID + "'></tr>");
+		
+		for (var j = 0; j < arrayTableHeader.length; j++)
+		{
+			stringCellJavaScriptID = stringCellPrefix + stringInfixName + arrayTableHeader[j] + i;
+			stringCellJQueryID = stringKres + stringCellJavaScriptID;
+			stringMonthJavaScriptID = stringPrefixDate + stringInfixName + arrayTableHeader[j] + stringIDMonth + i;
+			stringMonthJQueryID = stringKres + stringMonthJavaScriptID;
+			stringYearJavaScriptID = stringPrefixDate + stringInfixName + arrayTableHeader[j] + stringIDYear + i;
+			stringYearJQueryID = stringKres + stringYearJavaScriptID;
+			
+			$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
+			
+			if (j == 2)
+			{
+				$(stringRowJQueryID + " " + stringCellJQueryID).append("<label for='" + stringMonthJavaScriptID + "' class='Wrap Single PositionerCenter'>Bulan</label>");
+				$(stringRowJQueryID + " " + stringCellJQueryID).append("<table id='" + stringMonthJavaScriptID + "' class='BoxSquare PositionerCenter' ></table><br>");
+				$(stringRowJQueryID + " " + stringCellJQueryID).append("<label for='" + stringYearJavaScriptID + "' class='Wrap Single PositionerCenter'>Tahun</label>");
+				$(stringRowJQueryID + " " + stringCellJQueryID).append("<table id='" + stringYearJavaScriptID + "' class='BoxSquare PositionerCenter'></table>");
+				
+                boxGenerator(stringMonthJQueryID, 2, boxTypeWithoutLabel, null);
+                boxGenerator(stringYearJQueryID, 2, boxTypeWithoutLabel, null);
+			}
+			else
+			{
+				
+			}
+		}
+	}
+}
+
+function setTableHealth(stringTableID, stringKey, stringValue)
+{
+    var stringTableJQueryID = stringKres + stringTableID;
+	var stringRowJQueryID = stringRowPrefix + stringTableID;
+    
+	for (var i = 0; i < 3; i++)
+	{
+		for (var j = 0; j < arrayTableHeader.length; j++)
+		{
+			if (stringKey.substring(stringKey.length - arrayTableHeader[j].length, stringKey.length) == arrayTableHeader[j])
+			{
+				$(stringTableJQueryID + " tbody" + " " + stringRowJQueryID + i + " td").each(function()
+				{
+					setTextGeneral($(this).attr("id"), stringValue);
+				});
+			}
+			else
+			{
+
+			}
+		}
+	}
 }
 
 function radioButtonHealthQuestionnaireDefault()
@@ -729,37 +815,6 @@ function getTextGeneral(stringID)
     return $(stringJQueryID).val();
 }
 
-//var booleanPushState = true;
-//        
-//        if (arrayHealthQuestionnaire.length > 0)
-//        {
-//            for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
-//            {
-//                if (arrayHealthQuestionnaire[i].key == stringName)
-//                {
-//                    arrayHealthQuestionnaire[i].value = stringRadioButtonValue;
-//                    booleanPushState = false;
-//                }
-//                else
-//                {
-//
-//                }
-//            }
-//
-//            if (booleanPushState == true)
-//            {
-//                arrayHealthQuestionnaire.push({ key: stringName, value: stringRadioButtonValue});
-//            }
-//            else
-//            {
-//
-//            }
-//        }
-//        else
-//        {
-//            arrayHealthQuestionnaire.push({ key: stringName, value: stringRadioButtonValue});
-//        }
-
 function getRadioButtonGeneral(stringName)
 {
     var stringRadioButtonValue;
@@ -802,50 +857,10 @@ function getCheckboxGeneral(stringName)
     return stringCheckboxValue;
 }
 
-//var booleanPushState = true;
-//         
-//        if (arrayHealthQuestionnaire.length > 0)
-//        {
-//            for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
-//            {
-//                if (arrayHealthQuestionnaire[i].key == stringTextKey)
-//                {
-//                    arrayHealthQuestionnaire[i].value = stringTextValue;
-//                    booleanPushState = false;
-//                }
-//                else
-//                {
-//                    
-//                }
-//            }
-//
-//            if (booleanPushState == true)
-//            {
-//                arrayHealthQuestionnaire.push({ key: stringTextKey, value: stringTextValue});
-//            }
-//            else
-//            {
-//
-//            }
-//        }
-//        else
-//        {
-//            arrayHealthQuestionnaire.push({ key: stringTextKey, value: stringTextValue});
-//        }
-
 function getTextForm(stringID)
 {
     return getTextGeneral(stringID);
 }
-
-//if (validateTextGeneral(stringID) == false)
-//    {
-//        // alert("Harap isi kolom di bawah ini !.");
-//    }
-//    else
-//    {
-//        
-//    }
 
 function getTextPDF(stringID)
 {
@@ -889,6 +904,8 @@ function getDatePDF(stringID)
 }
 
 
+
+
 // GET FROM DATABASE
 
 function getFromDatabase(objectContent, stringPageType)
@@ -899,15 +916,15 @@ function getFromDatabase(objectContent, stringPageType)
         var stringValue = objectContent[i].Value;               
         
         if (stringKey.substring(0, 4) == stringPrefixText)
-        {            
-            if (stringPageType == stringPageTypePDF)
-            {
-                setTextPDF(stringKey, stringValue);        
-            }
-            else
-            {
-                setTextForm(stringKey, stringValue);
-            }
+        {
+			if (stringPageType == stringPageTypePDF)
+			{
+				setTextPDF(stringKey, stringValue);        
+			}
+			else
+			{
+				setTextForm(stringKey, stringValue);
+			}
         }
         else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
         {            
@@ -915,7 +932,7 @@ function getFromDatabase(objectContent, stringPageType)
         }
         else if (stringKey.substring(0, 8) == stringPrefixCheckbox)
         {            
-            setRadioCheckboxGeneral(stringKey, stringValue);
+            setRadioButtonGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, 6) == stringPrefixSelect)
         {            
