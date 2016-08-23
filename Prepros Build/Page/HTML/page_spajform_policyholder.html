@@ -64,7 +64,9 @@
           {
               dateSeparator: "/",
               dateFormat: "dd/MM/yyyy"
-          });                            
+          });     
+          $("#DatePolicyHolderBirthday").val("01/02/1990");
+          calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       });
     </script>
   </head>
@@ -73,37 +75,50 @@
     <!-- MAIN -->
     <main>
       <form>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN'>Nomor CIN</label>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN' required='true'>Nomor CIN</label>
         <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderFullName'>Nama Lengkap</label>
-          <input class='Full Single Item' id='TextPolicyHolderFullName' type='text'>
+          <input class='Full Single Item' disabled='true' id='TextPolicyHolderFullName' required='true' type='text'>
+        </div>
+        <div class='ContainerLeft'>
+          <label class='Medium Single Item' for='RadioButtonPolicyHolderIDTypeKTP'>Jenis Identitas Diri</label>
+          <div class='RadioButton Item'>
+            <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='KTP'>
+            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKTP'>KTP</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='SIM'>
+            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeSIM'>SIM</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonPolicyHolderIDTypePassport' name='RadioButtonPolicyHolderIDType' type='radio' value='PASPOR'>
+            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypePassport'>Paspor</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='KIMSKITAS'>
+            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKIMSKITAS'>KIMS/KITAS</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeOther' name='RadioButtonPolicyHolderIDType' type='radio' value='LAINNYA'>
+            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeOther'>Lainnya</label>
+          </div>
+          <input class='Long Single PositionerLeft' id='TextPolicyHolderIDTypeOther' type='text'>
+          <br>
         </div>
         <div class='ContainerFit'>
-          <label class='Medium Single Item' for='SelectPolicyHolderIDType'>Jenis Identitas Diri</label>
-          <select class='Medium Single Item' id='SelectPolicyHolderIDType'>
-            <option value='KTP'>KTP</option>
-            <option value='SIM'>SIM</option>
-            <option value='paspor'>Paspor</option>
-            <option value='KIMSKITAS'>KIMS / KITAS</option>
-            <option value='other'>Lainnya</option>
-          </select>
-          <label class='Medium Single Item' for='TextPolicyHolderID'>Nomor Identitas Diri</label>
-          <input class='Medium Single Item' id='TextPolicyHolderID' type='text'>
+          <label class='Medium Single Item' for='TextPolicyHolderIDNumber'>Nomor Identitas Diri</label>
+          <input class='Medium Single Item' id='TextPolicyHolderIDNumber' required='true' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderActive'>Masa berlaku</label>
-          <input class='Medium Single Item' data-field='date' id='DatePolicyHolderActive' readonly='true' type='text'>
+          <input class='Medium Single Item' data-field='date' id='DatePolicyHolderActive' readonly='true' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderPlace'>Tempat lahir</label>
           <input class='Medium Single Item' id='TextPolicyHolderPlace' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderBirthday'>Tanggal lahir</label>
-          <input class='Medium Single Item' data-field='date' id='DatePolicyHolderBirthday' readonly='true' type='text'>
-          <label class='Medium Single Item' for='DatePolicyHolderAge'>Umur</label>
-          <input class='Medium Single Item' id='DatePolicyHolderAge' type='text'>
+          <input class='Medium Single Item' data-field='date' id='DatePolicyHolderBirthday' readonly='true' required='true' type='text'>
+          <label class='Medium Single Item' for='TextPolicyHolderAge'>Umur</label>
+          <input class='Medium Single Item' id='TextPolicyHolderAge' type='text'>
         </div>
         <div class='ContainerLeft'>
-          <label class='Medium Single Item' for='RadioButtonPolicyHolderNatioanlity'>Kewarganegaraan</label>
+          <label class='Medium Single Item' for='RadioButtonPolicyHolderNationalityWNI'>Kewarganegaraan</label>
           <div class='RadioButton Item'>
             <input class='Medium Single' id='RadioButtonPolicyHolderNationalityWNI' name='RadioButtonPolicyHolderNationality' type='radio' value='WNI'>
             <label class='RadioButton' for='RadioButtonPolicyHolderNationalityWNI'>WNI</label>
@@ -190,7 +205,7 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress1'>Alamat Tempat Tinggal</label>
-          <input class='Full Single Item' id='TextPolicyHolderHomeAddress1' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderHomeAddress1' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress2'></label>
@@ -203,9 +218,9 @@
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'></label>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'>Kota</label>
-          <input class='Medium Single Item' id='TextPolicyHolderHomeCity' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderHomeCity' required='true' type='text'>
           <label class='Medium Single Item' for='TextPolicyHolderHomePostalCode'>Kode Pos</label>
-          <input class='Medium Single Item' id='TextPolicyHolderPostalCode' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderPostalCode' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeTelephone'></label>
@@ -214,7 +229,7 @@
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderHandphone1'>Nomor HP Utama</label>
-        <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone1' type='text'>
+        <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone1' required='true' type='text'>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderHandphone2'>Nomor HP 2</label>
         <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone2' type='text'>
         <br>

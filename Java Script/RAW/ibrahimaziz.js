@@ -204,29 +204,29 @@ function tableSPAJProposalGenerator(stringTableID, intRow)
 	}
 }
 
-function setTableHealth(stringTableID, stringKey, stringValue)
-{
-    var stringTableJQueryID = stringKres + stringTableID;
-	var stringRowJQueryID = stringRowPrefix + stringTableID;
-    
-	for (var i = 0; i < 3; i++)
-	{
-		for (var j = 0; j < arrayTableHeader.length; j++)
-		{
-			if (stringKey.substring(stringKey.length - arrayTableHeader[j].length, stringKey.length) == arrayTableHeader[j])
-			{
-				$(stringTableJQueryID + " tbody" + " " + stringRowJQueryID + i + " td").each(function()
-				{
-					setTextGeneral($(this).attr("id"), stringValue);
-				});
-			}
-			else
-			{
-
-			}
-		}
-	}
-}
+//function setTableHealth(stringTableID, stringKey, stringValue)
+//{
+//    var stringTableJQueryID = stringKres + stringTableID;
+//	var stringRowJQueryID = stringRowPrefix + stringTableID;
+//    
+//	for (var i = 0; i < 3; i++)
+//	{
+//		for (var j = 0; j < arrayTableHeader.length; j++)
+//		{
+//			if (stringKey.substring(stringKey.length - arrayTableHeader[j].length, stringKey.length) == arrayTableHeader[j])
+//			{
+//				$(stringTableJQueryID + " tbody" + " " + stringRowJQueryID + i + " td").each(function()
+//				{
+//					setTextGeneral($(this).attr("id"), stringValue);
+//				});
+//			}
+//			else
+//			{
+//
+//			}
+//		}
+//	}
+//}
 
 function radioButtonHealthQuestionnaireDefault()
 {
@@ -975,6 +975,39 @@ function getFromDatabase(objectContent, stringPageType)
         
         if (stringKey.substring(0, 4) == stringPrefixText)
         {
+//			for (var j = 0; j < arrayHealthTableHeader.length; j++)
+//			{
+//				if (stringKey.substring(stringKey.length - arrayHealthTableHeader[j].length, stringKey.length) == arrayHealthTableHeader[j])
+//				{
+//					var stringIndicatorPrefix = stringKey.substring(stringPrefixText.length, string.PrefixText.length + 3);
+//					var stringIndicatorPolicyHolder = "Pol";
+//					var stringIndicatorProspectiveInsured = "Pro";
+//					
+//					if (stringIndicatorPrefix == stringIndicatorPolicyHolder)
+//					{
+//						$("#TableProspectiveInsuredIllness tbody tr").each(function()
+//						{
+//							
+//						});
+//					}
+//					else
+//					{
+//						
+//					}
+//					
+////					$(stringTableJQueryID + " tbody" + " " + stringRowJQueryID + i + " td").each(function()
+////					{
+////						setTextGeneral($(this).attr("id"), stringValue);
+////					});
+//					
+//					alert(stringKey + " == " + arrayHealthTableHeader[j]);
+//				}
+//				else
+//				{
+//
+//				}
+//			}
+			
 			if (stringPageType == stringPageTypePDF)
 			{
 				setTextPDF(stringKey, stringValue);        

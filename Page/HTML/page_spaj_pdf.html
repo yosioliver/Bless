@@ -289,9 +289,19 @@
       	// SETTER
       
       	var objectContent = JSON.parse(jsonDummy);
-      	getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+      	// getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
       	
       	headerGenerator(".HeaderGeneral table");
+      	
+      	var stringSectionHeader = "#SectionHeader";
+      	var stringSectionHeaderSuffix;
+      	
+      	for (var i = 1; i < 9; i++)
+      	{
+      		stringSectionHeaderSuffix = stringSectionHeader + i;
+      		
+      		alert("SectionHeader" + i + " -> x = " + $(stringSectionHeaderSuffix).position().left + ", y = " + $(stringSectionHeaderSuffix).position().top);
+      	}
       });
     </script>
   </head>
@@ -347,9 +357,25 @@
         <br>
         <label class='Medium Single PositionerLeft' for='TextBranchCode'>Kode Cabang</label>
         <table class='BoxSquare PositionerLeft' id='TextBranchCode'></table>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceOther' name='RadioButtonReferenceSource' type='radio' value='Other'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceOther'>Other</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceAccountManager' name='RadioButtonReferenceSource' type='radio' value='AccountManager'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceAccountManager'>AM</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceAccountOfficer' name='RadioButtonReferenceSource' type='radio' value='AccountOfficer'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceAccountOfficer'>AO</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceTeller' name='RadioButtonReferenceSource' type='radio' value='Teller'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceTeller'>Teller</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceCustomerService' name='RadioButtonReferenceSource' type='radio' value='CustomerService'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceCustomerService'>CS</label>
+        <label class='Wrap Single PositionerRight'>Tanggal Referal</label>
         <br>
         <label class='Medium Single PositionerLeft' for='TextArea'>Area / Kanwil</label>
         <table class='BoxSquare PositionerLeft' id='TextArea'></table>
+        <label class='Note Wrap Single PositionerRight' style='margin-top: -10px'>(harap dapat dilingkari)</label>
         <br>
         <label class='Medium Single PositionerLeft' for='TextAgentID'>AgentID</label>
         <table class='BoxSquare PositionerLeft' id='TextAgentID'></table>
@@ -1357,7 +1383,7 @@
         </section>
       </section>
       <section id='SectionProspectiveHealth'>
-        <section id='SectionHeader5'>
+        <section id='SectionHeader4'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
@@ -1845,7 +1871,7 @@
           </div>
           <div class='PageBreak'></div>
         </section>
-        <section id='SectionHeader6'>
+        <section id='SectionHeader5'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
@@ -1995,7 +2021,7 @@
           </div>
           <div class='PageBreak'></div>
         </section>
-        <section id='SectionHeader7'>
+        <section id='SectionHeader6'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
@@ -2184,7 +2210,7 @@
           </div>
           <div class='PageBreak'></div>
         </section>
-        <section id='SectionHeader8'>
+        <section id='SectionHeader7'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>

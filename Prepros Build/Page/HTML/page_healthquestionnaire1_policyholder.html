@@ -44,6 +44,10 @@
     <script>
       $(document).ready(function()
       {
+          // SETUP
+      
+          // radioButtonHealthQuestionnaireDefault();
+      
           // GENERATOR
           
           additionalQuestionGenerator();
@@ -54,10 +58,10 @@
           buttonPopUpGeneralGenerator();
           buttonPopUpHealthGenerator();
           
-          $("#MainForm #ButtonDone").click(function()
+          /* $("#MainForm #ButtonDone").click(function()
           {
               savetoDB();
-          });
+          }); */
       });
     </script>
   </head>
@@ -66,16 +70,14 @@
     <!-- HEADER -->
     <header id='MainForm'>
       <h1></h1>
-      <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>
+      <!-- %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" } -->
       <div class='Highlighted'>
         <label class='Medium Single'>Calon</label>
-        <div class='RadioButton' style='margin-left: 80px'>
-          <input id='ProspectiveInsured' name='UserType' type='radio'>
-          <label class='RadioButton' for='ProspectiveInsured'>Tertanggung</label>
+        <nav class='RadioButton' style='margin-left: 80px'>
+          <a class='Clear Selected' href='../../Page/HTML/page_healthquestionnaire1_policyholder.html'>Pemegang Polis</a>
           <div class='Separator'></div>
-          <input id='PolicyHolder' name='UserType' type='radio'>
-          <label class='RadioButton' for='PolicyHolder'>Pemegang Polis</label>
-        </div>
+          <a class='Clear' href='../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html'>Tertanggung</a>
+        </nav>
       </div>
       <h2>Pertanyaan Kesehatan</h2>
     </header>
@@ -131,6 +133,7 @@
                 <label class='RadioButton' for='RadioButtonPolicyHolderSmokerNo'>Tidak</label>
               </div>
             </div>
+            <input class='ButtonPreview' data-popup-type='general' id='ButtonPreviewPolicyHolderSmoker' name='RadioButtonPolicyHolderSmoker' type='button' value='View recent input'>
           </li>
           <hr>
           <li>
@@ -146,6 +149,7 @@
                 <label class='RadioButton' for='RadioButtonPolicyHolderJunkieNo'>Tidak</label>
               </div>
             </div>
+            <input class='ButtonPreview' data-popup-type='general' id='ButtonPreviewPolicyHolderJunkie' name='RadioButtonPolicyHolderJunkie' type='button' value='View recent input'>
           </li>
           <hr>
           <li>
@@ -161,6 +165,7 @@
                 <label class='RadioButton' for='RadioButtonPolicyHolderExtremeSportNo'>Tidak</label>
               </div>
             </div>
+            <input class='ButtonPreview' data-popup-type='general' id='ButtonPreviewPolicyHolderExtremeSport' name='RadioButtonPolicyHolderExtremeSport' type='button' value='View recent input'>
           </li>
           <hr>
           <li>
@@ -176,6 +181,7 @@
                 <label class='RadioButton' for='RadioButtonPolicyHolderAbroadNo'>Tidak</label>
               </div>
             </div>
+            <input class='ButtonPreview' data-popup-type='general' id='ButtonPreviewPolicyHolderAbroad' name='RadioButtonPolicyHolderAbroad' type='button' value='View recent input'>
           </li>
           <hr>
           <li>
@@ -205,6 +211,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderVisionNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderVision' name='RadioButtonPolicyHolderVision' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -219,6 +226,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderENTNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderENT' name='RadioButtonPolicyHolderENT' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -233,6 +241,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderRespiratoryNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderRespiratory' name='RadioButtonPolicyHolderRespiratory' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -247,6 +256,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderCardiacNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderCardiac' name='RadioButtonPolicyHolderCardiac' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -261,6 +271,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderDigestNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderDigest' name='RadioButtonPolicyHolderDigest' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -275,6 +286,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderNerveNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHoldernerve' name='RadioButtonPolicyHolderNerve' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -289,6 +301,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderLiverNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderLiver' name='RadioButtonPolicyHolderLiver' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -303,6 +316,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderReproductionNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderReproduction' name='RadioButtonPolicyHolderReproduction' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -317,6 +331,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderMotionNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderMotion' name='RadioButtonPolicyHolderMotion' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -331,6 +346,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderBloodNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderBlood' name='RadioButtonPolicyHolderBlood' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -345,6 +361,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderImmuneNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderImmune' name='RadioButtonPolicyHolderImmune' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -359,6 +376,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderCancerNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderCancer' name='RadioButtonPolicyHolderCancer' type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -373,6 +391,7 @@
                     <label class='RadioButton' for='RadioButtonPolicyHolderOtherIllnessNo'>Tidak</label>
                   </div>
                 </div>
+                <input class='ButtonPreview' data-popup-type='health' id='ButtonPreviewPolicyHolderOtherIllness' name='RadioButtonPolicyHolderOtherIllness' type='button' value='View recent input'>
               </li>
             </ol>
           </li>
@@ -551,7 +570,7 @@
             <label class='Wrap' for='DateSickFrom' id='LabelSickFrom'>Kapan Mulai Sakit</label>
             <input class='Full Single' id='DateSickFrom' type='text'>
             <label class='Wrap' for='TextSickDuration' id='LabelSickDuration'>Lama Sakit</label>
-            <input class='Full Single' id='TextAdditionalQuestion' type='text'>
+            <input class='Full Single' id='TextSickDuration' type='text'>
             <label class='Wrap' for='TextDoctorName' id='LabelDoctorName'>Nama Dokter</label>
             <input class='Full Single' id='TextDoctorName' type='text'>
             <label class='Wrap' for='TextHospital' id='LabelHospital'>Rumah Sakit / Klinik / Laboratorium / Puskesmas</label>

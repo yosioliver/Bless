@@ -100,19 +100,52 @@
           <label class='RadioButton' for='RadionButtonPremiPaymentFrequencyFull'>Sekaligus</label>
         </div>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentPayorHolder'>Frekuensi Pembayaran</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentPayorHolder'>Pembayar Premi</label>
         <div class='RadioButton PositionerLeft'>
           <input class='Medium Single' id='RadioButtonPremiPaymentPayorHolder' name='RadioButtonPremiPaymentPayor' type='radio' value='dirisendiri'>
-          <label class='RadioButton' for='RadioButtonPremiPaymentPayorHolder'>Pemegang Polis Perorangan</label>
+          <label class='RadioButton Medium' for='RadioButtonPremiPaymentPayorHolder'>Pemegang Polis Perorangan</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPremiPaymentPayorHolderCompany' name='RadioButtonPremiPaymentPayorHolder' type='radio' value='perusahaan'>
-          <label class='RadioButton' for='RadioButtonPremiPaymentPayorHolderCompany'>Pemegang Polis Perusahaan / Badan Hukum</label>
+          <input class='Medium Single' id='RadioButtonPremiPaymentPayorCompany' name='RadioButtonPremiPaymentPayor' type='radio' value='perusahaan'>
+          <label class='RadioButton Medium' for='RadioButtonPremiPaymentPayorCompany'>Pemegang Polis Perusahaan / Badan Hukum</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadionButtonPremiPaymentFrequencyQuarterly' name='RadionButtonPremiPaymentFrequency' type='radio' value='quarterly'>
-          <label class='RadioButton' for='RadionButtonPremiPaymentFrequencyQuarterly'>Triwulan</label>
+          <input class='Medium Single' id='RadioButtonPremiPaymentPayorInsured' name='RadioButtonPremiPaymentPayor' type='radio' value='tertanggung'>
+          <label class='RadioButton' for='RadioButtonPremiPaymentPayorInsured'>Tertanggung</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadionButtonPremiPaymentFrequencyMonthly' name='RadionButtonPremiPaymentFrequency' type='radio' value='monthly'>
-          <label class='RadioButton' for='RadionButtonPremiPaymentFrequencyMonthly'>Bulanan</label>
+          <input class='Medium Single' id='RadioButtonPremiPaymentPayorThirdParty' name='RadioButtonPremiPaymentPayor' type='radio' value='pihakketiga'>
+          <label class='RadioButton' for='RadioButtonPremiPaymentPayorThirdParty'>Pihak Ketiga</label>
+        </div>
+        <br>
+        <label class='Long PositionerLeft Medium Single Item' for='TextPremiPaymentBankAccountDetails'>Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit:</label>
+        <br>
+        <div class='ContainerFit'>
+          <label class='LongFix Single Item' for='TextPremiPaymentBankAccountDetailsName'>Nama Pemilik Rekening/Kartu Kredit</label>
+          <input class='Full Single Item' id='TextPremiPaymentBankAccountDetailsName' required='true' type='text'>
+        </div>
+        <br>
+        <div class='ContainerFit'>
+          <label class='LongFix Single Item' for='TextPremiPaymentBankAccountDetailsNumber'>Nomor Rekening/Kartu Kredit</label>
+          <input class='Full Single Item' id='TextPremiPaymentBankAccountDetailsNumber' required='true' type='text'>
+        </div>
+        <br>
+        <div class='ContainerFit'>
+          <label class='LongFix Single Item' for='TextPremiPaymentBankAccountDetailsBankName'>Nama Bank</label>
+          <input class='Full Single Item' id='TextPremiPaymentBankAccountDetailsBankName' required='true' type='text'>
+        </div>
+        <br>
+        <div class='ContainerFit'>
+          <label class='LongFix Single Item' for='TextPremiPaymentBankAccountDetailsBankBranch'>Nama Cabang</label>
+          <input class='Full Single Item' id='TextPremiPaymentBankAccountDetailsBankBranch' required='true' type='text'>
+        </div>
+        <br>
+        <div class='ContainerFit'>
+          <label class='Full Single Item' for='TextPremiPaymentThirdPartyAnswer'>Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?</label>
+          <div class='RadioButton MediumFix Single Item'>
+            <input class='Medium Single' id='RadioButtonPremiPaymentThirdPartyAnswerYes' name='RadioButtonPremiPaymentThirdPartyAnswer' type='radio' value='ya'>
+            <label class='RadioButton' for='RadioButtonPremiPaymentThirdPartyAnswerYes'>Ya</label>
+            <div class='Separator'></div>
+            <input class='Medium Single' id='RadioButtonPremiPaymentThirdPartyAnswerNo' name='RadioButtonPremiPaymentThirdPartyAnswer' type='radio' value='tidak'>
+            <label class='RadioButton' for='RadioButtonPremiPaymentThirdPartyAnswerNo'>Tidak</label>
+          </div>
         </div>
         <br>
       </form>

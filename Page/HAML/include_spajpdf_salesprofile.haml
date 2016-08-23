@@ -36,14 +36,33 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextBranchCode" } Kode Cabang
 %table#TextBranchCode.BoxSquare.PositionerLeft
+
+%input.Plain#RadioButtonPolicyHolderReferenceSourceOther{ :type => "radio", :name => "RadioButtonReferenceSource", :value => "Other" }
+%label.RadioButton.PositionerRight{ :for => "RadioButtonPolicyHolderReferenceSourceOther" } Other
+%span.Separator.Tight.PositionerRight /
+%input.Plain#RadioButtonPolicyHolderReferenceSourceAccountManager{ :type => "radio", :name => "RadioButtonReferenceSource", :value => "AccountManager" }
+%label.RadioButton.PositionerRight{ :for => "RadioButtonPolicyHolderReferenceSourceAccountManager" } AM
+%span.Separator.Tight.PositionerRight /
+%input.Plain#RadioButtonPolicyHolderReferenceSourceAccountOfficer{ :type => "radio", :name => "RadioButtonReferenceSource", :value => "AccountOfficer" }
+%label.RadioButton.PositionerRight{ :for => "RadioButtonPolicyHolderReferenceSourceAccountOfficer" } AO
+%span.Separator.Tight.PositionerRight /
+%input.Plain#RadioButtonPolicyHolderReferenceSourceTeller{ :type => "radio", :name => "RadioButtonReferenceSource", :value => "Teller" }
+%label.RadioButton.PositionerRight{ :for => "RadioButtonPolicyHolderReferenceSourceTeller" } Teller
+%span.Separator.Tight.PositionerRight /
+%input.Plain#RadioButtonPolicyHolderReferenceSourceCustomerService{ :type => "radio", :name => "RadioButtonReferenceSource", :value => "CustomerService" }
+%label.RadioButton.PositionerRight{ :for => "RadioButtonPolicyHolderReferenceSourceCustomerService" } CS
+%label.Wrap.Single.PositionerRight Tanggal Referal
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextArea" } Area / Kanwil
 %table#TextArea.BoxSquare.PositionerLeft
+
+%label.Note.Wrap.Single.PositionerRight{ :style => "margin-top: -10px" } (harap dapat dilingkari)
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextAgentID" } AgentID
 %table#TextAgentID.BoxSquare.PositionerLeft
+
 %table#DateReferenceYear.BoxSquare.PositionerRight
 %span.Separator.PositionerRight /
 %table#DateReferenceMonth.BoxSquare.PositionerRight
