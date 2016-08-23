@@ -46,6 +46,13 @@ var stringPopUpTypeGeneral = "general";
 var stringPopUpTypeHealth = "health";
 var stringPopUpTypeSPAJProposal = "spajproposal";
 var stringInputTypeAutoPopulate = "autopopulate";
+var stringTablePrefix = "Table";
+var stringBodyPrefix = "Body";
+var stringRowPrefix = "Row";
+var stringCellPrefix = "Cell";
+var stringNumberPrefix = "Number"; 
+var arrayHealthTableHeader = ["DiseaseName", "SickFrom", "SickDuration", "DoctorName", "Hospital", "Address", "Telephone"];
+var arraySPAJProposalTableHeader = ["CompanyName", "PolicyNumber", "PublishedDate", "BasicSumAssured", "Decision"];
 
 
 // GENERATOR
