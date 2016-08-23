@@ -21,16 +21,25 @@ header
 
 .HeaderContainer
 	position: absolute
-	height: 60px
+	height: 65px
 	left: $general_space_medium
 	right: $general_space_medium
 	.HeaderGeneral
-		padding: $general_space_small
+		padding-top: $general_space_small
+		padding-left: $general_space_medium
+		padding-right: $general_space_medium
+		padding-bottom: $general_space_small
 		+BorderRadius-Top($general_borderradius_thick)
+	hr
+		border-top: none
+		border-left: none
+		border-right: none
+		border-bottom-style: solid
+		border-bottom-width: $general_borderwidth_thin
 
 .HeaderBreak
 	width: 100%
-	height: 60px
+	height: 65px
         
 
 /* MAIN */

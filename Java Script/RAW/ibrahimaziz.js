@@ -96,6 +96,21 @@ function lineGenerator(lineID, lineAmount)
     $(lineID).css("width", ((sizeBox * lineAmount) + 2) + "px");
 }
 
+function headerGenerator(stringID)
+{
+	$(stringID).each(function(index)
+	{
+		var stringTableOriginalJavaScriptID = $(this).attr("id");
+		var stringTableOriginalJQueryID = stringKres + stringTableOriginalJavaScriptID;
+		var stringTableUpdatedJavaScriptID = $(this).attr("id") + index;
+		var stringTableUpdatedJQueryID = stringKres + stringTableUpdatedJavaScriptID;
+
+		$(this).attr("id", stringTableUpdatedJavaScriptID);
+
+		boxGenerator(stringTableUpdatedJQueryID, 11, boxTypeWithoutLabel, null);
+	});
+}
+
 function tableHealthGenerator(stringTableID, intRow)
 {
 	var stringInfixName = stringTableID.substring(stringTablePrefix.length, stringTableID.length);
