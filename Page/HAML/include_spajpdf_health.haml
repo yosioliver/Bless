@@ -360,6 +360,22 @@
                 Jika pertanyaan nomor 6 dijawab "Ya" maka mohon agar melengkapi kolom dibawah ini
                 Apabila diperlukan dapat memberikan keterangan pada lembar tambahan. Lembar tambahan tersebut harus ditandatangani oleh Calon Pemegang Polis/Calon Tertanggung dan menjadi bagian yang tidak terpisahkan dari SPAJ ini.
                 %br
+
+%section.SectionFooter
+    = Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
+
+%section#SectionHeader5
+    = Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
+
+%table.Square
+    %thead
+        %tr
+            %th Pertanyaan Kesehatan
+            %th Calon Tertanggung
+            %th Calon Pemegang Polis
+    %tbody
+        %tr
+            %td.Child{ :colspan => "3" }
                 %h3 Calon Tertanggung
                 %table#TableProspectiveInsuredIllness.Space
                     %thead
@@ -382,20 +398,6 @@
                             %th Nama Dokter
                             %th Rumah Sakit / Klinik / Laboratorium / Puskesmas
                             %th Alamat dan Nomor Telepon
-
-%section.SectionFooter
-    = Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
-
-%section#SectionHeader5
-    = Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
-
-%table.Square
-    %thead
-        %tr
-            %th Pertanyaan Kesehatan
-            %th Calon Tertanggung
-            %th Calon Pemegang Polis
-    %tbody
         %tr
             %td.Child
                 7. Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
@@ -416,9 +418,6 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonProspectiveInsuredSPAJProposalNo" } Tidak
         %tr
             %td.Child{ :colspan => "3" }
-                Jika pertanyaan nomor 6 dijawab "Ya" maka mohon agar melengkapi kolom dibawah ini
-                Apabila diperlukan dapat memberikan keterangan pada lembar tambahan. Lembar tambahan tersebut harus ditandatangani oleh Calon Pemegang Polis/Calon Tertanggung dan menjadi bagian yang tidak terpisahkan dari SPAJ ini.
-                %br
                 %h3 Calon Tertanggung
                 %table#TableProspectiveInsuredSPAJProposal.Space
                     %thead
