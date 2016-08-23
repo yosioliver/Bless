@@ -46,7 +46,7 @@
       
       $(document).ready(function()
       {
-      	var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"},{"elementID":"RadioButtonProspectiveInsuredSmoker","Value":"true"},{"elementID":"RadioButtonProspectiveInsuredJunkie","Value":"false"},{"elementID":"RadioButtonPolicyHolderExtremeSport","Value":"true"},{"elementID":"RadioButtonPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"}]}}'
+      	var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"},{"elementID":"RadioButtonProspectiveInsuredSmoker","Value":"true"},{"elementID":"RadioButtonProspectiveInsuredJunkie","Value":"false"},{"elementID":"RadioButtonPolicyHolderExtremeSport","Value":"true"},{"elementID":"RadioButtonPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredVisionDiseaseName","Value":"belekan"},{"elementID":"TextProspectiveInsuredVisionSickFrom","Value":"01/07/2016"},{"elementID":"TextProspectiveInsuredVisionSickDuration","Value":"2 minggu"},{"elementID":"TextProspectiveInsuredVisionDoctorName","Value":"anto"},{"elementID":"TextProspectiveInsuredVisionHosipital","Value":"rsib"},{"elementID":"TextProspectiveInsuredVisionAddress","Value":"bintaro"},{"elementID":"TextProspectiveInsuredVisionTelephone","Value":"123"},{"elementID":"TextProspectiveInsuredENTDiseaseName","Value":"congean"},{"elementID":"TextProspectiveInsuredRespiratoryDiseaseName","Value":"pilek"},{"elementID":"TextProspectiveInsuredCardiacDiseaseName","Value":"sesek"},{"elementID":"TextProspectiveInsuredCardiacDoctorName","Value":"surianto"}]}}'
       
       	// SECTION GENERAL
       
@@ -270,18 +270,10 @@
       	boxGenerator("#TextProspectiveInsuredSmokeAmount", 2, boxTypeWithoutLabel, null);
       	boxGenerator("#TextPolicyHolderSmokeAmount", 2, boxTypeWithoutLabel, null);
       
-      	boxGenerator("#BoxProspectiveInsured1Month", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxProspectiveInsured1Year", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxProspectiveInsured2Month", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxProspectiveInsured2Year", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxProspectiveInsured3Month", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxProspectiveInsured3Year", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxPolicyHolder1Month", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxPolicyHolder1Year", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxPolicyHolder2Month", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxPolicyHolder2Year", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxPolicyHolder3Month", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxPolicyHolder3Year", 2, boxTypeWithoutLabel, null);
+      	tableHealthGenerator("TableProspectiveInsuredIllness", 3);
+      	tableHealthGenerator("TablePolicyHolderIllness", 3);
+      	tableSPAJProposalGenerator("TableProspectiveInsuredSPAJProposal", 3);
+      	tableSPAJProposalGenerator("TablePolicyHolderSPAJProposal", 3);
       
       	boxGenerator("#TextProspectiveInsuredBabyHeight", 2, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredBabyWeight", 2, boxTypeWithoutLabel, null);
@@ -297,9 +289,7 @@
       	// SETTER
       
       	var objectContent = JSON.parse(jsonDummy);
-      	getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
-      	tableHealthGenerator("TableProspectiveInsuredIllness", 3);
-      	tableHealthGenerator("TablePolicyHolderIllness", 3);
+      	getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);	
       });
     </script>
   </head>
@@ -525,6 +515,16 @@
         <label class='Wrap Single PositionerLeft' for='TextPolicyHolderCompany'>11. a. Nama Perusahaan/Instansi/Sekolah</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompany' style='margin-left: 4px'></table>
         <br>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
         <label class='Medium SecondIndent Single PositionerLeft' for='TextPolicyHolderMainJob'>Pekerjaan Utama</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderMainJob'></table>
         <br>
@@ -756,6 +756,27 @@
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderCompanySector'>8. Bidang Usaha</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanySector'></table>
         <br>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <section class='SectionHeader'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
         <label class='Medium Multi PositionerLeft' for='TextPolicyHolderCompanyAddress'>9. Alamat Perusahaan (sesuai SKDP)</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderCompanyAddress'></table>
         <label class='Box Single PositionerLeft' for='TextPolicyHolderCompanyCity' id='LabelPolicyHolderCompanyCity'>Kota</label>
@@ -1010,6 +1031,27 @@
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredEmail'>14. Alamat Email</label>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredEmail'></table>
         <br>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <section class='SectionHeader'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
         <label class='Medium Multi PositionerLeft' for='TextProspectiveInsuredOfficeAddress1' style='height: 112px'>15. Alamat Kantor</label>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredOfficeAddress1'></table>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredOfficeAddress2'></table>
@@ -1290,8 +1332,29 @@
         <label class='RadioButton PositionerLeft' for='RadioButtonPremiPaymentThirdPartyAnswerNo' id='LabelPremiPaymentThirdPartyAnswerNo'>Tidak</label>
         <label class='Wrap Single FirstIndent PositionerLeft' for='TextPremiPaymentThirdPartyAnswerYesStatement'>Bila jawaban Anda “Ya”, mohon isi dan lengkapi Formulir Keterangan Tambahan untuk Pihak ketiga.</label>
         <br>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
       </section>
       <section id='SectionProspectiveHealth'>
+        <section class='SectionHeader'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
         <h2>Data Kesehatan</h2>
         <table class='Square'>
           <thead>
@@ -1757,6 +1820,38 @@
                 </table>
               </td>
             </tr>
+          </tbody>
+        </table>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <section class='SectionHeader'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
+        <table class='Square'>
+          <thead>
+            <tr>
+              <th>Pertanyaan Kesehatan</th>
+              <th>Calon Tertanggung</th>
+              <th>Calon Pemegang Polis</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td class='Child'>
                 7. Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
@@ -1796,35 +1891,9 @@
                       <th>Hasil Keputusan</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
                 </table>
                 <h3>Calon Pemegang Polis</h3>
-                <table class='Space' id='TableProspectiveInsuredSPAJProposal'>
+                <table class='Space' id='TablePolicyHolderSPAJProposal'>
                   <thead>
                     <tr>
                       <th>No.</th>
@@ -1835,32 +1904,6 @@
                       <th>Hasil Keputusan</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
                 </table>
               </td>
             </tr>
@@ -2085,6 +2128,18 @@
           <li>
             Saya/Kami dengan ini mengizinkan Penanggung untuk menggunakan atau memberikan informasi atau keterangan mengenai Saya/Kami yang tersedia, diperoleh atau disimpan oleh Penanggung (sesuai yang tercantum dalam SPAJ ini atau sarana lain), kepada pihak-pihak lain (termasuk tetapi tidak terbatas pada perusahaan reasuransi, asuransi, lembaga, bank atau badan hukum lain baik di dalam maupun di luar negeri) yang memiliki hubungan kerjasama dengan Penanggung dalam rangka pengajuan SPAJ ini, pembayaran klaim dan pelayanan nasabah. Saya/Kami juga mengerti bahwa Saya/Kami berhak untuk melakukan koreksi atau penambahan atas informasi dan keterangan mengenai Saya/Kami tersebut dengan menghubungi Kantor Pusat Penanggung.
           </li>
+        </ol>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <ol>
           <li>
             Saya/Kami menyetujui membayar kepada Penanggung semua biaya pemeriksaan kesehatan yang timbul jika Saya/Kami membatalkan SPAJ dalam proses Underwriting atau setelah diputuskan dengan risiko standar.
           </li>
@@ -2221,6 +2276,16 @@
           <br>
           Mohon agar menandatangani SPAJ, jika Anda telah mengisi semua pertanyaan dan pernyataan dengan benar dan lengkap sesuai dengan keadaan sebenarnya. Segala risiko yang timbul akibat dari SPAJ yang ditandatangani dalam keadaan kosong atau tidak sesuai dengan kondisi sebenarnya merupakan tanggung jawab Pemegang Polis.
         </p>
+      </section>
+      <section class='SectionFooter'>
+        <div class='FooterContainer'>
+          <div class='FooterLast'>
+            <img class='PositionerRight' src='../../Resource/Icon/Turqoise/icon_halobca.svg'>
+            <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+            <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+          </div>
+        </div>
+        <div class='PageBreak'></div>
       </section>
     </main>
   </body>

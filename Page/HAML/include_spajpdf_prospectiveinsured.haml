@@ -167,6 +167,12 @@
 %table#TextProspectiveInsuredEmail.BoxSquare.PositionerLeft
 %br
 
+%section.SectionFooter
+	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
+	
+%section.SectionHeader
+	= Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
+
 %label.Medium.Multi.PositionerLeft{ :for => "TextProspectiveInsuredOfficeAddress1", :style => "height: 112px" } 15. Alamat Kantor
 %table#TextProspectiveInsuredOfficeAddress1.BoxSquare.PositionerLeft
 %table#TextProspectiveInsuredOfficeAddress2.BoxSquare.PositionerLeft

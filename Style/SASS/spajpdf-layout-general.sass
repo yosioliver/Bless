@@ -19,19 +19,51 @@ header
     h1
         float: left
 
+.HeaderContainer
+	position: absolute
+	height: 50px
+	left: $general_space_medium
+	right: $general_space_medium
+	.HeaderGeneral
+		padding: $general_space_small
+        +BorderRadius-Top($general_borderradius_thick)
+
+.HeaderBreak
+	width: 100%
+	height: 50px
+        
 
 /* MAIN */
 
 main
     padding: $general_space_medium
     section
-        padding: $general_space_small
+        padding: $general_space_tiny
         .Note
             margin-bottom: $general_space_medium
             padding: $general_space_small
             border-style: solid
             border-width: $general_borderwidth_thin
             +BorderRadius($general_borderradius_thin)
+			
+			
+/* FOOTER */
+
+.FooterContainer
+	position: absolute
+	height: 50px
+	left: $general_space_medium
+	right: $general_space_medium
+	.FooterGeneral
+		padding-top: $general_space_medium
+		padding-left: $general_space_small
+		padding-right: $general_space_small
+		padding-bottom: $general_space_tiny
+		+BorderRadius-Bottom($general_borderradius_thick)
+
+.PageBreak
+	width: 100%
+	height: 50px
 
 
 /* CONDITION */

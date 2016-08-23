@@ -45,11 +45,13 @@ var stringPrefixSelect = "Select";
 var stringPopUpTypeGeneral = "general";
 var stringPopUpTypeHealth = "health";
 var stringPopUpTypeSPAJProposal = "spajproposal";
-var arrayTableHeader = ["DiseaseName", "SickFrom", "SickDuration", "DoctorName", "Hospital", "Address", "Telephone"];
+var arrayHealthTableHeader = ["DiseaseName", "SickFrom", "SickDuration", "DoctorName", "Hospital", "Address", "Telephone"];
+var arraySPAJProposalTableHeader = ["CompanyName", "PolicyNumber", "DatePublished", "BasicSumAssured", "Decision"];
 var stringRowPrefix = "Row";
 var stringCellPrefix = "Cell";
 var stringTablePrefix = "Table";
 var stringBodyPrefix = "Body";
+var stringNumberPrefix = "Number";
 
 
 // GENERATOR
@@ -118,13 +120,18 @@ function tableHealthGenerator(stringTableID, intRow)
 		
 		$(stringTableJQueryID + " " + stringBodyJQueryID).append("<tr id='" + stringRowJavaScriptID + "'></tr>");
 		
-		for (var j = 0; j < arrayTableHeader.length; j++)
+		stringCellJavaScriptID = stringCellPrefix + stringInfixName + stringNumberPrefix + i;
+		stringCellJQueryID = stringKres + stringCellJavaScriptID;
+
+		$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
+		
+		for (var j = 0; j < arrayHealthTableHeader.length - 1; j++)
 		{
-			stringCellJavaScriptID = stringCellPrefix + stringInfixName + arrayTableHeader[j] + i;
+			stringCellJavaScriptID = stringCellPrefix + stringInfixName + arrayHealthTableHeader[j] + i;
 			stringCellJQueryID = stringKres + stringCellJavaScriptID;
-			stringMonthJavaScriptID = stringPrefixDate + stringInfixName + arrayTableHeader[j] + stringIDMonth + i;
+			stringMonthJavaScriptID = stringPrefixDate + stringInfixName + arrayHealthTableHeader[j] + stringIDMonth + i;
 			stringMonthJQueryID = stringKres + stringMonthJavaScriptID;
-			stringYearJavaScriptID = stringPrefixDate + stringInfixName + arrayTableHeader[j] + stringIDYear + i;
+			stringYearJavaScriptID = stringPrefixDate + stringInfixName + arrayHealthTableHeader[j] + stringIDYear + i;
 			stringYearJQueryID = stringKres + stringYearJavaScriptID;
 			
 			$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
@@ -132,7 +139,7 @@ function tableHealthGenerator(stringTableID, intRow)
 			if (j == 2)
 			{
 				$(stringRowJQueryID + " " + stringCellJQueryID).append("<label for='" + stringMonthJavaScriptID + "' class='Wrap Single PositionerCenter'>Bulan</label>");
-				$(stringRowJQueryID + " " + stringCellJQueryID).append("<table id='" + stringMonthJavaScriptID + "' class='BoxSquare PositionerCenter' ></table><br>");
+				$(stringRowJQueryID + " " + stringCellJQueryID).append("<table id='" + stringMonthJavaScriptID + "' class='BoxSquare PositionerCenter'></table><br>");
 				$(stringRowJQueryID + " " + stringCellJQueryID).append("<label for='" + stringYearJavaScriptID + "' class='Wrap Single PositionerCenter'>Tahun</label>");
 				$(stringRowJQueryID + " " + stringCellJQueryID).append("<table id='" + stringYearJavaScriptID + "' class='BoxSquare PositionerCenter'></table>");
 				
@@ -143,6 +150,41 @@ function tableHealthGenerator(stringTableID, intRow)
 			{
 				
 			}
+		}
+	}
+}
+
+function tableSPAJProposalGenerator(stringTableID, intRow)
+{
+	var stringInfixName = stringTableID.substring(stringTablePrefix.length, stringTableID.length);
+	var stringTableJQueryID = stringKres + stringTableID;
+	var stringRowJavaScriptID;
+	var stringRowJQueryID;
+	var stringCellJavaScriptID;
+	var stringCellJQueryID;
+	var stringBodyJavaScriptID = stringBodyPrefix + stringInfixName;
+	var stringBodyJQueryID = stringKres + stringBodyJavaScriptID;
+	
+	$(stringTableJQueryID).append("<tbody id='" + stringBodyJavaScriptID + "'></tbody>");
+	
+	for (var i = 0; i < intRow; i++)
+	{
+		stringRowJavaScriptID = stringRowPrefix + stringInfixName + i;
+		stringRowJQueryID = stringKres + stringRowJavaScriptID;
+		
+		$(stringTableJQueryID + " " + stringBodyJQueryID).append("<tr id='" + stringRowJavaScriptID + "'></tr>");
+		
+		stringCellJavaScriptID = stringCellPrefix + stringInfixName + stringNumberPrefix + i;
+		stringCellJQueryID = stringKres + stringCellJavaScriptID;
+
+		$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
+		
+		for (var j = 0; j < arraySPAJProposalTableHeader.length; j++)
+		{
+			stringCellJavaScriptID = stringCellPrefix + stringInfixName + arraySPAJProposalTableHeader[j] + i;
+			stringCellJQueryID = stringKres + stringCellJavaScriptID;
+			
+			$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
 		}
 	}
 }
@@ -217,12 +259,14 @@ function popUpGeneralShow(stringName, booleanInputState)
     
     if ($("#LabelDetail").text().length > 0)
     {
-        
+        $("#LabelDetail").empty();
     }
     else
     {
-        $("#LabelDetail").append($(stringKres + stringPrefixLabel + stringInfixName).text());
+        
     }
+	
+	$("#LabelDetail").append($(stringKres + stringPrefixLabel + stringInfixName).text());
 
     var stringDetailValue = arrayFind(arrayHealthQuestionnaire, stringPrefixText + stringInfixName + stringDetailSuffix);
     
@@ -283,7 +327,6 @@ function additionalQuestionGenerator()
             {
                 if ($(this).val() == "true")
                 {
-                    
                     popUpGeneralShow($(this).attr("name"), true);
                 }
                 else

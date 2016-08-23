@@ -16,7 +16,7 @@
 
 			$(document).ready(function()
 			{
-				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"},{"elementID":"RadioButtonProspectiveInsuredSmoker","Value":"true"},{"elementID":"RadioButtonProspectiveInsuredJunkie","Value":"false"},{"elementID":"RadioButtonPolicyHolderExtremeSport","Value":"true"},{"elementID":"RadioButtonPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"}]}}'
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"},{"elementID":"RadioButtonProspectiveInsuredSmoker","Value":"true"},{"elementID":"RadioButtonProspectiveInsuredJunkie","Value":"false"},{"elementID":"RadioButtonPolicyHolderExtremeSport","Value":"true"},{"elementID":"RadioButtonPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredVisionDiseaseName","Value":"belekan"},{"elementID":"TextProspectiveInsuredVisionSickFrom","Value":"01/07/2016"},{"elementID":"TextProspectiveInsuredVisionSickDuration","Value":"2 minggu"},{"elementID":"TextProspectiveInsuredVisionDoctorName","Value":"anto"},{"elementID":"TextProspectiveInsuredVisionHosipital","Value":"rsib"},{"elementID":"TextProspectiveInsuredVisionAddress","Value":"bintaro"},{"elementID":"TextProspectiveInsuredVisionTelephone","Value":"123"},{"elementID":"TextProspectiveInsuredENTDiseaseName","Value":"congean"},{"elementID":"TextProspectiveInsuredRespiratoryDiseaseName","Value":"pilek"},{"elementID":"TextProspectiveInsuredCardiacDiseaseName","Value":"sesek"},{"elementID":"TextProspectiveInsuredCardiacDoctorName","Value":"surianto"}]}}'
 
 				// SECTION GENERAL
 
@@ -240,18 +240,10 @@
 				boxGenerator("#TextProspectiveInsuredSmokeAmount", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderSmokeAmount", 2, boxTypeWithoutLabel, null);
 
-				boxGenerator("#BoxProspectiveInsured1Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxProspectiveInsured1Year", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxProspectiveInsured2Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxProspectiveInsured2Year", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxProspectiveInsured3Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxProspectiveInsured3Year", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxPolicyHolder1Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxPolicyHolder1Year", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxPolicyHolder2Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxPolicyHolder2Year", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxPolicyHolder3Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#BoxPolicyHolder3Year", 2, boxTypeWithoutLabel, null);
+				tableHealthGenerator("TableProspectiveInsuredIllness", 3);
+				tableHealthGenerator("TablePolicyHolderIllness", 3);
+				tableSPAJProposalGenerator("TableProspectiveInsuredSPAJProposal", 3);
+				tableSPAJProposalGenerator("TablePolicyHolderSPAJProposal", 3);
 
 				boxGenerator("#TextProspectiveInsuredBabyHeight", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProspectiveInsuredBabyWeight", 2, boxTypeWithoutLabel, null);
@@ -267,9 +259,7 @@
 				// SETTER
 
 				var objectContent = JSON.parse(jsonDummy);
-				getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
-				tableHealthGenerator("TableProspectiveInsuredIllness", 3);
-				tableHealthGenerator("TablePolicyHolderIllness", 3);
+				getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);	
 			});
 
 
@@ -310,3 +300,5 @@
 				= Haml::Engine.new(File.read("include_spajpdf_declaration.haml")).render
 			%section#SectionAgreement
 				= Haml::Engine.new(File.read("include_spajpdf_agreement.haml")).render
+			%section.SectionFooter
+				= Haml::Engine.new(File.read("footer_spajpdf_last.haml")).render
