@@ -14,10 +14,10 @@ $theme_secondary_color: #b7e8eb
 $theme_secondary_red: 182
 $theme_secondary_green: 232
 $theme_secondary_blue: 235
-$theme_tertiary_color: #e47d3a
-$theme_tertiary_red: 228
-$theme_tertiary_green: 125
-$theme_tertiary_blue: 58
+$theme_tertiary_color: #f5f5f5
+$theme_tertiary_red: 245
+$theme_tertiary_green: 245
+$theme_tertiary_blue: 245
 $theme_quaternary_color: #ebecec
 $theme_quaternary_red: 235
 $theme_quaternary_green: 236
@@ -183,6 +183,9 @@ input[type="text"], input[type="password"]
     background-color: transparent
     
 input[type="text"]:disabled, input[type="password"]:disabled
+    background-color: $theme_tertiary_color
+    
+input[type="text"]:read-only, input[type="password"]:read-only
     background-color: $theme_quaternary_color
 
 .RadioButton
