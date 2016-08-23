@@ -62,13 +62,14 @@ main
         label.Long, span.Long
             width: 100%
         label.ShortFix, span.ShortFix
+            width: $label_width_short
             max-width: $label_width_short
         label.MediumFix, span.MediumFix
+            width: $label_width_medium * 1.5
             max-width: $label_width_medium * 1.5
         label.LongFix, span.LongFix
-            max-width: $label_width_long
-        label.LongFix, span.LongFix
-            max-width: 100%
+            width: $label_width_long * 2
+            max-width: $label_width_long * 2
         label.Short:first-child, span.Short:first-child
             max-width: $label_width_short
         label.Medium:first-child, span.Medium:first-child

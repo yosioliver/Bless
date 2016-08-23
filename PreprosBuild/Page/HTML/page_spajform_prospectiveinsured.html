@@ -69,14 +69,7 @@
           });
                           
           autoPopulateState();
-          //calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
-          $('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );
-          $('#TextProspectiveInsuredRevenue').number( true, 0, ',', '.' );
-          $('#TextProspectiveInsuredOtherIncome').number( true, 0, ',', '.' );
-          
-          radioButtonOtherGenerator("RadioButtonProspectiveInsuredIDType", "#TextProspectiveInsuredIDTypeOther", "OTHER");
-          radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "lainnya");
-          radioButtonOtherGenerator("RadioButtonProspectiveInsuredInsurancePurpose", "#TextProspectiveInsuredInsurancePurposeOther", "lainnya");
+          calculateAge("DateProspectiveInsuredBirthday", "TextProspectiveInsuredAge");
       });
     </script>
   </head>
@@ -117,15 +110,15 @@
           <label class='Medium Single Item' for='TextProspectiveInsuredIDNumber'>Nomor Identitas Diri</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredIDNumber' required='true' type='text'>
           <label class='Medium Single Item' for='DateProspectiveInsuredActive'>Masa berlaku</label>
-          <input class='Medium Single Item' data-input-type='autopopulate' id='DateProspectiveInsuredActive' required='true' type='text'>
+          <input class='Medium Single Item' data-field='date' data-input-type='autopopulate' id='DateProspectiveInsuredActive' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredPlace'>Tempat lahir</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredPlace' type='text'>
           <label class='Medium Single Item' for='DateProspectiveInsuredBirthday'>Tanggal lahir</label>
-          <input class='Medium Single Item' data-input-type='autopopulate' id='DateProspectiveInsuredBirthday' required='true' type='text'>
+          <input class='Medium Single Item' data-field='date' id='DateProspectiveInsuredBirthday' required='true' type='text'>
           <label class='Medium Single Item' for='TextProspectiveInsuredAge'>Umur</label>
-          <input class='Medium Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredAge' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredAge' type='text'>
         </div>
         <div class='ContainerLeft'>
           <label class='Medium Single Item' for='RadioButtonProspectiveInsuredNatioanlity'>Kewarganegaraan</label>
@@ -321,7 +314,7 @@
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredNPWP'>Nomor NPWP</label>
         <input class='Medium Single PositionerLeft' data-input-type='autopopulate' id='TextProspectiveInsuredNPWP' type='text'>
         <label class='Medium Single PositionerLeft' for='DateProspectiveInsuredNPWPActive'>Tanggal Berlaku</label>
-        <input class='Medium Single PositionerLeft' data-field='date' id='DateProspectiveInsuredNPWPActive' type='text'>
+        <input class='Medium Single PositionerLeft' id='DateProspectiveInsuredNPWPActive' type='text'>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredSalaryIDR'>Gaji</label>
         <div class='RadioButton PositionerLeft'>
@@ -332,7 +325,7 @@
           <label class='RadioButton' for='RadioButtonProspectiveInsuredSalaryUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredSalary'>Penghasilan / Tahun</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredSalary' type='text' value='0'>
+        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredSalary' type='text'>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredRevenueIDR'>Hasil USaha</label>
         <div class='RadioButton PositionerLeft'>
@@ -343,7 +336,7 @@
           <label class='RadioButton' for='RadioButtonProspectiveInsuredRevenueUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredRevenue'>Penghasilan / Tahun</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredRevenue' type='text' value='0'>
+        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredRevenue' type='text'>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonHolderOtherIncomeIDR'>Penghasilan Lainnya</label>
         <div class='RadioButton PositionerLeft'>
@@ -354,7 +347,7 @@
           <label class='RadioButton' for='RadioButtonHolderOtherIncomeUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredOtherIncome'>Penghasilan / Tahun</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredOtherIncome' type='text' value='0'>
+        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredOtherIncome' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredSource'>Jelaskan Sumbernya</label>

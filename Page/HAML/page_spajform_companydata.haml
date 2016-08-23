@@ -30,7 +30,7 @@
         / HEADER
 
         %header
-            %h1 Data Perusahaan / Badan Hukum
+            / %h1 Data Perusahaan / Badan Hukum
 
         / MAIN
 
@@ -97,8 +97,9 @@
                     %input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text" }
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
                     %input#TextPolicyHolderPostalCode.Medium.Single.Item{ :type => "text" }
+                %br
                     
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyAsset1" } Aset Perusahaan(Rp)
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyAsset1" } Aset         Perusahaan (Rp) 
                 %div.RadioButton.PositionerLeft
                     %input#RadioButtonPolicyHolderCompanyAsset1.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyAsset", :value => "100juta" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyAsset1" } < 100 Juta
@@ -116,7 +117,7 @@
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyAsset5" } >100 Miliar
                 %br
                 
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRevenue1" } Jumlah Penghasilan(Rp)
+                %label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRevenue1" } Jumlah        Penghasilan (Rp)                 
                 %div.RadioButton.PositionerLeft
                     %input#RadioButtonPolicyHolderCompanyRevenue1.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRevenue", :value => "100juta" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRevenue1" } < 100 Juta
