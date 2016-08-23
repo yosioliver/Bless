@@ -57,17 +57,25 @@ main
 			
 /* FOOTER */
 
-.FooterContainer
+.FooterContainer, .FooterContainerLast
 	position: absolute
 	height: 60px
 	left: $general_space_medium
 	right: $general_space_medium
-	.FooterGeneral
+	.FooterGeneral, .FooterLast
 		padding-top: $general_space_medium
 		padding-left: $general_space_small
 		padding-right: $general_space_small
 		padding-bottom: $general_space_tiny
 		+BorderRadius-Bottom($general_borderradius_thick)
+	img
+		width: 130px
+
+.FooterContainerLast
+	height: 120px
+
+.FooterContainerLast + .PageBreak
+	margin-top: 70px
 
 .PageBreak
 	width: 100%
