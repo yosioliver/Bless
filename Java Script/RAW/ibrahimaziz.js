@@ -45,13 +45,7 @@ var stringPrefixSelect = "Select";
 var stringPopUpTypeGeneral = "general";
 var stringPopUpTypeHealth = "health";
 var stringPopUpTypeSPAJProposal = "spajproposal";
-var arrayHealthTableHeader = ["DiseaseName", "SickFrom", "SickDuration", "DoctorName", "Hospital", "Address", "Telephone"];
-var arraySPAJProposalTableHeader = ["CompanyName", "PolicyNumber", "DatePublished", "BasicSumAssured", "Decision"];
-var stringRowPrefix = "Row";
-var stringCellPrefix = "Cell";
-var stringTablePrefix = "Table";
-var stringBodyPrefix = "Body";
-var stringNumberPrefix = "Number";
+var stringInputTypeAutoPopulate = "autopopulate";
 
 
 // GENERATOR
@@ -68,17 +62,13 @@ function spanGenerator(spanID, spanAmount)
 
 function boxGenerator(tableID, boxAmount, boxType, boxLabel)
 {
-	var stringInfixName = tableID.substring(5, tableID.length);
-	var stringBodyJavaScriptID = stringBodyPrefix + stringInfixName;
-	var stringBodyJQueryID = stringKres + stringBodyJavaScriptID;
-	
-    $(tableID).append("<tbody id='" + stringBodyJavaScriptID + "'></tbody>");
-    $(tableID + " " + stringBodyJQueryID).append("<tr></tr>");
+    $(tableID).append("<tbody></tbody>");
+    $(tableID + " tbody").append("<tr></tr>");
     var stringTableID = tableID.substring(1, tableID.length);
     
     for (var i = 0; i < boxAmount; i++)
     {
-        $(tableID + " " + stringBodyJQueryID + " tr").append("<td id=" + stringTableID + i + "></td>");
+        $(tableID + " tbody tr").append("<td id=" + stringTableID + i + "></td>");
     }
     
     if (boxType == boxTypeWithBottomLabel)
@@ -274,14 +264,12 @@ function popUpGeneralShow(stringName, booleanInputState)
     
     if ($("#LabelDetail").text().length > 0)
     {
-        $("#LabelDetail").empty();
+        
     }
     else
     {
-        
+        $("#LabelDetail").append($(stringKres + stringPrefixLabel + stringInfixName).text());
     }
-	
-	$("#LabelDetail").append($(stringKres + stringPrefixLabel + stringInfixName).text());
 
     var stringDetailValue = arrayFind(arrayHealthQuestionnaire, stringPrefixText + stringInfixName + stringDetailSuffix);
     
@@ -342,6 +330,7 @@ function additionalQuestionGenerator()
             {
                 if ($(this).val() == "true")
                 {
+                    
                     popUpGeneralShow($(this).attr("name"), true);
                 }
                 else
@@ -920,6 +909,15 @@ function getTextForm(stringID)
     return getTextGeneral(stringID);
 }
 
+//if (validateTextGeneral(stringID) == false)
+//    {
+//        // alert("Harap isi kolom di bawah ini !.");
+//    }
+//    else
+//    {
+//        
+//    }
+
 function getTextPDF(stringID)
 {
     var stringTextValue = $(stringID).val();
@@ -960,8 +958,6 @@ function getDatePDF(stringID)
 {
     return getBoxGeneral(stringID);
 }
-
-
 
 
 // GET FROM DATABASE
@@ -1023,7 +1019,7 @@ function getFromDatabase(objectContent, stringPageType)
         }
         else if (stringKey.substring(0, 8) == stringPrefixCheckbox)
         {            
-            setRadioButtonGeneral(stringKey, stringValue);
+            setRadioCheckboxGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, 6) == stringPrefixSelect)
         {            
@@ -1193,36 +1189,34 @@ function radioButtonMonitoring(radioButtonName)
 
 function calculateAge(stringBirthdayID, stringAgeID)
 {
-   var stringBirthdayJQueryID = stringKres + stringBirthdayID;
-   var stringAgeJQueryID = stringKres + stringAgeID;
+    var stringBirthdayJQueryID = stringKres + stringBirthdayID;
+    var stringAgeJQueryID = stringKres + stringAgeID;
+    
+    $(stringBirthdayJQueryID).change(function()
+    {
+        
+        if ($(stringBirthdayJQueryID).val().length > 0)
+        {
+            var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
+            var dateBirthday = new Date(arrayBirthday[2], arrayBirthday[1], arrayBirthday[0]);
+            var dateToday = new Date();        
+            var dateDifference = Math.ceil(dateToday.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 365);
+            var intAge = parseInt(dateDifference);
+            
+            if (intAge == null || intAge == undefined)
+            {
+                $(stringAgeJQueryID).val("");
+            }
+            else
+            {
+                $(stringAgeJQueryID).val(intAge);
+            }
+        }
+        else
+        {
 
-   $(stringBirthdayJQueryID).change(function()
-   {
-
-       if ($(stringBirthdayJQueryID).val().length > 0)
-       {
-           var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
-           var dateBirthday = new Date(arrayBirthday[2], arrayBirthday[1],
-arrayBirthday[0]);
-           var dateToday = new Date();        
-           var dateDifference = Math.ceil(dateToday.getTime() -
-dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 365);
-           var intAge = parseInt(dateDifference);
-
-           if (intAge == null || intAge == undefined)
-           {
-               $(stringAgeJQueryID).val("");
-           }
-           else
-           {
-               $(stringAgeJQueryID).val(intAge);
-           }
-       }
-       else
-       {
-
-       }
-   });
+        }
+    });
 }
 
 function autoPopulateState()
