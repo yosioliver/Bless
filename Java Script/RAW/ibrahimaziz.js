@@ -1193,12 +1193,66 @@ function radioButtonMonitoring(radioButtonName)
 
 function calculateAge(stringBirthdayID, stringAgeID)
 {
-    var stringBirthdayJQueryID = stringKres + stringBirthdayID;
-    var stringAgeJQueryID = stringKres + stringAgeID;
-    var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
-    var dateBirthday = new Date(arrayBirthday[2], arrayBirthday[1], arrayBirthday[0]);
-    var dateToday = new Date();        
-    var dateDifference = Math.ceil(dateToday.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 365);
-    var intAge = parseInt(dateDifference);        
-    $(stringAgeJQueryID).val(intAge);
+   var stringBirthdayJQueryID = stringKres + stringBirthdayID;
+   var stringAgeJQueryID = stringKres + stringAgeID;
+
+   $(stringBirthdayJQueryID).change(function()
+   {
+
+       if ($(stringBirthdayJQueryID).val().length > 0)
+       {
+           var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
+           var dateBirthday = new Date(arrayBirthday[2], arrayBirthday[1],
+arrayBirthday[0]);
+           var dateToday = new Date();        
+           var dateDifference = Math.ceil(dateToday.getTime() -
+dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 365);
+           var intAge = parseInt(dateDifference);
+
+           if (intAge == null || intAge == undefined)
+           {
+               $(stringAgeJQueryID).val("");
+           }
+           else
+           {
+               $(stringAgeJQueryID).val(intAge);
+           }
+       }
+       else
+       {
+
+       }
+   });
+}
+
+function autoPopulateState()
+{
+   var stringJQueryID;
+
+   $("input[data-input-type='" + stringInputTypeAutoPopulate +
+"']").each(function()
+   {
+       stringJQueryID = stringKres +$(this).attr("id");
+
+       $(stringJQueryID).prop("readonly", true);
+   });
+}
+
+function radioButtonOtherGenerator(stringRadioButtonName, stringTextID,
+stringValue)
+{
+   $(stringTextID).prop("readonly", true);
+
+   $("input:radio[name='" + stringRadioButtonName + "']").change(function()
+   {
+       if (getRadioButtonGeneral(stringRadioButtonName) == stringValue)
+       {
+           $(stringTextID).prop("readonly", false);
+       }
+       else
+       {
+           $(stringTextID).prop("readonly", true);
+           $(stringTextID).val('');
+       }
+   });
 }
