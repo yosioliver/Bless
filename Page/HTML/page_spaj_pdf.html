@@ -289,7 +289,15 @@
       	// SETTER
       
       	var objectContent = JSON.parse(jsonDummy);
-      	getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);	
+      	getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+      	
+      	boxGenerator("#SectionHeader1 table", 11, boxTypeWithoutLabel, null);
+      	boxGenerator("#SectionHeader2 table", 11, boxTypeWithoutLabel, null);
+      	boxGenerator("#SectionHeader3 table", 11, boxTypeWithoutLabel, null);
+      	boxGenerator("#SectionHeader4 table", 11, boxTypeWithoutLabel, null);
+      	boxGenerator("#SectionHeader5 table", 11, boxTypeWithoutLabel, null);
+      	boxGenerator("#SectionHeader6 table", 11, boxTypeWithoutLabel, null);
+      	boxGenerator("#SectionHeader7 table", 11, boxTypeWithoutLabel, null);
       });
     </script>
   </head>
@@ -524,6 +532,17 @@
             </div>
           </div>
           <div class='PageBreak'></div>
+        </section>
+        <section id='SectionHeader1'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
         </section>
         <label class='Medium SecondIndent Single PositionerLeft' for='TextPolicyHolderMainJob'>Pekerjaan Utama</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderMainJob'></table>
@@ -766,7 +785,7 @@
           </div>
           <div class='PageBreak'></div>
         </section>
-        <section class='SectionHeader'>
+        <section id='SectionHeader2'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
@@ -1041,7 +1060,7 @@
           </div>
           <div class='PageBreak'></div>
         </section>
-        <section class='SectionHeader'>
+        <section id='SectionHeader3'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
@@ -1344,7 +1363,7 @@
         </section>
       </section>
       <section id='SectionProspectiveHealth'>
-        <section class='SectionHeader'>
+        <section id='SectionHeader5'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
@@ -1832,7 +1851,7 @@
           </div>
           <div class='PageBreak'></div>
         </section>
-        <section class='SectionHeader'>
+        <section id='SectionHeader6'>
           <div class='HeaderContainer'>
             <div class='HeaderGeneral'>
               <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
@@ -1970,6 +1989,38 @@
               <td></td>
               <td></td>
             </tr>
+          </tbody>
+        </table>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <section id='SectionHeader7'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
+        <table class='Square'>
+          <thead>
+            <tr>
+              <th>Pertanyaan Kesehatan</th>
+              <th>Calon Tertanggung</th>
+              <th>Calon Pemegang Polis</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>
                 11. Pertanyaan khusus untuk wanita:
@@ -2138,6 +2189,17 @@
             </div>
           </div>
           <div class='PageBreak'></div>
+        </section>
+        <section id='SectionHeader8'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <label class='Medium Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
         </section>
         <ol>
           <li>

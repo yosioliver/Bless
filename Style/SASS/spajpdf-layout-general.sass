@@ -25,8 +25,10 @@ header
 	left: $general_space_medium
 	right: $general_space_medium
 	.HeaderGeneral
-		padding: $general_space_small
-        +BorderRadius-Top($general_borderradius_thick)
+		padding-left: $general_space_small
+		padding-right: $general_space_small
+		padding-bottom: $general_space_small
+		+BorderRadius-Top($general_borderradius_thick)
 
 .HeaderBreak
 	width: 100%
@@ -38,7 +40,6 @@ header
 main
     padding: $general_space_medium
     section
-        padding: $general_space_tiny
         .Note
             margin-bottom: $general_space_medium
             padding: $general_space_small

@@ -1,4 +1,4 @@
-%section.SectionHeader
+%section#SectionHeader5
     = Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
 
 %h2 Data Kesehatan
@@ -385,7 +385,7 @@
 %section.SectionFooter
     = Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
-%section.SectionHeader
+%section#SectionHeader6
     = Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
 
 %table.Square
@@ -491,6 +491,20 @@
                 %span.PositionerLeft Kg
             %td
             %td
+		
+%section.SectionFooter
+    = Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
+		
+%section#SectionHeader7
+    = Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
+
+%table.Square
+    %thead
+        %tr
+            %th Pertanyaan Kesehatan
+            %th Calon Tertanggung
+            %th Calon Pemegang Polis
+    %tbody
         %tr
             %td
                 11. Pertanyaan khusus untuk wanita:
