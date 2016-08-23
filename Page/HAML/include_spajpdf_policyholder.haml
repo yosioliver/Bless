@@ -123,6 +123,12 @@
 %table#TextPolicyHolderCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 4px" }
 %br
 
+%section.SectionFooter
+	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
+
+%section#SectionHeader1
+	= Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
+
 %label.Medium.SecondIndent.Single.PositionerLeft{ :for => "TextPolicyHolderMainJob" } Pekerjaan Utama
 %table#TextPolicyHolderMainJob.BoxSquare.PositionerLeft
 %br
@@ -389,6 +395,12 @@
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanySector" } 8. Bidang Usaha
 %table#TextPolicyHolderCompanySector.BoxSquare.PositionerLeft
 %br
+
+%section.SectionFooter
+	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
+
+%section#SectionHeader2
+	= Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
 
 %label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderCompanyAddress" } 9. Alamat Perusahaan (sesuai SKDP)
 %table#TextPolicyHolderCompanyAddress.BoxSquare.PositionerLeft
