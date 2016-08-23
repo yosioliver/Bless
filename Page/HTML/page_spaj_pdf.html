@@ -285,12 +285,182 @@
           boxGenerator("#TextProspectiveInsuredBabyWeight", 2, boxTypeWithoutLabel, null);
           boxGenerator("#TextProspectiveInsuredPregnancyAge", 2, boxTypeWithoutLabel, null);
       
+<<<<<<< HEAD
           // SECTION AGREEMENT
           
           lineGenerator("#LineSignedPlace", 8);
           lineGenerator("#LineSignedDateDay", 2);
           lineGenerator("#LineSignedDateMonth", 2);
           lineGenerator("#LineSignedDateYear", 4);                            
+=======
+      	boxGenerator("#TextProspectiveInsuredCIN", 7, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredFullName", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredIDNumber", 16, boxTypeWithoutLabel, null);
+      	lineGenerator("#LineProspectiveInsuredIDTypeOther", 11);
+      	boxGenerator("#TextProspectiveInsuredActiveDateDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#TextProspectiveInsuredActiveDateMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#TextProspectiveInsuredActiveDateYear", 4, boxTypeWithBottomLabel, labelYear);
+      	lineGenerator("#TextProspectiveInsuredBirthPlace", 8);
+      	boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#TextProspectiveInsuredAge", 2, boxTypeWithoutLabel, null);
+      	lineGenerator("#LineProspectiveInsuredNationalityWNA", 4);
+      	boxGenerator("#TextProspectiveInsuredCompany", 25, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredMainJob", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredWorkScope", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredPosition", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredJobDescription", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredSideJob", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredHomeAddress1", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredHomeAddress2", 30, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredHomeCity", 2)
+      	boxGenerator("#TextProspectiveInsuredHomeCity", 19, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredHomePostalCode", 3)
+      	boxGenerator("#TextProspectiveInsuredHomePostalCode", 6, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredHomeTelephonePrefix", 2)
+      	boxGenerator("#TextProspectiveInsuredHomeTelephonePrefix", 4, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredHomeTelephoneInfix", 1)
+      	boxGenerator("#TextProspectiveInsuredHomeTelephoneInfix", 9, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredOfficeAddress1", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredOfficeAddress2", 30, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredOfficeCity", 2)
+      	boxGenerator("#TextProspectiveInsuredOfficeCity", 19, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredOfficePostalCode", 3)
+      	boxGenerator("#TextProspectiveInsuredOfficePostalCode", 6, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredOfficeTelephonePrefix", 2)
+      	boxGenerator("#TextProspectiveInsuredOfficeTelephonePrefix", 4, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredOfficeTelephoneInfix", 1)
+      	boxGenerator("#TextProspectiveInsuredOfficeTelephoneInfix", 9, boxTypeWithoutLabel, null);
+      	lineGenerator("#LineProspectiveInsuredOtherRelationship", 5);
+      	lineGenerator("#LineProspectiveInsuredOtherPurpose", 5);
+      	boxGenerator("#TextProspectiveInsuredEmail", 30, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredTelephone1", 1)
+      	boxGenerator("#TextProspectiveInsuredTelephone1", 9, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredTelephone2", 1)
+      	boxGenerator("#TextProspectiveInsuredTelephone2", 9, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredNPWP", 16, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredNPWPActiveDateDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#TextProspectiveInsuredNPWPActiveDateMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#TextProspectiveInsuredNPWPActiveDateYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#TextProspectiveInsuredSalary", 17, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredRevenue", 17, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredOtherIncome", 17, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredSource", 30, boxTypeWithoutLabel, null);
+      
+      	// SUB B
+      
+      	boxGenerator("#TextPolicyHolderCompanyName", 30, boxTypeWithoutLabel, null);
+      	lineGenerator("#LinePolicyHolderCompanyTypeOther", 11);
+      	lineGenerator("#LinePolicyHolderComanyIDTypeOther", 11);
+      	boxGenerator("#TextPolicyHolderCompanyNoAnggaranDasar", 21, boxTypeWithoutLabel, null);
+      	boxGenerator("#DatePolicyHolderCompanyNoAnggaranDasarExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DatePolicyHolderCompanyNoAnggaranDasarExpiredYear", 4, boxTypeWithBottomLabel, labelYear); 
+      	boxGenerator("#TextPolicyHolderCompanyNoSIUP", 21, boxTypeWithoutLabel, null);
+      	boxGenerator("#DatePolicyHolderCompanySIUPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DatePolicyHolderCompanySIUPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DatePolicyHolderCompanySIUPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#TextPolicyHolderCompanyNoTDP", 21, boxTypeWithoutLabel, null);
+      	boxGenerator("#DatePolicyHolderCompanyNoTDPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DatePolicyHolderCompanyNoTDPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DatePolicyHolderCompanyNoTDPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#TextPolicyHolderCompanyNoSKDP", 21, boxTypeWithoutLabel, null);
+      	boxGenerator("#DatePolicyHolderCompanyNoSKDPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DatePolicyHolderCompanyNoSKDPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DatePolicyHolderCompanyNoSKDPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#TextPolicyHolderCompanyNoNPWP", 16, boxTypeWithoutLabel, null);
+      	boxGenerator("#DatePolicyHolderCompanyNoNPWPDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DatePolicyHolderCompanyNoNPWPMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DatePolicyHolderCompanyNoNPWPYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#TextPolicyHolderCompanySector", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPolicyHolderCompanyAddress", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPolicyHolderCompanyCity", 19, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelPolicyHolderCompanyPostalCode", 3);
+      	boxGenerator("#TextPolicyHolderCompanyPostalCode", 6, boxTypeWithoutLabel, null);
+      
+      	// SECTION COMPANY REPRESENTATIVE
+      
+      	boxGenerator("#TextPolicyHolderCompanyRepresentativeFullName", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPolicyHolderCompanyRepresentativePosition", 28, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPolicyHolderCompanyRepresentativeIDNumber", 16, boxTypeWithoutLabel, null);
+      	boxGenerator("#DatePolicyHolderCompanyRepresentativeIDExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DatePolicyHolderCompanyRepresentativeIDExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DatePolicyHolderCompanyRepresentativeIDExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+      	lineGenerator("#TextPolicyHolderCompanyRepresentativeRelationshipOther", 19);
+      	lineGenerator("#TextPolicyHolderCompanyRepresentativeInsurancePurposeOther", 5);
+      
+      	// SECTION ILLUSTRATION
+      
+      	boxGenerator("#BoxIllustrationAgentName", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#BoxIllustrationNumber", 10, boxTypeWithoutLabel, null);
+      	boxGenerator("#BoxIllustrationDateDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#BoxIllustrationDateMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#BoxIllustrationDateYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#BoxIllustrationAgentCode", 13, boxTypeWithoutLabel, null);
+      
+      	// SECTION PREMI PAYMENT
+      
+      	labelGenerator("#LabelPremiPaymentFrequencyYear", 5)
+      	labelGenerator("#LabelPremiPaymentFrequencySemester", 4)
+      	labelGenerator("#LabelPremiPaymentFrequencyTriwulan", 4)
+      	labelGenerator("#LabelPremiPaymentFrequencyMonth", 4)
+      	labelGenerator("#LabelPremiPaymentFrequencyFull", 4)
+      	labelGenerator("#LabelPremiPaymentPayorHolder", 5)
+      	labelGenerator("#LabelPremiPaymentPayorCompany", 12)
+      	labelGenerator("#LabelPremiPaymentPayorInsured", 5)
+      	labelGenerator("#LabelPremiPaymentPayorThirdParty", 18)
+      	labelGenerator("#LabelPremiPaymentDebitAccount", 5)
+      	labelGenerator("#LabelPremiPaymentCreditCardAccount", 9)  
+      	labelGenerator("#LabelPremiPaymentOtherAccount", 5)
+      	lineGenerator("#LinePremiPaymentOtherAccount", 9);
+      	boxGenerator("#TextPremiPaymentBankAccountDetailsName", 27, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPremiPaymentBankAccountDetailsNumber", 27, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPremiPaymentBankAccountDetailsBankName", 27, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPremiPaymentBankAccountDetailsBankBranch", 27, boxTypeWithoutLabel, null);
+      
+      	// SECTION HEALTH
+      
+      	boxGenerator("#TextProspectiveInsuredHeight", 3, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPolicyHolderHeight", 3, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredWeight", 3, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPolicyHolderWeight", 3, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredSmokeAmount", 2, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextPolicyHolderSmokeAmount", 2, boxTypeWithoutLabel, null);
+      
+      	tableHealthGenerator("TableProspectiveInsuredIllness", 3);
+      	tableHealthGenerator("TablePolicyHolderIllness", 3);
+      	tableSPAJProposalGenerator("TableProspectiveInsuredSPAJProposal", 3);
+      	tableSPAJProposalGenerator("TablePolicyHolderSPAJProposal", 3);
+      
+      	boxGenerator("#TextProspectiveInsuredBabyHeight", 2, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredBabyWeight", 2, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredPregnancyAge", 2, boxTypeWithoutLabel, null);
+      
+      	// SECTION AGREEMENT
+      
+      	lineGenerator("#LineSignedPlace", 8);
+      	lineGenerator("#LineSignedDateDay", 2);
+      	lineGenerator("#LineSignedDateMonth", 2);
+      	lineGenerator("#LineSignedDateYear", 4);  
+      
+      	// SETTER
+      
+      	var objectContent = JSON.parse(jsonDummy);
+      	// getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+      	
+      	headerGenerator(".HeaderGeneral table");
+      	
+      	var stringSectionHeader = "#SectionHeader";
+      	var stringSectionHeaderSuffix;
+      	
+      	for (var i = 1; i < 9; i++)
+      	{
+      		stringSectionHeaderSuffix = stringSectionHeader + i;
+      		
+      		alert("SectionHeader" + i + " -> x = " + $(stringSectionHeaderSuffix).position().left + ", y = " + $(stringSectionHeaderSuffix).position().top);
+      	}
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51
       });
     </script>
   </head>
@@ -346,9 +516,25 @@
         <br>
         <label class='Medium Single PositionerLeft' for='TextBranchCode'>Kode Cabang</label>
         <table class='BoxSquare PositionerLeft' id='TextBranchCode'></table>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceOther' name='RadioButtonReferenceSource' type='radio' value='Other'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceOther'>Other</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceAccountManager' name='RadioButtonReferenceSource' type='radio' value='AccountManager'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceAccountManager'>AM</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceAccountOfficer' name='RadioButtonReferenceSource' type='radio' value='AccountOfficer'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceAccountOfficer'>AO</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceTeller' name='RadioButtonReferenceSource' type='radio' value='Teller'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceTeller'>Teller</label>
+        <span class='Separator Tight PositionerRight'>/</span>
+        <input class='Plain' id='RadioButtonPolicyHolderReferenceSourceCustomerService' name='RadioButtonReferenceSource' type='radio' value='CustomerService'>
+        <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceCustomerService'>CS</label>
+        <label class='Wrap Single PositionerRight'>Tanggal Referal</label>
         <br>
         <label class='Medium Single PositionerLeft' for='TextArea'>Area / Kanwil</label>
         <table class='BoxSquare PositionerLeft' id='TextArea'></table>
+        <label class='Note Wrap Single PositionerRight' style='margin-top: -10px'>(harap dapat dilingkari)</label>
         <br>
         <label class='Medium Single PositionerLeft' for='TextAgentID'>AgentID</label>
         <table class='BoxSquare PositionerLeft' id='TextAgentID'></table>
@@ -1283,6 +1469,20 @@
         <br>
       </section>
       <section id='SectionProspectiveHealth'>
+<<<<<<< HEAD
+=======
+        <section id='SectionHeader4'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <label class='Short Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51
         <h2>Data Kesehatan</h2>
         <table class='Square'>
           <thead>
@@ -1837,6 +2037,41 @@
                 </table>
               </td>
             </tr>
+<<<<<<< HEAD
+=======
+          </tbody>
+        </table>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <section id='SectionHeader5'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <label class='Short Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
+        <table class='Square'>
+          <thead>
+            <tr>
+              <th>Pertanyaan Kesehatan</th>
+              <th>Calon Tertanggung</th>
+              <th>Calon Pemegang Polis</th>
+            </tr>
+          </thead>
+          <tbody>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51
             <tr>
               <td class='Child'>
                 7. Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
@@ -2007,6 +2242,41 @@
               <td></td>
               <td></td>
             </tr>
+<<<<<<< HEAD
+=======
+          </tbody>
+        </table>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <section id='SectionHeader6'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <label class='Short Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
+        <table class='Square'>
+          <thead>
+            <tr>
+              <th>Pertanyaan Kesehatan</th>
+              <th>Calon Tertanggung</th>
+              <th>Calon Pemegang Polis</th>
+            </tr>
+          </thead>
+          <tbody>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51
             <tr>
               <td>
                 11. Pertanyaan khusus untuk wanita:
@@ -2165,6 +2435,32 @@
           <li>
             Saya/Kami dengan ini mengizinkan Penanggung untuk menggunakan atau memberikan informasi atau keterangan mengenai Saya/Kami yang tersedia, diperoleh atau disimpan oleh Penanggung (sesuai yang tercantum dalam SPAJ ini atau sarana lain), kepada pihak-pihak lain (termasuk tetapi tidak terbatas pada perusahaan reasuransi, asuransi, lembaga, bank atau badan hukum lain baik di dalam maupun di luar negeri) yang memiliki hubungan kerjasama dengan Penanggung dalam rangka pengajuan SPAJ ini, pembayaran klaim dan pelayanan nasabah. Saya/Kami juga mengerti bahwa Saya/Kami berhak untuk melakukan koreksi atau penambahan atas informasi dan keterangan mengenai Saya/Kami tersebut dengan menghubungi Kantor Pusat Penanggung.
           </li>
+<<<<<<< HEAD
+=======
+        </ol>
+        <section class='SectionFooter'>
+          <div class='FooterContainer'>
+            <div class='FooterGeneral'>
+              <span class='Note Single PositionerLeft'>OP/NB/0104/031602 Hal 1 / 8</span>
+              <span class='Note Single PositionerRight'>PT Asuransi Jiwa BCA telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan.</span>
+              <br>
+            </div>
+          </div>
+          <div class='PageBreak'></div>
+        </section>
+        <section id='SectionHeader7'>
+          <div class='HeaderContainer'>
+            <div class='HeaderGeneral'>
+              <table class='BoxSquare PositionerRight' id='TextHeaderSPAJNumber'></table>
+              <label class='Short Single PositionerRight' for='TextHeaderSPAJNumber'>Nomor SPAJ</label>
+              <br>
+              <hr>
+            </div>
+          </div>
+          <div class='HeaderBreak'></div>
+        </section>
+        <ol>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51
           <li>
             Saya/Kami menyetujui membayar kepada Penanggung semua biaya pemeriksaan kesehatan yang timbul jika Saya/Kami membatalkan SPAJ dalam proses Underwriting atau setelah diputuskan dengan risiko standar.
           </li>

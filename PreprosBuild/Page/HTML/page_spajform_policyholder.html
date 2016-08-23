@@ -65,6 +65,7 @@
           {
               dateSeparator: "/",
               dateFormat: "dd/MM/yyyy"
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
           });
           
           autoPopulateState();
@@ -76,6 +77,11 @@
           radioButtonOtherGenerator("RadioButtonPolicyHolderIDType", "#TextPolicyHolderIDTypeOther", "OTHER");
           radioButtonOtherGenerator("RadioButtonPolicyHolderRelationAssured", "#TextPolicyHolderRelationAssuredOther", "lainnya");
           radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "lainnya");
+=======
+          });     
+          $("#DatePolicyHolderBirthday").val("01/02/1990");
+          calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
       });
     </script>
   </head>
@@ -89,7 +95,11 @@
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderFullName'>Nama Lengkap</label>
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
           <input class='Full Single Item' data-input-type='autopopulate' id='TextPolicyHolderFullName' required='true' type='text'>
+=======
+          <input class='Full Single Item' disabled='true' id='TextPolicyHolderFullName' required='true' type='text'>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
         </div>
         <div class='ContainerLeft'>
           <label class='Medium Single Item' for='RadioButtonPolicyHolderIDTypeKTP'>Jenis Identitas Diri</label>
@@ -106,7 +116,11 @@
             <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='KIMSKITAS'>
             <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKIMSKITAS'>KIMS/KITAS</label>
             <div class='Separator'></div>
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
             <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeOther' name='RadioButtonPolicyHolderIDType' type='radio' value='OTHER'>
+=======
+            <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeOther' name='RadioButtonPolicyHolderIDType' type='radio' value='LAINNYA'>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
             <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeOther'>Lainnya</label>
           </div>
           <input class='Long Single PositionerLeft' id='TextPolicyHolderIDTypeOther' type='text'>
@@ -114,17 +128,29 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderIDNumber'>Nomor Identitas Diri</label>
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextPolicyHolderIDNumber' required='true' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderActive'>Masa berlaku</label>
           <input class='Medium Single Item' data-field='date' data-input-type='autopopulate' id='DatePolicyHolderActive' required='true' type='text'>
+=======
+          <input class='Medium Single Item' id='TextPolicyHolderIDNumber' required='true' type='text'>
+          <label class='Medium Single Item' for='DatePolicyHolderActive'>Masa berlaku</label>
+          <input class='Medium Single Item' data-field='date' id='DatePolicyHolderActive' readonly='true' required='true' type='text'>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderPlace'>Tempat lahir</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextPolicyHolderPlace' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderBirthday'>Tanggal lahir</label>
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
           <input class='Medium Single Item' data-input-type='autopopulate' id='DatePolicyHolderBirthday' required='true' type='text'>
           <label class='Medium Single Item' for='TextPolicyHolderAge'>Umur</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextPolicyHolderAge' type='text'>
+=======
+          <input class='Medium Single Item' data-field='date' id='DatePolicyHolderBirthday' readonly='true' required='true' type='text'>
+          <label class='Medium Single Item' for='TextPolicyHolderAge'>Umur</label>
+          <input class='Medium Single Item' id='TextPolicyHolderAge' type='text'>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
         </div>
         <div class='ContainerLeft'>
           <label class='Medium Single Item' for='RadioButtonPolicyHolderNationalityWNI'>Kewarganegaraan</label>
@@ -214,7 +240,11 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress1'>Alamat Tempat Tinggal</label>
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
           <input class='Full Single Item' data-input-type='autopopulate' id='TextPolicyHolderHomeAddress1' required='true' type='text'>
+=======
+          <input class='Full Single Item' id='TextPolicyHolderHomeAddress1' required='true' type='text'>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress2'></label>
@@ -227,9 +257,15 @@
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'></label>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'>Kota</label>
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextPolicyHolderHomeCity' required='true' type='text'>
           <label class='Medium Single Item' for='TextPolicyHolderHomePostalCode'>Kode Pos</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextPolicyHolderPostalCode' required='true' type='text'>
+=======
+          <input class='Medium Single Item' id='TextPolicyHolderHomeCity' required='true' type='text'>
+          <label class='Medium Single Item' for='TextPolicyHolderHomePostalCode'>Kode Pos</label>
+          <input class='Medium Single Item' id='TextPolicyHolderPostalCode' required='true' type='text'>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeTelephone'></label>
@@ -238,7 +274,11 @@
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderHandphone1'>Nomor HP Utama</label>
+<<<<<<< HEAD:PreprosBuild/Page/HTML/page_spajform_policyholder.html
         <input class='Long Single PositionerLeft' data-input-type='autopopulate' id='TextPolicyHolderHandphone1' required='true' type='text'>
+=======
+        <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone1' required='true' type='text'>
+>>>>>>> 77fbf58acd73913b138bed4f8610cf050c56fa51:Prepros Build/Page/HTML/page_spajform_policyholder.html
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderHandphone2'>Nomor HP 2</label>
         <input class='Long Single PositionerLeft' data-input-type='autopopulate' id='TextPolicyHolderHandphone2' type='text'>
         <br>
