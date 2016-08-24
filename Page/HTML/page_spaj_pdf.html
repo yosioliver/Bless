@@ -60,14 +60,14 @@
       	boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
       	boxGenerator("#TextLicenseNumber", 16, boxTypeWithoutLabel, null);
-      	boxGenerator("#DateActiveDay", 2, boxTypeWithBottomLabel, labelDay);
-      	boxGenerator("#DateActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
-      	boxGenerator("#DateActiveYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#DateActiveAgentExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DateActiveAgentExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DateActiveAgentExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
       	boxGenerator("#TextProductName", 16, boxTypeWithoutLabel, null);
       	boxGenerator("#TextReferenceName", 30, boxTypeWithoutLabel, null);
       	boxGenerator("#TextBranchName", 30, boxTypeWithoutLabel, null);
       	boxGenerator("#TextBranchCode", 16, boxTypeWithoutLabel, null);
-      	boxGenerator("#TextArea", 16, boxTypeWithoutLabel, null);
+      	boxGenerator("#AreaKanwilAgent", 16, boxTypeWithoutLabel, null);
       	boxGenerator("#TextAgentID", 13, boxTypeWithoutLabel, null);
       	boxGenerator("#DateReferenceDay", 2, boxTypeWithBottomLabel, labelDay);
       	boxGenerator("#DateReferenceMonth", 2, boxTypeWithBottomLabel, labelMonth);
@@ -234,12 +234,12 @@
       
       	// SECTION ILLUSTRATION
       
-      	boxGenerator("#BoxIllustrationAgentName", 30, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxIllustrationNumber", 10, boxTypeWithoutLabel, null);
-      	boxGenerator("#BoxIllustrationDateDay", 2, boxTypeWithBottomLabel, labelDay);
-      	boxGenerator("#BoxIllustrationDateMonth", 2, boxTypeWithBottomLabel, labelMonth);
-      	boxGenerator("#BoxIllustrationDateYear", 4, boxTypeWithBottomLabel, labelYear);
-      	boxGenerator("#BoxIllustrationAgentCode", 13, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextIllustrationAgentName", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextIllustrationNumber", 10, boxTypeWithoutLabel, null);
+      	boxGenerator("#DateIllustrationDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DateIllustrationMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DateIllustrationYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#TextIllustrationAgentCode", 13, boxTypeWithoutLabel, null);
       
       	// SECTION PREMI PAYMENT
       
@@ -337,12 +337,12 @@
         <br>
         <label class='Medium Single PositionerLeft' for='TextLicenseNumber'>License Number</label>
         <table class='BoxSquare PositionerLeft' id='TextLicenseNumber'></table>
-        <table class='BoxSquare PositionerRight' id='DateActiveYear'></table>
-        <span class='Separator PositionerRight' for='DateActiveYear'>/</span>
-        <table class='BoxSquare PositionerRight' id='DateActiveMonth'></table>
-        <span class='Separator PositionerRight' for='DateActiveMonth'>/</span>
-        <table class='BoxSquare PositionerRight' id='DateActiveDay'></table>
-        <label class='Wrap Single PositionerRight' for='DateActiveDay'>Masa Berlaku</label>
+        <table class='BoxSquare PositionerRight' id='DateActiveAgentExpiredYear'></table>
+        <span class='Separator PositionerRight' for='DateActiveAgentExpiredYear'>/</span>
+        <table class='BoxSquare PositionerRight' id='DateActiveAgentExpiredMonth'></table>
+        <span class='Separator PositionerRight' for='DateActiveAgentExpiredMonth'>/</span>
+        <table class='BoxSquare PositionerRight' id='DateActiveAgentExpiredDay'></table>
+        <label class='Wrap Single PositionerRight' for='DateActiveAgentExpiredDay'>Masa Berlaku</label>
         <br>
         <label class='Medium Single PositionerLeft' for='TextProductName'>Nama Produk</label>
         <table class='BoxSquare PositionerLeft' id='TextProductName'></table>
@@ -373,8 +373,8 @@
         <label class='RadioButton PositionerRight' for='RadioButtonPolicyHolderReferenceSourceCustomerService'>CS</label>
         <label class='Wrap Single PositionerRight'>Tanggal Referal</label>
         <br>
-        <label class='Medium Single PositionerLeft' for='TextArea'>Area / Kanwil</label>
-        <table class='BoxSquare PositionerLeft' id='TextArea'></table>
+        <label class='Medium Single PositionerLeft' for='AreaKanwilAgent'>Area / Kanwil</label>
+        <table class='BoxSquare PositionerLeft' id='AreaKanwilAgent'></table>
         <label class='Note Wrap Single PositionerRight' style='margin-top: -10px'>(harap dapat dilingkari)</label>
         <br>
         <label class='Medium Single PositionerLeft' for='TextAgentID'>AgentID</label>
@@ -1285,20 +1285,20 @@
           Segala ketentuan yang terkait dengan Manfaat Asuransi Dasar dan Asuransi Tambahan, usia Calon Pemegang Polis/Calon Tertanggung, Uang Pertanggungan, frekuensi pembayaran adalah sebagaimana yang terdapat pada ilustrasi yang dilampirkan sebagai berikut:
         </span>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxIllustrationAgentName'>Nama Tenaga Penjual</label>
-        <table class='BoxSquare PositionerLeft' id='BoxIllustrationAgentName'></table>
+        <label class='Medium Single PositionerLeft' for='TextIllustrationAgentName'>Nama Tenaga Penjual</label>
+        <table class='BoxSquare PositionerLeft' id='TextIllustrationAgentName'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxIllustrationNumber'>Nomor Ilustrasi</label>
-        <table class='BoxSquare PositionerLeft' id='BoxIllustrationNumber'></table>
-        <label class='Wrap FirstIndent Single PositionerLeft' for='BoxIllustrationDateDay'>Tanggal</label>
-        <table class='BoxSquare PositionerLeft' id='BoxIllustrationDateDay'></table>
-        <label class='Separator Single PositionerLeft' for='BoxIllustrationDateMonth'>/</label>
-        <table class='BoxSquare PositionerLeft' id='BoxIllustrationDateMonth'></table>
-        <label class='Separator Single PositionerLeft' for='BoxIllustrationDateYear'>/</label>
-        <table class='BoxSquare PositionerLeft' id='BoxIllustrationDateYear'></table>
+        <label class='Medium Single PositionerLeft' for='TextIllustrationNumber'>Nomor Ilustrasi</label>
+        <table class='BoxSquare PositionerLeft' id='TextIllustrationNumber'></table>
+        <label class='Wrap FirstIndent Single PositionerLeft' for='DateIllustrationDay'>Tanggal</label>
+        <table class='BoxSquare PositionerLeft' id='DateIllustrationDay'></table>
+        <label class='Separator Single PositionerLeft' for='DateIllustrationMonth'>/</label>
+        <table class='BoxSquare PositionerLeft' id='DateIllustrationMonth'></table>
+        <label class='Separator Single PositionerLeft' for='DateIllustrationYear'>/</label>
+        <table class='BoxSquare PositionerLeft' id='DateIllustrationYear'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='BoxIllustrationAgentCode'>Kode Tenaga Penjual</label>
-        <table class='BoxSquare PositionerLeft' id='BoxIllustrationAgentCode'></table>
+        <label class='Medium Single PositionerLeft' for='TextIllustrationAgentCode'>Kode Tenaga Penjual</label>
+        <table class='BoxSquare PositionerLeft' id='TextIllustrationAgentCode'></table>
         <br>
         <span class='Wrap MediumIndent PosiitionerLeft'>
           * Wajib lengkapi sesuai dengan ilustrasi yang dilampirkan

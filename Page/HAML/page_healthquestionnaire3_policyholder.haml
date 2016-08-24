@@ -1,0 +1,38 @@
+!!! 5
+
+%html
+
+    / HEAD
+    
+    %head
+        = Haml::Engine.new(File.read("include_healthquestionnaire_header.haml")).render
+        %title BCA Life - BLESS, Health Questionnaire 1 Form
+
+        / JQUERY
+        
+        :javascript
+            $(document).ready(function()
+            {
+                
+            });
+
+
+    / BODY
+
+    %body#Main
+
+        / MAIN
+
+        %main
+            %form#HealthQuestionnaireMain
+                %ol
+                    %li
+                        %div.ContainerFit
+                            %label.Item{ :for => "RadioButtonPolicyHolderWeightChangeYes" }
+                                Apakah saat ini Anda mengonsumsi alkohol/ obat-obatan?
+                            %div.RadioButton.Item
+                                %input#RadioButtonPolicyHolderWeightChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderWeightChange", :value => "true" }
+                                %label.RadioButton{ :for => "RadioButtonPolicyHolderWeightChangeYes" } Ya
+                                %div.Separator
+                                %input#RadioButtonPolicyHolderWeightChangeNo{ :type => "radio", :name => "RadioButtonPolicyHolderWeightChange", :value => "false" }
+                                %label.RadioButton{ :for => "RadioButtonPolicyHolderWeightChangeNo" } Tidak

@@ -20,6 +20,16 @@
                 // GETTER
                  
                 // radioButtonGetter("WeightChange");
+                
+                $("#BoxDate").DateTimePicker(
+                {
+                    dateSeparator: "/",
+                    dateFormat: "dd/MM/yyyy"
+                });
+                
+                radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyType", "#TextPolicyHolderCompanyTypeOther", "lainnya");
+                radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyRepresentativeRelationship", "#TextPolicyHolderCompanyRepresentativeRelationshipOther", "lainnya");
+                radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", "#TextPolicyHolderCompanyRepresentativeInsurancePurposeOther", "lainnya");
             });
 
 
@@ -41,49 +51,49 @@
                     %input#TextPolicyHolderCompanyName.Full.Single.Item{ :type => "text", :required => "true" }
                 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypePT" } Jenis Perusahaan
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPolicyHolderCompanyTypePT.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %input#RadioButtonPolicyHolderCompanyTypePT.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "pt" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypePT" } Perseroan Terbatas
                     %div.Separator
-                    %input#RadioButtonPolicyHolderCompanyTypeYayasan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %input#RadioButtonPolicyHolderCompanyTypeYayasan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yayasan" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypeYayasan" } Yayasan
                     %div.Separator
-                    %input#RadioButtonPolicyHolderCompanyTypeBUMN.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %input#RadioButtonPolicyHolderCompanyTypeBUMN.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "bumn" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypeBUMN" } BUMN
                     %div.Separator
-                    %input#RadioButtonPolicyHolderLainnya.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "yes" }
+                    %input#RadioButtonPolicyHolderCompanyTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "lainnya" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyTypeOther" } Lainnya
-                    %input#RadioButtonPolicyHolderCompanyTypeOther.Medium.Single.PositionerRight{ :type => "text" }
+                    %input#TextPolicyHolderCompanyTypeOther.Medium.Single.PositionerRight{ :type => "text" }
                 %br
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoAnggaranDasar" } Nomor Anggaran Dasar/Akta Pendirian
                     %input#TextPolicyHolderCompanyNoAnggaranDasar.Full.Single.Item{ :type => "text" }
                 
                 %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpired" } Tanggal Berlaku
-                %input#DatePolicyHolderCompanyNoAnggaranDasarExpired.Medium.Single.PositionerLeft{ :type => "text" }
+                %input#DatePolicyHolderCompanyNoAnggaranDasarExpired.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
                 %br
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoSIUP" } Nomor Surat Ijin Usaha
                     %input#TextPolicyHolderCompanyNoSIUP.Full.Single.Item{ :type => "text" }
                 %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpired" } Tanggal Berlaku
-                %input#DatePolicyHolderCompanySIUPExpired.Medium.Single.PositionerLeft{ :type => "text" }
+                %input#DatePolicyHolderCompanySIUPExpired.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
                 %br
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoTDP" } Nomor TDP
                     %input#TextPolicyHolderCompanyNoTDP.Full.Single.Item{ :type => "text" }
                 %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpired" } Tanggal Berlaku
-                %input#DatePolicyHolderCompanyNoTDPExpired.Medium.Single.PositionerLeft{ :type => "text" }
+                %input#DatePolicyHolderCompanyNoTDPExpired.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
                 %br
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoSKDP" } Nomor SDKP (Domisili)
                     %input#TextPolicyHolderCompanyNoSKDP.Full.Single.Item{ :type => "text" }
                 %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpired" } Tanggal Berlaku
-                %input#DatePolicyHolderCompanyNoSKDPExpired.Medium.Single.PositionerLeft{ :type => "text" }
+                %input#DatePolicyHolderCompanyNoSKDPExpired.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
                 %br
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextPolicyHolderTanggalBerlaku" } Nomor NPWP (Jika ada)
-                    %input#TextPolicyHolderTanggalBerlaku.Full.Single.Item{ :type => "text" }
-                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderTanggalBerlaku" } Tanggal Berlaku
-                %input#TextPolicyHolderTanggalBerlaku.Medium.Single.PositionerLeft{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanyNoNPWP" } Nomor NPWP (Jika ada)
+                    %input#TextPolicyHolderCompanyNoNPWP.Full.Single.Item{ :type => "text" }
+                %label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoNPWP" } Tanggal Berlaku
+                %input#DatePolicyHolderCompanyNoNPWP.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
                 %br
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderCompanySector" } Bidang Usaha
@@ -148,7 +158,7 @@
                 %label.Medium.Single.PositionerLeft{ :for =>"TextPolicyHolderCompanyRepresentativeIDNumber" } Nomor Identitas Diri
                 %input#TextPolicyHolderCompanyRepresentativeIDNumber.Medium.Single.PositionerLeft{ :type => "text", :required => "true" }
                 
-                %input#DatePolicyHolderCompanyRepresentativeIDExpired.Medium.Single.PositionerRight{ :type => "text" }
+                %input#DatePolicyHolderCompanyRepresentativeIDExpired.Medium.Single.PositionerRight{ :type => "text", "data-field" => "date" }
                 %label.Medium.Single.PositionerRight{ :for =>"DatePolicyHolderCompanyRepresentativeIDExpired" } Masa Berlaku
                 %br
                 
@@ -161,21 +171,24 @@
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRepresentativeRelationshipOther" } Lainnya
                     %input#TextPolicyHolderCompanyRepresentativeRelationshipOther.Medium.Single.PositionerRight{ :type => "text" }
                 %br
-                %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHubunganDenganCalonTertanggung" } Tujuan Pembelian Asuransi
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings" } Tujuan Pembelian Asuransi
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPolicyHolderTujuanTabungan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta" }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanTabungan" } Tabungan
+                    %input#RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", :value => "tabungan" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings" } Tabungan
                     %div.Separator
-                    %input#RadioButtonPolicyHolderTujuanProteksi.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanProteksi" } Proteksi
+                    %input#RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeProtection.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", :value => "proteksi"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeProtection" } Proteksi
                     %div.Separator
-                    %input#RadioButtonPolicyHolderTujuanInvestasi.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanInvestasi" } Investasi
+                    %input#RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeInvestation.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", :value => "investasi"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeInvestation" } Investasi
                     %div.Separator
-                    %input#RadioButtonPolicyHolderTujuanPendidikan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanPendidikan" } Pendidikan
+                    %input#RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeEducation.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", :value => "pendidikan"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeEducation" } Pendidikan
                     %div.Separator
-                    %input#RadioButtonPolicyHolderTujuanLainnya.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanPembelianAsuransi", :value => "100juta1miliar"  }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanLainnya" } Lainnya
-                    %input#TextPolicyHolderCIN.Medium.Single.PositionerRight{ :type => "text" }
+                    %input#RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", :value => "lainnya"  }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeOther" } Lainnya
+                    %input#TextPolicyHolderCompanyRepresentativeInsurancePurposeOther.Medium.Single.PositionerRight{ :type => "text" }
+                %br
+                
+                %div#BoxDate
                     
