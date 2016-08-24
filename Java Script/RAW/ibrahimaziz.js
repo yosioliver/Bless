@@ -845,7 +845,7 @@ function setAreaForm(stringID, stringValue)
     setTextGeneral(stringID, stringValue);
 }
 
-function setAreaPDF(stringID, stringContent)
+function setAreaPDF(stringID, stringValue)
 {
     setBoxGeneral(stringID, stringValue);
 }
