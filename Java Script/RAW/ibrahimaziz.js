@@ -272,6 +272,8 @@ function popUpGeneralShow(stringName, booleanInputState)
     
     $(stringJQueryID).css("display", "block");
     
+    $("#LabelDetail").text("");
+    
     if ($("#LabelDetail").text().length > 0)
     {
         
@@ -340,7 +342,6 @@ function additionalQuestionGenerator()
             {
                 if ($(this).val() == "true")
                 {
-                    
                     popUpGeneralShow($(this).attr("name"), true);
                 }
                 else
@@ -1005,40 +1006,59 @@ function getFromDatabase(objectContent, stringPageType)
 //			{
 //				if (stringKey.substring(stringKey.length - arrayHealthTableHeader[j].length, stringKey.length) == arrayHealthTableHeader[j])
 //				{
-//					var stringIndicatorPrefix = stringKey.substring(stringPrefixText.length, string.PrefixText.length + 3);
+//					var stringIndicatorPrefix = stringKey.substring(stringPrefixText.length, stringPrefixText.length + 3);
 //					var stringIndicatorPolicyHolder = "Pol";
 //					var stringIndicatorProspectiveInsured = "Pro";
 //					
 //					if (stringIndicatorPrefix == stringIndicatorPolicyHolder)
 //					{
-//						$("#TablePolicyHolderIllness tbody tr").each(function()
+//						$("#TablePolicyHolderIllness tbody tr td").each(function(index)
 //						{
 //                            var stringCellID = $(this).attr("id");
-//                            var stringCellInfix = 
+//                            var stringCellInfix = stringCellID.substring(stringCellPrefix.length, stringCellID.length - 1);
+//                            var stringCellUpdatedID = stringKres + stringCellPrefix + stringCellInfix + index;
 //                            
-//							if ()
+//							if ($(stringCellUpdatedID).val() == "" || $(stringCellUpdatedID).val() == undefined || $(stringCellUpdatedID).val() == null)
+//                            {
+//
+//                            }
+//                            else
+//                            {
+//                                $(stringCellUpdatedID).val(stringValue);
+//                            }
 //						});
 //					}
 //					else
 //					{
-//						$("#TableProspectiveInsuredIllness tbody tr").each(function()
+//						$("#TableProspectiveInsuredIllness tbody tr td").each(function(index)
 //						{
-//							
+//							var stringCellID = $(this).attr("id");
+//                            var stringCellInfix = stringCellID.substring(stringCellPrefix.length, stringCellID.length - 1);
+//                            var stringCellUpdatedID = stringKres + stringCellPrefix + stringCellInfix + index;
+//                            
+//							if ($(stringCellUpdatedID).val() == "" || $(stringCellUpdatedID).val() == undefined || $(stringCellUpdatedID).val() == null)
+//                            {
+//
+//                            }
+//                            else
+//                            {
+//                                $(stringCellUpdatedID).val(stringValue);
+//                            }
 //						});
 //					}
-//					
+					
 //					$(stringTableJQueryID + " tbody" + " " + stringRowJQueryID + i + " td").each(function()
 //					{
 //						setTextGeneral($(this).attr("id"), stringValue);
 //					});
 //					
 //					alert(stringKey + " == " + arrayHealthTableHeader[j]);
-//				}
-//				else
-//				{
-//
-//				}
-//			}
+				}
+				else
+				{
+
+				}
+			}
 			
 			if (stringPageType == stringPageTypePDF)
 			{
