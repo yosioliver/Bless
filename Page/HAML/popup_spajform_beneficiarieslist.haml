@@ -1,0 +1,18 @@
+%form#FormBeneficiariesList
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%h2 Pertanyaan Kesehatan
+
+	%fieldset
+		%label#LabelBeneficiariesListFullName.Wrap{ :for => "TextBeneficiariesListFullName" }
+		%input#TextBeneficiariesListFullName.Full.Single{ :type => "text" }
+
+		%label.Medium.Single.PositionerLeft{ :for => "RadioButtonBeneficiariesListSex" } Jenis Kelamin
+		%div.RadioButton.PositionerLeft
+			%input#RadioButtonBeneficiariesListSexMale.Medium.Single{ :type => "radio", :name => "RadioButtonBeneficiariesListSex", :value => "male" }
+			%label.RadioButton{ :for => "RadioButtonBeneficiariesListSexMale" } Pria
+			%div.Separator
+			%input#RadioButtonBeneficiariesListSexFemale.Medium.Single{ :type => "radio", :name => "RadioButtonBeneficiariesListSex", :value => "female" }
+			%label.RadioButton{ :for => "RadioButtonBeneficiariesListSexFemale" } Wanita
+		%br
