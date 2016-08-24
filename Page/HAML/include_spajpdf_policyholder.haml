@@ -123,7 +123,9 @@
 %table#TextPolicyHolderCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 4px" }
 %br
 
-%section.SectionFooter
+// QUICK FIX
+
+%section.SectionFooter{ :style => "margin-top: 3px" }
 	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
 %section#SectionHeader1
@@ -195,7 +197,7 @@
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceOfficeAddress" } Alamat Kantor
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } 17. Hubungan dengan Calon Tertangung
+%label.Medium.Double.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } 17. Hubungan dengan Calon Tertangung
 %input#RadioButtonPolicyHolderRelationAssuredSelf{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "dirisendiri" }
 %div#RadioButtonPolicyHolderRelationAssuredSelf.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } Diri Sendiri
@@ -214,7 +216,7 @@
 %div#LinePolicyHolderOtherRelationship.LineDot.PositionerLeft
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeSavings" } 18. Tujuan Pembelian Asuransi
+%label.Medium.Double.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeSavings" } 18. Tujuan Pembelian Asuransi
 %input#RadioButtonPolicyHolderInsurancePurposeSavings{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "tabungan" }
 %div#RadioButtonPolicyHolderInsurancePurposeSavings.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeSavings" } Tabungan
@@ -284,7 +286,9 @@
 %br
 %br
 
-%h3 A2. PERUSAHAAN/BERBADAN HUKUM
+// QUICK FIX
+
+%h3{ :style => "margin-top: 25px; margin-bottom: 21px;" } A2. PERUSAHAAN/BERBADAN HUKUM
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyName" } 1. Nama Perusahaan
@@ -326,77 +330,88 @@
 %div#LinePolicyHolderCompanyTypeOther.LineDot.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoAnggaranDasar" } 3. Nomor Anggaran Dasar/Akta Pendirian
+// QUICK FIX START
+
+%label.Medium.Double.PositionerLeft{ :for => "TextPolicyHolderCompanyNoAnggaranDasar" } 3. Nomor Anggaran Dasar/Akta Pendirian
 %table#TextPolicyHolderCompanyNoAnggaranDasar.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpired" }
+%div{ :style => "margin-top: 10px;" }
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpired" }
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredDay" } Tanggal Berlaku
-%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredDay.BoxSquare.PositionerLeft
-%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth" } /
-%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredYear" } /
-%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredYear.BoxSquare.PositionerLeft
-%br
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredDay" } Tanggal Berlaku
+	%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredDay.BoxSquare.PositionerLeft
+	%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth" } /
+	%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredMonth.BoxSquare.PositionerLeft
+	%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoAnggaranDasarExpiredYear" } /
+	%table#DatePolicyHolderCompanyNoAnggaranDasarExpiredYear.BoxSquare.PositionerLeft
+	%br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoSIUP" } 4. Nomor Surat Ijin Usaha
 %table#TextPolicyHolderCompanyNoSIUP.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpired" } 
+%div{ :style => "margin-top: 10px;" }
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpired" } 
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredDay" } Tanggal Berlaku
-%table#DatePolicyHolderCompanySIUPExpiredDay.BoxSquare.PositionerLeft
-%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredMonth" } /
-%table#DatePolicyHolderCompanySIUPExpiredMonth.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredYear" } /
-%table#DatePolicyHolderCompanySIUPExpiredYear.BoxSquare.PositionerLeft
-%br
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredDay" } Tanggal Berlaku
+	%table#DatePolicyHolderCompanySIUPExpiredDay.BoxSquare.PositionerLeft
+	%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredMonth" } /
+	%table#DatePolicyHolderCompanySIUPExpiredMonth.BoxSquare.PositionerLeft
+	%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanySIUPExpiredYear" } /
+	%table#DatePolicyHolderCompanySIUPExpiredYear.BoxSquare.PositionerLeft
+	%br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoTDP" } 5. Nomor TDP
 %table#TextPolicyHolderCompanyNoTDP.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpired" } 
+%div{ :style => "margin-top: 10px;" }
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpired" } 
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpiredDay" } Tanggal Berlaku
-%table#DatePolicyHolderCompanyNoTDPExpiredDay.BoxSquare.PositionerLeft
-%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpiredMonth" } /
-%table#DatePolicyHolderCompanyNoTDPExpiredMonth.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpiredYear" } /
-%table#DatePolicyHolderCompanyNoTDPExpiredYear.BoxSquare.PositionerLeft
-%br
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpiredDay" } Tanggal Berlaku
+	%table#DatePolicyHolderCompanyNoTDPExpiredDay.BoxSquare.PositionerLeft
+	%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpiredMonth" } /
+	%table#DatePolicyHolderCompanyNoTDPExpiredMonth.BoxSquare.PositionerLeft
+	%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoTDPExpiredYear" } /
+	%table#DatePolicyHolderCompanyNoTDPExpiredYear.BoxSquare.PositionerLeft
+	%br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoSKDP" } 6. Nomor SKDP (Domisili)
 %table#TextPolicyHolderCompanyNoSKDP.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpired" } 
+%div{ :style => "margin-top: 10px;" }
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpired" } 
 
-%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpiredDay" } Tanggal Berlaku
-%table#DatePolicyHolderCompanyNoSKDPExpiredDay.BoxSquare.PositionerLeft
-%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpiredMonth" } /
-%table#DatePolicyHolderCompanyNoSKDPExpiredMonth.BoxSquare.PositionerLeft
-%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpiredYear" } /
-%table#DatePolicyHolderCompanyNoSKDPExpiredYear.BoxSquare.PositionerLeft
-%br
+	%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpiredDay" } Tanggal Berlaku
+	%table#DatePolicyHolderCompanyNoSKDPExpiredDay.BoxSquare.PositionerLeft
+	%span.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpiredMonth" } /
+	%table#DatePolicyHolderCompanyNoSKDPExpiredMonth.BoxSquare.PositionerLeft
+	%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderCompanyNoSKDPExpiredYear" } /
+	%table#DatePolicyHolderCompanyNoSKDPExpiredYear.BoxSquare.PositionerLeft
+	%br
 
-%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoNPWP" } 7. Nomor NPWP (jika ada)
-%table#TextPolicyHolderCompanyNoNPWP.BoxSquare.PositionerLeft
-%table#DatePolicyHolderCompanyNoNPWPYear.BoxSquare.PositionerRight
-%span.Separator.PositionerRight /
-%table#DatePolicyHolderCompanyNoNPWPMonth.BoxSquare.PositionerRight
-%span.Separator.PositionerRight /
-%table#DatePolicyHolderCompanyNoNPWPDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight Tanggal Berlaku
-%br
+%div{ :style => "margin-top: 10px;" }
+	%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoNPWP" } 7. Nomor NPWP (jika ada)
+	%table#TextPolicyHolderCompanyNoNPWP.BoxSquare.PositionerLeft
+	%table#DatePolicyHolderCompanyNoNPWPYear.BoxSquare.PositionerRight
+	%span.Separator.PositionerRight /
+	%table#DatePolicyHolderCompanyNoNPWPMonth.BoxSquare.PositionerRight
+	%span.Separator.PositionerRight /
+	%table#DatePolicyHolderCompanyNoNPWPDay.BoxSquare.PositionerRight
+	%label.Wrap.Single.PositionerRight Tanggal Berlaku
+	%br
+
+// QUICK FIX END
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanySector" } 8. Bidang Usaha
 %table#TextPolicyHolderCompanySector.BoxSquare.PositionerLeft
 %br
 
-%section.SectionFooter
+// QUICK FIX
+
+%section.SectionFooter{ :style => "margin-top: 119px" }
 	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
 %section#SectionHeader2
