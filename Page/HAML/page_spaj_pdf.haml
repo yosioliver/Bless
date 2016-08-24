@@ -86,7 +86,7 @@
 				labelGenerator("#LabelPolicyHolderOfficeTelephoneInfix", 1)
 				boxGenerator("#TextPolicyHolderOfficeTelephoneInfix", 9, boxTypeWithoutLabel, null);
 				lineGenerator("#LinePolicyHolderOtherRelationship", 5);
-				lineGenerator("#LinePolicyHolderOtherPurpose", 5);
+				lineGenerator("#TextPolicyHolderInsurancePurposeOther", 5);
 				boxGenerator("#TextPolicyHolderEmail", 30, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelPolicyHolderTelephone1", 1)
 				boxGenerator("#TextPolicyHolderTelephone1", 9, boxTypeWithoutLabel, null);
@@ -258,8 +258,8 @@
 
 				// SETTER
 
-				var objectContent = JSON.parse(jsonDummy);
-				getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+				//var objectContent = JSON.parse(jsonDummy);
+				//getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
 				
 				headerGenerator(".HeaderGeneral table");
 				

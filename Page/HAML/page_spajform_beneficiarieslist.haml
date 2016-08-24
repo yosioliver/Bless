@@ -1,0 +1,58 @@
+!!! 5
+
+%html
+
+    / HEAD
+    
+    %head
+        = Haml::Engine.new(File.read("include_spajform_header.haml")).render
+        %title BCA Life - BLESS, Health Questionnaire 1 Form
+        
+        / JQUERY
+        
+        :javascript
+            $(document).ready(function()
+            {
+                // SETTER
+                
+                // radioButtonSetter("WeightChange", true);
+                
+                // GETTER
+                
+                // radioButtonGetter("WeightChange");
+                
+                // INITIALIZATION
+                
+                // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
+                
+                $("#BoxDate").DateTimePicker(
+                {
+                    dateSeparator: "/",
+                    dateFormat: "dd/MM/yyyy"
+                });                                                                
+            });
+
+    / BODY
+    
+    %body#Main
+    
+        / MAIN
+
+        %main
+            %form
+                %label.Long.SecondIndent.Single.PositionerLeft{ :for => "TextNoNomination" } No Nomination    
+                %br
+                
+                %label.Medium.Single.PositionerLeft{ :for => "TextBeneficiariesListSharedPercentage" } Total Percentage :
+                %input#TextBeneficiariesListSharedPercentage.Medium.Single.PositionerLeft{ :type => "text" }
+                %br                
+                
+                %input#ButtonAdd.ButtonPrimary{ :type => "button", :value => "Tambah Penerima Manfaat" }
+                %br
+                
+                %table.Square#TablePenerimaManfaat
+                    %thead
+                    %tr
+                        %th Nama
+                        %th{ :colspan => "2" } Action                     
+                    %tbody                        

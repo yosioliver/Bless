@@ -22,7 +22,7 @@
 %input#RadioButtonPolicyHolderIDTypeSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
 %div#RadioButtonPolicyHolderIDTypeSIM.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM
-%input#RadioButtonPolicyHolderIDTypePassport{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "Paspor" }
+%input#RadioButtonPolicyHolderIDTypePassport{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "PASPOR" }
 %div#RadioButtonPolicyHolderIDTypePassport.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor
 %input#RadioButtonPolicyHolderIDTypeKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
@@ -86,16 +86,16 @@
 %label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderSexFemale" } Wanita
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusSingle" } 9. Status Pernikahan
-%input#RadioButtonPolicyHolderStatusSingle{ :type => "radio", :name => "RadioButtonPolicyHolderStatus", :value => "single" }
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatusSingle" } 9. Status Pernikahan
+%input#RadioButtonPolicyHolderMaritalStatusSingle{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "single" }
 %div#BoxPolicyHolderSingle.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusSingle" } Belum Menikah
-%input#RadioButtonPolicyHolderStatusMarried{ :type => "radio", :name => "RadioButtonPolicyHolderStatus", :value => "married" }
-%div#RadioButtonPolicyHolderStatusMarried.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusMarried" } Menikah
-%input#RadioButtonPolicyHolderStatusWidower{ :type => "radio", :name => "RadioButtonPolicyHolderStatus", :value => "widower" }
-%div#RadioButtonPolicyHolderStatusWidower.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusWidower" } Janda / Duda
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatusSingle" } Belum Menikah
+%input#RadioButtonPolicyHolderMaritalStatusMarried{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "married" }
+%div#RadioButtonPolicyHolderMaritalStatusMarried.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatusMarried" } Menikah
+%input#RadioButtonPolicyHolderMaritalStatusWidower{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "widower" }
+%div#RadioButtonPolicyHolderMaritalStatusWidower.BoxRound.PositionerLeft
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatusWidower" } Janda / Duda
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionIslam" } 10. Agama
@@ -232,7 +232,7 @@
 %input#RadioButtonPolicyHolderInsurancePurposeOther{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "lainnya" }
 %div#RadioButtonPolicyHolderInsurancePurposeOther.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeOther" } Lainnya, sebutkan
-%div#LinePolicyHolderOtherPurpose.LineDot.PositionerLeft
+%div#TextPolicyHolderInsurancePurposeOther.LineDot.PositionerLeft
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderNPWP" } 19. Nomor NPWP (jika ada)
@@ -270,13 +270,13 @@
 %table#TextPolicyHolderRevenue.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeIDR" } Penghasilan Lainnya
-%input#RadioButtonHolderOtherIncomeIDR{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "idr" }
-%div#RadioButtonHolderOtherIncomeIDR.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeIDR" } Rp
-%input#RadioButtonHolderOtherIncomeUSD{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "usd" }
-%div#RadioButtonHolderOtherIncomeUSD.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeUSD" } USD
+%label.Medium.FirstIndent.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } Penghasilan Lainnya
+%input#RadioButtonPolicyHolderOtherIncomeIDR{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "idr" }
+%div#RadioButtonPolicyHolderOtherIncomeIDR.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } Rp
+%input#RadioButtonPolicyHolderOtherIncomeUSD{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "usd" }
+%div#RadioButtonPolicyHolderOtherIncomeUSD.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherIncomeUSD" } USD
 %label.RadioButton.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Jumlah Penghasilan / tahun
 %table#TextPolicyHolderOtherIncome.BoxSquare.PositionerLeft
 %br
