@@ -145,7 +145,7 @@
 				labelGenerator("#LabelProspectiveInsuredOfficeTelephoneInfix", 1)
 				boxGenerator("#TextProspectiveInsuredOfficeTelephoneInfix", 9, boxTypeWithoutLabel, null);
 				lineGenerator("#LineProspectiveInsuredOtherRelationship", 5);
-				lineGenerator("#LineProspectiveInsuredOtherPurpose", 5);
+				lineGenerator("#TextProspectiveInsuredInsurancePurposeOther", 5);
 				boxGenerator("#TextProspectiveInsuredEmail", 30, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelProspectiveInsuredHandhone1", 1)
 				boxGenerator("#TextProspectiveInsuredHandphone1", 9, boxTypeWithoutLabel, null);
@@ -259,7 +259,7 @@
 				// SETTER
 
 				var objectContent = JSON.parse(jsonDummy);
-				getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
 				
 				headerGenerator(".HeaderGeneral table");
 				

@@ -23,13 +23,8 @@
                 
                 // INITIALIZATION
                 
-                // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
-                
-                $("#BoxDate").DateTimePicker(
-                {
-                    dateSeparator: "/",
-                    dateFormat: "dd/MM/yyyy"
-                });                                                                
+                // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'                                                             
+                radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
             });
 
     / BODY
@@ -67,6 +62,19 @@
                     %label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyFull" } Sekaligus
                 %br
                 
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentWayDebit" } Cara Pembayaran
+                %div.RadioButton.PositionerLeft
+                    %input#RadioButtonPremiPaymentWayDebit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "annualy" }
+                    %label.RadioButton{ :for => "RadioButtonPremiPaymentWayDebit" } Debit Rekening
+                    %div.Separator
+                    %input#RadioButtonPremiPaymentWayCredit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "semester" }
+                    %label.RadioButton{ :for => "RadioButtonPremiPaymentWayCredit" } Debit Kartu Kredit
+                    %div.Separator
+                    %input#RadioButtonPremiPaymentWayOther{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "other" }
+                    %label.RadioButton{ :for => "RadioButtonPremiPaymentWayOther" } Lainnya
+                %input#TextPremiPaymentWayOther.Long.Single.PositionerLeft{ :type => "text" }
+                %br
+				
                 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } Pembayar Premi
                 %div.RadioButton.PositionerLeft
                     %input#RadioButtonPremiPaymentPayorHolder.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "dirisendiri" }
@@ -109,9 +117,9 @@
                     %label.Full.Single.Item{ :for => "TextPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?                   
                     
                     %div.RadioButton.MediumFix.Single.Item
-                        %input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "ya" }
+                        %input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true" }
                         %label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
                         %div.Separator
-                        %input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "tidak" }
+                        %input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false" }
                         %label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak           
                 %br   

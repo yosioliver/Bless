@@ -5,27 +5,27 @@
 %input#RadioButtonPremiPaymentKursIDR{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "idr" }
 %div#RadioButtonPremiPaymentKursIDR.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentKursIDR" } Rupiah
-%input#RadioButtonPremiPaymentKursUSD{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "USD" }
+%input#RadioButtonPremiPaymentKursUSD{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "usd" }
 %div#RadioButtonPremiPaymentKursUSD.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentKursUSD" } USD
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "RadionButtonPremiPaymentFrequencyAnually" } 2. Frekuensi Pembayaran
-%input#RadionButtonPremiPaymentFrequencyAnually{ :type => "radio", :name => "RadionButtonPremiPaymentFrequency", :value => "anually" }
-%div#RadionButtonPremiPaymentFrequencyAnually.BoxRound.PositionerLeft
-%label#LabelPremiPaymentFrequencyYear.RadioButton.PositionerLeft{ :for => "RadionButtonPremiPaymentFrequencyAnually" } Tahunan
-%input#RadionButtonPremiPaymentFrequencySemester{ :type => "radio", :name => "RadionButtonPremiPaymentFrequency", :value => "semester" }
-%div#RadionButtonPremiPaymentFrequencySemester.BoxRound.PositionerLeft
-%label#LabelPremiPaymentFrequencySemester.RadioButton.PositionerLeft{ :for => "RadionButtonPremiPaymentFrequencySemester" } Semesteran
-%input#RadionButtonPremiPaymentFrequencyQuarterly{ :type => "radio", :name => "RadionButtonPremiPaymentFrequency", :value => "quarterly" }
-%div#RadionButtonPremiPaymentFrequencyQuarterly.BoxRound.PositionerLeft
-%label#LabelPremiPaymentFrequencyTriwulan.RadioButton.PositionerLeft{ :for => "RadionButtonPremiPaymentFrequencyQuarterly" } Triwulan
-%input#RadionButtonPremiPaymentFrequencyMonthly{ :type => "radio", :name => "RadionButtonPremiPaymentFrequency", :value => "monthly" }
-%div#RadionButtonPremiPaymentFrequencyMonthly.BoxRound.PositionerLeft
-%label#LabelPremiPaymentFrequencyMonth.RadioButton.PositionerLeft{ :for => "RadionButtonPremiPaymentFrequencyMonthly" } Bulanan
-%input#RadionButtonPremiPaymentFrequencyFull{ :type => "radio", :name => "RadionButtonPremiPaymentFrequency", :value => "full" }
-%div#RadionButtonPremiPaymentFrequencyFull.BoxRound.PositionerLeft
-%label#LabelPremiPaymentFrequencyFull.RadioButton.PositionerLeft{ :for => "RadionButtonPremiPaymentFrequencyFull" } Sekaligus
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyAnually" } 2. Frekuensi Pembayaran
+%input#RadioButtonPremiPaymentFrequencyAnually{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "anually" }
+%div#RadioButtonPremiPaymentFrequencyAnually.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyYear.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyAnually" } Tahunan
+%input#RadioButtonPremiPaymentFrequencySemester{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "semester" }
+%div#RadioButtonPremiPaymentFrequencySemester.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencySemester.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencySemester" } Semesteran
+%input#RadioButtonPremiPaymentFrequencyQuarterly{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "quarterly" }
+%div#RadioButtonPremiPaymentFrequencyQuarterly.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyTriwulan.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyQuarterly" } Triwulan
+%input#RadioButtonPremiPaymentFrequencyMonthly{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "monthly" }
+%div#RadioButtonPremiPaymentFrequencyMonthly.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyMonth.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyMonthly" } Bulanan
+%input#RadioButtonPremiPaymentFrequencyFull{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "full" }
+%div#RadioButtonPremiPaymentFrequencyFull.BoxRound.PositionerLeft
+%label#LabelPremiPaymentFrequencyFull.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyFull" } Sekaligus
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } 3. Pembayar Premi
@@ -54,8 +54,8 @@
 %label#LabelPremiPaymentCreditCardAccount.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentWayCredit" } Debit Kartu Kredit
 %input#RadioButtonPremiPaymentWayOther{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "other" }
 %div#RadioButtonPremiPaymentWayOther.BoxRound.PositionerLeft
-%label#LabelPremiPaymentOtherAccount.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentWayOther" } Lainnya, Sebutkan
-%div#LinePremiPaymentOtherAccount.LineDot.PositionerLeft
+%label#LabelPremiPaymentWayOther.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentWayOther" } Lainnya, Sebutkan
+%div#TextPremiPaymentWayOther.LineDot.PositionerLeft
 %br
 
 %label.Wrap.Single.PositionerLeft{ :for => "TextPremiPaymentBankAccountDetails" } 5. Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit
@@ -80,10 +80,10 @@
 %label.Wrap.Single.PositionerLeft{ :for => "TextPremiPaymentThirdPartyAnswer" } 6. Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini,
 %br
 %label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } menjadi pembayar Premi meminta hak atas manfaat Polis?
-%input#RadioButtonPremiPaymentThirdPartyAnswerYes{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "yes" }
+%input#RadioButtonPremiPaymentThirdPartyAnswerYes{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true" }
 %div#RadioButtonPremiPaymentThirdPartyAnswerYes.BoxRound.PositionerLeft
 %label#LabelPremiPaymentThirdPartyAnswerYes.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
-%input#RadioButtonPremiPaymentThirdPartyAnswerNo{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "no" }
+%input#RadioButtonPremiPaymentThirdPartyAnswerNo{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false" }
 %div#RadioButtonPremiPaymentThirdPartyAnswerNo.BoxRound.PositionerLeft
 %label#LabelPremiPaymentThirdPartyAnswerNo.RadioButton.PositionerLeft{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak
 %label.Wrap.Single.FirstIndent.PositionerLeft{ :for => "TextPremiPaymentThirdPartyAnswerYesStatement" } Bila jawaban Anda “Ya”, mohon isi dan lengkapi Formulir Keterangan Tambahan untuk Pihak ketiga.
