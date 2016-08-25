@@ -1173,40 +1173,37 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			arrayHealthQuestionnaire = objectContent;
 			
-			alert("Fill up array health questionnaire !");
+			var stringButtonPreviewJavaScriptID;
+			var stringButtonPreviewJQueryID;
+			var stringButtonName;
+			var stringRadioButtonNameWithoutPrefix;
+			var stringTextJavaScriptID;
+			var stringValue;
+
+			$(".ButtonPreview").each(function()
+			{
+				stringButtonPreviewJavaScriptID = $(this).attr("id");
+				stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+				stringButtonName = $(this).attr("name");
+				stringRadioButtonNameWithoutPrefix = stringButtonName.substring(stringPrefixRadioButton.length, stringButtonName.length);
+				stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
+
+				stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
+
+				if (stringValue == null || stringValue == undefined)
+				{
+
+				}
+				else
+				{
+					$(stringButtonPreviewJQueryID).css("display", "block");
+				}
+			});
 		}
 		else
 		{
 
 		}
-		
-		var stringButtonPreviewJavaScriptID;
-		var stringButtonPreviewJQueryID;
-		var stringButtonName;
-		var stringButtonNameWithoutPrefix;
-		var stringTextJavaScriptID;
-		var stringValue;
-
-		$(".ButtonPreview").each(function()
-		{
-			stringButtonPreviewJavaScriptID = $(this).attr("id");
-			stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
-			stringButtonName = $(this).attr("name");
-			stringButtonNameWithoutPrefix = stringButtonName.substring(stringPrefixRadioButton.length, stringButtonName.length);
-			stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
-
-			stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
-			
-			if (stringValue.length == 0 || stringValue == null || strigValue == undefined)
-			{
-
-			}
-			else
-			{
-				alert("show button preview for -> " + stringButtonPreviewJavaScriptID + " and " + stringTextJavaScriptID);
-				stringButtonPreviewJQueryID.css("display", "block");
-			}
-		});
 	}
 }
 
