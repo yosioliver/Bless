@@ -39,8 +39,8 @@
                 $('#TextProspectiveInsuredOtherIncome').number( true, 0, ',', '.' );
                 
                 radioButtonOtherGenerator("RadioButtonProspectiveInsuredIDType", "#TextProspectiveInsuredIDTypeOther", "OTHER");
-                radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "lainnya");
-                radioButtonOtherGenerator("RadioButtonProspectiveInsuredInsurancePurpose", "#TextProspectiveInsuredInsurancePurposeOther", "lainnya");
+                radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "other");
+                radioButtonOtherGenerator("RadioButtonProspectiveInsuredInsurancePurpose", "#TextProspectiveInsuredInsurancePurposeOther", "other");
             });
 
     / BODY
@@ -289,13 +289,13 @@
                 %input#TextProspectiveInsuredRevenue.Long.Single.PositionerLeft{ :type => "text", :value => "0" }
                 %br
                 
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonHolderOtherIncomeIDR" } Penghasilan Lainnya
+                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredOtherIncomeIDR" } Penghasilan Lainnya
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "idr" }
-                    %label.RadioButton{ :for => "RadioButtonHolderOtherIncomeIDR" } RP
+                    %input#RadioButtonProspectiveInsuredOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherIncome", :value => "idr" }
+                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherIncomeIDR" } RP
                     %div.Separator
-                    %input#RadioButtonHolderOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonHolderOtherIncome", :value => "usd" }
-                    %label.RadioButton{ :for => "RadioButtonHolderOtherIncomeUSD" } USD                
+                    %input#RadioButtonProspectiveInsuredOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherIncome", :value => "usd" }
+                    %label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherIncomeUSD" } USD                
                 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredOtherIncome" } Penghasilan / Tahun
                 %input#TextProspectiveInsuredOtherIncome.Long.Single.PositionerLeft{ :type => "text", :value => "0" }
                 %br
