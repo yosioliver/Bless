@@ -1172,6 +1172,8 @@ function getFromDatabase(objectContent, stringPageType)
 		if (arrayHealthQuestionnaire.length == 0)
 		{
 			arrayHealthQuestionnaire = objectContent;
+			
+			alert("Fill up array health questionnaire !");
 		}
 		else
 		{
@@ -1201,6 +1203,7 @@ function getFromDatabase(objectContent, stringPageType)
 			}
 			else
 			{
+				alert("show button preview for -> " + stringButtonPreviewJavaScriptID + " and " + stringTextJavaScriptID);
 				stringButtonPreviewJQueryID.css("display", "block");
 			}
 		});
