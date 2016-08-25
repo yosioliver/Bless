@@ -40,9 +40,6 @@
 
 		%main
 			%form
-				%label.Long.SecondIndent.Single.PositionerLeft{ :for => "TextNoNomination" } No Nomination    
-				%br
-
 				%label.Medium.Single.PositionerLeft{ :for => "TextBeneficiariesListSharedPercentage" } Total Percentage :
 				%input#TextBeneficiariesListSharedPercentage.Medium.Single.PositionerLeft{ :type => "text" }
 				%br                
@@ -50,12 +47,12 @@
 				%input#ButtonAdd.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Tambah Penerima Manfaat" }
 				%br
 
-				%table.Square#TablePenerimaManfaat
-					%thead
-						%tr
-							%th Nama
-							%th{ :colspan => "2" } Action                     
-					%tbody
+			%table.Square#TablePenerimaManfaat
+				%thead
+					%tr
+						%th Nama
+						%th{ :colspan => "2" } Action                     
+				%tbody
 
 			%section#PopUpBeneficiariesList
 				= Haml::Engine.new(File.read("popup_spajform_beneficiarieslist.haml")).render
