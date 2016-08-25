@@ -18,7 +18,7 @@
 <input id='RadioButtonProspectiveInsuredIDTypeSIM' name='RadioButtonProspectiveInsuredIDType' type='radio' value='SIM'>
 <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredIDTypeSIM'></div>
 <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredIDTypeSIM'>SIM</label>
-<input id='RadioButtonProspectiveInsuredIDTypePaspor' name='RadioButtonProspectiveInsuredIDType' type='radio' value='Paspor'>
+<input id='RadioButtonProspectiveInsuredIDTypePaspor' name='RadioButtonProspectiveInsuredIDType' type='radio' value='PASPOR'>
 <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredIDTypePaspor'></div>
 <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredIDTypePaspor'>Paspor</label>
 <input id='RadioButtonProspectiveInsuredIDTypeKIMSKITAS' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KIMSKITAS'>
@@ -31,12 +31,12 @@
 <br>
 <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredIDNumber'>4. Nomor Identitas Diri</label>
 <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredIDNumber'></table>
-<table class='BoxSquare PositionerRight' id='TextProspectiveInsuredActiveDateYear'></table>
-<label class='Separator Single PositionerRight' for='TextProspectiveInsuredActiveDateYear'>/</label>
-<table class='BoxSquare PositionerRight' id='TextProspectiveInsuredActiveDateMonth'></table>
-<label class='Separator Single PositionerRight' for='TextProspectiveInsuredActiveDateMonth'>/</label>
-<table class='BoxSquare PositionerRight' id='TextProspectiveInsuredActiveDateDay'></table>
-<label class='Wrap Single PositionerRight' for='TextProspectiveInsuredActiveDateDay'>Masa Berlaku</label>
+<table class='BoxSquare PositionerRight' id='DateProspectiveInsuredActiveYear'></table>
+<label class='Separator Single PositionerRight' for='DateProspectiveInsuredActiveYear'>/</label>
+<table class='BoxSquare PositionerRight' id='DateProspectiveInsuredActiveMonth'></table>
+<label class='Separator Single PositionerRight' for='DateProspectiveInsuredActiveMonth'>/</label>
+<table class='BoxSquare PositionerRight' id='DateProspectiveInsuredActiveDay'></table>
+<label class='Wrap Single PositionerRight' for='DateProspectiveInsuredActiveDay'>Masa Berlaku</label>
 <br>
 <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredBirthPlace'>5. Tempat Tanggal Lahir</label>
 <div class='LineStraight PositionerLeft' id='TextProspectiveInsuredBirthPlace'></div>
@@ -138,10 +138,10 @@
 <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredHomeTelephoneInfix'></table>
 <br>
 <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredTelephone1'>13. Nomor Ponsel</label>
-<label class='Box Single PositionerLeft' for='TextProspectiveInsuredTelephone1' id='LabelProspectiveInsuredTelephone1'>1.</label>
-<table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredTelephone1'></table>
-<label class='Box Single PositionerLeft' for='TextProspectiveInsuredTelephone2' id='LabelProspectiveInsuredTelephone2'>2.</label>
-<table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredTelephone2'></table>
+<label class='Box Single PositionerLeft' for='TextProspectiveInsuredHandphone1' id='LabelProspectiveInsuredTelephone1'>1.</label>
+<table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredHandphone1'></table>
+<label class='Box Single PositionerLeft' for='TextProspectiveInsuredHandphone2' id='LabelProspectiveInsuredTelephone2'>2.</label>
+<table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredHandphone2'></table>
 <br>
 <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredEmail'>14. Alamat Email</label>
 <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredEmail'></table>
@@ -179,13 +179,13 @@
 <label class='Box Plain Single PositionerLeft' for='TextProspectiveInsuredOfficeTelephoneInfix' id='LabelProspectiveInsuredOfficeTeleponeInfix'>-</label>
 <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredOfficeTelephoneInfix'></table>
 <br>
-<label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'>16. Alamat Korespondensi</label>
-<input id='RadioButtonProspectiveInsuredCorrespondanceHomeAddress' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='home'>
-<div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'></div>
-<label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'>Alamat Tempat Tinggal</label>
-<input id='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='office'>
-<div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress'></div>
-<label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress'>Alamat Kantor</label>
+<label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddressHome'>16. Alamat Korespondensi</label>
+<input id='RadioButtonProspectiveInsuredCorrespondanceAddressHome' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='home'>
+<div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceAddressHome'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddressHome'>Alamat Tempat Tinggal</label>
+<input id='RadioButtonProspectiveInsuredCorrespondanceAddressOffice' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='office'>
+<div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceAddressOffice'></div>
+<label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddressOffice'>Alamat Kantor</label>
 <br>
 <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredRelationAssuredSelf'>17. Hubungan dengan Calon Tertangung</label>
 <input id='RadioButtonProspectiveInsuredRelationAssuredSelf' name='RadioButtonProspectiveInsuredRelationAssured' type='radio' value='self'>
@@ -225,16 +225,16 @@
 <br>
 <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredNPWP'>19. Nomor NPWP (jika ada)</label>
 <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredNPWP'></table>
-<table class='BoxSquare PositionerRight' id='TextProspectiveInsuredNPWPActiveDateYear'></table>
-<label class='Separator Single PositionerRight' for='TextProspectiveInsuredNPWPActiveDateYear'>/</label>
-<table class='BoxSquare PositionerRight' id='TextProspectiveInsuredNPWPActiveDateMonth'></table>
-<label class='Separator Single PositionerRight' for='TextProspectiveInsuredNPWPActiveDateMonth'>/</label>
-<table class='BoxSquare PositionerRight' id='TextProspectiveInsuredNPWPActiveDateDay'></table>
-<label class='Wrap Single PositionerRight' for='TextProspectiveInsuredNPWPActiveDateDay'>Masa Berlaku</label>
+<table class='BoxSquare PositionerRight' id='DateProspectiveInsuredNPWPActiveYear'></table>
+<label class='Separator Single PositionerRight' for='DateProspectiveInsuredNPWPActiveYear'>/</label>
+<table class='BoxSquare PositionerRight' id='DateProspectiveInsuredNPWPActiveMonth'></table>
+<label class='Separator Single PositionerRight' for='DateProspectiveInsuredNPWPActiveMonth'>/</label>
+<table class='BoxSquare PositionerRight' id='DateProspectiveInsuredNPWPActiveDay'></table>
+<label class='Wrap Single PositionerRight' for='DateProspectiveInsuredNPWPActiveDay'>Masa Berlaku</label>
 <br>
-<label class='Wrap Single PositionerLeft' for='BoxProspectiveInsuredSalaryIDR'>20. Penghasilan Kotor Per Tahun</label>
+<label class='Wrap Single PositionerLeft' for='TextProspectiveInsuredSalaryIDR'>20. Penghasilan Kotor Per Tahun</label>
 <br>
-<label class='Medium Single FirstIndent PositionerLeft' for='BoxProspectiveInsuredSalaryIDR'>Gaji</label>
+<label class='Medium Single FirstIndent PositionerLeft' for='TextProspectiveInsuredSalaryIDR'>Gaji</label>
 <input id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonProspectiveInsuredSalary' type='radio' value='idr'>
 <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredSalaryIDR'></div>
 <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredSalaryIDR'>Rp</label>

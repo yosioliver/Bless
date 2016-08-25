@@ -118,10 +118,10 @@
       	lineGenerator("#LinePolicyHolderOtherRelationship", 5);
       	lineGenerator("#TextPolicyHolderInsurancePurposeOther", 5);
       	boxGenerator("#TextPolicyHolderEmail", 30, boxTypeWithoutLabel, null);
-      	labelGenerator("#LabelPolicyHolderTelephone1", 1)
-      	boxGenerator("#TextPolicyHolderTelephone1", 9, boxTypeWithoutLabel, null);
-      	labelGenerator("#LabelPolicyHolderTelephone2", 1)
-      	boxGenerator("#TextPolicyHolderTelephone2", 9, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelPolicyHolderHandhone1", 1)
+      	boxGenerator("#TextPolicyHolderHandphone1", 9, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelPolicyHolderHandhone2", 1)
+      	boxGenerator("#TextPolicyHolderHandphone2", 9, boxTypeWithoutLabel, null);
       	boxGenerator("#TextPolicyHolderNPWP", 16, boxTypeWithoutLabel, null);
       	boxGenerator("#DatePolicyHolderNPWPActiveDay", 2, boxTypeWithBottomLabel, labelDay);
       	boxGenerator("#DatePolicyHolderNPWPActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
@@ -139,9 +139,9 @@
       	boxGenerator("#TextProspectiveInsuredFullName", 30, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredIDNumber", 16, boxTypeWithoutLabel, null);
       	lineGenerator("#LineProspectiveInsuredIDTypeOther", 11);
-      	boxGenerator("#TextProspectiveInsuredActiveDateDay", 2, boxTypeWithBottomLabel, labelDay);
-      	boxGenerator("#TextProspectiveInsuredActiveDateMonth", 2, boxTypeWithBottomLabel, labelMonth);
-      	boxGenerator("#TextProspectiveInsuredActiveDateYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#DateProspectiveInsuredActiveDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DateProspectiveInsuredActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DateProspectiveInsuredActiveYear", 4, boxTypeWithBottomLabel, labelYear);
       	lineGenerator("#TextProspectiveInsuredBirthPlace", 8);
       	boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithBottomLabel, labelDay);
       	boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithBottomLabel, labelMonth);
@@ -177,14 +177,14 @@
       	lineGenerator("#LineProspectiveInsuredOtherRelationship", 5);
       	lineGenerator("#LineProspectiveInsuredOtherPurpose", 5);
       	boxGenerator("#TextProspectiveInsuredEmail", 30, boxTypeWithoutLabel, null);
-      	labelGenerator("#LabelProspectiveInsuredTelephone1", 1)
-      	boxGenerator("#TextProspectiveInsuredTelephone1", 9, boxTypeWithoutLabel, null);
-      	labelGenerator("#LabelProspectiveInsuredTelephone2", 1)
-      	boxGenerator("#TextProspectiveInsuredTelephone2", 9, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredHandhone1", 1)
+      	boxGenerator("#TextProspectiveInsuredHandphone1", 9, boxTypeWithoutLabel, null);
+      	labelGenerator("#LabelProspectiveInsuredHandhone2", 1)
+      	boxGenerator("#TextProspectiveInsuredHandphone2", 9, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredNPWP", 16, boxTypeWithoutLabel, null);
-      	boxGenerator("#TextProspectiveInsuredNPWPActiveDateDay", 2, boxTypeWithBottomLabel, labelDay);
-      	boxGenerator("#TextProspectiveInsuredNPWPActiveDateMonth", 2, boxTypeWithBottomLabel, labelMonth);
-      	boxGenerator("#TextProspectiveInsuredNPWPActiveDateYear", 4, boxTypeWithBottomLabel, labelYear);
+      	boxGenerator("#DateProspectiveInsuredNPWPActiveDay", 2, boxTypeWithBottomLabel, labelDay);
+      	boxGenerator("#DateProspectiveInsuredNPWPActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
+      	boxGenerator("#DateProspectiveInsuredNPWPActiveYear", 4, boxTypeWithBottomLabel, labelYear);
       	boxGenerator("#TextProspectiveInsuredSalary", 17, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredRevenue", 17, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredOtherIncome", 17, boxTypeWithoutLabel, null);
@@ -493,10 +493,10 @@
         <span class='Note PositionerLeft'>(Jika jawaban "WNA" mohon melampirkan fotokopi KITAS & Paspor dan melengkapi kuesioner WNA)</span>
         <br>
         <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderUSACitizenYes'>7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?</label>
-        <input id='RadioButtonPolicyHolderUSACitizenYes' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='yes'>
+        <input id='RadioButtonPolicyHolderUSACitizenYes' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='true'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderUSACitizenYes'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderUSACitizenYes'>YA</label>
-        <input id='RadioButtonPolicyHolderUSACitizenNo' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='no'>
+        <input id='RadioButtonPolicyHolderUSACitizenNo' name='RadioButtonPolicyHolderUSACitizen' type='radio' value='false'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderUSACitizenNo'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderUSACitizenNo'>TIDAK</label>
         <span class='Note PositionerLeft'>(Jika jawaban "YA" mohon lampirkan formulir W8 / W9)</span>
@@ -592,11 +592,11 @@
         <label class='Box Plain Single PositionerLeft' for='TextPolicyHolderHomeTelephoneInfix' id='LabelPolicyHolderHomeTeleponeInfix'>-</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderHomeTelephoneInfix'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderTelephone1'>13. Nomor Ponsel</label>
-        <label class='Box Single PositionerLeft' for='TextPolicyHolderTelephone1' id='LabelPolicyHolderTelephone1'>1.</label>
-        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderTelephone1'></table>
-        <label class='Box Single PositionerLeft' for='TextPolicyHolderTelephone2' id='LabelPolicyHolderTelephone2'>2.</label>
-        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderTelephone2'></table>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderHandphone1'>13. Nomor Ponsel</label>
+        <label class='Box Single PositionerLeft' for='TextPolicyHolderHandphone1' id='LabelPolicyHolderHandphone1'>1.</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderHandphone1'></table>
+        <label class='Box Single PositionerLeft' for='TextPolicyHolderHandphone2' id='LabelPolicyHolderHandphone2'>2.</label>
+        <table class='BoxSquare PositionerLeft' id='TextPolicyHolderHandphone2'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderEmail'>14. Alamat Email</label>
         <table class='BoxSquare PositionerLeft' id='TextPolicyHolderEmail'></table>
@@ -622,19 +622,19 @@
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderCorrespondanceOfficeAddress'>Alamat Kantor</label>
         <br>
         <label class='Medium Double PositionerLeft' for='RadioButtonPolicyHolderRelationAssuredSelf'>17. Hubungan dengan Calon Tertangung</label>
-        <input id='RadioButtonPolicyHolderRelationAssuredSelf' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='dirisendiri'>
+        <input id='RadioButtonPolicyHolderRelationAssuredSelf' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='self'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderRelationAssuredSelf'></div>
         <label class='RadioButton Short PositionerLeft' for='RadioButtonPolicyHolderRelationAssuredSelf'>Diri Sendiri</label>
-        <input id='RadioButtonPolicyHolderRelationAssuredSpouse' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='suamiistri'>
+        <input id='RadioButtonPolicyHolderRelationAssuredSpouse' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='spouse'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderRelationAssuredSpouse'></div>
         <label class='RadioButton Short PositionerLeft' for='RadioButtonPolicyHolderRelationAssuredSpouse'>Suami / Istri</label>
-        <input id='RadioButtonPolicyHolderRelationAssuredFamily' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='orangtuaanak'>
+        <input id='RadioButtonPolicyHolderRelationAssuredFamily' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='family'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderRelationAssuredFamily'></div>
         <label class='RadioButton Short PositionerLeft' for='RadioButtonPolicyHolderRelationAssuredFamily'>Orang Tua / Anak</label>
-        <input id='RadioButtonPolicyHolderRelationAssuredColleague' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='perusahaankaryawan'>
+        <input id='RadioButtonPolicyHolderRelationAssuredColleague' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='colleague'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderRelationAssuredColleague'></div>
         <label class='RadioButton Short PositionerLeft' for='RadioButtonPolicyHolderRelationAssuredColleague'>Perusahaan / Karyawan</label>
-        <input id='RadioButtonPolicyHolderRelationAssuredOther' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='lainnya'>
+        <input id='RadioButtonPolicyHolderRelationAssuredOther' name='RadioButtonPolicyHolderRelationAssured' type='radio' value='other'>
         <div class='BoxRound PositionerLeft' id='RadioButtonPolicyHolderRelationAssuredOther'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonPolicyHolderRelationAssuredOther'>Lainnya, sebutkan</label>
         <div class='LineDot PositionerLeft' id='LinePolicyHolderOtherRelationship'></div>
@@ -957,7 +957,7 @@
         <input id='RadioButtonProspectiveInsuredIDTypeSIM' name='RadioButtonProspectiveInsuredIDType' type='radio' value='SIM'>
         <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredIDTypeSIM'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredIDTypeSIM'>SIM</label>
-        <input id='RadioButtonProspectiveInsuredIDTypePaspor' name='RadioButtonProspectiveInsuredIDType' type='radio' value='Paspor'>
+        <input id='RadioButtonProspectiveInsuredIDTypePaspor' name='RadioButtonProspectiveInsuredIDType' type='radio' value='PASPOR'>
         <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredIDTypePaspor'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredIDTypePaspor'>Paspor</label>
         <input id='RadioButtonProspectiveInsuredIDTypeKIMSKITAS' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KIMSKITAS'>
@@ -970,12 +970,12 @@
         <br>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredIDNumber'>4. Nomor Identitas Diri</label>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredIDNumber'></table>
-        <table class='BoxSquare PositionerRight' id='TextProspectiveInsuredActiveDateYear'></table>
-        <label class='Separator Single PositionerRight' for='TextProspectiveInsuredActiveDateYear'>/</label>
-        <table class='BoxSquare PositionerRight' id='TextProspectiveInsuredActiveDateMonth'></table>
-        <label class='Separator Single PositionerRight' for='TextProspectiveInsuredActiveDateMonth'>/</label>
-        <table class='BoxSquare PositionerRight' id='TextProspectiveInsuredActiveDateDay'></table>
-        <label class='Wrap Single PositionerRight' for='TextProspectiveInsuredActiveDateDay'>Masa Berlaku</label>
+        <table class='BoxSquare PositionerRight' id='DateProspectiveInsuredActiveYear'></table>
+        <label class='Separator Single PositionerRight' for='DateProspectiveInsuredActiveYear'>/</label>
+        <table class='BoxSquare PositionerRight' id='DateProspectiveInsuredActiveMonth'></table>
+        <label class='Separator Single PositionerRight' for='DateProspectiveInsuredActiveMonth'>/</label>
+        <table class='BoxSquare PositionerRight' id='DateProspectiveInsuredActiveDay'></table>
+        <label class='Wrap Single PositionerRight' for='DateProspectiveInsuredActiveDay'>Masa Berlaku</label>
         <br>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredBirthPlace'>5. Tempat Tanggal Lahir</label>
         <div class='LineStraight PositionerLeft' id='TextProspectiveInsuredBirthPlace'></div>
@@ -1077,10 +1077,10 @@
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredHomeTelephoneInfix'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredTelephone1'>13. Nomor Ponsel</label>
-        <label class='Box Single PositionerLeft' for='TextProspectiveInsuredTelephone1' id='LabelProspectiveInsuredTelephone1'>1.</label>
-        <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredTelephone1'></table>
-        <label class='Box Single PositionerLeft' for='TextProspectiveInsuredTelephone2' id='LabelProspectiveInsuredTelephone2'>2.</label>
-        <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredTelephone2'></table>
+        <label class='Box Single PositionerLeft' for='TextProspectiveInsuredHandphone1' id='LabelProspectiveInsuredTelephone1'>1.</label>
+        <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredHandphone1'></table>
+        <label class='Box Single PositionerLeft' for='TextProspectiveInsuredHandphone2' id='LabelProspectiveInsuredTelephone2'>2.</label>
+        <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredHandphone2'></table>
         <br>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredEmail'>14. Alamat Email</label>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredEmail'></table>
@@ -1118,13 +1118,13 @@
         <label class='Box Plain Single PositionerLeft' for='TextProspectiveInsuredOfficeTelephoneInfix' id='LabelProspectiveInsuredOfficeTeleponeInfix'>-</label>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredOfficeTelephoneInfix'></table>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'>16. Alamat Korespondensi</label>
-        <input id='RadioButtonProspectiveInsuredCorrespondanceHomeAddress' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='home'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceHomeAddress'>Alamat Tempat Tinggal</label>
-        <input id='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='office'>
-        <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress'></div>
-        <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceOfficeAddress'>Alamat Kantor</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddressHome'>16. Alamat Korespondensi</label>
+        <input id='RadioButtonProspectiveInsuredCorrespondanceAddressHome' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='home'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceAddressHome'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddressHome'>Alamat Tempat Tinggal</label>
+        <input id='RadioButtonProspectiveInsuredCorrespondanceAddressOffice' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='office'>
+        <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredCorrespondanceAddressOffice'></div>
+        <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddressOffice'>Alamat Kantor</label>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredRelationAssuredSelf'>17. Hubungan dengan Calon Tertangung</label>
         <input id='RadioButtonProspectiveInsuredRelationAssuredSelf' name='RadioButtonProspectiveInsuredRelationAssured' type='radio' value='self'>
@@ -1164,16 +1164,16 @@
         <br>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredNPWP'>19. Nomor NPWP (jika ada)</label>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredNPWP'></table>
-        <table class='BoxSquare PositionerRight' id='TextProspectiveInsuredNPWPActiveDateYear'></table>
-        <label class='Separator Single PositionerRight' for='TextProspectiveInsuredNPWPActiveDateYear'>/</label>
-        <table class='BoxSquare PositionerRight' id='TextProspectiveInsuredNPWPActiveDateMonth'></table>
-        <label class='Separator Single PositionerRight' for='TextProspectiveInsuredNPWPActiveDateMonth'>/</label>
-        <table class='BoxSquare PositionerRight' id='TextProspectiveInsuredNPWPActiveDateDay'></table>
-        <label class='Wrap Single PositionerRight' for='TextProspectiveInsuredNPWPActiveDateDay'>Masa Berlaku</label>
+        <table class='BoxSquare PositionerRight' id='DateProspectiveInsuredNPWPActiveYear'></table>
+        <label class='Separator Single PositionerRight' for='DateProspectiveInsuredNPWPActiveYear'>/</label>
+        <table class='BoxSquare PositionerRight' id='DateProspectiveInsuredNPWPActiveMonth'></table>
+        <label class='Separator Single PositionerRight' for='DateProspectiveInsuredNPWPActiveMonth'>/</label>
+        <table class='BoxSquare PositionerRight' id='DateProspectiveInsuredNPWPActiveDay'></table>
+        <label class='Wrap Single PositionerRight' for='DateProspectiveInsuredNPWPActiveDay'>Masa Berlaku</label>
         <br>
-        <label class='Wrap Single PositionerLeft' for='BoxProspectiveInsuredSalaryIDR'>20. Penghasilan Kotor Per Tahun</label>
+        <label class='Wrap Single PositionerLeft' for='TextProspectiveInsuredSalaryIDR'>20. Penghasilan Kotor Per Tahun</label>
         <br>
-        <label class='Medium Single FirstIndent PositionerLeft' for='BoxProspectiveInsuredSalaryIDR'>Gaji</label>
+        <label class='Medium Single FirstIndent PositionerLeft' for='TextProspectiveInsuredSalaryIDR'>Gaji</label>
         <input id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonProspectiveInsuredSalary' type='radio' value='idr'>
         <div class='BoxRound PositionerLeft' id='RadioButtonProspectiveInsuredSalaryIDR'></div>
         <label class='RadioButton PositionerLeft' for='RadioButtonProspectiveInsuredSalaryIDR'>Rp</label>
