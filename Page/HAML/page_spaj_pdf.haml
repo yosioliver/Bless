@@ -21,7 +21,7 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyNumber", 11, boxTypeWithBottomNote, "(Dilenkapi oleh Kantor Pusat)");
 				boxGenerator("#TextVANumber", 16, boxTypeWithoutLabel, null);
 
 				// SECTION AGENT PROFILE
@@ -33,9 +33,9 @@
 				boxGenerator("#DateActiveAgentExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
 				boxGenerator("#DateActiveAgentExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
 				boxGenerator("#DateActiveAgentExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
-				boxGenerator("#TextProductName", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#TextReferenceName", 30, boxTypeWithoutLabel, null);
-				boxGenerator("#TextBranchName", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductName", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextReferenceName", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextBranchName", 29, boxTypeWithoutLabel, null);
 				boxGenerator("#TextBranchCode", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#AreaKanwilAgent", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentID", 13, boxTypeWithoutLabel, null);
@@ -89,9 +89,9 @@
 				lineGenerator("#TextPolicyHolderInsurancePurposeOther", 5);
 				boxGenerator("#TextPolicyHolderEmail", 30, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelPolicyHolderHandhone1", 1)
-				boxGenerator("#TextPolicyHolderHandphone1", 9, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHandphone1", 13, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelPolicyHolderHandhone2", 1)
-				boxGenerator("#TextPolicyHolderHandphone2", 9, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHandphone2", 13, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderNPWP", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderNPWPActiveDay", 2, boxTypeWithBottomLabel, labelDay);
 				boxGenerator("#DatePolicyHolderNPWPActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
@@ -148,9 +148,9 @@
 				lineGenerator("#LineProspectiveInsuredOtherPurpose", 5);
 				boxGenerator("#TextProspectiveInsuredEmail", 30, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelProspectiveInsuredHandhone1", 1)
-				boxGenerator("#TextProspectiveInsuredHandphone1", 9, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredHandphone1", 13, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelProspectiveInsuredHandhone2", 1)
-				boxGenerator("#TextProspectiveInsuredHandphone2", 9, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredHandphone2", 13, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProspectiveInsuredNPWP", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredNPWPActiveDay", 2, boxTypeWithBottomLabel, labelDay);
 				boxGenerator("#DateProspectiveInsuredNPWPActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
@@ -256,22 +256,19 @@
 				lineGenerator("#LineSignedDateMonth", 2);
 				lineGenerator("#LineSignedDateYear", 4);  
 
+				// FOOTER AND HEADER
+
+				headerGenerator(".HeaderGeneral table");
+				footerGenerator("OP/NB/0104/031602", "8");
+
+
 				// SETTER
 
 				var objectContent = JSON.parse(jsonDummy);
 				getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
 				
-				headerGenerator(".HeaderGeneral table");
-				
 				var stringSectionHeader = "#SectionHeader";
 				var stringSectionHeaderSuffix;
-				
-				for (var i = 1; i < 9; i++)
-				{
-					stringSectionHeaderSuffix = stringSectionHeader + i;
-					
-					// alert("SectionHeader" + i + " -> x = " + $(stringSectionHeaderSuffix).position().left + ", y = " + $(stringSectionHeaderSuffix).position().top);
-				}
 			});
 
 

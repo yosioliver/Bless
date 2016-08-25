@@ -55,6 +55,8 @@
 %table#TextPolicyHolderAge.BoxSquare.PositionerLeft
 %span.Separator.Single.PositionerLeft Tahun
 %br
+%span.Note.PositionerLeft{ :style => "margin-top: -20px;" } (sesuai dengan indetitas diri)
+%br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderNationalityWNI" } 6. Kewarganegaraan
 %input#RadioButtonPolicyHolderNationalityWNI{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wni" }
@@ -151,8 +153,9 @@
 %table#TextPolicyHolderSideJob.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderHomeAddress1", :style => "height: 112px" } 12. Alamat Tempat Tinggal
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHomeAddress1" } 12. Alamat Tempat Tinggal
 %table#TextPolicyHolderHomeAddress1.BoxSquare.PositionerLeft
+%span.Note.Medium.Multi.Tight.PositionerLeft{ :style => "height: 60px;" } (Bila tidak sesuai kartu identitas Diri, diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Keluarahan & Kecamatan)
 %table#TextPolicyHolderHomeAddress2.BoxSquare.PositionerLeft
 %label#LabelPolicyHolderHomeCity.Box.Single.PositionerLeft{ :for => "TextPolicyHolderHomeCity" } Kota
 %table#TextPolicyHolderHomeCity.BoxSquare.PositionerLeft
@@ -242,7 +245,7 @@
 %table#DatePolicyHolderNPWPActiveMonth.BoxSquare.PositionerRight
 %label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderNPWPActiveMonth" } /
 %table#DatePolicyHolderNPWPActiveDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "DatePolicyHolderNPWPActiveDay" } Masa Berlaku
+%label.Wrap.Single.PositionerRight{ :for => "DatePolicyHolderNPWPActiveDay" } Tanggal Berlaku
 %br
 
 %label.Wrap.Single.PositionerLeft{ :for => "BoxPolicyHolderSalaryIDR" } 20. Penghasilan Kotor Per Tahun
@@ -295,25 +298,6 @@
 %table#TextPolicyHolderCompanyName.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderComanyIDTypeKTP" } 3. Jenis Identitas Diri
-%input#RadioButtonPolicyHolderComanyIDTypeKTP{ :type => "radio", :name => "RadioButtonPolicyHolderComanyIDType", :value => "KTP" }
-%div#RadioButtonPolicyHolderComanyIDTypeKTP.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderComanyIDTypeKTP" } KTP
-%input#RadioButtonPolicyHolderComanyIDTypeSIM{ :type => "radio", :name => "RadioButtonPolicyHolderComanyIDType", :value => "SIM" }
-%div#RadioButtonPolicyHolderComanyIDTypeSIM.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderComanyIDTypeSIM" } SIM
-%input#RadioButtonPolicyHolderComanyIDTypePassport{ :type => "radio", :name => "RadioButtonPolicyHolderComanyIDType", :value => "PASPOR" }
-%div#RadioButtonPolicyHolderComanyIDTypePassport.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderComanyIDTypePassport" } Paspor
-%input#RadioButtonPolicyHolderComanyIDTypeKIMKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderComanyIDType", :value => "KIMSKITAS" }
-%div#RadioButtonPolicyHolderComanyIDTypeKIMKITAS.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderComanyIDTypeKIMKITAS" } KIMS / KITAS
-%input#RadioButtonPolicyHolderComanyIDTypeOther{ :type => "radio", :name => "RadioButtonPolicyHolderComanyIDType", :value => "OTHER" }
-%div#RadioButtonPolicyHolderComanyIDTypeOther.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderComanyIDTypeOther" } Lainnya, sebutkan
-%div#LinePolicyHolderComanyIDTypeOther.LineDot.PositionerLeft
-%br
-
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypePT" } 2. Jenis Perusahaan
 %input#RadioButtonPolicyHolderCompanyTypePT{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "pt" }
 %div#RadioButtonPolicyHolderCompanyTypePT.BoxRound.PositionerLeft
@@ -332,7 +316,7 @@
 
 // QUICK FIX START
 
-%label.Medium.Double.PositionerLeft{ :for => "TextPolicyHolderCompanyNoAnggaranDasar" } 3. Nomor Anggaran Dasar/Akta Pendirian
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyNoAnggaranDasar" } 3. Nomor Anggaran Dasar/Akta Pendirian
 %table#TextPolicyHolderCompanyNoAnggaranDasar.BoxSquare.PositionerLeft
 %br
 
