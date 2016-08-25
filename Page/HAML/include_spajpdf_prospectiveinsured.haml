@@ -22,7 +22,7 @@
 %input#RadioButtonProspectiveInsuredIDTypeSIM{ :type => "radio", :name => "RadioButtonProspectiveInsuredIDType", :value => "SIM" }
 %div#RadioButtonProspectiveInsuredIDTypeSIM.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredIDTypeSIM" } SIM
-%input#RadioButtonProspectiveInsuredIDTypePaspor{ :type => "radio", :name => "RadioButtonProspectiveInsuredIDType", :value => "Paspor" }
+%input#RadioButtonProspectiveInsuredIDTypePaspor{ :type => "radio", :name => "RadioButtonProspectiveInsuredIDType", :value => "PASPOR" }
 %div#RadioButtonProspectiveInsuredIDTypePaspor.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredIDTypePaspor" } Paspor
 %input#RadioButtonProspectiveInsuredIDTypeKIMSKITAS{ :type => "radio", :name => "RadioButtonProspectiveInsuredIDType", :value => "KIMSKITAS" }
@@ -36,12 +36,12 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredIDNumber" } 4. Nomor Identitas Diri
 %table#TextProspectiveInsuredIDNumber.BoxSquare.PositionerLeft
-%table#TextProspectiveInsuredActiveDateYear.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "TextProspectiveInsuredActiveDateYear" } /
-%table#TextProspectiveInsuredActiveDateMonth.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "TextProspectiveInsuredActiveDateMonth" } /
-%table#TextProspectiveInsuredActiveDateDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "TextProspectiveInsuredActiveDateDay" } Masa Berlaku
+%table#DateProspectiveInsuredActiveYear.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredActiveYear" } /
+%table#DateProspectiveInsuredActiveMonth.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredActiveMonth" } /
+%table#DateProspectiveInsuredActiveDay.BoxSquare.PositionerRight
+%label.Wrap.Single.PositionerRight{ :for => "DateProspectiveInsuredActiveDay" } Masa Berlaku
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredBirthPlace" } 5. Tempat Tanggal Lahir
@@ -157,10 +157,10 @@
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredTelephone1" } 13. Nomor Ponsel
-%label#LabelProspectiveInsuredTelephone1.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredTelephone1" } 1. 
-%table#TextProspectiveInsuredTelephone1.BoxSquare.PositionerLeft
-%label#LabelProspectiveInsuredTelephone2.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredTelephone2" } 2. 
-%table#TextProspectiveInsuredTelephone2.BoxSquare.PositionerLeft
+%label#LabelProspectiveInsuredTelephone1.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHandphone1" } 1. 
+%table#TextProspectiveInsuredHandphone1.BoxSquare.PositionerLeft
+%label#LabelProspectiveInsuredTelephone2.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHandphone2" } 2. 
+%table#TextProspectiveInsuredHandphone2.BoxSquare.PositionerLeft
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredEmail" } 14. Alamat Email
@@ -186,13 +186,13 @@
 %table#TextProspectiveInsuredOfficeTelephoneInfix.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCorrespondanceHomeAddress" } 16. Alamat Korespondensi
-%input#RadioButtonProspectiveInsuredCorrespondanceHomeAddress{ :type => "radio", :name => "RadioButtonProspectiveInsuredCorrespondanceAddress", :value => "home" }
-%div#RadioButtonProspectiveInsuredCorrespondanceHomeAddress.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCorrespondanceHomeAddress" } Alamat Tempat Tinggal
-%input#RadioButtonProspectiveInsuredCorrespondanceOfficeAddress{ :type => "radio", :name => "RadioButtonProspectiveInsuredCorrespondanceAddress", :value => "office" }
-%div#RadioButtonProspectiveInsuredCorrespondanceOfficeAddress.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCorrespondanceOfficeAddress" } Alamat Kantor
+%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCorrespondanceAddressHome" } 16. Alamat Korespondensi
+%input#RadioButtonProspectiveInsuredCorrespondanceAddressHome{ :type => "radio", :name => "RadioButtonProspectiveInsuredCorrespondanceAddress", :value => "home" }
+%div#RadioButtonProspectiveInsuredCorrespondanceAddressHome.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCorrespondanceAddressHome" } Alamat Tempat Tinggal
+%input#RadioButtonProspectiveInsuredCorrespondanceAddressOffice{ :type => "radio", :name => "RadioButtonProspectiveInsuredCorrespondanceAddress", :value => "office" }
+%div#RadioButtonProspectiveInsuredCorrespondanceAddressOffice.BoxRound.PositionerLeft
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCorrespondanceAddressOffice" } Alamat Kantor
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredRelationAssuredSelf" } 17. Hubungan dengan Calon Tertangung
@@ -235,18 +235,18 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredNPWP" } 19. Nomor NPWP (jika ada)
 %table#TextProspectiveInsuredNPWP.BoxSquare.PositionerLeft
-%table#TextProspectiveInsuredNPWPActiveDateYear.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "TextProspectiveInsuredNPWPActiveDateYear" } /
-%table#TextProspectiveInsuredNPWPActiveDateMonth.BoxSquare.PositionerRight
-%label.Separator.Single.PositionerRight{ :for => "TextProspectiveInsuredNPWPActiveDateMonth" } /
-%table#TextProspectiveInsuredNPWPActiveDateDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "TextProspectiveInsuredNPWPActiveDateDay" } Masa Berlaku
+%table#DateProspectiveInsuredNPWPActiveYear.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredNPWPActiveYear" } /
+%table#DateProspectiveInsuredNPWPActiveMonth.BoxSquare.PositionerRight
+%label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredNPWPActiveMonth" } /
+%table#DateProspectiveInsuredNPWPActiveDay.BoxSquare.PositionerRight
+%label.Wrap.Single.PositionerRight{ :for => "DateProspectiveInsuredNPWPActiveDay" } Masa Berlaku
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "BoxProspectiveInsuredSalaryIDR" } 20. Penghasilan Kotor Per Tahun
+%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredSalaryIDR" } 20. Penghasilan Kotor Per Tahun
 %br
 
-%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "BoxProspectiveInsuredSalaryIDR" } Gaji
+%label.Medium.Single.FirstIndent.PositionerLeft{ :for => "TextProspectiveInsuredSalaryIDR" } Gaji
 %input#RadioButtonProspectiveInsuredSalaryIDR{ :type => "radio", :name => "RadioButtonProspectiveInsuredSalary", :value => "idr" }
 %div#RadioButtonProspectiveInsuredSalaryIDR.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSalaryIDR" } Rp

@@ -98,14 +98,14 @@
                         %div.Separator
                         %input#RadioButtonPolicyHolderNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wna", :disabled => "true" }
                         %label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
-                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAmericanYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
+                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPolicyHolderAmericanYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderAmerican", :value => "true" }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderAmericanYes" } Ya
+                    %input#RadioButtonPolicyHolderUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "true" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Ya
                     %div.Separator
-                    %input#RadioButtonPolicyHolderAmericanNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderAmerican", :value => "false" }
-                    %label.RadioButton{ :for => "RadioButtonPolicyHolderAmericanNo" } Tidak
-                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAmericanYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
+                    %input#RadioButtonPolicyHolderUSACitizenNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "false" }
+                    %label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenNo" } Tidak
+                %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
                 %br
                 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSex" } Jenis Kelamin
                 %div.RadioButton.PositionerLeft
@@ -155,8 +155,8 @@
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderMainJob" } Pekerjaan Utama
                     %input#TextPolicyHolderMainJob.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
                 %div.ContainerFit
-                    %label.Medium.Single.Item{ :for => "TextPolicyHolderScopeWork" } Bidang Usaha
-                    %input#TextPolicyHolderScopeWork.Full.Single.Item{ :type => "text" }
+                    %label.Medium.Single.Item{ :for => "TextPolicyHolderWorkScope" } Bidang Usaha
+                    %input#TextPolicyHolderWorkScope.Full.Single.Item{ :type => "text" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderPosition" } Jabatan
                     %input#TextPolicyHolderPosition.Full.Single.Item{ :type => "text" }
@@ -180,7 +180,7 @@
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" } Kota
                     %input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
-                    %input#TextPolicyHolderPostalCode.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
+                    %input#TextPolicyHolderHomePostalCode.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
                 %div.ContainerFit
                     %label.Medium.Single.Item{ :for => "TextPolicyHolderHomeTelephone" }
                     %label.MediumFix.Single.Item{ :for => "TextPolicyHolderHomeTelephone" } Nomor telepon
@@ -225,19 +225,19 @@
                 
                 %label.Medium.Multi.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssured" } Hubungan Dengan Calon Tertanggung
                 %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPolicyHolderRelationAssuredSelf.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "dirisendiri", :disabled => "true" }
+                    %input#RadioButtonPolicyHolderRelationAssuredSelf.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "self", :disabled => "true" }
                     %label.Short.RadioButton{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } Diri Sendiri
                     %div.Separator
-                    %input#RadioButtonPolicyHolderRelationAssuredSpouse.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "suamiistri", :disabled => "true" }
+                    %input#RadioButtonPolicyHolderRelationAssuredSpouse.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "spuse", :disabled => "true" }
                     %label.Short.RadioButton{ :for => "RadioButtonPolicyHolderRelationAssuredSpouse" } Suami / Istri
                     %div.Separator                    
-                    %input#RadioButtonPolicyHolderRelationAssuredFamily.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "orangtuaanak", :disabled => "true" }
+                    %input#RadioButtonPolicyHolderRelationAssuredFamily.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "family", :disabled => "true" }
                     %label.Short.RadioButton{ :for => "RadioButtonPolicyHolderRelationAssuredFamily" } Orang Tua / Anak
                     %div.Separator             
-                    %input#RadioButtonPolicyHolderRelationAssuredColleague.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "perusahaankaryawan", :disabled => "true" }
+                    %input#RadioButtonPolicyHolderRelationAssuredColleague.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "colleague", :disabled => "true" }
                     %label.RadioButton{ :for => "RadioButtonPolicyHolderRelationAssuredColleague", :style => "width: 100px;" } Perusahaan / Karyawan
                     %div.Separator
-                    %input#RadioButtonPolicyHolderRelationAssuredOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "lainnya", :disabled => "true" }
+                    %input#RadioButtonPolicyHolderRelationAssuredOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "other", :disabled => "true" }
                     %label.Short.RadioButton{ :for => "RadioButtonPolicyHolderRelationAssuredOther" } Lainnya
                 %input#TextPolicyHolderRelationAssuredOther.Long.Single.PositionerLeft{ :type => "text" }
                 %br

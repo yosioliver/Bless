@@ -68,10 +68,10 @@
 %br
 
 %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } 7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?
-%input#RadioButtonPolicyHolderUSACitizenYes{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "yes" }
+%input#RadioButtonPolicyHolderUSACitizenYes{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "true" }
 %div#RadioButtonPolicyHolderUSACitizenYes.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } YA 
-%input#RadioButtonPolicyHolderUSACitizenNo{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "no" }
+%input#RadioButtonPolicyHolderUSACitizenNo{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "false" }
 %div#RadioButtonPolicyHolderUSACitizenNo.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenNo" } TIDAK
 %span.Note.PositionerLeft (Jika jawaban "YA" mohon lampirkan formulir W8 / W9)
@@ -164,11 +164,11 @@
 %table#TextPolicyHolderHomeTelephoneInfix.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderTelephone1" } 13. Nomor Ponsel
-%label#LabelPolicyHolderTelephone1.Box.Single.PositionerLeft{ :for => "TextPolicyHolderTelephone1" } 1. 
-%table#TextPolicyHolderTelephone1.BoxSquare.PositionerLeft
-%label#LabelPolicyHolderTelephone2.Box.Single.PositionerLeft{ :for => "TextPolicyHolderTelephone2" } 2. 
-%table#TextPolicyHolderTelephone2.BoxSquare.PositionerLeft
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } 13. Nomor Ponsel
+%label#LabelPolicyHolderHandphone1.Box.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } 1. 
+%table#TextPolicyHolderHandphone1.BoxSquare.PositionerLeft
+%label#LabelPolicyHolderHandphone2.Box.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } 2. 
+%table#TextPolicyHolderHandphone2.BoxSquare.PositionerLeft
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderEmail" } 14. Alamat Email
@@ -198,19 +198,19 @@
 %br
 
 %label.Medium.Double.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } 17. Hubungan dengan Calon Tertangung
-%input#RadioButtonPolicyHolderRelationAssuredSelf{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "dirisendiri" }
+%input#RadioButtonPolicyHolderRelationAssuredSelf{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "self" }
 %div#RadioButtonPolicyHolderRelationAssuredSelf.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSelf" } Diri Sendiri
-%input#RadioButtonPolicyHolderRelationAssuredSpouse{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "suamiistri" }
+%input#RadioButtonPolicyHolderRelationAssuredSpouse{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "spouse" }
 %div#RadioButtonPolicyHolderRelationAssuredSpouse.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredSpouse" } Suami / Istri
-%input#RadioButtonPolicyHolderRelationAssuredFamily{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "orangtuaanak" }
+%input#RadioButtonPolicyHolderRelationAssuredFamily{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "family" }
 %div#RadioButtonPolicyHolderRelationAssuredFamily.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredFamily" } Orang Tua / Anak
-%input#RadioButtonPolicyHolderRelationAssuredColleague{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "perusahaankaryawan" }
+%input#RadioButtonPolicyHolderRelationAssuredColleague{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "colleague" }
 %div#RadioButtonPolicyHolderRelationAssuredColleague.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredColleague" } Perusahaan / Karyawan
-%input#RadioButtonPolicyHolderRelationAssuredOther{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "lainnya" }
+%input#RadioButtonPolicyHolderRelationAssuredOther{ :type => "radio", :name => "RadioButtonPolicyHolderRelationAssured", :value => "other" }
 %div#RadioButtonPolicyHolderRelationAssuredOther.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssuredOther" } Lainnya, sebutkan
 %div#LinePolicyHolderOtherRelationship.LineDot.PositionerLeft

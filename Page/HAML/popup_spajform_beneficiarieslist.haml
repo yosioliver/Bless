@@ -2,12 +2,14 @@
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-		%h2 Pertanyaan Kesehatan
+		%h2 Tambah Penerima Manfaat
 
 	%fieldset
-		%label#LabelBeneficiariesListFullName.Wrap{ :for => "TextBeneficiariesListFullName" }
-		%input#TextBeneficiariesListFullName.Full.Single{ :type => "text" }
-
+		%div.ContainerFit
+			%label.Medium.Single.Item{ :for => "TextBeneficiariesListFullName" } Nama Lengkap
+			%input#TextBeneficiariesListFullName.Full.Single.Item{ :type => "text", :required => "true" }
+		%br
+		
 		%label.Medium.Single.PositionerLeft{ :for => "RadioButtonBeneficiariesListSex" } Jenis Kelamin
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonBeneficiariesListSexMale.Medium.Single{ :type => "radio", :name => "RadioButtonBeneficiariesListSex", :value => "male" }
@@ -15,4 +17,22 @@
 			%div.Separator
 			%input#RadioButtonBeneficiariesListSexFemale.Medium.Single{ :type => "radio", :name => "RadioButtonBeneficiariesListSex", :value => "female" }
 			%label.RadioButton{ :for => "RadioButtonBeneficiariesListSexFemale" } Wanita
+		%br        		
+		
+		%label.Medium.Single.PositionerLeft{ :for => "DateBeneficiariesListBirth" } Tanggal Lahir
+		%input#DateBeneficiariesListBirth.Long.Single.PositionerLeft{ :type => "text", :required => "true" }
+		%label.Medium.Single.PositionerLeft{ :for => "TextBeneficiariesListAge" } Umur	
+		%input#TextBeneficiariesListAge.Long.Single.PositionerLeft{ :type => "text" }
+		%br
+		
+		%label.Medium.Single.PositionerLeft{ :for => "SelectBeneficiariesListNationality" } Kewarganegaraan
+		%select#SelectBeneficiariesListNationality
+			%option{ :value => "A"} A
+			%option{ :value => "B"} B
+		%br
+		
+		%label.Medium.Single.PositionerLeft{ :for => "SelectBeneficiariesListRelationship" } Hubungan Dengan Calon Tertanggung
+		%select#SelectBeneficiariesListRelationship
+			%option{ :value => "A"} A
+			%option{ :value => "B"} B
 		%br
