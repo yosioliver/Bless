@@ -58,7 +58,7 @@ var stringProspectiveInsuredPrefix = "ProspectiveInsured";
 var stringPolicyHolderPrefix = "PolicyHolder";
 var arrayCountryList = [];
 var stringButtonPrefix = "Button";
-var stringHanphoneSuffix = "Handphone";
+var stringHandphoneSuffix = "Handphone";
 
 
 // GENERATOR
@@ -818,9 +818,10 @@ function setTextPDF(stringID, stringValue)
 {
     if (stringValue.indexOf(stringSeparatorTelephone) > 0)
     {
-		var stringHandphoneSuffixID = stringID.substring(stringID.length - stringHandphoneSuffix.length, stringID.length - 1);
+		var stringHandphoneSuffixID = stringID.substring(stringID.length - stringHandphoneSuffix.length - 1, stringID.length - 1);
 		
-		if (stringHandphoneSuffixID == stringHandphoneSuffix)
+		alert(stringHandphoneSuffixID + " != " + stringHandphoneSuffix);
+		if (stringHandphoneSuffixID != stringHandphoneSuffix)
 		{
 			var arrayTelephoneString = stringValue.split(stringSeparatorTelephone);
 			var arrayTelephoneID = [stringIDPrefix, stringIDInfix];
