@@ -43,12 +43,47 @@ main
             align-items: stretch
             .Item
                 flex-grow: 1
+            .Item1
+                flex-grow: 1
+            .Item2
+                flex-grow: 2
+            .Item3
+                flex-grow: 3
+            .Margin
+                margin: $general_space_tiny
+            .Center
+                text-align: center
+            .Left
+                text-align: left
+            .Right
+                text-align: right
         .ContainerFit
             justify-content: space-between
         .ContainerLeft
             justify-content: flex-start
         .ContainerRight
             justify-content: flex-end
+
+div.Short, div.Short
+    min-width: $label_width_short
+    width: $label_width_short
+div.Medium, div.Medium
+    min-width: $label_width_medium * 1.5
+    width: $label_width_medium * 1.5
+div.Long, div.Long
+    min-width: $label_width_long
+    width: $label_width_long
+div.Long, div.Long
+    width: 100%
+div.ShortFix, div.ShortFix
+    width: $label_width_short
+    max-width: $label_width_short
+div.MediumFix, div.MediumFix
+    width: $label_width_medium * 1.5
+    max-width: $label_width_medium * 1.5
+div.LongFix, div.LongFix
+    width: $label_width_long * 2
+    max-width: $label_width_long * 2
 
 
 /* CONDITION */
