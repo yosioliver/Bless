@@ -10,9 +10,10 @@
 var directoryRoot = "..";
 var boxTypeWithBottomLabel = "With bottom label";
 var boxTypeWithoutLabel = "Without label";
-var labelDay = "Hari";
+var labelDay = "Tanggal";
 var labelMonth = "Bulan";
 var labelYear = "Tahun";
+var labelDate = "Tanggal";
 var sizeBox = 20;
 var arrayHealthQuestionnaire = [];
 var stringRadioButtonName;
@@ -59,6 +60,7 @@ var stringPolicyHolderPrefix = "PolicyHolder";
 var arrayCountryList = [];
 var stringButtonPrefix = "Button";
 var stringHandphoneSuffix = "Handphone";
+var boxTypeWithBottomNote = "With bottom note";
 
 
 // GENERATOR
@@ -88,6 +90,10 @@ function boxGenerator(tableID, boxAmount, boxType, boxLabel)
     {
         $(tableID).append("<tfoot><tr><td class='' colspan=" + boxAmount + ">" + boxLabel + "</td></tr></tfoot>");
     }
+	else if (boxType == boxTypeWithBottomNote)
+	{
+		$(tableID).append("<tfoot><tr><td class='Note' colspan=" + boxAmount + ">" + boxLabel + "</td></tr></tfoot>");
+	}
     else
     {
 
@@ -1423,4 +1429,12 @@ stringValue)
            $(stringTextID).val('');
        }
    });
+}
+
+function footerGenerator(stringDetail, intTotalPage)
+{
+	$(".SpanFooterDetail").each(function(indexPage)
+	{
+		$(this).text(stringDetail + " Hal " + (indexPage + 1) + " / " + intTotalPage);
+	})
 }
