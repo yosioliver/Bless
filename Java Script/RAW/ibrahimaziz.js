@@ -1162,23 +1162,47 @@ function getFromDatabase(objectContent, stringPageType)
 	
 	// FOR HEALTH QUESTIONNAIRE
 	
-	if (arrayHealthQuestionnaire.length == 0)
+	if (stringPageType == stringPageTypePDF)
 	{
-		arrayHealthQuestionnaire = objectContent;
+
 	}
 	else
 	{
-		if (stringPageType == stringPageTypePDF)
+		if (arrayHealthQuestionnaire.length == 0)
 		{
-
+			arrayHealthQuestionnaire = objectContent;
 		}
 		else
 		{
-			$(".ButtonPreview").each(function()
+
+		}
+		
+		var stringButtonPreviewJavaScriptID;
+		var stringButtonPreviewJQueryID;
+		var stringButtonName;
+		var stringButtonNameWithoutPrefix;
+		var stringTextJavaScriptID;
+		var stringValue;
+
+		$(".ButtonPreview").each(function()
+		{
+			stringButtonPreviewJavaScriptID = $(this).attr("id");
+			stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+			stringButtonName = $(this).attr("name");
+			stringButtonNameWithoutPrefix = stringButtonName.substring(stringPrefixRadioButton.length, stringButtonName.length);
+			stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
+
+			stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
+			
+			if (stringValue.length == 0 || stringValue == null || strigValue == undefined)
 			{
 
-			});
-		}
+			}
+			else
+			{
+				stringButtonPreviewJQueryID.css("display", "block");
+			}
+		});
 	}
 }
 
