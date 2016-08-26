@@ -2,124 +2,124 @@
 
 %html
 
-    / HEAD
-    
-    %head
-        = Haml::Engine.new(File.read("include_spajform_header.haml")).render
-        %title BCA Life - BLESS, Health Questionnaire 1 Form
+	/ HEAD
 
-        / JQUERY
-        
-        :javascript
-            $(document).ready(function()
-            {
-                // SETTER
-                
-                // radioButtonSetter("WeightChange", true);
-                
-                // GETTER
-                
-                // radioButtonGetter("WeightChange");
-                
-                // INITIALIZATION
-                
-                // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'                                                             
-                radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
-            });
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
 
-    / BODY
-    
-    %body#Main
-    
-        / MAIN
+		/ JQUERY
 
-        %main
-            %form
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentKursIDR" } Mata Uang
-                %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPremiPaymentKursIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "idr" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentKursIDR" } RP
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentKursUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "usd" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentKursUSD" } USD           
-                %br
-                    
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyAnually" } Frekuensi Pembayaran
-                %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPremiPaymentFrequencyAnually.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "annualy" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyAnually" } Tahunan
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentFrequencySemester.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "semester" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencySemester" } Semesteran
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentFrequencyQuarterly.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "quarterly" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyQuarterly" } Triwulan
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentFrequencyMonthly.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "monthly" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyMonthly" } Bulanan
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentFrequencyFull.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "full" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyFull" } Sekaligus
-                %br
-                
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentWayDebit" } Cara Pembayaran
-                %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPremiPaymentWayDebit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "annualy" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentWayDebit" } Debit Rekening
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentWayCredit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "semester" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentWayCredit" } Debit Kartu Kredit
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentWayOther{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "other" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentWayOther" } Lainnya
-                %input#TextPremiPaymentWayOther.Long.Single.PositionerLeft{ :type => "text" }
-                %br
-				
-                %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } Pembayar Premi
-                %div.RadioButton.PositionerLeft
-                    %input#RadioButtonPremiPaymentPayorHolder.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "dirisendiri" }
-                    %label.RadioButton.Medium{ :for => "RadioButtonPremiPaymentPayorHolder" } Pemegang Polis Perorangan
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentPayorCompany.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "perusahaan" }
-                    %label.RadioButton.Medium{ :for => "RadioButtonPremiPaymentPayorCompany" } Pemegang Polis Perusahaan / Badan Hukum
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentPayorInsured.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "tertanggung" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentPayorInsured" } Tertanggung
-                    %div.Separator
-                    %input#RadioButtonPremiPaymentPayorThirdParty.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "pihakketiga" }
-                    %label.RadioButton{ :for => "RadioButtonPremiPaymentPayorThirdParty" } Pihak Ketiga                    
-                %br
-                
-                %label.Long.PositionerLeft.Medium.Single.Item{ :for => "TextPremiPaymentBankAccountDetails" } Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit:
-                %br
-                
-                %div.ContainerFit
-                    %label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsName" } Nama Pemilik Rekening/Kartu Kredit
-                    %input#TextPremiPaymentBankAccountDetailsName.Full.Single.Item{ :type => "text", :required => "true" }
-                %br   
-                
-                %div.ContainerFit
-                    %label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsNumber" } Nomor Rekening/Kartu Kredit
-                    %input#TextPremiPaymentBankAccountDetailsNumber.Full.Single.Item{ :type => "text", :required => "true" }
-                %br
-                
-                %div.ContainerFit
-                    %label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsBankName" } Nama Bank
-                    %input#TextPremiPaymentBankAccountDetailsBankName.Full.Single.Item{ :type => "text", :required => "true" }
-                %br
-                
-                %div.ContainerFit
-                    %label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsBankBranch" } Nama Cabang
-                    %input#TextPremiPaymentBankAccountDetailsBankBranch.Full.Single.Item{ :type => "text", :required => "true" }
-                %br
-                
-                %div.ContainerFit
-                    %label.Full.Single.Item{ :for => "TextPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?                   
-                    
-                    %div.RadioButton.MediumFix.Single.Item
-                        %input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true" }
-                        %label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
-                        %div.Separator
-                        %input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false" }
-                        %label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak           
-                %br   
+		:javascript
+			$(document).ready(function()
+			{
+				// SETTER
+
+				// radioButtonSetter("WeightChange", true);
+
+				// GETTER
+
+				// radioButtonGetter("WeightChange");
+
+				// INITIALIZATION
+
+				// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'                                                             
+				radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
+			});
+
+	/ BODY
+
+	%body#Main
+
+		/ MAIN
+
+		%main
+			%form
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentKursIDR" } Mata Uang
+				%div.RadioButton.PositionerLeft
+					%input#RadioButtonPremiPaymentKursIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "idr" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentKursIDR" } RP
+					%div.Separator
+					%input#RadioButtonPremiPaymentKursUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "usd" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentKursUSD" } USD           
+				%br
+
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyAnually" } Frekuensi Pembayaran
+				%div.RadioButton.PositionerLeft
+					%input#RadioButtonPremiPaymentFrequencyAnually.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "annualy" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyAnually" } Tahunan
+					%div.Separator
+					%input#RadioButtonPremiPaymentFrequencySemester.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "semester" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencySemester" } Semesteran
+					%div.Separator
+					%input#RadioButtonPremiPaymentFrequencyQuarterly.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "quarterly" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyQuarterly" } Triwulan
+					%div.Separator
+					%input#RadioButtonPremiPaymentFrequencyMonthly.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "monthly" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyMonthly" } Bulanan
+					%div.Separator
+					%input#RadioButtonPremiPaymentFrequencyFull.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "full" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyFull" } Sekaligus
+				%br
+
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } Pembayar Premi
+				%div.RadioButton.PositionerLeft
+					%input#RadioButtonPremiPaymentPayorHolder.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "dirisendiri" }
+					%label.RadioButton.Medium{ :for => "RadioButtonPremiPaymentPayorHolder" } Pemegang Polis Perorangan
+					%div.Separator
+					%input#RadioButtonPremiPaymentPayorCompany.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "perusahaan" }
+					%label.RadioButton.Medium{ :for => "RadioButtonPremiPaymentPayorCompany" } Pemegang Polis Perusahaan / Badan Hukum
+					%div.Separator
+					%input#RadioButtonPremiPaymentPayorInsured.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "tertanggung" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentPayorInsured" } Tertanggung
+					%div.Separator
+					%input#RadioButtonPremiPaymentPayorThirdParty.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "pihakketiga" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentPayorThirdParty" } Pihak Ketiga
+				%br
+
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentWayDebit" } Cara Pembayaran
+				%div.RadioButton.PositionerLeft
+					%input#RadioButtonPremiPaymentWayDebit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "annualy" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayDebit" } Debit Rekening
+					%div.Separator
+					%input#RadioButtonPremiPaymentWayCredit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "semester" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayCredit" } Debit Kartu Kredit
+					%div.Separator
+					%input#RadioButtonPremiPaymentWayOther{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "other" }
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayOther" } Lainnya
+				%input#TextPremiPaymentWayOther.Long.Single.PositionerLeft{ :type => "text" }
+				%br
+
+				%label.Wrap.PositionerLeft.Single.PositionerLeft{ :for => "TextPremiPaymentBankAccountDetails" } Wajib diisi untuk pengembalian Premi dan untuk media pembayaran Premi Lanjutan melalui Debit Rekening/Debit Kartu Kredit:
+				%br
+
+				%div.ContainerFit
+					%label.LongFix.Double.Item{ :for => "TextPremiPaymentBankAccountDetailsName" } Nama Pemilik Rekening/Kartu Kredit
+					%input#TextPremiPaymentBankAccountDetailsName.Full.Single.Item{ :type => "text", :required => "true" }
+				%br   
+
+				%div.ContainerFit
+					%label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsNumber" } Nomor Rekening/Kartu Kredit
+					%input#TextPremiPaymentBankAccountDetailsNumber.Full.Single.Item{ :type => "text", :required => "true" }
+				%br
+
+				%div.ContainerFit
+					%label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsBankName" } Nama Bank
+					%input#TextPremiPaymentBankAccountDetailsBankName.Full.Single.Item{ :type => "text", :required => "true" }
+				%br
+
+				%div.ContainerFit
+					%label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsBankBranch" } Nama Cabang
+					%input#TextPremiPaymentBankAccountDetailsBankBranch.Full.Single.Item{ :type => "text", :required => "true" }
+				%br
+
+				%div.ContainerFit
+					%label.Full.Single.Item{ :for => "TextPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?                   
+
+					%div.RadioButton.LongFix.Single.Item
+						%input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true" }
+						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
+						%div.Separator
+						%input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false" }
+						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak           
+				%br   

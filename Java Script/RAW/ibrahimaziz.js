@@ -68,6 +68,8 @@ var stringPageSectionForm = "Form";
 var stringPageSectionHealthQuestionnaire = "Health Questionnaire";
 var stringPageSectionBeneficiariesList = "Beneficiaries List";
 var stringPageSectionCurrent = stringPageSectionForm;
+var stringButtonViewPrefix = "ButtonView";
+var stringButtonDeletePrefix = "ButtonDelete";
 
 
 // GENERATOR
@@ -373,15 +375,6 @@ function popUpBeneficiariesListShow(stringKeyID)
     var stringPopUpJavaScriptID = "PopUpBeneficiariesList";
     var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
     
-	if (stringKeyID == undefined || stringKeyID == null)
-	{
-		stringKeyID = "";
-	}
-	else
-	{
-		
-	}
-	
     $(stringPopUpJQueryID).css("display", "block");
     
 	// INPUT SETTER
@@ -392,10 +385,12 @@ function popUpBeneficiariesListShow(stringKeyID)
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		$(stringInputJQueryID).val("");
 		
-        var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringInputNameWithoutPrefix + stringKeyID;
+        var stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
+        var stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
+		console.log("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		
         if (stringValue == null || stringValue == undefined)
         {
             
@@ -755,6 +750,17 @@ function buttonViewBeneficiariesList(stringButtonViewJavaScriptID, stringButtonV
 	});
 }
 
+function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButtonViewName)
+{
+	var stringButtonViewJQueryID = stringKres + stringButtonViewJavaScriptID;
+
+	$(stringButtonViewJQueryID).click(function()
+	{
+		arrayDelete(arrayBeneficiariesList, stringKey);
+		tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
+	});
+}
+
 function buttonPopUpBeneficiariesListGenerator()
 {
     var stringKey;
@@ -765,16 +771,10 @@ function buttonPopUpBeneficiariesListGenerator()
     var stringInputJQueryID;
 	var stringInputIDWithoutPrefix;
 	
-//    $(stringPopUpJQueryID + " #ButtonCancel").click(function()
-//    {
-//        stringRadioButtonKey = stringRadioButtonName;
-//        stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
-//        
-//        setRadioButtonGeneral(stringRadioButtonKey, "false");
-//        arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
-//        
-//        $(stringPopUpJQueryID).css("display", "none");
-//    });
+    $(stringPopUpJQueryID + " #ButtonCancel").click(function()
+    {
+        $(stringPopUpJQueryID).css("display", "none");
+    });
 
     $(stringPopUpJQueryID + " #ButtonDone").click(function()
     {
@@ -894,8 +894,8 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 				(
 					"<tr>" + 
 						"<td>" + stringContentName + "</td>" + 
-						"<td><input type='button' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "' onclick='buttonViewBeneficiariesList(this.id, this.name)'/></td>" + 
-						"<td><input type='button' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "' onclick='buttonDeleteBeneficiariesList(this.id, this.name)'/></td>" + 
+						"<td><input type='button' id='" + stringButtonViewPrefix + stringKeyID + "' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "' onclick='buttonViewBeneficiariesList(this.id, this.name)'/></td>" + 
+						"<td><input type='button' id='" + stringButtonDeletePrefix + stringKeyID + "' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "' onclick='buttonDeleteBeneficiariesList(this.id, this.name)'/></td>" + 
 					"</tr>"
 				);
 				

@@ -49,33 +49,33 @@
     <script>
       $(document).ready(function()
       {            
-          // SETTER
-          
-          // radioButtonSetter("WeightChange", true);                                
-          
-          // GETTER
-          
-          // radioButtonGetter("WeightChange");
-          
-          // INITIALIZATION
-          
-          // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
-          
-          $("#BoxDate").DateTimePicker(
-          {
-              dateSeparator: "/",
-              dateFormat: "dd/MM/yyyy"
-          });
-          
-          autoPopulateState();
-          //calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
-          $('#TextPolicyHolderSalary').number( true, 0, ',', '.' );
-          $('#TextPolicyHolderRevenue').number( true, 0, ',', '.' );
-          $('#TextPolicyHolderOtherIncome').number( true, 0, ',', '.' );
-          
-          radioButtonOtherGenerator("RadioButtonPolicyHolderIDType", "#TextPolicyHolderIDTypeOther", "OTHER");
-          radioButtonOtherGenerator("RadioButtonPolicyHolderRelationAssured", "#TextPolicyHolderRelationAssuredOther", "other");
-          radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");
+      	// SETTER
+      
+      	// radioButtonSetter("WeightChange", true);                                
+      
+      	// GETTER
+      
+      	// radioButtonGetter("WeightChange");
+      
+      	// INITIALIZATION
+      
+      	// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
+      
+      	$("#BoxDate").DateTimePicker(
+      	{
+      		dateSeparator: "/",
+      		dateFormat: "dd/MM/yyyy"
+      	});
+      
+      	autoPopulateState();
+      	//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
+      	$('#TextPolicyHolderSalary').number( true, 0, ',', '.' );
+      	$('#TextPolicyHolderRevenue').number( true, 0, ',', '.' );
+      	$('#TextPolicyHolderOtherIncome').number( true, 0, ',', '.' );
+      
+      	radioButtonOtherGenerator("RadioButtonPolicyHolderIDType", "#TextPolicyHolderIDTypeOther", "OTHER");
+      	radioButtonOtherGenerator("RadioButtonPolicyHolderRelationAssured", "#TextPolicyHolderRelationAssuredOther", "other");
+      	radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");
       });
     </script>
   </head>
@@ -91,27 +91,25 @@
           <label class='Medium Single Item' for='TextPolicyHolderFullName'>Nama Lengkap</label>
           <input class='Full Single Item' data-input-type='autopopulate' id='TextPolicyHolderFullName' required='true' type='text'>
         </div>
-        <div class='ContainerLeft'>
-          <label class='Medium Single Item' for='RadioButtonPolicyHolderIDTypeKTP'>Jenis Identitas Diri</label>
-          <div class='RadioButton Item'>
-            <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='KTP'>
-            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKTP'>KTP</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='SIM'>
-            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeSIM'>SIM</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypePassport' name='RadioButtonPolicyHolderIDType' type='radio' value='PASPOR'>
-            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypePassport'>Paspor</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='KIMSKITAS'>
-            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKIMSKITAS'>KIMS/KITAS</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeOther' name='RadioButtonPolicyHolderIDType' type='radio' value='OTHER'>
-            <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeOther'>Lainnya</label>
-          </div>
-          <input class='Long Single PositionerLeft' id='TextPolicyHolderIDTypeOther' type='text'>
-          <br>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderIDTypeKTP'>Jenis Identitas Diri</label>
+        <div class='RadioButton PositionerLeft'>
+          <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='KTP'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKTP'>KTP</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='SIM'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeSIM'>SIM</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypePassport' name='RadioButtonPolicyHolderIDType' type='radio' value='PASPOR'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderIDTypePassport'>Paspor</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='KIMSKITAS'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKIMSKITAS'>KIMS/KITAS</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonPolicyHolderIDTypeOther' name='RadioButtonPolicyHolderIDType' type='radio' value='OTHER'>
+          <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeOther'>Lainnya</label>
         </div>
+        <input class='Long Single PositionerLeft' id='TextPolicyHolderIDTypeOther' type='text'>
+        <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderIDNumber'>Nomor Identitas Diri</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextPolicyHolderIDNumber' required='true' type='text'>
