@@ -752,25 +752,19 @@ function buttonPopUpBeneficiariesListGenerator()
     var stringInputJQueryID;
 	var stringInputIDWithoutPrefix;
     
-    $("input:button[id^='ButtonView']").each(function()
-    {
-        if ($(this).data("popup-type") == stringPopUpTypeHealth)
-        {
-            var stringButtonViewJavaScriptID = $(this).attr("id");
-            var stringButtonViewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
-            var stringButtonViewName = $(this).attr("name");
-            
-            $(stringButtonViewJQueryID).click(function()
-            {
-                stringRadioButtonName = stringButtonPreviewName;
-                popUpBeneficiariesListShow(stringButtonPreviewName, stringButtonViewName);
-            });
-        }
-        else
-        {
-            
-        }
-    });
+//    $("input:button[class^='ButtonView']").each(function()
+//    {
+//		var stringButtonViewJavaScriptID = $(this).attr("id");
+//		var stringButtonViewJQueryID = stringKres + stringButtonViewJavaScriptID;
+//		var stringButtonViewName = $(this).attr("name");
+//
+//		$(stringButtonViewJQueryID).click(function()
+//		{
+//			alert(stringButtonViewName);
+//			stringRadioButtonName = stringButtonViewName;
+//			popUpBeneficiariesListShow(stringButtonPreviewName, stringButtonViewName);
+//		});
+//    });
     
 //    $(stringPopUpJQueryID + " #ButtonCancel").click(function()
 //    {
