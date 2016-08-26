@@ -67,9 +67,9 @@ var stringBeneficiariesListInfix = "BeneficiariesList";
 var stringPageSectionForm = "Form";
 var stringPageSectionHealthQuestionnaire = "Health Questionnaire";
 var stringPageSectionBeneficiariesList = "Beneficiaries List";
-var stringPageSectionCurrent = stringPageSectionForm;
 var stringButtonViewPrefix = "ButtonView";
 var stringButtonDeletePrefix = "ButtonDelete";
+var stringSharePercentage = 0;
 
 
 // GENERATOR
@@ -434,6 +434,8 @@ function additionalQuestionGenerator()
         {
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
+				stringInfixName = $(this).attr("name").substring(stringPrefixRadioButton.length, $(this).attr("name").length);
+				
                 if ($(this).val() == "true")
                 {
                     popUpGeneralShow($(this).attr("name"), true);
@@ -444,12 +446,47 @@ function additionalQuestionGenerator()
                     $("#LabelDetail").empty();
                     buttonPreviewGenerator($(this).attr("name"), false);
                     
-                    stringInfixName = $(this).attr("name").substring(stringPrefixRadioButton.length, $(this).attr("name").length);
                     stringDetailKey = stringPrefixText + stringInfixName + stringDetailSuffix;
                     arrayDelete(arrayHealthQuestionnaire, stringDetailKey);
                 }
 
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
+				
+				
+				// HARDCODE QUICK FIX FOR INPUT TEXT
+					
+				var stringInfixHardcode;
+
+				if (stringInfixName.substring(3, stringInfixName.length) == "Pro")
+				{
+					stringInfixHardcode = stringProspectiveInsuredPrefix;
+				}
+				else
+				{
+					stringInfixHardcode = stringPolicyHolderPrefix;
+				}
+
+				var stringHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Height";
+				var stringHeightJQueryID = stringKres + stringHeightJavaScriptID;
+				var stringHeightValue = getTextForm(stringHeightJavaScriptID);
+				var stringWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Weight";
+				var stringWeightJQueryID = stringKres + stringHeightJavaScriptID;
+				var stringWeightValue = getTextForm(stringWeightJavaScriptID);
+				var stringBabyHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyHeight";
+				var stringBabyHeightJQueryID = stringKres + stringHeightJavaScriptID;
+				var stringBabyHeightValue = getTextForm(stringBabyHeightJavaScriptID);
+				var stringBabyWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyWeight";
+				var stringBabyWeightJQueryID = stringKres + stringHeightJavaScriptID;
+				var stringBabyWeightValue = getTextForm(stringBabyWeightJavaScriptID);
+				var stringPregnantWeekJavaScriptID = stringPrefixText + stringInfixHardcode + "PregnantWeek";
+				var stringPregnantWeekJQueryID = stringKres + stringHeightJavaScriptID;
+				var stringPregnantWeekValue = getTextForm(stringPregnantWeekJavaScriptID);
+
+				arrayAdd(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
+				arrayAdd(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
+				arrayAdd(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
+				arrayAdd(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
+				arrayAdd(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
 				
                 stringRadioButtonName = $(this).attr("name");
             });
@@ -477,43 +514,10 @@ function additionalQuestionGenerator()
                     });
                     
                     buttonPreviewGenerator($(this).attr("name"), false);
-					
-					// HARDCODE QUICK FIX FOR INPUT TEXT
-					
-					var stringInfixHardcode;
-					
-					if (stringInfixName.substring(3, stringInfixName.length) == "Pro")
-					{
-						stringInfixHardcode = stringProspectiveInsuredPrefix;
-					}
-					else
-					{
-						stringInfixHardcode = stringPolicyHolderPrefix;
-					}
-					
-					var stringHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Height";
-					var stringHeightJQueryID = stringKres + stringHeightJavaScriptID;
-					var stringHeightValue = getTextForm(stringHeightJavaScriptID);
-					var stringWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Weight";
-					var stringWeightJQueryID = stringKres + stringHeightJavaScriptID;
-					var stringWeightValue = getTextForm(stringWeightJavaScriptID);
-					var stringBabyHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyHeight";
-					var stringBabyHeightJQueryID = stringKres + stringHeightJavaScriptID;
-					var stringBabyHeightValue = getTextForm(stringBabyHeightJavaScriptID);
-					var stringBabyWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyWeight";
-					var stringBabyWeightJQueryID = stringKres + stringHeightJavaScriptID;
-					var stringBabyWeightValue = getTextForm(stringBabyWeightJavaScriptID);
-					var stringPregnantWeekJavaScriptID = stringPrefixText + stringInfixHardcode + "PregnantWeek";
-					var stringPregnantWeekJQueryID = stringKres + stringHeightJavaScriptID;
-					var stringPregnantWeekValue = getTextForm(stringPregnantWeekJavaScriptID);
-						
-					arrayAdd(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
-					arrayAdd(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
-					arrayAdd(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
-					arrayAdd(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
-					arrayAdd(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
                 }
                 
+				
+				
                 stringRadioButtonName = $(this).attr("name");
             });
         }
@@ -791,7 +795,20 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 
 	$(stringButtonViewJQueryID).click(function()
 	{
-		arrayDelete(arrayBeneficiariesList, stringKey);
+		for (var i = 0; i < arrayBeneficiariesList.length; i++)
+		{
+			var stringKeyForDelete = arrayBeneficiariesList[i].elementID.substring(arrayBeneficiariesList[i].elementID.length - stringButtonViewName.length, arrayBeneficiariesList[i].elementID.length);
+			
+			if (stringKeyForDelete == stringButtonViewName)
+			{
+				arrayDelete(arrayBeneficiariesList, arrayBeneficiariesList[i].elementID);
+			}
+			else
+			{
+				
+			}
+		}
+		
 		tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 	});
 }
