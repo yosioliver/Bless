@@ -127,7 +127,7 @@ function setHeader(stringValue)
 {
 	$(".HeaderGeneral table").each(function(index)
 	{
-		setBoxGeneral($(this), stringValue);
+		setBoxGeneral($(this).attr("id"), stringValue);
 	});
 }
 
