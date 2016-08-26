@@ -70,6 +70,7 @@ var stringPageSectionBeneficiariesList = "Beneficiaries List";
 var stringPageSectionCurrent = stringPageSectionForm;
 var stringButtonViewPrefix = "ButtonView";
 var stringButtonDeletePrefix = "ButtonDelete";
+var stringSharePercentage = 0;
 
 
 // GENERATOR
@@ -791,7 +792,20 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 
 	$(stringButtonViewJQueryID).click(function()
 	{
-		arrayDelete(arrayBeneficiariesList, stringKey);
+		for (var i = 0; i < arrayBeneficiariesList.length; i++)
+		{
+			var stringKeyForDelete = arrayBeneficiariesList[i].elementID.substring(arrayBeneficiariesList[i].elementID.length - stringButtonViewName.length, arrayBeneficiariesList[i].elementID.length);
+			
+			if (stringKeyForDelete == stringButtonViewName)
+			{
+				arrayDelete(arrayBeneficiariesList, arrayBeneficiariesList[i].elementID);
+			}
+			else
+			{
+				
+			}
+		}
+		
 		tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 	});
 }
