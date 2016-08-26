@@ -826,7 +826,7 @@ function setTextPDF(stringID, stringValue)
     {
 		var stringHandphoneSuffixID = stringID.substring(stringID.length - stringHandphoneSuffix.length - 1, stringID.length - 1);
 		
-		alert(stringHandphoneSuffixID + " != " + stringHandphoneSuffix);
+		//alert(stringHandphoneSuffixID + " != " + stringHandphoneSuffix);
 		if (stringHandphoneSuffixID != stringHandphoneSuffix)
 		{
 			var arrayTelephoneString = stringValue.split(stringSeparatorTelephone);
