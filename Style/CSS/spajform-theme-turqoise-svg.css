@@ -163,6 +163,39 @@ select:disabled {
   background-color: #ebecec;
 }
 
+/* TABLE */
+section table.Square tbody tr td table.BoxSquare tbody tr td, section table.Square tbody tr td table.BoxRound tbody tr td {
+  border-color: #000000;
+  background-color: transparent;
+}
+
+section table.Square tbody tr td table.BoxSquare tbody tr:nth-child(odd), section table.Square tbody tr td table.BoxRound tbody tr:nth-child(odd) {
+  background-color: transparent !important;
+}
+
+section table.Square tbody tr td table.BoxSquare tbody tr:nth-child(even), section table.Square tbody tr td table.BoxRound tbody tr:nth-child(even) {
+  background-color: transparent !important;
+}
+
+section table.Square thead tr th {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #00a6b3;
+}
+
+section table.Square tbody tr td {
+  border-color: #00a6b3;
+  color: #000000;
+}
+
+section table.Square tbody tr:nth-child(odd) {
+  background-color: #b7e8eb;
+}
+
+section table.Square tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
 /* BUTTON */
 .ButtonPrimary {
   background-color: #00a6b3;

@@ -137,6 +137,63 @@ main
         border-width: $general_borderwidth_thin
 
 
+/* TABLE */
+
+table.Square
+    margin-top: $general_space_tiny
+    margin-bottom: $general_space_tiny
+    tbody
+        tr
+            td
+                table.BoxSquare, table.BoxRound
+                    margin-bottom: $general_space_tiny
+                    tbody
+                        tr
+                            td
+                                padding: 0px !important
+            td.Child
+                padding: $general_space_medium
+
+table.Square
+    border-style: solid
+    border-width: $general_borderwidth_thin
+    border-spacing: 0
+    thead
+        tr
+            th
+                width: ($label_width_long * 0.8) - ($general_space_tiny * 2)
+                padding: $general_space_tiny
+                font-size: $fontsize_table_header
+                border-style: solid
+                border-width: $general_borderwidth_thin
+            th:first-child
+                width: auto !important
+    tbody
+        tr
+            td
+                padding: $general_space_tiny
+                font-size: $fontsize_table_item
+                text-align: center
+                vertical-align: top
+                border-top-style: none
+                border-right-style: solid
+                border-left-style: solid
+                border-bottom-style: none
+                border-width: $general_borderwidth_thin
+                .PositionerCenter
+                    display: inline-block
+                span, label
+                    padding-left: $general_space_tiny
+                    padding-right: $general_space_tiny
+                    min-width: $general_space_medium
+                    line-height: $label_height_single
+                    font-size: 1em
+                    display: inline-block
+            td:first-child
+                text-align: left
+                white-space: normal
+
+
 /* POP UP */
 
 main

@@ -228,6 +228,72 @@ main hr {
   border-width: 1px;
 }
 
+/* TABLE */
+table.Square {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+table.Square tbody tr td table.BoxSquare, table.Square tbody tr td table.BoxRound {
+  margin-bottom: 5px;
+}
+
+table.Square tbody tr td table.BoxSquare tbody tr td, table.Square tbody tr td table.BoxRound tbody tr td {
+  padding: 0px !important;
+}
+
+table.Square tbody tr td.Child {
+  padding: 15px;
+}
+
+table.Square {
+  border-style: solid;
+  border-width: 1px;
+  border-spacing: 0;
+}
+
+table.Square thead tr th {
+  width: 86px;
+  padding: 5px;
+  font-size: 0.8em;
+  border-style: solid;
+  border-width: 1px;
+}
+
+table.Square thead tr th:first-child {
+  width: auto !important;
+}
+
+table.Square tbody tr td {
+  padding: 5px;
+  font-size: 0.75em;
+  text-align: center;
+  vertical-align: top;
+  border-top-style: none;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-bottom-style: none;
+  border-width: 1px;
+}
+
+table.Square tbody tr td .PositionerCenter {
+  display: inline-block;
+}
+
+table.Square tbody tr td span, table.Square tbody tr td label {
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 15px;
+  line-height: 20px;
+  font-size: 1em;
+  display: inline-block;
+}
+
+table.Square tbody tr td:first-child {
+  text-align: left;
+  white-space: normal;
+}
+
 /* POP UP */
 main section form header h2 {
   border: none;

@@ -120,6 +120,14 @@ function headerGenerator(stringID)
 	});
 }
 
+function footerGenerator(stringDetail, intTotalPage)
+{
+	$(".SpanFooterDetail").each(function(indexPage)
+	{
+		$(this).text(stringDetail + " Hal " + (indexPage + 1) + " / " + intTotalPage);
+	})
+}
+
 function tableHealthGenerator(stringTableID, intRow)
 {
 	var stringInfixName = stringTableID.substring(stringTablePrefix.length, stringTableID.length);
@@ -304,20 +312,20 @@ function popUpGeneralShow(stringTriggerName, booleanInputState)
 
     popUpTextSetter(stringPopUpJavaScriptID, stringRadioButtonNameWithoutPrefix);
     
-    buttonCancelGenerator(stringID, booleanInputState)
+    buttonCancelGenerator(stringPopUpJavaScriptID, booleanInputState)
 }
 
 function popUpHealthShow(stringTriggerName, booleanInputState)
 {
     var stringPopUpJavaScriptID = "PopUpHealth";
-    var stringPopUpJQueryID = stringKres + stringID;
-    var stringRadioButtonNameWithoutPrefix = stringTriggerName.substring(stringPrefixRadioButton.length, stringTriggerName.length); // PolicyHolderVision
+    var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
+    var stringRadioButtonNameWithoutPrefix = stringTriggerName.substring(stringPrefixRadioButton.length, stringTriggerName.length);
     
     $(stringPopUpJQueryID).css("display", "block");
     
     popUpTextSetter(stringPopUpJavaScriptID, stringRadioButtonNameWithoutPrefix);
     
-    buttonCancelGenerator(stringID, booleanInputState);
+    buttonCancelGenerator(stringPopUpJavaScriptID, booleanInputState);
 }
 
 function popUpBeneficiariesListShow(stringButtonJavaScriptID)
@@ -1429,12 +1437,4 @@ stringValue)
            $(stringTextID).val('');
        }
    });
-}
-
-function footerGenerator(stringDetail, intTotalPage)
-{
-	$(".SpanFooterDetail").each(function(indexPage)
-	{
-		$(this).text(stringDetail + " Hal " + (indexPage + 1) + " / " + intTotalPage);
-	})
 }

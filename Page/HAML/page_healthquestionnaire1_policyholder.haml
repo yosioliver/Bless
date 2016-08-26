@@ -393,9 +393,9 @@
                                 %input#RadioButtonPolicyHolderHeartDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHeartDissorder", :value => "false", "data-popup-type" => "general" }
                                 %label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderNo" } Tidak
                     %hr
-            %section#PopUpGeneral
+            %section#PopUpGeneral.PopUp
                 = Haml::Engine.new(File.read("popup_healthquestionnaire_general.haml")).render
-            %section#PopUpHealth
+            %section#PopUpHealth.PopUp
                 = Haml::Engine.new(File.read("popup_healthquestionnaire_health.haml")).render
-            %section#PopUpSPAJProposal
+            %section#PopUpSPAJProposal.PopUp
                 = Haml::Engine.new(File.read("popup_healthquestionnaire_spajproposal.haml")).render
