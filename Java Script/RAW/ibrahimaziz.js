@@ -64,6 +64,10 @@ var boxTypeWithBottomNote = "With bottom note";
 var arrayBeneficiariesList = [];
 var intBeneficiariesListID = 1;
 var stringBeneficiariesListInfix = "BeneficiariesList";
+var stringPageSectionForm = "Form";
+var stringPageSectionHealthQuestionnaire = "Health Questionnaire";
+var stringPageSectionBeneficiariesList = "Beneficiaries List";
+var stringPageSectionCurrent = stringPageSectionForm;
 
 
 // GENERATOR
@@ -364,11 +368,10 @@ function popUpHealthShow(stringTriggerName, booleanInputState)
     buttonCancelGenerator(stringPopUpJavaScriptID, booleanInputState);
 }
 
-function popUpBeneficiariesListShow(stringButtonJavaScriptID, stringKeyID)
+function popUpBeneficiariesListShow(stringKeyID)
 {
     var stringPopUpJavaScriptID = "PopUpBeneficiariesList";
     var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
-    var stringButtonIDWithoutPrefix = stringButtonJavaScriptID.substring(stringButtonPrefix.length, stringButtonJavaScriptID.length);
     
 	if (stringKeyID == undefined || stringKeyID == null)
 	{
@@ -420,7 +423,7 @@ function beneficiariesListGenerator(stringButtonJavaScriptID)
 		}
 		else
 		{
-			popUpBeneficiariesListShow(stringButtonIDWithoutPrefix, null);
+			popUpBeneficiariesListShow(null);
 		}
 	})
 }
@@ -742,6 +745,16 @@ function buttonPopUpHealthGenerator()
     });
 }
 
+function buttonViewBeneficiariesList(stringButtonViewJavaScriptID, stringButtonViewName)
+{
+	var stringButtonViewJQueryID = stringKres + stringButtonViewJavaScriptID;
+
+	$(stringButtonViewJQueryID).click(function()
+	{
+		popUpBeneficiariesListShow(stringButtonViewName);
+	});
+}
+
 function buttonPopUpBeneficiariesListGenerator()
 {
     var stringKey;
@@ -751,25 +764,7 @@ function buttonPopUpBeneficiariesListGenerator()
     var stringInputJavaScriptID;
     var stringInputJQueryID;
 	var stringInputIDWithoutPrefix;
-    alert("begin");
 	
-//    $(".ButtonView").each(function()
-//    {
-//		alert("a");
-//		var stringButtonViewJavaScriptID = $(this).attr("id");
-//		alert("b");
-//		var stringButtonViewJQueryID = stringKres + stringButtonViewJavaScriptID;
-//		alert("c");
-//		var stringButtonViewName = $(this).attr("name");
-//		alert("d");
-//		
-//		$(stringButtonViewJQueryID).click(function()
-//		{
-//			alert(stringButtonViewName);
-//			popUpBeneficiariesListShow(stringButtonPreviewName, stringButtonViewName);
-//		});
-//    });
-    
 //    $(stringPopUpJQueryID + " #ButtonCancel").click(function()
 //    {
 //        stringRadioButtonKey = stringRadioButtonName;
@@ -886,9 +881,7 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		stringKeyID = arrayContent[i].elementID.substring(stringKey.length, arrayContent[i].elementID.length);
 		stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
 		stringContentName = arrayFind(arrayContent, stringKey);
-		
-		// alert("i = " + i + ", arrayContent[i].elementID = " + arrayContent[i].elementID + ", stringKeyID = " + stringKeyID + ", stringKey = " + stringKey + ", stringContentName = " + stringContentName);
-		
+
 		if (stringFlag == 0 || stringFlag != stringKeyID)
 		{
 			if (stringContentName == null || stringContentName == undefined)
@@ -901,8 +894,8 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 				(
 					"<tr>" + 
 						"<td>" + stringContentName + "</td>" + 
-						"<td><input type='button' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "'/></td>" + 
-						"<td><input type='button' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "'/></td>" + 
+						"<td><input type='button' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "' onclick='buttonViewBeneficiariesList(this.id, this.name)'/></td>" + 
+						"<td><input type='button' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "' onclick='buttonDeleteBeneficiariesList(this.id, this.name)'/></td>" + 
 					"</tr>"
 				);
 				
