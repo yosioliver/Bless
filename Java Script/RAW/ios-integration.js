@@ -131,8 +131,10 @@ function savetoDB()
     }
     
     var jsonToDatabase = JSONGenerator(objectContent);
-    
-    calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);    
+    calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
+	
+	arrayHealthQuestionnaire = [];
+	arrayBeneficiariesList = [];
 }
 
 function PrintData()

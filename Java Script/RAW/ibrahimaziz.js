@@ -751,17 +751,21 @@ function buttonPopUpBeneficiariesListGenerator()
     var stringInputJavaScriptID;
     var stringInputJQueryID;
 	var stringInputIDWithoutPrefix;
-    
-//    $("input:button[class^='ButtonView']").each(function()
+    alert("begin");
+	
+//    $(".ButtonView").each(function()
 //    {
+//		alert("a");
 //		var stringButtonViewJavaScriptID = $(this).attr("id");
+//		alert("b");
 //		var stringButtonViewJQueryID = stringKres + stringButtonViewJavaScriptID;
+//		alert("c");
 //		var stringButtonViewName = $(this).attr("name");
-//
+//		alert("d");
+//		
 //		$(stringButtonViewJQueryID).click(function()
 //		{
 //			alert(stringButtonViewName);
-//			stringRadioButtonName = stringButtonViewName;
 //			popUpBeneficiariesListShow(stringButtonPreviewName, stringButtonViewName);
 //		});
 //    });
@@ -897,8 +901,8 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 				(
 					"<tr>" + 
 						"<td>" + stringContentName + "</td>" + 
-						"<td><input type='button' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "'></td>" + 
-						"<td><input type='button' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "'></td>" + 
+						"<td><input type='button' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "'/></td>" + 
+						"<td><input type='button' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "'/></td>" + 
 					"</tr>"
 				);
 				
