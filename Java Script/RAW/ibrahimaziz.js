@@ -435,7 +435,7 @@ function additionalQuestionGenerator()
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
 				stringInfixName = $(this).attr("name").substring(stringPrefixRadioButton.length, $(this).attr("name").length);
-				
+				alert(stringInfixName);
                 if ($(this).val() == "true")
                 {
                     popUpGeneralShow($(this).attr("name"), true);
@@ -452,12 +452,11 @@ function additionalQuestionGenerator()
 
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
 				
-				
 				// HARDCODE QUICK FIX FOR INPUT TEXT
 					
 				var stringInfixHardcode;
 
-				if (stringInfixName.substring(3, stringInfixName.length) == "Pro")
+				if (stringInfixName.substring(0, 3) == "Pro")
 				{
 					stringInfixHardcode = stringProspectiveInsuredPrefix;
 				}
@@ -465,7 +464,7 @@ function additionalQuestionGenerator()
 				{
 					stringInfixHardcode = stringPolicyHolderPrefix;
 				}
-
+				
 				var stringHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Height";
 				var stringHeightJQueryID = stringKres + stringHeightJavaScriptID;
 				var stringHeightValue = getTextForm(stringHeightJavaScriptID);
@@ -479,14 +478,22 @@ function additionalQuestionGenerator()
 				var stringBabyWeightJQueryID = stringKres + stringHeightJavaScriptID;
 				var stringBabyWeightValue = getTextForm(stringBabyWeightJavaScriptID);
 				var stringPregnantWeekJavaScriptID = stringPrefixText + stringInfixHardcode + "PregnantWeek";
-				var stringPregnantWeekJQueryID = stringKres + stringHeightJavaScriptID;
+				var stringPregnantWeekJQueryID = stringKres + stringPregnantWeekJavaScriptID;
 				var stringPregnantWeekValue = getTextForm(stringPregnantWeekJavaScriptID);
-
-				arrayAdd(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
-				arrayAdd(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
-				arrayAdd(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
-				arrayAdd(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
-				arrayAdd(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
+				var stringPregnancyJavaScriptID = stringPrefixRadioButton + stringInfixHardcode + "Pregnancy";
+				var stringPregnancyJQueryID = stringKres + stringPregnancyJavaScriptID;
+				var stringPregnancyValue = getRadioButtonGeneral(stringPregnancyJavaScriptID);
+				var stringWeightChangeJavaScriptID = stringPrefixRadioButton + stringInfixHardcode + "WeightChange";
+				var stringWeightChangeJQueryID = stringKres + stringWeightChangeJavaScriptID;
+				var stringWeightChangeValue = getRadioButtonGeneral(stringWeightChangeJavaScriptID);
+				
+				setHardCode(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
+				setHardCode(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
+				setHardCode(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
+				setHardCode(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
+				setHardCode(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
+				setHardCode(arrayHealthQuestionnaire, stringPregnancyJavaScriptID, stringPregnancyValue);
+				setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
 				
                 stringRadioButtonName = $(this).attr("name");
             });
@@ -516,8 +523,6 @@ function additionalQuestionGenerator()
                     buttonPreviewGenerator($(this).attr("name"), false);
                 }
                 
-				
-				
                 stringRadioButtonName = $(this).attr("name");
             });
         }
@@ -545,6 +550,18 @@ function additionalQuestionGenerator()
             
         }
     });
+}
+
+function setHardCode(arrayContent, stringKey, stringValue)
+{
+	if (stringValue == null || stringValue == undefined || stringValue == "")
+	{
+		
+	}
+	else
+	{
+		arrayAdd(arrayContent, stringKey, stringValue);
+	}
 }
 
 
