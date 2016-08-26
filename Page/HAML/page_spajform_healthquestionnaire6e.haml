@@ -1,0 +1,63 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.6e Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia,Hepatitis dan lainnya?
+				%br
+				%hr
+				%div.ContainerFit
+					%label.medium.Single.Item 1. Jelaskan gangguan pencernaan yang pernah dialami?
+				%br
+				
+				%div.RadioButton.PositionerLeft
+					%input#RadioButtonPolicyHolderReligionTukakLambung.Single{ :type => "radio", :name => "RadioButtonPolicyHolderPencernaan", :value => "tukak lambung", :disabled => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTukakLambung" } tukak lambung
+					%div.Separator
+					%input#RadioButtonPolicyHolderRadangUsus.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderPencernaan", :value => "radang usus", :disabled => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderRadangUsus" } radang usus
+					%div.Separator
+					%input#RadioButtonPolicyHolderTukakUsus.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderPencernaan", :value => "tukak usus", :disabled => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTukakUsus" } tukak usus
+					%div.Separator
+					%input#RadioButtonPolicyHolderReligionMaag.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderPencernaan", :value => "maag", :disabled => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMaag" } maag
+					%div.Separator
+					%input#RadioButtonPolicyHolderRadangUsus12Jari.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderPencernaan", :value => "RadangUsus12Jari", :disabled => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderRadangUsus12Jari" } radang usus 12 jari
+					%div.Separator
+					%input#RadioButtonPolicyHolderLainnya{ :type => "radio", :name =>"RadioButtonPolicyHolderPencernaan", :value => "lainnya", :disabled => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderLainnya" } lainnya
+				%br
+					%input#TextPolicyHolderAlasanBerhentiAlcaholTo.Full.Single.Item1.Margin{ :type =>"text" }
+					
+				%hr
+				%div.ContainerFit
+					%label#LabelPolicyHolderLainnya.Long.Single.Item3.Margin 2. Sejak kapan mengalami gangguan pencernaan?
+					%input#TextPolicyHolderLainnyaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderLainnya.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyLainnyaFrom.Short.Single.Item1.Margin{ :type => "text" }
+					
