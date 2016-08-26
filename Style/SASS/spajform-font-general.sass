@@ -63,8 +63,6 @@ main
         label.Long, span.Long
             min-width: $label_width_long
             width: $label_width_long
-        label.Long, span.Long
-            width: 100%
         label.ShortFix, span.ShortFix
             width: $label_width_short
             max-width: $label_width_short
@@ -74,14 +72,6 @@ main
         label.LongFix, span.LongFix
             width: $label_width_long * 2
             max-width: $label_width_long * 2
-        label.Short:first-child, span.Short:first-child
-            max-width: $label_width_short
-        label.Medium:first-child, span.Medium:first-child
-            max-width: $label_width_medium * 1.5
-        label.Long:first-child, span.Long:first-child
-            max-width: $label_width_long
-        label.Full:first-child, span.Full:first-child
-            max-width: 100%
         label.FirstIndent, span.FirstIndent
             margin-left: $general_space_medium
         label.SecondIndent, span.SecondIndent
@@ -136,7 +126,16 @@ main
         border-bottom: solid
         border-width: $general_borderwidth_thin
 
-
+//label.Short:first-child, span.Short:first-child
+//	max-width: $label_width_short
+//label.Medium:first-child, span.Medium:first-child
+//	max-width: $label_width_medium * 1.5
+//label.Long:first-child, span.Long:first-child
+//	max-width: $label_width_long
+//label.Full:first-child, span.Full:first-child
+//	max-width: 100%
+		
+		
 /* TABLE */
 
 table.Square

@@ -1,4 +1,4 @@
-%form#FormBeneficiariesList
+%form#FormPopUpBeneficiariesList.SPAJPopUp
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
@@ -6,33 +6,43 @@
 
 	%fieldset
 		%div.ContainerFit
-			%label.Medium.Single.Item{ :for => "TextBeneficiariesListFullName" } Nama Lengkap
-			%input#TextBeneficiariesListFullName.Full.Single.Item{ :type => "text", :required => "true" }
+			%label.Medium.Single.Item{ :for => "TextFullName" } Nama Lengkap
+			%input#TextFullName.Full.Single.Item{ :type => "text", :required => "true" }
 		%br
 		
-		%label.Medium.Single.PositionerLeft{ :for => "RadioButtonBeneficiariesListSex" } Jenis Kelamin
+		%label.Medium.Single.PositionerLeft{ :for => "RadioButtonSexMale" } Jenis Kelamin
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonBeneficiariesListSexMale.Medium.Single{ :type => "radio", :name => "RadioButtonBeneficiariesListSex", :value => "male" }
-			%label.RadioButton{ :for => "RadioButtonBeneficiariesListSexMale" } Pria
+			%input#RadioButtonSexMale.Medium.Single{ :type => "radio", :name => "RadioButtonSex", :value => "male" }
+			%label.RadioButton{ :for => "RadioButtonSexMale" } Pria
 			%div.Separator
-			%input#RadioButtonBeneficiariesListSexFemale.Medium.Single{ :type => "radio", :name => "RadioButtonBeneficiariesListSex", :value => "female" }
-			%label.RadioButton{ :for => "RadioButtonBeneficiariesListSexFemale" } Wanita
+			%input#RadioButtonSexFemale.Medium.Single{ :type => "radio", :name => "RadioButtonSex", :value => "female" }
+			%label.RadioButton{ :for => "RadioButtonSexFemale" } Wanita
 		%br        		
 		
-		%label.Medium.Single.PositionerLeft{ :for => "DateBeneficiariesListBirth" } Tanggal Lahir
-		%input#DateBeneficiariesListBirth.Long.Single.PositionerLeft{ :type => "text", :required => "true" }
-		%label.Medium.Single.PositionerLeft{ :for => "TextBeneficiariesListAge" } Umur	
-		%input#TextBeneficiariesListAge.Long.Single.PositionerLeft{ :type => "text" }
+		%label.Medium.Single.PositionerLeft{ :for => "DateBirthday" } Tanggal Lahir
+		%input#DateBirthday.Long.Single.PositionerLeft{ :type => "text", :required => "true", "data-field" => "date" }
+		%label.Medium.Single.PositionerRight{ :for => "TextAge" } Umur	
+		%input#TextAge.Long.Single.PositionerRight{ :type => "text" }
 		%br
 		
-		%label.Medium.Single.PositionerLeft{ :for => "SelectBeneficiariesListNationality" } Kewarganegaraan
-		%select#SelectBeneficiariesListNationality
-			%option{ :value => "A"} A
-			%option{ :value => "B"} B
+		%label.Medium.Single.PositionerLeft{ :for => "SelectNationality" } Kewarganegaraan
+		%select#SelectNationality.Single.Long.PositionerLeft
+			%option{ :value => "indonesia"} Indonesia
+			%option{ :value => "malaysia"} Malaysia
+			%option{ :value => "india"} India
+			%option{ :value => "china"} China
+			%option{ :value => "singapore"} Singapore
 		%br
 		
-		%label.Medium.Single.PositionerLeft{ :for => "SelectBeneficiariesListRelationship" } Hubungan Dengan Calon Tertanggung
-		%select#SelectBeneficiariesListRelationship
-			%option{ :value => "A"} A
-			%option{ :value => "B"} B
+		%label.Medium.Multi.PositionerLeft{ :for => "SelectRelationship" } Hubungan Dengan Calon Tertanggung
+		%select#SelectRelationship.Single.Long.PositionerLeft
+			%option{ :value => "parents"} Orang Tua
+			%option{ :value => "spouse"} Suami / Istri
+			%option{ :value => "family"} Anak
+			%option{ :value => "friend"} Teman
+			%option{ :value => "neighbour"} Tetangga
+		%br
+		
+		%label.Medium.Single.PositionerLeft{ :for => "TextSharePercentage" } Share Percentage
+		%input#TextSharePercentage.Single.Long.PositionerLeft{ :type => "text" }
 		%br
