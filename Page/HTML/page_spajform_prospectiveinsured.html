@@ -50,33 +50,33 @@
       calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       $(document).ready(function()
       {
-          // SETTER
-          
-          // radioButtonSetter("WeightChange", true);
-          
-          // GETTER
-          
-          // radioButtonGetter("WeightChange");
-          
-          // INITIALIZATION
-          
-          // var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
-          
-          $("#BoxDate").DateTimePicker(
-          {
-              dateSeparator: "/",
-              dateFormat: "dd/MM/yyyy"
-          });
-                          
-          autoPopulateState();
-          //calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
-          $('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );
-          $('#TextProspectiveInsuredRevenue').number( true, 0, ',', '.' );
-          $('#TextProspectiveInsuredOtherIncome').number( true, 0, ',', '.' );
-          
-          radioButtonOtherGenerator("RadioButtonProspectiveInsuredIDType", "#TextProspectiveInsuredIDTypeOther", "OTHER");
-          radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "other");
-          radioButtonOtherGenerator("RadioButtonProspectiveInsuredInsurancePurpose", "#TextProspectiveInsuredInsurancePurposeOther", "other");
+      	// SETTER
+      
+      	// radioButtonSetter("WeightChange", true);
+      
+      	// GETTER
+      
+      	// radioButtonGetter("WeightChange");
+      
+      	// INITIALIZATION
+      
+      	// var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
+      
+      	$("#BoxDate").DateTimePicker(
+      	{
+      		dateSeparator: "/",
+      		dateFormat: "dd/MM/yyyy"
+      	});
+      
+      	autoPopulateState();
+      	//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
+      	$('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );
+      	$('#TextProspectiveInsuredRevenue').number( true, 0, ',', '.' );
+      	$('#TextProspectiveInsuredOtherIncome').number( true, 0, ',', '.' );
+      
+      	radioButtonOtherGenerator("RadioButtonProspectiveInsuredIDType", "#TextProspectiveInsuredIDTypeOther", "OTHER");
+      	radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "other");
+      	radioButtonOtherGenerator("RadioButtonProspectiveInsuredInsurancePurpose", "#TextProspectiveInsuredInsurancePurposeOther", "other");
       });
     </script>
   </head>
@@ -92,27 +92,25 @@
           <label class='Medium Single Item' for='TextProspectiveInsuredFullName'>Nama Lengkap</label>
           <input class='Full Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredFullName' required='true' type='text'>
         </div>
-        <div class='ContainerLeft'>
-          <label class='Medium Single Item' for='RadioButtonProspectiveInsuredIDTypeKTP'>Jenis Identitas Diri</label>
-          <div class='RadioButton Item'>
-            <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeKTP' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KTP'>
-            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKTP'>KTP</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeSIM' name='RadioButtonProspectiveInsuredIDType' type='radio' value='SIM'>
-            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeSIM'>SIM</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypePassport' name='RadioButtonProspectiveInsuredIDType' type='radio' value='PASPOR'>
-            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypePassport'>Paspor</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeKIMSKITAS' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KIMSKITAS'>
-            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKIMSKITAS'>KIMS/KITAS</label>
-            <div class='Separator'></div>
-            <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeOther' name='RadioButtonProspectiveInsuredIDType' type='radio' value='OTHER'>
-            <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeOther'>Lainnya</label>
-          </div>
-          <input class='Long Single PositionerLeft' id='TextProspectiveInsuredIDTypeOther' type='text'>
-          <br>
+        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredIDTypeKTP'>Jenis Identitas Diri</label>
+        <div class='RadioButton PositionerLeft'>
+          <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeKTP' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KTP'>
+          <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKTP'>KTP</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeSIM' name='RadioButtonProspectiveInsuredIDType' type='radio' value='SIM'>
+          <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeSIM'>SIM</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypePassport' name='RadioButtonProspectiveInsuredIDType' type='radio' value='PASPOR'>
+          <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypePassport'>Paspor</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeKIMSKITAS' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KIMSKITAS'>
+          <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKIMSKITAS'>KIMS/KITAS</label>
+          <div class='Separator'></div>
+          <input class='Medium Single' disabled='true' id='RadioButtonProspectiveInsuredIDTypeOther' name='RadioButtonProspectiveInsuredIDType' type='radio' value='OTHER'>
+          <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeOther'>Lainnya</label>
         </div>
+        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredIDTypeOther' type='text'>
+        <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredIDNumber'>Nomor Identitas Diri</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredIDNumber' required='true' type='text'>
