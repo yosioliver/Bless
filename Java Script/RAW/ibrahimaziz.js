@@ -274,7 +274,7 @@ function buttonCancelGenerator(stringPopUpID, booleanState)
 
 // POP UP SETTER
 
-function popUpTextSetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
+function textPopUpSetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
 {
 	var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
 	
@@ -346,7 +346,7 @@ function popUpGeneralShow(stringTriggerName, booleanInputState)
         $("#LabelDetail").append($(stringKres + stringPrefixLabel + stringRadioButtonNameWithoutPrefix).text());
     }
 
-    popUpTextSetter(stringPopUpJavaScriptID, stringRadioButtonNameWithoutPrefix, arrayHealthQuestionnaire);
+    textPopUpSetter(stringPopUpJavaScriptID, stringRadioButtonNameWithoutPrefix, arrayHealthQuestionnaire);
     
     buttonCancelGenerator(stringPopUpJavaScriptID, booleanInputState)
 }
@@ -359,20 +359,49 @@ function popUpHealthShow(stringTriggerName, booleanInputState)
     
     $(stringPopUpJQueryID).css("display", "block");
     
-    popUpTextSetter(stringPopUpJavaScriptID, stringRadioButtonNameWithoutPrefix, arrayHealthQuestionnaire);
+    textPopUpSetter(stringPopUpJavaScriptID, stringRadioButtonNameWithoutPrefix, arrayHealthQuestionnaire);
     
     buttonCancelGenerator(stringPopUpJavaScriptID, booleanInputState);
 }
 
-function popUpBeneficiariesListShow(stringButtonJavaScriptID)
+function popUpBeneficiariesListShow(stringButtonJavaScriptID, stringKeyID)
 {
     var stringPopUpJavaScriptID = "PopUpBeneficiariesList";
     var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
     var stringButtonIDWithoutPrefix = stringButtonJavaScriptID.substring(stringButtonPrefix.length, stringButtonJavaScriptID.length);
     
+	if (stringKeyID == undefined || stringKeyID == null)
+	{
+		stringKeyID = "";
+	}
+	else
+	{
+		
+	}
+	
     $(stringPopUpJQueryID).css("display", "block");
     
-    popUpTextSetter(stringPopUpJavaScriptID, stringButtonIDWithoutPrefix, arrayBeneficiariesList);
+	// INPUT SETTER
+	
+	$(stringPopUpJQueryID + " input:text").each(function()
+    {
+        var stringInputJavaScriptID = $(this).attr("id");
+		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+		$(stringInputJQueryID).val("");
+		
+        var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
+        var stringKey = stringPrefixText + stringInputNameWithoutPrefix + stringKeyID;
+        var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
+        
+        if (stringValue == null || stringValue == undefined)
+        {
+            
+        }
+        else
+        {
+            setTextForm(stringInputJavaScriptID, stringValue);
+        }
+    });
 }
 
 
@@ -391,7 +420,7 @@ function beneficiariesListGenerator(stringButtonJavaScriptID)
 		}
 		else
 		{
-			popUpBeneficiariesListShow(stringButtonIDWithoutPrefix);
+			popUpBeneficiariesListShow(stringButtonIDWithoutPrefix, null);
 		}
 	})
 }
@@ -422,6 +451,8 @@ function additionalQuestionGenerator()
                     arrayDelete(arrayHealthQuestionnaire, stringDetailKey);
                 }
 
+				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
+				
                 stringRadioButtonName = $(this).attr("name");
             });
         }
@@ -721,26 +752,26 @@ function buttonPopUpBeneficiariesListGenerator()
     var stringInputJQueryID;
 	var stringInputIDWithoutPrefix;
     
-//    $("input:button[id^='ButtonPreview']").each(function()
-//    {
-//        if ($(this).data("popup-type") == stringPopUpTypeHealth)
-//        {
-//            var stringButtonPreviewJavaScriptID = $(this).attr("id");
-//            var stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
-//            var stringButtonPreviewName = $(this).attr("name");
-//            
-//            $(stringButtonPreviewJQueryID).click(function()
-//            {
-//                stringRadioButtonName = stringButtonPreviewName;
-//                popUpHealthShow(stringButtonPreviewName, false);
-//            });
-//        }
-//        else
-//        {
-//            
-//        }
-//    });
-//    
+    $("input:button[id^='ButtonView']").each(function()
+    {
+        if ($(this).data("popup-type") == stringPopUpTypeHealth)
+        {
+            var stringButtonViewJavaScriptID = $(this).attr("id");
+            var stringButtonViewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+            var stringButtonViewName = $(this).attr("name");
+            
+            $(stringButtonViewJQueryID).click(function()
+            {
+                stringRadioButtonName = stringButtonPreviewName;
+                popUpBeneficiariesListShow(stringButtonPreviewName, stringButtonViewName);
+            });
+        }
+        else
+        {
+            
+        }
+    });
+    
 //    $(stringPopUpJQueryID + " #ButtonCancel").click(function()
 //    {
 //        stringRadioButtonKey = stringRadioButtonName;
@@ -858,7 +889,7 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
 		stringContentName = arrayFind(arrayContent, stringKey);
 		
-		alert("i = " + i + ", arrayContent[i].elementID = " + arrayContent[i].elementID + ", stringKeyID = " + stringKeyID + ", stringKey = " + stringKey + ", stringContentName = " + stringContentName);
+		// alert("i = " + i + ", arrayContent[i].elementID = " + arrayContent[i].elementID + ", stringKeyID = " + stringKeyID + ", stringKey = " + stringKey + ", stringContentName = " + stringContentName);
 		
 		if (stringFlag == 0 || stringFlag != stringKeyID)
 		{
@@ -872,8 +903,8 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 				(
 					"<tr>" + 
 						"<td>" + stringContentName + "</td>" + 
-						"<td><input type='button' class='ButtonPrimary' value='View' name='" + stringKeyID + "'></td>" + 
-						"<td><input type='button' class='ButtonPrimary' value='Delete' name='" + stringKeyID + "'></td>" + 
+						"<td><input type='button' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "'></td>" + 
+						"<td><input type='button' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "'></td>" + 
 					"</tr>"
 				);
 				
