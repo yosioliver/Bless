@@ -477,6 +477,41 @@ function additionalQuestionGenerator()
                     });
                     
                     buttonPreviewGenerator($(this).attr("name"), false);
+					
+					// HARDCODE QUICK FIX FOR INPUT TEXT
+					
+					var stringInfixHardcode;
+					
+					if (stringInfixName.substring(3, stringInfixName.length) == "Pro")
+					{
+						stringInfixHardcode = stringProspectiveInsuredPrefix;
+					}
+					else
+					{
+						stringInfixHardcode = stringPolicyHolderPrefix;
+					}
+					
+					var stringHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Height";
+					var stringHeightJQueryID = stringKres + stringHeightJavaScriptID;
+					var stringHeightValue = getTextForm(stringHeightJavaScriptID);
+					var stringWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Weight";
+					var stringWeightJQueryID = stringKres + stringHeightJavaScriptID;
+					var stringWeightValue = getTextForm(stringWeightJavaScriptID);
+					var stringBabyHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyHeight";
+					var stringBabyHeightJQueryID = stringKres + stringHeightJavaScriptID;
+					var stringBabyHeightValue = getTextForm(stringBabyHeightJavaScriptID);
+					var stringBabyWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyWeight";
+					var stringBabyWeightJQueryID = stringKres + stringHeightJavaScriptID;
+					var stringBabyWeightValue = getTextForm(stringBabyWeightJavaScriptID);
+					var stringPregnantWeekJavaScriptID = stringPrefixText + stringInfixHardcode + "PregnantWeek";
+					var stringPregnantWeekJQueryID = stringKres + stringHeightJavaScriptID;
+					var stringPregnantWeekValue = getTextForm(stringPregnantWeekJavaScriptID);
+						
+					arrayAdd(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
+					arrayAdd(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
+					arrayAdd(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
+					arrayAdd(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
+					arrayAdd(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
                 }
                 
                 stringRadioButtonName = $(this).attr("name");

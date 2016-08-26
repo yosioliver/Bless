@@ -44,20 +44,20 @@
     <script>
       $(document).ready(function()
       {
-          // GENERATOR
-          
-          additionalQuestionGenerator();
-          
-          
-          // BUTTON
+      	// GENERATOR
       
-          buttonPopUpGeneralGenerator();
-          buttonPopUpHealthGenerator();
-          
-          /* $("#MainForm #ButtonDone").click(function()
-          {
-              savetoDB();
-          }); */
+      	additionalQuestionGenerator();
+      
+      
+      	// BUTTON
+      
+      	buttonPopUpGeneralGenerator();
+      	buttonPopUpHealthGenerator();
+      
+      	/* $("#MainForm #ButtonDone").click(function()
+      	{
+      		savetoDB();
+      	}); */
       });
     </script>
   </head>
@@ -452,10 +452,10 @@
             <label class='PositionerLeft' for='BabyHeight'>Panjang dan berat saat lahir</label>
             <br>
             <br>
-            <input class='Short PositionerLeft' id='RadioButtonProspectiveInsuredBabyHeight' style='margin-right: 10px;' type='text'>
-            <label class='PositionerLeft' for='RadioButtonProspectiveInsuredBabyHeight'>Cm</label>
-            <input class='Short PositionerLeft' id='RadioButtonProspectiveInsuredBabyWeight' style='margin-left: 10px; margin-right: 10px;' type='text'>
-            <label class='PositionerLeft' for='RadioButtonProspectiveInsuredBabyWeight'>Kg</label>
+            <input class='Short PositionerLeft' id='TextProspectiveInsuredBabyHeight' style='margin-right: 10px;' type='text'>
+            <label class='PositionerLeft' for='TextProspectiveInsuredBabyHeight'>Cm</label>
+            <input class='Short PositionerLeft' id='TextProspectiveInsuredBabyWeight' style='margin-left: 10px; margin-right: 10px;' type='text'>
+            <label class='PositionerLeft' for='TextProspectiveInsuredBabyWeight'>Kg</label>
           </li>
           <hr>
           <li>
@@ -468,6 +468,8 @@
                   <label class='Item' for='RadioButtonProspectiveInsuredPregnantYes' id='LabelProspectiveInsuredPregnant'>
                     Apakah Anda sedang hamil?
                   </label>
+                  <input class='Short PositionerLeft' id='TextProspectiveInsuredPregnantWeek' style='margin-left: -60px;' type='text'>
+                  <label class='Short Single PositionerLeft' for='TextProspectiveInsuredPregnantWeek' style='margin-left: -60px;'>Minggu</label>
                   <div class='RadioButton Item'>
                     <input data-popup-type='general' id='RadioButtonProspectiveInsuredPregnantStateYes' name='RadioButtonProspectiveInsuredPregnant' type='radio' value='true'>
                     <label class='RadioButton' for='RadioButtonProspectiveInsuredPregnantStateYes'>Ya</label>
