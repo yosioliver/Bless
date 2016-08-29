@@ -16,7 +16,7 @@
 
 			$(document).ready(function()
 			{
-				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"},{"elementID":"RadioButtonProspectiveInsuredSmoker","Value":"true"},{"elementID":"RadioButtonProspectiveInsuredJunkie","Value":"false"},{"elementID":"RadioButtonPolicyHolderExtremeSport","Value":"true"},{"elementID":"RadioButtonPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredVisionDiseaseName","Value":"belekan"},{"elementID":"TextProspectiveInsuredVisionSickFrom","Value":"01/07/2016"},{"elementID":"TextProspectiveInsuredVisionSickDuration","Value":"2 minggu"},{"elementID":"TextProspectiveInsuredVisionDoctorName","Value":"anto"},{"elementID":"TextProspectiveInsuredVisionHosipital","Value":"rsib"},{"elementID":"TextProspectiveInsuredVisionAddress","Value":"bintaro"},{"elementID":"TextProspectiveInsuredVisionTelephone","Value":"123"},{"elementID":"TextProspectiveInsuredENTDiseaseName","Value":"congean"},{"elementID":"TextProspectiveInsuredRespiratoryDiseaseName","Value":"pilek"},{"elementID":"TextProspectiveInsuredCardiacDiseaseName","Value":"sesek"},{"elementID":"TextProspectiveInsuredCardiacDoctorName","Value":"surianto"},{"elementID":"AreaKanwilAgent","Value":"jakarta"},{"elementID":"TextPolicyHolderHandphone1","Value":"0818-146139"}]}}'
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"},{"elementID":"RadioButtonProspectiveInsuredSmoker","Value":"true"},{"elementID":"RadioButtonProspectiveInsuredJunkie","Value":"false"},{"elementID":"RadioButtonPolicyHolderExtremeSport","Value":"true"},{"elementID":"RadioButtonPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredVisionDiseaseName","Value":"belekan"},{"elementID":"TextProspectiveInsuredVisionSickFrom","Value":"01/07/2016"},{"elementID":"TextProspectiveInsuredVisionSickDuration","Value":"2 minggu"},{"elementID":"TextProspectiveInsuredVisionDoctorName","Value":"anto"},{"elementID":"TextProspectiveInsuredVisionHosipital","Value":"rsib"},{"elementID":"TextProspectiveInsuredVisionAddress","Value":"bintaro"},{"elementID":"TextProspectiveInsuredVisionTelephone","Value":"123"},{"elementID":"TextProspectiveInsuredENTDiseaseName","Value":"congean"},{"elementID":"TextProspectiveInsuredRespiratoryDiseaseName","Value":"pilek"},{"elementID":"TextProspectiveInsuredCardiacDiseaseName","Value":"sesek"},{"elementID":"TextProspectiveInsuredCardiacDoctorName","Value":"surianto"},{"elementID":"AreaKanwilAgent","Value":"jakarta"},{"elementID":"TextPolicyHolderHandphone1","Value":"0818-146139"},{"elementID":"TextBeneficiariesListFullName1","Value":"Satri Kharima"},{"elementID":"DateBeneficiariesListBirthday1","Value":"01/02/1990"},{"elementID":"SelectBeneficiariesListRelationship1","Value":"family"},{"elementID":"RadioButtonBeneficiariesListSex1","Value":"male"},{"elementID":"SelectBeneficiariesListNationality1","Value":"indonesia"},{"elementID":"TextBeneficiariesListFullName1","Value":"Faiz Baraja"},{"elementID":"DateBeneficiariesListBirthday1","Value":"02/03/1990"},{"elementID":"SelectBeneficiariesListRelationship1","Value":"family"},{"elementID":"RadioButtonBeneficiariesListSex1","Value":"male"},{"elementID":"SelectBeneficiariesListNationality1","Value":"indonesia"},{"elementID":"TextBeneficiariesListFullName1","Value":"Erwin Lim"},{"elementID":"DateBeneficiariesListBirthday1","Value":"03/04/1990"},{"elementID":"SelectBeneficiariesListRelationship1","Value":"family"},{"elementID":"RadioButtonBeneficiariesListSex1","Value":"male"},{"elementID":"SelectBeneficiariesListNationality1","Value":"indonesia"}]}}'
 
 				// SECTION GENERAL
 
@@ -231,6 +231,10 @@
 				boxGenerator("#TextPremiPaymentBankAccountDetailsBankName", 27, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPremiPaymentBankAccountDetailsBankBranch", 27, boxTypeWithoutLabel, null);
 
+				// SECTION BENEFICIARIES LIST
+				
+				tablePDFBeneficiariesListGenerator("TableBeneficiariesList", 5);
+				
 				// SECTION HEALTH
 
 				boxGenerator("#TextProspectiveInsuredHeight", 3, boxTypeWithoutLabel, null);
@@ -265,12 +269,9 @@
 				// SETTER
 
 				var objectContent = JSON.parse(jsonDummy);
-				// getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+				getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
 				
-				var stringSectionHeader = "#SectionHeader";
-				var stringSectionHeaderSuffix;
-				
-				setHeader("123456");
+				// setHeader("123456");
 			});
 
 
