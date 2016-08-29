@@ -128,6 +128,7 @@ function savetoDB()
 	{
 		// alert("no getter !, arrayBeneficiariesList length : " + arrayBeneficiarisList.length);
 		arrayAdd(arrayBeneficiariesList, "TextBeneficiariesListSharePercentage", getTextForm("TextBeneficiariesListSharePercentage"));
+		alert("TextBeneficiariesListSharePercentage" + " // " + getTextForm("TextBeneficiariesListSharePercentage"))
 		objectContent = arrayBeneficiariesList;
 	}
     else

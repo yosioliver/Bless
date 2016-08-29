@@ -950,6 +950,7 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						if (validateTextGeneral(stringInputJQueryID) == true)
 						{
+							alert(stringKey + " " + stringValue);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 						else
