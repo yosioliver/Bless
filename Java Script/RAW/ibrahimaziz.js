@@ -1513,22 +1513,24 @@ function getFromDatabase(objectContent, stringPageType)
 						var stringIndicatorPolicyHolder = "Pol";
 						var stringIndicatorProspectiveInsured = "Pro";
 						var stringTableJQueryID;
+						var stringInfix;
 
 						if (stringIndicatorPrefix == stringIndicatorPolicyHolder)
 						{
 							stringTableJQueryID = stringKres + "TablePolicyHolderIllness";
+							stringInfix = stringPolicyHolderPrefix;
 						}
 						else
 						{
 							stringTableJQueryID = stringKres + "TableProspectiveInsuredIllness";
+							stringInfix = stringProspectiveInsuredPrefix;
 						}
 
 						$(stringTableJQueryID + " tbody tr").each(function(indexRow)
 						{
 							var stringRowJavaScriptID = $(this).attr("id");
 							var stringRowJQueryID = stringKres + stringRowJavaScriptID;
-
-							var stringCellJavaScriptID = stringCellPrefix + stringProspectiveInsuredPrefix + "Illness" + arrayHealthTableHeader[j];
+							var stringCellJavaScriptID = stringCellPrefix + stringInfix + "Illness" + arrayHealthTableHeader[j];
 							var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
 							var stringCellSuffix = stringCellJavaScriptID;
 
@@ -1546,6 +1548,8 @@ function getFromDatabase(objectContent, stringPageType)
 									{
 										setBoxGeneral($(this).attr("id"), stringDate[indexTable]);
 									});
+									
+									return false;
 								}
 								else
 								{
@@ -1555,7 +1559,7 @@ function getFromDatabase(objectContent, stringPageType)
 										
 										// FOR NUMBER
 										
-										numberGenerator(stringProspectiveInsuredPrefix + "Illness", indexRow);
+										numberGenerator(stringInfix + "Illness", indexRow);
 										
 										return false;
 									}
@@ -1768,7 +1772,6 @@ function getFromDatabase(objectContent, stringPageType)
 								var stringCellJavaScriptID = stringCellPrefix + stringBeneficiariesListInfix + arrayBirthdayTableHeader[k];
 								var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
 								var arrayDate = stringValue.split(stringSeparatorDate);
-								alert(stringCellJQueryID + " " + arrayDate[k]);
 								
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
