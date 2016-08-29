@@ -427,7 +427,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		//alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
 		
         if (stringValue == null || stringValue == undefined)
         {
