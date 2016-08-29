@@ -614,6 +614,8 @@ function additionalQuestionGenerator()
                     buttonPreviewGenerator($(this).attr("name"), false);
                 }
                 
+				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
+				
                 stringRadioButtonName = $(this).attr("name");
             });
         }
@@ -623,13 +625,13 @@ function additionalQuestionGenerator()
             {
                 if ($(this).val() == "true")
                 {
-                    $("#PopUpSPAJProposal").css("display", "block");
+                    // $("#PopUpSPAJProposal").css("display", "block");
                     // $("#LabelAdditionalQuestion").append($("#Label" + radioButtonName).text());
                     // $("#TextAdditionalQuestion").empty();
                 }
                 else
                 {
-                    $("#PopUpSPAJProposal").css("display", "none");
+                    // $("#PopUpSPAJProposal").css("display", "none");
                     // $("#LabelAdditionalQuestion").empty();
                 }
 
