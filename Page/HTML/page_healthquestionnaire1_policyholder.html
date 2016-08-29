@@ -30,11 +30,15 @@
     <link href='../../Style/CSS/healthquestionnaire-fontfamily-bpreplay.css' id='cssfontfamily' rel='stylesheet' type='text/css'>
     <link href='../../Style/CSS/healthquestionnaire-theme-turqoise-svg.css' id='csstheme' rel='stylesheet' type='text/css'>
     <!-- %link{ :id => "cssresponsive", :href => "#{urlCSS}#{urlCSSSectionPrefix}-responsive-general.css", :rel => "stylesheet", :type => "text/css" } -->
+    <link href='../../Java Script/Minimized/DateTimePicker.min.css' id='cssresponsive' rel='stylesheet' type='text/css'>
     <!-- JAVA SCRIPT -->
     <!-- %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery.mobile-1.4.5.min.js" } -->
     <script src='../../Java Script/Minimized/jquery-1.11.1.min.js' type='text/javascript'></script>
     <script src='../../Java Script/Minimized/jquery-migrate-1.2.1.min.js' type='text/javascript'></script>
     <script src='../../Java Script/Minimized/ibrahimaziz.min.js' type='text/javascript'></script>
+    <script src='../../Java Script/Minimized/DateTimePicker.min.js' type='text/javascript'></script>
+    <script src='../../Java Script/Minimized/DateTimePicker-i18n.js' type='text/javascript'></script>
+    <script src='../../Java Script/Minimized/DateTimePicker_IOS_fix.js' type='text/javascript'></script>
     <script>
       var stringPageTypeCurrent = stringPageTypeForm;
     </script>
@@ -53,6 +57,12 @@
       
       	buttonPopUpGeneralGenerator();
       	buttonPopUpHealthGenerator();
+      
+      	$("#BoxDate").DateTimePicker(
+      	{
+      		dateSeparator: "/",
+      		dateFormat: "dd/MM/yyyy"
+      	});
       
       	/* $("#MainForm #ButtonDone").click(function()
       	{
@@ -559,7 +569,7 @@
             <label class='Wrap' for='TextDiseaseName' id='LabelDiseaseName'>Nama Penyakit</label>
             <input class='Full Single' id='TextDiseaseName' type='text'>
             <label class='Wrap' for='DateSickFrom' id='LabelSickFrom'>Kapan Mulai Sakit</label>
-            <input class='Full Single' id='DateSickFrom' type='text'>
+            <input class='Full Single' data-field='date' id='DateSickFrom' type='text'>
             <label class='Wrap' for='TextSickDuration' id='LabelSickDuration'>Lama Sakit</label>
             <input class='Full Single' id='TextSickDuration' type='text'>
             <label class='Wrap' for='TextDoctorName' id='LabelDoctorName'>Nama Dokter</label>
@@ -594,6 +604,7 @@
           </fieldset>
         </form>
       </section>
+      <div id='BoxDate'></div>
     </main>
   </body>
 </html>
