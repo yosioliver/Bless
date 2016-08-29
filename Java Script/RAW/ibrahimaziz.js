@@ -515,7 +515,7 @@ function additionalQuestionGenerator()
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
 				stringInfixName = $(this).attr("name").substring(stringPrefixRadioButton.length, $(this).attr("name").length);
-				alert(stringInfixName);
+				
                 if ($(this).val() == "true")
                 {
                     popUpGeneralShow($(this).attr("name"), true);
@@ -781,7 +781,7 @@ function buttonPopUpGeneralGenerator()
                 stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
             }
 
-            //alert(stringObjectPreview);
+            alert(stringObjectPreview);
         }
         else
         {
@@ -872,7 +872,7 @@ function buttonPopUpHealthGenerator()
             stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
         }
 
-        //alert(stringObjectPreview);
+        alert(stringObjectPreview);
     });
 }
 
@@ -1043,8 +1043,6 @@ function buttonPopUpBeneficiariesListGenerator()
 		{
 			
 		}
-		
-        
     });
 }
 
@@ -1723,7 +1721,7 @@ function getFromDatabase(objectContent, stringPageType)
 								var stringCellJavaScriptID = stringCellPrefix + stringBeneficiariesListInfix + arrayBirthdayTableHeader[k];
 								var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
 								var arrayDate = stringValue.split(stringSeparatorDate);
-								// alert(stringCellJQueryID + " " + arrayDate[k]);
+								alert(stringCellJQueryID + " " + arrayDate[k]);
 								
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
