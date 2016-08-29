@@ -189,6 +189,7 @@
       	boxGenerator("#TextProspectiveInsuredRevenue", 17, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredOtherIncome", 17, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredSource", 30, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredFundingSource", 27, boxTypeWithoutLabel, null);
       
       	// SUB B
       
@@ -298,8 +299,8 @@
       
       	// SETTER
       
-      	var objectContent = JSON.parse(jsonDummy);
-      	getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+      	// var objectContent = JSON.parse(jsonDummy);
+      	// getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
       	
       	// setHeader("123456");
       });
@@ -1191,6 +1192,9 @@
         <br>
         <label class='Medium Single FirstIndent PositionerLeft' for='TextProspectiveInsuredSource'>Jelaskan Sumbernya</label>
         <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredSource'></table>
+        <br>
+        <label class='Long Single FirstIndent PositionerLeft' for='TextProspectiveInsuredFundingSource'>Sumber Dana Pembelian Asuransi</label>
+        <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredFundingSource'></table>
         <br>
       </section>
       <section id='SectionProspectiveBeneficiariesList'>

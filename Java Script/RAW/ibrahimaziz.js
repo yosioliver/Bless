@@ -513,7 +513,7 @@ function additionalQuestionGenerator()
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
 				stringInfixName = $(this).attr("name").substring(stringPrefixRadioButton.length, $(this).attr("name").length);
-				alert(stringInfixName);
+				
                 if ($(this).val() == "true")
                 {
                     popUpGeneralShow($(this).attr("name"), true);
@@ -779,7 +779,7 @@ function buttonPopUpGeneralGenerator()
                 stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
             }
 
-            //alert(stringObjectPreview);
+            alert(stringObjectPreview);
         }
         else
         {
@@ -870,7 +870,7 @@ function buttonPopUpHealthGenerator()
             stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
         }
 
-        //alert(stringObjectPreview);
+        alert(stringObjectPreview);
     });
 }
 
@@ -1008,7 +1008,7 @@ function buttonPopUpBeneficiariesListGenerator()
             stringObjectPreview += "key : " + arrayBeneficiariesList[i].elementID + "\nvalue : " + arrayBeneficiariesList[i].Value + "\n";
         }
 
-        //alert(stringObjectPreview);
+        alert(stringObjectPreview);
     });
 }
 
