@@ -70,6 +70,7 @@ var stringPageSectionBeneficiariesList = "Beneficiaries List";
 var stringButtonViewPrefix = "ButtonView";
 var stringButtonDeletePrefix = "ButtonDelete";
 var stringSharePercentage = 0;
+var arrayBeneficiariesListTableHeader = ["FullName",stringIDDay,stringIDMonth,stringIDYear,"Sex","Relationship","Nationality"];
 
 
 // GENERATOR
@@ -231,6 +232,41 @@ function tableSPAJProposalGenerator(stringTableID, intRow)
 		for (var j = 0; j < arraySPAJProposalTableHeader.length; j++)
 		{
 			stringCellJavaScriptID = stringCellPrefix + stringInfixName + arraySPAJProposalTableHeader[j] + i;
+			stringCellJQueryID = stringKres + stringCellJavaScriptID;
+			
+			$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
+		}
+	}
+}
+
+function tablePDFBeneficiariesListGenerator(stringTableID, intRow)
+{
+	var stringInfixName = stringTableID.substring(stringTablePrefix.length, stringTableID.length);
+	var stringTableJQueryID = stringKres + stringTableID;
+	var stringRowJavaScriptID;
+	var stringRowJQueryID;
+	var stringCellJavaScriptID;
+	var stringCellJQueryID;
+	var stringBodyJavaScriptID = stringBodyPrefix + stringInfixName;
+	var stringBodyJQueryID = stringKres + stringBodyJavaScriptID;
+	
+	$(stringTableJQueryID).append("<tbody id='" + stringBodyJavaScriptID + "'></tbody>");
+	
+	for (var i = 0; i < intRow; i++)
+	{
+		stringRowJavaScriptID = stringRowPrefix + stringInfixName + i;
+		stringRowJQueryID = stringKres + stringRowJavaScriptID;
+		
+		$(stringTableJQueryID + " " + stringBodyJQueryID).append("<tr id='" + stringRowJavaScriptID + "'></tr>");
+		
+		stringCellJavaScriptID = stringCellPrefix + stringInfixName + stringNumberPrefix + i;
+		stringCellJQueryID = stringKres + stringCellJavaScriptID;
+
+		$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
+		
+		for (var j = 0; j < arrayBeneficiariesListTableHeader.length; j++)
+		{
+			stringCellJavaScriptID = stringCellPrefix + stringInfixName + arrayBeneficiariesListTableHeader[j] + i;
 			stringCellJQueryID = stringKres + stringCellJavaScriptID;
 			
 			$(stringRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
@@ -1423,6 +1459,51 @@ function getFromDatabase(objectContent, stringPageType)
 					}
 				}
 				
+				
+				// BENEFICIARIES LIST
+				
+				var stringIDWithoutPrefix = stringKey.substring(stringPrefixText.length, stringKey.length);
+				var stringIndicatorPrefix = stringIDWithoutPrefix.substring(0, 3);
+				
+				if (stringIndicatorPrefix == "Ben")
+				{	
+					var stringIDWithoutInfix = stringIDWithoutPrefix.substring(stringBeneficiariesListInfix.length, stringIDWithoutPrefix.length - 1);
+					var stringTableJQueryID = stringKres + stringTablePrefix + stringBeneficiariesListInfix;
+					
+					for (var j = 0; j < arrayBeneficiariesListTableHeader.length; j++)
+					{
+						$(stringTableJQueryID + " tbody tr").each(function(indexRow)
+						{
+							var stringRowJavaScriptID = $(this).attr("id");
+							var stringRowJQueryID = stringKres + stringRowJavaScriptID;
+							var stringCellJavaScriptID = stringCellPrefix + stringBeneficiariesListInfix + arrayBeneficiariesListTableHeader[j];
+							var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
+							var stringCellSuffix = stringCellJavaScriptID;
+							
+							if (stringIDWithoutInfix == arrayBeneficiariesListTableHeader[j])
+							{
+								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
+								{
+									$(stringCellJQueryID).append(stringValue);
+									return false;
+								}
+								else
+								{
+
+								}
+							}
+							else
+							{
+
+							}
+						});
+					}
+				}
+				else
+				{
+
+				}
+				
 				setTextPDF(stringKey, stringValue);        
 			}
 			else
@@ -1431,7 +1512,51 @@ function getFromDatabase(objectContent, stringPageType)
 			}
         }
         else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
-        {            
+        {
+			// BENEFICIARIES LIST
+				
+			var stringIDWithoutPrefix = stringKey.substring(stringPrefixRadioButton.length, stringKey.length);
+			var stringIndicatorPrefix = stringIDWithoutPrefix.substring(0, 3);
+
+			if (stringIndicatorPrefix == "Ben")
+			{
+				var stringIDWithoutInfix = stringIDWithoutPrefix.substring(stringBeneficiariesListInfix.length, stringIDWithoutPrefix.length - 1);
+				var stringTableJQueryID = stringKres + stringTablePrefix + stringBeneficiariesListInfix;
+
+				for (var j = 0; j < arrayBeneficiariesListTableHeader.length; j++)
+				{
+					$(stringTableJQueryID + " tbody tr").each(function(indexRow)
+					{
+						var stringRowJavaScriptID = $(this).attr("id");
+						var stringRowJQueryID = stringKres + stringRowJavaScriptID;
+						var stringCellJavaScriptID = stringCellPrefix + stringBeneficiariesListInfix + arrayBeneficiariesListTableHeader[j];
+						var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
+						var stringCellSuffix = stringCellJavaScriptID;
+
+						if (stringIDWithoutInfix == arrayBeneficiariesListTableHeader[j])
+						{
+							if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
+							{
+								$(stringCellJQueryID).append(stringValue);
+								return false;
+							}
+							else
+							{
+
+							}
+						}
+						else
+						{
+
+						}
+					});
+				}
+			}
+			else
+			{
+
+			}
+			
             setRadioButtonGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
@@ -1442,6 +1567,50 @@ function getFromDatabase(objectContent, stringPageType)
         {            
             if (stringPageType == stringPageTypePDF)
             {
+				// BENEFICIARIES LIST
+				
+				var stringIDWithoutPrefix = stringKey.substring(stringPrefixSelect.length, stringKey.length);
+				var stringIndicatorPrefix = stringIDWithoutPrefix.substring(0, 3);
+				
+				if (stringIndicatorPrefix == "Ben")
+				{
+					var stringIDWithoutInfix = stringIDWithoutPrefix.substring(stringBeneficiariesListInfix.length, stringIDWithoutPrefix.length - 1);
+					var stringTableJQueryID = stringKres + stringTablePrefix + stringBeneficiariesListInfix;
+					
+					for (var j = 0; j < arrayBeneficiariesListTableHeader.length; j++)
+					{
+						$(stringTableJQueryID + " tbody tr").each(function(indexRow)
+						{
+							var stringRowJavaScriptID = $(this).attr("id");
+							var stringRowJQueryID = stringKres + stringRowJavaScriptID;
+							var stringCellJavaScriptID = stringCellPrefix + stringBeneficiariesListInfix + arrayBeneficiariesListTableHeader[j];
+							var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
+							var stringCellSuffix = stringCellJavaScriptID;
+							
+							if (stringIDWithoutInfix == arrayBeneficiariesListTableHeader[j])
+							{
+								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
+								{
+									$(stringCellJQueryID).append(stringValue);
+									return false;
+								}
+								else
+								{
+
+								}
+							}
+							else
+							{
+
+							}
+						});
+					}
+				}
+				else
+				{
+				
+				}
+				
                 setSelectPDF(stringKey, stringValue);
             }
             else
@@ -1453,6 +1622,61 @@ function getFromDatabase(objectContent, stringPageType)
         {            
             if (stringPageType == stringPageTypePDF)
             {
+				// BENEFICIARIES LIST
+				
+				var stringIDWithoutPrefix = stringKey.substring(stringPrefixDate.length, stringKey.length);
+				var stringIndicatorPrefix = stringIDWithoutPrefix.substring(0, 3);
+				
+				if (stringIndicatorPrefix == "Ben")
+				{
+					var stringIDWithoutInfix = stringIDWithoutPrefix.substring(stringBeneficiariesListInfix.length, stringIDWithoutPrefix.length - 1);
+					var stringTableJQueryID = stringKres + stringTablePrefix + stringBeneficiariesListInfix;
+						
+					if (stringIDWithoutInfix == "Birthday")
+					{
+						$(stringTableJQueryID + " tbody tr").each(function(indexRow)
+						{
+							var stringRowJavaScriptID = $(this).attr("id");
+							var stringRowJQueryID = stringKres + stringRowJavaScriptID;
+							var arrayBirthdayTableHeader = [stringIDDay, stringIDMonth, stringIDYear];
+
+							for (var k = 0; k < arrayBirthdayTableHeader.length; k++)
+							{
+								var stringCellJavaScriptID = stringCellPrefix + stringBeneficiariesListInfix + arrayBirthdayTableHeader[k];
+								var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
+								var arrayDate = stringValue.split(stringSeparatorDate);
+								// alert(stringCellJQueryID + " " + arrayDate[k]);
+								
+								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
+								{
+									$(stringCellJQueryID).append(arrayDate[k]);
+									
+									if (k == arrayBirthdayTableHeader.length - 1)
+									{
+										return false;
+									}
+									else
+									{
+										
+									}
+								}
+								else
+								{
+
+								}
+							}
+						});
+					}
+					else
+					{
+
+					}
+				}
+				else
+				{
+				
+				}
+				
                 setDatePDF(stringKey, stringValue);
             }
             else
