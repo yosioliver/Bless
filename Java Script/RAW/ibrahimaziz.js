@@ -438,8 +438,6 @@ function popUpBeneficiariesListShow(stringKeyID)
 		
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		// alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
-		
         if (stringValue == null || stringValue == undefined)
         {
             
