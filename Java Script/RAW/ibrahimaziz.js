@@ -684,7 +684,7 @@ function buttonPopUpGeneralGenerator()
                 stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
             }
 
-            alert(stringObjectPreview);
+            //alert(stringObjectPreview);
         }
         else
         {
@@ -775,7 +775,7 @@ function buttonPopUpHealthGenerator()
             stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
         }
 
-        alert(stringObjectPreview);
+        //alert(stringObjectPreview);
     });
 }
 
@@ -913,7 +913,7 @@ function buttonPopUpBeneficiariesListGenerator()
             stringObjectPreview += "key : " + arrayBeneficiariesList[i].elementID + "\nvalue : " + arrayBeneficiariesList[i].Value + "\n";
         }
 
-        alert(stringObjectPreview);
+        //alert(stringObjectPreview);
     });
 }
 
