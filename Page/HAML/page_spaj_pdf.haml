@@ -291,7 +291,7 @@
 		/ MAIN
 
 		%main            
-			%section#SectionGeneral
+			%section#SectionGeneral 
 				= Haml::Engine.new(File.read("include_spajpdf_general.haml")).render
 			%section#SectionAgentProfile
 				= Haml::Engine.new(File.read("include_spajpdf_salesprofile.haml")).render
