@@ -299,8 +299,8 @@
       
       	// SETTER
       
-      	// var objectContent = JSON.parse(jsonDummy);
-      	// getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
+      	var objectContent = JSON.parse(jsonDummy);
+      	getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);
       	
       	// setHeader("123456");
       });
@@ -2096,10 +2096,10 @@
                 12. Apakah ada anggota keluarga Anda (orang tua, anak, saudara kandung) yang menderita/dinyatakan terdiagnosa mengidap kelainan Jantung Koroner, Stroke, Kencing Manis (Diabetes Melitus), Kanker atau penyakit keturunan lainnya? (Jika “Ya” mohon agar dijelaskan pada kolom dibawah ini)
               </td>
               <td>
-                <input id='RadioButtonProspectiveInsuredHeartDissorderYes' name='RadioButtonProspectiveInsuredHeartDissorder' type='radio' value='yes'>
+                <input id='RadioButtonProspectiveInsuredHeartDissorderYes' name='RadioButtonProspectiveInsuredHeartDissorder' type='radio' value='true'>
                 <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredHeartDissorderYes'></div>
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredHeartDissorderYes'>Ya</label>
-                <input id='RadioButtonProspectiveInsuredHeartDissorderNo' name='RadioButtonProspectiveInsuredHeartDissorder' type='radio' value='no'>
+                <input id='RadioButtonProspectiveInsuredHeartDissorderNo' name='RadioButtonProspectiveInsuredHeartDissorder' type='radio' value='false'>
                 <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredHeartDissorderNo'></div>
                 <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredHeartDissorderNo'>Tidak</label>
               </td>

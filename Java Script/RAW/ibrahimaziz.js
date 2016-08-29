@@ -1043,28 +1043,6 @@ function buttonPopUpBeneficiariesListGenerator()
 		{
 			
 		}
-		
-<<<<<<< HEAD
-        $(stringPopUpJQueryID).css("display", "none");
-
-        $(stringPopUpJQueryID + " form input[type=text]").each(function()
-        {
-            $(this).val("");
-        });
-
-		tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
-		
-        var stringObjectPreview = "";
-
-        for (var i = 0; i < arrayBeneficiariesList.length; i++)
-        {
-            stringObjectPreview += "key : " + arrayBeneficiariesList[i].elementID + "\nvalue : " + arrayBeneficiariesList[i].Value + "\n";
-        }
-
-        alert(stringObjectPreview);
-=======
-        
->>>>>>> 95450cf798b82a90e869131f7657063389c03f47
     });
 }
 
@@ -1743,7 +1721,7 @@ function getFromDatabase(objectContent, stringPageType)
 								var stringCellJavaScriptID = stringCellPrefix + stringBeneficiariesListInfix + arrayBirthdayTableHeader[k];
 								var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
 								var arrayDate = stringValue.split(stringSeparatorDate);
-								// alert(stringCellJQueryID + " " + arrayDate[k]);
+								alert(stringCellJQueryID + " " + arrayDate[k]);
 								
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
