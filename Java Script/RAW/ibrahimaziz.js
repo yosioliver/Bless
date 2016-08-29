@@ -1775,6 +1775,15 @@ function getFromDatabase(objectContent, stringPageType)
         {
             
         }
+		
+		if (stringPageType == stringPageTypePDF)
+		{
+			
+		}
+		else
+		{
+			tableBeneficiariesListGenerator("TableBeneficiariesList", objectContent);
+		}
     }
 	
 	

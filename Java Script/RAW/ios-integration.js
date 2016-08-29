@@ -127,8 +127,8 @@ function savetoDB()
 	else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
 	{
 		// alert("no getter !, arrayBeneficiariesList length : " + arrayBeneficiarisList.length);
+		arrayAdd(arrayBeneficiariesList, "TextBeneficiariesListSharePercentage", getTextForm("TextBeneficiariesListSharePercentage"));
 		objectContent = arrayBeneficiariesList;
-		tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 	}
     else
     {
