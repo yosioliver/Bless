@@ -427,7 +427,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		console.log("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
 		
         if (stringValue == null || stringValue == undefined)
         {
@@ -448,7 +448,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringKey = stringPrefixRadioButton + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		console.log("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
 		
         if (stringValue == null || stringValue == undefined)
         {
@@ -469,7 +469,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		console.log("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
 		
         if (stringValue == null || stringValue == undefined)
         {
@@ -494,7 +494,7 @@ function beneficiariesListGenerator(stringButtonJavaScriptID)
 	{
 		if (arrayBeneficiariesList.length >= 10 && parseInt(intSharePercentage, 10) >= 100)
 		{
-			alert("Maksimal 10 penerima manfaat !.");
+			alert("Maksimal 10 penerima manfaat atau share percentage sudah mencapai 100 !.");
 		}
 		else
 		{
@@ -898,6 +898,7 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 			
 			if (stringKeyForDelete == stringButtonViewName)
 			{
+				alert("delete = " + arrayBeneficiariesList[i].elementID);
 				arrayDelete(arrayBeneficiariesList, arrayBeneficiariesList[i].elementID);
 			}
 			else
@@ -945,12 +946,20 @@ function buttonPopUpBeneficiariesListGenerator()
 						stringInputJQueryID = stringKres + stringInputJavaScriptID;
 						stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
 
-						stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
+						if (stringInputJavaScriptID.substring(0, stringPrefixDate) == stringPrefixDate)
+						{
+							stringKey = stringPrefixDate + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
+						}
+						else
+						{
+							stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
+						}
+						
 						stringValue = getTextGeneral(stringInputJavaScriptID);
 
 						if (validateTextGeneral(stringInputJQueryID) == true)
 						{
-							alert(stringKey + " " + stringValue);
+							alert("text = " + stringKey + " " + stringValue);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 						else
@@ -970,6 +979,7 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						if (validateTextGeneral(stringInputJQueryID) == true)
 						{
+							alert("select = " + stringKey + " " + stringValue);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 						else
@@ -990,6 +1000,7 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						if (validateTextGeneral(stringInputJQueryID) == true)
 						{
+							alert("radiobutton = " + stringKey + " " + stringValue);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 						else
