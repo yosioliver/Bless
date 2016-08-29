@@ -128,6 +128,7 @@ function savetoDB()
 	{
 		// alert("no getter !, arrayBeneficiariesList length : " + arrayBeneficiarisList.length);
 		objectContent = arrayBeneficiariesList;
+		tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 	}
     else
     {

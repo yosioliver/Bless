@@ -927,7 +927,7 @@ function buttonPopUpBeneficiariesListGenerator()
 
     $(stringPopUpJQueryID + " #ButtonDone").click(function()
     {
-		if (intBeneficiariesListID < 11 && intSharePercentage < 100)
+		if (intBeneficiariesListID < 11 && intSharePercentage <= 100)
 		{
 			var stringSharePercentageJavaScriptID = stringPrefixText + stringSharePercentageSuffix;
 			var stringSharePercentageJQueryID = stringKres + stringSharePercentageJavaScriptID;
@@ -937,7 +937,7 @@ function buttonPopUpBeneficiariesListGenerator()
 			{
 				intCurrentSharePercentage = parseInt(intSharePercentage, 10) + parseInt(getTextForm(stringSharePercentageJavaScriptID), 10);
 				
-				if (intCurrentSharePercentage < 100)
+				if (intCurrentSharePercentage <= 100)
 				{
 					$(stringPopUpJQueryID + " form input[type=text]").each(function()
 					{
