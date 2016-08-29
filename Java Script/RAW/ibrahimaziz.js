@@ -422,13 +422,22 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringInputJavaScriptID = $(this).attr("id");
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		$(stringInputJQueryID).val("");
+		var stringInputIDWithoutPrefix;
+        var stringKey;
 		
-        var stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
+		if (stringInputJavaScriptID.substring(0, stringPrefixDate.length) == stringPrefixDate)
+		{
+			stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixDate.length, stringInputJavaScriptID.length);
+			stringKey = stringPrefixDate + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
+		}
+		else
+		{
+			stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
+			stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
+		}
+		
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		//alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
-		
         if (stringValue == null || stringValue == undefined)
         {
             
@@ -448,7 +457,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringKey = stringPrefixRadioButton + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		// alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
 		
         if (stringValue == null || stringValue == undefined)
         {
@@ -469,7 +478,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		// alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
 		
         if (stringValue == null || stringValue == undefined)
         {
@@ -944,14 +953,15 @@ function buttonPopUpBeneficiariesListGenerator()
 					{
 						stringInputJavaScriptID = $(this).attr("id");
 						stringInputJQueryID = stringKres + stringInputJavaScriptID;
-						stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
 
-						if (stringInputJavaScriptID.substring(0, stringPrefixDate) == stringPrefixDate)
+						if (stringInputJavaScriptID.substring(0, stringPrefixDate.length) == stringPrefixDate)
 						{
+							stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixDate.length, stringInputJavaScriptID.length);
 							stringKey = stringPrefixDate + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
 						}
 						else
 						{
+							stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
 							stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
 						}
 						
@@ -959,7 +969,6 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						if (validateTextGeneral(stringInputJQueryID) == true)
 						{
-							alert("text = " + stringKey + " " + stringValue);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 						else
@@ -979,7 +988,6 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						if (validateTextGeneral(stringInputJQueryID) == true)
 						{
-							alert("select = " + stringKey + " " + stringValue);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 						else
@@ -1000,7 +1008,6 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						if (validateTextGeneral(stringInputJQueryID) == true)
 						{
-							alert("radiobutton = " + stringKey + " " + stringValue);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 						else
@@ -1462,6 +1469,22 @@ function getAreaPDF(stringID)
 }
 
 
+
+function numberGenerator(stringNameInfix, indexRow)
+{
+	var stringCellNumberJQueryID = stringKres + stringCellPrefix + stringNameInfix + stringNumberPrefix + indexRow;
+										
+	if ($(stringCellNumberJQueryID).text() == "" || $(stringCellNumberJQueryID).text() == undefined || $(stringCellNumberJQueryID).text() == null)
+	{
+		$(stringCellNumberJQueryID).append(indexRow + 1);
+	}
+	else
+	{
+
+	}
+}
+
+
 // GET FROM DATABASE
 
 function getFromDatabase(objectContent, stringPageType)
@@ -1527,6 +1550,11 @@ function getFromDatabase(objectContent, stringPageType)
 									if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 									{
 										$(stringCellJQueryID).append(stringValue);
+										
+										// FOR NUMBER
+										
+										numberGenerator(stringProspectiveInsuredPrefix + "Illness", indexRow);
+										
 										return false;
 									}
 									else
@@ -1573,6 +1601,11 @@ function getFromDatabase(objectContent, stringPageType)
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
 									$(stringCellJQueryID).append(stringValue);
+									
+									// FOR NUMBER
+										
+									numberGenerator(stringBeneficiariesListInfix, indexRow);
+									
 									return false;
 								}
 								else
