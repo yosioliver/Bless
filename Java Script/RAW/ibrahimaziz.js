@@ -436,6 +436,50 @@ function popUpBeneficiariesListShow(stringKeyID)
             setTextForm(stringInputJavaScriptID, stringValue);
         }
     });
+	
+	$(stringPopUpJQueryID + " input:radio").each(function()
+    {
+        var stringInputJavaScriptID = $(this).attr("id");
+		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+		$(stringInputJQueryID).val("");
+		
+        var stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixRadioButton.length, stringInputJavaScriptID.length);
+        var stringKey = stringPrefixRadioButton + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
+        var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
+        
+		console.log("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		
+        if (stringValue == null || stringValue == undefined)
+        {
+            
+        }
+        else
+        {
+            setRadioButtonGeneral(stringInputJavaScriptID, stringValue);
+        }
+    });
+	
+	$(stringPopUpJQueryID + " select").each(function()
+    {
+        var stringInputJavaScriptID = $(this).attr("id");
+		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+		$(stringInputJQueryID).val("");
+		
+        var stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixSelect.length, stringInputJavaScriptID.length);
+        var stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
+        var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
+        
+		console.log("stringKey = " + stringKey + ", stringValue = " + stringValue);
+		
+        if (stringValue == null || stringValue == undefined)
+        {
+            
+        }
+        else
+        {
+            setSelectForm(stringInputJavaScriptID, stringValue);
+        }
+    });
 }
 
 
