@@ -46,8 +46,10 @@
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
     <!-- JQUERY -->
     <script>
+	  var stringURL = "";	
+	
       $(document).ready(function()
-      {
+      {				
       	// GENERATOR
       
       	additionalQuestionGenerator();								
@@ -66,13 +68,20 @@
       	/* $("#MainForm #ButtonDone").click(function()
       	{
       		savetoDB();
-      	}); */
-      	
-      	function CheckRelationshipStatus(stringStatus)
-      	{
-      		alert(stringStatus);
-      	}
+      	}); */								
       });
+	  
+	 function CheckRelationshipStatus(stringStatus)
+	 {				
+		if (stringStatus = "self")
+		{
+			stringURL = "";				
+		}
+		else
+		{
+			stringURL = "../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html";				
+		}
+	 }
     </script>
   </head>
   <!-- BODY -->
@@ -86,7 +95,7 @@
         <nav class='RadioButton' style='margin-left: 80px'>
           <a class='Clear Selected' href='../../Page/HTML/page_healthquestionnaire1_policyholder.html'>Pemegang Polis</a>
           <div class='Separator'></div>
-          <a class='Clear' href='../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html'>Tertanggung</a>
+          <a class='Clear' href=stringURL>Tertanggung</a>
         </nav>
       </div>
       <h2>Pertanyaan Kesehatan</h2>
