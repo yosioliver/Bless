@@ -1865,11 +1865,14 @@ function getFromDatabase(objectContent, stringPageType)
 			}				
 			setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);				
 		}
-		else
+		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
 			// arrayHealthQuestionnaire = objectContent;
 		}
-
+		else
+		{
+			
+		}
 	}
 	
 	
