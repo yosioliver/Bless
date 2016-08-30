@@ -457,8 +457,6 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringKey = stringPrefixRadioButton + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
         
-		// alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
-		
         if (stringValue == null || stringValue == undefined)
         {
             
@@ -477,9 +475,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixSelect.length, stringInputJavaScriptID.length);
         var stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
-        
-		// alert("stringKey = " + stringKey + ", stringValue = " + stringValue);
-		
+
         if (stringValue == null || stringValue == undefined)
         {
             
@@ -1266,7 +1262,6 @@ function setTextPDF(stringID, stringValue)
     {
 		var stringHandphoneSuffixID = stringID.substring(stringID.length - stringHandphoneSuffix.length - 1, stringID.length - 1);
 		
-		//alert(stringHandphoneSuffixID + " != " + stringHandphoneSuffix);
 		if (stringHandphoneSuffixID != stringHandphoneSuffix)
 		{
 			var arrayTelephoneString = stringValue.split(stringSeparatorTelephone);
@@ -1832,10 +1827,27 @@ function getFromDatabase(objectContent, stringPageType)
 			{
 				arrayBeneficiariesList = objectContent;
 				tableBeneficiariesListGenerator("TableBeneficiariesList", objectContent);
+				
+				for (var i = 0; i < arrayBeneficiariesList.length; i++)
+				{
+					var stringIndicatorShare = arrayBeneficiariesList[i].elementID.length.substring((stringPrefixText + stringBeneficiariesListInfix).length, (stringPrefixText + stringBeneficiariesListInfix).length + 5);
+					
+					if (stringIndicatorShare == "Share")
+					{
+						intSharePercentage += arrayBeneficiariesList[i].Value;
+					}
+					else
+					{
+						
+					}
+					
+				}
+				
+				setTextForm(stringText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharedPercentage);
 			}
 			else
 			{
-				arrayHealthQuestionnaire = objectContent;
+				// arrayHealthQuestionnaire = objectContent;
 			}
 			
 		}
