@@ -51,7 +51,7 @@ var stringTablePrefix = "Table";
 var stringBodyPrefix = "Body";
 var stringRowPrefix = "Row";
 var stringCellPrefix = "Cell";
-var stringNumberPrefix = "Number"; 
+var stringNumberPrefix = "Number";
 var arrayHealthTableHeader = ["DiseaseName", "SickFrom", "SickDuration", "DoctorName", "Hospital", "Address", "Telephone"];
 var arraySPAJProposalTableHeader = ["CompanyName", "PolicyNumber", "PublishedDate", "BasicSumAssured", "Decision"];
 var stringAreaPrefix = "Area";
@@ -70,7 +70,7 @@ var stringPageSectionBeneficiariesList = "Beneficiaries List";
 var stringButtonViewPrefix = "ButtonView";
 var stringButtonDeletePrefix = "ButtonDelete";
 var stringSharePercentage = 0;
-var arrayBeneficiariesListTableHeader = ["FullName",stringIDDay,stringIDMonth,stringIDYear,"Sex","Relationship","Nationality"];
+var arrayBeneficiariesListTableHeader = ["FullName", stringIDDay, stringIDMonth, stringIDYear, "Sex", "Relationship", "Nationality"];
 var intSharePercentage = 0;
 var stringSharePercentageSuffix = "SharePercentage";
 
@@ -1524,7 +1524,8 @@ function getFromDatabase(objectContent, stringPageType)
 							var stringCellJavaScriptID = stringCellPrefix + stringInfix + "Illness" + arrayHealthTableHeader[j];
 							var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
 							var stringCellSuffix = stringCellJavaScriptID;
-
+							var booleanBreak = false;
+							
 							if (stringCellSuffix.substring(stringCellSuffix.length - arrayHealthTableHeader[j].length, stringCellSuffix.length) == arrayHealthTableHeader[j])
 							{
 								if (j == 1)
@@ -1537,10 +1538,28 @@ function getFromDatabase(objectContent, stringPageType)
 
 									$(stringCellJQueryID + " table").each(function(indexTable)
 									{
-										setBoxGeneral($(this).attr("id"), stringDate[indexTable]);
+										var stringBoxID = $(this).attr("id");
+										var stringBoxValue = getBoxGeneral(stringBoxID);
+										
+										if (stringBoxValue == null || stringBoxValue == undefined || stringBoxValue == "")
+										{
+											setBoxGeneral(stringBoxID, stringDate[indexTable]);
+											booleanBreak = true;
+										}
+										else
+										{
+											
+										}
 									});
 									
-									return false;
+									if (booleanBreak == true)
+									{
+										return false;
+									}
+									else
+									{
+										
+									}
 								}
 								else
 								{
@@ -1556,7 +1575,7 @@ function getFromDatabase(objectContent, stringPageType)
 									}
 									else
 									{
-
+										
 									}
 								}
 							}
