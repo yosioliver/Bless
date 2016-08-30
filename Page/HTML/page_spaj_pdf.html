@@ -282,7 +282,7 @@
       
       	boxGenerator("#TextProspectiveInsuredBabyHeight", 2, boxTypeWithoutLabel, null);
       	boxGenerator("#TextProspectiveInsuredBabyWeight", 2, boxTypeWithoutLabel, null);
-      	boxGenerator("#TextProspectiveInsuredPregnancyAge", 2, boxTypeWithoutLabel, null);
+      	boxGenerator("#TextProspectiveInsuredPregnantWeek", 2, boxTypeWithoutLabel, null);
       
       	// SECTION AGREEMENT
       
@@ -1954,10 +1954,10 @@
                 <label class='FirstIndent PositionerLeft'>Waktu lahir</label>
                 <input id='RadioButtonProspectiveInsuredPregnancyNormal' name='RadioButtonProspectiveInsuredPregnancy' type='radio' value='true'>
                 <div class='BoxRound PositionerCenter' id='RadioButtonProspectiveInsuredNormalPregnancy'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnancyNormal'>Ya</label>
+                <label class='RadioButton Wrap PositionerCenter' for='RadioButtonProspectiveInsuredPregnancyNormal'>Cukup Bulan</label>
                 <input id='BoxProspectiveInsuredPregnancyPremature' name='RadioButtonProspectiveInsuredPregnancy' type='radio' value='false'>
                 <div class='BoxRound PositionerCenter' id='BoxProspectiveInsuredPregnancyPremature'></div>
-                <label class='RadioButton Wrap PositionerCenter' for='BoxProspectiveInsuredPregnancyPremature'>Tidak</label>
+                <label class='RadioButton Wrap PositionerCenter' for='BoxProspectiveInsuredPregnancyPremature'>Prematur</label>
                 <br>
                 <label class='FirstIndent PositionerLeft'>Panjang dan berat saat lahir</label>
                 <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredBabyHeight'></table>
@@ -2010,7 +2010,7 @@
             <tr>
               <td>
                 <span class='FirstIndent PositionerLeft'>a. Apakah Anda sedang hamil? Usia kehamilan</span>
-                <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredPregnancyAge'></table>
+                <table class='BoxSquare PositionerLeft' id='TextProspectiveInsuredPregnantWeek'></table>
                 <span class='PositionerLeft'>Minggu</span>
               </td>
               <td>
@@ -2246,7 +2246,7 @@
         <table class='SignatureMedium Horizontal25of100'>
           <thead>
             <tr>
-              <th>Telah dibaca dan disetujui oleh pemegang polis</th>
+              <th>Calon Pemegang Polis</th>
             </tr>
           </thead>
           <tbody>
@@ -2256,14 +2256,14 @@
           </tbody>
           <tfoot>
             <tr>
-              <td>Nama dan tanda tangan calon pemegang polis</td>
+              <td>Nama Lengkap & Tanda tangan</td>
             </tr>
           </tfoot>
         </table>
         <table class='SignatureMedium Horizontal25of100'>
           <thead>
             <tr>
-              <th>Telah dibaca dan disetujui oleh pemegang polis</th>
+              <th>Calon Tertanggung</th>
             </tr>
           </thead>
           <tbody>
@@ -2273,14 +2273,18 @@
           </tbody>
           <tfoot>
             <tr>
-              <td>Nama dan tanda tangan calon pemegang polis</td>
+              <td>Nama Lengkap & Tanda tangan</td>
             </tr>
           </tfoot>
         </table>
         <table class='SignatureMedium Horizontal25of100'>
           <thead>
             <tr>
-              <th>Telah dibaca dan disetujui oleh pemegang polis</th>
+              <th>
+                Orang Tua/Wali yang sah
+                <br>
+                <span class='Note'>(jika Usia Calon Tertanggung < 21 Tahun)</span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -2290,14 +2294,14 @@
           </tbody>
           <tfoot>
             <tr>
-              <td>Nama dan tanda tangan calon pemegang polis</td>
+              <td>Nama Lengkap & Tanda tangan</td>
             </tr>
           </tfoot>
         </table>
         <table class='SignatureMedium Horizontal25of100'>
           <thead>
             <tr>
-              <th>Telah dibaca dan disetujui oleh pemegang polis</th>
+              <th>Tenaga Penjual</th>
             </tr>
           </thead>
           <tbody>
@@ -2307,7 +2311,7 @@
           </tbody>
           <tfoot>
             <tr>
-              <td>Nama dan tanda tangan calon pemegang polis</td>
+              <td>Nama Lengkap & Tanda tangan</td>
             </tr>
           </tfoot>
         </table>

@@ -252,7 +252,7 @@
 
 				boxGenerator("#TextProspectiveInsuredBabyHeight", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProspectiveInsuredBabyWeight", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredPregnancyAge", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredPregnantWeek", 2, boxTypeWithoutLabel, null);
 
 				// SECTION AGREEMENT
 
@@ -281,7 +281,7 @@
 	%body#A4
 
 		/ HEADER
-
+ 
 		%header
 			%h1 SURAT PENGAJUAN ASURANSI JIWA (SPAJ)
 			%img{:src => "../../Resource/Logo/logo_bcalife.svg"}
@@ -290,7 +290,7 @@
 
 		/ MAIN
 
-		%main            
+		%main
 			%section#SectionGeneral
 				= Haml::Engine.new(File.read("include_spajpdf_general.haml")).render
 			%section#SectionAgentProfile
