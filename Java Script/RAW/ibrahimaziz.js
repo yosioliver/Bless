@@ -893,7 +893,6 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 {
 	var stringButtonViewJQueryID = stringKres + stringButtonViewJavaScriptID;
 	var intSelectedSharePercentage = arrayFind(arrayBeneficiariesList, stringPrefixText + stringBeneficiariesListInfix + "SharePercentage" + stringButtonViewName);
-	alert(parseInt(intSharePercentage, 10) + " - " + parseInt(intSelectedSharePercentage, 10));
 	intSharePercentage = parseInt(intSharePercentage, 10) - parseInt(intSelectedSharePercentage, 10);
 	setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
 
@@ -1834,41 +1833,44 @@ function getFromDatabase(objectContent, stringPageType)
         else
         {
             
-        }
-		
-		if (stringPageType == stringPageTypePDF)
-		{
-			
+        }				
+    }
+	
+	
+	// FOR BENEFICIARIES LIST
+	
+	if (stringPageType == stringPageTypePDF)
+	{
+
+	}
+	else
+	{
+		if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
+		{				
+			arrayBeneficiariesList = objectContent;
+			tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
+
+			for (var j = 0; j < arrayBeneficiariesList.length; j++)
+			{
+				var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring((stringPrefixText.length + stringBeneficiariesListInfix.length), (stringPrefixText.length + stringBeneficiariesListInfix.length) + 5);										
+
+				if (stringIndicatorShare == "Share")
+				{
+					intSharePercentage += parseInt(arrayBeneficiariesList[j].Value, 10);							
+				}
+				else
+				{
+
+				}
+			}				
+			setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);				
 		}
 		else
 		{
-			if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
-			{				
-				arrayBeneficiariesList = objectContent;
-				tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
-				
-				for (var j = 0; j < arrayBeneficiariesList.length; j++)
-				{
-					var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring((stringPrefixText.length + stringBeneficiariesListInfix.length), (stringPrefixText.length + stringBeneficiariesListInfix.length) + 5);										
-					
-					if (stringIndicatorShare == "Share")
-					{
-						intSharePercentage += parseInt(arrayBeneficiariesList[j].Value, 10);						
-					}
-					else
-					{
-						
-					}
-				}				
-				setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);				
-			}
-			else
-			{
-				// arrayHealthQuestionnaire = objectContent;
-			}
-			
+			// arrayHealthQuestionnaire = objectContent;
 		}
-    }
+
+	}
 	
 	
 	// FOR HEALTH QUESTIONNAIRE
