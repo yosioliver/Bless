@@ -437,7 +437,8 @@ function popUpBeneficiariesListShow(stringKeyID)
 		}
 		
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
-        
+        alert("stringValue = " + stringValue + ", stringKey" + stringKey);
+		
         if (stringValue == null || stringValue == undefined)
         {
             
@@ -903,6 +904,11 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 
 	$(stringButtonViewJQueryID).click(function()
 	{
+		var intSelectedSharePercentage = arrayFind(arrayBeneficiariesList, stringPrefixText + stringBeneficiariesListInfix + "SharePercentage" + stringButtonViewName);
+		alert(parseInt(intSharePercentage, 10) + " - " + parseInt(intSelectedSharePercentage, 10));
+		intSharePercentage = parseInt(intSharePercentage, 10) - parseInt(intSelectedSharePercentage, 10);
+		setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
+		
 		for (var i = 0; i < arrayBeneficiariesList.length; i++)
 		{
 			var stringKeyForDelete = arrayBeneficiariesList[i].elementID.substring(arrayBeneficiariesList[i].elementID.length - stringButtonViewName.length, arrayBeneficiariesList[i].elementID.length);

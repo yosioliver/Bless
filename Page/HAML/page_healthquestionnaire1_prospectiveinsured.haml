@@ -20,6 +20,12 @@
 
 				// BUTTON
 
+				$("#BoxDate").DateTimePicker(
+				{
+					dateSeparator: "/",
+					dateFormat: "dd/MM/yyyy"
+				});
+
 				buttonPopUpGeneralGenerator();
 				buttonPopUpHealthGenerator();
 
@@ -391,3 +397,4 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaire_health.haml")).render
 			%section#PopUpSPAJProposal.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaire_spajproposal.haml")).render
+			%div#BoxDate
