@@ -1824,25 +1824,24 @@ function getFromDatabase(objectContent, stringPageType)
 		else
 		{
 			if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
-			{
+			{				
 				arrayBeneficiariesList = objectContent;
-				tableBeneficiariesListGenerator("TableBeneficiariesList", objectContent);
+				tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 				
-				for (var i = 0; i < arrayBeneficiariesList.length; i++)
+				for (var j = 0; j < arrayBeneficiariesList.length; j++)
 				{
-					var stringIndicatorShare = arrayBeneficiariesList[i].elementID.length.substring((stringPrefixText + stringBeneficiariesListInfix).length, (stringPrefixText + stringBeneficiariesListInfix).length + 5);
+					var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring((stringPrefixText.length + stringBeneficiariesListInfix.length), (stringPrefixText.length + stringBeneficiariesListInfix.length) + 5);										
 					
 					if (stringIndicatorShare == "Share")
 					{
-						intSharePercentage += arrayBeneficiariesList[i].Value;
+						intSharePercentage += parseInt(arrayBeneficiariesList[j].Value, 10);						
 					}
 					else
 					{
 						
 					}
-				}
-				
-				setTextForm(stringText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
+				}				
+				setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);				
 			}
 			else
 			{
