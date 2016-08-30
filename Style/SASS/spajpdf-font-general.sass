@@ -229,24 +229,27 @@ main
 			margin-bottom: $general_space_large
 			min-width: $signature_width_small
 			padding: 0px
+			vertical-align: top
 			border-style: solid
 			border-width: $general_borderwidth_thin
 			+BorderRadius($general_borderradius_thick)
 			thead
 				tr
 					th
-						padding: $header_padding_edge
+						padding: $header_padding_edge						
 						font-size: $fontsize_signaturemedium_header
 						text-align: center
 						border-bottom-style: solid
 						border-width: $general_borderwidth_thin
+						.Note
+							font-size: $fontsize_note_content
 			tbody
 				tr
-					td
+					td						
 						height: $signature_height_medium
 			tfoot
 				tr
-					td
+					td						
 						font-size: $fontsize_signaturemedium_detail
 						text-align: center
 
@@ -256,6 +259,8 @@ main
 table.Square, table.Round, table.Space
 	margin-top: $general_space_tiny
 	margin-bottom: $general_space_tiny
+	thead
+				
 	tbody
 		tr
 			td

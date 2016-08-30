@@ -792,7 +792,7 @@ function buttonPopUpGeneralGenerator()
                 stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
             }
 
-            alert(stringObjectPreview);
+            // alert(stringObjectPreview);
         }
         else
         {
@@ -883,7 +883,7 @@ function buttonPopUpHealthGenerator()
             stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
         }
 
-        alert(stringObjectPreview);
+        // alert(stringObjectPreview);
     });
 }
 

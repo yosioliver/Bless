@@ -61,31 +61,31 @@
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKTP" } Jenis Identitas Diri
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderIDTypeKTP.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP", :disabled => "true" }
+					%input#RadioButtonPolicyHolderIDTypeKTP.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP                 
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeSIM.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM", :disabled => "true" }
+					%input#RadioButtonPolicyHolderIDTypeSIM.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM                 
 					%div.Separator                        
-					%input#RadioButtonPolicyHolderIDTypePassport.Medium.Single{ :type => "radio", :name=>"RadioButtonPolicyHolderIDType", :value => "PASPOR", :disabled => "true" }
+					%input#RadioButtonPolicyHolderIDTypePassport.Medium.Single{ :type => "radio", :name=>"RadioButtonPolicyHolderIDType", :value => "PASPOR" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeKIMSKITAS.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS", :disabled => "true" }
+					%input#RadioButtonPolicyHolderIDTypeKIMSKITAS.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS/KITAS
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "OTHER", :disabled => "true" }
+					%input#RadioButtonPolicyHolderIDTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "OTHER" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeOther" } Lainnya
 				%input#TextPolicyHolderIDTypeOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br
 
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderIDNumber" } Nomor Identitas Diri
-					%input#TextPolicyHolderIDNumber.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderIDNumber.Medium.Single.Item{ :type => "text", :required => "true" }
 					%label.Medium.Single.Item{ :for => "DatePolicyHolderActive" } Masa berlaku
-					%input#DatePolicyHolderActive.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
+					%input#DatePolicyHolderActive.Medium.Single.Item{ :type => "text", :required => "true" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderBirthPlace" } Tempat lahir
-					%input#TextPolicyHolderBirthPlace.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderBirthPlace.Medium.Single.Item{ :type => "text" }
 					%label.Medium.Single.Item{ :for => "DatePolicyHolderBirth" } Tanggal lahir
 					%input#DatePolicyHolderBirth.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderAge" } Umur
@@ -93,10 +93,10 @@
 				%div.ContainerLeft
 					%label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderNationalityWNI" } Kewarganegaraan
 					%div.RadioButton.Item
-						%input#RadioButtonPolicyHolderNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wni", :disabled => "true" }
+						%input#RadioButtonPolicyHolderNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wni" }
 						%label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNI" } WNI
 						%div.Separator
-						%input#RadioButtonPolicyHolderNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wna", :disabled => "true" }
+						%input#RadioButtonPolicyHolderNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wna" }
 						%label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
 				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
 				%div.RadioButton.PositionerLeft
@@ -129,22 +129,22 @@
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderReligion" } Agama
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderReligionIslam.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "islam", :disabled => "true" }
+					%input#RadioButtonPolicyHolderReligionIslam.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "islam" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderReligionIslam" } Islam
 					%div.Separator
-					%input#RadioButtonPolicyHolderReligionKristenKatolik.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "katolik", :disabled => "true" }
+					%input#RadioButtonPolicyHolderReligionKristenKatolik.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "katolik" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderReligionKristenKatolik" } Kristen Katolik
 					%div.Separator
-					%input#RadioButtonPolicyHolderReligionKristenProtestan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "kristen", :disabled => "true" }
+					%input#RadioButtonPolicyHolderReligionKristenProtestan.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderReligion", :value => "kristen" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderReligionKristenProtestan" } Kristen Protestan
 					%div.Separator
-					%input#RadioButtonPolicyHolderReligionHindu.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderReligion", :value => "hindu", :disabled => "true" }
+					%input#RadioButtonPolicyHolderReligionHindu.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderReligion", :value => "hindu" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderReligionHindu" } Hindu
 					%div.Separator
-					%input#RadioButtonPolicyHolderReligionBudha.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderReligion", :value => "budha", :disabled => "true" }
+					%input#RadioButtonPolicyHolderReligionBudha.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderReligion", :value => "budha" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderReligionBudha" } Budha
 					%div.Separator
-					%input#RadioButtonPolicyHolderReligionKonghucu.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderReligion", :value => "konghuchu", :disabled => "true" }
+					%input#RadioButtonPolicyHolderReligionKonghucu.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderReligion", :value => "konghuchu" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderReligionKonghucu" } Kong Hu Cu
 				%br
 
@@ -168,51 +168,51 @@
 					%input#TextPolicyHolderSideJob.Full.Single.Item{ :type => "text" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress1" } Alamat Tempat Tinggal
-					%input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text", :required => "true" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress2" }
-					%input#TextPolicyHolderHomeAddress2.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderHomeAddress2.Full.Single.Item{ :type => "text" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress3" }
-					%input#TextPolicyHolderHomeAddress3.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderHomeAddress3.Full.Single.Item{ :type => "text" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" } Kota
-					%input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text", :required => "true" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
-					%input#TextPolicyHolderHomePostalCode.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderHomePostalCode.Medium.Single.Item{ :type => "text", :required => "true" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeTelephone" }
 					%label.MediumFix.Single.Item{ :for => "TextPolicyHolderHomeTelephone" } Nomor telepon
-					%input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text" }
 				%br
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } Nomor HP Utama
-				%input#TextPolicyHolderHandphone1.Long.Single.PositionerLeft{ :type => "text", :required => "true", "data-input-type" => "autopopulate"}
+				%input#TextPolicyHolderHandphone1.Long.Single.PositionerLeft{ :type => "text", :required => "true" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } Nomor HP 2
-				%input#TextPolicyHolderHandphone2.Long.Single.PositionerLeft{ :type => "text", "data-input-type" => "autopopulate" }
+				%input#TextPolicyHolderHandphone2.Long.Single.PositionerLeft{ :type => "text" }
 				%br
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderEmail" } Email
-					%input#TextPolicyHolderEmail.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }                
+					%input#TextPolicyHolderEmail.Full.Single.Item{ :type => "text" }                
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress1" } Alamat kantor
-					%input#TextPolicyHolderOfficeAddress1.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderOfficeAddress1.Full.Single.Item{ :type => "text" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress2" }
-					%input#TextPolicyHolderOfficeAddress2.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderOfficeAddress2.Full.Single.Item{ :type => "text" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress3" }
-					%input#TextPolicyHolderOfficeAddress3.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderOfficeAddress3.Full.Single.Item{ :type => "text" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeCity" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeCity" } Kota
-					%input#TextPolicyHolderOfficeCity.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderOfficeCity.Medium.Single.Item{ :type => "text" }
 					%label.Medum.Single.Item{ :for => "TextPolicyHolderOfficePostalCode" } Kode Pos
-					%input#TextPolicyHolderOfficePostalCode.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderOfficePostalCode.Medium.Single.Item{ :type => "text" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeTelephone" }
 					%label.MediumFix.Single.Item{ :for => "TextPolicyHolderOfficeTelephone" } Telp
-					%input#TextPolicyHolderOfficeTelephone.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
+					%input#TextPolicyHolderOfficeTelephone.Medium.Single.Item{ :type => "text" }
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceAddress" } Alamat Korespondensi
 				%div.RadioButton.PositionerLeft
@@ -262,7 +262,7 @@
 				%br                               
 
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderNPWP" } Nomor NPWP
-				%input#TextPolicyHolderNPWP.Medium.Single.PositionerLeft{ :type => "text", "data-input-type" => "autopopulate" }
+				%input#TextPolicyHolderNPWP.Medium.Single.PositionerLeft{ :type => "text" }
 				%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderNPWPActive" } Tanggal Berlaku
 				%input#DatePolicyHolderNPWPActive.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
 				%br
