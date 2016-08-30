@@ -1840,10 +1840,9 @@ function getFromDatabase(objectContent, stringPageType)
 					{
 						
 					}
-					
 				}
 				
-				setTextForm(stringText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharedPercentage);
+				setTextForm(stringText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
 			}
 			else
 			{
