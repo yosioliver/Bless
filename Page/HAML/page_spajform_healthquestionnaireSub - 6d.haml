@@ -1,0 +1,53 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 6d(Sub) Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
+				%br
+				%h2 KUESIONER NYERI DADA | KUESIONER TEKANAN DARAH TINGGI
+				%hr
+				%label.Medium.Single silahkan memberikan rincian lebih lanjut
+				%br
+				%input#TextPolicyHolderKuesionerNyeriDadaSub.Full.Multi.Item.Margin{ :type =>"text" }
+				%label.Medium.Single (maksimum 250 karakter)
+				
+
+				
+								
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+			

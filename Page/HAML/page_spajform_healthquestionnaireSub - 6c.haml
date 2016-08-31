@@ -1,0 +1,53 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 6c(Sub) Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.6c Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
+				%br
+				%h2 KUESIONER GANGGUAN PERNAPASAN
+				%hr
+				%label.Medium.Single silahkan memberikan rincian lebih lanjut
+				%br
+				%input#TextPolicyHolderKuesionerGangguanPernapasanSub.Full.Multi.Item.Margin{ :type =>"text" }
+				%label.Medium.Single (maksimum 250 karakter)
+				
+
+				
+								
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+			
