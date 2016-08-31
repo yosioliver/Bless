@@ -1,0 +1,143 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+
+				boxGenerator("#TextProspectiveInsuredSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 11, boxTypeWithoutLabel "(Dilenkapi oleh Kantor Pusat)");
+				boxGenerator("#TextProspectiveInsuredBirthdayPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthdayYear", 4, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
+			%span.Header PT Asuransi Jiwa BCA
+			%span.Detail
+			%br
+
+			%h1 Kuesioner Nyeri Dada
+			%br
+
+			%div.Note
+				Perlu diperhatikan:
+				%ol
+					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
+					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
+					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
+					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
+					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+
+		/ MAIN
+
+		%main
+			%form
+				%h2 I. Data (Calon) Tertanggung
+				%fieldset
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
+					%table#TextProspectiveInsuredSPAJNumber.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.PositionerLeft 2
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
+					%table#TextProspectiveIsuredFullName1.BoxSquare.PositionerLeft
+					%br
+					%table#TextProspectiveInsuredFullName2.BoxSquare.PositionerLeft
+
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
+					%input#TextProspectiveInsuredBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft ,
+					%table#TextProspectiveInsuredBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#TextProspectiveInsuredBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#TextProspectiveInsuredBirthdayYear.BoxSquare.PositionerLeft
+					%br
+
+				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
+				%fieldset
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSPAJNumber" } Kapan pertama kali Anda merasakan nyeri dada?
+					%table#TextProspectiveInsuredBirthdayYear.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#TextProspectiveInsuredBirthdayMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#TextProspectiveInsuredBirthdayDay.BoxSquare.PositionerRight
+					%br
+
+					%span.Number.PositionerLeft 2
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredFullName1" } Berapa lama serangan tersebut berlangsung?
+					%input#TextProspectiveInsuredAttackDurationSecond.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationSecond" }.Single Detik /
+					%input#TextProspectiveInsuredAttackDurationMinute.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationMinute" }.Single Menit /
+					%input#TextProspectiveInsuredAttackDurationHour.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationHour" }.Single Jam /
+					%br
+
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSecondAttackNo" } Apakah ada serangan lanjutan sesudahnya?
+					%div.RadioButton
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredSecondAttackNo" }
+						%input#RadioButtonProspectiveInsuredSecondAttackNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredSecondAttack", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredSecondAttackYes" }
+						%input#RadioButtonProspectiveInsuredSecondAttackYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredSecondAttack", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+
+					%span.Number.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredBirthdayPlace" } Tanggal serangan terakhir:
+					%table#TextProspectiveInsuredLastAttackYear.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#TextProspectiveInsuredLastAttackMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#TextProspectiveInsuredLastAttackDay.BoxSquare.PositionerRight
+					%br
+
+					%span.Number.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAttackDuration" } Berapa lama serangan tersebut berlangsung?
+					%input#TextProspectiveInsuredAttackDurationSecond.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationSecond" }.Single Detik /
+					%input#TextProspectiveInsuredAttackDurationMinute.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationMinute" }.Single Menit /
+					%input#TextProspectiveInsuredAttackDurationHour.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationHour" }.Single Jam /
+					%br
+
+					%span.Number.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAttackAmount" } Hingga saat ini serangan sudah terjadi sebanyak:
+					%input#TextProspectiveInsuredAttackAmount.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackAmount" }.Single Kali /
+					%br
