@@ -6,7 +6,7 @@
 
 	%head
 		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life - BLESS, Health Questionnaire 1 Form
+		%title BCA Life - BLESS, Health Questionnaire 6f Form
 
 		/ JQUERY
 
@@ -20,6 +20,11 @@
 	/ BODY
 
 	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER EPILEPSI DAN KEJANG
 
 		/ MAIN
 
@@ -76,11 +81,11 @@
 				%br
 				%div.ContainerFit 
 					%div.RadioButton.Medium.Item
-						%input#RadioButtonPolicyDirawatEpilepsiNo{ :type => "radio", :name => "RadioButtonPolicyDirawatEpilepsiChange", :value => "false" }
-						%label.RadioButton{ :for => "RadioButtonPolicyDirawatEpilepsiNo" } Tidak
+						%input#RadioButtonPolicyHolderDirawatEpilepsiNo{ :type => "radio", :name => "RadioButtonPolicyHolderDirawatEpilepsiChange", :value => "false" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderDirawatEpilepsiNo" } Tidak
 						%div.Separator
-						%input#RadioButtonPolicyDirawatEpilepsiYes{ :type => "radio", :name => "RadioButtonPolicyDirawatEpilepsiChange", :value => "true"}
-						%label.RadioButton{ :for => "RadioButtonPolicyDirawatEpilepsiYes" } Ya
+						%input#RadioButtonPolicyHolderDirawatEpilepsiYes{ :type => "radio", :name => "RadioButtonPolicyHolderDirawatEpilepsiChange", :value => "true"}
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderDirawatEpilepsiYes" } Ya
 					%input#TextPolicyHolderAlasanDirawatEpilepsi.Full.Single.Item.Margin{ :type =>"text", :placeholder => "Jika Ya berapa lama Anda dirawat?" }
 				%br
 				%hr
