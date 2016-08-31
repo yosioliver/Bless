@@ -1,0 +1,189 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.6f Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
+				%br
+				%hr
+				%div.ContainerFit 
+					%label#Wrap.Single.PositionerLeft 1. Sejak umur berapa Anda terserang epilepsi?
+					%input#TextPolicyHolderUmurTerserangEpilepsi.Short.Single.Item.Margin{ :type =>"text" }
+				%br
+				%hr
+				%div.ContainerFit 
+					%label#Wrap.Single.PositionerLeft 2. Berapa kali terjadi serangan dalam satu bulan atau setahun?
+					%input#TextPolicyHolderKaliSeranganSatuBulan.Short.Single.Item.Margin{ :type =>"text" }
+				%br
+				%hr
+				%div.ContainerFit 
+					%label#Wrap.Single.PositionerLeft 3. Kapan terakhir kali serangan terjadi?
+					%input#TextPolicyHolderSeranganTerakhir.Short.Single.Item.Margin{ :type =>"text" }
+				%br
+				%hr
+				%div.ContainerFit 
+					%label#Wrap.Single.PositionerLeft 4. Pada saat terjadi serangan, apakah:
+				%br
+                
+				%div.ContainerFit 
+					%div.RadioButton.Medium.Item
+						%input#RadioButtonPolicyHanyaHilangKesadaran{ :type => "radio", :name => "RadioButtonPolicySeranganEpilepsi", :value => "Hanya hilang kesadaran sejenak tanpa kaku-kaku, kemudian lupa dengan apa yang telah terjadi." }
+						%label.RadioButton{ :for => "RadioButtonPolicyHanyaHilangKesadaran" } Hanya hilang kesadaran sejenak tanpa kaku-kaku, kemudian lupa dengan apa yang telah terjadi.
+                        
+						%br
+                        
+						%input#RadioButtonPolicyTibaJatuh{ :type => "radio", :name => "RadioButtonPolicySeranganEpilepsi", :value => "Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur." }
+						%label.RadioButton{ :for => "RadioButtonPolicyTibaJatuh" } Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
+				%br
+                
+				%hr
+					%label.medium.Single.Item 5. Sebelum terjadi serangan, apakah dirasakan adanya pusing-pusing, mencium bau-bauan, melihat cahaya, atau bunyi-bunyian?
+				%br
+				%div.ContainerFit 
+					%div.RadioButton.Medium.Item
+						%input#RadioButtonPolicyRasaSebelumTerserangNo{ :type => "radio", :name => "RadioButtonPolicyRasaSebelumTerserangChange", :value => "false" }
+						%label.RadioButton{ :for => "RadioButtonPolicyRasaSebelumTerserangNo" } Tidak
+						%div.Separator
+						%input#RadioButtonPolicyRasaSebelumTerserangYes{ :type => "radio", :name => "RadioButtonPolicyRasaSebelumTerserangChange", :value => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyRasaSebelumTerserangYes" } Ya
+					%input#TextPolicyHolderAlasanRasaSebelumTerseranga.Full.Single.Item.Margin{ :type =>"text" }
+				%br
+				%hr
+					%label.medium.Single.Item 6. Apakah Anda pernah dirawat karena epilepsi?
+				%br
+				%div.ContainerFit 
+					%div.RadioButton.Medium.Item
+						%input#RadioButtonPolicyDirawatEpilepsiNo{ :type => "radio", :name => "RadioButtonPolicyDirawatEpilepsiChange", :value => "false" }
+						%label.RadioButton{ :for => "RadioButtonPolicyDirawatEpilepsiNo" } Tidak
+						%div.Separator
+						%input#RadioButtonPolicyDirawatEpilepsiYes{ :type => "radio", :name => "RadioButtonPolicyDirawatEpilepsiChange", :value => "true"}
+						%label.RadioButton{ :for => "RadioButtonPolicyDirawatEpilepsiYes" } Ya
+					%input#TextPolicyHolderAlasanDirawatEpilepsi.Full.Single.Item.Margin{ :type =>"text", :placeholder => "Jika Ya berapa lama Anda dirawat?" }
+				%br
+				%hr
+				%label.medium.Single.Item 7. Apakah Anda selalu berkonsultasi / berobat ke dokter?
+				%br
+				%div.RadioButton.PositionerLeft
+					%input#RadioButtonPolicyHolderBerkonsultasiDokterNo{ :type => "radio", :name => "RadioButtonPolicyHolderBerkonsultasiDokter", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBerkonsultasiDokterNo" } Tidak
+					%div.Separator
+					%input#RadioButtonPolicyHolderBerkonsultasiDokterYes{ :type => "radio", :name => "RadioButtonPolicyHolderBerkonsultasiDokter", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBerkonsultasiDokterYes" } Ya
+				%label#Wrap.Single.PositionerLeft Nama Dokter
+				%input#TextPolicyHolderNamaDokter.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
+				%br
+				%label#Wrap.Single.PositionerLeft Alamat Dokter
+				%input#TextPolicyHolderAlamatDokter.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
+				%br
+				%hr 
+				%div.ContainerFit 
+					%label#Wrap.Single.PositionerLeft 8. Kapan terakhir kali Anda berkonsultasi dengan dokter?
+					%input#TextPolicyHolderKapanTerakhirBerkosnsultasiDokter.Short.Single.Item.Margin{ :type =>"text" }
+				%br
+					%label#Wrap.Single.PositionerLeft Apakah Anda mendapat obat dokter?
+					%div.RadioButton.Medium.Item
+						%input#RadioButtonPolicyObatDokterNo{ :type => "radio", :name => "RadioButtonPolicyObatDokterChange", :value => "false" }
+						%label.RadioButton{ :for => "RadioButtonPolicyObatDokterNo" } Tidak
+						%div.Separator
+						%input#RadioButtonPolicyObatDokterYes{ :type => "radio", :name => "RadioButtonPolicyObatDokterChange", :value => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyObatDokterYes" } Ya
+				%br
+                
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin Name Obat
+					%label.Short.Single.Item1.Center.Margin Dosis
+				%div.ContainerFit
+					%input#TextPolicyHolderNameObat1.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderDosis1.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%input#TextPolicyHolderNameObat2.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderDosis2.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%input#TextPolicyHolderNameObat3.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderDosis3.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%input#TextPolicyHolderNameObat4.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderDosis4.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%input#TextPolicyHolderNameObat5.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderDosis5.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+                
+				%hr
+				%div.ContainerFit 
+					%label#Wrap.Single.PositionerLeft 9. Apakah Anda masih minum obat secara teratur hingga saat ini?
+					%input#TextPolicyHolderMinumObatSecaraTerartur.Short.Single.Item.Margin{ :type =>"text" }
+				%br
+				%hr
+                
+				%label.medium.Single.Item 10. Apakah Anda pernah menderita penyakit infeksi selaput otak/gegar otak sebelumnya?
+				%br    
+				%input#TextPolicyHolderMenderitaPenyakitInfeksi.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+                
+					%label.medium.Single.Item 11. Apakah ada riwayat keluarga Anda yang menderita epilepsi ?
+				%br
+				%div.ContainerFit 
+					%div.RadioButton.Medium.Item
+						%input#RadioButtonPolicyRiwayatKeluargaMenderitaEpilepsiNo{ :type => "radio", :name => "RadioButtonPolicyRiwayatKeluargaMenderitaEpilepsiChange", :value => "false" }
+						%label.RadioButton{ :for => "RadioButtonPolicyRiwayatKeluargaMenderitaEpilepsiNo" } Tidak
+						%div.Separator
+						%input#RadioButtonPolicyRiwayatKeluargaMenderitaEpilepsiYes{ :type => "radio", :name => "RadioButtonPolicyRiwayatKeluargaMenderitaEpilepsiChange", :value => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyRiwayatKeluargaMenderitaEpilepsiYes" } Ya
+					%input#TextPolicyHolderAlasanRiwayatKeluargaMenderitaEpilepsi.Full.Single.Item.Margin{ :type =>"text" }
+				%br
+				%hr
+                
+				%label.medium.Single.Item 12. Apakah Anda menderita penyakit lain seperti kencing manis, hipertensi, tumor otak dan/atau komplikasinya ?
+				%br    
+				%input#TextPolicyHolderMenderitaPenyakitLain.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+                
+				%div.ContainerFit
+					%label.medium.Single.Item 13. Apakah pernah melakukan pemeriksaan berikut?
+				%br
+				%h2 E.E.G (rekaman syaraf otak). Jelaskan kapan dan bagaimana hasilnya.    
+				%input#TextPolicyHolderEEG.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%h2 Rontgen photo tengkorak (kepala). Jelaskan kapan dan bagaimana hasilnya.    
+				%input#TextPolicyHolderRontgenPhotoTengkorak.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+                
+				%label.medium.Single.Item 14. Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+				%br    
+				%input#TextPolicyHolderInformasiLainSehubunganDenganKondisiKesehatan.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+                
+				%h2 PERNYATAAN DAN KUASA
+				%ol
+					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
