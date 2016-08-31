@@ -20,6 +20,11 @@
 	/ BODY
 
 	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 Pertanyaan Kesehatan
 
 		/ MAIN
 
@@ -28,7 +33,7 @@
 				%div.ContainerFit
 					%span.Multi.Single.6l Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
 				%br
-				%h2 KUESIONER TUMOR
+				%a.NavigationPopUp{ :href => "../../Page/HTML/.html" } KUESIONER TUMOR
 				%hr
 				%label.Medium.Single silahkan memberikan rincian lebih lanjut
 				%br

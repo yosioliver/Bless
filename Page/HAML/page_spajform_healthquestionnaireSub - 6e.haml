@@ -21,6 +21,11 @@
 
 	%body#Main
 
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 Pertanyaan Kesehatan
+
 		/ MAIN
 
 		%main
@@ -28,7 +33,7 @@
 				%div.ContainerFit
 					%span.Multi.Single.6e Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
 				%br
-				%h2 KUESIONER GANGGUAN PENCERNAAN
+				%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6e.html" } KUESIONER GANGGUAN PENCERNAAN
 				%hr
 				%label.Medium.Single silahkan memberikan rincian lebih lanjut
 				%br

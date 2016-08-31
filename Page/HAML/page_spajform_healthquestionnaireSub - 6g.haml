@@ -20,6 +20,11 @@
 	/ BODY
 
 	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 Pertanyaan Kesehatan
 
 		/ MAIN
 
@@ -28,7 +33,7 @@
 				%div.ContainerFit
 					%span.Multi.Single.6g Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
 				%br
-				%h2 KUESIONER DIABETES
+				%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6g.html" } KUESIONER DIABETES
 				%hr
 				%label.Medium.Single silahkan memberikan rincian lebih lanjut
 				%br

@@ -21,6 +21,11 @@
 
 	%body#Main
 
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 Pertanyaan Kesehatan
+
 		/ MAIN
 
 		%main
@@ -28,7 +33,7 @@
 				%div.ContainerFit
 					%span.Multi.Single.6f Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
 				%br
-				%h2 KUESIONER EPILEPSI DAN KEJANG
+				%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6f.html" } KUESIONER EPILEPSI DAN KEJANG
 				%hr
 				%label.Medium.Single silahkan memberikan rincian lebih lanjut
 				%br
