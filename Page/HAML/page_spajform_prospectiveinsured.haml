@@ -10,8 +10,7 @@
 
 		/ JQUERY
 
-		:javascript
-			calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
+		:javascript			
 			$(document).ready(function()
 			{
 				// SETTER
@@ -35,6 +34,20 @@
 				autoPopulateState();
 				
 				$("#TextProspectiveInsuredCIN").keypress(function (e) {
+				 //if the letter is not digit then display error and don't type anything
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+						return false;
+					}
+			    });
+				
+				$("#TextProspectiveInsuredHomePostalCode").keypress(function (e) {
+				 //if the letter is not digit then display error and don't type anything
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+						return false;
+					}
+			    });
+				
+				$("#TextProspectiveInsuredOfficePostalCode").keypress(function (e) {
 				 //if the letter is not digit then display error and don't type anything
 					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
 						return false;
@@ -165,16 +178,16 @@
 					%input#TextProspectiveInsuredMainJob.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredWorkScope" } Bidang Usaha
-					%input#TextProspectiveInsuredWorkScope.Full.Single.Item{ :type => "text" }
+					%input#TextProspectiveInsuredWorkScope.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredPosition" } Jabatan
-					%input#TextProspectiveInsuredPosition.Full.Single.Item{ :type => "text" }
+					%input#TextProspectiveInsuredPosition.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredJobDescription" } Uraian Pekerjaan
-					%input#TextProspectiveInsuredJobDescription.Full.Single.Item{ :type => "text" }
+					%input#TextProspectiveInsuredJobDescription.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredSideJob" } Pekerjaan Tambahan
-					%input#TextProspectiveInsuredSideJob.Full.Single.Item{ :type => "text" }
+					%input#TextProspectiveInsuredSideJob.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredHomeAddress1" } Alamat Tempat Tinggal
 					%input#TextProspectiveInsuredHomeAddress1.Full.Single.Item{ :type => "text" }

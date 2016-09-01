@@ -47,7 +47,6 @@
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
     <!-- JQUERY -->
     <script>
-      calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       $(document).ready(function()
       {
       	// SETTER
@@ -71,6 +70,20 @@
       	autoPopulateState();
       	
       	$("#TextProspectiveInsuredCIN").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });
+      	
+      	$("#TextProspectiveInsuredHomePostalCode").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });
+      	
+      	$("#TextProspectiveInsuredOfficePostalCode").keypress(function (e) {
       	 //if the letter is not digit then display error and don't type anything
       		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
       			return false;
@@ -206,19 +219,19 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredWorkScope'>Bidang Usaha</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredWorkScope' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredWorkScope' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredPosition'>Jabatan</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredPosition' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredPosition' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredJobDescription'>Uraian Pekerjaan</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredJobDescription' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredJobDescription' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredSideJob'>Pekerjaan Tambahan</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredSideJob' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredSideJob' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeAddress1'>Alamat Tempat Tinggal</label>

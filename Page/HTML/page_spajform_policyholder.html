@@ -76,6 +76,20 @@
       		}
           });
       	
+      	$("#TextPolicyHolderHomePostalCode").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });
+      	
+      	$("#TextPolicyHolderOfficePostalCode").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });				
+      	
       	//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       	$('#TextPolicyHolderSalary').number( true, 0, ',', '.' );
       	$('#TextPolicyHolderRevenue').number( true, 0, ',', '.' );
@@ -205,19 +219,19 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderWorkScope'>Bidang Usaha</label>
-          <input class='Full Single Item' id='TextPolicyHolderWorkScope' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderWorkScope' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderPosition'>Jabatan</label>
-          <input class='Full Single Item' id='TextPolicyHolderPosition' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderPosition' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderJobDescription'>Uraian Pekerjaan</label>
-          <input class='Full Single Item' id='TextPolicyHolderJobDescription' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderJobDescription' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderSideJob'>Pekerjaan Tambahan</label>
-          <input class='Full Single Item' id='TextPolicyHolderSideJob' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderSideJob' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress1'>Alamat Tempat Tinggal</label>
