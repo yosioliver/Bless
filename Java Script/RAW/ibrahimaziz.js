@@ -1168,8 +1168,6 @@ function buttonPopUpBeneficiariesListGenerator()
 							stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
 						}
 						
-						alert(stringInputJavaScriptID + " " + validateTextGeneral(stringInputJQueryID));
-						
 						if (validateTextGeneral(stringInputJQueryID) == false)
 						{
 							validationMessage("Harap lengkapi form terlebih dahulu !.", null);
@@ -1190,6 +1188,8 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
 
+						alert(stringInputJavaScriptID + " " + validateSelectGeneral(stringInputJQueryID));
+						
 						if (validateSelectGeneral(stringInputJQueryID) == false)
 						{
 							validationMessage("Harap lengkapi form terlebih dahulu !.", null);
@@ -1519,7 +1519,7 @@ function validateSelectGeneral(stringInputJQueryID)
 {
 	var stringInputValue = $(stringInputJQueryID).val();
 	
-    if (stringInputValue == undefined || stringInputValue == null || stringInputValue == "")
+    if (stringInputValue == "null")
     {
         validateState(false);
         return false;
@@ -2263,10 +2263,11 @@ function getFromDatabase(objectContent, stringPageType)
 			for (var j = 0; j < arrayBeneficiariesList.length; j++)
 			{
 				var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring(arrayBeneficiariesList[j].elementID.length - 5, arrayBeneficiariesList[j].elementID.length);										
-
+				alert(arrayBeneficiariesList[j].elementID + " " + stringIndicatorShare + " " + arrayBeneficiariesList[j].Value);
+				
 				if (stringIndicatorShare == "Share")
 				{
-					intSharePercentage += parseInt(arrayBeneficiariesList[j].Value, 10);
+					intSharePercentage = parseInt(arrayBeneficiariesList[j].Value, 10);
 				}
 				else
 				{
