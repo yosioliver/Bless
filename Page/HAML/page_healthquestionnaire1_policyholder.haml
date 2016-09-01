@@ -150,6 +150,12 @@
 						%div.Container
 							%label#RadioButtonPolicyHolderMedicalTreatment.Item{ :for => "RadioButtonPolicyHolderMedicalTreatmentYes" }
 								Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
+							%div.RadioButton.Item
+								%input#RadioButtonPolicyHolderMedicalTreatmentYes{ :type => "radio", :name => "RadioButtonPolicyHolderMedicalTreatment", :value => "true" }
+								%label.RadioButton{ :for => "RadioButtonPolicyHolderMedicalTreatmentYes" } Ya
+								%div.Separator | 
+								%input#RadioButtonPolicyHolderMedicalTreatmentNo{ :type => "radio", :name => "RadioButtonPolicyHolderMedicalTreatment", :value => "false" }
+								%label.RadioButton{ :for => "RadioButtonPolicyHolderMedicalTreatmentNo" } Tidak
 						%ol
 							%li
 								%div.Container
@@ -211,23 +217,23 @@
 									%label#LabelPolicyHolderNerve.Item{ :for => "RadioButtonPolicyHolderNerveYes" }
 										Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveNo" } Tidak
-								%input#ButtonPreviewPolicyHolderNerve.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderNerve", "data-popup-type" => "health" }
+								%input#ButtonPreviewPolicyHolderNerve.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderNerve", "data-popup-type" => "hardcopy" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderLiver.Item{ :for => "RadioButtonPolicyHolderLiverYes" }
 										Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverNo" } Tidak
-								%input#ButtonPreviewPolicyHolderLiver.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderLiver", "data-popup-type" => "health" }
+								%input#ButtonPreviewPolicyHolderLiver.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderLiver", "data-popup-type" => "hardcopy" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderReproduction.Item{ :for => "RadioButtonPolicyHolderReproductionYes" }
@@ -244,23 +250,23 @@
 									%label#LabelPolicyHolderMotion.Item{ :for => "RadioButtonPolicyHolderMotionYes" }
 										Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
-								%input#ButtonPreviewPolicyHolderMotion.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderMotion", "data-popup-type" => "health" }
+								%input#ButtonPreviewPolicyHolderMotion.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderMotion", "data-popup-type" => "hardcopy" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderBlood.Item{ :for => "RadioButtonPolicyHolderBloodYes" }
 										Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderBloodYes{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "true", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderBloodYes{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "true", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderBloodYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderBloodNo{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "false", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderBloodNo{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "false" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderBloodNo" } Tidak
-								%input#ButtonPreviewPolicyHolderBlood.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderBlood", "data-popup-type" => "health" }
+								%input#ButtonPreviewPolicyHolderBlood.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderBlood", "data-popup-type" => "hardcopy" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderImmune.Item{ :for => "RadioButtonPolicyHolderImmuneYes" }
@@ -277,12 +283,12 @@
 									%label#LabelPolicyHolderCancer.Item{ :for => "RadioButtonPolicyHolderCancerYes" }
 										Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCancerYes{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "true", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderCancerYes{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "true", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCancerYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderCancerNo{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "false", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderCancerNo{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "false" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCancerNo" } Tidak
-								%input#ButtonPreviewPolicyHolderCancer.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCancer", "data-popup-type" => "health" }
+								%input#ButtonPreviewPolicyHolderCancer.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCancer", "data-popup-type" => "hardcopy" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderOtherIllness.Item{ :for => "RadioButtonPolicyHolderOtherIllnessYes" }
