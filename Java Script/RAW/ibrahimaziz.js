@@ -1240,7 +1240,7 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						$(stringPopUpJQueryID).css("display", "none");
 
-						$(stringPopUpJQueryID + " form input[type=text]").each(function()
+						/* $(stringPopUpJQueryID + " form input[type=text]").each(function()
 						{
 							$(this).val("");
 						});
@@ -1253,7 +1253,7 @@ function buttonPopUpBeneficiariesListGenerator()
 						$(stringPopUpJQueryID + " form input:radio").each(function()
 						{
 							$(this).prop("checked", false);
-						});
+						}); */
 
 						tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 

@@ -124,10 +124,11 @@ function savetoDB()
 
 	if (booleanValidateState == false)
 	{
-		
+		alert('1');	
 	}
 	else
 	{
+		//alert('2');
 		$("input:text[required]").each(function()
 		{
 			stringValue = $(this).val();
@@ -135,21 +136,21 @@ function savetoDB()
 
 			if (stringValue == undefined || stringValue == null || stringValue == "")
 			{
-				//alert($(this).attr("id") + " " + stringValue);
-				ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
+				alert($(this).attr("id") + " " + stringValue);
+				//ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
 				booleanValidateState = false;
 				return false;
 			}
 			else
 			{
-
+				alert('disini');
 			}
 		});
 	}
 	
 	if (booleanValidateState == false)
 	{
-		
+		alert('3');	
 	}
 	else
 	{
@@ -169,12 +170,12 @@ function savetoDB()
 				}				
 				else
 				{
-
+					alert('4');
 				}
 			}
 			else
 			{
-
+				alert('5');
 			}
 		});
 	}
@@ -183,7 +184,7 @@ function savetoDB()
 	{
 		if (booleanValidateState == false)
 		{
-
+			alert('6');
 		}
 		else
 		{
@@ -195,19 +196,18 @@ function savetoDB()
 			}				
 			else
 			{
-
+				alert('7');
 			}
 		}
 	}
 	else
 	{
 		
-	}
-	
+	}		
 	
 	if (booleanValidateState == false)
 	{
-		
+		alert('8');		
 	}
 	else
 	{
