@@ -179,6 +179,32 @@ function savetoDB()
 		});
 	}
 	
+	if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
+	{
+		if (booleanValidateState == false)
+		{
+
+		}
+		else
+		{
+			if (intSharePercentage != 100)
+			{
+				alert("Jumlah share percentage harus 100 !.");
+				booleanValidateState = false;
+				return false;
+			}				
+			else
+			{
+
+			}
+		}
+	}
+	else
+	{
+		
+	}
+	
+	
 	if (booleanValidateState == false)
 	{
 		

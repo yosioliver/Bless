@@ -732,6 +732,8 @@ function additionalQuestionGenerator()
         {
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
+				var stringInfix = releasePrefix($(this).attr("name"));
+				
                 if ($(this).val() == "true")
                 {
                     popUpSPAJProposalShow($(this).attr("name"), null, "PopUpSPAJProposal", arrayHealthQuestionnaire);
@@ -743,10 +745,10 @@ function additionalQuestionGenerator()
                     {
                         var stringID = $(this).attr("id");
                         var stringSuffix = releasePrefix(stringID);
-						var stringInfix = releasePrefix($(this).attr("name"));
+						
                         $(this).empty();
                         stringDetailKey = stringPrefixText + stringInfix + stringSuffix;
-						
+
 						for (var k = 0; k < arrayHealthQuestionnaire.length; k++)
 						{
 							if (stringDetailKey == arrayHealthQuestionnaire[i].elementID.substring(0, stringDetailKey.length))
@@ -1075,8 +1077,9 @@ function buttonDeleteSPAJProposal(stringButtonViewJavaScriptID, stringButtonView
 	{
 		arrayDelete(arrayHealthQuestionnaire, arrayTemporary[i].elementID);
 	}
-	
+	alert("a");
 	tableSPAJProposalGenerator(releasePrefix(stringButtonViewJavaScriptID), "SPAJProposalList", arrayHealthQuestionnaire);
+	alert("b");
 }
 
 function buttonPopUpBeneficiariesListGenerator()
