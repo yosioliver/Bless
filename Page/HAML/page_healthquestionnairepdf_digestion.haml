@@ -27,30 +27,37 @@
 				boxGenerator("#DateProspectiveInsuredBirthdayYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
-				boxGenerator("#DateProspectiveInsuredLastAttackDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredLastAttackMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredLastAttackYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DateProspectiveInsuredFirstPainDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredFirstPainMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredFirstPainYear", 4, boxTypeWithoutLabel, null);
-
-				boxGenerator("#DateProspectiveInsuredLastPainDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredLastPainMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredLastPainYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenYear", 4, boxTypeWithoutLabel, null);
 				
-				boxGenerator("#DateProspectiveInsuredConsulToDoctorLastDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredConsulToDoctorLastMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredConsulToDoctorLastYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenLastDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenLastMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenLastYear", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBloodDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBloodMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBloodYear", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood2Day", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood2Month", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood2Year", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Day", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Month", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Year", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood4Day", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood4Month", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood4Year", 4, boxTypeWithoutLabel, null);
+		
+				boxGenerator("#DateProspectiveInsuredSigned5Day", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredSigned5Month", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredSigned5Year", 4, boxTypeWithoutLabel, null);
+		
 				
-				boxGenerator("#DateProspectiveInsuredTakeLeaveDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredTakeLeaveMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredTakeLeaveYear", 4, boxTypeWithoutLabel, null);
-
-				boxGenerator("#DateProspectiveInsuredSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredSignedYear", 4, boxTypeWithoutLabel, null);
-
+				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
@@ -112,311 +119,297 @@
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				%fieldset
 					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSPAJNumber" } Gangguan pencernaan yang pernah Anda alami?
-					%table#DateProspectiveInsuredFirstPainDay.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredFirstPainMonth.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredFirstPainYear.BoxSquare.PositionerRight
-					%br
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionEver" } Gangguan pencernaan yang pernah Anda alami?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredDigestionPepticUlcer.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestionPepticUlcer", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestionPepticUlcer" } Tukak Lambung
+						
+						%input#RadioButtonProspectiveInsuredDigestionIntestinalUlcer.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestionIntestinalUlcer", :value => "false" }
+						%div.BoxRound.PositionerLeft											
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestionIntestinalUlcer" } Tukak Usus
+						
+						%input#RadioButtonProspectiveInsuredDigestionColitis.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestionColitis", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestionColitis" } Radang Usus Besar	
+						
+						%input#RadioButtonProspectiveInsuredDigestionEnteritis.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestionEnteritis", :value => "false" }
+						%div.BoxRound.PositionerLeft											
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestionEnteritis" } Radang Usus 12 Jari
+						
+						%input#RadioButtonProspectiveInsuredDigestionUlcer.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestionUlcer", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestionUlcer" } Maag
+						
+						%input#RadioButtonProspectiveInsuredDigestionOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestionOthers", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestionOthers"} Lainnya, sebutkan  
+						
+						%input#TextProspectiveInsuredDigestionOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br					
 
 					%span.Number.PositionerLeft 2
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredFullName1" } Berapa lama serangan tersebut berlangsung?
-					%input#TextProspectiveInsuredAttackDurationSecond.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationSecond" }.Single Detik /
-					%input#TextProspectiveInsuredAttackDurationMinute.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationMinute" }.Single Menit /
-					%input#TextProspectiveInsuredAttackDurationHour.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationHour" }.Single Jam /
-					%br
-
-					%span.Number.PositionerLeft 3
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSecondAttackNo" } Apakah ada serangan lanjutan sesudahnya?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredSecondAttackNo" }
-						%input#RadioButtonProspectiveInsuredSecondAttackNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredSecondAttack", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredSecondAttackYes" }
-						%input#RadioButtonProspectiveInsuredSecondAttackYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredSecondAttack", :value => "true" }
-						%div.BoxRound.PositionerRight
-					%br
-
-					%span.Number.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredBirthdayPlace" } Tanggal serangan terakhir:
-					%table#DateProspectiveInsuredLastAttackDay.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionWhen" } Sejak kapan anda mengalami gangguan pencernaan?
+					%table#DateProspectiveInsuredDigestionWhenDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredLastAttackMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestionWhenMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredLastAttackYear.BoxSquare.PositionerRight
-					%br
-
-					%span.Number.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAttackDuration" } Berapa lama serangan tersebut berlangsung?
-					%input#TextProspectiveInsuredAttackDurationSecond.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationSecond" }.Single Detik /
-					%input#TextProspectiveInsuredAttackDurationMinute.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationMinute" }.Single Menit /
-					%input#TextProspectiveInsuredAttackDurationHour.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackDurationHour" }.Single Jam /
-					%br
-
-					%span.Number.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAttackAmount" } Hingga saat ini serangan sudah terjadi sebanyak:
-					%input#TextProspectiveInsuredAttackAmount.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "TextProspectiveInsuredAttackAmount" }.Single Kali /
-					%br					
-										
-					%span.Number.PositionerLeft 4
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredLastAttack" } Kapan terakhir kali nyeri dada terjadi?
-					%table#DateProspectiveInsuredLastPainDay.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredLastPainMonth.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredLastPainYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestionWhenYear.BoxSquare.PositionerRight
 					%br
 					
-					%span.Number.PositionerLeft 5
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredCharacter" } Bagaimana sifat nyeri dada yang Anda rasakan?
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionHowMany" } a. Berapa kali anda mengalami gangguan pencernaan?
+					%input#TextProspectiveInsuredDigestionHowMany.Short.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionHowMany" } kali per (bulan/tahun*) *coret yang tidak perlu					
+					%br
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionWhenLast" } b. Kapan timbulnya keluahan terakhir?
+					%table#DateProspectiveInsuredDigestionWhenLastDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionWhenLastMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionWhenLastYear.BoxSquare.PositionerRight
+					%br					
+
+					%span.Number.PositionerLeft 4
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredFeel" } Keluhan apa yang anda rasakan?
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredCharacterOutOfBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterOutOfBreath", :value => "false" }
+						%input#RadioButtonProspectiveInsuredSpreadToShoulder.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToShoulder", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterOutOfBreath" } Sesak Nafas
-						%input#RadioButtonProspectiveInsuredCharacterSqueezed.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterSqueezed", :value => "false" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToShoulder" } Mual
+						
+						%input#RadioButtonProspectiveInsuredSpreadToArm.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToArm", :value => "false" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterSqueezed" } Dada terasa diremas
-						%input#RadioButtonProspectiveInsuredCharacterDepressed.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterDepressed", :value => "false" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToArm" } Muntah
+						
+						%input#RadioButtonProspectiveInsuredSpreadToJaw.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToJaw", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterDepressed" } Dada terasa tertekan
-						%input#RadioButtonProspectiveInsuredCharacterHot.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterHot", :value => "false" }
-						%div.BoxRound.PositionerLeft						
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterHot"} Dada terasa panas
-						%input#RadioButtonProspectiveInsuredCharacterChestTightness.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterChestTightness", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterChestTightness" } Dada terasa berat
-						%input#RadioButtonProspectiveInsuredCharacterChestPunctured.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterChestPunctured", :value => "false" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToJaw" } Muntah Darah
+						
+						%input#RadioButtonProspectiveInsuredSpreadToBelly.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToBelly", :value => "false" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterChestPunctured" } Dada terasa ditusuk-tusuk												
-						%input#RadioButtonProspectiveInsuredCharacterVaguelyUncomfortable.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterVaguelyUncomfortable", :value => "false" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToBelly" } Nyeri Ulu Hati
+												
+						%input#RadioButtonProspectiveInsuredSpreadToOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToOthers", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterVaguelyUncomfortable" } Samar-samar tidak nyaman						
-						%input#RadioButtonProspectiveInsuredCharacterOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredCharacterOthers", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCharacterOthers"} Lainnya, sebutkan
-						%input#TextProspectiveInsuredCharacterOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToOthers"} Lainnya, sebutkan  
+						
+						%input#TextProspectiveInsuredSpreadToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br		
+
+					%span.Number.PositionerLeft 5
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredVomitingBlood" } a.	Apakah Anda pernah mengalami muntah darah?
+					%div.RadioButton
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodNo" } Tidak   
+						%input#RadioButtonProspectiveInsuredVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodNo", :value => "false" }
+						%div.BoxRound.PositionerRight
+
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodYes" } Ya
+						%input#RadioButtonProspectiveInsuredVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodYes", :value => "true" }
+						%div.BoxRound.PositionerRight
+							
+					%div.BoxRound.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBlood" } b. Jika “Ya”, kapan terakhir Anda mengalaminya?
+					%table#DateProspectiveInsuredDigestionVomitingBloodDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionVomitingBloodMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionVomitingBloodYear.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } c. Berapa kali Anda mengalami muntah darah?
+					%input#TextProspectiveInsuredDigestionVomitingBloodHowMany.Short.Single.PositionerLeft{ :type => "text"}
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } kali per (bulan/tahun*) *coret yang tidak perlu					
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodDesc"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredDigestionVomitingBloodDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%span.Number.PositionerLeft 6
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } Dimanakah letak nyeri dada tersebut?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } Jelaskan secara rinci keluhan nyeri yang Anda dirasakan:
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredPainLocationRight.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationRight", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationRight" } Di sisi kanan dada
-						%input#RadioButtonProspectiveInsuredPainLocationMiddle.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationMiddle", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationMiddle" } Di tengah dada
+					
 						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Di sisi kiri dada
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationRight" } Timbul pada kondisi tertentu, jelaskan:					
+					
+						%input#TextProspectiveInsuredPainLocationOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					
+						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationRight" } Nyeri berkurang bila sedang makan
+						
+						%input#RadioButtonProspectiveInsuredPainLocationMiddle.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationMiddle", :value => "false" }
+						%div.BoxRound.PositionerLeft											
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationMiddle" } Nyeri bertambah bila sedang makan
+						
+						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Nyeri menjalar ke seluruh tubuh lain:
+						
+						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Kepala
+						
+						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Dada
+						
+						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Perut
+												
+						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Lengan						
+						
 						%input#RadioButtonProspectiveInsuredPainLocationOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationOthers", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationOthers"} Di bagian lain dari dada, sebutkan
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationOthers"} Lainnya, sebutkan
 						%input#TextProspectiveInsuredPainLocationOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.PositionerLeft 7
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSpread" } Apakah nyeri dada tersebut menjalar?
-					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredSpreadToShoulder.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToShoulder", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToShoulder" } Ke bahu	
-						%input#RadioButtonProspectiveInsuredSpreadToArm.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToArm", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToArm" } Ke lengan
-						%input#RadioButtonProspectiveInsuredSpreadToJaw.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToJaw", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToJaw" } Ke rahang	
-						%input#RadioButtonProspectiveInsuredSpreadToBelly.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToBelly", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToBelly" } Ke perut
-						%input#RadioButtonProspectiveInsuredSpreadToBack.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToBack", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToBack" } Ke punggung
-						%input#RadioButtonProspectiveInsuredSpreadToOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToOthers", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToOthers"} Di bagian lain, sebutkan: 
-						%input#TextProspectiveInsuredSpreadToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-					%br					
-
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSpread" } Mohon jelaskan secara rinci pada kolom di bawah ini mengenai nama obat yang Anda konsumsi dan lama pemakaiannya sehubungan dengan gangguan pencernaan?
+					%br
+					%input#TextProspectiveInsuredSpreadToOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+					%br
+					
 					%span.Number.PositionerLeft 8
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredHowHappened" } Bagaimana terjadinya nyeri dada tersebut?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredVomitingBlood" } Apakah obat yang Anda peroleh tersebut berdasarkan resep dokter?
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredHowHappenedSudden.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredHowHappenedSudden", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredHowHappenedSudden" } Mendadak
-						%input#RadioButtonProspectiveInsuredHowHappenedGradually.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredHowHappenedGradually", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredHowHappenedGradually" } Bertahap
-						%input#RadioButtonProspectiveInsuredHowHappenedWhenRest.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredHowHappenedWhenRest", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredHowHappenedWhenRest" } Di waktu istirahat
-						%input#RadioButtonProspectiveInsuredHowHappenedCertainPostur.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredHowHappenedCertainPostur", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredHowHappenedCertainPostur" } Hanya pada postur tertentu
-						%input#RadioButtonProspectiveInsuredHowHappenedAfterSport.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredHowHappenedAfterSport", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredHowHappenedAfterSport" } Hanya pada istirahat sehabis olah raga
-						%input#RadioButtonProspectiveInsuredHowHappenedDeepBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredHowHappenedDeepBreath", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredHowHappenedDeepBreath" } Diperburuk dengan nafas dalam
-						%input#RadioButtonProspectiveInsuredHowHappenedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredHowHappenedOthers", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredHowHappenedOthers"} Di bagian lain dari dada, sebutkan: 
-						%input#TextProspectiveInsuredSpreadOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-					%br					
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodNo" } Tidak
+						%input#RadioButtonProspectiveInsuredVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodNo", :value => "false" }						
+						%div.BoxRound.PositionerRight
+						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodYes" } Ya
+						%input#RadioButtonProspectiveInsuredVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodYes", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%label.Wrap.Single.PositionerLeft{:for => "TextProspectiveInsuredVomitingBlood"} Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorDiagnosis" } Nama Lengkap Dokter:
+					%input#TextProspectiveInsuredConsulToDoctorDiagnosis.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorFullNameDoctor" } No. Telepon/Handphone:
+					%input#TextProspectiveInsuredConsulToDoctorFullNameDoctor.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorPhone" } No. Nama Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredConsulToDoctorPhone.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorHospitalName" } Alamat Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredConsulToDoctorHospitalName.Short.Single.PositionerLeft{ :type => "text" }				
+					%br
+					%br
 					
 					%span.Number.PositionerLeft 9
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredGettingWorse" } Kondisi bagaimana yang memperburuk nyeri dada?
-					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredGettingWorseWhenTired.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredGettingWorseWhenTired", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredGettingWorseWhenTired" } Kelelahan/emosi
-						%input#RadioButtonProspectiveInsuredGettingWorseWhenPressureOnChest.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredGettingWorseWhenPressureOnChest", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredGettingWorseWhenPressureOnChest" } Tekanan pada dada
-						%input#RadioButtonProspectiveInsuredGettingWorseWhenCoughing.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredGettingWorseWhenCoughing", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredGettingWorseWhenCoughing" } Batuk menghirup nafas dalam
-						%input#RadioButtonProspectiveInsuredGettingWorseOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredGettingWorseOthers", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredGettingWorseOthers"} Lainnya, sebutkan 
-						%input#TextProspectiveInsuredGettingWorseOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-					%br					
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSpread" } Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuk tanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
+					%br
+					%input#TextProspectiveInsuredSpreadToOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+					%br
 					
 					%span.Number.PositionerLeft 10
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainReduced" } Kondisi bagaimana yang mengurangi nyeri dada?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredVomitingBlood" } Apakah Anda pernah mendapatkan perawatan Rumah Sakit sehubungan dengan gangguan pencernaan tersebut?
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredPainReducedWhenRest.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainReducedWhenRest", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainReducedWhenRest" } Istirahat
-						%input#RadioButtonProspectiveInsuredPainReducedWhenDrinkMilk.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainReducedWhenDrinkMilk", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainReducedWhenDrinkMilk" } Minum susu
-						%input#RadioButtonProspectiveInsuredPainReducedWhenDrinkDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainReducedWhenDrinkDrug", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainReducedWhenDrinkDrug" } Minum obat maag
-						%input#RadioButtonProspectiveInsuredPainReducedAfterDrinkDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainReducedAfterDrinkDrug", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainReducedAfterDrinkDrug" } Setelah minum obat (Jelaskan secara rinci nama obat, dosis dan frekuensi penggunaannya pada kolom di bawah ini).
-						%input#RadioButtonProspectiveInsuredPainReducedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainReducedOthers", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainReducedOthers"} Lainnya, sebutkan
-						%input#TextProspectiveInsuredPainReducedOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-					%br				
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodNo" } Tidak
+						%input#RadioButtonProspectiveInsuredVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodNo", :value => "false" }
+						%div.BoxRound.PositionerRight
+						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodYes" } Ya
+						%input#RadioButtonProspectiveInsuredVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodYes", :value => "true" }
+						%div.BoxRound.PositionerRight
+						
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBlood" } Jika “Ya”, sejak kapan?
+					
+					%table#DateProspectiveInsuredDigestionVomitingBlood2Day.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionVomitingBlood2Month.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionVomitingBlood2Year.BoxSquare.PositionerRight
+
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } s/d
+					
+					%table#DateProspectiveInsuredDigestionVomitingBlood3Day.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionVomitingBlood3Month.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDigestionVomitingBlood3Year.BoxSquare.PositionerRight
+
+
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } Lama perawatan
+					%input#TextProspectiveInsuredDigestionVomitingBloodHowMany.Short.Single.PositionerLeft{ :type => "text"}
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } (bulan/tahun*) *coret yang tidak perlu
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodDesc"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredDigestionVomitingBloodDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%br	
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } a.	Nama Dokter
+					%input#TextProspectiveInsuredDigestionVomitingBloodHowMany.Short.Single.PositionerLeft{ :type => "text"}
+					%br	
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } b.	Alamat Dokter
+					%input#TextProspectiveInsuredDigestionVomitingBloodHowMany.Short.Single.PositionerLeft{ :type => "text"}					
+					%br
+					%br
 					
 					%span.Number.PositionerLeft 11
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctor" } Apakah keluhan nyeri dada tersebut pernah dikonsultasikan ke Dokter?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredVomitingBlood" } Apakah Anda sampai saat ini masih dalam pengobatan?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredConsulToDoctorNo" }
-						%input#RadioButtonProspectiveInsuredConsulToDoctorNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredConsulToDoctorNo", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodNo" } Tidak
+						%input#RadioButtonProspectiveInsuredVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodNo", :value => "false" }						
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredConsulToDoctorYes" }
-						%input#RadioButtonProspectiveInsuredConsulToDoctorYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredConsulToDoctorYes", :value => "true" }
+						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodYes" } Ya
+						%input#RadioButtonProspectiveInsuredVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodYes", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorReason" } Jika “Ya”, mohon berikan alasannya?
-						%input#TextProspectiveInsuredConsulToDoctorReason.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorLast" } Tanggal terakhir konsultasi:
-						%table#DateProspectiveInsuredConsulToDoctorLastDay.BoxSquare.PositionerRight
-						%span.Separator.Single.PositionerRight /
-						%table#DateProspectiveInsuredConsulToDoctorLastMonth.BoxSquare.PositionerRight
-						%span.Separator.Single.PositionerRight /
-						%table#DateProspectiveInsuredConsulToDoctorLastYear.BoxSquare.PositionerRight
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorDiagnosis" } Diagnosa:
-						%input#TextProspectiveInsuredConsulToDoctorDiagnosis.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorFullNameDoctor" } Nama lengkap dokter:
-						%input#TextProspectiveInsuredConsulToDoctorFullNameDoctor.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorPhone" } No. Telepon/Handphone:
-						%input#TextProspectiveInsuredConsulToDoctorPhone.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorHospitalName" } Nama Klinik/Rumah Sakit:
-						%input#TextProspectiveInsuredConsulToDoctorHospitalName.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorHospitalAddress" } Alamat Klinik/Rumah Sakit:
-						%input#TextProspectiveInsuredConsulToDoctorHospitalAddress.Short.Single.PositionerLeft{ :type => "text" }
+					%br	
+					%label.Wrap.Single.PositionerLeft{:for => "TextProspectiveInsuredVomitingBlood"} Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorDiagnosis" } Nama Lengkap Dokter:
+					%input#TextProspectiveInsuredConsulToDoctorDiagnosis.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorFullNameDoctor" } No. Telepon/Handphone:
+					%input#TextProspectiveInsuredConsulToDoctorFullNameDoctor.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorPhone" } Nama Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredConsulToDoctorPhone.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredConsulToDoctorHospitalName" } Alamat Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredConsulToDoctorHospitalName.Short.Single.PositionerLeft{ :type => "text" }				
+					%br
 					%br
 					
 					%span.Number.PositionerLeft 12
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTreatment" } Apakah ada pengobatan yang diberikan sehubungan nyeri dada?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTreatment" } Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTreatmentNo" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTreatment" } Tidak
 						%input#RadioButtonProspectiveInsuredTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredTreatmentNo", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTreatmentYes" }
+						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTreatment" } Ya
 						%input#RadioButtonProspectiveInsuredTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredTreatmentYes", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTreatmentReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+						
+						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTreatmentReason" } Jika “Ya”, kapan?.
+						
+						%table#DateProspectiveInsuredDigestionVomitingBlood4Day.BoxSquare.PositionerRight
+						%span.Separator.Single.PositionerRight /
+						%table#DateProspectiveInsuredDigestionVomitingBlood4Month.BoxSquare.PositionerRight
+						%span.Separator.Single.PositionerRight /
+						%table#DateProspectiveInsuredDigestionVomitingBlood4Year.BoxSquare.PositionerRight
+
+						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTreatmentReason" } Berapa lama?
+						
 						%input#TextProspectiveInsuredTreatmentReason.Short.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTreatmentReason" } hari.
 					%br					
 
 					%span.Number.PositionerLeft 13
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEverCheck" } Apakah pernah melakukan pemeriksaan sebagai berikut?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredEverCheckNo" }
-						%input#RadioButtonProspectiveInsuredEverCheckNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredEverCheckNo", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredEverCheckYes" }
-						%input#RadioButtonProspectiveInsuredEverCheckYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredEverCheckYes", :value => "true" }
-						%div.BoxRound.PositionerRight
-						
-						%input#RadioButtonProspectiveInsuredEverCheckEkg.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEverCheckEkg", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEverCheckEkg" } EKG/ ECG
-						
-						%input#RadioButtonProspectiveInsuredEverCheckRontgen.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEverCheckRontgen", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEverCheckRontgen" } Rontgen dada
-						
-						%input#RadioButtonProspectiveInsuredEverCheckEchocardiogram.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEverCheckEchocardiogram", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEverCheckEchocardiogram" } Echocardiogram
-
-						%input#RadioButtonProspectiveInsuredEverCheckLaboratorium.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEverCheckLaboratorium", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEverCheckLaboratorium" } Laboratorium
-
-						%input#RadioButtonProspectiveInsuredEverCheckOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEverCheckOthers", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEverCheckOthers"} Lainnya, sebutkan 
-						
-						%input#TextProspectiveInsuredEverCheckOthersDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }												
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredEverCheckReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
-						%input#TextProspectiveInsuredEverCheckReason.Long.Single.PositionerLeft{ :type => "text" }
-					%br					
-	
-					%span.Number.PositionerLeft 14
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTakeLeave" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTakeLeaveNo" }
-						%input#RadioButtonProspectiveInsuredTakeLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredTakeLeaveNo", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTakeLeaveYes" }
-						%input#RadioButtonProspectiveInsuredEverCheckYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredTakeLeaveYes", :value => "true" }
-						%div.BoxRound.PositionerRight
-						
-						
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTakeLeaveIfYes" } Jika ya kapan?:
-					%table#DateProspectiveInsuredTakeLeaveDay.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTakeLeaveMonth.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTakeLeaveYear.BoxSquare.PositionerRight
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTakeLeaveHowLong" } Dan berapa lama?
-					%input#TextProspectiveInsuredTakeLeaveHowLong.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTakeLeaveHowLong" } hari
-					%br					
-
-					%span.Number.PositionerLeft 15
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%br
 					%input#TextProspectiveInsuredAdditionalInfo.Long.Single.PositionerLeft{ :type => "text" }
+					%br	
 
-					%h2 I. Data (Calon) Tertanggung
+					%h2 PERNYATAAN DAN KUASA
 					%div.Note
 						Perlu diperhatikan: 
 						%ol
@@ -432,11 +425,11 @@
 					%span.Separator.Single.PositionerLeft
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSigned" } Tanggal
 					%span.Separator.Single.PositionerLeft
-					%table#DateProspectiveInsuredSignedDay.BoxSquare.PositionerLeft
+					%table#DateProspectiveInsuredSigned5Day.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateProspectiveInsuredSignedMonth.BoxSquare.PositionerLeft
+					%table#DateProspectiveInsuredSigned5Month.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateProspectiveInsuredSignedYear.BoxSquare.PositionerLeft
+					%table#DateProspectiveInsuredSigned5Year.BoxSquare.PositionerLeft
 					%br
 							
 					%div.Signature.Horizontal30of100
