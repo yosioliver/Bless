@@ -12,7 +12,7 @@
 
 		:javascript            
 			$(document).ready(function()
-			{            
+			{								
 				// SETTER
 
 				// radioButtonSetter("WeightChange", true);                                
@@ -32,6 +32,28 @@
 				});
 
 				autoPopulateState();
+				
+				$("#TextPolicyHolderCIN").keypress(function (e) {
+				 //if the letter is not digit then display error and don't type anything
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+						return false;
+					}
+			    });
+				
+				$("#TextPolicyHolderHomePostalCode").keypress(function (e) {
+				 //if the letter is not digit then display error and don't type anything
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+						return false;
+					}
+			    });
+				
+				$("#TextPolicyHolderOfficePostalCode").keypress(function (e) {
+				 //if the letter is not digit then display error and don't type anything
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+						return false;
+					}
+			    });				
+				
 				//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
 				$('#TextPolicyHolderSalary').number( true, 0, ',', '.' );
 				$('#TextPolicyHolderRevenue').number( true, 0, ',', '.' );
@@ -39,7 +61,7 @@
 
 				radioButtonOtherGenerator("RadioButtonPolicyHolderIDType", "#TextPolicyHolderIDTypeOther", "OTHER");
 				radioButtonOtherGenerator("RadioButtonPolicyHolderRelationAssured", "#TextPolicyHolderRelationAssuredOther", "other");
-				radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");
+				radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");								
 			});
 
 
@@ -51,31 +73,32 @@
 
 		%main
 			%form
-				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN", :required => "true" } Nomor CIN
-				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text" }                       
+				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
+				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true" }                       
 				%br
 
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderFullName" } Nama Lengkap
 					%input#TextPolicyHolderFullName.Full.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKTP" } Jenis Identitas Diri
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } Jenis Identitas Diri
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderIDTypeKTP.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP" }
+					%input#RadioButtonPolicyHolderIDTypeKTP.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP                 
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeSIM.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
+					%input#RadioButtonPolicyHolderIDTypeSIM.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM                 
 					%div.Separator                        
-					%input#RadioButtonPolicyHolderIDTypePassport.Medium.Single{ :type => "radio", :name=>"RadioButtonPolicyHolderIDType", :value => "PASPOR" }
+					%input#RadioButtonPolicyHolderIDTypePassport.Medium.Single{ :type => "radio", :name=>"RadioButtonPolicyHolderIDType", :value => "PASPOR", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeKIMSKITAS.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
+					%input#RadioButtonPolicyHolderIDTypeKIMSKITAS.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS/KITAS
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "OTHER" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeOther" } Lainnya
+					%input#RadioButtonPolicyHolderIDTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "OTHER", :required => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeOther" } Lainnya					
 				%input#TextPolicyHolderIDTypeOther.Long.Single.PositionerLeft{ :type => "text" }
+				%img.PositionerLeft{ :src => "../../jqueryLibrary/Resource/Input/input_text_required.svg", :style => "width: 20px;" }
 				%br
 
 				%div.ContainerFit
@@ -115,15 +138,15 @@
 					%input#RadioButtonPolicyHolderSexFemale.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSex", :value => "female", :disabled => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderSexFemale" } Wanita
 				%br
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderStatusSingle" } Status Pernikahan
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatus" } Status Pernikahan
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderMaritalStatusSingle.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "single" }
+					%input#RadioButtonPolicyHolderMaritalStatusSingle.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "single", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusSingle" } Belum Menikah
 					%div.Separator
-					%input#RadioButtonPolicyHolderMaritalStatusMarried.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "married" }
+					%input#RadioButtonPolicyHolderMaritalStatusMarried.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "married", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusMarried" } Menikah
 					%div.Separator
-					%input#RadioButtonPolicyHolderMaritalStatusDivorced.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "divorced" }
+					%input#RadioButtonPolicyHolderMaritalStatusDivorced.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "divorced", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusDivorced" } Bercerai
 				%br
 
@@ -156,16 +179,16 @@
 					%input#TextPolicyHolderMainJob.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderWorkScope" } Bidang Usaha
-					%input#TextPolicyHolderWorkScope.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderWorkScope.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderPosition" } Jabatan
-					%input#TextPolicyHolderPosition.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderPosition.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderJobDescription" } Uraian Pekerjaan
-					%input#TextPolicyHolderJobDescription.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderJobDescription.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderSideJob" } Pekerjaan Tambahan
-					%input#TextPolicyHolderSideJob.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderSideJob.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress1" } Alamat Tempat Tinggal
 					%input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text", :required => "true" }
@@ -214,13 +237,14 @@
 					%label.MediumFix.Single.Item{ :for => "TextPolicyHolderOfficeTelephone" } Telp
 					%input#TextPolicyHolderOfficeTelephone.Medium.Single.Item{ :type => "text" }
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceAddress" } Alamat Korespondensi
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceAddress" } Alamat Korespondensi				
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderCorrespondanceAddressHome.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "home" }
+					%input#RadioButtonPolicyHolderCorrespondanceAddressHome.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "home", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderCorrespondanceAddressHome" } Alamat Tempat Tinggal
 					%div.Separator
-					%input#RadioButtonPolicyHolderCorrespondanceAddressOffice.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "office" }
+					%input#RadioButtonPolicyHolderCorrespondanceAddressOffice.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "office", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderCorrespondanceAddressOffice" } Alamat Kantor
+					%img.PositionerRight{ :src => "../../jqueryLibrary/Resource/Input/input_text_required.svg", :style => "width: 20px;" } 
 				%br
 
 				%label.Medium.Multi.PositionerLeft{ :for => "RadioButtonPolicyHolderRelationAssured" } Hubungan Dengan Calon Tertanggung
@@ -305,4 +329,4 @@
 					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text" }
 				%br
 
-				%div#BoxDate
+				%div#BoxDate								

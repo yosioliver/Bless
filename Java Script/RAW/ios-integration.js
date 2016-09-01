@@ -2,7 +2,8 @@ __functionIndexMap = {};
 
 function calliOSFunction(functionName, successCallback, errorCallback, callInfo)
 {
-    var url = 'js-frame:';
+    var url = 'js-frame:';	
+	
     callInfo.functionname = functionName;
 
 	if (successCallback)
@@ -117,31 +118,99 @@ function readfromDB()
 
 function savetoDB() 
 {
-    var objectContent;
-    
-    if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
-    {
-        //alert("no getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
-        objectContent = arrayHealthQuestionnaire;
-    }
-	else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
+	var stringValue;
+	var stringRadioButtonFlag;
+	var booleanValidateState = true;
+
+	if (booleanValidateState == false)
 	{
-		// alert("no getter !, arrayBeneficiariesList length : " + arrayBeneficiarisList.length);
-		arrayAdd(arrayBeneficiariesList, "TextBeneficiariesListSharePercentage", getTextForm("TextBeneficiariesListSharePercentage"));
-		// alert("TextBeneficiariesListSharePercentage" + " // " + getTextForm("TextBeneficiariesListSharePercentage"))
-		objectContent = arrayBeneficiariesList;
+		
 	}
-    else
-    {
-        //alert("with getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
-        objectContent = setToDatabase(stringPageTypeCurrent);
-    }
-    
-    var jsonToDatabase = JSONGenerator(objectContent);
-    calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
+	else
+	{
+		$("input:text[required]").each(function()
+		{
+			stringValue = $(this).val();
+			var $label = $("label[for='"+this.id+"']")
+
+			if (stringValue == undefined || stringValue == null || stringValue == "")
+			{
+				//alert($(this).attr("id") + " " + stringValue);
+				ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
+				booleanValidateState = false;
+				return false;
+			}
+			else
+			{
+
+			}
+		});
+	}
 	
-	arrayHealthQuestionnaire = [];
-	arrayBeneficiariesList = [];
+	if (booleanValidateState == false)
+	{
+		
+	}
+	else
+	{
+		$("input:radio[required]").each(function()
+		{												
+			stringValue = getRadioButtonGeneral($(this).attr("name"));						
+			var $label = $("label[for='"+this.name+"']")
+
+			if (stringRadioButtonFlag != $(this).attr("name"))
+			{
+				if (stringValue == undefined)
+				{							
+					ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap dipilih.");
+					stringRadioButtonFlag = $(this).attr("name");
+					booleanValidateState = false;
+					return false;
+				}				
+				else
+				{
+
+				}
+			}
+			else
+			{
+
+			}
+		});
+	}
+	
+	if (booleanValidateState == false)
+	{
+		
+	}
+	else
+	{
+		var objectContent;
+    
+		if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
+		{
+			//alert("no getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
+			objectContent = arrayHealthQuestionnaire;
+		}
+		else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
+		{
+			// alert("no getter !, arrayBeneficiariesList length : " + arrayBeneficiarisList.length);
+			arrayAdd(arrayBeneficiariesList, "TextBeneficiariesListSharePercentage", getTextForm("TextBeneficiariesListSharePercentage"));
+			// alert("TextBeneficiariesListSharePercentage" + " // " + getTextForm("TextBeneficiariesListSharePercentage"))
+			objectContent = arrayBeneficiariesList;
+		}
+		else
+		{
+			//alert("with getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
+			objectContent = setToDatabase(stringPageTypeCurrent);
+		}
+
+		var jsonToDatabase = JSONGenerator(objectContent);
+		calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
+
+		arrayHealthQuestionnaire = [];
+		arrayBeneficiariesList = [];
+	}
 }
 
 function PrintData()
@@ -167,4 +236,15 @@ function AutoPopulate(jsonObject)
 function ReadData()
 {
     readfromDB();
+}
+
+function ReplaceHTMLNameOnValidate(title, body)
+{
+	var callInfo = {};
+	callInfo.data = {};
+	callInfo.data.title = title;
+	callInfo.data.body = body;
+
+	//call the wrapper with the parameterized info
+	calliOSFunction('showAlert:',onSuccess,onError, callInfo);
 }

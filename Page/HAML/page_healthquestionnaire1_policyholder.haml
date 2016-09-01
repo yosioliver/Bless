@@ -34,7 +34,21 @@
 				{
 					savetoDB();
 				}); */								
-			});						
+			});
+			
+			function CheckRelationshipStatus(RealtionshipStatus)
+			{
+				if (RealtionshipStatus == "self")
+				{
+					
+				}
+				else
+				{
+					$('#ProspectiveInsuredLink').click(function(e) {
+						e.preventDefault();						
+					});
+				}
+			}
 
 	/ BODY
 
@@ -49,9 +63,9 @@
 			%div.Highlighted
 				%label.Medium.Single Calon
 				%nav.RadioButton{ :style => "margin-left: 80px" }
-					%a.Clear.Selected{ :href => "" }  Pemegang Polis
+					%a.Clear.Selected{ :href => "../../Page/HTML/page_healthquestionnaire1_policyholder.html" }  Pemegang Polis
 					%div.Separator
-					%a.Clear{ :href => "" } Tertanggung
+					%a#ProspectiveInsuredLink.Clear{ :href => "../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html" } Tertanggung
 
 			%h2 Pertanyaan Kesehatan
 

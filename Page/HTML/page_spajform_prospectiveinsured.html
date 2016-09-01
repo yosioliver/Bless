@@ -47,7 +47,6 @@
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
     <!-- JQUERY -->
     <script>
-      calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       $(document).ready(function()
       {
       	// SETTER
@@ -69,6 +68,28 @@
       	});
       
       	autoPopulateState();
+      	
+      	$("#TextProspectiveInsuredCIN").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });
+      	
+      	$("#TextProspectiveInsuredHomePostalCode").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });
+      	
+      	$("#TextProspectiveInsuredOfficePostalCode").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });
+      	
       	//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       	$('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );
       	$('#TextProspectiveInsuredRevenue').number( true, 0, ',', '.' );
@@ -85,31 +106,32 @@
     <!-- MAIN -->
     <main>
       <form>
-        <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredCIN' required='true'>Nomor CIN</label>
-        <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredCIN' type='text'>
+        <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredCIN'>Nomor CIN</label>
+        <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredCIN' required='true' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredFullName'>Nama Lengkap</label>
           <input class='Full Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredFullName' required='true' type='text'>
         </div>
-        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredIDTypeKTP'>Jenis Identitas Diri</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredIDType'>Jenis Identitas Diri</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeKTP' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KTP'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeKTP' name='RadioButtonProspectiveInsuredIDType' required='true' type='radio' value='KTP'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKTP'>KTP</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeSIM' name='RadioButtonProspectiveInsuredIDType' type='radio' value='SIM'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeSIM' name='RadioButtonProspectiveInsuredIDType' required='true' type='radio' value='SIM'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeSIM'>SIM</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypePassport' name='RadioButtonProspectiveInsuredIDType' type='radio' value='PASPOR'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypePassport' name='RadioButtonProspectiveInsuredIDType' required='true' type='radio' value='PASPOR'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypePassport'>Paspor</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeKIMSKITAS' name='RadioButtonProspectiveInsuredIDType' type='radio' value='KIMSKITAS'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeKIMSKITAS' name='RadioButtonProspectiveInsuredIDType' required='true' type='radio' value='KIMSKITAS'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeKIMSKITAS'>KIMS/KITAS</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeOther' name='RadioButtonProspectiveInsuredIDType' type='radio' value='OTHER'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredIDTypeOther' name='RadioButtonProspectiveInsuredIDType' required='true' type='radio' value='OTHER'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredIDTypeOther'>Lainnya</label>
         </div>
         <input class='Long Single PositionerLeft' id='TextProspectiveInsuredIDTypeOther' type='text'>
+        <img class='PositionerRight' src='../../jqueryLibrary/Resource/Input/input_text_required.svg' style='width: 20px;'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredIDNumber'>Nomor Identitas Diri</label>
@@ -154,15 +176,15 @@
           <label class='RadioButton' for='RadioButtonProspectiveInsuredSexFemale'>Wanita</label>
         </div>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredStatusSingle'>Status Pernikahan</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredMaritalStatus'>Status Pernikahan</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredMaritalStatusSingle' name='RadioButtonProspectiveInsuredMaritalStatus' type='radio' value='single'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredMaritalStatusSingle' name='RadioButtonProspectiveInsuredMaritalStatus' required='true' type='radio' value='single'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredMaritalStatusSingle'>Belum Menikah</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredMaritalStatusMarried' name='RadioButtonProspectiveInsuredMaritalStatus' type='radio' value='married'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredMaritalStatusMarried' name='RadioButtonProspectiveInsuredMaritalStatus' required='true' type='radio' value='married'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredMaritalStatusMarried'>Menikah</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredMaritalStatusDivorced' name='RadioButtonProspectiveInsuredMaritalStatus' type='radio' value='divorced'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredMaritalStatusDivorced' name='RadioButtonProspectiveInsuredMaritalStatus' required='true' type='radio' value='divorced'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredMaritalStatusDivorced'>Bercerai</label>
         </div>
         <br>
@@ -197,19 +219,19 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredWorkScope'>Bidang Usaha</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredWorkScope' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredWorkScope' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredPosition'>Jabatan</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredPosition' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredPosition' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredJobDescription'>Uraian Pekerjaan</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredJobDescription' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredJobDescription' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredSideJob'>Pekerjaan Tambahan</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredSideJob' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredSideJob' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeAddress1'>Alamat Tempat Tinggal</label>
@@ -227,8 +249,8 @@
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeCity'></label>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeCity'>Kota</label>
           <input class='Medium Single Item' id='TextProspectiveInsuredHomeCity' required='true' type='text'>
-          <label class='Medium Single Item' for='TextProspectiveInsuredHomePostalCode' required='true'>Kode Pos</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredHomePostalCode' type='text'>
+          <label class='Medium Single Item' for='TextProspectiveInsuredHomePostalCode'>Kode Pos</label>
+          <input class='Medium Single Item' id='TextProspectiveInsuredHomePostalCode' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeTelephone'></label>
@@ -269,13 +291,14 @@
           <label class='MediumFix Single Item' for='TextProspectiveInsuredOfficeTelephone'>Telp</label>
           <input class='Medium Single Item' id='TextProspectiveInsuredOfficeTelephone' type='text'>
         </div>
-        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddressHome'>Alamat Korespondensi</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddress'>Alamat Korespondensi</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredCorrespondanceAddressHome' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='home'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredCorrespondanceAddressHome' name='RadioButtonProspectiveInsuredCorrespondanceAddress' required='true' type='radio' value='home'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredCorrespondanceAddressHome'>Alamat Tempat Tinggal</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredCorrespondanceAddressOffice' name='RadioButtonProspectiveInsuredCorrespondanceAddress' type='radio' value='office'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredCorrespondanceAddressOffice' name='RadioButtonProspectiveInsuredCorrespondanceAddress' required='true' type='radio' value='office'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredCorrespondanceAddressOffice'>Alamat Kantor</label>
+          <img class='PositionerRight' src='../../jqueryLibrary/Resource/Input/input_text_required.svg' style='width: 20px;'>
         </div>
         <br>
         <label class='Medium Multi PositionerLeft' for='RadioButtonProspectiveInsuredRelationAssured'>Hubungan Dengan Calon Tertanggung</label>

@@ -70,6 +70,20 @@
       		savetoDB();
       	}); */								
       });
+      
+      function CheckRelationshipStatus(RealtionshipStatus)
+      {
+      	if (RealtionshipStatus == "self")
+      	{
+      		
+      	}
+      	else
+      	{
+      		$('#ProspectiveInsuredLink').click(function(e) {
+      			e.preventDefault();						
+      		});
+      	}
+      }
     </script>
   </head>
   <!-- BODY -->
@@ -81,9 +95,9 @@
       <div class='Highlighted'>
         <label class='Medium Single'>Calon</label>
         <nav class='RadioButton' style='margin-left: 80px'>
-          <a class='Clear Selected' href=''>Pemegang Polis</a>
+          <a class='Clear Selected' href='../../Page/HTML/page_healthquestionnaire1_policyholder.html'>Pemegang Polis</a>
           <div class='Separator'></div>
-          <a class='Clear' href=''>Tertanggung</a>
+          <a class='Clear' href='../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html' id='ProspectiveInsuredLink'>Tertanggung</a>
         </nav>
       </div>
       <h2>Pertanyaan Kesehatan</h2>
@@ -599,7 +613,7 @@
             <label class='Wrap' for='TextPolicyNumber' id='LabelPolicyNumber'>Nomor Polix</label>
             <input class='Full Single' id='TextPolicyNumber' type='text'>
             <label class='Wrap' for='DatePublished' id='LabelDatePubliched'>Tanggal Diterbitkan</label>
-            <input class='Full Single' id='DatePublished' type='text'>
+            <input class='Full Single' data-field='date' id='DatePublished' type='text'>
             <label class='Wrap' for='TextBasicSumAssured' id='LabelBasicSumAssured'>Uang Pertanggungan</label>
             <input class='Full Single' id='TextBasicSumAssured' type='text'>
             <label class='Wrap' for='TextDecision' id='LabelDecision'>Hasil Keputusan</label>
