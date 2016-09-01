@@ -49,23 +49,23 @@
     <script>
       $(document).ready(function()
       {
-          // SETTER
-          
-          // radioButtonSetter("WeightChange", true);
-          
-          // GETTER
-           
-          // radioButtonGetter("WeightChange");
-          
-          $("#BoxDate").DateTimePicker(
-          {
-              dateSeparator: "/",
-              dateFormat: "dd/MM/yyyy"
-          });
-          
-          radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyType", "#TextPolicyHolderCompanyTypeOther", "lainnya");
-          radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyRepresentativeRelationship", "#TextPolicyHolderCompanyRepresentativeRelationshipOther", "lainnya");
-          radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", "#TextPolicyHolderCompanyRepresentativeInsurancePurposeOther", "lainnya");
+      	// SETTER
+      
+      	// radioButtonSetter("WeightChange", true);
+      
+      	// GETTER
+      
+      	// radioButtonGetter("WeightChange");
+      
+      	$("#BoxDate").DateTimePicker(
+      	{
+      		dateSeparator: "/",
+      		dateFormat: "dd/MM/yyyy"
+      	});
+      
+      	radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyType", "#TextPolicyHolderCompanyTypeOther", "lainnya");
+      	radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyRepresentativeRelationship", "#TextPolicyHolderCompanyRepresentativeRelationshipOther", "lainnya");
+      	radioButtonOtherGenerator("RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", "#TextPolicyHolderCompanyRepresentativeInsurancePurposeOther", "lainnya");
       });
     </script>
   </head>
@@ -200,14 +200,15 @@
         <input class='Medium Single PositionerRight' data-field='date' id='DatePolicyHolderCompanyRepresentativeIDExpired' type='text'>
         <label class='Medium Single PositionerRight' for='DatePolicyHolderCompanyRepresentativeIDExpired'>Masa Berlaku</label>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague'>Hubungan dengan Calon tertanggung</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyRepresentativeRelationship'>Hubungan dengan Calon tertanggung</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague' name='RadioButtonPolicyHolderCompanyRepresentativeRelationship' type='radio' value='perusahaankaryawan'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague' name='RadioButtonPolicyHolderCompanyRepresentativeRelationship' required='true' type='radio' value='perusahaankaryawan'>
           <label class='RadioButton' for='RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague'>Perusahaan / Karyawan</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderCompanyRepresentativeRelationshipOther' name='RadioButtonPolicyHolderCompanyRepresentativeRelationship' type='radio' value='lainnya'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderCompanyRepresentativeRelationshipOther' name='RadioButtonPolicyHolderCompanyRepresentativeRelationship' required='true' type='radio' value='lainnya'>
           <label class='RadioButton' for='RadioButtonPolicyHolderCompanyRepresentativeRelationshipOther'>Lainnya</label>
           <input class='Medium Single PositionerRight' id='TextPolicyHolderCompanyRepresentativeRelationshipOther' type='text'>
+          <img class='PositionerRight' src='../../jqueryLibrary/Resource/Input/input_text_required.svg' style='width: 20px;'>
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings'>Tujuan Pembelian Asuransi</label>

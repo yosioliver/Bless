@@ -1015,7 +1015,7 @@ function buttonPopUpBeneficiariesListGenerator()
 					
 					$(stringPopUpJQueryID).css("display", "none");
 
-					$(stringPopUpJQueryID + " form input[type=text]").each(function()
+					/* $(stringPopUpJQueryID + " form input[type=text]").each(function()
 					{
 						$(this).val("");
 					});
@@ -1028,7 +1028,7 @@ function buttonPopUpBeneficiariesListGenerator()
 					$(stringPopUpJQueryID + " form input:radio").each(function()
 					{
 						$(this).prop("checked", false);
-					});
+					}); */
 
 					tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 
@@ -1303,12 +1303,19 @@ function setDateForm(stringID, stringValue)
 function setDatePDF(stringID, stringContent)
 {
     var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
-    var arrayDateString = stringContent.split(stringSeparatorDate);
-    
-    for (var i = 0; i < arrayDateString.length; i++)
-    {        
-        setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);
-    }
+    var arrayDateString = stringContent.split(stringSeparatorDate);    			
+		
+	for (var i = 0; i < arrayDateString.length; i++)
+	{ 
+		if ($(stringKres + stringID + arrayDateID[i]).is("table") == true)
+		{
+			setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
+		}
+		else
+		{
+			setLineGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
+		}			
+	}			
 }
 
 function setAreaForm(stringID, stringValue)

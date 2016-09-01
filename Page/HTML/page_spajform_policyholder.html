@@ -48,7 +48,7 @@
     <!-- JQUERY -->
     <script>
       $(document).ready(function()
-      {            
+      {								
       	// SETTER
       
       	// radioButtonSetter("WeightChange", true);                                
@@ -68,6 +68,14 @@
       	});
       
       	autoPopulateState();
+      	
+      	$("#TextPolicyHolderCIN").keypress(function (e) {
+      	 //if the letter is not digit then display error and don't type anything
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      			return false;
+      		}
+          });
+      	
       	//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       	$('#TextPolicyHolderSalary').number( true, 0, ',', '.' );
       	$('#TextPolicyHolderRevenue').number( true, 0, ',', '.' );
@@ -75,7 +83,7 @@
       
       	radioButtonOtherGenerator("RadioButtonPolicyHolderIDType", "#TextPolicyHolderIDTypeOther", "OTHER");
       	radioButtonOtherGenerator("RadioButtonPolicyHolderRelationAssured", "#TextPolicyHolderRelationAssuredOther", "other");
-      	radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");
+      	radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");								
       });
     </script>
   </head>
@@ -84,31 +92,32 @@
     <!-- MAIN -->
     <main>
       <form>
-        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN' required='true'>Nomor CIN</label>
-        <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' type='text'>
+        <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN'>Nomor CIN</label>
+        <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' required='true' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderFullName'>Nama Lengkap</label>
           <input class='Full Single Item' data-input-type='autopopulate' id='TextPolicyHolderFullName' required='true' type='text'>
         </div>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderIDTypeKTP'>Jenis Identitas Diri</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderIDType'>Jenis Identitas Diri</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeKTP' name='RadioButtonPolicyHolderIDType' type='radio' value='KTP'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeKTP' name='RadioButtonPolicyHolderIDType' required='true' type='radio' value='KTP'>
           <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKTP'>KTP</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeSIM' name='RadioButtonPolicyHolderIDType' type='radio' value='SIM'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeSIM' name='RadioButtonPolicyHolderIDType' required='true' type='radio' value='SIM'>
           <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeSIM'>SIM</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypePassport' name='RadioButtonPolicyHolderIDType' type='radio' value='PASPOR'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypePassport' name='RadioButtonPolicyHolderIDType' required='true' type='radio' value='PASPOR'>
           <label class='RadioButton' for='RadioButtonPolicyHolderIDTypePassport'>Paspor</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeKIMSKITAS' name='RadioButtonPolicyHolderIDType' type='radio' value='KIMSKITAS'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeKIMSKITAS' name='RadioButtonPolicyHolderIDType' required='true' type='radio' value='KIMSKITAS'>
           <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeKIMSKITAS'>KIMS/KITAS</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeOther' name='RadioButtonPolicyHolderIDType' type='radio' value='OTHER'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderIDTypeOther' name='RadioButtonPolicyHolderIDType' required='true' type='radio' value='OTHER'>
           <label class='RadioButton' for='RadioButtonPolicyHolderIDTypeOther'>Lainnya</label>
         </div>
         <input class='Long Single PositionerLeft' id='TextPolicyHolderIDTypeOther' type='text'>
+        <img class='PositionerLeft' src='../../jqueryLibrary/Resource/Input/input_text_required.svg' style='width: 20px;'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderIDNumber'>Nomor Identitas Diri</label>
@@ -153,15 +162,15 @@
           <label class='RadioButton' for='RadioButtonPolicyHolderSexFemale'>Wanita</label>
         </div>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderStatusSingle'>Status Pernikahan</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderMaritalStatus'>Status Pernikahan</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderMaritalStatusSingle' name='RadioButtonPolicyHolderMaritalStatus' type='radio' value='single'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderMaritalStatusSingle' name='RadioButtonPolicyHolderMaritalStatus' required='true' type='radio' value='single'>
           <label class='RadioButton' for='RadioButtonPolicyHolderMaritalStatusSingle'>Belum Menikah</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderMaritalStatusMarried' name='RadioButtonPolicyHolderMaritalStatus' type='radio' value='married'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderMaritalStatusMarried' name='RadioButtonPolicyHolderMaritalStatus' required='true' type='radio' value='married'>
           <label class='RadioButton' for='RadioButtonPolicyHolderMaritalStatusMarried'>Menikah</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderMaritalStatusDivorced' name='RadioButtonPolicyHolderMaritalStatus' type='radio' value='divorced'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderMaritalStatusDivorced' name='RadioButtonPolicyHolderMaritalStatus' required='true' type='radio' value='divorced'>
           <label class='RadioButton' for='RadioButtonPolicyHolderMaritalStatusDivorced'>Bercerai</label>
         </div>
         <br>
@@ -270,11 +279,12 @@
         </div>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCorrespondanceAddress'>Alamat Korespondensi</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderCorrespondanceAddressHome' name='RadioButtonPolicyHolderCorrespondanceAddress' type='radio' value='home'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderCorrespondanceAddressHome' name='RadioButtonPolicyHolderCorrespondanceAddress' required='true' type='radio' value='home'>
           <label class='RadioButton' for='RadioButtonPolicyHolderCorrespondanceAddressHome'>Alamat Tempat Tinggal</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderCorrespondanceAddressOffice' name='RadioButtonPolicyHolderCorrespondanceAddress' type='radio' value='office'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderCorrespondanceAddressOffice' name='RadioButtonPolicyHolderCorrespondanceAddress' required='true' type='radio' value='office'>
           <label class='RadioButton' for='RadioButtonPolicyHolderCorrespondanceAddressOffice'>Alamat Kantor</label>
+          <img class='PositionerRight' src='../../jqueryLibrary/Resource/Input/input_text_required.svg' style='width: 20px;'>
         </div>
         <br>
         <label class='Medium Multi PositionerLeft' for='RadioButtonPolicyHolderRelationAssured'>Hubungan Dengan Calon Tertanggung</label>
