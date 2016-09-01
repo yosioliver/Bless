@@ -179,7 +179,7 @@ function savetoDB()
 		});
 	}
 	
-	if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
+	if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
 	{
 		if (booleanValidateState == false)
 		{
