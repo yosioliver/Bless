@@ -793,11 +793,11 @@ function additionalQuestionGenerator()
 					
 					if (stringInfixName.substring(0, 3) == "Pol")
 					{
-						setRadioButtonGeneral("RadioButtonPolicyHolderMedicalTreatment", true);
+						setRadioButtonGeneral("RadioButtonPolicyHolderHealthDissorder", true);
 					}
 					else
 					{
-						setRadioButtonGeneral("RadioButtonProspectiveInsuredMedicalTreatment", true);
+						setRadioButtonGeneral("RadioButtonProspectiveInsuredHealthDissorder", true);
 					}
                 }
                 else
