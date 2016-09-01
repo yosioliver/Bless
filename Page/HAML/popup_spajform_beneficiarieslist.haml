@@ -36,11 +36,27 @@
 		
 		%label.Medium.Multi.PositionerLeft{ :for => "SelectRelationship" } Hubungan Dengan Calon Tertanggung
 		%select#SelectRelationship.Single.Long.PositionerLeft
-			%option{ :value => "parents"} Orang Tua
-			%option{ :value => "spouse"} Suami / Istri
-			%option{ :value => "family"} Anak
-			%option{ :value => "friend"} Teman
-			%option{ :value => "neighbour"} Tetangga
+			%option{ :value => "null"} Please Select
+			%option{ :value => "self"} Diri Sendiri
+			%option{ :value => "parent"} Orang Tua
+			%option{ :value => "child"} Anak
+			%option{ :value => "spouse"} Pasangan
+			%option{ :value => "brother"} Saudara Laki-Laki
+			%option{ :value => "sister"} Saudara Perempuan
+			%option{ :value => "grandparent"} Kakek / Nenek
+			%option{ :value => "grandchildren"} Cucu
+			%option{ :value => "aunt"} Bibi
+			%option{ :value => "uncle"} Paman
+			%option{ :value => "nephew"} Keponakan Laki-Laki
+			%option{ :value => "niece"} Keponakan Perempuan
+			%option{ :value => "employee"} Pekerja
+			%option{ :value => "employer"} Pemberi Kerja
+			%option{ :value => "other"} Lainnya
+			%option{ :value => "heir"} Ahli Waris
+			%option{ :value => "guardian"} Wali
+			%option{ :value => "creditordebitor"} Kreditor / Debitor
+			%option{ :value => "charity"} Amal
+			%option{ :value => "heirlaw"} Ahli Waris Hukum
 		%br
 		
 		%label.Medium.Single.PositionerLeft{ :for => "TextSharePercentage" } Share Percentage
