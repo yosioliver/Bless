@@ -53,7 +53,7 @@ var stringRowPrefix = "Row";
 var stringCellPrefix = "Cell";
 var stringNumberPrefix = "Number";
 var arrayHealthTableHeader = ["DiseaseName", "SickFrom", "SickDuration", "DoctorName", "Hospital", "Address", "Telephone"];
-var arraySPAJProposalTableHeader = ["CompanyName", "PolicyNumber", "PublishedDate", "BasicSumAssured", "Decision"];
+var arraySPAJProposalTableHeader = ["CompanyName", "PolicyNumber", "Published", "BasicSumAssured", "Decision"];
 var stringAreaPrefix = "Area";
 var stringProspectiveInsuredPrefix = "ProspectiveInsured";
 var stringPolicyHolderPrefix = "PolicyHolder";
@@ -76,6 +76,8 @@ var stringSharePercentageSuffix = "SharePercentage";
 var stringSPAJProposalInfix = "SPAJProposal";
 var intSPAJProposalID = 1;
 var stringPopUpTypeHardCopy = "hardcopy";
+var stringIndicatorPolicyHolder = "Pol";
+var stringIndicatorProspectiveInsured = "Pro";
 
 
 // GENERATOR
@@ -1083,6 +1085,7 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 	var intSelectedSharePercentage = arrayFind(arrayBeneficiariesList, stringPrefixText + stringBeneficiariesListInfix + "SharePercentage" + stringButtonViewName);
 	intSharePercentage = parseInt(intSharePercentage, 10) - parseInt(intSelectedSharePercentage, 10);
 	setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
+	var arrayTemporary = [];
 
 	for (var i = 0; i < arrayBeneficiariesList.length; i++)
 	{
@@ -1090,12 +1093,17 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 
 		if (stringKeyForDelete == stringButtonViewName)
 		{
-			arrayDelete(arrayBeneficiariesList, arrayBeneficiariesList[i].elementID);
+			arrayAdd(arrayTemporary, arrayBeneficiariesList[i].elementID);
 		}
 		else
 		{
 
 		}
+	}
+	
+	for (var i = 0; i < arrayTemporary.length; i++)
+	{
+		arrayDelete(arrayBeneficiariesList, arrayTemporary[i].elementID);
 	}
 
 	tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
@@ -1875,8 +1883,8 @@ function getFromDatabase(objectContent, stringPageType)
 					if (stringKey.substring(stringKey.length - arrayHealthTableHeader[j].length, stringKey.length) == arrayHealthTableHeader[j])
 					{
 						var stringIndicatorPrefix = stringKey.substring(stringPrefixText.length, stringPrefixText.length + 3);
-						var stringIndicatorPolicyHolder = "Pol";
-						var stringIndicatorProspectiveInsured = "Pro";
+						// var stringIndicatorPolicyHolder = "Pol";
+						// var stringIndicatorProspectiveInsured = "Pro";
 						var stringTableJQueryID;
 						var stringInfix;
 
@@ -2017,39 +2025,54 @@ function getFromDatabase(objectContent, stringPageType)
 				
 				// FOR TABLE SPAJ PROPOSAL
 				
-//				for (var j = 0; j < arraySPAJProposalTableHeader.length; j++)
-//				{
-//					$(stringTableJQueryID + " tbody tr").each(function(indexRow)
-//					{
-//						var stringRowJavaScriptID = $(this).attr("id");
-//						var stringRowJQueryID = stringKres + stringRowJavaScriptID;
-//						var stringCellJavaScriptID = stringCellPrefix + "SPAJProposal" + arraySPAJProposalTableHeader[j];
-//						var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
-//						var stringCellSuffix = stringCellJavaScriptID;
-//
-//						if (stringIDWithoutInfix == arrayBeneficiariesListTableHeader[j])
-//						{
-//							if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
-//							{
-//								$(stringCellJQueryID).append(stringValue);
-//
-//								// FOR NUMBER
-//
-//								numberGenerator(stringBeneficiariesListInfix, indexRow);
-//
-//								return false;
-//							}
-//							else
-//							{
-//
-//							}
-//						}
-//						else
-//						{
-//
-//						}
-//					});
-//				}
+				var stringInfix;
+				
+				if (stringIndicatorPrefix == stringIndicatorPolicyHolder)
+				{
+					stringTableJQueryID = stringKres + "TablePolicyHolderSPAJProposal";
+					stringInfix = stringPolicyHolderPrefix;
+				}
+				else
+				{
+					stringTableJQueryID = stringKres + "TableProspectiveInsuredSPAJProposal";
+					stringInfix = stringProspectiveInsuredPrefix;
+				}
+				
+				var stringIDWithoutInfix = stringIDWithoutPrefix.substring(stringInfix.length + "SPAJProposal".length, stringIDWithoutPrefix.length - 1);
+				
+				for (var j = 0; j < arraySPAJProposalTableHeader.length; j++)
+				{
+					$(stringTableJQueryID + " tbody tr").each(function(indexRow)
+					{
+						var stringRowJavaScriptID = $(this).attr("id");
+						var stringRowJQueryID = stringKres + stringRowJavaScriptID;
+						var stringCellJavaScriptID = stringCellPrefix + stringInfix + "SPAJProposal" + arraySPAJProposalTableHeader[j];
+						var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
+						var stringCellSuffix = stringCellJavaScriptID;
+						
+						if (stringIDWithoutInfix == arraySPAJProposalTableHeader[j])
+						{
+							if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
+							{
+								$(stringCellJQueryID).append(stringValue);
+
+								// FOR NUMBER
+
+								numberGenerator(stringInfix + "SPAJProposal", indexRow);
+
+								return false;
+							}
+							else
+							{
+
+							}
+						}
+						else
+						{
+
+						}
+					});
+				}
 				
 				setTextPDF(stringKey, stringValue);        
 			}
@@ -2221,6 +2244,57 @@ function getFromDatabase(objectContent, stringPageType)
 				else
 				{
 				
+				}
+				
+				// FOR TABLE SPAJ PROPOSAL
+				
+				var stringInfix;
+				
+				if (stringIndicatorPrefix == stringIndicatorPolicyHolder)
+				{
+					stringTableJQueryID = stringKres + "TablePolicyHolderSPAJProposal";
+					stringInfix = stringPolicyHolderPrefix;
+				}
+				else
+				{
+					stringTableJQueryID = stringKres + "TableProspectiveInsuredSPAJProposal";
+					stringInfix = stringProspectiveInsuredPrefix;
+				}
+				
+				var stringIDWithoutInfix = stringIDWithoutPrefix.substring(stringInfix.length + "SPAJProposal".length, stringIDWithoutPrefix.length - 1);
+				
+				for (var j = 0; j < arraySPAJProposalTableHeader.length; j++)
+				{
+					$(stringTableJQueryID + " tbody tr").each(function(indexRow)
+					{
+						var stringRowJavaScriptID = $(this).attr("id");
+						var stringRowJQueryID = stringKres + stringRowJavaScriptID;
+						var stringCellJavaScriptID = stringCellPrefix + stringInfix + "SPAJProposal" + arraySPAJProposalTableHeader[j];
+						var stringCellJQueryID = stringKres + stringCellJavaScriptID + indexRow;
+						var stringCellSuffix = stringCellJavaScriptID;
+						
+						if (stringIDWithoutInfix == arraySPAJProposalTableHeader[j])
+						{
+							if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
+							{
+								$(stringCellJQueryID).append(stringValue);
+
+								// FOR NUMBER
+
+								numberGenerator(stringInfix + "SPAJProposal", indexRow);
+
+								return false;
+							}
+							else
+							{
+
+							}
+						}
+						else
+						{
+
+						}
+					});
 				}
 				
                 setDatePDF(stringKey, stringValue);
