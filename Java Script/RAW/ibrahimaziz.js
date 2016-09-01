@@ -2178,7 +2178,8 @@ function getFromDatabase(objectContent, stringPageType)
 	else
 	{
 		if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
-		{				
+		{
+			alert("initial : " + intSharePercentage);
 			arrayBeneficiariesList = objectContent;
 			tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 
@@ -2188,13 +2189,15 @@ function getFromDatabase(objectContent, stringPageType)
 
 				if (stringIndicatorShare == "Share")
 				{
-					intSharePercentage += parseInt(arrayBeneficiariesList[j].Value, 10);							
+					intSharePercentage += parseInt(arrayBeneficiariesList[j].Value, 10);
+					alert("cumulative : " + intSharePercentage);
 				}
 				else
 				{
 
 				}
-			}				
+			}
+			
 			setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);				
 		}
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
