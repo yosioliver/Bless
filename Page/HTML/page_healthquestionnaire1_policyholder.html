@@ -56,6 +56,8 @@
       
       	buttonPopUpGeneralGenerator();
       	buttonPopUpHealthGenerator();
+      	buttonPopUpSPAJProposalGenerator();
+      	SPAJProposalGenerator("ButtonAddSPAJProposal");
       
       	$("#BoxDate").DateTimePicker(
       	{
@@ -421,6 +423,8 @@
                 <label class='RadioButton' for='RadioButtonPolicyHolderSPAJProposalNo'>Tidak</label>
               </div>
             </div>
+            <input class='ButtonPrimary' id='ButtonAddSPAJProposal' type='button' value='Add'>
+            <div id='SPAJProposalList'></div>
           </li>
           <hr>
           <li>
@@ -597,7 +601,7 @@
         </form>
       </section>
       <section class='PopUp' id='PopUpSPAJProposal'>
-        <form id='FormPopUpSPAJProposal'>
+        <form id='PopUpSPAJProposal'>
           <header>
             <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' type='button' value='Cancel'>
             <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>
@@ -609,7 +613,7 @@
             <label class='Wrap' for='TextPolicyNumber' id='LabelPolicyNumber'>Nomor Polix</label>
             <input class='Full Single' id='TextPolicyNumber' type='text'>
             <label class='Wrap' for='DatePublished' id='LabelDatePubliched'>Tanggal Diterbitkan</label>
-            <input class='Full Single' id='DatePublished' type='text'>
+            <input class='Full Single' data-field='date' id='DatePublished' type='text'>
             <label class='Wrap' for='TextBasicSumAssured' id='LabelBasicSumAssured'>Uang Pertanggungan</label>
             <input class='Full Single' id='TextBasicSumAssured' type='text'>
             <label class='Wrap' for='TextDecision' id='LabelDecision'>Hasil Keputusan</label>

@@ -6,7 +6,7 @@
 - urlJavaScript = '../../Java Script/Minimized/'
 - urlResource = '../Resource/Icon/'
 - urlCSSGeneralPrefix = 'bless'
-- urlCSSSectionPrefix = 'healthquestionnairepdf'
+- urlCSSSectionPrefix = 'healthquestionnaire'
 
 -# CONTENT
 
@@ -49,6 +49,7 @@
 %link{ :id => "cssfontfamily", :href => "#{urlCSS}#{urlCSSSectionPrefix}-fontfamily-bpreplay.css", :rel => "stylesheet", :type => "text/css" }
 %link{ :id => "csstheme", :href => "#{urlCSS}#{urlCSSSectionPrefix}-theme-turqoise-svg.css", :rel => "stylesheet", :type => "text/css" }
 / %link{ :id => "cssresponsive", :href => "#{urlCSS}#{urlCSSSectionPrefix}-responsive-general.css", :rel => "stylesheet", :type => "text/css" }
+%link{ :id => "cssresponsive", :href => "#{urlJavaScript}DateTimePicker.min.css", :rel => "stylesheet", :type => "text/css" }
 
 / JAVA SCRIPT
 
@@ -56,6 +57,9 @@
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery-1.11.1.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery-migrate-1.2.1.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ibrahimaziz.min.js" }
+%script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker.min.js" }
+%script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker-i18n.js" }
+%script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker_IOS_fix.js" }
 :javascript
     var stringPageTypeCurrent = stringPageTypeForm;
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ios-integration.min.js" }

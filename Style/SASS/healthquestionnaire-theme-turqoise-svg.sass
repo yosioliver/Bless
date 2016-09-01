@@ -104,12 +104,12 @@ body
 	background-color: $theme_quinary_color
 
 main
-    background-color: $theme_quinary_color
+	background-color: $theme_quinary_color
 
 /* NEUTRALIZATION */
 
 h1, h2, h3, h4, h5, h6, p, mark, ol, ul, li
-    background-color: transparent
+	background-color: transparent
 
 
 // LAYOUT
@@ -120,91 +120,99 @@ h1, h2, h3, h4, h5, h6, p, mark, ol, ul, li
 /* HEADER */
 
 header
-    h1
-        color: $theme_senary_color
-    .Highlighted
-        background-color: $theme_quaternary_color
-        border-top-color: $theme_primary_color
-        border-bottom-color: $theme_primary_color
-    h2
-        color: $theme_septenary_color
-        border-bottom-color: $theme_primary_color
-    
+	h1
+		color: $theme_senary_color
+	.Highlighted
+		background-color: $theme_quaternary_color
+		border-top-color: $theme_primary_color
+		border-bottom-color: $theme_primary_color
+	h2
+		color: $theme_septenary_color
+		border-bottom-color: $theme_primary_color
+
 
 /* FORM */
-			
+
 main
-    form
-        label
-            color: $theme_senary_color
-        span
-            color: $theme_senary_color
-        table.BoxSquare
-            tbody
-                tr
-                    td
-                        border-color: $theme_senary_color
-        .BoxRound
-            border-color: $theme_senary_color
-        .Note
-            border-color: $theme_primary_color
-            h3
-                color: $theme_senary_color
-                background-color: transparent
-            ol, ul
-                li
-                    color: $theme_senary_color
-        .LineStraight, .LineDot
-            color: $theme_senary_color
-            border-color: $theme_senary_color
-    .Container
-        border-color: $theme_primary_color
-    hr
-        border-color: $theme_primary_color
+	form
+		label
+			color: $theme_senary_color
+		span
+			color: $theme_senary_color
+		table.BoxSquare
+			tbody
+				tr
+					td
+						border-color: $theme_senary_color
+		.BoxRound
+			border-color: $theme_senary_color
+		.Note
+			border-color: $theme_primary_color
+			h3
+				color: $theme_senary_color
+				background-color: transparent
+			ol, ul
+				li
+					color: $theme_senary_color
+		.LineStraight, .LineDot
+			color: $theme_senary_color
+			border-color: $theme_senary_color
+	.Container
+		border-color: $theme_primary_color
+	hr
+		border-color: $theme_primary_color
 
 
 /* POP UP */
 
 main
-    section
-        background-color: rgba($theme_senary_red, $theme_senary_green, $theme_senary_blue, 0.75)
-        form
-            background-color: $theme_quinary_color
-            header
-                background-color: $theme_quaternary_color
+	section
+		background-color: rgba($theme_senary_red, $theme_senary_green, $theme_senary_blue, 0.75)
+		form
+			background-color: $theme_quinary_color
+			header
+				background-color: $theme_quaternary_color
 
-        
+
 /* INPUT */
 
 input[type="text"]
-    border-color: $theme_primary_color
-    color: $theme_senary_color
+	border-color: $theme_primary_color
+	color: $theme_senary_color
 
 .RadioButton
-    .Separator
-        background-color: $theme_primary_color
-    label.RadioButton
-        background-color: transparent
-        color: $theme_primary_color
+	.Separator
+		background-color: $theme_primary_color
+	label.RadioButton
+		background-color: transparent
+		color: $theme_primary_color
 
 .RadioButton input[type="radio"]:checked + label.RadioButton
-    background-color: $theme_primary_color
-    color: $theme_quaternary_color
-    
+	background-color: $theme_primary_color
+	color: $theme_quaternary_color
+
 
 /* NAVIGATION */
 
 nav
-    a
-        color: $theme_primary_color
-        background-color: transparent
-    a.Selected
-        color: $theme_quinary_color
-        background-color: $theme_primary_color
+	a
+		color: $theme_primary_color
+		background-color: transparent
+	a.Selected
+		color: $theme_quinary_color
+		background-color: $theme_primary_color
 
-    
+
 /* BUTTON */
 
-.ButtonPrimary, .ButtonPreview
-    background-color: transparent
-    color: $theme_primary_color
+.ButtonPrimary
+	background-color: $theme_primary_color
+	color: $theme_quinary_color
+
+.ButtonPreview, .ButtonView
+	background-color: transparent
+	color: $theme_primary_color
+
+.ButtonDelete
+	background-color: transparent
+	color: $theme_fail_color
