@@ -1920,7 +1920,7 @@ function getFromDatabase(objectContent, stringPageType)
 				
 				// FOR TABLE SPAJ PROPOSAL
 				
-				for (var j = 0; j < arraySPAJPrposalTableHeader.length; j++)
+				for (var j = 0; j < arraySPAJProposalTableHeader.length; j++)
 				{
 					if (stringKey.substring(stringKey.length - arraySPAJProposalTableHeader[j].length, stringKey.length) == arraySPAJProposalTableHeader[j])
 					{
