@@ -1,0 +1,158 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life -  Questionnaire Menyelam Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER INDUSTRI PERTAMBANGAN, PERMINYAKAN, DAN GAS
+	
+		/ MAIN
+
+		%main
+			%form#ActivityQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.4 INDUSTRI PERTAMBANGAN, PERMINYAKAN, DAN GAS
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 6. Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator) 
+				%br
+				%input#TextPolicyHolderJabatanAnda.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 2. Jika tidak termasuk dalam daftar di atas, mohon dijelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut.
+				%br
+				%input#TextPolicyHolderJabatanDanRincianPekerjaan.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 3. Sudah berapa lama Anda bekerja dalam bidang Pertambangan/Perminyakkan/Gas?
+				%br
+				%input#TextPolicyHolderBerapaLamaBekerja.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 4. Mohon dijelaskan berapa persen pekerjaan Anda yang bersifat manual atau fisik dari total pekerjaan Anda serta uraian pekerjaan Anda sehari-hari ?
+				%br
+				%input#TextPolicyHolderJelaskanPersenPekerjaan.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 5. Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining? Mohon jelaskan.
+				%br
+				%input#TextPolicyHolderSertaDalamAktifitasTambangTerbuka.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 6. Dimana lokasi Anda bekerja? (Sebutkan nama lokasi dan daerah/ provinsinya)
+				%br
+				%input#TextPolicyHolderLokasiBekerja.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 7. Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut: 
+				%br
+				%label.Medium.Single.Item a. Apakah lokasi tersebut ada di darat atau di lepas pantai? 
+				%br
+				%input#TextPolicyHolderLokasiTersebut.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%label.Medium.Single.Item b. Bila di darat apakah di permukaan tanah atau di bawah tanah? 
+				%br
+				%input#TextPolicyHolderDaratDiPermukaanBawahTanah.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%label.Medium.Single.Item     Jika di bawah tanah, sebutkan kedalamannya  
+				%br
+				%input#TextPolicyHolderSebutkanKedalaman.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				
+				%label#Wrap.Single.PositionerLeft c. Apakah Anda kadang-kadang juga bertugas ke lokasi sebagaimana tersebut di atas?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderBekerjaLokasiTersebutYes{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaLokasiTersebutChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaLokasiTersebutYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderBekerjaLokasiTersebutNo{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaLokasiTersebutChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaLokasiTersebutNo" } Tidak
+				%br
+				%input#TextPolicyHolderMengalamiKecelakaan.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "berapa frekuensinya dalam 1 (satu) tahun berada di lokasi tersebut dan berapa lama?"}
+				%br
+				
+				%label#Wrap.Single.PositionerLeft d. Apakah dalam bekerja Anda menggunakan bahan peledak?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakYes{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakNo{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakNo" } Tidak
+				
+				%br
+				
+				%label#Wrap.Single.PositionerLeft e. Apakah Anda melakukan tugas penyelaman?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderTugasPenyelamanYes{ :type => "radio", :name => "RadioButtonPolicyHolderTugasPenyelamanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasPenyelamanYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderTugasPenyelamanNo{ :type => "radio", :name => "RadioButtonPolicyHolderTugasPenyelamanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasPenyelamanNo" } Tidak
+				%br
+				%input#TextPolicyHolderTugasPenyelaman.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "mohon mengisi formulir kuesioner menyelam"}
+				
+				%br
+				
+				%label#Wrap.Single.PositionerLeft f. Apakah Anda bertugas di ketinggian tertentu?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderTugasDiKetinggianTertentuYes{ :type => "radio", :name => "RadioButtonPolicyHolderTugasDiKetinggianTertentuChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasDiKetinggianTertentuYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderTugasDiKetinggianTertentuNo{ :type => "radio", :name => "RadioButtonPolicyHolderTugasDiKetinggianTertentuChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasDiKetinggianTertentuNo" } Tidak
+				%br
+				%input#TextPolicyHolderTugasDiKetinggianTertentu.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "mohon jelaskan berapa meter di atas permukaan laut?"}
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 8. Transportasi apa yang Anda gunakan menuju lokasi kerja? Berapa lama waktu yang Anda perlukan untuk menuju lokasi? (Jika menggunakan helikopter, mohon dijelaskan jumlah jam terbang per tahun) dan mengisi formulir kuesioner penerbangan.
+				%br
+				%input#TextPolicyHolderTransportasiGunaMenujuLokasiKerja.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 9. Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda? 
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaYes{ :type => "radio", :name => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaNo{ :type => "radio", :name => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaNo" } Tidak
+				%br
+				%input#TextPolicyHolderMengalamiKecelakaanGangguanKerja.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami?"}
+				
+				%br
+				%hr
+				
+				%h2 PERNYATAAN DAN KUASA
+				%ol
+					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
