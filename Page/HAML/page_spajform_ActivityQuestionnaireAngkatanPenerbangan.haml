@@ -1,0 +1,226 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 6c Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+	
+		%header
+		 									
+		
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER PENERBANGAN							 
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.4 ANGKATAN BERSENJATA / POLISI 
+				%hr
+				%br
+			
+				%div.ContainerFit
+					%label.medium.Single.Item 1. Apakah Anda terbang sebagai pilot atau navigator?
+				%input#TextPolicyHolderTerbangSebagaiPilotAtauNavigator.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.medium.Single.Item 2.Apakah Anda terbang sebagai penumpang?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyterbangSebagaiPenumpangYes{ :type => "radio", :name => "RadioButtonPolicyterbangSebagaiPenumpangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyterbangSebagaiPenumpangYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyterbangSebagaiPenumpangNo{ :type => "radio", :name => "RadioButtonPolicyterbangSebagaiPenumpangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyterbangSebagaiPenumpangNo" } Tidak
+				%br
+				%hr
+				
+				%label.medium.Single.Item 3.Apakah Anda memiliki pesawat sendiri?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyPesawatSendiriYes{ :type => "radio", :name => "RadioButtonPolicyPesawatSendiriChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyPesawatSendiriYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyPesawatSendiriNo{ :type => "radio", :name => "RadioButtonPolicyPesawatSendiriChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyPesawatSendiriNo" } Tidak
+				%br
+				%hr
+				
+				%div.ContainerFit
+					%label.medium.Single.Item 4. Sebutkan jenis pesawat apakah yang Anda terbangkan? 
+				%input#TextPolicyHolderJenisPesawatDiterbangkan.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.medium.Single.Item  5. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
+				%div.ContainerFit
+					%label.Short.Single.Item1.Center Lisensi/ Sertifikat	  
+					%label.Short.Single.Item1.Center Tanggal Perolehan
+					%label.Short.Single.Item1.Center Tanggal Perpanjangan
+				
+				%div.ContainerFit
+					%input#TextPolicyHolderLisensiSertifikat.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderTanggalPerolehan.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderTanggalPerpanjangan.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+				%div.ContainerFit
+					%input#TextPolicyHolderLisensiSertifikat1.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderTanggalPerolehan1.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderTanggalPerpanjangan1.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+				%hr
+				
+				%div.ContainerFit
+					%label.medium.Single.Item 6. Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
+				%input#TextPolicyHolderberencana.Full.Single.Item1.Margin{ :type =>"text", :placeholder => "mohon jelaskan secara rinci" }
+				%br
+				%hr
+				
+				%div.ContainerFit
+					%label.medium.Single.Item 7.Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
+				%input#TextPolicyHolderAsosiasiKegiatanMenerbang.Full.Single.Item1.Margin{ :type =>"text", :placeholder => "mohon jelaskan secara rinci" }
+				%br
+				%hr
+				%label.medium.Single.Item  8. Berapa sering dan jumlah jam terbang Anda:
+				%br
+				%div.ContainerFit
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin
+					%label.Short.Single.Item1.Center Tujuan	  
+					%label.Short.Single.Item1.Center Jumlah Penerbangan
+					%label.Short.Single.Item1.Center Jumlah Jam Terbang
+				%br	
+				%div.ContainerFit
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin 
+					%label.Short.Single.Item1.Center 	  
+					%label.Short.Single.Item1.Center Total   |   12 buln   |   12 bulan y.a.d
+					%label.Short.Single.Item1.Center Total   |   12 buln   |   12 bulan y.a.d
+				%br
+				
+				%div.ContainerFit 
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan berjadwal
+					%input#TextPolicyHolderNarkotikaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaDose.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaFrom.Short.Single.Item1.Margin{ :type => "text" }
+				%br	
+				
+				%div.ContainerFit 
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan tdk 
+					%input#TextPolicyHolderNarkotikaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaDose.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaFrom.Short.Single.Item1.Margin{ :type => "text" }
+				%br	
+				
+				%div.ContainerFit 
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan komersial 
+					%input#TextPolicyHolderNarkotikaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaDose.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaFrom.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+				
+				%div.ContainerFit 
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan Pribadi 
+					%input#TextPolicyHolderNarkotikaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaDose.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaFrom.Short.Single.Item1.Margin{ :type => "text" }
+				%br	
+				
+				%div.ContainerFit 
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Helikopter 
+					%input#TextPolicyHolderNarkotikaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaDose.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaFrom.Short.Single.Item1.Margin{ :type => "text" }
+				%br	
+					
+				%div.ContainerFit 
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Terbang layang 
+					%input#TextPolicyHolderNarkotikaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaDose.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaFrom.Short.Single.Item1.Margin{ :type => "text" }
+				%br	
+				
+				%div.ContainerFit 
+					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Lainnya 
+					%input#TextPolicyHolderNarkotikaFrequency.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaDose.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolderNarkotikaFrom.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+				%hr
+				
+				
+				%label.medium.Single.Item 9. Darimana Anda terbang?
+				%input#TextPolicyHolderDarimanaDiterbangkan.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.medium.Single.Item 10. Apakah Anda terbang dari bandara control?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyBandaraControlYes{ :type => "radio", :name => "RadioButtonPolicyBandaraControlChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyBandaraControlYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyBandaraControlNo{ :type => "radio", :name => "RadioButtonPolicyBandaraControlChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyBandaraControlNo" } Tidak
+				%br
+				%input#TextPolicyHolderRadioButtonPolicyBandaraControl.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.medium.Single.Item 11. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyKecelakaanTerbangYes{ :type => "radio", :name => "RadioButtonPolicyKecelakaanTerbangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyKecelakaanTerbangYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyKecelakaanTerbangNo{ :type => "radio", :name => "RadioButtonPolicyKecelakaanTerbangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyKecelakaanTerbangNo" } Tidak
+				
+				%input#TextPolicyHolderKecelakaanTerbang.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.medium.Single.Item 12. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicySuratKeteranganMedisYes{ :type => "radio", :name => "RadioButtonPolicySuratKeteranganMedisChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicySuratKeteranganMedisYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicySuratKeteranganMedisNo{ :type => "radio", :name => "RadioButtonPolicySuratKeteranganMedisChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicySuratKeteranganMedisNo" } Tidak
+				
+				%input#TextPolicyHolderKecelakaanTerbang.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+				%input#TextPolicyHolderInformasiKondisiKesehatan.Full.Single.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%h2 PERNYATAAN DAN KUASA
+				%ol
+					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+				
+				
+				
+					
+				
+				
+					
+				

@@ -6,7 +6,7 @@
 
 	%head
 		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life - BLESS, Health Questionnaire 1 Form
+		%title BCA Life - Form 6e
 
 		/ JQUERY
 
@@ -22,6 +22,12 @@
 	%body#Main
 
 		/ MAIN
+		
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER GANGGUAN PENCERNAAN							
+
 
 		%main
 			%form#HealthQuestionnaireMain

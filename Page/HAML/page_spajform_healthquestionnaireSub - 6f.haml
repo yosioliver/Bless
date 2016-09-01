@@ -1,0 +1,58 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 6f(Sub) Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 Pertanyaan Kesehatan
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.6f Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
+				%br
+				%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6f.html" } KUESIONER EPILEPSI DAN KEJANG
+				%hr
+				%label.Medium.Single silahkan memberikan rincian lebih lanjut
+				%br
+				%input#TextPolicyHolderKuesionerEpilepsiDanKejangSub.Full.Multi.Item.Margin{ :type =>"text" }
+				%label.Medium.Single (maksimum 250 karakter)
+				
+
+				
+								
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+			

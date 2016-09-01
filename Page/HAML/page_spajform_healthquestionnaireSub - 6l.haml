@@ -1,0 +1,58 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 6l(Sub) Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 Pertanyaan Kesehatan
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.6l Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
+				%br
+				%a.NavigationPopUp{ :href => "../../Page/HTML/.html" } KUESIONER TUMOR
+				%hr
+				%label.Medium.Single silahkan memberikan rincian lebih lanjut
+				%br
+				%input#TextPolicyHolderKuesionerTumorSub.Full.Multi.Item.Margin{ :type =>"text" }
+				%label.Medium.Single (maksimum 250 karakter)
+				
+
+				
+								
+				
+				
+				
+				
+				
+				
+				
+					
+					
+				
+				
+				
+			
