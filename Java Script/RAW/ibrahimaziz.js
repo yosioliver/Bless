@@ -1195,8 +1195,6 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + intBeneficiariesListID;
 
-						alert(stringInputJavaScriptID + " " + validateSelectGeneral(stringInputJQueryID));
-						
 						if (validateSelectGeneral(stringInputJQueryID) == false)
 						{
 							validationMessage("Harap lengkapi form terlebih dahulu !.", null);
@@ -1217,8 +1215,8 @@ function buttonPopUpBeneficiariesListGenerator()
 						stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixRadioButton.length, stringInputName.length);
 
 						stringKey = stringPrefixRadioButton + stringBeneficiariesListInfix + stringInputNameWithoutPrefix + intBeneficiariesListID;
-
-						if (validateRadioButtonGeneral(stringInputJQueryID) == false)
+						
+						if (validateRadioButtonGeneral(stringInputName) == false)
 						{
 							validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 							return false;
