@@ -1,0 +1,203 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life -  Questionnaire Menyelam Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER MENYELAM
+	
+		/ MAIN
+
+		%main
+			%form#ActivityQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.4 MENYELAM
+				%br
+				%hr
+				%div.RadioButton.PositionerLeft
+					%label.medium.Single.Item 1. Apakah jenis menyelam yang Anda ikuti saat ini?
+					%br
+					%input#RadioButtonPolicyHolderSkinDiving{ :type => "radio", :name => "RadioButtonPolicyJenisMenyelam", :value => "Skin Diving"}
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderSkinDiving" } Skin Diving
+					%div.Separator
+					%input#RadioButtonPolicyHolderSCUBADiving{ :type => "radio", :name => "RadioButtonPolicyJenisMenyelam", :value => "SCUBA Diving"}
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderSCUBADiving" } SCUBA Diving
+					%div.Separator
+					%input#RadioButtonPolicyHolderFreeDiving{ :type => "radio", :name => "RadioButtonPolicyJenisMenyelam", :value => "Skin Diving"}
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderFreeDiving" } FREE Diving
+					%div.Separator
+				%br
+				%hr
+				
+				%div.Containerfit
+					%label#LabelPolicyHolderLisensiMiliki.Long.Single.Item3.Margin 2. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki.
+				%br
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin Lisensi/ Sertifikat
+					%label.Short.Single.Item1.Center.Margin Tanggal Perolehan
+				%div.ContainerFit
+					%input#TextPolicyHolderLisensi1.Short.Single.Item1.Margin{ :type => "text"}
+					%input#TextPolicyHolderTanggalPerolehan1.Short.Single.Item1.Margin{ :type => "text"}
+				%div.ContainerFit
+					%input#TextPolicyHolderLisensi2.Short.Single.Item1.Margin{ :type => "text"}
+					%input#TextPolicyHolderTanggalPerolehan2.Short.Single.Item1.Margin{ :type => "text"}
+				%br
+				%hr
+				
+				%label.medium.Single.Item 3. Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan:
+				%br
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin{ :Style => "opacity: 0"}
+					%label.Short.Single.Item1.Center.Margin 12 Bulan terakhir
+					%label.Short.Single.Item1.Center.Margin Tanggal Perolehan
+				%div.ContainerFit
+					%label.Short.Single.Item.Margin Lokasi
+					%input#TextPolicyHolderLokasi12Bulan.Short.Single.Item1.Margin{ :type => "text"}
+					%input#TextPolicyHolderLokasiTanggalPerolehan.Short.Single.Item1.Margin{ :type => "text"}
+				%div.ContainerFit
+					%label.Short.Single.Item.Margin Kedalaman rata-rata
+					%input#TextPolicyHolderKedalamanRata12Bulan.Short.Single.Item1.Margin{ :type => "text"}
+					%input#TextPolicyHolderKedalamanRataTanggalPerolehan.Short.Single.Item1.Margin{ :type => "text"}
+				%div.ContainerFit
+					%label.Short.Single.Item.Margin Kedalaman maksimum
+					%input#TextPolicyHolderKedalamanMaksimum12Bulan.Short.Single.Item1.Margin{ :type => "text"}
+					%input#TextPolicyHolderKedalamanMaksimumTanggalPerolehan.Short.Single.Item1.Margin{ :type => "text"}
+				%div.ContainerFit
+					%label.Short.Single.Item.Margin Jumlah penyelaman
+					%input#TextPolicyHolderJumlahPenyelaman12Bulan.Short.Single.Item1.Margin{ :type => "text"}
+					%input#TextPolicyHolderJumlahPenyelamanTanggalPerolehan.Short.Single.Item1.Margin{ :type => "text"}
+				%br
+				%hr
+				
+				%label.medium.Single.Item 4. Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut:
+				%br
+				
+				%label#Wrap.Single.PositionerLeft Menyelam seorang diri
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMeyelamSeorangYes{ :type => "radio", :name => "RadioButtonPolicyMeyelamSeorangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamSeorangYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMeyelamSeorangNo{ :type => "radio", :name => "RadioButtonPolicyMeyelamSeorangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamSeorangNo" } Tidak
+				
+				%br
+				%label#Wrap.Single.PositionerLeft Penyelaman di gua
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMeyelamDiguaYes{ :type => "radio", :name => "RadioButtonPolicyMeyelamDiguaChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamDiguaYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMeyelamDiguaNo{ :type => "radio", :name => "RadioButtonPolicyMeyelamDiguaChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamDiguaNo" } Tidak
+				
+				%br
+				%label#Wrap.Single.PositionerLeft Eksplorasi Internal kecelakaan
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyEksplorasiInternalkecelakaanYes{ :type => "radio", :name => "RadioButtonPolicyEksplorasiInternalkecelakaanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyEksplorasiInternalkecelakaanYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyEksplorasiInternalkecelakaanNo{ :type => "radio", :name => "RadioButtonPolicyEksplorasiInternalkecelakaanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyEksplorasiInternalkecelakaanNo" } Tidak
+				
+				%br
+				%label#Wrap.Single.PositionerLeft Menyelam dan menyelamatkan orang di laut
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMeyelamDanSelamatOrangYes{ :type => "radio", :name => "RadioButtonPolicyMeyelamDanSelamatOrangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamDanSelamatOrangYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMeyelamDanSelamatOrangNo{ :type => "radio", :name => "RadioButtonPolicyMeyelamDanSelamatOrangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamDanSelamatOrangNo" } Tidak
+					
+				%br
+				%label#Wrap.Single.PositionerLeft Ijin penyelamatan atau penyelaman
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyIjinPenyelamatanYes{ :type => "radio", :name => "RadioButtonPolicyIjinPenyelamatanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyIjinPenyelamatanYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyIjinPenyelamatanNo{ :type => "radio", :name => "RadioButtonPolicyIjinPenyelamatanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyIjinPenyelamatanNo" } Tidak
+					
+				%br
+				%label#Wrap.Single.PositionerLeft Penggunaan bahan peledak di laut
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyPenggunaanBahanPeledakYes{ :type => "radio", :name => "RadioButtonPolicyPenggunaanBahanPeledakChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyPenggunaanBahanPeledakYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyPenggunaanBahanPeledakNo{ :type => "radio", :name => "RadioButtonPolicyPenggunaanBahanPeledakChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyPenggunaanBahanPeledakNo" } Tidak
+					
+				%br
+				%label#Wrap.Single.PositionerLeft Menyelam untuk mencari abalone
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMeyelamCariAbaloneYes{ :type => "radio", :name => "RadioButtonPolicyMeyelamCariAbaloneChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamCariAbaloneYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMeyelamCariAbaloneNo{ :type => "radio", :name => "RadioButtonPolicyMeyelamCariAbaloneChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamCariAbaloneNo" } Tidak
+					
+				%br
+				%label#Wrap.Single.PositionerLeft Meyelam dengan peralatan selain peralatan SCUBA biasa 
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMeyelamDenganPeralatanYes{ :type => "radio", :name => "RadioButtonPolicyMeyelamDenganPeralatanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamDenganPeralatanYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMeyelamDenganPeralatanNo{ :type => "radio", :name => "RadioButtonPolicyMeyelamDenganPeralatanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamDenganPeralatanNo" } Tidak
+				
+				%br
+				%label#Wrap.Single.PositionerLeft Menyelam dengan kedalaman lebih dari 45 meter (150 kaki)
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMeyelamKedalaman45Yes{ :type => "radio", :name => "RadioButtonPolicyMeyelamKedalaman45Change", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamKedalaman45Yes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMeyelamKedalaman45No{ :type => "radio", :name => "RadioButtonPolicyMeyelamKedalaman45Change", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMeyelamKedalaman45No" } Tidak
+				%br
+				%label.medium.Single.Item Jika menjawab ‘ya’ untuk pernyataan di atas, mohon menjelaskan lokasi, kapan, frekuensi, dan tujuan di kemudian hari:
+				%br    
+				%input#TextPolicyHolderAlasanJikaJawabYa.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 5. Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMengalamiKecelakaanYes{ :type => "radio", :name => "RadioButtonPolicyMengalamiKecelakaanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMengalamiKecelakaanYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMengalamiKecelakaanNo{ :type => "radio", :name => "RadioButtonPolicyMengalamiKecelakaanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMengalamiKecelakaanNo" } Tidak
+				%br
+				%input#TextPolicyHolderMengalamiKecelakaan.Full.Multi.Item1.Margin{ :type =>"text" , :placeholder => "Mohon memberikan rincian termasuk tanggal:"}
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 6. Mohon memberikan informasi tambahan yang menurut Anda penting
+				%br
+				%input#TextPolicyHolderInformasiTambahan.Full.Multi.Item1.Margin{ :type =>"text" , :placeholder => "Mohon memberikan rincian termasuk tanggal:"}
+				%br
+				%hr
+				
+				%h2 PERNYATAAN DAN KUASA
+				%ol
+					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
