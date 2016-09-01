@@ -1042,13 +1042,20 @@ function buttonPopUpHealthGenerator()
             }
         });
 
-        $(stringPopUpJQueryID).css("display", "none");
+		if (stateValidation == false)
+		{
+			
+		}
+		else
+		{
+			$(stringPopUpJQueryID).css("display", "none");
 
-        $(stringPopUpJQueryID + " form input[type=text]").each(function()
-        {
-            $(this).val("");
-        });
-
+			$(stringPopUpJQueryID + " form input[type=text]").each(function()
+			{
+				$(this).val("");
+			});
+		}
+        
         var stringObjectPreview = "";
 
         for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
@@ -1223,37 +1230,44 @@ function buttonPopUpBeneficiariesListGenerator()
 						}
 					});
 
-					intBeneficiariesListID ++;
-					intSharePercentage = parseInt(intSharePercentage, 10) + parseInt(getTextForm(stringSharePercentageJavaScriptID), 10);
-					setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
-					
-					$(stringPopUpJQueryID).css("display", "none");
-
-					/* $(stringPopUpJQueryID + " form input[type=text]").each(function()
+					if (stateValidation == false)
 					{
-						$(this).val("");
-					});
-					
-					$(stringPopUpJQueryID + " form select").each(function()
-					{
-						$(stringKres + $(this).attr("id") + " :nth-child(1)").prop("selected", true);
-					});
-					
-					$(stringPopUpJQueryID + " form input:radio").each(function()
-					{
-						$(this).prop("checked", false);
-					}); */
-
-					tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
-
-					var stringObjectPreview = "";
-
-					for (var i = 0; i < arrayBeneficiariesList.length; i++)
-					{
-						stringObjectPreview += "key : " + arrayBeneficiariesList[i].elementID + "\nvalue : " + arrayBeneficiariesList[i].Value + "\n";
+						
 					}
+					else
+					{
+						intBeneficiariesListID ++;
+						intSharePercentage = parseInt(intSharePercentage, 10) + parseInt(getTextForm(stringSharePercentageJavaScriptID), 10);
+						setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
 
-					alert(stringObjectPreview);
+						$(stringPopUpJQueryID).css("display", "none");
+
+						/* $(stringPopUpJQueryID + " form input[type=text]").each(function()
+						{
+							$(this).val("");
+						});
+
+						$(stringPopUpJQueryID + " form select").each(function()
+						{
+							$(stringKres + $(this).attr("id") + " :nth-child(1)").prop("selected", true);
+						});
+
+						$(stringPopUpJQueryID + " form input:radio").each(function()
+						{
+							$(this).prop("checked", false);
+						}); */
+
+						tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
+
+						var stringObjectPreview = "";
+
+						for (var i = 0; i < arrayBeneficiariesList.length; i++)
+						{
+							stringObjectPreview += "key : " + arrayBeneficiariesList[i].elementID + "\nvalue : " + arrayBeneficiariesList[i].Value + "\n";
+						}
+
+						alert(stringObjectPreview);
+					}
 				}
 				else
 				{
@@ -1313,25 +1327,32 @@ function buttonPopUpSPAJProposalGenerator()
 				arrayAdd(arrayHealthQuestionnaire, stringKey, stringValue);
 			}
 		});
-					
-		$(stringPopUpJQueryID).css("display", "none");
-		intSPAJProposalID++;
 		
-		$(stringPopUpJQueryID + " form input[type=text]").each(function()
+		if (stateValidation == false)
 		{
-			$(this).val("");
-		});
-		
-		tableSPAJProposalGenerator(stringTriggerInfix, "SPAJProposalList", arrayHealthQuestionnaire);
-
-		var stringObjectPreview = "";
-
-		for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
-		{
-			stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
+			
 		}
+		else
+		{
+			$(stringPopUpJQueryID).css("display", "none");
+			intSPAJProposalID++;
 
-		alert(stringObjectPreview);
+			$(stringPopUpJQueryID + " form input[type=text]").each(function()
+			{
+				$(this).val("");
+			});
+
+			tableSPAJProposalGenerator(stringTriggerInfix, "SPAJProposalList", arrayHealthQuestionnaire);
+
+			var stringObjectPreview = "";
+
+			for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
+			{
+				stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
+			}
+
+			alert(stringObjectPreview);
+		}
     });
 }
 
@@ -2265,7 +2286,7 @@ function getFromDatabase(objectContent, stringPageType)
 				var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring(arrayBeneficiariesList[j].elementID.length - 5, arrayBeneficiariesList[j].elementID.length);										
 				alert(arrayBeneficiariesList[j].elementID + " " + stringIndicatorShare + " " + arrayBeneficiariesList[j].Value);
 				
-				if (stringIndicatorShare == "Share")
+				if (stringIndicatorShare == "ntage")
 				{
 					intSharePercentage = parseInt(arrayBeneficiariesList[j].Value, 10);
 				}
