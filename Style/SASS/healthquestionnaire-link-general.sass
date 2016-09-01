@@ -62,7 +62,7 @@ nav
 
 /* BUTTON BY TEXT */
 
-.ButtonPrimary, .ButtonSecondary, .ButtonPreview
+.ButtonPrimary, .ButtonSecondary, .ButtonPreview, .ButtonDelete, .ButtonView
 	padding-top: $button_padding_edge
 	padding-right: $button_padding_side
 	padding-left: $button_padding_side
@@ -72,6 +72,7 @@ nav
 	vertical-align: middle
 	border: none
     display: inline-block
+	+BorderRadius($general_borderradius_thick)
 	
 .ButtonPrimary:disabled
 	z-index: 2

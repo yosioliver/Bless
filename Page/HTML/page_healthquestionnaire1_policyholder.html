@@ -46,8 +46,6 @@
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
     <!-- JQUERY -->
     <script>
-	  var stringURL = "";	
-	
       $(document).ready(function()
       {				
       	// GENERATOR
@@ -58,6 +56,8 @@
       
       	buttonPopUpGeneralGenerator();
       	buttonPopUpHealthGenerator();
+      	buttonPopUpSPAJProposalGenerator();
+      	SPAJProposalGenerator("ButtonAddSPAJProposal");
       
       	$("#BoxDate").DateTimePicker(
       	{
@@ -70,18 +70,6 @@
       		savetoDB();
       	}); */								
       });
-	  
-	 function CheckRelationshipStatus(stringStatus)
-	 {				
-		if (stringStatus = "self")
-		{
-			stringURL = "";				
-		}
-		else
-		{
-			stringURL = "../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html";				
-		}
-	 }
     </script>
   </head>
   <!-- BODY -->
@@ -93,9 +81,9 @@
       <div class='Highlighted'>
         <label class='Medium Single'>Calon</label>
         <nav class='RadioButton' style='margin-left: 80px'>
-          <a class='Clear Selected' href='../../Page/HTML/page_healthquestionnaire1_policyholder.html'>Pemegang Polis</a>
+          <a class='Clear Selected' href=''>Pemegang Polis</a>
           <div class='Separator'></div>
-          <a class='Clear' href=stringURL>Tertanggung</a>
+          <a class='Clear' href=''>Tertanggung</a>
         </nav>
       </div>
       <h2>Pertanyaan Kesehatan</h2>
@@ -421,6 +409,8 @@
                 <label class='RadioButton' for='RadioButtonPolicyHolderSPAJProposalNo'>Tidak</label>
               </div>
             </div>
+            <input class='ButtonPrimary' id='ButtonAddSPAJProposal' type='button' value='Add'>
+            <div id='SPAJProposalList'></div>
           </li>
           <hr>
           <li>
@@ -597,7 +587,7 @@
         </form>
       </section>
       <section class='PopUp' id='PopUpSPAJProposal'>
-        <form id='FormPopUpSPAJProposal'>
+        <form id='PopUpSPAJProposal'>
           <header>
             <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' type='button' value='Cancel'>
             <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>

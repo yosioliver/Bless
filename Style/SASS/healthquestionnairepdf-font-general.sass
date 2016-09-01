@@ -4,16 +4,27 @@
 
 // IMPORT
 
-@import spajpdf-initialization-general
+@import healthquestionnairepdf-initialization-general
 
 
 /* HEADER */
 
 header
+	span.Header
+		font-size: $fontsize_header_header
+	span.Detail
+		font-size: $fontsize_header_detail
 	h1
 		margin-top: $general_space_small
 		margin-bottom: $general_space_small
-		font-size: $fontsize_paper_h1
+		padding-top: $general_space_medium
+		padding-bottom: $general_space_medium
+		font-size: $fontsize_header_h1
+		text-align: center
+		border-top-style: solid
+		border-top-width: $general_borderwidth_thin
+		border-bottom-style: solid
+		border-bottom-width: $general_borderwidth_thick
 
 
 /* FORM */
@@ -28,17 +39,6 @@ main
 			font-size: $fontsize_form_h2
 			text-align: center
 			vertical-align: midde
-		h3
-			margin-top: $general_space_tiny
-			margin-bottom: $general_space_tiny
-			padding-top: $header_padding_edge
-			padding-right: $general_space_tiny
-			padding-left: $general_space_tiny
-			padding-bottom: $header_padding_edge
-			font-size: $fontsize_form_h3
-			vertical-align: middle
-			display: inline-block
-			+BorderRadius($general_borderradius_thick)
 		label, span
 			font-size: $fontsize_form_labelgeneral
 			vertical-align: top

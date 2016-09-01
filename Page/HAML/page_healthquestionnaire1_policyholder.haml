@@ -21,6 +21,8 @@
 
 				buttonPopUpGeneralGenerator();
 				buttonPopUpHealthGenerator();
+				buttonPopUpSPAJProposalGenerator();
+				SPAJProposalGenerator("ButtonAddSPAJProposal");
 
 				$("#BoxDate").DateTimePicker(
 				{
@@ -289,6 +291,8 @@
 								%div.Separator | 
 								%input#RadioButtonPolicyHolderSPAJProposalNo{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", "data-popup-type" => "spajproposal" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderSPAJProposalNo" } Tidak
+						%input#ButtonAddSPAJProposal.ButtonPrimary{ :type => "button", :value => "Add" }
+						%div#SPAJProposalList
 					%hr
 					%li
 						%div.Container
@@ -390,9 +394,9 @@
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderNo" } Tidak
 					%hr
 			%section#PopUpGeneral.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaire_general.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_general.haml")).render
 			%section#PopUpHealth.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaire_health.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaire_spajproposal.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_spajproposal.haml")).render
 			%div#BoxDate
