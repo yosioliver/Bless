@@ -2456,14 +2456,21 @@ function getFromDatabase(objectContent, stringPageType)
 			
 		}
 		
-		var stringObjectPreview = "";
-
-		for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
+		if (arrayHealthQuestionnaire.length > 0)
 		{
-			stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
-		}
+			var stringObjectPreview = "";
 
-		alert(stringObjectPreview);
+			for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
+			{
+				stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
+			}
+
+			alert(stringObjectPreview);
+		}
+		else
+		{
+			
+		}
 	}
 }
 
