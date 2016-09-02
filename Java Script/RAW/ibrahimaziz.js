@@ -2383,8 +2383,9 @@ function getFromDatabase(objectContent, stringPageType)
 		}
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
+			alert("before : arrayHealthQuestionnaire : " + arrayHealthQuestionnaire.length + ", objectContent : " + objectContent.length);
 			arrayHealthQuestionnaire = objectContent;
-			
+			alert("before : arrayHealthQuestionnaire : " + arrayHealthQuestinnaire.length + ", object Content : " + objectContent.length);
 			if (arrayHealthQuestionnaire.length > 0)
 			{
 				if (stringPageInfixTypeCurrent == stringPolicyHolderPrefix)
@@ -2412,7 +2413,6 @@ function getFromDatabase(objectContent, stringPageType)
 					stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
 
 					stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
-					alert(stringTextJavaScriptID + " " + stringValue);
 
 					if (stringValue == null || stringValue == undefined)
 					{
@@ -2420,6 +2420,7 @@ function getFromDatabase(objectContent, stringPageType)
 					}
 					else
 					{
+						alert(stringTextJavaScriptID + " " + stringValue);
 						$(stringButtonPreviewJQueryID).css("display", "block");
 					}
 				});

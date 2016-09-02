@@ -14,11 +14,11 @@
 			6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 		%br
 		%div.RadioButton
-			%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6d.html" } KUESIONER NYERI DADA
+			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Nyeri Dada" }
 			%div.Separator
-			%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6d2.html" } KUESIONER TEKANAN DARAH TINGGI 
+			%input#ButtonHipertensi.ButtonPrimary{ :type => "button", :value => "Kuesioner Tekanan Darah Tinggi" }
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br
-		%input#TextPolicyHolderKuesionerNyeriDadaSub.Full.Multi.Item.Margin{ :type =>"text" }
+		%input#TextDetail.Full.Multi{ :type =>"text" }
 		%label.Medium.Single (maksimum 250 karakter)
