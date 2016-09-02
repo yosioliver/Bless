@@ -33,7 +33,7 @@
 				/* $("#MainForm #ButtonDone").click(function()
 				{
 					savetoDB();
-				}); */								
+				});	 */					
 			});
 			
 			function CheckRelationshipStatus(RealtionshipStatus)
@@ -58,7 +58,7 @@
 
 		%header#MainForm
 			%h1
-			/ %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
 
 			%div.Highlighted
 				%label.Medium.Single Calon
@@ -195,12 +195,12 @@
 									%label#LabelPolicyHolderCardiac.Item{ :for => "RadioButtonPolicyHolderCardiacYes" }
 										Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", "data-popup-type" => "PopUpChestPain" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", "data-popup-type" => "health" }
+										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", "data-popup-type" => "PopUpChestPain" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacNo" } Tidak
-								%input#ButtonPreviewPolicyHolderCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCardiac", "data-popup-type" => "health" }
+								%input#ButtonPreviewPolicyHolderCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCardiac", "data-popup-type" => "PopUpChestPain" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderDigest.Item{ :for => "RadioButtonPolicyHolderDigestYes" }
@@ -419,4 +419,6 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_spajproposal.haml")).render
+			%section#PopUpChestPain.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_chestpain.haml")).render
 			%div#BoxDate
