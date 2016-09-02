@@ -2405,6 +2405,7 @@ function getFromDatabase(objectContent, stringPageType)
 					stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
 
 					stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
+					alert(stringTextJavaScriptID + " " + stringValue);
 
 					if (stringValue == null || stringValue == undefined)
 					{
