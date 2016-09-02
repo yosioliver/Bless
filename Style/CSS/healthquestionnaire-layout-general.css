@@ -392,6 +392,14 @@ div.LongFix, div.LongFix {
   max-width: 450px;
 }
 
+/* MAIN */
+main form {
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+
 /* POP UP */
 main section.PopUp {
   position: fixed;
@@ -401,13 +409,15 @@ main section.PopUp {
   bottom: 0px;
   padding: 15px;
   display: none;
+  overflow: auto;
 }
 
-main section.PopUp form {
-  margin: 15px;
+main section.PopUp form.PopUp {
+  margin: 20px;
+  padding: 0px;
 }
 
-main section.PopUp form header {
+main section.PopUp form.PopUp header {
   margin: 0px;
   padding-top: 10px;
   padding-right: 15px;
@@ -415,12 +425,8 @@ main section.PopUp form header {
   padding-bottom: 10px;
 }
 
-main section.PopUp form fieldset {
+main section.PopUp form.PopUp fieldset {
   margin: 15px;
-}
-
-main form.SPAJPopUp {
-  padding: 0px;
 }
 
 /* CONDITION */
