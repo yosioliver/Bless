@@ -1,0 +1,24 @@
+%form#PopUpCardiac.PopUp
+
+	/ HEADER
+
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%h2 Pertanyaan Kesehatan
+
+	/ FIELDSET
+
+	%fieldset
+		%label#LabelDetail.Multi.Single
+			6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
+		%br
+		%div.RadioButton
+			%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6d.html" } KUESIONER NYERI DADA
+			%div.Separator
+			%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6d2.html" } KUESIONER TEKANAN DARAH TINGGI 
+		%hr
+		%label.Medium.Single silahkan memberikan rincian lebih lanjut
+		%br
+		%input#TextPolicyHolderKuesionerNyeriDadaSub.Full.Multi.Item.Margin{ :type =>"text" }
+		%label.Medium.Single (maksimum 250 karakter)

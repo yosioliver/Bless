@@ -148,14 +148,14 @@
 					%hr
 					%li
 						%div.Container
-							%label#RadioButtonPolicyHolderHealthDissorder.Item{ :for => "RadioButtonPolicyHolderMedicalTreatmentYes" }
+							%label#RadioButtonPolicyHolderHealthDissorder.Item{ :for => "RadioButtonPolicyHolderHealthDissorderYes" }
 								Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
 							%div.RadioButton.Item
-								%input#RadioButtonPolicyHolderMedicalTreatmentYes{ :type => "radio", :name => "RadioButtonPolicyHolderMedicalTreatment", :value => "true" }
-								%label.RadioButton{ :for => "RadioButtonPolicyHolderMedicalTreatmentYes" } Ya
+								%input#RadioButtonPolicyHolderHealthDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderMedicalTreatment", :value => "true" }
+								%label.RadioButton{ :for => "RadioButtonPolicyHolderHealthDissorderYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonPolicyHolderMedicalTreatmentNo{ :type => "radio", :name => "RadioButtonPolicyHolderMedicalTreatment", :value => "false" }
-								%label.RadioButton{ :for => "RadioButtonPolicyHolderMedicalTreatmentNo" } Tidak
+								%input#RadioButtonPolicyHolderHealthDissorderNo{ :type => "radio", :name => "RadioButtonPolicyHolderHealthDissorder", :value => "false" }
+								%label.RadioButton{ :for => "RadioButtonPolicyHolderHealthDissorderNo" } Tidak
 						%ol
 							%li
 								%div.Container
@@ -195,12 +195,12 @@
 									%label#LabelPolicyHolderCardiac.Item{ :for => "RadioButtonPolicyHolderCardiacYes" }
 										Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", "data-popup-type" => "PopUpChestPain" }
+										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", "data-popup-type" => "PopUpCardiac" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", "data-popup-type" => "PopUpChestPain" }
+										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", "data-popup-type" => "PopUpCardiac" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacNo" } Tidak
-								%input#ButtonPreviewPolicyHolderCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCardiac", "data-popup-type" => "PopUpChestPain" }
+								%input#ButtonPreviewPolicyHolderCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCardiac", "data-popup-type" => "PopUpCardiac" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderDigest.Item{ :for => "RadioButtonPolicyHolderDigestYes" }
@@ -309,7 +309,7 @@
 								%input#RadioButtonPolicyHolderSPAJProposalYes{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", :value => "true", "data-popup-type" => "spajproposal" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderSPAJProposalYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonPolicyHolderSPAJProposalNo{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", "data-popup-type" => "spajproposal" }
+								%input#RadioButtonPolicyHolderSPAJProposalNo{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", :value => "false", "data-popup-type" => "spajproposal" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderSPAJProposalNo" } Tidak
 						%input#ButtonAddSPAJProposal.ButtonPrimary{ :type => "button", :value => "Add" }
 						%div#SPAJProposalList
@@ -419,6 +419,10 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_spajproposal.haml")).render
+			%section#PopUpCardiac.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_cardiac.haml")).render
 			%section#PopUpChestPain.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_chestpain.haml")).render
+			%section#PopUpHipertensi.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_hipertensi.haml")).render
 			%div#BoxDate
