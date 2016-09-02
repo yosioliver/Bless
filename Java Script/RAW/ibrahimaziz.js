@@ -1045,7 +1045,6 @@ function buttonPopUpHealthGenerator()
     {
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
-        arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
         stringInfixName = stringRadioButtonKey.substring(stringPrefixRadioButton.length, stringRadioButtonKey.length);
         stateValidation = true;
 		
@@ -1074,6 +1073,7 @@ function buttonPopUpHealthGenerator()
 		}
 		else
 		{
+			arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
 			$(stringPopUpJQueryID).css("display", "none");
 
 			$(stringPopUpJQueryID + " form input[type=text]").each(function()
@@ -1365,6 +1365,7 @@ function buttonPopUpSPAJProposalGenerator()
 		}
 		else
 		{
+			arrayAdd(arrayHealthQuestionnaire, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 			$(stringPopUpJQueryID).css("display", "none");
 			intSPAJProposalID++;
 
@@ -2383,9 +2384,8 @@ function getFromDatabase(objectContent, stringPageType)
 		}
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
-			alert("before : arrayHealthQuestionnaire : " + arrayHealthQuestionnaire.length + ", objectContent : " + objectContent.length);
 			arrayHealthQuestionnaire = objectContent;
-			alert("before : arrayHealthQuestionnaire : " + arrayHealthQuestinnaire.length + ", object Content : " + objectContent.length);
+			
 			if (arrayHealthQuestionnaire.length > 0)
 			{
 				if (stringPageInfixTypeCurrent == stringPolicyHolderPrefix)
@@ -2399,7 +2399,7 @@ function getFromDatabase(objectContent, stringPageType)
 
 				var stringButtonPreviewJavaScriptID;
 				var stringButtonPreviewJQueryID;
-				var stringButtonName;
+				var stringButtonPreviewName;
 				var stringRadioButtonNameWithoutPrefix;
 				var stringTextJavaScriptID;
 				var stringValue;
@@ -2408,19 +2408,15 @@ function getFromDatabase(objectContent, stringPageType)
 				{
 					stringButtonPreviewJavaScriptID = $(this).attr("id");
 					stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
-					stringButtonName = $(this).attr("name");
-					stringRadioButtonNameWithoutPrefix = stringButtonName.substring(stringPrefixRadioButton.length, stringButtonName.length);
-					stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
+					stringButtonPreviewName = $(this).attr("name");
+					stringValue = arrayFind(arrayHealthQuestionnaire, stringButtonPreviewName);
 
-					stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
-
-					if (stringValue == null || stringValue == undefined)
+					if (stringValue == null || stringValue == undefined || stringValue == "false" || stringValue == false)
 					{
 
 					}
 					else
 					{
-						alert(stringTextJavaScriptID + " " + stringValue);
 						$(stringButtonPreviewJQueryID).css("display", "block");
 					}
 				});
@@ -2429,22 +2425,6 @@ function getFromDatabase(objectContent, stringPageType)
 			{
 
 			}
-		}
-		else
-		{
-			
-		}
-		
-		if (arrayHealthQuestionnaire.length > 0)
-		{
-			var stringObjectPreview = "";
-
-			for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
-			{
-				stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
-			}
-
-			alert(stringObjectPreview);
 		}
 		else
 		{
@@ -2669,4 +2649,12 @@ stringValue)
            $(stringTextID).val('');
        }
    });
+}
+
+
+// MULTI POP UP
+
+function popUp()
+{
+	
 }
