@@ -1045,7 +1045,6 @@ function buttonPopUpHealthGenerator()
     {		
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
-        arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
         stringInfixName = stringRadioButtonKey.substring(stringPrefixRadioButton.length, stringRadioButtonKey.length);
         stateValidation = true;
 		
@@ -1074,6 +1073,7 @@ function buttonPopUpHealthGenerator()
 		}
 		else
 		{
+			arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
 			$(stringPopUpJQueryID).css("display", "none");
 
 			$(stringPopUpJQueryID + " form input[type=text]").each(function()
@@ -1365,6 +1365,7 @@ function buttonPopUpSPAJProposalGenerator()
 		}
 		else
 		{
+			arrayAdd(arrayHealthQuestionnaire, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 			$(stringPopUpJQueryID).css("display", "none");
 			intSPAJProposalID++;
 
@@ -2387,18 +2388,43 @@ function getFromDatabase(objectContent, stringPageType)
 			
 			if (arrayHealthQuestionnaire.length > 0)
 			{
+				var stringNameInfix;
+				var stringRadioButtonValue;
+				
 				if (stringPageInfixTypeCurrent == stringPolicyHolderPrefix)
 				{
-					tableSPAJProposalGenerator(stringPolicyHolderPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+					stringNameInfix = stringPolicyHolderPrefix + "SPAJProposal";
+					stringRadioButtonValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringNameInfix)
+					
+					if (stringRadioButtonValue == true || stringRadioButtonValue == "true")
+					{
+						tableSPAJProposalGenerator(stringNameInfix, "SPAJProposalList", arrayHealthQuestionnaire);
+						$("#ButtonAddSPAJProposal").css("display", "block");
+					}
+					else
+					{
+
+					}
 				}
 				else
 				{
-					tableSPAJProposalGenerator(stringProspectiveInsuredPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+					stringNameInfix = stringPolicyHolderPrefix + "SPAJProposal";
+					stringRadioButtonValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringNameInfix)
+					
+					if (stringRadioButtonValue == true || stringRadioButtonValue == "true")
+					{
+						tableSPAJProposalGenerator(stringProspectiveInsuredPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+						$("#ButtonAddSPAJProposal").css("display", "block");
+					}
+					else
+					{
+
+					}
 				}
 
 				var stringButtonPreviewJavaScriptID;
 				var stringButtonPreviewJQueryID;
-				var stringButtonName;
+				var stringButtonPreviewName;
 				var stringRadioButtonNameWithoutPrefix;
 				var stringTextJavaScriptID;
 				var stringValue;
@@ -2407,14 +2433,17 @@ function getFromDatabase(objectContent, stringPageType)
 				{
 					stringButtonPreviewJavaScriptID = $(this).attr("id");
 					stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
-					stringButtonName = $(this).attr("name");
-					stringRadioButtonNameWithoutPrefix = stringButtonName.substring(stringPrefixRadioButton.length, stringButtonName.length);
-					stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
+					stringButtonPreviewName = $(this).attr("name");
+					stringValue = arrayFind(arrayHealthQuestionnaire, stringButtonPreviewName);
 
+<<<<<<< HEAD
 					stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
 					// alert(stringTextJavaScriptID + " " + stringValue);
 
 					if (stringValue == null || stringValue == undefined)
+=======
+					if (stringValue == null || stringValue == undefined || stringValue == "false" || stringValue == false)
+>>>>>>> 33f3466159ea62ed1a817b071f3c5e878ac00486
 					{
 
 					}
@@ -2423,6 +2452,8 @@ function getFromDatabase(objectContent, stringPageType)
 						$(stringButtonPreviewJQueryID).css("display", "block");
 					}
 				});
+				
+				
 			}
 			else
 			{
@@ -2433,6 +2464,7 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			
 		}
+<<<<<<< HEAD
 		
 		if (arrayHealthQuestionnaire.length > 0)
 		{
@@ -2449,6 +2481,8 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			
 		}
+=======
+>>>>>>> 33f3466159ea62ed1a817b071f3c5e878ac00486
 	}
 }
 
@@ -2669,3 +2703,11 @@ stringValue)
        }
    });
 }
+
+
+// MULTI POP UP
+
+//function buttonSubPopUp(stringButtonJavaScriptID, stringPopUpJavaScriptID)
+//{
+//	$()
+//}
