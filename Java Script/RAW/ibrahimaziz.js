@@ -1265,14 +1265,14 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 
-						/* var stringObjectPreview = "";
+						var stringObjectPreview = "";
 
 						for (var i = 0; i < arrayBeneficiariesList.length; i++)
 						{
 							stringObjectPreview += "key : " + arrayBeneficiariesList[i].elementID + "\nvalue : " + arrayBeneficiariesList[i].Value + "\n";
 						}
 
-						alert(stringObjectPreview); */
+						//alert(stringObjectPreview);
 					}
 				}
 				else
@@ -2338,7 +2338,7 @@ function getFromDatabase(objectContent, stringPageType)
 			for (var j = 0; j < arrayBeneficiariesList.length; j++)
 			{
 				var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring(arrayBeneficiariesList[j].elementID.length - 5, arrayBeneficiariesList[j].elementID.length);										
-				alert(arrayBeneficiariesList[j].elementID + " " + stringIndicatorShare + " " + arrayBeneficiariesList[j].Value);
+				//alert(arrayBeneficiariesList[j].elementID + " " + stringIndicatorShare + " " + arrayBeneficiariesList[j].Value);
 				
 				if (stringIndicatorShare == "ntage")
 				{
@@ -2374,6 +2374,8 @@ function getFromDatabase(objectContent, stringPageType)
 		if (arrayHealthQuestionnaire.length == 0)
 		{
 			arrayHealthQuestionnaire = objectContent;
+			
+			// NANTI TAMBAHIN DI SINI
 			
 			var stringButtonPreviewJavaScriptID;
 			var stringButtonPreviewJQueryID;
