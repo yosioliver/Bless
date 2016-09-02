@@ -2406,8 +2406,18 @@ function getFromDatabase(objectContent, stringPageType)
 				if (arrayHealthQuestionnaire.length == 0)
 				{
 					arrayHealthQuestionnaire = objectContent;
-					tableSPAJProposalGenerator("TableBeneficiariesList", arrayBeneficiariesList);
+					
+					if (stringPageInfixType == stringPolicyHolderPrefix)
+					{
+						tableSPAJProposalGenerator(stringPolicyHolderPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+					}
+					else
+					{
+						tableSPAJProposalGenerator(stringProspectiveInsuredPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+					}
 
+					
+					
 					var stringButtonPreviewJavaScriptID;
 					var stringButtonPreviewJQueryID;
 					var stringButtonName;
@@ -2445,6 +2455,15 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			
 		}
+		
+		var stringObjectPreview = "";
+
+		for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
+		{
+			stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
+		}
+
+		alert(stringObjectPreview);
 	}
 }
 
