@@ -188,7 +188,8 @@ function savetoDB()
 		{
 			if (intSharePercentage != 100)
 			{
-				alert("Jumlah share percentage harus 100 !.");
+				ReplaceHTMLNameOnValidate("","Jumlah share percentage harus 100 !.");
+				//alert("Jumlah share percentage harus 100 !.");
 				booleanValidateState = false;
 				return false;
 			}				

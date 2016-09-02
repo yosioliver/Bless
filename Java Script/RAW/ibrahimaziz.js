@@ -606,7 +606,8 @@ function beneficiariesListGenerator(stringButtonJavaScriptID)
 	{
 		if (arrayBeneficiariesList.length >= 10 && parseInt(intSharePercentage, 10) >= 100)
 		{
-			alert("Maksimal 10 penerima manfaat atau share percentage sudah mencapai 100 !.");
+			ReplaceHTMLNameOnValidate("","Maksimal 10 penerima manfaat atau share percentage sudah mencapai 100 !.");
+			//alert("Maksimal 10 penerima manfaat atau share percentage sudah mencapai 100 !.");
 		}
 		else
 		{
@@ -791,7 +792,8 @@ function additionalQuestionGenerator()
 				
                 if ($(this).val() == "true")
                 {
-                    alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
+					ReplaceHTMLNameOnValidate("","Harap mengisi form kuesioner nomor 6 melalui hard copy.");
+                    //alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
 					
 					if (stringInfixName.substring(0, 3) == "Pol")
 					{
@@ -1296,7 +1298,8 @@ function buttonPopUpBeneficiariesListGenerator()
 				}
 				else
 				{
-					alert("Share percentage melebihi 100 persen !.");
+					ReplaceHTMLNameOnValidate("","Share percentage melebihi 100 persen !.");
+					//alert("Share percentage melebihi 100 persen !.");
 				}
 			}
 			else
@@ -1496,7 +1499,8 @@ function validationMessage(stringMessageNegative, stringMessagePositive)
 {
     if (stateValidation == false)
     {
-        alert(stringMessageNegative);
+		ReplaceHTMLNameOnValidate("",stringMessageNegative);
+        //alert(stringMessageNegative);
     }
     else
     {
@@ -1506,7 +1510,8 @@ function validationMessage(stringMessageNegative, stringMessagePositive)
         }
         else
         {
-            alert(stringMessagePositive)
+			ReplaceHTMLNameOnValidate("",stringMessagePositive);
+            //alert(stringMessagePositive)
         }
     }
 }
