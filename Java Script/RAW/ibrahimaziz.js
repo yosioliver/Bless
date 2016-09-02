@@ -2375,80 +2375,49 @@ function getFromDatabase(objectContent, stringPageType)
 		}
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
-			// FOR HEALTH QUESTIONNAIRE
-	
-			if (stringPageType == stringPageTypePDF)
+			if (arrayHealthQuestionnaire.length == 0)
 			{
+				arrayHealthQuestionnaire = objectContent;
 
-<<<<<<< HEAD
-	}
-	else
-	{
-		if (arrayHealthQuestionnaire.length == 0)
-		{
-			arrayHealthQuestionnaire = objectContent;
-			
-			// NANTI TAMBAHIN DI SINI
-			
-			var stringButtonPreviewJavaScriptID;
-			var stringButtonPreviewJQueryID;
-			var stringButtonName;
-			var stringRadioButtonNameWithoutPrefix;
-			var stringTextJavaScriptID;
-			var stringValue;
-
-			$(".ButtonPreview").each(function()
-=======
-			}
-			else
->>>>>>> 17d029a9e0d4614acd2c1bbbbfab879767798232
-			{
-				if (arrayHealthQuestionnaire.length == 0)
+				if (stringPageInfixTypeCurrent == stringPolicyHolderPrefix)
 				{
-					arrayHealthQuestionnaire = objectContent;
-					
-					if (stringPageInfixType == stringPolicyHolderPrefix)
-					{
-						tableSPAJProposalGenerator(stringPolicyHolderPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
-					}
-					else
-					{
-						tableSPAJProposalGenerator(stringProspectiveInsuredPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
-					}
-
-					
-					
-					var stringButtonPreviewJavaScriptID;
-					var stringButtonPreviewJQueryID;
-					var stringButtonName;
-					var stringRadioButtonNameWithoutPrefix;
-					var stringTextJavaScriptID;
-					var stringValue;
-
-					$(".ButtonPreview").each(function()
-					{
-						stringButtonPreviewJavaScriptID = $(this).attr("id");
-						stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
-						stringButtonName = $(this).attr("name");
-						stringRadioButtonNameWithoutPrefix = stringButtonName.substring(stringPrefixRadioButton.length, stringButtonName.length);
-						stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
-
-						stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
-
-						if (stringValue == null || stringValue == undefined)
-						{
-
-						}
-						else
-						{
-							$(stringButtonPreviewJQueryID).css("display", "block");
-						}
-					});
+					tableSPAJProposalGenerator(stringPolicyHolderPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
 				}
 				else
 				{
-
+					tableSPAJProposalGenerator(stringProspectiveInsuredPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
 				}
+
+				var stringButtonPreviewJavaScriptID;
+				var stringButtonPreviewJQueryID;
+				var stringButtonName;
+				var stringRadioButtonNameWithoutPrefix;
+				var stringTextJavaScriptID;
+				var stringValue;
+
+				$(".ButtonPreview").each(function()
+				{
+					stringButtonPreviewJavaScriptID = $(this).attr("id");
+					stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+					stringButtonName = $(this).attr("name");
+					stringRadioButtonNameWithoutPrefix = stringButtonName.substring(stringPrefixRadioButton.length, stringButtonName.length);
+					stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
+
+					stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
+
+					if (stringValue == null || stringValue == undefined)
+					{
+
+					}
+					else
+					{
+						$(stringButtonPreviewJQueryID).css("display", "block");
+					}
+				});
+			}
+			else
+			{
+
 			}
 		}
 		else
