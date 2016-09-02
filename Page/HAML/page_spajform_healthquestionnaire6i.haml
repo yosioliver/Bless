@@ -1,0 +1,55 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 6i Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER GANGGUAN SENDI
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.6i Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
+				%br
+				%hr
+				
+				%label.medium.Single.Item 1. Apakah Anda pernah menderita artritis / rematik / kelainan sendi lainnya?
+				%br
+				%div.ContainerFit 
+					%div.RadioButton.Medium.Item
+						%input#RadioButtonPolicyMenderitaSendiYes{ :type => "radio", :name => "RadioButtonPolicyMenderitaSendiChange", :value => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyMenderitaSendiYes" } Ya
+						%div.Separator
+						
+						%input#RadioButtonPolicyMenderitaSendiNo{ :type => "radio", :name => "RadioButtonPolicyMenderitaSendiChange", :value => "false" }
+						%label.RadioButton{ :for => "RadioButtonPolicyMenderitaSendiNo" } Tidak
+						
+					%input#TextPolicyHolderMenderitaSendi.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
+				%br
+				%hr
+				
+				%label.medium.Single.Item 2. Jika Ya, kapan pertama kali keluhan tersebut timbul?
+				%br
+				%input#TextPolicyHolderKapanPertamaKaliKeluhanTimbul.Full.Multi.PositionerLeft.Margin{ :type => "text" }
