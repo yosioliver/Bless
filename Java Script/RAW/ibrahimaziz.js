@@ -2388,13 +2388,38 @@ function getFromDatabase(objectContent, stringPageType)
 			
 			if (arrayHealthQuestionnaire.length > 0)
 			{
+				var stringNameInfix;
+				var stringRadioButtonValue;
+				
 				if (stringPageInfixTypeCurrent == stringPolicyHolderPrefix)
 				{
-					tableSPAJProposalGenerator(stringPolicyHolderPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+					stringNameInfix = stringPolicyHolderPrefix + "SPAJProposal";
+					stringRadioButtonValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringNameInfix)
+					
+					if (stringRadioButtonValue == true || stringRadioButtonValue == "true")
+					{
+						tableSPAJProposalGenerator(stringNameInfix, "SPAJProposalList", arrayHealthQuestionnaire);
+						$("#ButtonAddSPAJProposal").css("display", "block");
+					}
+					else
+					{
+
+					}
 				}
 				else
 				{
-					tableSPAJProposalGenerator(stringProspectiveInsuredPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+					stringNameInfix = stringPolicyHolderPrefix + "SPAJProposal";
+					stringRadioButtonValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringNameInfix)
+					
+					if (stringRadioButtonValue == true || stringRadioButtonValue == "true")
+					{
+						tableSPAJProposalGenerator(stringProspectiveInsuredPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
+						$("#ButtonAddSPAJProposal").css("display", "block");
+					}
+					else
+					{
+
+					}
 				}
 
 				var stringButtonPreviewJavaScriptID;
@@ -2420,6 +2445,8 @@ function getFromDatabase(objectContent, stringPageType)
 						$(stringButtonPreviewJQueryID).css("display", "block");
 					}
 				});
+				
+				
 			}
 			else
 			{
@@ -2654,7 +2681,7 @@ stringValue)
 
 // MULTI POP UP
 
-function popUp()
-{
-	
-}
+//function buttonSubPopUp(stringButtonJavaScriptID, stringPopUpJavaScriptID)
+//{
+//	$()
+//}
