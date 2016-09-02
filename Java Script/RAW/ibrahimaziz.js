@@ -926,7 +926,7 @@ function arrayFind(arrayObject, stringKey)
 }
 
 function buttonPopUpGeneralGenerator()
-{
+{	
     var stringRadioButtonKey;
     var stringRadioButtonValue;
     var stringDetailKey;
@@ -967,7 +967,7 @@ function buttonPopUpGeneralGenerator()
     });
 
     $(stringPopUpJQueryID + " #ButtonDone").click(function()
-    {
+    {		
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
         stringDetailKey = stringPrefixText + stringRadioButtonName.substring(stringPrefixRadioButton.length, stringRadioButtonName.length) + stringDetailSuffix;
@@ -999,7 +999,7 @@ function buttonPopUpGeneralGenerator()
 }
 
 function buttonPopUpHealthGenerator()
-{
+{	
     var stringRadioButtonKey;
     var stringRadioButtonValue;
     var stringDetailKey;
@@ -1042,7 +1042,7 @@ function buttonPopUpHealthGenerator()
     });
 
     $(stringPopUpJQueryID + " #ButtonDone").click(function()
-    {
+    {		
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
         arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
@@ -2412,7 +2412,7 @@ function getFromDatabase(objectContent, stringPageType)
 					stringTextJavaScriptID = stringPrefixText + stringRadioButtonNameWithoutPrefix + stringDetailSuffix;
 
 					stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
-					alert(stringTextJavaScriptID + " " + stringValue);
+					// alert(stringTextJavaScriptID + " " + stringValue);
 
 					if (stringValue == null || stringValue == undefined)
 					{
@@ -2443,7 +2443,7 @@ function getFromDatabase(objectContent, stringPageType)
 				stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
 			}
 
-			alert(stringObjectPreview);
+			// alert(stringObjectPreview);
 		}
 		else
 		{

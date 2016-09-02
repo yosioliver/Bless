@@ -117,7 +117,7 @@ function readfromDB()
 }
 
 function savetoDB() 
-{
+{	
 	var stringValue;
 	var stringRadioButtonFlag;
 	var booleanValidateState = true;
@@ -209,12 +209,12 @@ function savetoDB()
 		
 	}
 	else
-	{
+	{		
 		var objectContent;
     	
 		if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
-			//alert("no getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
+			// alert("no getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
 			objectContent = arrayHealthQuestionnaire;
 		}
 		else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
