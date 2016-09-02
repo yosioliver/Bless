@@ -630,6 +630,7 @@ function additionalQuestionGenerator()
 {
     var stringDetailKey;
     var stirngInfixName;
+	
     $("#ButtonAddSPAJProposal").css("display", "none");
 	
     $("input:radio[name^='RadioButton']").each(function()
@@ -2375,10 +2376,10 @@ function getFromDatabase(objectContent, stringPageType)
 		}
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
+			arrayHealthQuestionnaire = objectContent;
+			
 			if (arrayHealthQuestionnaire.length == 0)
 			{
-				arrayHealthQuestionnaire = objectContent;
-
 				if (stringPageInfixTypeCurrent == stringPolicyHolderPrefix)
 				{
 					tableSPAJProposalGenerator(stringPolicyHolderPrefix + "SPAJProposal", "SPAJProposalList", arrayHealthQuestionnaire);
