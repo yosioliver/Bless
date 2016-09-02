@@ -78,7 +78,9 @@ var intSPAJProposalID = 1;
 var stringPopUpTypeHardCopy = "hardcopy";
 var stringIndicatorPolicyHolder = "Pol";
 var stringIndicatorProspectiveInsured = "Pro";
+var stringPopUpTypeCardiac = "PopUpCardiac";
 var stringPopUpTypeChestPain = "PopUpChestPain";
+var stringPopUpTypeHipertensi = "PopUpHipertensi";
 
 
 // GENERATOR
@@ -811,7 +813,7 @@ function additionalQuestionGenerator()
                 stringRadioButtonName = $(this).attr("name");
             });
         }
-		else if ($(this).data("popup-type") == stringPopUpTypeChestPain)
+		else if ($(this).data("popup-type") == stringPopUpTypeCardiac)
         {
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
@@ -2378,7 +2380,7 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			arrayHealthQuestionnaire = objectContent;
 			
-			if (arrayHealthQuestionnaire.length == 0)
+			if (arrayHealthQuestionnaire.length > 0)
 			{
 				if (stringPageInfixTypeCurrent == stringPolicyHolderPrefix)
 				{
