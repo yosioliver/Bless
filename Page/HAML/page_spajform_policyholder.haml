@@ -12,15 +12,7 @@
 
 		:javascript            
 			$(document).ready(function()
-			{								
-				// SETTER
-
-				// radioButtonSetter("WeightChange", true);                                
-
-				// GETTER
-
-				// radioButtonGetter("WeightChange");
-
+			{
 				// INITIALIZATION
 
 				// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
@@ -61,18 +53,27 @@
 
 				radioButtonOtherGenerator("RadioButtonPolicyHolderIDType", "#TextPolicyHolderIDTypeOther", "OTHER");
 				radioButtonOtherGenerator("RadioButtonPolicyHolderRelationAssured", "#TextPolicyHolderRelationAssuredOther", "other");
-				radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");								
+				radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");
+				
+				
+				// FOR TESTING
+				
+				/* $("#ButtonSubmit").click(function()
+				{
+					savetoDB();
+				}); */
 			});
 
 
 	/ BODY
 
-	%body#Main     
+	%body#Main
 
 		/ MAIN
 
 		%main
 			%form
+				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
 				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true" }                       
 				%br
@@ -124,10 +125,10 @@
 						%label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
 				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "true" }
+					%input#RadioButtonPolicyHolderUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "true", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Ya
 					%div.Separator
-					%input#RadioButtonPolicyHolderUSACitizenNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "false" }
+					%input#RadioButtonPolicyHolderUSACitizenNo.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "false", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderUSACitizenNo" } Tidak
 				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } (Jika jawaban "Ya" mohon lampirkan formulir W8 / W9).
 				%br
@@ -292,42 +293,45 @@
 				%input#DatePolicyHolderNPWPActive.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
 				%br
 
+				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryIDR" } Penghasilan Kotor Per Tahun
+				%br
+
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryIDR" } Gaji
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderSalaryIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "idr" }
+					%input#RadioButtonPolicyHolderSalaryIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "idr", :checked => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderSalaryIDR" } RP
 					%div.Separator
 					%input#RadioButtonPolicyHolderSalaryUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "usd" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderSalaryUSD" } USD                
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSalary" } Penghasilan / Tahun
-				%input#TextPolicyHolderSalary.Long.Single.PositionerLeft{ :type => "text", :value => "0" }
+				%input#TextPolicyHolderSalary.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income"  }
 				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRevenueIDR" } Hasil USaha
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderRevenueIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "idr" }
+					%input#RadioButtonPolicyHolderRevenueIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "idr", :checked => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderRevenueIDR" } RP
 					%div.Separator
 					%input#RadioButtonPolicyHolderRevenueUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "usd" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderRevenueUSD" } USD                
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRevenue" } Penghasilan / Tahun
-				%input#TextPolicyHolderRevenue.Long.Single.PositionerLeft{ :type => "text", :value => "0" }
+				%input#TextPolicyHolderRevenue.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income"  }
 				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } Penghasilan Lainnya
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "idr" }
+					%input#RadioButtonPolicyHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "idr", :checked => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } RP
 					%div.Separator
 					%input#RadioButtonPolicyHolderOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "usd" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIncomeUSD" } USD                
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Penghasilan / Tahun
-				%input#TextPolicyHolderOtherIncome.Long.Single.PositionerLeft{ :type => "text", :value => "0" }
+				%input#TextPolicyHolderOtherIncome.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income"  }
 				%br
 
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderSource" } Jelaskan Sumbernya
-					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text", :required => "true" }
 				%br
 
 				%div#BoxDate								

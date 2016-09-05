@@ -632,8 +632,8 @@
         <form class='PopUp' id='PopUpCardiac'>
           <!-- HEADER -->
           <header>
-            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>
+            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonPopUpCancel('PopUpCardiac')" type='button' value='Cancel'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonPopUpDone('PopUpCardiac', this.id, 'PopUpHipertensi')" type='button' value='Done'>
             <h2>Pertanyaan Kesehatan</h2>
           </header>
           <!-- FIELDSET -->
@@ -643,9 +643,15 @@
             </label>
             <br>
             <div class='RadioButton'>
+<<<<<<< Updated upstream
               <input class='ButtonPrimary' id='ButtonChestPain' type='button' value='Kuesioner Nyeri Dada'>
               <div class='Separator'></div>
               <input class='ButtonPrimary' id='ButtonHipertensi' type='button' value='Kuesioner Tekanan Darah Tinggi'>
+=======
+              <input class='ButtonPrimary' id='ButtonChestPain' onclick="buttonPopUpNavigation('PopUpCardiac', this.id, 'PopUpChestPain')" type='button' value='Kuesioner Nyeri Dada'>
+              <div class='Separator'></div>
+              <input class='ButtonPrimary' id='ButtonHipertensi' onclick="buttonPopUpNavigation('PopUpCardiac', this.id, 'PopUpHipertensi')" type='button' value='Kuesioner Tekanan Darah Tinggi'>
+>>>>>>> Stashed changes
             </div>
             <hr>
             <label class='Medium Single'>silahkan memberikan rincian lebih lanjut</label>
@@ -659,8 +665,8 @@
         <form class='PopUp' id='PopUpChestPain'>
           <!-- HEADER -->
           <header>
-            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>
+            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonSubPopUpCancel('PopUpChestPain', 'PopUpCardiac')" type='button' value='Cancel'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick='buttonSubPopUpDone()' type='button' value='Done'>
             <h2>KUESIONER NYERI DADA</h2>
           </header>
           <!-- FIELDSET -->
@@ -963,8 +969,8 @@
         <form class='PopUp' id='PopUpHipertensi'>
           <!-- HEADER -->
           <header>
-            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' type='button' value='Done'>
+            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonSubPopUpCancel('PopUpHipertensi', 'PopUpCardiac')" type='button' value='Cancel'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick='buttonSubPopUpDone()' type='button' value='Done'>
             <h2>KUESIONER TEKANAN DARAH TINGGI</h2>
           </header>
           <!-- FIELDSET -->

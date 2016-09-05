@@ -49,14 +49,6 @@
     <script>
       $(document).ready(function()
       {
-      	// SETTER
-      
-      	// radioButtonSetter("WeightChange", true);
-      
-      	// GETTER
-      
-      	// radioButtonGetter("WeightChange");
-      
       	// INITIALIZATION
       
       	// var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
@@ -98,6 +90,13 @@
       	radioButtonOtherGenerator("RadioButtonProspectiveInsuredIDType", "#TextProspectiveInsuredIDTypeOther", "OTHER");
       	radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "other");
       	radioButtonOtherGenerator("RadioButtonProspectiveInsuredInsurancePurpose", "#TextProspectiveInsuredInsurancePurposeOther", "other");
+      	
+      	// FOR TESTING
+      	
+      	/* $("#ButtonSubmit").click(function()
+      	{
+      		savetoDB();
+      	}); */
       });
     </script>
   </head>
@@ -106,6 +105,7 @@
     <!-- MAIN -->
     <main>
       <form>
+        <!-- %input#ButtonSubmit{ :type => "button", :value => "Submit" } -->
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredCIN'>Nomor CIN</label>
         <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredCIN' required='true' type='text'>
         <br>
@@ -344,47 +344,54 @@
         <label class='Medium Single PositionerLeft' for='DateProspectiveInsuredNPWPActive'>Tanggal Berlaku</label>
         <input class='Medium Single PositionerLeft' data-field='date' id='DateProspectiveInsuredNPWPActive' type='text'>
         <br>
+        <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredNPWP'>Nomor NPWP</label>
+        <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredNPWP' type='text'>
+        <label class='Medium Single PositionerLeft' for='DateProspectiveInsuredNPWPActive'>Tanggal Berlaku</label>
+        <input class='Medium Single PositionerLeft' data-field='date' id='DateProspectiveInsuredNPWPActive' type='text'>
+        <br>
+        <label class='Wrap Single PositionerLeft' for='RadioButtonProspectiveInsuredSalaryIDR'>Penghasilan Kotor Per Tahun</label>
+        <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredSalaryIDR'>Gaji</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonProspectiveInsuredSalary' type='radio' value='idr'>
+          <input checked='true' class='Medium Single' id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonProspectiveInsuredSalary' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredSalaryIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonProspectiveInsuredSalaryUSD' name='RadioButtonProspectiveInsuredSalary' type='radio' value='usd'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredSalaryUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredSalary'>Penghasilan / Tahun</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredSalary' type='text' value='0'>
+        <input class='Long Single PositionerLeft' data-customvalidation='income' id='TextProspectiveInsuredSalary' type='text' value='0'>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredRevenueIDR'>Hasil USaha</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredRevenueIDR'>Hasil Usaha</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredRevenueIDR' name='RadioButtonProspectiveInsuredRevenue' type='radio' value='idr'>
+          <input checked='true' class='Medium Single' id='RadioButtonProspectiveInsuredRevenueIDR' name='RadioButtonProspectiveInsuredRevenue' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredRevenueIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonProspectiveInsuredRevenueUSD' name='RadioButtonProspectiveInsuredRevenue' type='radio' value='usd'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredRevenueUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredRevenue'>Penghasilan / Tahun</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredRevenue' type='text' value='0'>
+        <input class='Long Single PositionerLeft' data-customvalidation='income' id='TextProspectiveInsuredRevenue' type='text' value='0'>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredOtherIncomeIDR'>Penghasilan Lainnya</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredOtherIncomeIDR' name='RadioButtonProspectiveInsuredOtherIncome' type='radio' value='idr'>
+          <input checked='true' class='Medium Single' id='RadioButtonProspectiveInsuredOtherIncomeIDR' name='RadioButtonProspectiveInsuredOtherIncome' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredOtherIncomeIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonProspectiveInsuredOtherIncomeUSD' name='RadioButtonProspectiveInsuredOtherIncome' type='radio' value='usd'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredOtherIncomeUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredOtherIncome'>Penghasilan / Tahun</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredOtherIncome' type='text' value='0'>
+        <input class='Long Single PositionerLeft' data-customvalidation='income' id='TextProspectiveInsuredOtherIncome' type='text' value='0'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredSource'>Jelaskan Sumbernya</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredSource' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredSource' required='true' type='text'>
         </div>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredFundingSource'>Sumber Dana Pembelian Asuransi</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredFundingSource' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredFundingSource' required='true' type='text'>
         </div>
         <br>
         <div id='BoxDate'></div>
