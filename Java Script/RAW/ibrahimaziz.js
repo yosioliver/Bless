@@ -1075,7 +1075,7 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 
 		if (stringKeyForDelete == stringButtonViewName)
 		{
-			arrayAdd(arrayTemporary, arrayBeneficiariesList[i].elementID);
+			arrayAdd(arrayTemporary, arrayBeneficiariesList[i].elementID,arrayBeneficiariesList[i].Value );
 		}
 		else
 		{
@@ -2697,8 +2697,9 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 {
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent);
+	$(stringPopUpCurrentJQueryID).css("display", "none");
 	
-	if (booleanState == true)
+	/* if (booleanState == true)
 	{
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		previewArrayObject(arrayContent);
@@ -2706,7 +2707,7 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 	else
 	{
 		
-	}
+	} */
 }
 
 function buttonPopUpCancel(stringPopUpCurrentJavaScriptID)
@@ -2720,7 +2721,9 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 {
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var stringPopUpParentJQueryID = stringKres + stringPopUpParentJavaScriptID;
-	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent);
+	$(stringPopUpCurrentJQueryID).css("display", "none");
+	$(stringPopUpParentJQueryID).css("display", "block");
+	/* var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent);
 	
 	if (booleanState == true)
 	{
@@ -2731,7 +2734,7 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 	else
 	{
 		
-	}
+	} */
 }
 
 function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJavaScriptID)
@@ -2800,7 +2803,7 @@ function textPopUpGetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix,
 
 function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stringInputInfix)
 {
-	var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
+	var stringPopUpJQueryID = stringKres + stringLayoutJavaScriptID;
 	var arrayInputTemporary = [];
 	stateValidation = true;
 	
@@ -2925,7 +2928,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input:date").each(function()
+		$(stringPopUpJQueryID + " form input[type='date']").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
@@ -2961,7 +2964,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input:email").each(function()
+		$(stringPopUpJQueryID + " form input[type='email']").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
@@ -2997,7 +3000,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input:number").each(function()
+		$(stringPopUpJQueryID + " form input[type='number']").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
