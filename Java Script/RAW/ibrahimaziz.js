@@ -806,6 +806,7 @@ function additionalQuestionGenerator()
             {
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
+				previewArrayObject(arrayHealthQuestionnaire);
             });
 		}
         else
