@@ -42,6 +42,8 @@
     <script src='../../Java Script/RAW/jquery.number.js' type='text/javascript'></script>
     <script>
       var stringPageTypeCurrent = stringPageTypeForm;
+		var stringPageSectionCurrent = stringPageSectionForm;
+		var stringPageValidationCurrent = 0;
     </script>
     <script src='../../Java Script/Minimized/ios-integration.min.js' type='text/javascript'></script>
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
@@ -49,18 +51,15 @@
     <script>
       $(document).ready(function()
       {
-      	// SETTER
-      
-      	// radioButtonSetter("WeightChange", true);
-      
-      	// GETTER
-      
-      	// radioButtonGetter("WeightChange");
-      
       	// INITIALIZATION
       
       	// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'                                                             
       	radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
+      	
+      	$("#ButtonSubmit").click(function()
+      	{
+      		savetoDB();
+      	});
       });
     </script>
   </head>
@@ -69,6 +68,7 @@
     <!-- MAIN -->
     <main>
       <form>
+        <input id='ButtonSubmit' type='button' value='Submit'>
         <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentKursIDR'>Mata Uang</label>
         <div class='RadioButton PositionerLeft'>
           <input class='Medium Single' disabled='true' id='RadioButtonPremiPaymentKursIDR' name='RadioButtonPremiPaymentKurs' type='radio' value='idr'>

@@ -13,18 +13,15 @@
 		:javascript
 			$(document).ready(function()
 			{
-				// SETTER
-
-				// radioButtonSetter("WeightChange", true);
-
-				// GETTER
-
-				// radioButtonGetter("WeightChange");
-
 				// INITIALIZATION
 
 				// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'                                                             
 				radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
+				
+				$("#ButtonSubmit").click(function()
+				{
+					savetoDB();
+				});
 			});
 
 	/ BODY
@@ -35,6 +32,7 @@
 
 		%main
 			%form
+				%input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentKursIDR" } Mata Uang
 				%div.RadioButton.PositionerLeft
 					%input#RadioButtonPremiPaymentKursIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "idr", :disabled => "true" }
