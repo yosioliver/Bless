@@ -148,7 +148,6 @@ function savetoDB()
 		
 	}
 	
-	
 	if (booleanValidateState == false)
 	{
 		

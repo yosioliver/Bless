@@ -1196,7 +1196,9 @@ function buttonPopUpBeneficiariesListGenerator()
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
 						}
 					});
-
+					
+					var stringRadioButtonFlag = 0;
+					
 					$(stringPopUpJQueryID + " form input:radio").each(function()
 					{
 						stringInputName = $(this).attr("name");
@@ -1206,16 +1208,18 @@ function buttonPopUpBeneficiariesListGenerator()
 
 						stringKey = stringPrefixRadioButton + stringBeneficiariesListInfix + stringInputNameWithoutPrefix + intBeneficiariesListID;
 						
-						if (validateRadioButtonGeneral(stringInputName) == false)
-						{
-							validationMessage("Harap lengkapi form terlebih dahulu !.", null);
-							return false;
-						}
-						else
-						{
+//						if (validateRadioButtonGeneral(stringInputName) == false)
+//						{
+//							alert("salah " + $(this).attr("name") + " " + getRadioButtonGeneral($(this).attr("name")) + " " + validateRadioButtonGeneral(stringInputName));
+//							validationMessage("Harap lengkapi form terlebih dahulu !.", null);
+//							return false;
+//						}
+//						else
+//						{
+//							alert("bener " + $(this).attr("name") + " " + getRadioButtonGeneral($(this).attr("name")) + " " + validateRadioButtonGeneral(stringInputName));
 							stringValue = getRadioButtonGeneral(stringInputName);
 							arrayAdd(arrayBeneficiariesList, stringKey, stringValue);
-						}
+						//}
 					});
 
 					if (stateValidation == false)
@@ -1507,15 +1511,19 @@ function validateTextGeneral(stringInputJQueryID)
 
 function validateRadioButtonGeneral(radioButtonName)
 {
-    if ($("input:radio[name=" + radioButtonName + "]:checked").val() != undefined)
+	var stringValue = getRadioButtonGeneral(radioButtonName);
+	// alert("1 " + stringValue);
+    // if ($("input:radio[name=" + radioButtonName + "]:checked").val() != undefined)
+	if (stringValue == undefined)
     {
-        validateState(true);
-        return true;
+		// alert("2 " + stringValue)
+        validateState(false);
+        return false;
     }
     else
     {
-        validateState(false);
-        return false;
+		validateState(true);
+        return true;
     }
 }
 
@@ -1751,7 +1759,7 @@ function getRadioButtonGeneral(stringName)
 {
     var stringRadioButtonValue;
     
-    stringRadioButtonValue = $("input:radio[name=" + stringName + "]:checked").val()
+    stringRadioButtonValue = $("input:radio[name=" + stringName + "]:checked").val();
     
     return stringRadioButtonValue;
 }
