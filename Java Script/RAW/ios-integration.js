@@ -173,6 +173,41 @@ function savetoDB()
 
 				}
 			});
+			
+			// QUICK FIX VALIDATION FOR FORM
+	
+			var booleanIncomeState = false;
+
+			 if (stringPageSectionCurrent == stringPageSectionForm && stringPageTypeCurrent == stringPageTypeForm)
+			 {
+				$("input:text[data-customvalidation='income']").each(function()
+				{
+					if ($(this).val() > 0)
+					{
+						booleanIncomeState = true;
+						return false;
+					}
+					else
+					{
+
+					}
+				});
+
+				if (booleanIncomeState == false)
+				{
+					booleanValidateState = false;
+					ReplaceHTMLNameOnValidate("","Harap mengisi penghasilan kotor minimum satu jenis");
+					// alert("Harap mengisi penghasilan kotor minimum satu jenis !.");
+				}
+				else
+				{
+
+				}
+			}
+			else
+			{
+
+			}
 		}
 		else
 		{
@@ -223,40 +258,7 @@ function savetoDB()
 	}
 	
 	
-	// QUICK FIX VALIDATION FOR FORM
 	
-	var booleanIncomeState = false;
-	
-	 if (stringPageSectionCurrent == stringPageSectionForm && stringPageTypeCurrent == stringPageTypeForm)
-	 {
-		$("input:text[data-customvalidation='income']").each(function()
-		{
-			if ($(this).val() > 0)
-			{
-				booleanIncomeState = true;
-				return false;
-			}
-			else
-			{
-
-			}
-		});
-
-		if (booleanIncomeState == false)
-		{
-			booleanValidateState = false;
-			ReplaceHTMLNameOnValidate("","Harap mengisi penghasilan kotor minimum satu jenis");
-			// alert("Harap mengisi penghasilan kotor minimum satu jenis !.");
-		}
-		else
-		{
-
-		}
-	}
-	else
-	{
-		
-	}
 	
 	
 	if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
