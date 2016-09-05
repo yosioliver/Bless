@@ -34,17 +34,17 @@
 				
 				lineGenerator("#TextProspectiveInsuredDigestOther", 5);
 				
-				boxGenerator("#DateProspectiveInsuredDigestionWhenLastDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionWhenLastMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionWhenLastYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestLastAriseDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestLastAriseMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestLastAriseYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBloodDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBloodMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBloodYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood2Day", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood2Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood2Year", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestVomitingBloodLastAriseDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestVomitingBloodLastAriseMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestVomitingBloodLastAriseYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Day", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Month", 2, boxTypeWithoutLabel, null);
@@ -159,68 +159,66 @@
 					
 					%span.Number.PositionerLeft 3
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestFrequencyInMonth" } a. Berapa kali anda mengalami gangguan pencernaan?
-					%input#TextProspectiveInsuredDigestFrequencyInMonth.Short.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%div#TextProspectiveInsuredDigestFrequencyInMonth.Short.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionHowMany" } kali per (bulan/tahun*) *coret yang tidak perlu					
 					%br
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionWhenLast" } b. Kapan timbulnya keluahan terakhir?
-					%table#DateProspectiveInsuredDigestionWhenLastDay.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredDigestLastArise" } b. Kapan timbulnya keluahan terakhir?
+					%table#DateProspectiveInsuredDigestLastAriseDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionWhenLastMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestLastAriseMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionWhenLastYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestLastAriseYear.BoxSquare.PositionerRight
 					%br					
 
 					%span.Number.PositionerLeft 4
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredFeel" } Keluhan apa yang anda rasakan?
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredSpreadToShoulder.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToShoulder", :value => "false" }
+						%input#RadioButtonProspectiveInsuredDigestComplainFeltMual.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestComplainFelt", :value => "mual" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToShoulder" } Mual
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestComplainFeltMual" } Mual
 						
-						%input#RadioButtonProspectiveInsuredSpreadToArm.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToArm", :value => "false" }
+						%input#RadioButtonProspectiveInsuredDigestComplainFeltMuntah.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestComplainFelt", :value => "muntah" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToArm" } Muntah
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestComplainFeltMuntah" } Muntah
 						
-						%input#RadioButtonProspectiveInsuredSpreadToJaw.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToJaw", :value => "false" }
+						%input#RadioButtonProspectiveInsuredDigestComplainFeltMuntahDarah.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestComplainFelt", :value => "muntahdarah" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToJaw" } Muntah Darah
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestComplainFeltMuntahDarah" } Muntah Darah
 						
-						%input#RadioButtonProspectiveInsuredSpreadToBelly.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToBelly", :value => "false" }
+						%input#RadioButtonProspectiveInsuredDigestComplainFeltNyeriuluhati.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestComplainFelt", :value => "nyeriuluhati" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToBelly" } Nyeri Ulu Hati
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestComplainFeltNyeriuluhati" } Nyeri Ulu Hati
 												
-						%input#RadioButtonProspectiveInsuredSpreadToOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredSpreadToOthers", :value => "false" }
+						%input#RadioButtonProspectiveInsuredDigestComplainFeltOther.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestComplainFelt", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSpreadToOthers"} Lainnya, sebutkan  
-						
-						%input#TextProspectiveInsuredSpreadToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestComplainFeltOther"} Lainnya, sebutkan
+						%div#TextProspectiveInsuredDigestComplainFeltOther.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br		
 
 					%span.Number.PositionerLeft 5
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredVomitingBlood" } a.	Apakah Anda pernah mengalami muntah darah?
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestVomitingBlood" } a.	Apakah Anda pernah mengalami muntah darah?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodNo" } Tidak   
-						%input#RadioButtonProspectiveInsuredVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodNo", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDigestVomitingBloodNo" } Tidak   
+						%input#RadioButtonProspectiveInsuredDigestVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestVomitingBlood", :value => "false" }
 						%div.BoxRound.PositionerRight
-
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodYes" } Ya
-						%input#RadioButtonProspectiveInsuredVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodYes", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDigestVomitingBloodYes" } Ya
+						%input#RadioButtonProspectiveInsuredDigestVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestVomitingBlood", :value => "true" }
 						%div.BoxRound.PositionerRight
 							
 					%div.BoxRound.PositionerRight
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBlood" } b. Jika “Ya”, kapan terakhir Anda mengalaminya?
-					%table#DateProspectiveInsuredDigestionVomitingBloodDay.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredDigestVomitingBloodLastAriseDay" } b. Jika “Ya”, kapan terakhir Anda mengalaminya?
+					%table#DateProspectiveInsuredDigestVomitingBloodLastAriseDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionVomitingBloodMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestVomitingBloodLastAriseMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionVomitingBloodYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestVomitingBloodLastAriseYear.BoxSquare.PositionerRight
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } c. Berapa kali Anda mengalami muntah darah?
-					%input#TextProspectiveInsuredDigestionVomitingBloodHowMany.Short.Single.PositionerLeft{ :type => "text"}
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } kali per (bulan/tahun*) *coret yang tidak perlu					
+					%input#TextProspectiveInsuredDigestVomitingBloodAriseTime.Short.Single.PositionerLeft{ :type => "text"}
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestVomitingBloodAriseTime" } kali per (bulan/tahun*) *coret yang tidak perlu					
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodDesc"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredDigestVomitingBloodSolvingWay"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
 					%br
-					%input#TextProspectiveInsuredDigestionVomitingBloodDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%input#TextProspectiveInsuredDigestVomitingBloodSolvingWay.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%span.Number.PositionerLeft 6
