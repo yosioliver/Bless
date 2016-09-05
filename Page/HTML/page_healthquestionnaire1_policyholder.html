@@ -633,7 +633,7 @@
           <!-- HEADER -->
           <header>
             <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonPopUpCancel('PopUpCardiac')" type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonPopUpDone('PopUpCardiac', this.id, 'PopUpHipertensi')" type='button' value='Done'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' name='Cardiac' onclick="buttonPopUpDone('PopUpCardiac', this.id, arrayHealthQuestionnaire)" type='button' value='Done'>
             <h2>Pertanyaan Kesehatan</h2>
           </header>
           <!-- FIELDSET -->
@@ -643,15 +643,9 @@
             </label>
             <br>
             <div class='RadioButton'>
-<<<<<<< Updated upstream
-              <input class='ButtonPrimary' id='ButtonChestPain' type='button' value='Kuesioner Nyeri Dada'>
-              <div class='Separator'></div>
-              <input class='ButtonPrimary' id='ButtonHipertensi' type='button' value='Kuesioner Tekanan Darah Tinggi'>
-=======
               <input class='ButtonPrimary' id='ButtonChestPain' onclick="buttonPopUpNavigation('PopUpCardiac', this.id, 'PopUpChestPain')" type='button' value='Kuesioner Nyeri Dada'>
               <div class='Separator'></div>
               <input class='ButtonPrimary' id='ButtonHipertensi' onclick="buttonPopUpNavigation('PopUpCardiac', this.id, 'PopUpHipertensi')" type='button' value='Kuesioner Tekanan Darah Tinggi'>
->>>>>>> Stashed changes
             </div>
             <hr>
             <label class='Medium Single'>silahkan memberikan rincian lebih lanjut</label>
