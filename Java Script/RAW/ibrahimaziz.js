@@ -1346,6 +1346,13 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		stringKeyID = arrayContent[i].elementID.substring(stringKey.length, arrayContent[i].elementID.length);
 		stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
 		stringContentName = arrayFind(arrayContent, stringKey);
+		
+//		stringSexKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
+//		stringSexValue = arrayFind(arrayContent, stringKey);
+//		stringRelationshipKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
+//		stringRelationshipValue = arrayFind(arrayContent, stringKey);
+//		stringSharePercentage = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
+//		stringSharePercentage = arrayFind(arrayContent, stringKey);
 
 		if (stringFlag == 0 || stringFlag != stringKeyID)
 		{

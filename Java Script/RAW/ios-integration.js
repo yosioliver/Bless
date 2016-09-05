@@ -190,14 +190,14 @@ function savetoDB()
 				if (stringValue == undefined)
 				{
 					// alert("invalid : " + $(this).attr("name") + " " + stringValue);
-					ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap dipilih.");
+					ReplaceHTMLNameOnValidate("", $(this).attr("name") + " " + $label.text() + " " + "harap dipilih.");
 					
 					booleanValidateState = false;
 					return false;
 				}				
 				else
 				{
-					alert("valid : " + $(this).attr("name") + " " + stringValue);
+					// alert("valid : " + $(this).attr("name") + " " + stringValue);
 				}
 				
 				stringRadioButtonFlag = $(this).attr("name");

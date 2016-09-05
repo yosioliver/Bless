@@ -118,10 +118,10 @@
 				%div.ContainerLeft
 					%label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderNationalityWNI" } Kewarganegaraan
 					%div.RadioButton.Item
-						%input#RadioButtonPolicyHolderNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wni" }
+						%input#RadioButtonPolicyHolderNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wni", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNI" } WNI
 						%div.Separator
-						%input#RadioButtonPolicyHolderNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wna" }
+						%input#RadioButtonPolicyHolderNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wna", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
 				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
 				%div.RadioButton.PositionerLeft
@@ -331,7 +331,7 @@
 
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderSource" } Jelaskan Sumbernya
-					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text", :required => "true" }
+					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text" }
 				%br
 
 				%div#BoxDate								
