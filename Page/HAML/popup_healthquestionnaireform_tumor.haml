@@ -1,0 +1,167 @@
+%form#PopUpTumor.PopUp
+
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%h2 KUESIONER TUMOR
+
+	/ MAIN
+
+	%fieldset
+		%div.ContainerFit
+			%span.Multi.Single.6l Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
+		%br
+		%hr
+
+		%label.medium.Single.Item 1. Kapan pertama kali diketahui adanya tumor?
+		%br    
+		%input#TextPolicyHolderKapanPertamaDiketahuiAdaTumor.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 2. Pada bagian tubuh mana tumor tersebut tumbuh?
+		%br    
+		%input#TextPolicyHolderBagianTumbuhTumor.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 3. Bila diketahui sebutkan diagnosis pasti dari tumor tersebut.
+		%br    
+		%input#TextPolicyHolderBilaDiketahuiDiagnosisDariTumor.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label#Wrap.Single.PositionerLeft 4. Apakah tumor tersebut telah diangkat/ dioperasi?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonPolicyHolderTumorDiangkatYes{ :type => "radio", :name => "RadioButtonPolicyHolderTumorDiangkatChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderTumorDiangkatYes" } Ya
+			%div.Separator
+			%input#RadioButtonPolicyHolderTumorDiangkatNo{ :type => "radio", :name => "RadioButtonPolicyHolderTumorDiangkatChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderTumorDiangkatNo" } Tidak
+		%br
+		%input#TextPolicyHolderJelaskanTumorDiangkat.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+
+		%div.ContainerFit
+			%label#LabelPolicyHolderTanggalOperasi.Long.Single.Item a. Tanggal operasi
+			%input#TextPolicyHolderTanggalOperasi.Full.Single.Item{ :type =>"text" }
+		%br
+
+		%label.medium.Single.Item b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya)
+		%br    
+		%input#TextPolicyHolderMetodeOperasi.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+
+		%label.medium.Single.Item c. Sebutkan nama dokter bedah/ dokter umum/ konsultan, rumah sakit/ klinik sehubungan dengan pengobatan tumor tersebut
+		%br    
+		%input#TextPolicyHolderNamaDokter.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+
+		%label.medium.Single.Item d. Pengobatan/ tindakan apa yang diberikan setelah dilakukan operasi tumor (seperti minum obat tablet, radioterapi, kemotherapi, dan sebagainya) ?
+		%br    
+		%input#TextPolicyHolderPengobatanOperasiTumor.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+
+		%label#Wrap.Single.PositionerLeft e. Apakah anda pernah diberi informasi tentang prognosa (ramalan) atas tumor tersebut?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonPolicyHolderInformasiRamalanTumorYes{ :type => "radio", :name => "RadioButtonPolicyHolderInformasiRamalanTumorChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderInformasiRamalanTumorYes" } Ya
+			%div.Separator
+			%input#RadioButtonPolicyHolderInformasiRamalanTumorNo{ :type => "radio", :name => "RadioButtonPolicyHolderInformasiRamalanTumorChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderInformasiRamalanTumorNo" } Tidak
+		%br    
+		%input#TextPolicyHolderInformasiRamalanTumor.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+
+		%label.medium.Single.Item f. Pemeriksaan-pemeriksaan apa saja yang telah dilakukan, termasuk tanggal dan hasil pemeriksaan tersebut.
+		%br
+		%div.ContainerFit
+			%label.Short.Single.Item.Center.Margin Jenis Pemeriksaan
+			%label.Short.Single.Item1.Center.Margin Tanggal Pemeriksaan
+			%label.Short.Single.Item1.Center.Margin Hasil Pemeriksaan
+			%a.NavigationPopUp{ :href => "#" } Add
+		%div.ContainerFit
+			%input#TextPolicyHolderNameObat1.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderDosis1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderDosis1.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%label.medium.Single.Item g. Pengobatan atau tindakan operasi apa saja yang pernah dianjurkan?
+		%br    
+		%input#TextPolicyHolderPengobatanDianjurkan.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label#Wrap.Single.PositionerLeft 5. Apakah sampai saat ini masih dalam pengobatan?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonPolicyHolderMasihPengobatanYes{ :type => "radio", :name => "RadioButtonPolicyHolderMasihPengobatanChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderMasihPengobatanYes" } Ya
+			%div.Separator
+			%input#RadioButtonPolicyHolderMasihPengobatanNo{ :type => "radio", :name => "RadioButtonPolicyHolderMasihPengobatanChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderMasihPengobatanNo" } Tidak
+		%br
+		%div.ContainerFit
+			%label.Short.Single.Item.Margin Alasan
+			%input#TextPolicyHolderAlasan.Long.Single.Item.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Short.Single.Item.Margin Pengobatan
+			%input#TextPolicyHolderPengobatan.Long.Single.Item.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Short.Single.Item.Margin Berapa kali dalam 1 tahun
+			%input#TextPolicyHolderKaliDalamSatuTahun.Long.Single.Item.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Short.Single.Item.Margin Nama Dokter
+			%input#TextPolicyHolderNamaDokter.Long.Single.Item.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Short.Single.Item.Margin Alamat Dokter
+			%input#TextPolicyHolderAlamatDokter.Long.Single.Item.Margin{ :type => "text" }
+		%br
+		%label.medium.Single.Item Sejak kapan Anda tidak lagi dalam perawatan lanjutan?
+		%br    
+		%input#TextPolicyHolderSejakKapanTidakLagiPerawatan.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label#Wrap.Single.PositionerLeft 6. Apakah anda pernah tidak masuk kerja karena gangguan ini?  
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonPolicyHolderTidakKerjaKarenaGangguanYes{ :type => "radio", :name => "RadioButtonPolicyHolderTidakKerjaKarenaGangguanChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderTidakKerjaKarenaGangguanYes" } Ya
+			%div.Separator
+			%input#RadioButtonPolicyHolderTidakKerjaKarenaGangguanNo{ :type => "radio", :name => "RadioButtonPolicyHolderTidakKerjaKarenaGangguanChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderTidakKerjaKarenaGangguanNo" } Tidak
+		%br    
+		%input#TextPolicyHolderTidakKerjaKarenaGangguan.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 7. Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon tuliskan tanggal konsultasi, pemeriksaan yang dilakukan dan hasilnya.
+		%div.ContainerFit
+			%label.Short.Single.Item.Center.Margin Jenis Pemeriksaan
+			%label.Short.Single.Item1.Center.Margin Tanggal Pemeriksaan
+			%label.Short.Single.Item1.Center.Margin Hasil Pemeriksaan
+		%div.ContainerFit
+			%input#TextPolicyHolderJenisPemeriksaan1.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalPemeriksaan1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderHasilPemeriksaan1.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextPolicyHolderJenisPemeriksaan2.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalPemeriksaan2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderHasilPemeriksaan12.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextPolicyHolderJenisPemeriksaan3.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalPemeriksaan3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderHasilPemeriksaan13.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 8. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini.
+		%br    
+		%input#TextPolicyHolderInformasiLainSehubunganKondisiKesehatan.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%h2 PERNYATAAN DAN KUASA
+		%ol
+			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
