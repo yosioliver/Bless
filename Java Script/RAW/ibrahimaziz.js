@@ -78,17 +78,9 @@ var intSPAJProposalID = 1;
 var stringPopUpTypeHardCopy = "hardcopy";
 var stringIndicatorPolicyHolder = "Pol";
 var stringIndicatorProspectiveInsured = "Pro";
-var stringPopUpTypeAlcahol = "PopUpAlcahol";
-var stringPopUpTypeBackBone = "PopUpBackBone";
-var stringPopUpTypeBreathing = "PopUpBreathing";
 var stringPopUpTypeCardiac = "PopUpCardiac";
 var stringPopUpTypeChestPain = "PopUpChestPain";
-var stringPopUpTypeDiabetes = "PopUpDiabetes";
-var stringPopUpTypeDigestion = "PopUpDigestion";
-var stringPopUpTypeDigestion = "PopUpEplilepsy";
 var stringPopUpTypeHipertensi = "PopUpHipertensi";
-var stringPopUpTypeJoint = "PopUpJoint";
-var stringPopUpTypeTumor = "PopUpTumor";
 var stringPrefixEmail = "Email";
 var stringPrefixNumber = "Number";
 var stringStateRequired = "required";
@@ -802,25 +794,6 @@ function additionalQuestionGenerator()
                 stringRadioButtonName = $(this).attr("name");
             });
         }
-				else if ($(this).data("popup-type") == stringPopUpTypeChestPain)
-        {
-            $("input:radio[name='" + $(this).attr("name") + "']").change(function()
-            {
-				stringInfixName = releasePrefix($(this).attr("name"));
-				
-                if ($(this).val() == "true")
-                {
-                    $(stringKres + $(this).data("popup-type")).css("display", "block");
-                }
-                else
-                {
-					
-                }
-
-                stringRadioButtonName = $(this).attr("name");
-            });
-        }
-
         else
         {
             
