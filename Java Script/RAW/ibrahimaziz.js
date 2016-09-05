@@ -756,7 +756,8 @@ function additionalQuestionGenerator()
 				
                 if ($(this).val() == "true")
                 {
-					ReplaceHTMLNameOnValidate("","Harap mengisi form kuesioner nomor 6 melalui hard copy.");
+					var stringIndicator = $(this).attr("data-question-title");
+					ReplaceHTMLNameOnValidate("","Harap mengisi form kuesioner " + stringIndicator + " melalui hard copy.");
                     //alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
 					
 					if (stringInfixName.substring(0, 3) == "Pol")
