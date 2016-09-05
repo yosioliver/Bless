@@ -124,7 +124,7 @@ function savetoDB()
 
 	// QUICK FIX FOR BENEFICIARIES LIST VALIDATION
 	
-	if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
+	/* if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
 	{
 		if (booleanValidateState == false)
 		{
@@ -146,7 +146,7 @@ function savetoDB()
 	else
 	{
 		
-	}
+	} */
 	
 	if (booleanValidateState == false)
 	{
@@ -154,58 +154,72 @@ function savetoDB()
 	}
 	else
 	{
-		$("input:text[required]").each(function()
+		if (stringPageSectionCurrent != stringPageSectionBeneficiariesList)
 		{
-			stringValue = $(this).val();
-			var $label = $("label[for='"+this.id+"']")
+			$("input:text[required]").each(function()
+			{
+				stringValue = $(this).val();
+				var $label = $("label[for='"+this.id+"']")
 
-			if (stringValue == undefined || stringValue == null || stringValue == "")
-			{	
-				ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
-				// alert($label.text() + " " + "harap diisi.");
-				booleanValidateState = false;
-				return false;
-			}
-			else
-			{
-				
-			}
-		});
-	}
-	
-	if (booleanValidateState == false)
-	{
-		
-	}
-	else
-	{
-		$("input:radio[required]").each(function()
-		{												
-			stringValue = getRadioButtonGeneral($(this).attr("name"));						
-			var $label = $("label[for='"+this.name+"']")
-			
-			if (stringRadioButtonFlag != $(this).attr("name"))
-			{
-				if (stringValue == undefined)
-				{
-					// alert("invalid : " + $(this).attr("name") + " " + stringValue);
-					ReplaceHTMLNameOnValidate("", $(this).attr("name") + " " + $label.text() + " " + "harap dipilih.");
-					
+				if (stringValue == undefined || stringValue == null || stringValue == "")
+				{	
+					ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
+					// alert($label.text() + " " + "harap diisi.");
 					booleanValidateState = false;
 					return false;
-				}				
+				}
 				else
 				{
-					// alert("valid : " + $(this).attr("name") + " " + stringValue);
+
 				}
-				
-				stringRadioButtonFlag = $(this).attr("name");
-			}
-			else
-			{
-				
-			}
-		});
+			});
+		}
+		else
+		{
+			
+		}
+	}
+	
+	if (booleanValidateState == false)
+	{
+		
+	}
+	else
+	{
+		if (stringPageSectionCurrent != stringPageSectionBeneficiariesList)
+		{
+			$("input:radio[required]").each(function()
+			{												
+				stringValue = getRadioButtonGeneral($(this).attr("name"));						
+				var $label = $("label[for='"+this.name+"']")
+
+				if (stringRadioButtonFlag != $(this).attr("name"))
+				{
+					if (stringValue == undefined)
+					{
+						// alert("invalid : " + $(this).attr("name") + " " + stringValue);
+						ReplaceHTMLNameOnValidate("", $(this).attr("name") + " " + $label.text() + " " + "harap dipilih.");
+
+						booleanValidateState = false;
+						return false;
+					}				
+					else
+					{
+						// alert("valid : " + $(this).attr("name") + " " + stringValue);
+					}
+
+					stringRadioButtonFlag = $(this).attr("name");
+				}
+				else
+				{
+
+				}
+			});
+		}
+		else
+		{
+			
+		}
 	}
 	
 	
