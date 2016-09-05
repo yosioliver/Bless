@@ -745,6 +745,7 @@ function additionalQuestionGenerator()
 					tableSPAJProposalGenerator(stringInfix, "SPAJProposalList", arrayHealthQuestionnaire);
                 }
 
+				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
             });
         }
