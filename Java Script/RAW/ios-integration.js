@@ -178,7 +178,7 @@ function savetoDB()
 	
 			var booleanIncomeState = false;
 
-			 if (stringPageSectionCurrent == stringPageSectionForm && stringPageTypeCurrent == stringPageTypeForm)
+			 if (stringPageValidationCurrent == "gaji")
 			 {
 				$("input:text[data-customvalidation='income']").each(function()
 				{
