@@ -2436,14 +2436,7 @@ function getFromDatabase(objectContent, stringPageType)
 					stringButtonPreviewName = $(this).attr("name");
 					stringValue = arrayFind(arrayHealthQuestionnaire, stringButtonPreviewName);
 
-<<<<<<< HEAD
-					stringValue = arrayFind(arrayHealthQuestionnaire, stringTextJavaScriptID);
-					// alert(stringTextJavaScriptID + " " + stringValue);
-
-					if (stringValue == null || stringValue == undefined)
-=======
 					if (stringValue == null || stringValue == undefined || stringValue == "false" || stringValue == false)
->>>>>>> 33f3466159ea62ed1a817b071f3c5e878ac00486
 					{
 
 					}
@@ -2464,25 +2457,6 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			
 		}
-<<<<<<< HEAD
-		
-		if (arrayHealthQuestionnaire.length > 0)
-		{
-			var stringObjectPreview = "";
-
-			for (var i = 0; i < arrayHealthQuestionnaire.length; i++)
-			{
-				stringObjectPreview += "key : " + arrayHealthQuestionnaire[i].elementID + "\nvalue : " + arrayHealthQuestionnaire[i].Value + "\n";
-			}
-
-			// alert(stringObjectPreview);
-		}
-		else
-		{
-			
-		}
-=======
->>>>>>> 33f3466159ea62ed1a817b071f3c5e878ac00486
 	}
 }
 
