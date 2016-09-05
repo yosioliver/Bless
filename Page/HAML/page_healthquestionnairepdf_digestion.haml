@@ -222,54 +222,40 @@
 					%br
 					
 					%span.Number.PositionerLeft 6
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } Jelaskan secara rinci keluhan nyeri yang Anda dirasakan:
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestPainComplain" } Jelaskan secara rinci keluhan nyeri yang Anda dirasakan:
 					%div.RadioButton
 					
-						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationRight" } Timbul pada kondisi tertentu, jelaskan:					
+						%input#RadioButtonProspectiveInsuredDigestPainComplainKondisiTertentu.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "timbulpadakondisitertentu" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestPainComplainKondisiTertentu" } Timbul pada kondisi tertentu																
 					
-						%input#TextProspectiveInsuredPainLocationOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
-					
-						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationRight" } Nyeri berkurang bila sedang makan
+						%input#RadioButtonProspectiveInsuredDigestPainComplainKeluhanNyeriBerkurang.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "nyeriberkurangbilasedangmakan" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestPainComplainKeluhanNyeriBerkurang" } Nyeri berkurang bila sedang makan
 						
-						%input#RadioButtonProspectiveInsuredPainLocationMiddle.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationMiddle", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationMiddle" } Nyeri bertambah bila sedang makan
+						%input#RadioButtonProspectiveInsuredDigestPainComplainKeluhanNyeriBertambah.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "nyeribertambahbilasedangmakan" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestPainComplainKeluhanNyeriBertambah" } Nyeri bertambah bila sedang makan
 						
-						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Nyeri menjalar ke seluruh tubuh lain:
+						%input#RadioButtonProspectiveInsuredDigestPainComplainKeSeluruhTubuh.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "nyerimenjalarkeseluruhtubuhlain" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestPainComplainKeSeluruhTubuh" } Nyeri menjalar ke seluruh tubuh lain
 						
-						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Kepala
+						%input#RadioButtonProspectiveInsuredDigestPainComplainPerut.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "perut" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestPainComplainPerut" } Perut
 						
-						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Dada
+						%input#RadioButtonProspectiveInsuredDigestPainComplainLengan.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "lengan" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestPainComplainLengan" } Lengan
 						
-						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Perut
-												
-						%input#RadioButtonProspectiveInsuredPainLocationLeft.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationLeft", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationLeft" } Lengan						
+						%input#RadioButtonProspectiveInsuredDigestPainComplainDada.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "dada" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestPainComplainDada" } Dada
 						
-						%input#RadioButtonProspectiveInsuredPainLocationOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationOthers", :value => "false" }
+						%input#RadioButtonProspectiveInsuredDigestPainComplainOther.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestPainComplain", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationOthers"} Lainnya, sebutkan
-						%input#TextProspectiveInsuredPainLocationOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredDigestPainComplainOther"} Lainnya, sebutkan
+						%div#TextProspectiveInsuredDigestPainComplainOther.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.PositionerLeft 7
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSpread" } Mohon jelaskan secara rinci pada kolom di bawah ini mengenai nama obat yang Anda konsumsi dan lama pemakaiannya sehubungan dengan gangguan pencernaan?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestDrugsName" } Mohon jelaskan secara rinci pada kolom di bawah ini mengenai nama obat yang Anda konsumsi dan lama pemakaiannya sehubungan dengan gangguan pencernaan?
 					%br
-					%input#TextProspectiveInsuredSpreadToOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
-					%br
+					%div#TextProspectiveInsuredDigestDrugsName.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%span.Number.PositionerLeft 8
