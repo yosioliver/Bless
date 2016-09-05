@@ -233,7 +233,7 @@ function savetoDB()
 					if (stringValue == undefined)
 					{
 						// alert("invalid : " + $(this).attr("name") + " " + stringValue);
-						ReplaceHTMLNameOnValidate("", $(this).attr("name") + " " + $label.text() + " " + "harap dipilih.");
+						ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap dipilih.");
 
 						booleanValidateState = false;
 						return false;
