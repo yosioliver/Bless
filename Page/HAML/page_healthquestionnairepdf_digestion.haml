@@ -28,9 +28,9 @@
 
 				// SECTION MANDATORY
 
-				boxGenerator("#DateProspectiveInsuredDigestionWhenDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionWhenMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionWhenYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestSinceStartedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestSinceStartedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestSinceStartedYear", 4, boxTypeWithoutLabel, null);
 				
 				lineGenerator("#TextProspectiveInsuredDigestOther", 5);
 				
@@ -144,16 +144,17 @@
 						%input#RadioButtonProspectiveInsuredDigestOther.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigest", :value => "other" }
 						%div.BoxRound.PositionerLeft												
 						%label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestOther"} Lainnya, sebutkan						
-						%input#TextProspectiveInsuredDigestOther.LineDot.PositionerLeft						
+						/ %input#TextProspectiveInsuredDigestOther.LineDot.PositionerLeft						
+						%div#TextProspectiveInsuredDigestOther.LineDot.PositionerLeft
 					%br					
 
 					%span.Number.PositionerLeft 2
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionWhen" } Sejak kapan anda mengalami gangguan pencernaan?
-					%table#DateProspectiveInsuredDigestionWhenDay.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestSinceStartedDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionWhenMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestSinceStartedMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionWhenYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestSinceStartedYear.BoxSquare.PositionerRight
 					%br
 					
 					%span.Number.PositionerLeft 3
