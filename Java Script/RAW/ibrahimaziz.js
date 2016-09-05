@@ -730,7 +730,7 @@ function additionalQuestionGenerator()
 
 						for (var k = 0; k < arrayHealthQuestionnaire.length; k++)
 						{
-							if (stringDetailKey == arrayHealthQuestionnaire[i].elementID.substring(0, stringDetailKey.length))
+							if (stringDetailKey == arrayHealthQuestionnaire[k].elementID.substring(0, stringDetailKey.length))
 							{
 								arrayDelete(arrayHealthQuestionnaire, stringDetailKey);
 							}
@@ -745,6 +745,7 @@ function additionalQuestionGenerator()
 					tableSPAJProposalGenerator(stringInfix, "SPAJProposalList", arrayHealthQuestionnaire);
                 }
 
+				alert($(this).attr("name") + " " + getRadioButtonGeneral($(this).attr("name")));
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
             });
@@ -802,8 +803,10 @@ function additionalQuestionGenerator()
         }
 		else if ($(this).data("custom-radiobutton") == "input")
 		{
+			alert("a");
 			$("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
+				alert("b");
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
 				previewArrayObject(arrayHealthQuestionnaire);

@@ -139,10 +139,10 @@
 							%label#LabelProspectiveInsuredHealthDissorder.Item{ :for => "RadioButtonProspectiveInsuredHealthDissorderYes" }
 								Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:							
 							%div.RadioButton.Item
-								%input#RadioButtonProspectiveInsuredHealthDissorderYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "true", :required => "true" }
+								%input#RadioButtonProspectiveInsuredHealthDissorderYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "true", :required => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHealthDissorderYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonProspectiveInsuredHealthDissorderNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "false", :required => "true" }
+								%input#RadioButtonProspectiveInsuredHealthDissorderNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "false", :required => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHealthDissorderNo" } Tidak								
 						%ol
 							%li
@@ -294,10 +294,10 @@
 							%label#LabelProspectiveInsuredSPAJProposal.Item{ :for => "RadioButtonProspectiveInsuredSPAJProposalYes" }
 								Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
 							%div.RadioButton.Item
-								%input#RadioButtonProspectiveInsuredSPAJProposalYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", :value => "true", "data-popup-type" => "spajproposal", :required => "true" }
+								%input#RadioButtonProspectiveInsuredSPAJProposalYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", :value => "true", "data-popup-type" => "spajproposal", "data-custom-radiobutton" => "input", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSPAJProposalYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonProspectiveInsuredSPAJProposalNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", "data-popup-type" => "spajproposal", :required => "true" }
+								%input#RadioButtonProspectiveInsuredSPAJProposalNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", "data-popup-type" => "spajproposal", "data-custom-radiobutton" => "input", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSPAJProposalNo" } Tidak
 						%input#ButtonAddSPAJProposal.ButtonPrimary{ :type => "button", :value => "Add" }
 						%div#SPAJProposalList
