@@ -122,6 +122,33 @@ function savetoDB()
 	var stringRadioButtonFlag;
 	var booleanValidateState = true;
 
+	// QUICK FIX FOR BENEFICIARIES LIST VALIDATION
+	
+	if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
+	{
+		if (booleanValidateState == false)
+		{
+			
+		}
+		else
+		{
+			if (intBeneficiariesListID == 1)
+			{
+
+			}
+			else
+			{
+				ReplaceHTMLNameOnValidate("", $label.text() + "Mohon masukkan minimal 1 orang calon penerima manfaat");
+				// alert("Mohon masukkan minimal 1 orang calon penerima manfaat");
+			}
+		}
+	}
+	else
+	{
+		
+	}
+	
+	
 	if (booleanValidateState == false)
 	{
 		
@@ -134,8 +161,9 @@ function savetoDB()
 			var $label = $("label[for='"+this.id+"']")
 
 			if (stringValue == undefined || stringValue == null || stringValue == "")
-			{				
+			{	
 				ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
+				// alert($label.text() + " " + "harap diisi.");
 				booleanValidateState = false;
 				return false;
 			}
@@ -177,6 +205,43 @@ function savetoDB()
 			}
 		});
 	}
+	
+	
+	// QUICK FIX VALIDATION FOR FORM
+	
+	var booleanIncomeState = false;
+	
+	 if (stringPageSectionCurrent == stringPageSectionForm && stringPageTypeCurrent == stringPageTypeForm)
+	 {
+		$("input:text[data-customvalidation='income']").each(function()
+		{
+			if ($(this).val() > 0)
+			{
+				booleanIncomeState = true;
+				return false;
+			}
+			else
+			{
+
+			}
+		});
+
+		if (booleanIncomeState == false)
+		{
+			booleanValidateState = false;
+			ReplaceHTMLNameOnValidate("","Harap mengisi penghasilan kotor minimum satu jenis !.");
+			// alert("Harap mengisi penghasilan kotor minimum satu jenis !.");
+		}
+		else
+		{
+
+		}
+	}
+	else
+	{
+		
+	}
+	
 	
 	if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
 	{
