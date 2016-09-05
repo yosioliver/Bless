@@ -800,7 +800,7 @@ function additionalQuestionGenerator()
                 stringRadioButtonName = $(this).attr("name");
             });
         }
-		else if ($(this).data("data-custom-validation") == "input")
+		else if ($(this).data("custom-radiobutton") == "input")
 		{
 			$("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
