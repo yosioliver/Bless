@@ -119,7 +119,7 @@ function readfromDB()
 function savetoDB() 
 {	
 	var stringValue;
-	var stringRadioButtonFlag;
+	var stringRadioButtonFlag = 0;
 	var booleanValidateState = true;
 
 	// QUICK FIX FOR BENEFICIARIES LIST VALIDATION
@@ -184,20 +184,23 @@ function savetoDB()
 		{												
 			stringValue = getRadioButtonGeneral($(this).attr("name"));						
 			var $label = $("label[for='"+this.name+"']")
-
+			
 			if (stringRadioButtonFlag != $(this).attr("name"))
 			{
 				if (stringValue == undefined)
-				{							
+				{
+					// alert("invalid : " + $(this).attr("name") + " " + stringValue);
 					ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap dipilih.");
-					stringRadioButtonFlag = $(this).attr("name");
+					
 					booleanValidateState = false;
 					return false;
 				}				
 				else
 				{
-					
+					alert("valid : " + $(this).attr("name") + " " + stringValue);
 				}
+				
+				stringRadioButtonFlag = $(this).attr("name");
 			}
 			else
 			{
@@ -229,7 +232,7 @@ function savetoDB()
 		if (booleanIncomeState == false)
 		{
 			booleanValidateState = false;
-			ReplaceHTMLNameOnValidate("","Harap mengisi penghasilan kotor minimum satu jenis !.");
+			ReplaceHTMLNameOnValidate("","Harap mengisi penghasilan kotor minimum satu jenis");
 			// alert("Harap mengisi penghasilan kotor minimum satu jenis !.");
 		}
 		else
@@ -267,7 +270,7 @@ function savetoDB()
 	else
 	{
 		
-	}		
+	}
 	
 	if (booleanValidateState == false)
 	{

@@ -1,0 +1,165 @@
+%form#PopUpBackBone.PopUp
+	
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%h2 KUESIONER GANGGUAN TULANG BELAKANG
+
+		/ MAIN
+
+	%fieldset
+		%form#HealthQuestionnaireMain
+			%div.ContainerFit
+				%span.Multi.Single.6i Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
+			%br
+			%hr
+
+			%label.medium.Single.Item 1. Apakah Anda pernah menderita hernia/ spondylosis/ kelainan tulang belakang lainnya?
+			%br
+			%div.ContainerFit 
+				%div.RadioButton.Medium.Item
+					%input#RadioButtonPolicyMenderitaTulangBelakangYes{ :type => "radio", :name => "RadioButtonPolicyMenderitaTulangBelakangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMenderitaTulangBelakangYes" } Ya
+					%div.Separator
+
+					%input#RadioButtonPolicyMenderitaTulangBelakangNo{ :type => "radio", :name => "RadioButtonPolicyMenderitaTulangBelakangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMenderitaTulangBelakangNo" } Tidak
+
+				%input#TextPolicyHolderMenderitaSendi.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
+
+			%br
+			%hr
+
+			%label.medium.Single.Item 2. Bila Ya, kapan pertama kali keluhan tersebut timbul?
+			%br
+			%input#TextPolicyHolderKapanPertamaKaliKeluhanTimbul.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+			%hr
+
+			%label.medium.Single.Item 3. Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
+			%br
+			%input#TextPolicyHolderSeringkahKeluhanTimbul.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+			%hr
+
+			%label.medium.Single.Item 4. Mohon jelaskan keluhan dan bagian tubuh mana?
+			%br
+			%input#TextPolicyHolderBagianTubuhMana.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+			%hr
+
+			%label.medium.Single.Item 5. Apakah aktivitas Anda mengalami hambatan? Jika Ya, mohon jelaskan
+			%br
+			%input#TextPolicyHolderAndaMengalamiHambatan.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+			%hr
+
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft 6. Kapan mengalami hambatan?
+				%input#TextPolicyHolderMengalamiHambatan.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Apa diagnosis dokter?
+				%input#TextPolicyHolderDiagnosisDokter.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%hr
+
+			%label.medium.Single.Item 7. Menurut dokter Anda, apa penyebab diagnosis tersebut? (kecelakaan, proses penentuan, kecelakaan sewaktu berolahraga, dsb)
+			%br
+			%input#TextPolicyHolderProsesPenentuan.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+			%hr
+				%label#Wrap.Single.PositionerLeft 8. Apakah Anda pernah menjalani X-ray, MRI, atau pemeriksaan lainnya?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMenjalaniPemeriksaanYes{ :type => "radio", :name => "RadioButtonPolicyMenjalaniPemeriksaanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMenjalaniPemeriksaanYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMenjalaniPemeriksaanNo{ :type => "radio", :name => "RadioButtonPolicyMenjalaniPemeriksaanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMenjalaniPemeriksaanNo" } Tidak
+				%input#TextPolicyHolderMenjalaniPemeriksaan.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+
+			%hr
+				%label#Wrap.Single.PositionerLeft 9. Apakah Anda menggunakan tongkat untuk berjalan atau alat bantu lainnya?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyMengunnakanTongkatYes{ :type => "radio", :name => "RadioButtonPolicyMengunnakanTongkatChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMengunnakanTongkatYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyMengunnakanTongkatNo{ :type => "radio", :name => "RadioButtonPolicyMengunnakanTongkatChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyMengunnakanTongkatNo" } Tidak
+				%input#TextPolicyHolderMengunnakanTongkat.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+
+			%hr
+				%label#Wrap.Single.PositionerLeft 10. Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyDioperasiYes{ :type => "radio", :name => "RadioButtonPolicyDioperasiChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyDioperasiYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyDioperasiNo{ :type => "radio", :name => "RadioButtonPolicyDioperasiChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyDioperasiNo" } Tidak
+				%input#TextPolicyHolderDioperasi.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+
+			%hr
+				%label#Wrap.Single.PositionerLeft 11. Mohon jelaskan dengan detil jenis pengobatan Anda saat ini dan dahulu, termasuk tanggal, nama obat, dosis, seberapa sering digunakan dan apakah diberi suntikan?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonDetilJenisPengobatanYes{ :type => "radio", :name => "RadioButtonDetilJenisPengobatanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonDetilJenisPengobatanYes" } 
+
+					%input#RadioButtonDetilJenisPengobatanNo{ :type => "radio", :name => "RadioButtonDetilJenisPengobatanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonDetilJenisPengobatanNo" } 
+				%input#TextPolicyDetilJenisPengobatanNo.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+
+			%hr
+			%label#Wrap.Single.PositionerLeft 12. Saat ini dengan dokter siapa Anda melakukan kontrol?
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Nama Dokter
+				%input#TextPolicyHolderNamaDokter.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Alamat Dokter
+				%input#TextPolicyHolderAlamatDokter.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%hr
+
+			%div.ContainerFit 
+				%label.Long.Multi.PositionerLeft 13. Seberapa sering Anda melakukan kontrol?
+				%input#TextPolicyHolderMelakukanControl.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Kapan kontrol terakhir Anda?
+				%input#TextPolicyHolderKontrolTerakhirAnda.Full.Single.Item.Margin{ :type =>"text" }
+
+			%hr
+				%label#Wrap.Single.PositionerLeft 14. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama 
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonTidakMasukKerjaYes{ :type => "radio", :name => "RadioButtonTidakMasukKerjaChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonTidakMasukKerjaYes" } Ya
+					%div.Separator
+					%input#RadioButtonTidakMasukKerjaNo{ :type => "radio", :name => "RadioButtonTidakMasukKerjaChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonTidakMasukKerjaNo" } Tidak
+				%input#TextPolicyHolderTidakMasukKerja.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+
+			%hr
+				%div.ContainerFit
+					%label#Wrap.Single.PositionerLeft 15. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini									
+				%br	
+					%input#TextPolicyDetilPengajuanAsuransi.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+			%br
+
+			%hr
+			%h2 PERNYATAAN DAN KUASA
+			%ol
+				%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+				%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+				%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+				%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+
+
+
+
