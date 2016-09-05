@@ -1,269 +1,240 @@
-!!! 5
+%form#PopUpDigestion.PopUp
 
-%html
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%h2 KUESIONER GANGGUAN PENCERNAAN							
 
-	/ HEAD
+	/ MAIN
 
-	%head
-		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life - Form 6e
+	%fieldset
+		%form#HealthQuestionnaireMain
+			%div.ContainerFit
+				%span.Multi.Single.6e Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia,Hepatitis dan lainnya?
+			%br
+			%hr
+			%div.ContainerFit
+				%label.medium.Single.Item 1. Jelaskan gangguan pencernaan yang pernah dialami?
+			%br
 
-		/ JQUERY
+			%div.RadioButton.PositionerLeft
+				%input#RadioButtonPolicyHolderDigestTukakLambung.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "tukaklambung" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestTukakLambung" } tukak lambung
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestRadangUsus.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "radangusus" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestRadangUsus" } radang usus
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestTukakUsus.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "tukakusus" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestTukakUsus" } tukak usus
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestMaag.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderDigest", :value => "maag" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestMaag" } maag
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestRadangUsus12Jari.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderDigest", :value => "RadangUsus12Jari" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestRadangUsus12Jari" } radang usus 12 jari
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestOther{ :type => "radio", :name =>"RadioButtonPolicyHolderDigest", :value => "other" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestOther" } lainnya
+			%br
+				%input#TextPolicyHolderDigestOther.Full.Single.Item1.Margin{ :type =>"text" }
 
-		:javascript
-			$(document).ready(function()
-			{
-				$("#BoxDate").DateTimePicker(
-				{
-					dateSeparator: "/",
-					dateFormat: "dd/MM/yyyy"
-				});
-				
-				radioButtonOtherGenerator("RadioButtonPolicyHolderDigest", "#TextPolicyHolderDigestOther", "other");
-				radioButtonOtherGenerator("RadioButtonPolicyHolderDigestComplainFelt", "#TextPolicyHolderDigestComplainFeltOther", "other");
-				radioButtonOtherGenerator("RadioButtonPolicyHolderDigestPainComplain", "#TextPolicyHolderDigestPainComplainOther", "other");
-			});
+			%hr
+			%div.ContainerFit					
+				%label#LabelPolicyHolderDigestSinceStarted.Long.Single.Item3.Margin 2. Sejak kapan mengalami gangguan pencernaan?
+				%input#DatePolicyHolderDigestSinceStarted.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }						
 
-	/ BODY
+			%hr	
+			%label.medium.Single.Item 3. a. Frekuensi timbulnya dalam satu bulan?
+			%br    
+			%input#TextPolicyHolderDigestFrequencyInMonth.Full.Single.Item1.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit
+				%label#LabelPolicyHolderDigestLastArise.Long.Single.Item3.Margin b. Kapan timbulnya keluhan terakhir?
+				%input#TextPolicyHolderDigestLastArise.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }					
+			%hr
+			%div.RadioButton.PositionerLeft
+				%label.medium.Single.Item 4. Keluhan apa yang dirasakan:
+				%input#RadioButtonPolicyHolderDigestComplainFeltMual.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "mual" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltMual" } mual
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestComplainFeltMuntah.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "muntah" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltMuntah" } muntah
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestComplainFeltMuntahDarah.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "muntahdarah" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltMuntahDarah" } muntah darah
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestComplainFeltNyeriukuhati.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "nyeriukuhati" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltNyeriukuhati" } nyeri uku hati
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestComplainFeltOther.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "other" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltOther" } lainnya
+			%br
+				%input#TextPolicyHolderDigestComplainFeltOther.Full.Single.Item1.Margin{ :type =>"text" }
+			%hr
+			%br
 
-	%body#Main
+			%div.RadioButton.PositionerLeft
+				%label.medium.Single.Item 5. Apakah Anda pernah mengalami muntah darah?
+				%input#RadioButtonPolicyHolderDigestVomitingBloodNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestVomitingBlood", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestVomitingBloodNo" } Tidak
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestVomitingBloodYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestVomitingBlood", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestVomitingBloodYes" } Ya				
+			%br
+			%div.ContainerFit 
+				%label#LabelPolicyHolderDigestVomitingBloodLastArise.Long.Single.Item3.Margin Jika "Ya", kapan terakhir Anda mengalaminya?
+				%input#DatePolicyHolderDigestVomitingBloodLastArise.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%br
 
-		/ MAIN
-		
-		%header
-			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-			%h2 KUESIONER GANGGUAN PENCERNAAN							
+			%div.ContainerFit 
+				%label#LabelPolicyHolderDigestVomitingBloodAriseTime.Long.Single.Item3.Margin Berapa kali Anda mengalami muntah darah?
+				%input#TextPolicyHolderDigestVomitingBloodAriseTime.Short.Single.Item1.Margin{ :type => "text" }
+			%br
 
+			%label.medium.Single.Item Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
+			%br
+			%input#TextPolicyHolderDigestVomitingBloodSolvingWay.Full.Single.Item1.Margin{ :type =>"text" }
+			%br
 
-		%main
-			%form#HealthQuestionnaireMain
-				%div.ContainerFit
-					%span.Multi.Single.6e Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia,Hepatitis dan lainnya?
+			%hr
+			%div.RadioButton.PositionerLeft
+				%label.medium.Single.Item 6. Jelaskan keluhan nyeri yang dirasakan :
 				%br
-				%hr
-				%div.ContainerFit
-					%label.medium.Single.Item 1. Jelaskan gangguan pencernaan yang pernah dialami?
-				%br
-				
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderDigestTukakLambung.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "tukaklambung" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestTukakLambung" } tukak lambung
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestRadangUsus.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "radangusus" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestRadangUsus" } radang usus
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestTukakUsus.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "tukakusus" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestTukakUsus" } tukak usus
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestMaag.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderDigest", :value => "maag" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestMaag" } maag
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestRadangUsus12Jari.Medium.Single{ :type => "radio", :name =>"RadioButtonPolicyHolderDigest", :value => "RadangUsus12Jari" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestRadangUsus12Jari" } radang usus 12 jari
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestOther{ :type => "radio", :name =>"RadioButtonPolicyHolderDigest", :value => "other" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestOther" } lainnya
-				%br
-					%input#TextPolicyHolderDigestOther.Full.Single.Item1.Margin{ :type =>"text" }
-					
-				%hr
-				%div.ContainerFit					
-					%label#LabelPolicyHolderDigestSinceStarted.Long.Single.Item3.Margin 2. Sejak kapan mengalami gangguan pencernaan?
-					%input#DatePolicyHolderDigestSinceStarted.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }						
-					
-				%hr	
-				%label.medium.Single.Item 3. a. Frekuensi timbulnya dalam satu bulan?
-				%br    
-				%input#TextPolicyHolderDigestFrequencyInMonth.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%div.ContainerFit
-					%label#LabelPolicyHolderDigestLastArise.Long.Single.Item3.Margin b. Kapan timbulnya keluhan terakhir?
-					%input#TextPolicyHolderDigestLastArise.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }					
-				%hr
-				%div.RadioButton.PositionerLeft
-					%label.medium.Single.Item 4. Keluhan apa yang dirasakan:
-					%input#RadioButtonPolicyHolderDigestComplainFeltMual.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "mual" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltMual" } mual
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestComplainFeltMuntah.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "muntah" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltMuntah" } muntah
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestComplainFeltMuntahDarah.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "muntahdarah" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltMuntahDarah" } muntah darah
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestComplainFeltNyeriukuhati.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "nyeriukuhati" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltNyeriukuhati" } nyeri uku hati
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestComplainFeltOther.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "other" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestComplainFeltOther" } lainnya
-				%br
-					%input#TextPolicyHolderDigestComplainFeltOther.Full.Single.Item1.Margin{ :type =>"text" }
-				%hr
-				%br
-				
-				%div.RadioButton.PositionerLeft
-					%label.medium.Single.Item 5. Apakah Anda pernah mengalami muntah darah?
-					%input#RadioButtonPolicyHolderDigestVomitingBloodNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestVomitingBlood", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestVomitingBloodNo" } Tidak
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestVomitingBloodYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestVomitingBlood", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestVomitingBloodYes" } Ya				
-				%br
-				%div.ContainerFit 
-					%label#LabelPolicyHolderDigestVomitingBloodLastArise.Long.Single.Item3.Margin Jika "Ya", kapan terakhir Anda mengalaminya?
-					%input#DatePolicyHolderDigestVomitingBloodLastArise.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-				%br
-				
-				%div.ContainerFit 
-					%label#LabelPolicyHolderDigestVomitingBloodAriseTime.Long.Single.Item3.Margin Berapa kali Anda mengalami muntah darah?
-					%input#TextPolicyHolderDigestVomitingBloodAriseTime.Short.Single.Item1.Margin{ :type => "text" }
-				%br
-				
-				%label.medium.Single.Item Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
-				%br
-				%input#TextPolicyHolderDigestVomitingBloodSolvingWay.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				
-				%hr
-				%div.RadioButton.PositionerLeft
-					%label.medium.Single.Item 6. Jelaskan keluhan nyeri yang dirasakan :
-					%br
-					%input#RadioButtonPolicyHolderDigestPainComplainKondisiTertentu.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Timbulpadakondisitertentu" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKondisiTertentu" } Timbul pada kondisi tertentu
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBerkurang.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Nyeriberkurangbilasedangmakan" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBerkurang" } Nyeri berkurang bila sedang makan
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBertambah.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Nyeribertambahbilasedangmakan" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBertambah" } Nyeri bertambah bila sedang makan
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestPainComplainKeSeluruhTubuh.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Nyerimenjalarkeseluruhtubuhlain" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKeSeluruhTubuh" } Nyeri menjalar ke seluruh tubuh lain
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestPainComplainPerut.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Perut" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainPerut" } Perut
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestPainComplainLengan.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Lengan" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainLengan" } Lengan
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestPainComplainDada.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Dada" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainDada" } Dada
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestPainComplainOther.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "other" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainOther" } Lainnya
-					
-				%br
-					%input#TextPolicyHolderDigestPainComplainOther.Full.Single.Item.Margin{ :type =>"text" }
-				%hr
-				
-				%label.medium.Single.Item 7. Jelaskan nama obat dan lama pemakainnya sehubungan dengan gangguan pencernaan :
-				%br    
-				%input#TextPolicyHolderDigestDrugsName.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%div.RadioButton.PositionerLeft
-					%label.medium.Single.Item 8. Apakah obat tersebut diperoleh berdasarkan resep dokter?
-					%input#RadioButtonPolicyHolderDigestDoctorRecipeNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDoctorRecipe", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestDoctorRecipeNo" } Tidak
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestDoctorRecipeYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDoctorRecipe", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestDoctorRecipeYes" } Ya
-				%br
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Nama Dokter
-					%input#TextPolicyHolderDigestDoctorName.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Alamat Dokter
-					%input#TextPolicyHolderDigestDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 9. Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuk tanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
-				%br    
-				%input#TextPolicyHolderDigestResultOfTheExamination.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 10. Apakah pernah mendapatkan perawatan rumah sakit sehubungan dengan gangguan pencernaan tersebut?
-				%br
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderDigestHospitalCareNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestHospitalCareYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya
-														
-				%input#TextPolicyHolderDigestHospitalCareWhen.Medium.Single.PositionerRight.Margin{ :type => "text", "data-field" => "date" }
-				%label#LabelPolicyHolderDigestHospitalCareWhen.Wrap.Single.PositionerRight.Margin Kapan
-				%br
-				
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Lama Perawatan
-					%input#TextPolicyHolderDigestHospitalCareHowLong.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Nama Dokter
-					%input#TextPolicyHolderDigestHospitalCareDoctorName.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Alamat Dokter
-					%input#TextPolicyHolderDigestHospitalCareDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%div.RadioButton.PositionerLeft
-					%label.medium.Single.Item 11. Apakah sampai saat ini masih dalam pengobatan?
-					%input#RadioButtonPolicyHolderDigestInTreatmentNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestInTreatmentNo" } Tidak
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestInTreatmentYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestInTreatmentYes" } Ya
-				%br
-				
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Alasan
-					%input#TextPolicyHolderDigestTreatmentReason.Full.Single.Item.Margin{ :type =>"text" }
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Nama Obat
-					%input#TextPolicyHolderDigestTreatmentDrugsName.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Nama Dokter
-					%input#TextPolicyHolderDigestTreatmentDoctorName.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%div.ContainerFit 
-					%label.Long.Single.PositionerLeft Alamat Dokter
-					%input#TextPolicyHolderDigestTreatmentDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
-				%br
-				%hr
-				%div.RadioButton.PositionerLeft
-					%label.medium.Single.Item 12. Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini ?
-					%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo" } Tidak
-					%div.Separator
-					%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes" } Ya	
-				%br
-				%label#LabelPolicyHolderDigestNoOfficeEntryInYearWhen.Wrap.Single.PositionerLeft.Margin Kapan
-				%input#TextPolicyHolderDigestNoOfficeEntryInYearWhen.Medium.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }	
-				%label#LabelPolicyHolderDigestNoOfficeEntryInYearHowLong.Wrap.Single.PositionerLeft.Margin dan berapa lama?
-				%input#TextPolicyHolderDigestNoOfficeEntryInYearHowLong.Medium.Single.PositionerLeft.Margin{ :type => "text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini  
-				%input#AreaPolicyHolderDigestOtherHealthCondition.Full.Multi.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%h2 PERNYATAAN DAN KUASA
-				%ol
-					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
-					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
-					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
-					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
-				
-				%div#BoxDate
+				%input#RadioButtonPolicyHolderDigestPainComplainKondisiTertentu.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Timbulpadakondisitertentu" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKondisiTertentu" } Timbul pada kondisi tertentu
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBerkurang.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Nyeriberkurangbilasedangmakan" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBerkurang" } Nyeri berkurang bila sedang makan
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBertambah.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Nyeribertambahbilasedangmakan" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKeluhanNyeriBertambah" } Nyeri bertambah bila sedang makan
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestPainComplainKeSeluruhTubuh.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Nyerimenjalarkeseluruhtubuhlain" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainKeSeluruhTubuh" } Nyeri menjalar ke seluruh tubuh lain
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestPainComplainPerut.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Perut" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainPerut" } Perut
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestPainComplainLengan.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Lengan" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainLengan" } Lengan
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestPainComplainDada.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "Dada" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainDada" } Dada
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestPainComplainOther.Single{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "other" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestPainComplainOther" } Lainnya
+
+			%br
+				%input#TextPolicyHolderDigestPainComplainOther.Full.Single.Item.Margin{ :type =>"text" }
+			%hr
+
+			%label.medium.Single.Item 7. Jelaskan nama obat dan lama pemakainnya sehubungan dengan gangguan pencernaan :
+			%br    
+			%input#TextPolicyHolderDigestDrugsName.Full.Single.Item1.Margin{ :type =>"text" }
+			%br
+			%hr
+
+			%div.RadioButton.PositionerLeft
+				%label.medium.Single.Item 8. Apakah obat tersebut diperoleh berdasarkan resep dokter?
+				%input#RadioButtonPolicyHolderDigestDoctorRecipeNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDoctorRecipe", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestDoctorRecipeNo" } Tidak
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestDoctorRecipeYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDoctorRecipe", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestDoctorRecipeYes" } Ya
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Nama Dokter
+				%input#TextPolicyHolderDigestDoctorName.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Alamat Dokter
+				%input#TextPolicyHolderDigestDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%hr
+
+			%label.medium.Single.Item 9. Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuk tanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
+			%br    
+			%input#TextPolicyHolderDigestResultOfTheExamination.Full.Single.Item1.Margin{ :type =>"text" }
+			%br
+			%hr
+
+			%label.medium.Single.Item 10. Apakah pernah mendapatkan perawatan rumah sakit sehubungan dengan gangguan pencernaan tersebut?
+			%br
+			%div.RadioButton.PositionerLeft
+				%input#RadioButtonPolicyHolderDigestHospitalCareNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestHospitalCareYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya
+
+			%input#TextPolicyHolderDigestHospitalCareWhen.Medium.Single.PositionerRight.Margin{ :type => "text", "data-field" => "date" }
+			%label#LabelPolicyHolderDigestHospitalCareWhen.Wrap.Single.PositionerRight.Margin Kapan
+			%br
+
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Lama Perawatan
+				%input#TextPolicyHolderDigestHospitalCareHowLong.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Nama Dokter
+				%input#TextPolicyHolderDigestHospitalCareDoctorName.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Alamat Dokter
+				%input#TextPolicyHolderDigestHospitalCareDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%hr
+
+			%div.RadioButton.PositionerLeft
+				%label.medium.Single.Item 11. Apakah sampai saat ini masih dalam pengobatan?
+				%input#RadioButtonPolicyHolderDigestInTreatmentNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestInTreatmentNo" } Tidak
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestInTreatmentYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestInTreatmentYes" } Ya
+			%br
+
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Alasan
+				%input#TextPolicyHolderDigestTreatmentReason.Full.Single.Item.Margin{ :type =>"text" }
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Nama Obat
+				%input#TextPolicyHolderDigestTreatmentDrugsName.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Nama Dokter
+				%input#TextPolicyHolderDigestTreatmentDoctorName.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%div.ContainerFit 
+				%label.Long.Single.PositionerLeft Alamat Dokter
+				%input#TextPolicyHolderDigestTreatmentDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%br
+			%hr
+			%div.RadioButton.PositionerLeft
+				%label.medium.Single.Item 12. Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini ?
+				%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo" } Tidak
+				%div.Separator
+				%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes" } Ya	
+			%br
+			%label#LabelPolicyHolderDigestNoOfficeEntryInYearWhen.Wrap.Single.PositionerLeft.Margin Kapan
+			%input#TextPolicyHolderDigestNoOfficeEntryInYearWhen.Medium.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }	
+			%label#LabelPolicyHolderDigestNoOfficeEntryInYearHowLong.Wrap.Single.PositionerLeft.Margin dan berapa lama?
+			%input#TextPolicyHolderDigestNoOfficeEntryInYearHowLong.Medium.Single.PositionerLeft.Margin{ :type => "text" }
+			%br
+			%hr
+
+			%label.medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini  
+			%input#AreaPolicyHolderDigestOtherHealthCondition.Full.Multi.Item1.Margin{ :type =>"text" }
+			%br
+			%hr
+
+			%h2 PERNYATAAN DAN KUASA
+			%ol
+				%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+				%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+				%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+				%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+
+			%div#BoxDate
