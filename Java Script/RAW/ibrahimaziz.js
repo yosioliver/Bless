@@ -800,6 +800,14 @@ function additionalQuestionGenerator()
                 stringRadioButtonName = $(this).attr("name");
             });
         }
+		else if ($(this).data("popup-type") == "input")
+		{
+			$("input:radio[name='" + $(this).attr("name") + "']").change(function()
+            {
+				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
+                stringRadioButtonName = $(this).attr("name");
+            });
+		}
         else
         {
             
