@@ -777,6 +777,7 @@ function additionalQuestionGenerator()
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
 
                 stringRadioButtonName = $(this).attr("name");
+				previewArrayObject(arrayHealthQuestionnaire);
             });
         }
 		else if ($(this).data("popup-type") == stringPopUpTypeCardiac)
@@ -794,10 +795,9 @@ function additionalQuestionGenerator()
 					
                 }
 
+				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
             });
-			
-			arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
         }
         else
         {
