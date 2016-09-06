@@ -2847,11 +2847,12 @@ function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaS
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;
 	var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
+	$(stringPopUpCurrentJQueryID).css("display", "none");
+	$(stringPopUpLinkJQueryID).css("display", "block");
 	
 	if (booleanState == true)
 	{
-		$(stringPopUpCurrentJQueryID).css("display", "none");
-		$(stringPopUpLinkJQueryID).css("display", "block");
+		
 	}
 	else
 	{
