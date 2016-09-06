@@ -50,9 +50,9 @@
 				boxGenerator("#DateProspectiveInsuredDigestHospitalCareWhenMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredDigestHospitalCareWhenYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Day", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Year", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestNoOfficeEntryInYearWhenDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestNoOfficeEntryInYearWhenMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestNoOfficeEntryInYearWhenYear", 4, boxTypeWithoutLabel, null);
 		
 				boxGenerator("#DateProspectiveInsuredSigned5Day", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredSigned5Month", 2, boxTypeWithoutLabel, null);
@@ -399,25 +399,23 @@
 					%span.Number.PositionerLeft 12
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTreatment" } Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTreatment" } Tidak
-						%input#RadioButtonProspectiveInsuredTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredTreatmentNo", :value => "false" }
-						%div.BoxRound.PositionerRight
-						
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredTreatment" } Ya
-						%input#RadioButtonProspectiveInsuredTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredTreatmentYes", :value => "true" }
-						%div.BoxRound.PositionerRight
-						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDigestNoOfficeEntryInYearNo" } Tidak
+						%input#RadioButtonProspectiveInsuredDigestNoOfficeEntryInYearNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestNoOfficeEntryInYear", :value => "false" }
+						%div.BoxRound.PositionerRight						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDigestNoOfficeEntryInYearYes" } Ya
+						%input#RadioButtonProspectiveInsuredDigestNoOfficeEntryInYearYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestNoOfficeEntryInYear", :value => "true" }
+						%div.BoxRound.PositionerRight						
 						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTreatmentReason" } Jika “Ya”, kapan?.
 						
-						%table#DateProspectiveInsuredDigestionVomitingBlood4Day.BoxSquare.PositionerRight
+						%table#DateProspectiveInsuredDigestNoOfficeEntryInYearWhenDay.BoxSquare.PositionerRight
 						%span.Separator.Single.PositionerRight /
-						%table#DateProspectiveInsuredDigestionVomitingBlood4Month.BoxSquare.PositionerRight
+						%table#DateProspectiveInsuredDigestNoOfficeEntryInYearWhenMonth.BoxSquare.PositionerRight
 						%span.Separator.Single.PositionerRight /
-						%table#DateProspectiveInsuredDigestionVomitingBlood4Year.BoxSquare.PositionerRight
+						%table#DateProspectiveInsuredDigestNoOfficeEntryInYearWhenYear.BoxSquare.PositionerRight
 
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTreatmentReason" } Berapa lama?
+						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredDigestNoOfficeEntryInYearHowLong" } Berapa lama?
 						
-						%input#TextProspectiveInsuredTreatmentReason.Short.Single.PositionerLeft{ :type => "text" }
+						%div#TextProspectiveInsuredDigestNoOfficeEntryInYearHowLong.Short.Single.PositionerLeft{ :type => "text" }
 						%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTreatmentReason" } hari.
 					%br					
 
