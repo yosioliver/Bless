@@ -32,7 +32,7 @@
 
 		%main
 			%form
-				%input#ButtonSubmit{ :type => "button", :value => "Submit" }
+				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentKursIDR" } Mata Uang
 				%div.RadioButton.PositionerLeft
 					%input#RadioButtonPremiPaymentKursIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "idr", :disabled => "true" }
@@ -77,10 +77,10 @@
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentWayDebit" } Cara Pembayaran
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPremiPaymentWayDebit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "annualy" }
+					%input#RadioButtonPremiPaymentWayDebit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "debit" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayDebit" } Debit Rekening
 					%div.Separator
-					%input#RadioButtonPremiPaymentWayCredit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "semester" }
+					%input#RadioButtonPremiPaymentWayCredit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "credit" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayCredit" } Debit Kartu Kredit
 					%div.Separator
 					%input#RadioButtonPremiPaymentWayOther{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "other" }
@@ -112,12 +112,12 @@
 				%br
 
 				%div.ContainerFit
-					%label.Full.Single.Item{ :for => "TextPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?                   
+					%label.Full.Single.Item{ :for => "RadioButtonPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?                   
 
 					%div.RadioButton.LongFix.Single.Item
-						%input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true" }
+						%input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
 						%div.Separator
-						%input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false" }
+						%input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak           
 				%br   

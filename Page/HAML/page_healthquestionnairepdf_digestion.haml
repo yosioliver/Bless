@@ -46,13 +46,13 @@
 				boxGenerator("#DateProspectiveInsuredDigestVomitingBloodLastAriseMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredDigestVomitingBloodLastAriseYear", 4, boxTypeWithoutLabel, null);
 
+				boxGenerator("#DateProspectiveInsuredDigestHospitalCareWhenDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestHospitalCareWhenMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestHospitalCareWhenYear", 4, boxTypeWithoutLabel, null);
+
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Day", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Month", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood3Year", 4, boxTypeWithoutLabel, null);
-
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood4Day", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood4Month", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredDigestionVomitingBlood4Year", 4, boxTypeWithoutLabel, null);
 		
 				boxGenerator("#DateProspectiveInsuredSigned5Day", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredSigned5Month", 2, boxTypeWithoutLabel, null);
@@ -302,32 +302,32 @@
 					%br
 					
 					%span.Number.PositionerLeft 9
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSpread" } Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuk tanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestResultOfTheExamination" } Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuk tanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
 					%br
-					%input#TextProspectiveInsuredSpreadToOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%div#TextProspectiveInsuredDigestResultOfTheExamination.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					%br
 					
 					%span.Number.PositionerLeft 10
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredVomitingBlood" } Apakah Anda pernah mendapatkan perawatan Rumah Sakit sehubungan dengan gangguan pencernaan tersebut?
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDigestHospitalCare" } Apakah Anda pernah mendapatkan perawatan Rumah Sakit sehubungan dengan gangguan pencernaan tersebut?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodNo" } Tidak
-						%input#RadioButtonProspectiveInsuredVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodNo", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDigestHospitalCareNo" } Tidak
+						%input#RadioButtonProspectiveInsuredDigestHospitalCareNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestHospitalCare", :value => "false" }
 						%div.BoxRound.PositionerRight
 						
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredVomitingBloodYes" } Ya
-						%input#RadioButtonProspectiveInsuredVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredVomitingBloodYes", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDigestHospitalCareYes" } Ya
+						%input#RadioButtonProspectiveInsuredDigestHospitalCareYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigestHospitalCare", :value => "true" }
 						%div.BoxRound.PositionerRight
 						
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBlood" } Jika “Ya”, sejak kapan?
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredDigestHospitalCareWhen" } Jika “Ya”, sejak kapan?
 					
-					%table#DateProspectiveInsuredDigestionVomitingBlood2Day.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestHospitalCareWhenDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionVomitingBlood2Month.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestHospitalCareWhenMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredDigestionVomitingBlood2Year.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredDigestHospitalCareWhenYear.BoxSquare.PositionerRight
 
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } s/d
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredDigestionVomitingBlood3Day" } s/d
 					
 					%table#DateProspectiveInsuredDigestionVomitingBlood3Day.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
@@ -336,8 +336,8 @@
 					%table#DateProspectiveInsuredDigestionVomitingBlood3Year.BoxSquare.PositionerRight
 
 
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } Lama perawatan
-					%input#TextProspectiveInsuredDigestionVomitingBloodHowMany.Short.Single.PositionerLeft{ :type => "text"}
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestHospitalCareHowLong" } Lama perawatan
+					%div#TextProspectiveInsuredDigestHospitalCareHowLong.Short.Single.PositionerLeft{ :type => "text"}
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodHowMany" } (bulan/tahun*) *coret yang tidak perlu
 					%br
 					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredDigestionVomitingBloodDesc"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
@@ -423,9 +423,9 @@
 					%br					
 
 					%span.Number.PositionerLeft 13
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%label.Wrap.PositionerLeft{ :for => "AreaProspectiveInsuredDigestOtherHealthCondition" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
-					%input#TextProspectiveInsuredAdditionalInfo.Long.Single.PositionerLeft{ :type => "text" }
+					%input#AreaProspectiveInsuredDigestOtherHealthCondition.Long.Single.PositionerLeft{ :type => "text" }
 					%br	
 
 					%h2 PERNYATAAN DAN KUASA

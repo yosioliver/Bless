@@ -208,8 +208,7 @@ function savetoDB()
 			$("input:radio[required]").each(function()
 			{												
 				stringValue = getRadioButtonGeneral($(this).attr("name"));						
-				var $label = $("label[for='"+this.name+"']")
-
+				var $label = $("label[for='"+this.name+"']")				
 				if (stringRadioButtonFlag != $(this).attr("name"))
 				{
 					if (stringValue == undefined)
