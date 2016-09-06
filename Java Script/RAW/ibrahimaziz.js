@@ -88,6 +88,7 @@ var intBeneficiariesListRecentID = 0;
 var intSPAJProposalRecentID = 0;
 var stringPageValidationIncome = "income";
 var stringPrefixArea = "Area";
+var stringPageTypeHealthQuestionnairePDF = "HealthQuestionnairePDF";
 
 
 // GENERATOR
@@ -2042,8 +2043,6 @@ function getFromDatabase(objectContent, stringPageType)
 					if (stringKey.substring(stringKey.length - arrayHealthTableHeader[j].length, stringKey.length) == arrayHealthTableHeader[j])
 					{
 						var stringIndicatorPrefix = stringKey.substring(stringPrefixText.length, stringPrefixText.length + 3);
-						// var stringIndicatorPolicyHolder = "Pol";
-						// var stringIndicatorProspectiveInsured = "Pro";
 						var stringTableJQueryID;
 						var stringInfix;
 
@@ -2984,7 +2983,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
 			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
 			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
-			var stringKey = stringPrefixText + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringKey = getPrefix(stringInputJavaScriptID) + stringInputInfix + stringInputIDWithoutPrefix;
 			var stringValue = getTextForm(stringSpecificInputJavaScriptID);
 			
 			if (stringInputRequired == stringStateRequired)
@@ -3422,4 +3421,130 @@ function telephoneStripGenerator(stringInputJavaScriptID)
 
 		}
 	});
+}
+
+function setToHealthQuestionnairePDF(stringLayoutJavaScriptID, arrayContent)
+{
+	var stringKey;
+	var stringValue;
+	var stringKeyPrefix;
+	var stringKeyWithoutPrefix;
+	var stringKeyWithoutInfix;
+	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	var stringInputJavaScriptID;
+	var stringInputJQueryID;
+	var stringSpecificInputJavaScriptID;
+	var stringSpecificInputJQueryID;
+	
+	for (var i = 0; i < arrayContent.length; i++)
+	{
+		stringKey = arrayContent[i].elementID;
+		stringValue = arrayContent[i].Value;
+		stringKeyPrefix = getPrefix(stringKey);
+
+		if (stringKeyPrefix == stringPrefixText)
+		{
+			stringInputJQueryID = stringKres + stringKey;
+			stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			
+			if (stringSpecificInputJQueryID.is("table") == true)
+			{
+				setBoxGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+			else
+			{
+				setTextGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+		}
+		else if (stringKeyPrefix == stringPrefixRadioButton)
+		{
+			setRadioButtonGeneral(stringLayoutJavaScriptID + " " + stringKres + stringKey, stringValue);
+		}
+		else if (stringKeyPrefix == stringPrefixCheckbox)
+		{
+			setCheckboxGeneral(stringLayoutJavaScriptID + " " + stringKres + stringKey, stringValue);
+		}
+		else if (stringKeyPrefix == stringPrefixSelect)
+		{
+			stringInputJQueryID = stringKres + stringKey;
+			stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			
+			if (stringSpecificInputJQueryID.is("table") == true)
+			{
+				setBoxGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+			else
+			{
+				setTextGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+		}
+		else if (stringKeyPrefix == stringPrefixArea)
+		{
+			stringInputJQueryID = stringKres + stringKey;
+			stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			
+			if (stringSpecificInputJQueryID.is("table") == true)
+			{
+				setBoxGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+			else
+			{
+				setTextGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+		}
+		else if (stringKeyPrefix == stringPrefixNumber)
+		{
+			stringInputJQueryID = stringKres + stringKey;
+			stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			
+			if (stringSpecificInputJQueryID.is("table") == true)
+			{
+				setBoxGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+			else
+			{
+				setTextGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+			
+			setNumberForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixNumber + stringKeyWithoutInfix, stringValue);
+		}
+		else if (stringKeyPrefix == stringPrefixEmail)
+		{
+			stringInputJQueryID = stringKres + stringKey;
+			stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			
+			if (stringSpecificInputJQueryID.is("table") == true)
+			{
+				setBoxGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+			else
+			{
+				setTextGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+		}
+		else if (stringKeyPrefix == stringPrefixDate)
+		{
+			stringInputJQueryID = stringKres + stringKey;
+			stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			
+			if (stringSpecificInputJQueryID.is("table") == true)
+			{
+				setBoxGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+			else
+			{
+				setTextGeneral(stringSpecificInputJavaScriptID, stringValue);
+			}
+		}
+		else
+		{
+			
+		}
+	}
 }
