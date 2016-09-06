@@ -762,7 +762,7 @@ function additionalQuestionGenerator()
 				
                 if ($(this).val() == "true")
                 {
-					var stringIndicator = $(this).attr("data-question-title");
+					var stringIndicator = $(this).data("question-title");
 					ReplaceHTMLNameOnValidate("","Harap mengisi form kuesioner " + stringIndicator + " melalui hard copy.");
                     alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
 					
