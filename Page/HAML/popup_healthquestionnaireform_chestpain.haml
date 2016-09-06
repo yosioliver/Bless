@@ -45,10 +45,8 @@
 		%hr
 
 		%div.ContainerFit 
-			%label#LabelPolicyHolder.Medium.Single.Item3.Margin 4. Kapan nyeri dada yang terakhir terjadi ?
-			%input#TextNyeriDadahNyeriHari.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Hari" }
-			%input#TextNyeriDadahBulan.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Bulan" }
-			%input#TextNyeriDadahTahun.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Tahun" }
+			%label#LabelLastAttack.Medium.Single.Item3.Margin 4. Kapan terakhir kali nyeri dada terjadi?
+			%input#DateLastAttack.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }
 		%br
 		%hr
 
@@ -89,27 +87,27 @@
 			%input#RadioButtonLainnya{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Lainnya" }
 			%label.RadioButton{ :for => "RadioButtonLainnya" }Lainnya
 		%br
+		%hr				
+
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ? (mohon beri tanda di kolom yang sesuai)  ?
+			%br
+			%input#RadioButtonTengahdada{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => " Tengah dada" }
+			%label.RadioButton{ :for => "RadioButtonTengahdada" } Tengah dada
+			%div.Separator
+			%input#RadioButtonDiSisiKiri{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => "Di sisi kiri" }
+			%label.RadioButton{ :for => "RadioButtonDiSisiKiri" } Di sisi kiri
+			%div.Separator
+			%input#RadioButtonDiSisiKanan{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => "Di sisi kanan" }
+			%label.RadioButton{ :for => "RadioButtonDiSisiKanan" } Di sisi kanan
+			%div.Separator
+			%input#RadioButtonDibahagianLain{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => "Di bagian lain dari dada" }
+			%label.RadioButton{ :for => "RadioButtonDibahagianLain" } Di bagian lain dari dada
+		%br
+		%input#TextProspectiveInsuredChestPainLocationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr
 		
 		-#
-
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ? (mohon beri tanda di kolom yang sesuai)  ?
-				%br
-				%input#RadioButtonTengahdada{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => " Tengah dada" }
-				%label.RadioButton{ :for => "RadioButtonTengahdada" } Tengah dada
-				%div.Separator
-				%input#RadioButtonDiSisiKiri{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => "Di sisi kiri" }
-				%label.RadioButton{ :for => "RadioButtonDiSisiKiri" } Di sisi kiri
-				%div.Separator
-				%input#RadioButtonDiSisiKanan{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => "Di sisi kanan" }
-				%label.RadioButton{ :for => "RadioButtonDiSisiKanan" } Di sisi kanan
-				%div.Separator
-				%input#RadioButtonDibahagianLain{ :type => "radio", :name => "RadioButtonLokasiNyeri", :value => "Di bagian lain dari dada" }
-				%label.RadioButton{ :for => "RadioButtonDibahagianLain" } Di bagian lain dari dada
-			%br
-			%input#TextPolicyHolderLokasiNyeriTersebut.Full.Single.Item1.Margin{ :type =>"text" }
-			%hr
 
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item 7. Apakah nyeri dada tersebut menjalar ? (mohon beri tanda di kolom yang sesuai)

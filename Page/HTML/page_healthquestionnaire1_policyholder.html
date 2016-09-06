@@ -701,10 +701,8 @@
             <input class='Full Single Item1 Margin' id='TextPolicyHolderBerapaKaliSerangan' type='text'>
             <hr>
             <div class='ContainerFit'>
-              <label class='Medium Single Item3 Margin' id='LabelPolicyHolder'>4. Kapan nyeri dada yang terakhir terjadi ?</label>
-              <input class='Medium Single Item1 Margin' id='TextNyeriDadahNyeriHari' placeholder='Hari' type='text'>
-              <input class='Medium Single Item1 Margin' id='TextNyeriDadahBulan' placeholder='Bulan' type='text'>
-              <input class='Medium Single Item1 Margin' id='TextNyeriDadahTahun' placeholder='Tahun' type='text'>
+              <label class='Medium Single Item3 Margin' id='LabelLastAttack'>4. Kapan terakhir kali nyeri dada terjadi?</label>
+              <input class='Medium Single Item1 Margin' data-field='date' id='DateLastAttack' type='date'>
             </div>
             <br>
             <hr>
@@ -746,6 +744,24 @@
               <label class='RadioButton' for='RadioButtonLainnya'>Lainnya</label>
             </div>
             <br>
+            <hr>
+            <div class='RadioButton PositionerLeft'>
+              <label class='medium Single Item'>6. Dimana lokasi dari nyeri tersebut ? (mohon beri tanda di kolom yang sesuai)  ?</label>
+              <br>
+              <input id='RadioButtonTengahdada' name='RadioButtonLokasiNyeri' type='radio' value=' Tengah dada'>
+              <label class='RadioButton' for='RadioButtonTengahdada'>Tengah dada</label>
+              <div class='Separator'></div>
+              <input id='RadioButtonDiSisiKiri' name='RadioButtonLokasiNyeri' type='radio' value='Di sisi kiri'>
+              <label class='RadioButton' for='RadioButtonDiSisiKiri'>Di sisi kiri</label>
+              <div class='Separator'></div>
+              <input id='RadioButtonDiSisiKanan' name='RadioButtonLokasiNyeri' type='radio' value='Di sisi kanan'>
+              <label class='RadioButton' for='RadioButtonDiSisiKanan'>Di sisi kanan</label>
+              <div class='Separator'></div>
+              <input id='RadioButtonDibahagianLain' name='RadioButtonLokasiNyeri' type='radio' value='Di bagian lain dari dada'>
+              <label class='RadioButton' for='RadioButtonDibahagianLain'>Di bagian lain dari dada</label>
+            </div>
+            <br>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredChestPainLocationOtherDesc' type='text'>
             <hr>
           </fieldset>
         </form>

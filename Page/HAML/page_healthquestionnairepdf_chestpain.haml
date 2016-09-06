@@ -31,9 +31,9 @@
 				boxGenerator("#DateProspectiveInsuredLastAttackMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredLastAttackYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DateFirstAttackDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateFirstAttackMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateFirstAttackYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredChestPainFirstAttackDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredChestPainFirstAttackMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredChestPainFirstAttackYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateProspectiveInsuredLastPainDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredLastPainMonth", 2, boxTypeWithoutLabel, null);
@@ -117,12 +117,12 @@
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
 				%fieldset
 					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "DateFirstAttackDay" } Kapan pertama kali Anda merasakan nyeri dada?
-					%table#DateFirstAttackDay.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredChestPainFirstAttackDay" } Kapan pertama kali Anda merasakan nyeri dada?
+					%table#DateProspectiveInsuredChestPainFirstAttackDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateFirstAttackMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredChestPainFirstAttackMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateFirstAttackYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredChestPainFirstAttackYear.BoxSquare.PositionerRight
 					%br
 
 					%span.Number.PositionerLeft 2
@@ -225,7 +225,7 @@
 						%input#RadioButtonProspectiveInsuredPainLocationOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredPainLocationOthers", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredPainLocationOthers"} Di bagian lain dari dada, sebutkan
-						%input#TextProspectiveInsuredPainLocationOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextProspectiveInsuredChestPainLocationOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.PositionerLeft 7
