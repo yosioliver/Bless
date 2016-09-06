@@ -749,7 +749,7 @@ function additionalQuestionGenerator()
 					tableSPAJProposalGenerator(stringInfix, "SPAJProposalList", arrayHealthQuestionnaire);
                 }
 
-				alert($(this).attr("name") + " " + getRadioButtonGeneral($(this).attr("name")));
+				// alert($(this).attr("name") + " " + getRadioButtonGeneral($(this).attr("name")));
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
             });
@@ -764,7 +764,7 @@ function additionalQuestionGenerator()
                 {
 					var stringIndicator = $(this).attr("data-question-title");
 					ReplaceHTMLNameOnValidate("","Harap mengisi form kuesioner " + stringIndicator + " melalui hard copy.");
-                    //alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
+                    alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
 					
 					if (stringInfixName.substring(0, 3) == "Pol")
 					{
@@ -807,10 +807,10 @@ function additionalQuestionGenerator()
         }
 		else if ($(this).data("custom-radiobutton") == "input")
 		{
-			alert("a");
+			// alert("a");
 			$("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
-				alert("b");
+				// alert("b");
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
 				previewArrayObject(arrayHealthQuestionnaire);
@@ -982,7 +982,7 @@ function previewArrayObject(arrayContent)
 		stringObjectPreview += "key : " + arrayContent[i].elementID + "\nvalue : " + arrayContent[i].Value + "\n";
 	}
 
-	alert(stringObjectPreview);
+	// alert(stringObjectPreview);
 }	
 
 function buttonPopUpHealthGenerator()
