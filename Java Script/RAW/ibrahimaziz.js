@@ -763,7 +763,7 @@ function additionalQuestionGenerator()
                 {
 					var stringIndicator = $(this).data("question-title");
 					ReplaceHTMLNameOnValidate("","Harap mengisi form kuesioner " + stringIndicator + " melalui hard copy.");
-                    alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
+                    // alert("Harap mengisi form kuesioner nomor 6 melalui hard copy.");
 					
 					if (stringInfixName.substring(0, 3) == "Pol")
 					{
@@ -782,7 +782,7 @@ function additionalQuestionGenerator()
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
 
                 stringRadioButtonName = $(this).attr("name");
-				previewArrayObject(arrayHealthQuestionnaire);
+				// previewArrayObject(arrayHealthQuestionnaire);
             });
         }
 		else if ($(this).data("popup-type") == stringPopUpTypeCardiac)
@@ -810,7 +810,7 @@ function additionalQuestionGenerator()
             {
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
-				previewArrayObject(arrayHealthQuestionnaire);
+				// previewArrayObject(arrayHealthQuestionnaire);
             });
 		}
         else
@@ -1125,7 +1125,7 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 		}
 	}
 
-	previewArrayObject(arrayBeneficiariesList);
+	// previewArrayObject(arrayBeneficiariesList);
 	
 	for (var l = 0; l < arraySharePercentageTemporary.length; l++)
 	{
@@ -2495,24 +2495,6 @@ function getFromDatabase(objectContent, stringPageType)
 			arrayBeneficiariesList = objectContent;
 			tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 
-//			for (var j = 0; j < arrayBeneficiariesList.length; j++)
-//			{
-//				var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring(arrayBeneficiariesList[j].elementID.length - 5, arrayBeneficiariesList[j].elementID.length);
-//				
-//				if (stringIndicatorShare == "ntage")
-//				{
-//					intSharePercentage = parseInt(arrayBeneficiariesList[j].Value, 10);
-//				}
-//				else
-//				{
-//
-//				}
-//			}
-//			
-//			setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
-//			
-//			alert("0");
-			previewArrayObject(arrayBeneficiariesList);
 			var stringSharePercentagePrefix  = stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix;
 			var intSharePercentageTemporary = 0;
 			var stringSharePercentageFilter;
@@ -2531,8 +2513,6 @@ function getFromDatabase(objectContent, stringPageType)
 
 				}
 			}
-
-			previewArrayObject(arrayBeneficiariesList);
 
 			for (var l = 0; l < arraySharePercentageTemporary.length; l++)
 			{
@@ -2858,7 +2838,7 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 	if (booleanState == true)
 	{
 		$(stringPopUpCurrentJQueryID).css("display", "none");
-		previewArrayObject(arrayContent);
+		// previewArrayObject(arrayContent);
 	}
 	else
 	{
