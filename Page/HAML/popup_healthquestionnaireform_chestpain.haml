@@ -17,85 +17,81 @@
 		%hr
 		
 		%div.ContainerFit
-			%label#LabelChestPainFirstAttack.Medium.Single.Item3.Margin 1. Kapan nyeri dada pertama kali dirasakan?
-			%input#DateChestPainFirstAttack.Medium.Single.Item1.Margin{ :type => "text", "data-field" => "date" }	
+			%label#LabelFirstAttack.Medium.Single.Item3.Margin 1. Kapan nyeri dada pertama kali dirasakan?
+			%input#DateFirstAttack.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }	
 		%br
 		%hr
 		
 		%label.medium.Single.Item 2. Berapa lama serangan tersebut berlangsung?
 		%br    
-		%input#TextChestPainAttackDuration.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextAttackDuration.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+				
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 3. Apakah ada serangan lanjutan sesudahnya?
+			%input#RadioButtonProspectiveInsuredChestPainNextAttackYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredChestPainNextAttack", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredChestPainNextAttackYes" } Ya
+			%div.Separator
+			%input#RadioButtonProspectiveInsuredChestPainNextAttackNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredChestPainNextAttack", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredChestPainNextAttackNo" } Tidak
+		%br		
+		
+		%div.ContainerFit
+			%label#LabelLastAttack.Medium.Single.Item3.Margin Tanggal serangan terakhir?
+			%input#DateLastAttack.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }			
+		%br
+		%input#TextPolicyHolderBerapaKaliSerangan.Full.Single.Item1.Margin{ :type =>"text" }
+		%hr
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolder.Medium.Single.Item3.Margin 4. Kapan nyeri dada yang terakhir terjadi ?
+			%input#TextNyeriDadahNyeriHari.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Hari" }
+			%input#TextNyeriDadahBulan.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Bulan" }
+			%input#TextNyeriDadahTahun.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Tahun" }
+		%br
+		%hr
+
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item Berapa kali serangan hingga saat ini?
+			%input#RadioButtonPolicyHinggaSaatIniChangeYes{ :type => "radio", :name => "RadioButtonPolicyHinggaSaatIniChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHinggaSaatIniChangeYes" } Ya
+			%div.Separator
+			%input#RadioButtonPolicyHinggaSaatIniNo{ :type => "radio", :name => "RadioButtonPolicyHinggaSaatIniChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyHinggaSaatIniChangeNo" } Tidak
+		%br
+		%hr
+
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 5. Bagaimana sifat nyeri dada Anda (mohon beri tanda di kolom yang sesuai) ?
+			%br
+			%input#RadioButtonSesakNafas{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Sesak Nafas" }
+			%label.RadioButton{ :for => "RadioButtonSesakNafas" } Sesak Nafas
+			%div.Separator
+			%input#RadioButtonDadaTerasa{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa diremas" }
+			%label.RadioButton{ :for => "RadioButtonDadaTerasa" } Dada terasa diremas
+			%div.Separator
+			%input#RadioButtonDadaTerasaTertekan{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa tertekan" }
+			%label.RadioButton{ :for => "RadioButtonDadaTerasaTertekan" } Dada terasa tertekan
+			%div.Separator
+			%input#RadioButtonDadaTerasaPanas{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa panas" }
+			%label.RadioButton{ :for => "RadioButtonDadaTerasaPanas" }Dada terasa panas
+			%div.Separator
+			%input#RadioButtonDadaTerasaBerat{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa berat" }
+			%label.RadioButton{ :for => "RadioButtonDadaTerasaBerat" }Dada terasa berat
+			%div.Separator
+			%input#RadioButtonDadaTerasaDitusukTusuk{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa ditusuk-tusuk" }
+			%label.RadioButton{ :for => "RadioButtonDadaTerasaDitusukTusuk" }Dada terasa ditusuk-tusuk
+			%div.Separator
+			%input#RadioButtonSamarSamar{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Samar-samar , tidak nyaman" }
+			%label.RadioButton{ :for => "RadioButtonSamarSamar" }Samar-samar , tidak nyaman
+			%div.Separator
+			%input#RadioButtonLainnya{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Lainnya" }
+			%label.RadioButton{ :for => "RadioButtonLainnya" }Lainnya
 		%br
 		%hr
 		
 		-#
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 3. Apakah ada serangan lanjutan sesudahnya?
-				%input#RadioButtonPolicyLajutanSesudahnyaChangeYes{ :type => "radio", :name => "RadioButtonPolicyLajutanSesudahnyaChange", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonPolicyLajutanSesudahnyaChangeYes" } Ya
-				%div.Separator
-				%input#RadioButtonPolicyLajutanSesudahnyaNo{ :type => "radio", :name => "RadioButtonPolicyLajutanSesudahnyaChange", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonPolicyLajutanSesudahnyaChangeNo" } Tidak
-			%br
-			%input#TextPolicyHolderBerapaKaliSerangan.Full.Single.Item1.Margin{ :type =>"text" }
-
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item Berapa kali serangan hingga saat ini?
-				%input#RadioButtonPolicyHinggaSaatIniChangeYes{ :type => "radio", :name => "RadioButtonPolicyHinggaSaatIniChange", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHinggaSaatIniChangeYes" } Ya
-				%div.Separator
-				%input#RadioButtonPolicyHinggaSaatIniNo{ :type => "radio", :name => "RadioButtonPolicyHinggaSaatIniChange", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHinggaSaatIniChangeNo" } Tidak
-			%br
-			%input#TextPolicyHolderBerapaKaliSerangan.Full.Single.Item1.Margin{ :type =>"text" }
-			%hr
-
-			%div.ContainerFit 
-				%label#LabelPolicyHolder.Medium.Single.Item3.Margin 4. Kapan nyeri dada yang terakhir terjadi ?
-				%input#TextNyeriDadahNyeriHari.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Hari" }
-				%input#TextNyeriDadahBulan.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Bulan" }
-				%input#TextNyeriDadahTahun.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Tahun" }
-			%br
-			%hr
-
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item Berapa kali serangan hingga saat ini?
-				%input#RadioButtonPolicyHinggaSaatIniChangeYes{ :type => "radio", :name => "RadioButtonPolicyHinggaSaatIniChange", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHinggaSaatIniChangeYes" } Ya
-				%div.Separator
-				%input#RadioButtonPolicyHinggaSaatIniNo{ :type => "radio", :name => "RadioButtonPolicyHinggaSaatIniChange", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHinggaSaatIniChangeNo" } Tidak
-			%br
-			%hr
-
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 5. Bagaimana sifat nyeri dada Anda (mohon beri tanda di kolom yang sesuai) ?
-				%br
-				%input#RadioButtonSesakNafas{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Sesak Nafas" }
-				%label.RadioButton{ :for => "RadioButtonSesakNafas" } Sesak Nafas
-				%div.Separator
-				%input#RadioButtonDadaTerasa{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa diremas" }
-				%label.RadioButton{ :for => "RadioButtonDadaTerasa" } Dada terasa diremas
-				%div.Separator
-				%input#RadioButtonDadaTerasaTertekan{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa tertekan" }
-				%label.RadioButton{ :for => "RadioButtonDadaTerasaTertekan" } Dada terasa tertekan
-				%div.Separator
-				%input#RadioButtonDadaTerasaPanas{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa panas" }
-				%label.RadioButton{ :for => "RadioButtonDadaTerasaPanas" }Dada terasa panas
-				%div.Separator
-				%input#RadioButtonDadaTerasaBerat{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa berat" }
-				%label.RadioButton{ :for => "RadioButtonDadaTerasaBerat" }Dada terasa berat
-				%div.Separator
-				%input#RadioButtonDadaTerasaDitusukTusuk{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Dada terasa ditusuk-tusuk" }
-				%label.RadioButton{ :for => "RadioButtonDadaTerasaDitusukTusuk" }Dada terasa ditusuk-tusuk
-				%div.Separator
-				%input#RadioButtonSamarSamar{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Samar-samar , tidak nyaman" }
-				%label.RadioButton{ :for => "RadioButtonSamarSamar" }Samar-samar , tidak nyaman
-				%div.Separator
-				%input#RadioButtonLainnya{ :type => "radio", :name => "RadioButtonSifatNyeri", :value => "Lainnya" }
-				%label.RadioButton{ :for => "RadioButtonLainnya" }Lainnya
-			%br
-			%hr
 
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ? (mohon beri tanda di kolom yang sesuai)  ?

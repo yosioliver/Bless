@@ -3125,6 +3125,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			}
 			else
 			{
+				alert(stringKey + " " + stringValue);
 				arrayAdd(arrayInputTemporary, stringKey, stringValue);
 			}
 		});

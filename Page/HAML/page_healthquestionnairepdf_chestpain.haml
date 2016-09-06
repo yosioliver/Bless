@@ -31,9 +31,9 @@
 				boxGenerator("#DateProspectiveInsuredLastAttackMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredLastAttackYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DateProspectiveInsuredFirstPainDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredFirstPainMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredFirstPainYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateFirstAttackDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateFirstAttackMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateFirstAttackYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateProspectiveInsuredLastPainDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredLastPainMonth", 2, boxTypeWithoutLabel, null);
@@ -117,12 +117,12 @@
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
 				%fieldset
 					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSPAJNumber" } Kapan pertama kali Anda merasakan nyeri dada?
-					%table#DateProspectiveInsuredFirstPainDay.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "DateFirstAttackDay" } Kapan pertama kali Anda merasakan nyeri dada?
+					%table#DateFirstAttackDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredFirstPainMonth.BoxSquare.PositionerRight
+					%table#DateFirstAttackMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredFirstPainYear.BoxSquare.PositionerRight
+					%table#DateFirstAttackYear.BoxSquare.PositionerRight
 					%br
 
 					%span.Number.PositionerLeft 2
@@ -138,11 +138,11 @@
 					%span.Number.PositionerLeft 3
 					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSecondAttackNo" } Apakah ada serangan lanjutan sesudahnya?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredSecondAttackNo" }
-						%input#RadioButtonProspectiveInsuredSecondAttackNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredSecondAttack", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredChestPainNextAttackNo" } Tidak
+						%input#RadioButtonProspectiveInsuredChestPainNextAttackNo.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredChestPainNextAttack", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredSecondAttackYes" }
-						%input#RadioButtonProspectiveInsuredSecondAttackYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredSecondAttack", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredChestPainNextAttackYes" } Ya
+						%input#RadioButtonProspectiveInsuredChestPainNextAttackYes.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredChestPainNextAttack", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 
