@@ -1088,9 +1088,9 @@ function buttonViewSPAJProposal(stringButtonViewJavaScriptID, stringButtonViewNa
 function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButtonViewName)
 {
 	var stringButtonViewJQueryID = stringKres + stringButtonViewJavaScriptID;
-	var intSelectedSharePercentage = arrayFind(arrayBeneficiariesList, stringPrefixText + stringBeneficiariesListInfix + "SharePercentage" + stringButtonViewName);
-	intSharePercentage = parseInt(intSharePercentage, 10) - parseInt(intSelectedSharePercentage, 10);
-	setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
+//	var intSelectedSharePercentage = arrayFind(arrayBeneficiariesList, stringPrefixText + stringBeneficiariesListInfix + "SharePercentage" + stringButtonViewName);
+//	intSharePercentage = parseInt(intSharePercentage, 10) - parseInt(intSelectedSharePercentage, 10);
+//	setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
 	var arrayTemporary = [];
 
 	for (var i = 0; i < arrayBeneficiariesList.length; i++)
@@ -1112,6 +1112,33 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 		arrayDelete(arrayBeneficiariesList, arrayTemporary[i].elementID);
 	}
 
+	var stringSharePercentagePrefix  = stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix;
+	var intSharePercentageTemporary = 0;
+	var stringSharePercentageFilter;
+	var arraySharePercentageTemporary = [];
+
+	for (var k = 0; k < arrayBeneficiariesList.length; k++)
+	{
+		stringSharePercentageFilter = arrayBeneficiariesList[k].elementID.substring(0, stringSharePercentagePrefix.length);
+
+		if (stringSharePercentageFilter == stringSharePercentagePrefix)
+		{
+			arrayAdd(arraySharePercentageTemporary, arrayBeneficiariesList[k].elementID, arrayBeneficiariesList[k].Value);
+		}
+		else
+		{
+
+		}
+	}
+
+	for (var l = 0; l < arraySharePercentageTemporary.length; l++)
+	{
+		intSharePercentageTemporary += parseInt(arraySharePercentageTemporary[l].Value, 10);
+	}
+
+	intSharePercentage = parseInt(intSharePercentageTemporary, 10);
+	setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
+	
 	tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 }
 
@@ -1460,13 +1487,6 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		stringKeyID = arrayContent[i].elementID.substring(stringKey.length, arrayContent[i].elementID.length);
 		stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
 		stringContentName = arrayFind(arrayContent, stringKey);
-		
-//		stringSexKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
-//		stringSexValue = arrayFind(arrayContent, stringKey);
-//		stringRelationshipKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
-//		stringRelationshipValue = arrayFind(arrayContent, stringKey);
-//		stringSharePercentage = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
-//		stringSharePercentage = arrayFind(arrayContent, stringKey);
 
 		if (stringFlag == 0 || stringFlag != stringKeyID)
 		{
