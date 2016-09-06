@@ -316,19 +316,14 @@ function savetoDB()
     	
 		if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
-			// alert("no getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
 			objectContent = arrayHealthQuestionnaire;
 		}
 		else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
 		{
-			// alert("no getter !, arrayBeneficiariesList length : " + arrayBeneficiarisList.length);
-			arrayAdd(arrayBeneficiariesList, "TextBeneficiariesListSharePercentage", getTextForm("TextBeneficiariesListSharePercentage"));
-			// alert("TextBeneficiariesListSharePercentage" + " // " + getTextForm("TextBeneficiariesListSharePercentage"))
 			objectContent = arrayBeneficiariesList;
 		}
 		else
 		{
-			//alert("with getter !, arrayHealthQuestionnaire length : " + arrayHealthQuestionnaire.length);
 			objectContent = setToDatabase(stringPageTypeCurrent);
 		}
 

@@ -1131,6 +1131,8 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 		}
 	}
 
+	previewArrayObject(arrayBeneficiariesList);
+	
 	for (var l = 0; l < arraySharePercentageTemporary.length; l++)
 	{
 		intSharePercentageTemporary += parseInt(arraySharePercentageTemporary[l].Value, 10);
@@ -1138,7 +1140,7 @@ function buttonDeleteBeneficiariesList(stringButtonViewJavaScriptID, stringButto
 
 	intSharePercentage = parseInt(intSharePercentageTemporary, 10);
 	setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
-	
+
 	tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 }
 
@@ -2497,21 +2499,52 @@ function getFromDatabase(objectContent, stringPageType)
 			arrayBeneficiariesList = objectContent;
 			tableBeneficiariesListGenerator("TableBeneficiariesList", arrayBeneficiariesList);
 
-			for (var j = 0; j < arrayBeneficiariesList.length; j++)
+//			for (var j = 0; j < arrayBeneficiariesList.length; j++)
+//			{
+//				var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring(arrayBeneficiariesList[j].elementID.length - 5, arrayBeneficiariesList[j].elementID.length);
+//				
+//				if (stringIndicatorShare == "ntage")
+//				{
+//					intSharePercentage = parseInt(arrayBeneficiariesList[j].Value, 10);
+//				}
+//				else
+//				{
+//
+//				}
+//			}
+//			
+//			setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
+//			
+//			alert("0");
+			previewArrayObject(arrayBeneficiariesList);
+			var stringSharePercentagePrefix  = stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix;
+			var intSharePercentageTemporary = 0;
+			var stringSharePercentageFilter;
+			var arraySharePercentageTemporary = [];
+			
+			for (var k = 0; k < arrayBeneficiariesList.length; k++)
 			{
-				var stringIndicatorShare = arrayBeneficiariesList[j].elementID.substring(arrayBeneficiariesList[j].elementID.length - 5, arrayBeneficiariesList[j].elementID.length);
-				
-				if (stringIndicatorShare == "ntage")
+				stringSharePercentageFilter = arrayBeneficiariesList[k].elementID.substring(0, stringSharePercentagePrefix.length);
+
+				if (stringSharePercentageFilter == stringSharePercentagePrefix)
 				{
-					intSharePercentage = parseInt(arrayBeneficiariesList[j].Value, 10);
+					arrayAdd(arraySharePercentageTemporary, arrayBeneficiariesList[k].elementID, arrayBeneficiariesList[k].Value);
 				}
 				else
 				{
 
 				}
 			}
-			
-			setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);				
+
+			previewArrayObject(arrayBeneficiariesList);
+
+			for (var l = 0; l < arraySharePercentageTemporary.length; l++)
+			{
+				intSharePercentageTemporary += parseInt(arraySharePercentageTemporary[l].Value, 10);
+			}
+
+			intSharePercentage = parseInt(intSharePercentageTemporary, 10);
+			setTextForm(stringPrefixText + stringBeneficiariesListInfix + stringSharePercentageSuffix, intSharePercentage);
 		}
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
