@@ -2787,22 +2787,10 @@ function calculateAge(stringBirthdayID, stringAgeID)
         if ($(stringBirthdayJQueryID).val().length > 0)
         {
             var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
-            var dateBirthday = new Date(arrayBirthday[2], arrayBirthday[1], arrayBirthday[0]);
+            var dateBirthday = new Date(arrayBirthday[2], parseInt(arrayBirthday[1] - 1, 10), arrayBirthday[0]);
             var dateToday = new Date();
-			/* alert(dateToday.getTime() + " - " + dateBirthday.getTime() + " = " + Math.ceil(dateToday.getTime() - dateBirthday.getTime()));
             var dateDifference = Math.ceil(dateToday.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 365);
-            var intAge = parseInt(dateDifference); */
-			
-			var intAge = dateToday.getFullYear() - dateBirthday.getFullYear();
-			var m = dateToday.getMonth() - dateBirthday.getMonth();
-			if (m < 0 || (m === 0 && dateToday.getDate() < dateBirthday.getDate())) 
-			{
-				intAge--;
-			}
-			else
-			{
-				
-			}
+            var intAge = parseInt(dateDifference);
 			
             if (intAge == null || intAge == undefined)
             {
