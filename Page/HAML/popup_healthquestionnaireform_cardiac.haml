@@ -4,7 +4,7 @@
 
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpCardiac')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :name => "Cardiac", :onclick => "buttonPopUpDone('PopUpCardiac', 'Cardiac', arrayHealthQuestionnaire)" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :name => "Cardiac", :onclick => "buttonPopUpDone('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" }
 		%h2 Pertanyaan Kesehatan
 
 	/ FIELDSET
@@ -14,9 +14,9 @@
 			6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 		%br
 		%div.RadioButton
-			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Nyeri Dada", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', 'ChestPain', arrayHealthQuestionnaire)" }
+			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Nyeri Dada", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', stringPageInfixTypeCurrent + 'ChestPain', arrayHealthQuestionnaire)" }
 			%div.Separator
-			%input#ButtonHipertensi.ButtonPrimary{ :type => "button", :value => "Kuesioner Tekanan Darah Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', 'ChestPain', arrayHealthQuestionnaire)" }
+			%input#ButtonHipertensi.ButtonPrimary{ :type => "button", :value => "Kuesioner Tekanan Darah Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', stringPageInfixTypeCurrent + 'Hipertensi', arrayHealthQuestionnaire)" }
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br

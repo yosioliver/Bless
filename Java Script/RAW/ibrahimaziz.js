@@ -2823,7 +2823,7 @@ stringValue)
 function buttonPopUp(stringButtonJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
 {
 	$(stringPopUpLinkJQueryID).css("display", "block");
-	setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringPageInfixTypeCurrent + stringParentNameWithoutPrefix);
+	setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 }
 
 function buttonPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -2833,7 +2833,7 @@ function buttonPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValu
 	if (getRadioButtonGeneral(stringRadioButtonName) == stringRadioButtonValue)
 	{
 		$(stringPopUpLinkJQueryID).css("display", "block");
-		setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringPageInfixTypeCurrent + stringParentNameWithoutPrefix);
+		setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 	}
 	else
 	{
@@ -2846,7 +2846,7 @@ function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaS
 	var stringButtonJQueryID = stringKres + stringButtonJavaScriptID;
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;
-	var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringPageInfixTypeCurrent + stringParentNameWithoutPrefix);
+	var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 	$(stringPopUpCurrentJQueryID).css("display", "none");
 	$(stringPopUpLinkJQueryID).css("display", "block");
 	
@@ -2863,7 +2863,7 @@ function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaS
 function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
 {
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
-	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringPageInfixTypeCurrent + stringParentNameWithoutPrefix);
+	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 	
 	if (booleanState == true)
 	{
@@ -2887,7 +2887,7 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 {
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var stringPopUpParentJQueryID = stringKres + stringPopUpParentJavaScriptID;
-	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringPageInfixTypeCurrent + stringParentNameWithoutPrefix);
+	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 	
 	if (booleanState == true)
 	{
