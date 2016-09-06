@@ -87,6 +87,7 @@ var stringStateRequired = "required";
 var intBeneficiariesListRecentID = 0;
 var intSPAJProposalRecentID = 0;
 var stringPageValidationIncome = "income";
+var stringPrefixArea = "Area";
 
 
 // GENERATOR
@@ -2832,13 +2833,12 @@ function buttonPopUpNavigation(stringPopUpCurrentJavaScriptID, stringButtonJavaS
 function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
 {
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
-	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent);
-	$(stringPopUpCurrentJQueryID).css("display", "none");
+	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringPageInfixTypeCurrent + stringParentNameWithoutPrefix);
 	
 	if (booleanState == true)
 	{
 		$(stringPopUpCurrentJQueryID).css("display", "none");
-		// previewArrayObject(arrayContent);
+		previewArrayObject(arrayContent);
 	}
 	else
 	{
@@ -2937,9 +2937,9 @@ function textPopUpGetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix,
 
 // FOR POP UP
 
-function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stringInputInfix)
+function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 {
-	var stringPopUpJQueryID = stringKres + stringLayoutJavaScriptID;
+	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
 	var arrayInputTemporary = [];
 	stateValidation = true;
 	
@@ -2947,18 +2947,20 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input:text").each(function()
+		$(stringLayoutJQueryID + " form input:text").each(function()
 		{
-			var stringInputJavaScriptID = $(this).attr("id");
+			var stringInputJavaScriptID =$(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
-			var stringKey = stringPrefixText + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getTextGeneral(stringInputJavaScriptID);
-
+			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			var stringKey = stringPrefixText + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringValue = getTextForm(stringSpecificInputJavaScriptID);
+			
 			if (stringInputRequired == stringStateRequired)
 			{
-				if (validateTextGeneral(stringInputJQueryID) == false)
+				if (validateTextGeneral(stringSpecificInputJQueryID) == false)
 				{
 					validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 					return false;
@@ -2983,21 +2985,23 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		var stringFlag = 0;
+		var stringRadioButtonFlag = 0;
 		
-		$(stringPopUpJQueryID + " form input:radio").each(function()
+		$(stringLayoutJQueryID + " form input:radio").each(function()
 		{
 			var stringInputName = $(this).attr("name");
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
+			var stringInputNameWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputNameJavaScriptID = stringLayoutJavaScriptID + " " + $(this).attr("name");
+			var stringSpecificInputNameJQueryID = stringKres + stringSpecificInputNameJavaScriptID;
 			var stringKey = stringPrefixRadioButton + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getRadioButtonGeneral(stringInputName);
+			var stringValue = getRadioButtonGeneral(stringSpecificInputNameJavaScriptID);
 
-			if (stringFlag != stringInputName)
+			if (stringRadioButtonFlag != stringInputName)
 			{
 				if (stringInputRequired == stringStateRequired)
 				{
-					if (validateRadioButtonGeneral(stringInputJQueryID) == false)
+					if (validateRadioButtonGeneral(stringSpecificInputNameJQueryID) == false)
 					{
 						validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 						return false;
@@ -3005,13 +3009,13 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 					else
 					{
 						arrayAdd(arrayInputTemporary, stringKey, stringValue);
-						stringFlag = stringInputName;
+						stringRadioButtonFlag = stringInputName;
 					}
 				}
 				else
 				{
 					arrayAdd(arrayInputTemporary, stringKey, stringValue);
-					stringFlag = stringInputName;
+					stringRadioButtonFlag = stringInputName;
 				}
 			}
 			else
@@ -3029,17 +3033,20 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form select").each(function()
+		$(stringLayoutJQueryID + " form select").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
-			var booleanInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
-			var stringKey = stringPrefixSelect + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getSelectForm(stringInputJavaScriptID);
+			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+			var stringInputRequired = $(this).attr("required");
+			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			var stringKey = stringPrefixSelect + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringValue = getSelectForm(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == stringStateRequired)
 			{
-				if (validateSelectGeneral(stringInputJQueryID) == false)
+				if (validateSelectGeneral(stringSpecificInputJQueryID) == false)
 				{
 					validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 					return false;
@@ -3064,18 +3071,20 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input[type='date']").each(function()
+		$(stringLayoutJQueryID + " form input[type='date']").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
-			var stringKey = stringPrefixDate + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getDateForm(stringInputJavaScriptID);
+			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			var stringKey = stringPrefixDate + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringValue = getDateForm(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == stringStateRequired)
 			{
-				if (validateTextGeneral(stringInputJQueryID) == false)
+				if (validateTextGeneral(stringSpecificInputJQueryID) == false)
 				{
 					validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 					return false;
@@ -3100,18 +3109,20 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input[type='email']").each(function()
+		$(stringLayoutJQueryID + " form input[type='email']").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
-			var stringKey = stringPrefixEmail + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getEmailForm(stringInputJavaScriptID);
+			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			var stringKey = stringPrefixEmail + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringValue = getEmailForm(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == true)
 			{
-				if (validateTextGeneral(stringInputJQueryID) == false)
+				if (validateTextGeneral(stringSpecificInputJQueryID) == false)
 				{
 					validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 					return false;
@@ -3136,18 +3147,20 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input[type='number']").each(function()
+		$(stringLayoutJQueryID + " form input[type='number']").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
-			var stringKey = stringPrefixText + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getNumberForm(stringInputJavaScriptID);
+			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			var stringKey = stringPrefixText + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringValue = getNumberForm(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == stringStateRequired)
 			{
-				if (validateTextGeneral(stringInputJQueryID) == false)
+				if (validateTextGeneral(stringSpecificInputJQueryID) == false)
 				{
 					validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 					return false;
@@ -3159,7 +3172,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 			}
 			else
 			{
-
+				arrayAdd(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3172,18 +3185,20 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form input:checkbox").each(function()
+		$(stringLayoutJQueryID + " form input:checkbox").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
-			var stringKey = stringPrefixText + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getCheckboxGeneral(stringInputJavaScriptID);
+			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			var stringKey = stringPrefixText + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringValue = getCheckboxGeneral(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == stringStateRequired)
 			{
-				if (validateTextGeneral(stringInputJQueryID) == false)
+				if (validateTextGeneral(stringSpecificInputJQueryID) == false)
 				{
 					validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 					return false;
@@ -3208,17 +3223,20 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
-		$(stringPopUpJQueryID + " form textarea").each(function()
+		$(stringLayoutJQueryID + " form textarea").each(function()
 		{
 			var stringInputJavaScriptID = $(this).attr("id");
+			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
-			var stringKey = stringPrefixArea + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getAreaForm(stringInputJavaScriptID);
+			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
+			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
+			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
+			var stringKey = stringPrefixArea + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringValue = getAreaForm(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == stringStateRequired)
 			{
-				if (validateTextGeneral(stringInputJQueryID) == false)
+				if (validateTextGeneral(stringSpecificInputJQueryID) == false)
 				{
 					validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 					return false;
@@ -3241,8 +3259,8 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState, stri
 	
 	if (stateValidation == true)
 	{
+		alert("transfer" + " " + arrayInputTemporary + " " + arrayContent);
 		arrayTransfer(arrayInputTemporary, arrayContent);
-		
 		return true;
 	}
 	else
@@ -3259,7 +3277,118 @@ function arrayTransfer(arrayTemporary, arrayContent)
 	}
 }
 
-function setInputFrom(stringLayoutJavaScriptID, arrayContent, booleanState)
+function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 {
+	var stringKey;
+	var stringValue;
+	var stringKeyPrefix;
+	var stringKeyWithoutPrefix;
+	var stringKeyWithoutInfix;
 	
+	for (var i = 0; i < arrayContent.length; i++)
+	{
+		stringKey = arrayContent[i].elementID;
+		stringValue = arrayContent[i].Value;
+		stringKeyPrefix = getPrefix(stringKey);
+		stringKeyWithoutPrefix = releasePrefix(stringKey);
+		stringKeyWithoutInfix = stringKeyWithoutPrefix.substring(0, stringInputInfix.length);
+
+		if (stringKeyPrefix == stringPrefixText)
+		{
+			setTextForm(stringPrefixText + stringKeyWithoutInfix);
+		}
+		else if (stringKeyPrefix == stringPrefixRadioButton)
+		{
+			setRadioButtonGeneral(stringPrefixRadioButton + stringKeyWithoutInfix);
+		}
+		else if (stringKeyPrefix == stringPrefixCheckbox)
+		{
+			setCheckboxGeneral(stringPrefixCheckbox + stringKeyWithoutInfix);
+		}
+		else if (stringKeyPrefix == stringPrefixSelect)
+		{
+			setSelectForm(stringPrefixSelect + stringKeyWithoutInfix);
+		}
+		else if (stringKeyPrefix == stringPrefixArea)
+		{
+			setAreaForm(stringPrefixArea + stringKeyWithoutInfix);
+		}
+		else if (stringKeyPrefix == stringPrefixNumber)
+		{
+			setNumberForm(stringPrefixNumber + stringKeyWithoutInfix);
+		}
+		else if (stringKeyPrefix == stringPrefixEmail)
+		{
+			setEmailForm(stringPrefixEmail + stringKeyWithoutInfix);
+		}
+		else if (stringKeyPrefix == stringPrefixDate)
+		{
+			setDateForm(stringPrefixDate + stringKeyWithoutInfix);
+		}
+		else
+		{
+
+		}
+	}
+}
+
+function getPrefix(stringKey)
+{
+	if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)
+	{
+		return stringPrefixText;
+	}
+	else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
+	{
+		return stringPrefixRadioButton;
+	}
+	else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
+	{
+		return stringPrefixCheckbox;
+	}
+	else if (stringKey.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
+	{
+		return stringPrefixSelect;
+	}
+	else if (stringKey.substring(0, stringPrefixDate.length) == stringPrefixDate)
+	{
+		return stringPrefixDate;
+	}
+	else if (stringKey.substring(0, stringPrefixArea.length) == stringPrefixArea)
+	{
+		return stringPrefixArea;
+	}
+	else if (stringKey.substring(0, stringPrefixNumber.length) == stringPrefixNumber)
+	{
+		return stringPrefixNumber;
+	}
+	else if (stringKey.substring(0, stringPrefixEmail.length) == stringPrefixEmail)
+	{
+		return stringPrefixEmail;
+	}
+	else
+	{
+		
+	}
+}
+
+function telephoneStripGenerator(stringInputJavaScriptID)
+{
+	var stringInputValue;
+	var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+  
+	$(stringInputJQueryID).keyup(function()
+	{
+		stringInputValue = $(this).val();
+
+		if (stringInputValue.length == 4)
+		{
+			stringInputValue += stringSeparatorTelephone;
+			$(this).val(stringTextValue);
+		}
+		else
+		{
+
+		}
+	});
 }
