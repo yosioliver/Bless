@@ -14,9 +14,9 @@
 			6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 		%br
 		%div.RadioButton
-			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Nyeri Dada", :onclick => "buttonPopUpNavigation('PopUpCardiac', this.id, 'PopUpChestPain')" }
+			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Nyeri Dada", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', 'ChestPain', arrayHealthQuestionnaire)" }
 			%div.Separator
-			%input#ButtonHipertensi.ButtonPrimary{ :type => "button", :value => "Kuesioner Tekanan Darah Tinggi", :onclick => "buttonPopUpNavigation('PopUpCardiac', this.id, 'PopUpHipertensi')" }
+			%input#ButtonHipertensi.ButtonPrimary{ :type => "button", :value => "Kuesioner Tekanan Darah Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', 'ChestPain', arrayHealthQuestionnaire)" }
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br

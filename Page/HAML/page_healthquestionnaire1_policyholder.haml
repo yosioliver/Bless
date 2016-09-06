@@ -195,10 +195,10 @@
 									%label#LabelPolicyHolderCardiac.Item{ :for => "RadioButtonPolicyHolderCardiacYes" }
 										Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", "data-popup-type" => "PopUpCardiac", :required => "true" }
+										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", :required => "true", :onchange => "buttonPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', 'Cardiac', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", "data-popup-type" => "PopUpCardiac", :required => "true" }
+										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", :onchange => "buttonPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', 'Cardiac', arrayHealthQuestionnaire)", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacNo" } Tidak
 								%input#ButtonPreviewPolicyHolderCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCardiac", "data-popup-type" => "PopUpCardiac" }
 							%li
