@@ -3284,6 +3284,9 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	var stringKeyPrefix;
 	var stringKeyWithoutPrefix;
 	var stringKeyWithoutInfix;
+	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	var stringSpecificInputJavaScriptID;
+	var stringSpecificInpuJQueryID;
 	
 	for (var i = 0; i < arrayContent.length; i++)
 	{
@@ -3384,7 +3387,7 @@ function telephoneStripGenerator(stringInputJavaScriptID)
 		if (stringInputValue.length == 4)
 		{
 			stringInputValue += stringSeparatorTelephone;
-			$(this).val(stringTextValue);
+			$(this).val(stringInputValue);
 		}
 		else
 		{
