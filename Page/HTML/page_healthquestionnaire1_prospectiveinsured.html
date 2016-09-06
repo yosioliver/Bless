@@ -620,7 +620,7 @@
           <!-- HEADER -->
           <header>
             <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonPopUpCancel('PopUpCardiac')" type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' name='Cardiac' onclick="buttonPopUpDone('PopUpCardiac', 'Cardiac', arrayHealthQuestionnaire)" type='button' value='Done'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' name='Cardiac' onclick="buttonPopUpDone('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" type='button' value='Done'>
             <h2>Pertanyaan Kesehatan</h2>
           </header>
           <!-- FIELDSET -->
@@ -630,9 +630,9 @@
             </label>
             <br>
             <div class='RadioButton'>
-              <input class='ButtonPrimary' id='ButtonChestPain' onclick="buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', 'ChestPain', arrayHealthQuestionnaire)" type='button' value='Kuesioner Nyeri Dada'>
+              <input class='ButtonPrimary' id='ButtonChestPain' onclick="buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', stringPageInfixTypeCurrent + 'ChestPain', arrayHealthQuestionnaire)" type='button' value='Kuesioner Nyeri Dada'>
               <div class='Separator'></div>
-              <input class='ButtonPrimary' id='ButtonHipertensi' onclick="buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', 'ChestPain', arrayHealthQuestionnaire)" type='button' value='Kuesioner Tekanan Darah Tinggi'>
+              <input class='ButtonPrimary' id='ButtonHipertensi' onclick="buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', stringPageInfixTypeCurrent + 'Hipertensi', arrayHealthQuestionnaire)" type='button' value='Kuesioner Tekanan Darah Tinggi'>
             </div>
             <hr>
             <label class='Medium Single'>silahkan memberikan rincian lebih lanjut</label>
@@ -647,7 +647,7 @@
           <!-- HEADER -->
           <header>
             <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonSubPopUpCancel('PopUpChestPain', 'PopUpCardiac')" type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonSubPopUpDone('PopUpChestPain', 'PopUpCardiac', 'ChestPain', arrayHealthQuestionnaire)" type='button' value='Done'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonSubPopUpDone('PopUpChestPain', 'PopUpCardiac', stringPageInfixTypeCurrent + 'ChestPain', arrayHealthQuestionnaire)" type='button' value='Done'>
             <h2>KUESIONER NYERI DADA</h2>
           </header>
           <!-- FIELDSET -->
@@ -667,7 +667,7 @@
             <hr>
             <label class='medium Single Item'>2. Berapa lama serangan tersebut berlangsung?</label>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderLamaSerangan' type='text'>
+            <input class='Full Single Item1 Margin' id='TextAttackDuration' type='text'>
             <br>
             <hr>
             <div class='RadioButton PositionerLeft'>
@@ -951,7 +951,7 @@
           <!-- HEADER -->
           <header>
             <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonSubPopUpCancel('PopUpHipertensi', 'PopUpCardiac')" type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonSubPopUpDone('PopUpHipertensi', 'PopUpCardiac', 'Hipertensi', arrayHealthQuestionnaire)" type='button' value='Done'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonSubPopUpDone('PopUpHipertensi', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hipertensi', arrayHealthQuestionnaire)" type='button' value='Done'>
             <h2>KUESIONER TEKANAN DARAH TINGGI</h2>
           </header>
           <!-- FIELDSET -->

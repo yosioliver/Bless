@@ -2893,7 +2893,7 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 	if (booleanState == true)
 	{
 		$(stringPopUpCurrentJQueryID).css("display", "none");
-		$(stringPopUpParentJQueryID).css("display", "none");
+		$(stringPopUpParentJQueryID).css("display", "block");
 		previewArrayObject(arrayContent);
 	}
 	else
@@ -3321,39 +3321,39 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		stringValue = arrayContent[i].Value;
 		stringKeyPrefix = getPrefix(stringKey);
 		stringKeyWithoutPrefix = releasePrefix(stringKey);
-		stringKeyWithoutInfix = stringKeyWithoutPrefix.substring(0, stringInputInfix.length);
+		stringKeyWithoutInfix = stringKeyWithoutPrefix.substring(stringInputInfix.length, stringKeyWithoutPrefix.length);
 
 		if (stringKeyPrefix == stringPrefixText)
 		{
-			setTextForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixText + stringKeyWithoutInfix);
+			setTextForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixText + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixRadioButton)
 		{
-			setRadioButtonGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixRadioButton + stringKeyWithoutInfix);
+			setRadioButtonGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixRadioButton + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixCheckbox)
 		{
-			setCheckboxGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixCheckbox + stringKeyWithoutInfix);
+			setCheckboxGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixCheckbox + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixSelect)
 		{
-			setSelectForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixSelect + stringKeyWithoutInfix);
+			setSelectForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixSelect + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixArea)
 		{
-			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix);
+			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
 		{
-			setNumberForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixNumber + stringKeyWithoutInfix);
+			setNumberForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixNumber + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixEmail)
 		{
-			setEmailForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixEmail + stringKeyWithoutInfix);
+			setEmailForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixEmail + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixDate)
 		{
-			setDateForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixDate + stringKeyWithoutInfix);
+			setDateForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixDate + stringKeyWithoutInfix, stringValue);
 		}
 		else
 		{
