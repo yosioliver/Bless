@@ -281,7 +281,6 @@ function savetoDB()
 				if (stringBeneficiariesListFilter == stringBeneficiariesListPrefix)
 				{
 					booleanBeneficiariesList = true;
-					return false;
 				}
 				else
 				{
@@ -312,7 +311,8 @@ function savetoDB()
 		
 	}
 	else
-	{		
+	{
+		alert("6");
 		var objectContent;
     	
 		if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
