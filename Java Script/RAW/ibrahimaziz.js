@@ -786,7 +786,7 @@ function additionalQuestionGenerator()
 				// previewArrayObject(arrayHealthQuestionnaire);
             });
         }
-		else if ($(this).data("popup-type") == stringPopUpTypeCardiac)
+		/* else if ($(this).data("popup-type") == stringPopUpTypeCardiac)
         {
             $("input:radio[name='" + $(this).attr("name") + "']").change(function()
             {
@@ -804,7 +804,7 @@ function additionalQuestionGenerator()
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
                 stringRadioButtonName = $(this).attr("name");
             });
-        }
+        } */
 		else if ($(this).data("custom-radiobutton") == "input")
 		{
 			$("input:radio[name='" + $(this).attr("name") + "']").change(function()
@@ -2828,6 +2828,8 @@ function buttonPopUp(stringButtonJavaScriptID, stringPopUpLinkJavaScriptID, stri
 
 function buttonPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
 {
+	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;
+	
 	if (getRadioButtonGeneral(stringRadioButtonName) == stringRadioButtonValue)
 	{
 		$(stringPopUpLinkJQueryID).css("display", "block");
@@ -2844,11 +2846,17 @@ function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaS
 	var stringButtonJQueryID = stringKres + stringButtonJavaScriptID;
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;
+	var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 	
-	$(stringPopUpCurrentJQueryID).css("display", "none");
-	$(stringPopUpLinkJQueryID).css("display", "block");
-	
-	setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
+	if (booleanState == true)
+	{
+		$(stringPopUpCurrentJQueryID).css("display", "none");
+		$(stringPopUpLinkJQueryID).css("display", "block");
+	}
+	else
+	{
+		
+	}
 }
 
 function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -2878,9 +2886,7 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 {
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var stringPopUpParentJQueryID = stringKres + stringPopUpParentJavaScriptID;
-	$(stringPopUpCurrentJQueryID).css("display", "none");
-	$(stringPopUpParentJQueryID).css("display", "block");
-	/* var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent);
+	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent);
 	
 	if (booleanState == true)
 	{
@@ -2891,7 +2897,7 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 	else
 	{
 		
-	} */
+	}
 }
 
 function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJavaScriptID)
