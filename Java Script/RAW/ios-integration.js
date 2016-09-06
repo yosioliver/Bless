@@ -311,7 +311,8 @@ function savetoDB()
 		
 	}
 	else
-	{		
+	{
+		alert("6");
 		var objectContent;
     	
 		if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
