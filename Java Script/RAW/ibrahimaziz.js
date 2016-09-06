@@ -2820,7 +2820,26 @@ stringValue)
 
 // MULTI POP UP
 
-function buttonPopUpNavigation(stringPopUpCurrentJavaScriptID, stringButtonJavaScriptID, stringPopUpLinkJavaScriptID)
+function buttonPopUp(stringButtonJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
+{
+	$(stringPopUpLinkJQueryID).css("display", "block");
+	setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
+}
+
+function buttonPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
+{
+	if (getRadioButtonGeneral(stringRadioButtonName) == stringRadioButtonValue)
+	{
+		$(stringPopUpLinkJQueryID).css("display", "block");
+		setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
+	}
+	else
+	{
+		
+	}
+}
+
+function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
 {
 	var stringButtonJQueryID = stringKres + stringButtonJavaScriptID;
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
@@ -2828,6 +2847,8 @@ function buttonPopUpNavigation(stringPopUpCurrentJavaScriptID, stringButtonJavaS
 	
 	$(stringPopUpCurrentJQueryID).css("display", "none");
 	$(stringPopUpLinkJQueryID).css("display", "block");
+	
+	setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 }
 
 function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -3285,8 +3306,6 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	var stringKeyWithoutPrefix;
 	var stringKeyWithoutInfix;
 	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
-	var stringSpecificInputJavaScriptID;
-	var stringSpecificInpuJQueryID;
 	
 	for (var i = 0; i < arrayContent.length; i++)
 	{
@@ -3298,39 +3317,39 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 
 		if (stringKeyPrefix == stringPrefixText)
 		{
-			setTextForm(stringPrefixText + stringKeyWithoutInfix);
+			setTextForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixText + stringKeyWithoutInfix);
 		}
 		else if (stringKeyPrefix == stringPrefixRadioButton)
 		{
-			setRadioButtonGeneral(stringPrefixRadioButton + stringKeyWithoutInfix);
+			setRadioButtonGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixRadioButton + stringKeyWithoutInfix);
 		}
 		else if (stringKeyPrefix == stringPrefixCheckbox)
 		{
-			setCheckboxGeneral(stringPrefixCheckbox + stringKeyWithoutInfix);
+			setCheckboxGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixCheckbox + stringKeyWithoutInfix);
 		}
 		else if (stringKeyPrefix == stringPrefixSelect)
 		{
-			setSelectForm(stringPrefixSelect + stringKeyWithoutInfix);
+			setSelectForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixSelect + stringKeyWithoutInfix);
 		}
 		else if (stringKeyPrefix == stringPrefixArea)
 		{
-			setAreaForm(stringPrefixArea + stringKeyWithoutInfix);
+			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
 		{
-			setNumberForm(stringPrefixNumber + stringKeyWithoutInfix);
+			setNumberForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixNumber + stringKeyWithoutInfix);
 		}
 		else if (stringKeyPrefix == stringPrefixEmail)
 		{
-			setEmailForm(stringPrefixEmail + stringKeyWithoutInfix);
+			setEmailForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixEmail + stringKeyWithoutInfix);
 		}
 		else if (stringKeyPrefix == stringPrefixDate)
 		{
-			setDateForm(stringPrefixDate + stringKeyWithoutInfix);
+			setDateForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixDate + stringKeyWithoutInfix);
 		}
 		else
 		{
-
+			
 		}
 	}
 }
