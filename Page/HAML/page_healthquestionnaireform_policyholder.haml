@@ -184,12 +184,12 @@
 									%label#LabelPolicyHolderRespiratory.Item{ :for => "RadioButtonPolicyHolderRespiratoryYes" }
 										Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryNo" } Tidak
-								%input#ButtonPreviewPolicyHolderRespiratory.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderRespiratory", "data-popup-type" => "health" }
+								%input#ButtonPreviewPolicyHolderRespiratory.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderCardiac.Item{ :for => "RadioButtonPolicyHolderCardiacYes" }
@@ -430,5 +430,9 @@
 			%section#PopUpDigestDetail.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_digestdetail.haml")).render
 			%section#PopUpAlcahol.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_Alcahol.haml")).render	
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_Alcahol.haml")).render
+			%section#PopUpRespiratory.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratory.haml")).render
+			%section#PopUpRespiratoryDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratorydetail.haml")).render
 			%div#BoxDate
