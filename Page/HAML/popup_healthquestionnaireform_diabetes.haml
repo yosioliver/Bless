@@ -1,9 +1,11 @@
 %form#PopUpDiabetes.PopUp
 
+	/ HEADER
+
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-		%h2 KUESIONER DIABETES
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpDiabetes', 'PopUpLiver')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpDiabetes', 'PopUpLiver', stringPageInfixTypeCurrent + 'Diabetes', arrayHealthQuestionnaire)" }
+		%h2 Kuesioner Diabetes
 
 	/ MAIN
 
