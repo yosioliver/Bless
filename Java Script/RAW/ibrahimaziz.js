@@ -81,7 +81,6 @@ var stringIndicatorProspectiveInsured = "Pro";
 var stringPopUpTypeCardiac = "PopUpCardiac";
 var stringPopUpTypeChestPain = "PopUpChestPain";
 var stringPopUpTypeHipertensi = "PopUpHipertensi";
-var stringPopUpTypeTiroid = "PopUpTiroid";
 var stringPrefixEmail = "Email";
 var stringPrefixNumber = "Number";
 var stringStateRequired = "required";
@@ -3362,7 +3361,8 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		stringValue = arrayContent[i].Value;
 		stringKeyPrefix = getPrefix(stringKey);
 		stringKeyWithoutPrefix = releasePrefix(stringKey);
-		stringKeyWithoutInfix = stringKeyWithoutPrefix.substring(stringInputInfix.length, stringKeyWithoutPrefix.length);		
+		stringKeyWithoutInfix = stringKeyWithoutPrefix.substring(stringInputInfix.length, stringKeyWithoutPrefix.length);
+		
 		if (stringKeyPrefix == stringPrefixText)
 		{			
 			setTextForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixText + stringKeyWithoutInfix, stringValue);
