@@ -1,58 +1,22 @@
-!!! 5
+%form#PopUpNerve.PopUp
+		
+	/ HEADER			
+	
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpNerve')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire, ['text' + stringPageInfixTypeCurrent + 'Epilepsy' + 'AgeAttack'])" }
+		%h2 Pertanyaan Kesehatan
 
-%html
+	/ FIELDSET
 
-	/ HEAD
-
-	%head
-		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life - BLESS, Health Questionnaire 6f(Sub) Form
-
-		/ JQUERY
-
-		:javascript
-			$(document).ready(function()
-			{
-
-			});
-
-
-	/ BODY
-
-	%body#Main
-
-		%header
-			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-			%h2 Pertanyaan Kesehatan
-
-		/ MAIN
-
-		%main
-			%form#HealthQuestionnaireMain
-				%div.ContainerFit
-					%span.Multi.Single.6f Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
-				%br
-				%a.NavigationPopUp{ :href => "../../Page/HTML/page_spajform_healthquestionnaire6f.html" } KUESIONER EPILEPSI DAN KEJANG
-				%hr
-				%label.Medium.Single silahkan memberikan rincian lebih lanjut
-				%br
-				%input#TextPolicyHolderKuesionerEpilepsiDanKejangSub.Full.Multi.Item.Margin{ :type =>"text" }
-				%label.Medium.Single (maksimum 250 karakter)
-				
-
-				
-								
-				
-				
-				
-				
-				
-				
-				
-					
-					
-				
-				
-				
-			
+	%fieldset
+		%div.ContainerFit
+			%span.Multi.Single.6f Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
+		%br		
+		%div.RadioButton
+			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Epilepsi Dan Kejang", :onclick => "buttonPopUpNavigation(this.id, 'PopUpNerve', 'PopUpEpilepsy', stringPageInfixTypeCurrent + 'Epilepsy', arrayHealthQuestionnaire)" }		
+		%hr
+		%label.Medium.Single silahkan memberikan rincian lebih lanjut
+		%br
+		%textarea#AreaDetail.Full.Multi
+		%label.Medium.Single (maksimum 250 karakter)

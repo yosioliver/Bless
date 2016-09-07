@@ -266,7 +266,7 @@
 										%div.Separator | 
 										%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandNo" } Tidak
-								%input#ButtonPreviewPolicyHolderGland.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderGland", :onclick => "showPopUpFromButton('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
+								%input#ButtonPreviewPolicyHolderGland.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderImmune.Item{ :for => "RadioButtonPolicyHolderImmuneYes" }
@@ -283,12 +283,12 @@
 									%label#LabelPolicyHolderCell.Item{ :for => "RadioButtonPolicyHolderCellYes" }
 										Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCellYes{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "kanker" }
+										%input#RadioButtonPolicyHolderCellYes{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "true", :required => "true", "data-question-title" => "kanker" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellYes" } Ya
 										%div.Separator | 
 										%input#RadioButtonPolicyHolderCellNo{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "false", :required => "true", "data-question-title" => "kanker" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellNo" } Tidak
-								%input#ButtonPreviewPolicyHolderCell.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCell", "data-popup-type" => "hardcopy" }
+								%input#ButtonPreviewPolicyHolderCell.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderOtherIllness.Item{ :for => "RadioButtonPolicyHolderOtherIllnessYes" }

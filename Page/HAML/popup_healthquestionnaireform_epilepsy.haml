@@ -1,9 +1,9 @@
 %form#PopUpEplilepsy.PopUp
-
+	
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-		%h2 KUESIONER EPILEPSI DAN KEJANG
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpEpilepsy', 'PopUpNerve')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpEpilepsy', 'PopUpNerve', stringPageInfixTypeCurrent + 'Epilepsy', arrayHealthQuestionnaire)" }
+		%h2 KUESIONER EPILEPSI DAN KEJANG		
 
 	/ MAIN
 
@@ -14,7 +14,7 @@
 		%hr
 		%div.ContainerFit 
 			%label#Wrap.Single.PositionerLeft 1. Sejak umur berapa Anda terserang epilepsi?
-			%input#TextPolicyHolderUmurTerserangEpilepsi.Short.Single.Item.Margin{ :type =>"text" }
+			%input#TextEpilepsyAgeAttack.Short.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 		%div.ContainerFit 
