@@ -50,7 +50,7 @@
 			%input#TextProspectiveInsuredHypertentionDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%label.Wrap.Single.PositionerLeft.Margin e. Berapa sering Anda kontrol ke Dokter?
-		%input#TextProspectiveInsuredHypertentionHowOftenCheck.Medium.Single.PositionerLeft.Margin{ :type => "text" }
+		%input#TextProspectiveInsuredHypertentionHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "text" }
 		%label.Wrap.Single.PositionerLeft.Margin kali per minggu/ bulan/ tahun
 		%br
 		%hr
@@ -58,16 +58,16 @@
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 2. Apakah kenaikan tekanan darah Anda tersebut berhubungan dengan penyakit sebagai berikut:
 			%br
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToHeart{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "Jantung" }
+			%input#RadioButtonProspectiveInsuredHypertentionRelatedToHeart{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "heart" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToHeart" }  Jantung
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToBrain{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "Otak" }
+			%input#RadioButtonProspectiveInsuredHypertentionRelatedToBrain{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "brain" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToBrain" } Otak
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToKidney{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "Ginjal" }
+			%input#RadioButtonProspectiveInsuredHypertentionRelatedToKidney{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "kidney" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToKidney" } Ginjal
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "Lainnya" }
+			%input#RadioButtonProspectiveInsuredHypertentionRelatedToOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "other" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToOther" }Lainnya, sebutkan 
 		%br
 		%input#TextProspectiveInsuredHypertentionRelatedToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
@@ -97,6 +97,8 @@
 			%input#RadioButtonProspectiveInsuredHypertentionInTherapyNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionInTherapy", :value => "tidak" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionInTherapyNo" } Tidak
 		%br
+		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
+		%br		
 		%div.ContainerFit
 			%label.Short.Single.Item1.Center Nama Obat  
 			%label.Short.Single.Item1.Center Dosis
@@ -145,7 +147,14 @@
 		%hr
 
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 4. Apakah pernah melakukan pemeriksaan sebagai berikut? Jika Ya, jelaskan kapan dan bagaimana hasilnya. 
+			%label.medium.Single.Item 4. Apakah pernah melakukan pemeriksaan sebagai berikut?
+			%input#RadioButtonProspectiveInsuredHypertentionCheckupYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "ya" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupYes" } Ya
+			%div.Separator
+			%input#RadioButtonProspectiveInsuredHypertentionCheckupNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "tidak" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupNo" } Tidak
+			%br
+			%label.medium.Single.Item Jika Ya, jelaskan kapan dan bagaimana hasilnya. 
 			%br
 			%input#RadioButtonProspectiveInsuredHypertentionCheckupEkg{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "ekgecg" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupEkg" } EKG/ ECG
@@ -153,19 +162,23 @@
 			%input#RadioButtonProspectiveInsuredHypertentionCheckupRontgen{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "rontgendada" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupRontgen" }Rontgen dada
 			%div.Separator
+			%input#RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "echocardiogram" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram" }Echocardiogram
+			%div.Separator			
 			%input#RadioButtonProspectiveInsuredHypertentionCheckupTreadmill{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "treadmill" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupTreadmill" }Treadmill
 			%div.Separator
 			%input#RadioButtonProspectiveInsuredHypertentionCheckupLaboratorium{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "laboratorium" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupLaboratorium" }Laboratorium
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "echocardiogram" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram" }Echocardiogram
-			%div.Separator
 			%input#RadioButtonProspectiveInsuredHypertentionCheckupOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupOther" } Lainnya
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupOther" }Lainnya, sebutkan
+			%input#TextProspectiveInsuredHypertentionCheckupOtherName.Line.PositionerLeft
 		%br
-		%input#TextPolicyHolderRadioButtonPolicyRadioButtonHasilPemeriksaanAlasan.Full.Single.Item1.Margin{ :type =>"text" }
+		Mohon menjelaskan secara rinci pada kolom di bawah ini.
+		(Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+		%br
+		%input#TextProspectiveInsuredHypertentionCheckupOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 		%div.RadioButton.PositionerLeft
@@ -175,6 +188,8 @@
 			%div.Separator
 			%input#RadioButtonProspectiveInsuredHypertentionTreatmentNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionTreatment", :value => "tidak" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionTreatmentNo" } Tidak
+		%br
+		%label.medium.Single.Item Jika “Ya”, mohon melengkapi kolom di bawah ini.
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item1.Center Alasan Perawatan  
@@ -198,7 +213,7 @@
 		%br
 		%hr
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 6. Apakah disertai komplikasi organ lain sebagai berikut?  
+			%label.medium.Single.Item 6. Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?  
 			%br
 			%input#RadioButtonProspectiveInsuredHypertentionComplicationNothing{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionComplication", :value => "nothing" }
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionComplicationNothing" } Tidak ada
@@ -222,9 +237,14 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 7. Jelaskan rata-rata tekanan darah dalam 12 bulan terakhir (termasuk tanggalnya).
+		%label.medium.Single.Item 7. Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.
 		%br
 		%input#TextProspectiveInsuredHypertentionAverageBloodPressure.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+		%label.medium.Single.Item 8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+		%br
+		%input#TextProspectiveInsuredHypertentionAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
