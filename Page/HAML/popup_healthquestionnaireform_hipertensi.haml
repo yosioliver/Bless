@@ -1,10 +1,10 @@
-%form#PopUpHipertensi.PopUp
+%form#PopUpHipertension.PopUp
 	
 	/ HEADER
 
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpHipertensi', 'PopUpCardiac')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpHipertensi', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hipertensi', arrayHealthQuestionnaire)" }
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpHipertension', 'PopUpCardiac')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpHipertension', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hipertension', arrayHealthQuestionnaire)" }
 		%h2 KUESIONER TEKANAN DARAH TINGGI 
 
 	/ FIELDSET
@@ -17,7 +17,7 @@
 		%hr
 		%div.ContainerFit
 			%label#LabelPolicyHolder.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan 
-			%input#DateProspectiveInsuredHypertentionFirstTime.Medium.Single.Item1.Margin{ :type => "text"}
+			%input#DateFirstTime.Medium.Single.Item1.Margin{ :type => "text"}
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft  b. Berapa tekanan darah saat itu?

@@ -41,15 +41,6 @@
     <script src='../../Java Script/Minimized/DateTimePicker_IOS_fix.js' type='text/javascript'></script>
     <script>
       var stringPageTypeCurrent = stringPageTypeForm;
-<<<<<<< HEAD
-var stringPageSectionCurrent = stringPageSectionHealthQuestionnaire;
-var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
-var stringPageValidationCurrent = 0;
-=======
-		var stringPageSectionCurrent  = stringPageSectionHealthQuestionnaire;
-		var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
-		var stringPageValidationCurrent = 0;
->>>>>>> origin/master
     </script>
     <script src='../../Java Script/Minimized/ios-integration.min.js' type='text/javascript'></script>
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
@@ -286,7 +277,7 @@ var stringPageValidationCurrent = 0;
                     <label class='RadioButton' for='RadioButtonPolicyHolderCardiacNo'>Tidak</label>
                   </div>
                 </div>
-                <input class='ButtonPreview' data-popup-type='PopUpCardiac' id='ButtonPreviewPolicyHolderCardiac' name='RadioButtonPolicyHolderCardiac' type='button' value='View recent input'>
+                <input class='ButtonPreview' id='ButtonPreviewPolicyHolderCardiac' name='RadioButtonPolicyHolderCardiac' onchange="buttonPopUpFromButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" type='button' value='View recent input'>
               </li>
               <li>
                 <div class='Container'>
@@ -642,7 +633,7 @@ var stringPageValidationCurrent = 0;
           <!-- HEADER -->
           <header>
             <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonPopUpCancel('PopUpCardiac')" type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' name='Cardiac' onclick="buttonPopUpDone('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" type='button' value='Done'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' name='Cardiac' onclick="buttonPopUpDone('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hipertension' + 'FirstTime'])" type='button' value='Done'>
             <h2>Pertanyaan Kesehatan</h2>
           </header>
           <!-- FIELDSET -->
@@ -654,7 +645,7 @@ var stringPageValidationCurrent = 0;
             <div class='RadioButton'>
               <input class='ButtonPrimary' id='ButtonChestPain' onclick="buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', stringPageInfixTypeCurrent + 'ChestPain', arrayHealthQuestionnaire)" type='button' value='Kuesioner Nyeri Dada'>
               <div class='Separator'></div>
-              <input class='ButtonPrimary' id='ButtonHipertensi' onclick="buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', stringPageInfixTypeCurrent + 'Hipertensi', arrayHealthQuestionnaire)" type='button' value='Kuesioner Tekanan Darah Tinggi'>
+              <input class='ButtonPrimary' id='ButtonHipertension' onclick="buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpHipertension', stringPageInfixTypeCurrent + 'Hipertension', arrayHealthQuestionnaire)" type='button' value='Kuesioner Tekanan Darah Tinggi'>
             </div>
             <hr>
             <label class='Medium Single'>silahkan memberikan rincian lebih lanjut</label>
@@ -967,11 +958,11 @@ var stringPageValidationCurrent = 0;
         </form>
       </section>
       <section class='PopUp' id='PopUpHipertensi'>
-        <form class='PopUp' id='PopUpHipertensi'>
+        <form class='PopUp' id='PopUpHipertension'>
           <!-- HEADER -->
           <header>
-            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonSubPopUpCancel('PopUpHipertensi', 'PopUpCardiac')" type='button' value='Cancel'>
-            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonSubPopUpDone('PopUpHipertensi', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hipertensi', arrayHealthQuestionnaire)" type='button' value='Done'>
+            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonSubPopUpCancel('PopUpHipertension', 'PopUpCardiac')" type='button' value='Cancel'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonSubPopUpDone('PopUpHipertension', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hipertension', arrayHealthQuestionnaire)" type='button' value='Done'>
             <h2>KUESIONER TEKANAN DARAH TINGGI</h2>
           </header>
           <!-- FIELDSET -->
@@ -983,7 +974,7 @@ var stringPageValidationCurrent = 0;
             <hr>
             <div class='ContainerFit'>
               <label class='Medium Single Item3 Margin' id='LabelPolicyHolder'>1. a. Kapan pertama kali diketahui menderita tekanan</label>
-              <input class='Medium Single Item1 Margin' id='DateProspectiveInsuredHypertentionFirstTime' type='text'>
+              <input class='Medium Single Item1 Margin' id='DateFirstTime' type='text'>
             </div>
             <br>
             <div class='ContainerFit'>
@@ -1022,90 +1013,159 @@ var stringPageValidationCurrent = 0;
             </div>
             <br>
             <label class='Wrap Single PositionerLeft Margin'>e. Berapa sering Anda kontrol ke Dokter?</label>
-            <input class='Medium Single PositionerLeft Margin' id='TextProspectiveInsuredHypertentionHowOftenCheck' type='text'>
+            <input class='Medium Single PositionerLeft Margin' id='TextProspectiveInsuredHypertentionHowOftenCheckupToDoctor' type='text'>
             <label class='Wrap Single PositionerLeft Margin'>kali per minggu/ bulan/ tahun</label>
             <br>
             <hr>
             <div class='RadioButton PositionerLeft'>
-              <label class='medium Single Item'>2. Apakah kenaikan tekanan darah tersebut berhubungan dengan penyakit sebagai berikut:</label>
+              <label class='medium Single Item'>2. Apakah kenaikan tekanan darah Anda tersebut berhubungan dengan penyakit sebagai berikut:</label>
               <br>
-              <input id='RadioButtonJantung' name='RadioButtonBerhubungPenyakit' type='radio' value='Jantung'>
-              <label class='RadioButton' for='RadioButtonJantung'>Jantung</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionRelatedToHeart' name='RadioButtonProspectiveInsuredHypertentionRelatedTo' type='radio' value='heart'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionRelatedToHeart'>Jantung</label>
               <div class='Separator'></div>
-              <input id='RadioButtonOtak' name='RadioButtonBerhubungPenyakit' type='radio' value='Otak'>
-              <label class='RadioButton' for='RadioButtonOtak'>Otak</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionRelatedToBrain' name='RadioButtonProspectiveInsuredHypertentionRelatedTo' type='radio' value='brain'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionRelatedToBrain'>Otak</label>
               <div class='Separator'></div>
-              <input id='RadioButtonGinjal' name='RadioButtonBerhubungPenyakit' type='radio' value='Ginjal'>
-              <label class='RadioButton' for='RadioButtonGinjal'>Ginjal</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionRelatedToKidney' name='RadioButtonProspectiveInsuredHypertentionRelatedTo' type='radio' value='kidney'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionRelatedToKidney'>Ginjal</label>
               <div class='Separator'></div>
-              <input id='RadioButtonBerhubungPenyakitLainnya' name='RadioButtonBerhubungPenyakit' type='radio' value='Lainnya'>
-              <label class='RadioButton' for='RadioButtonBerhubungPenyakitLainnya'>Lainnya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionRelatedToOther' name='RadioButtonProspectiveInsuredHypertentionRelatedTo' type='radio' value='other'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionRelatedToOther'>Lainnya, sebutkan</label>
             </div>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderBerhubungPenyakitAlasan' type='text'>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionRelatedToOtherDesc' type='text'>
             <hr>
             <div class='ContainerFit'>
-              <label class='Medium Single Item3 Margin' id='LabelPolicyHolder'>3. a. Kapan pengobatan kenaikan tekanan darah dimulai?</label>
-              <input class='Medium Single Item1 Margin' id='TextTekananDarahMulaiHari' placeholder='Hari' type='text'>
-              <input class='Medium Single Item1 Margin' id='TextTekananDarahMulaiBulan' placeholder='Bulan' type='text'>
-              <input class='Medium Single Item1 Margin' id='TextTekananDarahMulaiTahun' placeholder='Tahun' type='text'>
+              <label class='Medium Single Item3 Margin' id='LabelProspectiveInsuredHypertentionWhenStart'>3. a. Kapan Anda memulai pengobatan kenaikan tekanan darah tersebut?</label>
+              <input class='Medium Single Item1 Margin' id='DateProspectiveInsuredHypertentionWhenStart' type='text'>
             </div>
             <br>
             <div class='RadioButton PositionerLeft'>
               <label class='medium Single Item'>b. Apakah pernah berhenti minum obat?</label>
-              <input id='RadioButtonPolicyBerhentiUbatYes' name='RadioButtonPolicyBerhentiUbat' type='radio' value='true'>
-              <label class='RadioButton' for='RadioButtonPolicyBerhentiUbatYes'>Ya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionStopDrugYes' name='RadioButtonProspectiveInsuredHypertentionStopDrug' type='radio' value='ya'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionStopDrugYes'>Ya</label>
               <div class='Separator'></div>
-              <input id='RadioButtonPolicyBerhentiUbatNo' name='RadioButtonPolicyBerhentiUbat' type='radio' value='false'>
-              <label class='RadioButton' for='RadioButtonPolicyBerhentiUbatNo'>Tidak</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionStopDrugNo' name='RadioButtonProspectiveInsuredHypertentionStopDrug' type='radio' value='tidak'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionStopDrugNo'>Tidak</label>
             </div>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderRadioButtonPolicyBerhentiUbatAlasan' type='text'>
+            <label class='medium Single Item'>Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.</label>
+            <br>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionStopDrugIfYesDesc' type='text'>
+            <br>
             <div class='RadioButton PositionerLeft'>
               <label class='medium Single Item'>c. Apakah saat ini masih dalam pengobatan?</label>
-              <input id='RadioButtonPolicyMasihDalamPengobatanYes' name='RadioButtonPolicyMasihDalamPengobatan' type='radio' value='true'>
-              <label class='RadioButton' for='RadioButtonPolicyMasihDalamPengobatanYes'>Ya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionInTherapyYes' name='RadioButtonProspectiveInsuredHypertentionInTherapy' type='radio' value='ya'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionInTherapyYes'>Ya</label>
               <div class='Separator'></div>
-              <input id='RadioButtonPolicyMasihDalamPengobatanNo' name='RadioButtonPolicyMasihDalamPengobatan' type='radio' value='false'>
-              <label class='RadioButton' for='RadioButtonPolicyMasihDalamPengobatanNo'>Tidak</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionInTherapyNo' name='RadioButtonProspectiveInsuredHypertentionInTherapy' type='radio' value='tidak'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionInTherapyNo'>Tidak</label>
             </div>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderRadioButtonPolicyMasihDalamPengobatanAlasan' type='text'>
+            <label class='medium Single Item'>Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.</label>
+            <br>
+            <div class='ContainerFit'>
+              <label class='Short Single Item1 Center'>Nama Obat</label>
+              <label class='Short Single Item1 Center'>Dosis</label>
+              <label class='Short Single Item1 Center'>Frekuensi</label>
+            </div>
+            <div class='ContainerFit'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugName1' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugDosis1' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugFrequency1' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugName2' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugDosis2' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugFrequency2' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugName3' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugDosis3' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugFrequency3' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugName4' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugDosis4' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugFrequency4' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugName5' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugDosis5' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionInTherapyDrugFrequency5' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <label class='Long Single PositionerLeft'>Nama Lengkap Dokter:</label>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionInTherapyDocterName' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <label class='Long Single PositionerLeft'>No. Telepon/Handphone:</label>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionInTherapyPhone' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <label class='Long Single PositionerLeft'>Nama Klinik/Rumah Sakit:</label>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionInTherapyHospital' type='text'>
+            </div>
+            <br>
+            <div class='ContainerFit'>
+              <label class='Long Single PositionerLeft'>Alamat Klinik/Rumah Sakit:</label>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionInTherapyHospitalAddress' type='text'>
+            </div>
             <br>
             <hr>
             <div class='RadioButton PositionerLeft'>
-              <label class='medium Single Item'>4. Apakah pernah melakukan pemeriksaan sebagai berikut? Jika Ya, jelaskan kapan dan bagaimana hasilnya.</label>
+              <label class='medium Single Item'>4. Apakah pernah melakukan pemeriksaan sebagai berikut?</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupYes' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='ya'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupYes'>Ya</label>
+              <div class='Separator'></div>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupNo' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='tidak'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupNo'>Tidak</label>
               <br>
-              <input id='RadioButtonPemeriksaanEKG' name='RadioButtonHasilPemeriksaan' type='radio' value='EKG/ ECG'>
-              <label class='RadioButton' for='RadioButtonPemeriksaanEKG'>EKG/ ECG</label>
+              <label class='medium Single Item'>Jika Ya, jelaskan kapan dan bagaimana hasilnya.</label>
+              <br>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupEkg' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='ekgecg'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupEkg'>EKG/ ECG</label>
               <div class='Separator'></div>
-              <input id='RadioButtonRontgenDada' name='RadioButtonHasilPemeriksaan' type='radio' value='Rontgen dada'>
-              <label class='RadioButton' for='RadioButtonRontgenDada'>Rontgen dada</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupRontgen' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='rontgendada'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupRontgen'>Rontgen dada</label>
               <div class='Separator'></div>
-              <input id='RadioButtonTreadmill' name='RadioButtonHasilPemeriksaan' type='radio' value='Treadmill'>
-              <label class='RadioButton' for='RadioButtonTreadmill'>Treadmill</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='echocardiogram'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram'>Echocardiogram</label>
               <div class='Separator'></div>
-              <input id='RadioButtonLaboratorium' name='RadioButtonHasilPemeriksaan' type='radio' value='Laboratorium'>
-              <label class='RadioButton' for='RadioButtonLaboratorium'>Laboratorium</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupTreadmill' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='treadmill'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupTreadmill'>Treadmill</label>
               <div class='Separator'></div>
-              <input id='RadioButtonEchocardiogram' name='RadioButtonHasilPemeriksaan' type='radio' value='Echocardiogram'>
-              <label class='RadioButton' for='RadioButtonEchocardiogram'>Echocardiogram</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupLaboratorium' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='laboratorium'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupLaboratorium'>Laboratorium</label>
               <div class='Separator'></div>
-              <input id='RadioButtonHasilPemeriksaanLainnya' name='RadioButtonHasilPemeriksaan' type='radio' value='Lainnya'>
-              <label class='RadioButton' for='RadioButtonHasilPemeriksaanLainnya'>Lainnya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckupOther' name='RadioButtonProspectiveInsuredHypertentionCheckup' type='radio' value='other'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckupOther'>Lainnya, sebutkan</label>
+              <input class='Line PositionerLeft' id='TextProspectiveInsuredHypertentionCheckupOtherName'>
             </div>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderRadioButtonPolicyRadioButtonHasilPemeriksaanAlasan' type='text'>
+            Mohon menjelaskan secara rinci pada kolom di bawah ini.
+            (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+            <br>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionCheckupOtherDesc' type='text'>
             <br>
             <hr>
             <div class='RadioButton PositionerLeft'>
               <label class='medium Single Item'>5. Apakah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?</label>
-              <input id='RadioButtonPolicyBerawatDarahTinggiYes' name='RadioButtonPolicyBerawatDarahTinggi' type='radio' value='true'>
-              <label class='RadioButton' for='RadioButtonPolicyBerawatDarahTinggiYes'>Ya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionTreatmentYes' name='RadioButtonProspectiveInsuredHypertentionTreatment' type='radio' value='ya'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionTreatmentYes'>Ya</label>
               <div class='Separator'></div>
-              <input id='RadioButtonPolicyBerawatDarahTinggiNo' name='RadioButtonPolicyBerawatDarahTinggi' type='radio' value='false'>
-              <label class='RadioButton' for='RadioButtonPolicyBerawatDarahTinggiNo'>Tidak</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionTreatmentNo' name='RadioButtonProspectiveInsuredHypertentionTreatment' type='radio' value='tidak'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionTreatmentNo'>Tidak</label>
             </div>
+            <br>
+            <label class='medium Single Item'>Jika “Ya”, mohon melengkapi kolom di bawah ini.</label>
             <br>
             <div class='ContainerFit'>
               <label class='Short Single Item1 Center'>Alasan Perawatan</label>
@@ -1115,50 +1175,55 @@ var stringPageValidationCurrent = 0;
               <label class='Short Single Item1 Center'>Jangka waktu perawatan</label>
             </div>
             <div class='ContainerFit'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderAlasanRawatan1' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderNamaDokter1' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderAlamatDokter1' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderTanggalPerawatan1' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderJangkaWaktuPerawatan1' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentReason1' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentDoctor1' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentAddress1' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentDate1' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentDuration1' type='text'>
             </div>
             <br>
             <div class='ContainerFit'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderAlasanRawatan2' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderNamaDokter2' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderAlamatDokter2' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderTanggalPerawatan2' type='text'>
-              <input class='Short Single Item1 Margin' id='TextPolicyHolderJangkaWaktuPerawatan2' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentReason2' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentDoctor2' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentAddress2' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentDate2' type='text'>
+              <input class='Short Single Item1 Margin' id='TextProspectiveInsuredHypertentionTreatmentDuration2' type='text'>
             </div>
             <br>
             <hr>
             <div class='RadioButton PositionerLeft'>
-              <label class='medium Single Item'>6. Apakah disertai komplikasi organ lain sebagai berikut?</label>
+              <label class='medium Single Item'>6. Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?</label>
               <br>
-              <input id='RadioButtonTidakAda' name='RadioButtonHasilkomplikasiOrgan' type='radio' value='Tidak ada'>
-              <label class='RadioButton' for='RadioButtonTidakAda'>Tidak ada</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionComplicationNothing' name='RadioButtonProspectiveInsuredHypertentionComplication' type='radio' value='nothing'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionComplicationNothing'>Tidak ada</label>
               <div class='Separator'></div>
-              <input id='RadioButtonOrganGinjal' name='RadioButtonHasilkomplikasiOrgan' type='radio' value='Ginjal'>
-              <label class='RadioButton' for='RadioButtonOrganGinjal'>Ginjal</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionComplicationKidney' name='RadioButtonProspectiveInsuredHypertentionComplication' type='radio' value='kidney'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionComplicationKidney'>Ginjal</label>
               <div class='Separator'></div>
-              <input id='RadioButtonOrganOtak' name='RadioButtonHasilkomplikasiOrgan' type='radio' value='Otak'>
-              <label class='RadioButton' for='RadioButtonOrganOtak'>Otak</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionComplicationBrain' name='RadioButtonProspectiveInsuredHypertentionComplication' type='radio' value='brain'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionComplicationBrain'>Otak</label>
               <div class='Separator'></div>
-              <input id='RadioButtonGangguanPenglihatan' name='RadioButtonHasilkomplikasiOrgan' type='radio' value='Gangguan Penglihatan'>
-              <label class='RadioButton' for='RadioButtonGangguanPenglihatan'>Gangguan Penglihatan</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionComplicationVision' name='RadioButtonProspectiveInsuredHypertentionComplication' type='radio' value='impairedvision'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionComplicationVision'>Gangguan Penglihatan</label>
               <div class='Separator'></div>
-              <input id='RadioButtonHati' name='RadioButtonHasilkomplikasiOrgan' type='radio' value='Hati'>
-              <label class='RadioButton' for='RadioButtonHati'>Hati</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionComplicationHeart' name='RadioButtonProspectiveInsuredHypertentionComplication' type='radio' value='heart'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionComplicationHeart'>Hati</label>
               <div class='Separator'></div>
-              <input id='RadioButtonHasilkomplikasiOrganLain' name='RadioButtonHasilkomplikasiOrgan' type='radio' value='Lainnya'>
-              <label class='RadioButton' for='RadioButtonHasilkomplikasiOrganLain'>Lainnya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionComplicationOther' name='RadioButtonProspectiveInsuredHypertentionComplication' type='radio' value='other'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionComplicationOther'>Lainnya</label>
             </div>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderRadioButtonPolicyRadioButtonHasilkomplikasiOrganAlasan' type='text'>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionComplicationOtherDesc' type='text'>
             <br>
             <hr>
-            <label class='medium Single Item'>7. Jelaskan rata-rata tekanan darah dalam 12 bulan terakhir (termasuk tanggalnya).</label>
+            <label class='medium Single Item'>7. Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.</label>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderTekananDarahDalam12Bulan' type='text'>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionAverageBloodPressure' type='text'>
+            <br>
+            <hr>
+            <label class='medium Single Item'>8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.</label>
+            <br>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionAdditionalInfo' type='text'>
             <br>
             <hr>
             <h2>PERNYATAAN DAN KUASA</h2>
