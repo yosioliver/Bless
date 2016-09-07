@@ -280,15 +280,15 @@
 								%input#ButtonPreviewPolicyHolderImmune.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderImmune", "data-popup-type" => "health" }
 							%li
 								%div.Container
-									%label#LabelPolicyHolderCancer.Item{ :for => "RadioButtonPolicyHolderCancerYes" }
+									%label#LabelPolicyHolderCell.Item{ :for => "RadioButtonPolicyHolderCellYes" }
 										Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCancerYes{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "kanker" }
-										%label.RadioButton{ :for => "RadioButtonPolicyHolderCancerYes" } Ya
+										%input#RadioButtonPolicyHolderCellYes{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "kanker" }
+										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderCancerNo{ :type => "radio", :name => "RadioButtonPolicyHolderCancer", :value => "false", :required => "true", "data-question-title" => "kanker" }
-										%label.RadioButton{ :for => "RadioButtonPolicyHolderCancerNo" } Tidak
-								%input#ButtonPreviewPolicyHolderCancer.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCancer", "data-popup-type" => "hardcopy" }
+										%input#RadioButtonPolicyHolderCellNo{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "false", :required => "true", "data-question-title" => "kanker" }
+										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellNo" } Tidak
+								%input#ButtonPreviewPolicyHolderCell.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderCell", "data-popup-type" => "hardcopy" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderOtherIllness.Item{ :for => "RadioButtonPolicyHolderOtherIllnessYes" }
@@ -419,6 +419,12 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_spajproposal.haml")).render
+			%section#PopUpAlcohol.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_alcohol.haml")).render
+			%section#PopUpRespiratory.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratory.haml")).render
+			%section#PopUpRespiratoryDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratorydetail.haml")).render
 			%section#PopUpCardiac.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_cardiac.haml")).render
 			%section#PopUpChestPain.PopUp
@@ -432,23 +438,23 @@
 			%section#PopUpNerve.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_nerve.haml")).render
 			%section#PopUpNerveDetail.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_nervedetail.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_epilepsy.haml")).render
 			%section#PopUpLiver.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_liver.haml")).render
 			%section#PopUpLiverDetail.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_liverdetail.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_diabetes.haml")).render
 			%section#PopUpMotion.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_motion.haml")).render
-			%section#PopUpMotionDetail.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_motiondetail.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_motion.haml")).render			
+			%section#PopUpBackbone.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_backbone.haml")).render
+			%section#PopUpJoint.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_joint.haml")).render
 			%section#PopUpGland.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_gland.haml")).render
 			%section#PopUpGlandDetail.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_glanddetail.haml")).render
-			%section#PopUpAlcahol.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_Alcahol.haml")).render
-			%section#PopUpRespiratory.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratory.haml")).render
-			%section#PopUpRespiratoryDetail.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratorydetail.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_thyroid.haml")).render					
+			%section#PopUpCell.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_cell.haml")).render
+			%section#PopUpTumor.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_tumor.haml")).render
 			%div#BoxDate
