@@ -35,23 +35,23 @@
 		%input#TextProspectiveInsuredHypertentionCheckReasonDesc.Full.Single.Item1.Margin{ :type =>"text"}
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item d. Apakah dikonsultasikan ke dokter ?
-			%input#RadioButtonPolicydikonsultasikanYA{ :type => "radio", :name => "RadioButtonPolicyKonsultasiDoktorChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicydikonsultasikanYA" } Ya
+			%input#RadioButtonProspectiveInsuredHypertentionDoctorConsultYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionDoctorConsult", :value => "ya" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionDoctorConsultYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicydikonsultasikanNO{ :type => "radio", :name => "RadioButtonPolicyKonsultasiDoktorChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicydikonsultasikanNO" } Tidak
+			%input#RadioButtonProspectiveInsuredHypertentionDoctorConsultNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionDoctorConsult", :value => "tidak" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionDoctorConsultNo" } Tidak
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Dokter
-			%input#TextPolicyHolderNamaDokterTD.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextProspectiveInsuredHypertentionDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Alamat Dokter
-			%input#TextPolicyHolderAlamatDokterTD.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextProspectiveInsuredHypertentionDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%label#LabelPolicyHolderLainnya.Wrap.Single.PositionerLeft.Margin e. Bagaimana frekuensi kontrol ke dokter?
-		%input#TextPolicyHolderLainnyaFrequency.Medium.Single.PositionerLeft.Margin{ :type => "text" }
-		%label#LabelPolicyHolderLainnya.Wrap.Single.PositionerLeft.Margin kali per minggu/ bulan/ tahun
+		%label.Wrap.Single.PositionerLeft.Margin e. Berapa sering Anda kontrol ke Dokter?
+		%input#TextProspectiveInsuredHypertentionHowOftenCheck.Medium.Single.PositionerLeft.Margin{ :type => "text" }
+		%label.Wrap.Single.PositionerLeft.Margin kali per minggu/ bulan/ tahun
 		%br
 		%hr
 
