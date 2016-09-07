@@ -81,6 +81,7 @@ var stringIndicatorProspectiveInsured = "Pro";
 var stringPopUpTypeCardiac = "PopUpCardiac";
 var stringPopUpTypeChestPain = "PopUpChestPain";
 var stringPopUpTypeHipertensi = "PopUpHipertensi";
+var stringPopUpTypeTiroid = "PopUpTiroid";
 var stringPrefixEmail = "Email";
 var stringPrefixNumber = "Number";
 var stringStateRequired = "required";
