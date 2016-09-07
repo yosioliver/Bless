@@ -1,0 +1,405 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+
+				boxGenerator("#TextProspectiveInsuredSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName1", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthdayPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthdayYear", 4, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+
+				boxGenerator("#DateProspectiveInsuredDigestionWhenDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDigestionWhenYear", 4, boxTypeWithoutLabel, null);
+				
+				boxGenerator("#DateProspectiveInsuredDiabetesLastCheckUrineDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDiabetesLastCheckUrineMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredDiabetesLastCheckUrineYear", 4, boxTypeWithoutLabel, null);
+		
+		
+				boxGenerator("#DateProspectiveInsuredSigned5Day", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredSigned5Month", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredSigned5Year", 4, boxTypeWithoutLabel, null);
+		
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
+			%span.Header PT Asuransi Jiwa BCA
+			%span.Detail
+			%br
+
+			%h1 KUESIONER DIABETES MELITUS
+			%br
+
+			%div.Note
+				Perlu diperhatikan:
+				%ol
+					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
+					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
+					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
+					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
+					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+
+		/ MAIN
+
+		%main
+			%form
+				%h2 I. DATA (CALON) TERTANGGUNG
+				%fieldset
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
+					%table#TextProspectiveInsuredSPAJNumber.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.PositionerLeft 2
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
+					%table#TextProspectiveInsuredFullName1.BoxSquare.PositionerLeft
+					%br
+					%table#TextProspectiveInsuredFullName2.BoxSquare.PositionerLeft
+
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
+					%input#TextProspectiveInsuredBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft ,
+					%table#DateProspectiveInsuredBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredBirthdayYear.BoxSquare.PositionerLeft
+					%br
+
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
+				%fieldset
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredDiabetesFirstKnown" } Kapan pertama kali diketahui menderita diabetes?
+					%table#DateProspectiveInsuredDiabetesFirstKnownDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDiabetesFirstKnownMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredDiabetesFirstKnownYear.BoxSquare.PositionerRight
+					%br
+
+					%span.Number.PositionerLeft 2
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDiabetesFrequencyControlNumber" } a. Berapa kali frekuensi kontrol ke dokter?
+					%input#TextProspectiveInsuredDiabetesFrequencyControlNumber.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDiabetesFrequencyControlPerWeek" } kali    per
+					%input#TextProspectiveInsuredDiabetesFrequencyControlPerWeek.Short.Single.PositionerLeft{ :type => "text" } minggu
+					%br
+					b. Mohon melengkapi kolom di bawah ini dengan nama dan alamat lengkap dokter yang biasa dikunjungi untuk kontrol?
+					%br
+					
+					%table#TableTextProspectiveInsuredDiabetesDoctor
+						%thead
+							%tr
+								%th Nama Dokter
+								%th Alamat Dokter
+								%th Tanggal Pemeriksaan Terakhir
+						%tbody
+							%tr
+								%td 
+								%td
+								%td
+							%tr
+								%td
+								%td
+								%td								
+					
+					%br	
+
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } 	c.	Pengobatan apa saja yang Anda diperoleh?
+
+
+					%div.RadioButton
+					
+						%input#RadioButtonProspectiveInsuredDiabetesTherapyInsulin.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesTherapy", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesTherapyInsulin" } Insulin										
+						%input#TextProspectiveInsuredDiabetesTherapyInsulinDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredDiabetesTherapyInsulinDesc" } unit/hari
+						%br
+	
+						%input#RadioButtonProspectiveInsuredDiabetesTherapyDiet.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesTherapy", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesTherapyDiet" } Diet khusus, jelaskan										
+						%input#TextProspectiveInsuredDiabetesTherapyDietDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%br							
+	
+						%input#RadioButtonProspectiveInsuredDiabetesTherapyOral.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesTherapy", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesTherapyOral" } Oral/tablet.
+						%br
+						
+						Mohon menjelaskan secara rinci pada kolom di bawah ini (nama obat, dosis, frekuensi penggunaan dan lain-lain).
+						%input#TextProspectiveInsuredDiabetesTherapyOralDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						
+					%br
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } a. Bagaimana frekuensi melakukan pemeriksaan kadar gula dalam urine?
+
+					%div.RadioButton
+					
+						%input#RadioButtonProspectiveInsuredDiabetesCheckUrineDay.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "setiaphari" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesCheckUrineDay" } Setiap hari									
+						
+						%input#RadioButtonProspectiveInsuredDiabetesCheckUrineWeek.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "setiapminggu" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesCheckUrineWeek" } Setiap minggu
+						
+						%input#RadioButtonProspectiveInsuredDiabetesCheckUrineMonth.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "setiapbulan" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesCheckUrineMonth" } Setiap bulan	
+						
+						%input#RadioButtonProspectiveInsuredDiabetesCheckNever.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "tidakpernah" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesCheckNever" } Tidak pernah	
+						%br							
+						
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredDiabetesLastCheckUrineDay" } b. Kapan terakhir melakukan pemeriksaan kadar gula dalam urine?
+					
+					%span.Separator.Single.PositionerLeft ,
+					%table#DateProspectiveInsuredDiabetesLastCheckUrineDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredDiabetesLastCheckUrineMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredDiabetesLastCheckUrineYear.BoxSquare.PositionerLeft
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfoPlus" } Bagaimana hasilnya?
+					%div.RadioButton
+					
+						%input#RadioButtonProspectiveInsuredDiabetesUrineInfoPlus.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "+" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfoPlus" } +									
+						
+						%input#RadioButtonProspectiveInsuredDiabetesUrineInfo2Plus.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "++" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfo2Plus" } ++
+						
+						%input#RadioButtonProspectiveInsuredDiabetesUrineInfo3Plus.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "+++" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfo3Plus" } +++	
+						
+						%input#RadioButtonProspectiveInsuredDiabetesUrineInfo4Plus.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "++++" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfo4Plus" } ++++	
+						%br
+						
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } c. Mohon melengkapi kolom di bawah ini dengan hasil 3 (tiga) pemeriksaan terakhir?
+					
+					
+					%table#TextProspectiveInsuredDiabetesResult
+						%thead
+							%tr
+								%th Jenis Pemeriksaan
+								%th I
+								%th II
+								%th III								
+						%tbody
+							%tr
+								%th Kadar gula darah
+								%td
+								%td					
+								%td					
+
+							%tr
+								%th Tanggal pemeriksaan terakhir
+								%td
+								%td					
+								%td					
+					%br
+						
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesContainAlbuminNo" } 	d.	Apakah pernah didapatkan adanya protein/albumin dalam test urine?
+
+					%div.RadioButton
+					
+						%input#RadioButtonProspectiveInsuredDiabetesContainAlbuminNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainAlbumin", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesContainAlbuminNo" } Ya
+	
+						%input#RadioButtonProspectiveInsuredDiabetesContainAlbuminYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainAlbumin", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesContainAlbuminYes" } Tidak	
+						%br
+						Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+						%br
+						%input#TextProspectiveInsuredDiabetesContainAlbuminDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } 	e.	Apakah dilakukan pemeriksaan glycosylated haemoglobin (HbA1c)?
+
+					%div.RadioButton
+					
+						%input#RadioButtonProspectiveInsuredDiabetesContainHaemoglobinNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobin", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobinNo" } Tidak
+	
+						%input#RadioButtonProspectiveInsuredDiabetesContainHaemoglobinYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobin", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobinYes" } Ya
+						%br
+						Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+						%br
+						%input#TextProspectiveInsuredDiabetesContainHaemoglobinDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%br						
+					%br						
+						
+						
+					%span.Number.PositionerLeft 4
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } 	Apakah pernah mengalami perawatan di rumah sakit karena diabetes?
+					%div.RadioButton
+					
+						%input#RadioButtonProspectiveInsuredDiabetesEverHospitalNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesEverHospital", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesEverHospitalNo" } Tidak
+	
+						%input#RadioButtonProspectiveInsuredDiabetesEverHospitalYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesEverHospital", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesEverHospitalYes" } Ya
+						%br
+						Jika “Ya”, mohon melengkapi kolom di bawah ini.
+						%br
+						%table#TextProspectiveInsuredDiabetesEverHospitalIfYes
+							%thead
+								%tr
+									%th Alasan Perawatan
+									%th Nama Dokter
+									%th Alamat Dokter
+									%th Tanggal Perawatan
+									%th Jangka Waktu Perawatan									
+							%tbody
+								%tr
+									%td
+									%td
+									%td
+									%td
+									%td
+								%tr
+									%td
+									%td
+									%td
+									%td
+									%td
+						%br						
+					%br		
+					
+					%span.Number.PositionerLeft 5
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredVomitingBlood" } Apakah kondisi Diabetes Mellitus ini disertai komplikasi organ lain sebagai berikut?
+					%div.RadioButton
+						%label.Wrap.Single.PositionerLef{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsVision" } Gangguan penglihatan   
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsVision.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "false" }
+						%div.BoxRound.PositionerLeft
+
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodPressure" } Gangguan ginjal dan/saluran kemih
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodPressure.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsKidney" } Kelainan darah
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsKidney.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "true" }
+						%div.BoxRound.PositionerRight
+						
+						%label.Wrap.Single.PositionerLef{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsSensor" } Tekanan darah tinggi   
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsSensor.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "false" }
+						%div.BoxRound.PositionerLeft
+
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodDisorders" } Gangguan sensorik, termasuk kebas dan panas di kaki
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsDiabeticComa" } Gangguan jantung dan/pembuluh darah
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsDiabeticComa.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "true" }
+						%div.BoxRound.PositionerRight	
+												
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsHeartDisorders" } Koma diabetikum
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsHeartDisorders.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "true" }
+						%div.BoxRound.PositionerRight	
+						
+												
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsOthers" } Lainnya, sebutkan
+						%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsOthers.PositionerRight{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "true" }
+						%div.BoxRound.PositionerRight	
+						%input#TextProspectiveInsuredDiabetesWithComplicationsOthersDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }		
+					%br
+					
+					%span.Number.PositionerLeft 6
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredPainLocation" } 	Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.                                                         
+					%br								
+					%input#TextProspectiveInsuredPainLocationOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%br								
+
+					%h2 PERNYATAAN DAN KUASA
+					%div.Note
+						Perlu diperhatikan: 
+						%ol
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSigned" } Ditandatangani
+					%input#TextProspectiveInsuredBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredSigned" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DateProspectiveInsuredSigned5Day.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredSigned5Month.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredSigned5Year.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual						
