@@ -217,23 +217,23 @@
 									%label#LabelPolicyHolderNerve.Item{ :for => "RadioButtonPolicyHolderNerveYes" }
 										Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "saraf" }
+										%input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false", :required => "true", "data-question-title" => "saraf" }
+										%input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveNo" } Tidak
-								%input#ButtonPreviewPolicyHolderNerve.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderNerve", "data-popup-type" => "hardcopy" }
+								%input#ButtonPreviewPolicyHolderNerve.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderLiver.Item{ :for => "RadioButtonPolicyHolderLiverYes" }
 										Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "hati" }
+										%input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false", :required => "true", "data-question-title" => "hati" }
+										%input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverNo" } Tidak
-								%input#ButtonPreviewPolicyHolderLiver.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderLiver", "data-popup-type" => "hardcopy" }
+								%input#ButtonPreviewPolicyHolderLiver.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderReproduction.Item{ :for => "RadioButtonPolicyHolderReproductionYes" }
@@ -250,23 +250,23 @@
 									%label#LabelPolicyHolderMotion.Item{ :for => "RadioButtonPolicyHolderMotionYes" }
 										Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "sendi" }
+										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", "data-question-title" => "sendi" }
+										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
-								%input#ButtonPreviewPolicyHolderMotion.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderMotion", "data-popup-type" => "hardcopy" }
+								%input#ButtonPreviewPolicyHolderMotion.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
-									%label#LabelPolicyHolderBlood.Item{ :for => "RadioButtonPolicyHolderBloodYes" }
+									%label#LabelPolicyHolderGland.Item{ :for => "RadioButtonPolicyHolderGlandYes" }
 										Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderBloodYes{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "kelenjar dan darah" }
-										%label.RadioButton{ :for => "RadioButtonPolicyHolderBloodYes" } Ya
+										%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
+										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderBloodNo{ :type => "radio", :name => "RadioButtonPolicyHolderBlood", :value => "false", :required => "true", "data-question-title" => "kelenjar dan darah" }
-										%label.RadioButton{ :for => "RadioButtonPolicyHolderBloodNo" } Tidak
-								%input#ButtonPreviewPolicyHolderBlood.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderBlood", "data-popup-type" => "hardcopy" }
+										%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
+										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandNo" } Tidak
+								%input#ButtonPreviewPolicyHolderGland.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderGland", :onclick => "showPopUpFromButton('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderImmune.Item{ :for => "RadioButtonPolicyHolderImmuneYes" }
@@ -423,12 +423,28 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_cardiac.haml")).render
 			%section#PopUpChestPain.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_chestpain.haml")).render
-			%section#PopUpHipertensi.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_hipertensi.haml")).render
+			%section#PopUpHypertension.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_hypertension.haml")).render
 			%section#PopUpDigest.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_digest.haml")).render
 			%section#PopUpDigestDetail.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_digestdetail.haml")).render
+			%section#PopUpNerve.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_nerve.haml")).render
+			%section#PopUpNerveDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_nervedetail.haml")).render
+			%section#PopUpLiver.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_liver.haml")).render
+			%section#PopUpLiverDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_liverdetail.haml")).render
+			%section#PopUpMotion.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_motion.haml")).render
+			%section#PopUpMotionDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_motiondetail.haml")).render
+			%section#PopUpGland.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_gland.haml")).render
+			%section#PopUpGlandDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_glanddetail.haml")).render
 			%section#PopUpAlcahol.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_Alcahol.haml")).render
 			%section#PopUpRespiratory.PopUp

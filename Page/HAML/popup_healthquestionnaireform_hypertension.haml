@@ -1,10 +1,10 @@
-%form#PopUpHipertension.PopUp
+%form#PopUpHypertension.PopUp
 	
 	/ HEADER
 
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpHipertension', 'PopUpCardiac')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpHipertension', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hipertension', arrayHealthQuestionnaire)" }
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpHypertension', 'PopUpCardiac')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpHypertension', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hypertension', arrayHealthQuestionnaire)" }
 		%h2 KUESIONER TEKANAN DARAH TINGGI 
 
 	/ FIELDSET
@@ -12,7 +12,6 @@
 	%fieldset
 		%div.ContainerFit
 			%span.Multi.Single.6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya? 
-
 		%br
 		%hr
 		%div.ContainerFit
@@ -21,18 +20,19 @@
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft  b. Berapa tekanan darah saat itu?
-			%input#TextProspectiveInsuredHypertentionNumOfBloodPressure.Medium.Single.Item.Margin{ :type =>"text" }
+			%input#TextBloodPressure.Medium.Single.Item.Margin{ :type =>"text" }
 		%br	
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
 			%br
-			%input#ProspectiveInsuredHypertentionCheckReasonGeneral{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckReason", :value => "pemeriksaanrutin" }
-			%label.RadioButton{ :for => "ProspectiveInsuredHypertentionCheckReasonGeneral" } Pemeriksaan rutin
+			%input#RadioButtonCheckReasonRoutine{ :type => "radio", :name => "RadioButtonCheckReason", :value => "routine" }
+			%label.RadioButton{ :for => "RadioButtonCheckReasonGeneral" } Pemeriksaan rutin
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionCheckReasonOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckReason", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckReasonOther" }Keluhan lainnya. Mohon jelaskan
+			%input#RadioButtonCheckReasonOther{ :type => "radio", :name => "RadioButtonCheckReason", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonCheckReasonOther" }Keluhan lainnya. Mohon jelaskan
 		%br
-		%input#TextProspectiveInsuredHypertentionCheckReasonDesc.Full.Single.Item1.Margin{ :type =>"text"}
+		%input#TextCheckReasonOther.Full.Single.Item1.Margin{ :type =>"text" }
+		
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item d. Apakah dikonsultasikan ke dokter ?
 			%input#RadioButtonProspectiveInsuredHypertentionDoctorConsultYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionDoctorConsult", :value => "ya" }

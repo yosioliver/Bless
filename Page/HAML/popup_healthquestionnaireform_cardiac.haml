@@ -4,7 +4,7 @@
 
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpCardiac')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :name => "Cardiac", :onclick => "buttonPopUpDone('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hipertension' + 'FirstTime'])" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime'])" }
 		%h2 Pertanyaan Kesehatan
 
 	/ FIELDSET
@@ -16,7 +16,7 @@
 		%div.RadioButton
 			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Nyeri Dada", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpChestPain', stringPageInfixTypeCurrent + 'ChestPain', arrayHealthQuestionnaire)" }
 			%div.Separator
-			%input#ButtonHipertension.ButtonPrimary{ :type => "button", :value => "Kuesioner Tekanan Darah Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpHipertension', stringPageInfixTypeCurrent + 'Hipertension', arrayHealthQuestionnaire)" }
+			%input#ButtonHypertension.ButtonPrimary{ :type => "button", :value => "Kuesioner Tekanan Darah Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCardiac', 'PopUpHypertension', stringPageInfixTypeCurrent + 'Hypertension', arrayHealthQuestionnaire)" }
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br
