@@ -206,10 +206,10 @@
 									%label#LabelPolicyHolderDigest.Item{ :for => "RadioButtonPolicyHolderDigestYes" }
 										Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderDigestYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "true", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonPolicyHolderDigestYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "true", :required => "true", :onchange => "buttonPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderDigestNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "false", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonPolicyHolderDigestNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "false", :required => "true", :onchange => "buttonPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNo" } Tidak
 								%input#ButtonPreviewPolicyHolderDigest.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderDigest", "data-popup-type" => "health" }
 							%li
@@ -425,6 +425,10 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_chestpain.haml")).render
 			%section#PopUpHipertensi.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_hipertensi.haml")).render
+			%section#PopUpDigest.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_digest.haml")).render
+			%section#PopUpDigestDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_digestdetail.haml")).render
 			%section#PopUpAlcahol.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_Alcahol.haml")).render	
 			%div#BoxDate

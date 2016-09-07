@@ -18,13 +18,13 @@
 			{
 				// GENERATOR
 				
-				boxGenerator("#TextPolicyHolderName1", 26, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderName2", 26, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderIlustrasiNumb", 26, boxTypeWithoutLabel, null);
-				lineGenerator("#LineSignedPlace", 8);
-				lineGenerator("#LineSignedDateDay", 2);
-				lineGenerator("#LineSignedDateMonth", 2);
-				lineGenerator("#LineSignedDateYear", 4);  
+				boxGenerator("#TextPolicyHolderFullName1", 26, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2", 26, boxTypeWithoutLabel, null);
+				boxGenerator("#TextIllustrationNumber", 26, boxTypeWithoutLabel, null);
+				lineGenerator("#TextSignedPlace", 8);
+				lineGenerator("#DateSignedDay", 2);
+				lineGenerator("#DateSignedMonth", 2);
+				lineGenerator("#DateSignedYear", 4);  
 			});
 
 	/ BODY
@@ -34,7 +34,7 @@
 		/ HEADER
 	
 		%header
-			%img.PositionerLeft{ :src => "../../Resource/Logo/logo_bcalife.svg", :style => "width: 200px;"}
+			%img.PositionerLeft{ :src => "../../jqueryLibrary/Resource/Logo/logo_bcalife.svg", :style => "width: 200px;"}
 
 			%div.PositionerRight
 				%label.Wrap.Single.PositionerRight PT Ansuransi Jiwa BCA
@@ -53,14 +53,14 @@
 			
 		%main
 			%section
-				%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderName1" } Nama Calon Pemegang Polis
-				%table#TextPolicyHolderName1.BoxSquare.PositionerRight
+				%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderFullName1" } Nama Calon Pemegang Polis
+				%table#TextPolicyHolderFullName1.BoxSquare.PositionerRight
 				%br
-				%table#TextPolicyHolderName2.BoxSquare.PositionerRight
+				%table#TextPolicyHolderFullName2.BoxSquare.PositionerRight
 				%br
 				
-				%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderNomorIlustrasi" } Nomor Ilustrasi
-				%table#TextPolicyHolderIlustrasiNumb.BoxSquare.PositionerRight
+				%label.Wrap.Single.PositionerLeft{ :for => "TextIllustrationNumber" } Nomor Ilustrasi
+				%table#TextIllustrationNumber.BoxSquare.PositionerRight
 				%br
 				
 				%h2 Beberapa KEWAJIBAN Saya
@@ -95,14 +95,14 @@
 				%span.single.PositionerLeft Mengenai hal hal diatas, saya SETUJU dan telah PAHAM atas penjelasan yang diberikan oleh Tenaga Penjual BCA Life. Apabila terdapat perbedaan antara Ringkasan Pembelian dengan Ketentuan Polis, maka yang akan berlaku adalah ketentuan Polis.
 				
 				%br
-				%label.Single.PositionerLeft{ :for => "LineSignedPlace" } Ditandatangani di
-				%div#LineSignedPlace.LineStraight.PositionerLeft
-				%label.Single.PositionerLeft{ :for => "LineSignedDateDay" } Pada Tanggal 
-				%div#LineSignedDateDay.LineStraight.PositionerLeft
-				%label.Single.Separator.PositionerLeft{ :for => "LineSignedDateMonth" } /
-				%div#LineSignedDateMonth.LineStraight.PositionerLeft
-				%label.Single.Separator.PositionerLeft{ :for => "LineSignedDateYear" } /
-				%div#LineSignedDateYear.LineStraight.PositionerLeft
+				%label.Single.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani di
+				%div#TextSignedPlace.LineStraight.PositionerLeft
+				%label.Single.PositionerLeft{ :for => "DateSignedDay" } Pada Tanggal 
+				%div#DateSignedDay.LineStraight.PositionerLeft
+				%label.Single.Separator.PositionerLeft{ :for => "DateSignedMonth" } /
+				%div#DateSignedMonth.LineStraight.PositionerLeft
+				%label.Single.Separator.PositionerLeft{ :for => "DateSignedYear" } /
+				%div#DateSignedYear.LineStraight.PositionerLeft
 				%span.Single.Wrap.PositionerLeft (Tanggal/Bulan/Tahun).
 				%br
 				
