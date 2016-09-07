@@ -1654,6 +1654,22 @@ function validateRadioButtonGeneral(radioButtonName)
     }
 }
 
+function validateSpecificRadioButtonGeneral(stringLayoutJavaScriptID, radioButtonName)
+{
+	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	
+    if ($(stringLayoutJQueryID + " input:radio[name=" + radioButtonName + "]:checked").val() != undefined)
+    {
+        validateState(true);
+        return true;
+    }
+    else
+    {
+		validateState(false);
+        return false;
+    }
+}
+
 /* function validateCheckboxGeneral(stringInputJQueryID)
 {
     if ($(stringInputJQueryID).val() != undefined)
@@ -1717,6 +1733,24 @@ function setRadioButtonGeneral(stringName, stringValue)
     if (stringValue != null)
 	{
 		var radioButton = $("input:radio[name=" + stringName + "]");
+    	radioButton.filter("[value='" + stringValue + "']").prop("checked", true);
+	}
+	else
+	{
+		$("input:radio[name='" + stringName + "']").each(function()
+		{
+			$(this).prop("checked", false);
+		});
+	}
+}
+
+function setSpecificRadioButtonGeneral(stringLayoutJavaScriptID, stringName, stringValue)
+{
+	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	
+    if (stringValue != null)
+	{
+		var radioButton = $(stringLayoutJQueryID + " input:radio[name=" + stringName + "]");
     	radioButton.filter("[value='" + stringValue + "']").prop("checked", true);
 	}
 	else
@@ -1887,6 +1921,15 @@ function getRadioButtonGeneral(stringName)
     var stringRadioButtonValue;
     
     stringRadioButtonValue = $("input:radio[name=" + stringName + "]:checked").val();
+    
+    return stringRadioButtonValue;
+}
+
+function getSpecificRadioButtonGeneral(stringLayoutJavaScriptID, stringName)
+{
+    var stringRadioButtonValue;
+    
+    stringRadioButtonValue = $(stringLayoutJavaScriptID + " input:radio[name=" + stringName + "]:checked").val();
     
     return stringRadioButtonValue;
 }
@@ -2846,9 +2889,10 @@ function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaS
 	var stringButtonJQueryID = stringKres + stringButtonJavaScriptID;	
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;	
 	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;	
-	// var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);	
+	var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 	$(stringPopUpCurrentJQueryID).css("display", "none");	
 	$(stringPopUpLinkJQueryID).css("display", "block");	
+	
 	if (booleanState == true)
 	{
 		
@@ -2974,7 +3018,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	
 	if (stateValidation == true)
 	{
-		$(stringLayoutJQueryID + " form input:text").each(function()
+		$(stringLayoutJQueryID + " form input[type='text']").each(function()
 		{
 			var stringInputJavaScriptID =$(this).attr("id");
 			var stringInputJQueryID = stringKres + stringInputJavaScriptID;
@@ -3014,21 +3058,19 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	{
 		var stringRadioButtonFlag = 0;
 		
-		$(stringLayoutJQueryID + " form input:radio").each(function()
+		$(stringLayoutJQueryID + " form input[type='radio']").each(function()
 		{
 			var stringInputName = $(this).attr("name");
 			var stringInputRequired = $(this).attr("required");
-			var stringInputNameWithoutPrefix = releasePrefix($(this).attr("id"));
-			var stringSpecificInputNameJavaScriptID = stringLayoutJavaScriptID + " " + $(this).attr("name");
-			var stringSpecificInputNameJQueryID = stringKres + stringSpecificInputNameJavaScriptID;
+			var stringInputNameWithoutPrefix = releasePrefix($(this).attr("name"));
 			var stringKey = stringPrefixRadioButton + stringInputInfix + stringInputNameWithoutPrefix;
-			var stringValue = getRadioButtonGeneral(stringSpecificInputNameJavaScriptID);
+			var stringValue = getSpecificRadioButtonGeneral(stringLayoutJQueryID, stringInputName);
 
 			if (stringRadioButtonFlag != stringInputName)
 			{
 				if (stringInputRequired == stringStateRequired)
 				{
-					if (validateRadioButtonGeneral(stringSpecificInputNameJQueryID) == false)
+					if (validateSpecificRadioButtonGeneral(stringLayoutJQueryID, stringInputName) == false)
 					{
 						validationMessage("Harap lengkapi form terlebih dahulu !.", null);
 						return false;
@@ -3327,7 +3369,7 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		}
 		else if (stringKeyPrefix == stringPrefixRadioButton)
 		{			
-			setRadioButtonGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixRadioButton + stringKeyWithoutInfix, stringValue);
+			setSpecificRadioButtonGeneral(stringLayoutJavaScriptID, stringPrefixRadioButton + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixCheckbox)
 		{			
