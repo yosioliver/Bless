@@ -9,39 +9,43 @@
 	
 	/ FIELDSET
 	
-	%fieldset
-		-#
+	%fieldset		
 		%div.ContainerFit
 			%span.Multi.Single.6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?	
 		%br
 		%hr
-		
+
 		%div.ContainerFit
 			%label#LabelFirstAttack.Medium.Single.Item3.Margin 1. Kapan nyeri dada pertama kali dirasakan?
 			%input#DateFirstAttack.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }	
 		%br
 		%hr
-		
+
 		%label.medium.Single.Item 2. Berapa lama serangan tersebut berlangsung?
 		%br    
 		%input#TextAttackDuration.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
-				
+
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 3. Apakah ada serangan lanjutan sesudahnya?
-			%input#RadioButtonProspectiveInsuredChestPainNextAttackYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredChestPainNextAttack", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredChestPainNextAttackYes" } Ya
+			%input#RadioButtonNextAttackYes{ :type => "radio", :name => "RadioButtonNextAttack", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonNextAttackYes" } Ya
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredChestPainNextAttackNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredChestPainNextAttack", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredChestPainNextAttackNo" } Tidak
+			%input#RadioButtonNextAttackNo{ :type => "radio", :name => "RadioButtonNextAttack", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonNextAttackNo" } Tidak
 		%br		
-		
+
 		%div.ContainerFit
 			%label#LabelLastAttack.Medium.Single.Item3.Margin Tanggal serangan terakhir?
 			%input#DateLastAttack.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }			
 		%br
-		%input#TextPolicyHolderBerapaKaliSerangan.Full.Single.Item1.Margin{ :type =>"text" }
+		%label.medium.Single.Item Berapa lama serangan tersebut berlangsung?
+		%br
+		%input#TextLastAttackDuration.Full.Single.Item1.Margin{ :type =>"text" }
+		%div.ContainerFit 
+			%label#LabelCurrentAttackTimes.Medium.Single.Item3.Margin Hingga saat ini serangan sudah terjadi sebanyak
+			%input#TextCurrentAttackTimes.Medium.Single.Item1.Margin{ :type => "text" }
 		%hr
 
 		%div.ContainerFit 
@@ -105,9 +109,7 @@
 			%label.RadioButton{ :for => "RadioButtonDibahagianLain" } Di bagian lain dari dada
 		%br
 		%input#TextProspectiveInsuredChestPainLocationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
-		%hr
-		
-		-#
+		%hr				
 
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item 7. Apakah nyeri dada tersebut menjalar ? (mohon beri tanda di kolom yang sesuai)
