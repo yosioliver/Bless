@@ -9,7 +9,7 @@
 	
 /* INPUT TYPE TEXT */
 
-input[type="text"], input[type="password"]
+input, textarea
 	padding-top: $input_padding_edge
     padding-right: $input_padding_side
     padding-right: $input_padding_side
@@ -18,28 +18,57 @@ input[type="text"], input[type="password"]
 	border-style: solid
 	border-width: $input_borderwidth_pure
 
-input[type="text"].Tiny, input[type="password"].Tiny
+input
+	text-transform: uppercase
+
+input.Tiny, textarea.Tiny
     min-width: $input_width_short / 2 !important
     width: $input_width_short / 2 !important
 
-input[type="text"].Short, input[type="password"].Short
+input.Short, textarea.Short
     min-width: $input_width_short !important
     width: $input_width_short !important
 
-input[type="text"].Medium, input[type="password"].Medium
-	width: $input_width_medium
+input.Medium, textarea.Medium
+    min-width: $input_width_medium
+    width: $input_width_medium
 
-input[type="text"].Long, input[type="password"].Long
-	width: $input_width_long
+input.Long, textarea.Long
+    min-width: $input_width_long
+    width: $input_width_long
+
+input.Full, textarea.Full
+    width: 100%
+
+input.TinyFix, textarea.TinyFix
+    max-width: $input_width_short / 2 !important
+
+input.ShortFix, textarea.ShortFix
+    max-width: $input_width_short !important
+
+input.MediumFix, textarea.MediumFix
+    max-width: $input_width_medium
+
+input.LongFix, textarea.LongFix
+    max-width: $input_width_long
 	
-input[type="text"].Full, input[type="password"].Full
-	width: 100%
+input.FullFix, textarea.FullFix
+    max-width: 100%
 
-input[type="text"].Single, input[type="password"].Single
+input.Single, textarea.Single
 	height: $input_height_single
 
-input[type="text"].Multi, input[type="password"].Multi
+input.Multi, textarea.Multi
 	height: $input_height_multi
+
+input:required, textarea:required
+    background-image: url("../../Resource/Input/input_text_required.svg")
+    background-size: 3em 2em
+    background-position: right top
+    background-repeat: no-repeat
+    
+input:disabled, textarea:disabled
+    background-image: none
 
 
 /* CHECKBOX */

@@ -27,7 +27,7 @@
 /* RESOURCE */
 /* TYPEFACE */
 /* INPUT TYPE TEXT */
-input[type="text"], input[type="password"] {
+input, textarea {
   padding-top: 2px;
   padding-top-padding-right: 5px;
   padding-top-padding-right: 5px;
@@ -37,34 +37,71 @@ input[type="text"], input[type="password"] {
   border-width: 1px;
 }
 
-input[type="text"].Tiny, input[type="password"].Tiny {
+input {
+  text-transform: uppercase;
+}
+
+input.Tiny, textarea.Tiny {
   min-width: 37.5px !important;
   width: 37.5px !important;
 }
 
-input[type="text"].Short, input[type="password"].Short {
+input.Short, textarea.Short {
   min-width: 75px !important;
   width: 75px !important;
 }
 
-input[type="text"].Medium, input[type="password"].Medium {
+input.Medium, textarea.Medium {
+  min-width: 154px;
   width: 154px;
 }
 
-input[type="text"].Long, input[type="password"].Long {
+input.Long, textarea.Long {
+  min-width: 225px;
   width: 225px;
 }
 
-input[type="text"].Full, input[type="password"].Full {
+input.Full, textarea.Full {
   width: 100%;
 }
 
-input[type="text"].Single, input[type="password"].Single {
+input.TinyFix, textarea.TinyFix {
+  max-width: 37.5px !important;
+}
+
+input.ShortFix, textarea.ShortFix {
+  max-width: 75px !important;
+}
+
+input.MediumFix, textarea.MediumFix {
+  max-width: 154px;
+}
+
+input.LongFix, textarea.LongFix {
+  max-width: 225px;
+}
+
+input.FullFix, textarea.FullFix {
+  max-width: 100%;
+}
+
+input.Single, textarea.Single {
   height: 20px;
 }
 
-input[type="text"].Multi, input[type="password"].Multi {
+input.Multi, textarea.Multi {
   height: 60px;
+}
+
+input:required, textarea:required {
+  background-image: url("../../Resource/Input/input_text_required.svg");
+  background-size: 3em 2em;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+input:disabled, textarea:disabled {
+  background-image: none;
 }
 
 /* CHECKBOX */

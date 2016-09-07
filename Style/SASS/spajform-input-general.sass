@@ -9,7 +9,7 @@
 	
 /* INPUT TYPE TEXT */
 
-input[type="text"], input[type="password"]
+input, textarea
 	padding-top: $input_padding_edge
     padding-right: $input_padding_side
     padding-right: $input_padding_side
@@ -18,56 +18,56 @@ input[type="text"], input[type="password"]
 	border-style: solid
 	border-width: $input_borderwidth_pure
 
-input[type="text"]
+input
 	text-transform: uppercase
 
-input[type="text"].Tiny, input[type="password"].Tiny
+input.Tiny, textarea.Tiny
     min-width: $input_width_short / 2 !important
     width: $input_width_short / 2 !important
 
-input[type="text"].Short, input[type="password"].Short
+input.Short, textarea.Short
     min-width: $input_width_short !important
     width: $input_width_short !important
 
-input[type="text"].Medium, input[type="password"].Medium
+input.Medium, textarea.Medium
     min-width: $input_width_medium
     width: $input_width_medium
 
-input[type="text"].Long, input[type="password"].Long
+input.Long, textarea.Long
     min-width: $input_width_long
     width: $input_width_long
-	
-input[type="text"].Full, input[type="password"].Full
+
+input.Full, textarea.Full
     width: 100%
 
-input[type="text"].TinyFix, input[type="password"].TinyFix
+input.TinyFix, textarea.TinyFix
     max-width: $input_width_short / 2 !important
 
-input[type="text"].ShortFix, input[type="password"].ShortFix
+input.ShortFix, textarea.ShortFix
     max-width: $input_width_short !important
 
-input[type="text"].MediumFix, input[type="password"].MediumFix
+input.MediumFix, textarea.MediumFix
     max-width: $input_width_medium
 
-input[type="text"].LongFix, input[type="password"].LongFix
+input.LongFix, textarea.LongFix
     max-width: $input_width_long
 	
-input[type="text"].FullFix, input[type="password"].FullFix
+input.FullFix, textarea.FullFix
     max-width: 100%
 
-input[type="text"].Single, input[type="password"].Single
+input.Single, textarea.Single
 	height: $input_height_single
 
-input[type="text"].Multi, input[type="password"].Multi
+input.Multi, textarea.Multi
 	height: $input_height_multi
 
-input[type="text"]:required, input[type="password"]:required
+input:required, textarea:required
     background-image: url("../../Resource/Input/input_text_required.svg")
     background-size: 3em 2em
     background-position: right top
     background-repeat: no-repeat
     
-input[type="text"]:disabled, input[type="password"]:disabled
+input:disabled, textarea:disabled
     background-image: none
 
 
