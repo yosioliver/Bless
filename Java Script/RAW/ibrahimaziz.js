@@ -1615,6 +1615,18 @@ function validatePush(objectContent, stringKey, stringValue)
     }
 }
 
+function arrayValidatePush(objectContent, stringKey, stringValue)
+{
+    if (stringValue == undefined || stringValue == "" || stringValue === null)
+    {
+        
+    }
+    else
+    {
+        arrayAdd(objectContent, stringKey, stringValue);
+    }
+}
+
 function validateTextGeneral(stringInputJQueryID)
 {
 	var stringInputValue = $(stringInputJQueryID).val();
@@ -1656,16 +1668,17 @@ function validateRadioButtonGeneral(radioButtonName)
 function validateSpecificRadioButtonGeneral(stringLayoutJavaScriptID, radioButtonName)
 {
 	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	var stringValue = $(stringLayoutJQueryID + " input:radio[name=" + radioButtonName + "]:checked").val();
 	
-    if ($(stringLayoutJQueryID + " input:radio[name=" + radioButtonName + "]:checked").val() != undefined)
+    if (stringValue == undefined || stringValue == null || stringValue == "")
     {
-        validateState(true);
-        return true;
+        validateState(false);
+        return false;
     }
     else
     {
-		validateState(false);
-        return false;
+		validateState(true);
+        return true;
     }
 }
 
@@ -2876,6 +2889,7 @@ function buttonPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValu
 	{
 		$(stringPopUpLinkJQueryID).css("display", "block");
 		setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
+		arrayAdd(arrayHealthQuestionnaire, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 	}
 	else
 	{
@@ -2888,33 +2902,49 @@ function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaS
 	var stringButtonJQueryID = stringKres + stringButtonJavaScriptID;	
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;	
 	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;	
-	var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
-	$(stringPopUpCurrentJQueryID).css("display", "none");	
-	$(stringPopUpLinkJQueryID).css("display", "block");	
+	setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 	
-	if (booleanState == true)
+	$(stringPopUpCurrentJQueryID).css("display", "none");	
+	$(stringPopUpLinkJQueryID).css("display", "block");
+}
+
+function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent, arrayValidation)
+{
+	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
+	var booleanState = false;
+	
+	if (arrayValidation.length == 0 || arrayValidation == null)
 	{
-		
+		booleanState = true;
 	}
 	else
 	{
+		var stringRequiredValue;
 		
-	}
-}
+		for (var i = 0; i < arrayValidation.length; i++)
+		{
+			stringRequiredValue = arrayFind(arrayHealthQuestionnaire, arrayValidation[i]);
+			
+			if (stringRequiredValue != null)
+			{
+				booleanState = true;
+			}
+			else
+			{
 
-function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
-{
-	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
-	var booleanState = getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
+			}
+		}
+	}
 	
 	if (booleanState == true)
 	{
+		getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		previewArrayObject(arrayContent);
 	}
 	else
 	{
-		
+		alert("Harap mengisi kuesioner tambahan minimal satu !.");
 	}
 }
 
@@ -3037,12 +3067,12 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 				}
 			}
 			else
 			{
-				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3076,13 +3106,13 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 					}
 					else
 					{
-						arrayAdd(arrayInputTemporary, stringKey, stringValue);
+						arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 						stringRadioButtonFlag = stringInputName;
 					}
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 					stringRadioButtonFlag = stringInputName;
 				}
 			}
@@ -3121,12 +3151,12 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 				}
 			}
 			else
 			{
-				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3159,13 +3189,13 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 				}
 			}
 			else
 			{
 				// alert(stringKey + " " + stringValue);
-				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3198,12 +3228,12 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 				}
 			}
 			else
 			{
-				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3236,12 +3266,12 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 				}
 			}
 			else
 			{
-				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3274,12 +3304,12 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 				}
 			}
 			else
 			{
-				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3312,12 +3342,12 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 				}
 				else
 				{
-					arrayAdd(arrayInputTemporary, stringKey, stringValue);
+					arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 				}
 			}
 			else
 			{
-				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
 	}
@@ -3328,7 +3358,6 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	
 	if (stateValidation == true)
 	{
-		alert("transfer" + " " + arrayInputTemporary + " " + arrayContent);
 		arrayTransfer(arrayInputTemporary, arrayContent);
 		return true;
 	}
