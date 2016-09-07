@@ -17,24 +17,22 @@
 		%hr
 		%div.ContainerFit
 			%label#LabelPolicyHolder.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan 
-			%input#TextKapanNyeriHari.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Hari" }
-			%input#TextKapanNyeriBulan.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Bulan" }
-			%input#TextKapanNyeriTahun.Medium.Single.Item1.Margin{ :type => "text", :placeholder => "Tahun" }
+			%input#DateProspectiveInsuredHypertentionFirstTime.Medium.Single.Item1.Margin{ :type => "text"}
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft  b. Berapa tekanan darah saat itu?
-			%input#TextPolicyHolderAlasanTekananDarah.Medium.Single.Item.Margin{ :type =>"text" }
+			%input#TextProspectiveInsuredHypertentionNumOfBloodPressure.Medium.Single.Item.Margin{ :type =>"text" }
 		%br	
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
 			%br
-			%input#RadioButtonPemeriksaanRutin{ :type => "radio", :name => "RadioButtonPemeriksaanTekanan", :value => "Pemeriksaan rutin" }
-			%label.RadioButton{ :for => "RadioButtonPemeriksaanRutin" } Pemeriksaan rutin
+			%input#ProspectiveInsuredHypertentionCheckReasonGeneral{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckReason", :value => "pemeriksaanrutin" }
+			%label.RadioButton{ :for => "ProspectiveInsuredHypertentionCheckReasonGeneral" } Pemeriksaan rutin
 			%div.Separator
-			%input#RadioButtonAdeluhanMohonJelaskan{ :type => "radio", :name => "RadioButtonPemeriksaanTekanan", :value => "Adeluhan. Mohon jelaskan" }
-			%label.RadioButton{ :for => "RadioButtonAdeluhanMohonJelaskan" }Adeluhan. Mohon jelaskan
+			%input#RadioButtonProspectiveInsuredHypertentionCheckReasonOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckReason", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckReasonOther" }Keluhan lainnya. Mohon jelaskan
 		%br
-		%input#TextPolicyHolderLokasiNyeriTersebut.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextProspectiveInsuredHypertentionCheckReasonDesc.Full.Single.Item1.Margin{ :type =>"text"}
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item d. Apakah dikonsultasikan ke dokter ?
 			%input#RadioButtonPolicydikonsultasikanYA{ :type => "radio", :name => "RadioButtonPolicyKonsultasiDoktorChange", :value => "true" }
