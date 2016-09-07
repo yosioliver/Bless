@@ -98,6 +98,31 @@
       	{
       		savetoDB();
       	}); */
+      	
+      	$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
+      		if (this.value == 'home') {
+      			$("#TextPolicyHolderHomeAddress1").prop('required',true);
+      			$("#TextPolicyHolderHomeCity").prop('required',true);
+      			$("#TextPolicyHolderHomePostalCode").prop('required',true);
+      			
+      			$('#TextPolicyHolderOfficeAddress1').removeAttr('required');
+      			$('#TextPolicyHolderOfficeCity').removeAttr('required');
+      			$('#TextPolicyHolderOfficePostalCode').removeAttr('required');
+      		}
+      		else if (this.value == 'office') {
+      			$("#TextPolicyHolderOfficeAddress1").prop('required',true);
+      			$("#TextPolicyHolderOfficeCity").prop('required',true);
+      			$("#TextPolicyHolderOfficePostalCode").prop('required',true);
+      			
+      			$('#TextPolicyHolderHomeAddress1').removeAttr('required');
+      			$('#TextPolicyHolderHomeCity').removeAttr('required');
+      			$('#TextPolicyHolderHomePostalCode').removeAttr('required');
+      		}
+      		else
+      		{
+      			
+      		}
+      	});
       });
     </script>
   </head>
@@ -236,7 +261,7 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress1'>Alamat Tempat Tinggal</label>
-          <input class='Full Single Item' id='TextPolicyHolderHomeAddress1' required='true' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderHomeAddress1' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress2'></label>
@@ -249,9 +274,9 @@
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'></label>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'>Kota</label>
-          <input class='Medium Single Item' id='TextPolicyHolderHomeCity' required='true' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderHomeCity' type='text'>
           <label class='Medium Single Item' for='TextPolicyHolderHomePostalCode'>Kode Pos</label>
-          <input class='Medium Single Item' id='TextPolicyHolderHomePostalCode' required='true' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderHomePostalCode' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeTelephone'></label>

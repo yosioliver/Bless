@@ -98,6 +98,31 @@
       	{
       		savetoDB();
       	}); */
+      	
+      	$('input[type=radio][name=RadioButtonProspectiveInsuredCorrespondanceAddress]').change(function() {
+      		if (this.value == 'home') {
+      			$("#TextProspectiveInsuredHomeAddress1").prop('required',true);
+      			$("#TextProspectiveInsuredHomeCity").prop('required',true);
+      			$("#TextProspectiveInsuredHomePostalCode").prop('required',true);
+      			
+      			$('#TextProspectiveInsuredOfficeAddress1').removeAttr('required');
+      			$('#TextProspectiveInsuredOfficeCity').removeAttr('required');
+      			$('#TextProspectiveInsuredOfficePostalCode').removeAttr('required');
+      		}
+      		else if (this.value == 'office') {
+      			$("#TextProspectiveInsuredOfficeAddress1").prop('required',true);
+      			$("#TextProspectiveInsuredOfficeCity").prop('required',true);
+      			$("#TextProspectiveInsuredOfficePostalCode").prop('required',true);
+      			
+      			$('#TextProspectiveInsuredHomeAddress1').removeAttr('required');
+      			$('#TextProspectiveInsuredHomeCity').removeAttr('required');
+      			$('#TextProspectiveInsuredHomePostalCode').removeAttr('required');
+      		}
+      		else
+      		{
+      			
+      		}
+      	});
       });
     </script>
   </head>

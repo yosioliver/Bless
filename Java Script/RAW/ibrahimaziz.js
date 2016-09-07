@@ -2841,15 +2841,13 @@ function buttonPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValu
 }
 
 function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
-{
-	var stringButtonJQueryID = stringKres + stringButtonJavaScriptID;
-	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
-	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;
-	var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
-	
-	$(stringPopUpCurrentJQueryID).css("display", "none");
-	$(stringPopUpLinkJQueryID).css("display", "block");
-	
+{	
+	var stringButtonJQueryID = stringKres + stringButtonJavaScriptID;	
+	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;	
+	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;	
+	// var booleanState = setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);	
+	$(stringPopUpCurrentJQueryID).css("display", "none");	
+	$(stringPopUpLinkJQueryID).css("display", "block");	
 	if (booleanState == true)
 	{
 		
@@ -3124,7 +3122,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			}
 			else
 			{
-				alert(stringKey + " " + stringValue);
+				// alert(stringKey + " " + stringValue);
 				arrayAdd(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
@@ -3307,7 +3305,7 @@ function arrayTransfer(arrayTemporary, arrayContent)
 }
 
 function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
-{
+{	
 	var stringKey;
 	var stringValue;
 	var stringKeyPrefix;
@@ -3321,38 +3319,37 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		stringValue = arrayContent[i].Value;
 		stringKeyPrefix = getPrefix(stringKey);
 		stringKeyWithoutPrefix = releasePrefix(stringKey);
-		stringKeyWithoutInfix = stringKeyWithoutPrefix.substring(stringInputInfix.length, stringKeyWithoutPrefix.length);
-
+		stringKeyWithoutInfix = stringKeyWithoutPrefix.substring(stringInputInfix.length, stringKeyWithoutPrefix.length);		
 		if (stringKeyPrefix == stringPrefixText)
-		{
+		{			
 			setTextForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixText + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixRadioButton)
-		{
+		{			
 			setRadioButtonGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixRadioButton + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixCheckbox)
-		{
+		{			
 			setCheckboxGeneral(stringLayoutJavaScriptID + " " + stringKres + stringPrefixCheckbox + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixSelect)
-		{
+		{			
 			setSelectForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixSelect + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixArea)
-		{
+		{			
 			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
-		{
+		{			
 			setNumberForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixNumber + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixEmail)
-		{
+		{			
 			setEmailForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixEmail + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixDate)
-		{
+		{			
 			setDateForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixDate + stringKeyWithoutInfix, stringValue);
 		}
 		else
@@ -3370,6 +3367,7 @@ function getPrefix(stringKey)
 	}
 	else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
 	{
+		
 		return stringPrefixRadioButton;
 	}
 	else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
