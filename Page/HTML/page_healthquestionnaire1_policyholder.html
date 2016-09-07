@@ -285,10 +285,10 @@
                     Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
                   </label>
                   <div class='RadioButton Item'>
-                    <input data-popup-type='health' id='RadioButtonPolicyHolderDigestYes' name='RadioButtonPolicyHolderDigest' required='true' type='radio' value='true'>
+                    <input id='RadioButtonPolicyHolderDigestYes' name='RadioButtonPolicyHolderDigest' onchange="buttonPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" required='true' type='radio' value='true'>
                     <label class='RadioButton' for='RadioButtonPolicyHolderDigestYes'>Ya</label>
                     <div class='Separator'></div>
-                    <input data-popup-type='health' id='RadioButtonPolicyHolderDigestNo' name='RadioButtonPolicyHolderDigest' required='true' type='radio' value='false'>
+                    <input id='RadioButtonPolicyHolderDigestNo' name='RadioButtonPolicyHolderDigest' onchange="buttonPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" required='true' type='radio' value='false'>
                     <label class='RadioButton' for='RadioButtonPolicyHolderDigestNo'>Tidak</label>
                   </div>
                 </div>
@@ -995,26 +995,26 @@
             <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionCheckReasonDesc' type='text'>
             <div class='RadioButton PositionerLeft'>
               <label class='medium Single Item'>d. Apakah dikonsultasikan ke dokter ?</label>
-              <input id='RadioButtonPolicydikonsultasikanYA' name='RadioButtonPolicyKonsultasiDoktorChange' type='radio' value='true'>
-              <label class='RadioButton' for='RadioButtonPolicydikonsultasikanYA'>Ya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionDoctorConsultYes' name='RadioButtonProspectiveInsuredHypertentionDoctorConsult' type='radio' value='ya'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionDoctorConsultYes'>Ya</label>
               <div class='Separator'></div>
-              <input id='RadioButtonPolicydikonsultasikanNO' name='RadioButtonPolicyKonsultasiDoktorChange' type='radio' value='false'>
-              <label class='RadioButton' for='RadioButtonPolicydikonsultasikanNO'>Tidak</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionDoctorConsultNo' name='RadioButtonProspectiveInsuredHypertentionDoctorConsult' type='radio' value='tidak'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionDoctorConsultNo'>Tidak</label>
             </div>
             <br>
             <div class='ContainerFit'>
               <label class='Long Single PositionerLeft'>Nama Dokter</label>
-              <input class='Full Single Item Margin' id='TextPolicyHolderNamaDokterTD' type='text'>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionDoctorName' type='text'>
             </div>
             <br>
             <div class='ContainerFit'>
               <label class='Long Single PositionerLeft'>Alamat Dokter</label>
-              <input class='Full Single Item Margin' id='TextPolicyHolderAlamatDokterTD' type='text'>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionDoctorAddress' type='text'>
             </div>
             <br>
-            <label class='Wrap Single PositionerLeft Margin' id='LabelPolicyHolderLainnya'>e. Bagaimana frekuensi kontrol ke dokter?</label>
-            <input class='Medium Single PositionerLeft Margin' id='TextPolicyHolderLainnyaFrequency' type='text'>
-            <label class='Wrap Single PositionerLeft Margin' id='LabelPolicyHolderLainnya'>kali per minggu/ bulan/ tahun</label>
+            <label class='Wrap Single PositionerLeft Margin'>e. Berapa sering Anda kontrol ke Dokter?</label>
+            <input class='Medium Single PositionerLeft Margin' id='TextProspectiveInsuredHypertentionHowOftenCheck' type='text'>
+            <label class='Wrap Single PositionerLeft Margin'>kali per minggu/ bulan/ tahun</label>
             <br>
             <hr>
             <div class='RadioButton PositionerLeft'>
@@ -1159,6 +1159,111 @@
               <li>Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.</li>
               <li>Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.</li>
             </ol>
+          </fieldset>
+        </form>
+      </section>
+      <section class='PopUp' id='PopUpDigest'>
+        <form class='PopUp' id='PopUpDigest'>
+          <!-- HEADER -->
+          <header>
+            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonPopUpCancel('PopUpDigest')" type='button' value='Cancel'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonPopUpDone('PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" type='button' value='Done'>
+            <h2>Pertanyaan Kesehatan</h2>
+          </header>
+          <!-- FIELDSET -->
+          <fieldset>
+            <div class='ContainerFit'>
+              <span class='Multi Single 6e'>Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?</span>
+            </div>
+            <br>
+            <div class='RadioButton'>
+              <input class='ButtonPrimary' id='ButtonDigestDetail' onclick="buttonPopUpNavigation(this.id, 'PopUpDigest', 'PopUpDigestDetail', stringPageInfixTypeCurrent + 'DigestDetail', arrayHealthQuestionnaire)" type='button' value='Kuesioner Gangguan Pencernaan'>
+            </div>
+            <hr>
+            <label class='Medium Single'>silahkan memberikan rincian lebih lanjut</label>
+            <br>
+            <textarea class='Full Multi' id='AreaDetail'></textarea>
+            <label class='Medium Single'>(maksimum 250 karakter)</label>
+          </fieldset>
+        </form>
+      </section>
+      <section class='PopUp' id='PopUpDigestDetail'>
+        <form class='PopUp' id='PopUpDigestDetail'>
+          <!-- HEADER -->
+          <header>
+            <input class='ButtonPrimary PositionerLeft' id='ButtonCancel' onclick="buttonSubPopUpCancel('PopUpDigestDetail', 'PopUpDigest')" type='button' value='Cancel'>
+            <input class='ButtonPrimary PositionerRight' id='ButtonDone' onclick="buttonSubPopUpDone('PopUpDigestDetail', 'PopUpDigest', stringPageInfixTypeCurrent + 'DigestDetail', arrayHealthQuestionnaire)" type='button' value='Done'>
+            <h2>Kuesioner Gangguan Pencernaan</h2>
+          </header>
+          <!-- FIELDSET -->
+          <fieldset>
+            <div class='ContainerFit'>
+              <span class='Multi Single 6e'>Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia,Hepatitis dan lainnya?</span>
+            </div>
+            <br>
+            <hr>
+            <div class='ContainerFit'>
+              <label class='medium Single Item'>1. Jelaskan gangguan pencernaan yang pernah dialami?</label>
+            </div>
+            <br>
+            <div class='RadioButton PositionerLeft'>
+              <input class='Single' id='RadioButtonProblemPepticUlcer' name='RadioButtonProblem' type='radio' value='pepticulcer'>
+              <label class='RadioButton' for='RadioButtonProblemPepticUlcer'>Tukak lambung</label>
+              <div class='Separator'></div>
+              <input class='Medium Single' id='RadioButtonProblemEnteritis' name='RadioButtonProblem' type='radio' value='enteritirs'>
+              <label class='RadioButton' for='RadioButtonProblemEnteritis'>Radang usus</label>
+              <div class='Separator'></div>
+              <input class='Medium Single' id='RadioButtonProblemIntestinalUlcer' name='RadioButtonProblem' type='radio' value='intestinalulcer'>
+              <label class='RadioButton' for='RadioButtonProblemIntestinalUlcer'>Tukak usus</label>
+              <div class='Separator'></div>
+              <input class='Medium Single' id='RadioButtonProblemUlcer' name='RadioButtonProblem' type='radio' value='maag'>
+              <label class='RadioButton' for='RadioButtonProblemUlcer'>Maag</label>
+              <div class='Separator'></div>
+              <input class='Medium Single' id='RadioButtonProblemEnteritis12Fingers' name='RadioButtonProblem' type='radio' value='enteritis12fingers'>
+              <label class='RadioButton' for='RadioButtonProblemEnteritis12Fingers'>Radang usus 12 jari</label>
+              <div class='Separator'></div>
+              <input id='RadioButtonProblemOther' name='RadioButtonProblem' type='radio' value='other'>
+              <label class='RadioButton' for='RadioButtonProblemOther'>lainnya</label>
+            </div>
+            <br>
+            <input class='Full Single Item1 Margin' id='TextProblemOther' type='text'>
+            <hr>
+            <div class='ContainerFit'>
+              <label class='Long Single Item3 Margin' id='LabelProblemStarted'>2. Sejak kapan mengalami gangguan pencernaan?</label>
+              <input class='Short Single Item1 Margin' data-field='date' id='DateProblemStarted' type='text'>
+            </div>
+            <hr>
+            <label class='medium Single Item' for='TextFrequencyInMonth'>3. a. Frekuensi timbulnya dalam satu bulan?</label>
+            <br>
+            <input class='Full Single Item1 Margin' id='TextFrequencyInMonth' type='text'>
+            <br>
+            <div class='ContainerFit'>
+              <label class='Long Single Item3 Margin' for='TextLastComplain' id='Label'>b. Kapan timbulnya keluhan terakhir?</label>
+              <input class='Short Single Item1 Margin' data-field='date' id='DateLastComplain' type='text'>
+            </div>
+            <hr>
+            <div class='RadioButton PositionerLeft'>
+              <label class='medium Single Item'>4. Keluhan apa yang dirasakan:</label>
+              <input class='Single' id='RadioButtonComplainNausea' name='RadioButtonComplain' type='radio' value='nausea'>
+              <label class='RadioButton' for='RadioButtonComplainNausea'>Mual</label>
+              <div class='Separator'></div>
+              <input class='Single' id='RadioButtonComplainGag' name='RadioButtonComplain' type='radio' value='gag'>
+              <label class='RadioButton' for='RadioButtonComplain'>Muntah</label>
+              <div class='Separator'></div>
+              <input class='Single' id='RadioButtonComplainVomittingBlod' name='RadioButtonComplain' type='radio' value='vomittingblood'>
+              <label class='RadioButton' for='RadioButtonDigestComplainVomittingBlood'>muntah darah</label>
+              <div class='Separator'></div>
+              <input class='Single' id='RadioButtonComplainHeartburn' name='RadioButtonComplain' type='radio' value='heartburn'>
+              <label class='RadioButton' for='RadioButtonComplainHeartburn'>nyeri uku hati</label>
+              <div class='Separator'></div>
+              <input class='Single' id='RadioButtonComplainOther' name='RadioButtonComplain' type='radio' value='other'>
+              <label class='RadioButton' for='RadioButtonComplainOther'>lainnya</label>
+            </div>
+            <br>
+              <input class='Full Single Item1 Margin' id='TextComplainOther' type='text'>
+            </br>
+            <hr>
+            <br>
           </fieldset>
         </form>
       </section>

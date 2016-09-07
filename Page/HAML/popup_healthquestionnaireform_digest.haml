@@ -1,0 +1,22 @@
+%form#PopUpDigest.PopUp
+
+	/ HEADER
+
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpDigest')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
+		%h2 Pertanyaan Kesehatan
+
+	/ FIELDSET
+
+	%fieldset
+		%div.ContainerFit
+			%span.Multi.Single.6e Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
+		%br
+		%div.RadioButton
+			%input#ButtonDigestDetail.ButtonPrimary{ :type => "button", :value => "Kuesioner Gangguan Pencernaan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpDigest', 'PopUpDigestDetail', stringPageInfixTypeCurrent + 'DigestDetail', arrayHealthQuestionnaire)" }
+		%hr
+		%label.Medium.Single silahkan memberikan rincian lebih lanjut
+		%br
+		%textarea#AreaDetail.Full.Multi
+		%label.Medium.Single (maksimum 250 karakter)
