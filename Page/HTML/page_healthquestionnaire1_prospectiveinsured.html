@@ -670,11 +670,11 @@
             <hr>
             <div class='RadioButton PositionerLeft'>
               <label class='medium Single Item'>3. Apakah ada serangan lanjutan sesudahnya?</label>
-              <input id='RadioButtonProspectiveInsuredChestPainNextAttackYes' name='RadioButtonProspectiveInsuredChestPainNextAttack' type='radio' value='true'>
-              <label class='RadioButton' for='RadioButtonProspectiveInsuredChestPainNextAttackYes'>Ya</label>
+              <input id='RadioButtonNextAttackYes' name='RadioButtonNextAttack' type='radio' value='true'>
+              <label class='RadioButton' for='RadioButtonNextAttackYes'>Ya</label>
               <div class='Separator'></div>
-              <input id='RadioButtonProspectiveInsuredChestPainNextAttackNo' name='RadioButtonProspectiveInsuredChestPainNextAttack' type='radio' value='false'>
-              <label class='RadioButton' for='RadioButtonProspectiveInsuredChestPainNextAttackNo'>Tidak</label>
+              <input id='RadioButtonNextAttackNo' name='RadioButtonNextAttack' type='radio' value='false'>
+              <label class='RadioButton' for='RadioButtonNextAttackNo'>Tidak</label>
             </div>
             <br>
             <div class='ContainerFit'>
@@ -682,7 +682,13 @@
               <input class='Medium Single Item1 Margin' data-field='date' id='DateLastAttack' type='date'>
             </div>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderBerapaKaliSerangan' type='text'>
+            <label class='medium Single Item'>Berapa lama serangan tersebut berlangsung?</label>
+            <br>
+            <input class='Full Single Item1 Margin' id='TextLastAttackDuration' type='text'>
+            <div class='ContainerFit'>
+              <label class='Medium Single Item3 Margin' id='LabelCurrentAttackTimes'>Hingga saat ini serangan sudah terjadi sebanyak</label>
+              <input class='Medium Single Item1 Margin' id='TextCurrentAttackTimes' type='text'>
+            </div>
             <hr>
             <div class='ContainerFit'>
               <label class='Medium Single Item3 Margin' id='LabelLastAttack'>4. Kapan terakhir kali nyeri dada terjadi?</label>
@@ -747,6 +753,194 @@
             <br>
             <input class='Full Single Item1 Margin' id='TextProspectiveInsuredChestPainLocationOtherDesc' type='text'>
             <hr>
+              <div class='RadioButton PositionerLeft'>
+                <label class='medium Single Item'>7. Apakah nyeri dada tersebut menjalar ? (mohon beri tanda di kolom yang sesuai)</label>
+                <br>
+                <input id='RadioButtonKeBahu' name='RadioButtonMenjalar' type='radio' value=' Ke bahu'>
+                <label class='RadioButton' for='RadioButtonKeBahu'>Ke bahu</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonKeLengan' name='RadioButtonMenjalar' type='radio' value=' Ke lengan'>
+                <label class='RadioButton' for='RadioButtonKeLengan'>Ke lengan</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonKeRahang' name='RadioButtonMenjalar' type='radio' value=' Ke Rahang'>
+                <label class='RadioButton' for='RadioButtonKeRahang'>Ke Rahang</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonKePerut' name='RadioButtonMenjalar' type='radio' value=' Ke Perut'>
+                <label class='RadioButton' for='RadioButtonKePerut'>Ke Perut</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonKePunggung' name='RadioButtonMenjalar' type='radio' value=' Ke Punggung'>
+                <label class='RadioButton' for='RadioButtonKePunggung'>Ke Punggung</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonLainnyaMenjalar' name='RadioButtonMenjalar' type='radio' value=' Lainnya'>
+                <label class='RadioButton' for='RadioButtonLainnyaMenjalar'>Lainnya</label>
+                <br>
+              </div>
+              <input class='Full Single Item1 Margin' id='TextPolicyHolderNyeriMenjalar' type='text'>
+              <br>
+              <hr>
+              <div class='RadioButton PositionerLeft'>
+                <label class='medium Single Item'>8. Bagaimana terjadinya nyeri dada tersebut ?</label>
+                <br>
+                <input id='RadioButtonMendadak' name='RadioButtonNyeriDada' type='radio' value='Mendadak'>
+                <label class='RadioButton' for='RadioButtonMendadak'>Mendadak</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonBertahap' name='RadioButtonNyeriDada' type='radio' value='  Bertahap'>
+                <label class='RadioButton' for='RadioButtonBertahap'>Bertahap</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonDiWaktuIstirahat' name='RadioButtonNyeriDada' type='radio' value=' Di waktu Istirahat'>
+                <label class='RadioButton' for='RadioButtonDiWaktuIstirahat'>Di waktu Istirahat</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonHanyaPadaPosturTertentu' name='RadioButtonNyeriDada' type='radio' value=' Hanya pada postur tertentu'>
+                <label class='RadioButton' for='RadioButtonHanyaPadaPosturTertentu'>Hanya pada postur tertentu</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonHanyaPadaIstirahatSehabisExercise' name='RadioButtonNyeriDada' type='radio' value=' Hanya pada istirahat sehabis exercise '>
+                <label class='RadioButton' for='RadioButtonHanyaPadaIstirahatSehabisExercise'>Hanya pada istirahat sehabis exercise</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonDiperburukDenganTarikNafasDalam' name='RadioButtonNyeriDada' type='radio' value=' Diperburuk dengan tarik nafas dalam'>
+                <label class='RadioButton' for='RadioButtonDiperburukDenganTarikNafasDalam'>Diperburuk dengan tarik nafas dalam</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonNyeriDadaLainnya' name='RadioButtonNyeriDada' type='radio' value=' Lainnya'>
+                <label class='RadioButton' for='RadioButtonNyeriDadaLainnya'>Lainnya</label>
+                <br>
+              </div>
+              <input class='Full Single Item1 Margin' id='TextPolicyHolderNyeriDada' type='text'>
+              <br>
+              <hr>
+              <div class='RadioButton PositionerLeft'>
+                <label class='medium Single Item'>9. Kondisi bagaimana yang memperburuk nyeri dada?</label>
+                <br>
+                <input id='RadioButtonKelelahanEmosi' name='RadioButtonMemperburukNyeriDada' type='radio' value='Kelelahan/emosi'>
+                <label class='RadioButton' for='RadioButtonKelelahanEmosi'>Kelelahan/emosi</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonTekananPadaDada' name='RadioButtonMemperburukNyeriDada' type='radio' value='Tekanan pada dada'>
+                <label class='RadioButton' for='RadioButtonTekananPadaDada'>Tekanan pada dada</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonBatukMenghirupNafasDalam' name='RadioButtonMemperburukNyeriDada' type='radio' value='Batuk menghirup nafas dalam'>
+                <label class='RadioButton' for='RadioButtonBatukMenghirupNafasDalam'>Batuk menghirup nafas dalam</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonMemperburukNyeriDadaLainnya' name='RadioButtonMemperburukNyeriDada' type='radio' value='Lainnya'>
+                <label class='RadioButton' for='RadioButtonMemperburukNyeriDadaLainnya'>Lainnya</label>
+                <div class='Separator'></div>
+              </div>
+              <input class='Full Single Item1 Margin' id='TextPolicyHoldermMemperburukNyeriDada' type='text'>
+              <br>
+              <hr>
+              <label class='medium Single Item'>10. Kondisi bagaimana yang mengurangi nyeri dada ?</label>
+              <br>
+              <div class='ContainerLeft'>
+                <div class='RadioButton Full Item'>
+                  <input id='RadioButtonIstirahat' name='RadioButtonMengurangiNyeriDada' type='radio' value='Istirahat'>
+                  <label class='RadioButton' for='RadioButtonIstirahat'>Istirahat</label>
+                  <div class='Separator'></div>
+                  <input id='RadioButtonMinumSusu' name='RadioButtonMengurangiNyeriDada' type='radio' value='Minum Susu'>
+                  <label class='RadioButton' for='RadioButtonMinumSusu'>Minum Susu</label>
+                  <div class='Separator'></div>
+                  <input id='RadioButtonMinumObatMaag' name='RadioButtonMengurangiNyeriDada' type='radio' value='Minum Obat maag'>
+                  <label class='RadioButton' for='RadioButtonMinumObatMaag'>Minum Obat maag</label>
+                  <div class='Separator'></div>
+                  <input id='RadioButtonMengurangiNyeriDadaLainnya' name='RadioButtonMengurangiNyeriDada' type='radio' value=' Lainnya'>
+                  <label class='RadioButton' for='RadioButtonMengurangiNyeriDadaLainnya'>Lainnya</label>
+                </div>
+                <input class='Long Single Item1 Margin' id='TextPolicyHoldermMemperburukNyeriDada' type='text'>
+              </div>
+              <br>
+              <input class='Full Single Item1 Margin' id='TextPolicyHoldermMemperburukNyeriDada' type='text'>
+              <hr>
+              <div class='RadioButton PositionerLeft'>
+                <label class='medium Single Item'>11. Apakah keluhan nyeri dada tersebut pernah dikonsultasikan ke dokter ?</label>
+                <input id='RadioButtonNyeriDadaPernahDikonsultasikaneYes' name='RadioButtonPolicyNyeriDadaPernahDikonsultasikan' type='radio' value='true'>
+                <label class='RadioButton' for='RadioButtonPolicyNyeriDadaPernahDikonsultasikanYes'>Ya</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonPolicyNyeriDadaPernahDikonsultasikanaNo' name='RadioButtonPolicyNyeriDadaPernahDikonsultasikan' type='radio' value='false'>
+                <label class='RadioButton' for='RadioButtonPolicyNyeriDadaPernahDikonsultasikanNo'>Tidak</label>
+              </div>
+              <br>
+              <div class='ContainerFit'>
+                <label class='Long Single PositionerLeft'>Alasan</label>
+                <input class='Full Single Item Margin' id='TextPolicyHolderAlasan' type='text'>
+              </div>
+              <br>
+              <div class='ContainerFit'>
+                <label class='Long Single PositionerLeft'>Nama Dokter</label>
+                <input class='Full Single Item Margin' id='TextPolicyHolderNamaDokter' type='text'>
+              </div>
+              <br>
+              <div class='ContainerFit'>
+                <label class='Long Single PositionerLeft'>Alamat Dokter</label>
+                <input class='Full Single Item Margin' id='TextPolicyHolderAlamatDokter' type='text'>
+              </div>
+              <br>
+              <div class='ContainerFit'>
+                <label class='Long Single PositionerLeft'>Diagnosa</label>
+                <input class='Full Single Item Margin' id='TextPolicyHolderAlamatDokter' type='text'>
+              </div>
+              <br>
+              <hr>
+              <div class='RadioButton PositionerLeft'>
+                <label class='medium Single Item'>12. Apakah ada pengobatan yang diberikan sehubungan nyeri dada ?</label>
+                <input id='RadioButtonpengobatanYes' name='RadioButtonpengobatan' type='radio' value='true'>
+                <label class='RadioButton' for='RadioButtonpengobatan'>Ya</label>
+                <div class='Separator'></div>
+                <input id='RadioButtonpengobatanNo' name='RadioButtonpengobatan' type='radio' value='false'>
+                <label class='RadioButton' for='RadioButtonpengobatanNo'>Tidak</label>
+              </div>
+              <input class='Full Single Item1 Margin' id='TextPolicyHoldermMemperburukNyeriDada' placeholder='berikan nama dan jenis pengobatan' type='text'>
+              <br>
+              <hr>
+              <label class='medium Single Item'>13. Mohon tuliskan tanggal dan hasil pemeriksaan Anda  (Jika Anda mempunyai hasilnya, mohon dilampirkan)</label>
+              <div class='ContainerFit'>
+                <label class='LongFix Single Item3 Left'>Jenis Pemeriksaan</label>
+                <label class='Short Single Item1 Center'>Tanggal</label>
+                <label class='Short Single Item1 Center'>Hasil</label>
+              </div>
+              <hr>
+              <div class='ContainerFit'>
+                <label class='LongFix Single Item3 Margin' id='LabelPolicyHolderAlcohol'>1.    ECG (Electrocardiography)</label>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderElectrocardiographyTanggal' type='text'>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderElectrocardiographyHasil' type='text'>
+              </div>
+              <br>
+              <div class='ContainerFit'>
+                <label class='LongFix Single Item3 Margin' id='LabelPolicyHolderAlcohol'>2. Echocardiography</label>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderEchocardiographyTanggal' type='text'>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderEchocardiographyHasil' type='text'>
+              </div>
+              <br>
+              <div class='ContainerFit'>
+                <label class='LongFix Single Item3 Margin' id='LabelPolicyHolderAlcohol'>3. Treadmill</label>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderTreadmillTanggal' type='text'>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderTreadmillHasil' type='text'>
+              </div>
+              <br>
+              <div class='ContainerFit'>
+                <label class='LongFix Single Item3 Margin' id='LabelPolicyHolderAlcohol'>4.</label>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderEmptyTanggal' type='text'>
+                <input class='Short Single Item1 Margin' id='TextPolicyHolderEmptyHasil' type='text'>
+              </div>
+              <br>
+              <label class='medium Single Item'>14. Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini? Mohon tuliskan</label>
+              <br>
+              <input class='Full Single Item1 Margin' id='TextPolicyHolderNyeriDadaTidakMasukKerja' type='text'>
+              <br>
+              <hr>
+              <label class='medium Single Item'>15. Apakah ada kondisi medis lainnya yang Anda derita?</label>
+              <br>
+              <input class='Full Single Item1 Margin' id='TextPolicyHolderNyeriDadaMenderita' type='text'>
+              <br>
+              <hr>
+              <label class='medium Single Item'>16. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat</label>
+              <br>
+              <input class='Full Single Item1 Margin' id='TextPolicyHolderNyeriDadaKondisiKesehatanAnda' type='text'>
+              <br>
+              <hr>
+              <h2>PERNYATAAN DAN KUASA</h2>
+              <ol>
+                <li>Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.</li>
+                <li>Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.</li>
+                <li>Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.</li>
+                <li>Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.</li>
+              </ol>
+            </hr>
           </fieldset>
         </form>
       </section>
@@ -767,49 +961,47 @@
             <hr>
             <div class='ContainerFit'>
               <label class='Medium Single Item3 Margin' id='LabelPolicyHolder'>1. a. Kapan pertama kali diketahui menderita tekanan</label>
-              <input class='Medium Single Item1 Margin' id='TextKapanNyeriHari' placeholder='Hari' type='text'>
-              <input class='Medium Single Item1 Margin' id='TextKapanNyeriBulan' placeholder='Bulan' type='text'>
-              <input class='Medium Single Item1 Margin' id='TextKapanNyeriTahun' placeholder='Tahun' type='text'>
+              <input class='Medium Single Item1 Margin' id='DateProspectiveInsuredHypertentionFirstTime' type='text'>
             </div>
             <br>
             <div class='ContainerFit'>
               <label class='Long Single PositionerLeft'>b. Berapa tekanan darah saat itu?</label>
-              <input class='Medium Single Item Margin' id='TextPolicyHolderAlasanTekananDarah' type='text'>
+              <input class='Medium Single Item Margin' id='TextProspectiveInsuredHypertentionNumOfBloodPressure' type='text'>
             </div>
             <br>
             <div class='RadioButton PositionerLeft'>
               <label class='medium Single Item'>c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?</label>
               <br>
-              <input id='RadioButtonPemeriksaanRutin' name='RadioButtonPemeriksaanTekanan' type='radio' value='Pemeriksaan rutin'>
-              <label class='RadioButton' for='RadioButtonPemeriksaanRutin'>Pemeriksaan rutin</label>
+              <input id='ProspectiveInsuredHypertentionCheckReasonGeneral' name='RadioButtonProspectiveInsuredHypertentionCheckReason' type='radio' value='pemeriksaanrutin'>
+              <label class='RadioButton' for='ProspectiveInsuredHypertentionCheckReasonGeneral'>Pemeriksaan rutin</label>
               <div class='Separator'></div>
-              <input id='RadioButtonAdeluhanMohonJelaskan' name='RadioButtonPemeriksaanTekanan' type='radio' value='Adeluhan. Mohon jelaskan'>
-              <label class='RadioButton' for='RadioButtonAdeluhanMohonJelaskan'>Adeluhan. Mohon jelaskan</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionCheckReasonOther' name='RadioButtonProspectiveInsuredHypertentionCheckReason' type='radio' value='other'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionCheckReasonOther'>Keluhan lainnya. Mohon jelaskan</label>
             </div>
             <br>
-            <input class='Full Single Item1 Margin' id='TextPolicyHolderLokasiNyeriTersebut' type='text'>
+            <input class='Full Single Item1 Margin' id='TextProspectiveInsuredHypertentionCheckReasonDesc' type='text'>
             <div class='RadioButton PositionerLeft'>
               <label class='medium Single Item'>d. Apakah dikonsultasikan ke dokter ?</label>
-              <input id='RadioButtonPolicydikonsultasikanYA' name='RadioButtonPolicyKonsultasiDoktorChange' type='radio' value='true'>
-              <label class='RadioButton' for='RadioButtonPolicydikonsultasikanYA'>Ya</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionDoctorConsultYes' name='RadioButtonProspectiveInsuredHypertentionDoctorConsult' type='radio' value='ya'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionDoctorConsultYes'>Ya</label>
               <div class='Separator'></div>
-              <input id='RadioButtonPolicydikonsultasikanNO' name='RadioButtonPolicyKonsultasiDoktorChange' type='radio' value='false'>
-              <label class='RadioButton' for='RadioButtonPolicydikonsultasikanNO'>Tidak</label>
+              <input id='RadioButtonProspectiveInsuredHypertentionDoctorConsultNo' name='RadioButtonProspectiveInsuredHypertentionDoctorConsult' type='radio' value='tidak'>
+              <label class='RadioButton' for='RadioButtonProspectiveInsuredHypertentionDoctorConsultNo'>Tidak</label>
             </div>
             <br>
             <div class='ContainerFit'>
               <label class='Long Single PositionerLeft'>Nama Dokter</label>
-              <input class='Full Single Item Margin' id='TextPolicyHolderNamaDokterTD' type='text'>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionDoctorName' type='text'>
             </div>
             <br>
             <div class='ContainerFit'>
               <label class='Long Single PositionerLeft'>Alamat Dokter</label>
-              <input class='Full Single Item Margin' id='TextPolicyHolderAlamatDokterTD' type='text'>
+              <input class='Full Single Item Margin' id='TextProspectiveInsuredHypertentionDoctorAddress' type='text'>
             </div>
             <br>
-            <label class='Wrap Single PositionerLeft Margin' id='LabelPolicyHolderLainnya'>e. Bagaimana frekuensi kontrol ke dokter?</label>
-            <input class='Medium Single PositionerLeft Margin' id='TextPolicyHolderLainnyaFrequency' type='text'>
-            <label class='Wrap Single PositionerLeft Margin' id='LabelPolicyHolderLainnya'>kali per minggu/ bulan/ tahun</label>
+            <label class='Wrap Single PositionerLeft Margin'>e. Berapa sering Anda kontrol ke Dokter?</label>
+            <input class='Medium Single PositionerLeft Margin' id='TextProspectiveInsuredHypertentionHowOftenCheck' type='text'>
+            <label class='Wrap Single PositionerLeft Margin'>kali per minggu/ bulan/ tahun</label>
             <br>
             <hr>
             <div class='RadioButton PositionerLeft'>

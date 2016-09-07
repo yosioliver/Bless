@@ -18,8 +18,7 @@
 			{
 				// GENERATOR
 				
-				boxGenerator("#TextPolicyHolderFullName1", 26, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2", 26, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 26, boxTypeWithoutLabel, null);				
 				boxGenerator("#TextIllustrationNumber", 26, boxTypeWithoutLabel, null);
 				lineGenerator("#TextSignedPlace", 8);
 				lineGenerator("#DateSignedDay", 2);
@@ -53,11 +52,9 @@
 			
 		%main
 			%section
-				%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderFullName1" } Nama Calon Pemegang Polis
-				%table#TextPolicyHolderFullName1.BoxSquare.PositionerRight
-				%br
-				%table#TextPolicyHolderFullName2.BoxSquare.PositionerRight
-				%br
+				%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Calon Pemegang Polis
+				%table#TextPolicyHolderFullName.BoxSquare.PositionerRight
+				%br				
 				
 				%label.Wrap.Single.PositionerLeft{ :for => "TextIllustrationNumber" } Nomor Ilustrasi
 				%table#TextIllustrationNumber.BoxSquare.PositionerRight
