@@ -1,0 +1,110 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION MANDATORY
+				boxGenerator("#DateProspectiveInsuredAmandementSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredAmandementSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredAmandementSignedYear", 4, boxTypeWithoutLabel, null);		
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../jqueryLibrary/Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
+			%div.Address
+				%span.Header.PositionerRight PT Asuransi Jiwa BCA
+				%br
+				%span.Detail.PositionerRight
+					Chase Plaza Lantai 22 | Jl. Jend. Sudirman Kav 21, Jakarta 12920
+					%br
+					Telepon: (021) 21 888 000 | Faks: (021) 2934 7977 | Email: customer@bcalife.co.id
+			%br
+
+			%h1 AMANDEMENT
+			%br
+
+			%div.Note
+				Perlu diperhatikan:
+				%ol
+					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
+					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
+					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
+					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
+					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+
+
+		/ MAIN
+
+		%main
+			%form
+				%fieldset
+
+					%textarea#AreaProspectiveInsuredAmandement.Full.Multi.PositionerLeft{ :type => "text"}
+
+					%h2 PERNYATAAN DAN KUASA
+					%div.Note
+						Perlu diperhatikan: 
+						%ol
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredAmandeentSignedBy" } Ditandatangani
+					%input#TextProspectiveInsuredAmandeentSignedBy.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredAmandementSignedDay" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DateProspectiveInsuredAmandementSignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredAmandementSignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredAmandementSignedYear.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual						
+						
