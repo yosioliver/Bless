@@ -1,0 +1,236 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life -  Questionnaire Pendakian Gunung Dan Panjat Tebing Form
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER UNTUK PENDAKIAN GUNUNG DAN PANJAT TEBING
+	
+		/ MAIN
+
+		%main
+			%form#ActivityQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.4 PENDAKIAN GUNUNG DAN PANJAT TEBING
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 1. Mohon sebutkan jenis kegiatan pendakian gunung/panjat tebing yang Anda lakukan misalnya bouldering, hiking, pendakian es, pendakian dalam ruangan, mountainnering, trekking, dll?
+				%br
+				%input#TextPolicyHolderJenisKegiatanPendakianGunung.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+								
+				%label.Medium.Single.Item 2. Sudah berapa lama Anda melakukan olah raga ini?
+				%br
+				%input#TextPolicyHolderBerapaLamaMelakukanOlahRaga.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 3. Seberapa sering Anda melakukan olah raga ini?
+				%br
+				%input#TextPolicyHolderSeberapaSeringMelakukanOlahRaga.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 4. Dimana Anda melakukan olah raga ini?
+				%br
+				%input#TextPolicyHolderDimanaMelakukanOlahRaga.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 5. Selain disebutkan di atas apakah Anda pernah/memiliki rencana untuk mendaki di negara lain?
+				%br
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin Negara
+					%label.Short.Single.Item1.Center.Margin Waktu Pendakian
+				%div.ContainerFit
+					%input#TextPolicyHolderNegara1.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderWaktuPendakian1.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%input#TextPolicyHolderNegara2.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderWaktuPendakian2.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 6. Mohon sebutkan peralatan apa saja yang digunakan sewaktu melakukan olah raga ini.
+				%br
+				%div.ContainerFit
+					%div.RadioButton.Item
+						%input#RadioButtonPolicyHolderAltimer{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Altimer" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderAltimer" } Altimer
+						%br
+						%input#RadioButtonPolicyHolderJangkar{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Jangkar" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderJangkar" } Jangkar
+						%br
+						%input#RadioButtonPolicyHolderCellularMobileTelephone{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Cellular / Mobile Telephone" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderCellularMobileTelephone" } Cellular / Mobile Telephone
+						%br
+						%input#RadioButtonPolicyHolderChocksNutsHexes{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Chocks and Nuts, Hexes" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderChocksNutsHexes" } Chocks and Nuts, Hexes
+						%br
+						%input#RadioButtonPolicyHolderClimbingHarness{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Climbing harness" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderClimbingHarness" } Climbing harness
+						%br
+						%input#RadioButtonPolicyHolderSepatuEs{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Sepatu es" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderSepatuEs" } Sepatu es
+						%br
+						%input#RadioButtonPolicyHolderEtriersWebLadders{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Etriers or Web ladders" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderEtriersWebLadders" } Etriers or Web ladders
+						%br
+						%input#RadioButtonPolicyHolderCamDevices{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Cams, Camatots, Spring Loaded Cam Devices" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderCamDevices" } Cams, Camatots, Spring Loaded Cam Devices
+
+					%div.RadioButton.Item
+						%input#RadioButtonPolicyHolderGPS{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "GPS" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderGPS" } GPS
+						%br
+						%input#RadioButtonPolicyHolderSenter{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Senter" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderSenter" } Senter
+						%br
+						%input#RadioButtonPolicyHolderHeavyWinterClothing{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Heavy Winter Clothing" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderHeavyWinterClothing" } Heavy Winter Clothing
+						%br
+						%input#RadioButtonPolicyHolderHelm{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Helm" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderHelm" } Helm
+						%br
+						%input#RadioButtonPolicyHolderKapak{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Kapak" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderKapak" } Kapak
+						%br
+						%input#RadioButtonPolicyHolderIceScrews{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Ice Screws" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderIceScrews" } Ice Screws
+						%br
+						%input#RadioButtonPolicyHolderPetaKompas{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Peta & Kompas" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderPetaKompas" } Peta & Kompas
+						%br
+						%input#RadioButtonPolicyHolderJumars{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Mechanical Ascenders (jumars)" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderJumars" } Mechanical Ascenders (jumars)
+
+					%div.RadioButton.Item
+						%input#RadioButtonPolicyHolderSepatuGunung{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Sepatu Gunung" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderSepatuGunung" } Sepatu Gunung
+						%br
+						%input#RadioButtonPolicyHolderOxygenTanks{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Oxygen Tanks" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderOxygenTanks" } Oxygen Tanks
+						%br
+						%input#RadioButtonPolicyHolderPerlonRopesCarabiners{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Perlon Ropes & Carabiners" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderPerlonRopesCarabiners" } Perlon Ropes & Carabiners
+						%br
+						%input#RadioButtonPolicyHolderBeaks{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Pitons or Toucans (beaks)" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderBeaks" } Pitons or Toucans (beaks)
+						%br
+						%input#RadioButtonPolicyHolderPortaledge{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Portaledge" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderPortaledge" } Portaledge
+						%br
+						%input#RadioButtonPolicyHolderTwoWayRadio{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Two Way Radio" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderTwoWayRadio" } Two Way Radio
+						%br
+						%input#RadioButtonPolicyHolderSnowPicket{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Snow Picket" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderSnowPicket" } Snow Picket
+						%br
+						%input#RadioButtonPolicyHolderStoppers{ :type => "radio", :name => "RadioButtonPolicyHolderPeralatanChange", :value => "Stoppers" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderStoppers" } Stoppers
+				%br
+				%hr
+					
+				%label.Medium.Single.Item 7. Berapakah tinggi/ derajat pendakian Anda?
+				%br
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin Rata-Rata tinggi dan derajat
+					%label.Short.Single.Item.Center.Margin Pencapain maksimum
+					%label.Short.Single.Item1.Center.Margin Rencana tinggi dan derajat pendakian
+				%div.ContainerFit
+					%label.Short.Single.Short.Item.Center.Margin 
+					%div.RadioButton.Item
+						%label.Short.Single.Item1.Center.Margin Tinggi
+						%div.Separator
+						%label.Short.Single.Item1.Center.Margin Derajat
+						%div.Separator
+						%label.Short.Single.Item1.Center.Margin Tanggal
+					%label.Short.Single.Item1.Center.Margin
+				%div.ContainerFit
+					%input#TextPolicyHolderNameObat1.Short.Single.Item.Margin{ :type => "text" }
+					%div.ContainerFit
+						%input#TextPolicyHolderNameObat1.Long.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderDosis1.Long.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderDosis1.Long.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderDosis1.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%input#TextPolicyHolderNameObat1.Short.Single.Item.Margin{ :type => "text" }
+					%div.ContainerFit
+						%input#TextPolicyHolderNameObat1.Long.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderDosis1.Long.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderDosis1.Long.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderDosis1.Short.Single.Item1.Margin{ :type => "text" }
+					
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 8. Apakah Anda seorang anggota suatu Perkumpulan Pendaki Gunung/Panjat Tebing atau Asosiasi Pendaki Gunung/Panjat Tebing
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderAnggotaPerkumpulanPendakiGunungYes{ :type => "radio", :name => "RadioButtonPolicyHolderAnggotaPerkumpulanPendakiGunungChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderAnggotaPerkumpulanPendakiGunungYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderAnggotaPerkumpulanPendakiGunungNo{ :type => "radio", :name => "RadioButtonPolicyHolderAnggotaPerkumpulanPendakiGunungChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderAnggotaPerkumpulanPendakiGunungNo" } Tidak
+				%br
+				%input#TextPolicyHolderJelaskanAnggotaPerkumpulanPendakiGunung.Full.Multi.Item.Margin{ :type =>"text" , :placeholder => "Jelaskan secara rinci (nama asosiasi/perkumpulan, tanggal bergabung, lokasi perkumpulan dan aktivitas rutin)." }
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 9. Apakah Anda pernah mendaki seorang diri atau di malam hari?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderMendakiSeorangDiriYes{ :type => "radio", :name => "RadioButtonPolicyHolderMendakiSeorangDiriChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMendakiSeorangDiriYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderMendakiSeorangDiriNo{ :type => "radio", :name => "RadioButtonPolicyHolderMendakiSeorangDiriChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMendakiSeorangDiriNo" } Tidak
+				%br
+				%input#TextPolicyHolderMendakiSeorangDiri.Full.Multi.Item.Margin{ :type =>"text"}
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 10. Apakah Anda mendaki hanya untuk sekedar olah raga saja atau sebagai bagian dari pekerjaan?
+				%br
+				%input#TextPolicyHolderMendakiSekadarOlahRagaPekerjaan.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 11. Pernahkah Anda mengalami kecelakaan sewaktu mendaki gunung/panjat tebing?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderMengalamiKecelakaanYes{ :type => "radio", :name => "RadioButtonPolicyHolderMengalamiKecelakaanChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMengalamiKecelakaanYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderMengalamiKecelakaanNo{ :type => "radio", :name => "RadioButtonPolicyHolderMengalamiKecelakaanChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMengalamiKecelakaanNo" } Tidak
+				%br
+				%input#TextPolicyHolderMengalamiKecelakaan.Full.Multi.Item.Margin{ :type =>"text"}
+				%br
+				%hr
+				
+				%h2 PERNYATAAN DAN KUASA
+				%ol
+					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
