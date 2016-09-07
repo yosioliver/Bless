@@ -1,11 +1,13 @@
 %form#PopUpBackBone.PopUp
 	
+	/ HEADER
+	
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpCardiac')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
 		%h2 KUESIONER KELAINAN KELENJAR GONDOK 							
 
-		/ MAIN
+	/ FIELDSET
 
 	%fieldset
 		%form#HealthQuestionnaireMain
