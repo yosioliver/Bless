@@ -1,0 +1,151 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
+		%title BCA Life -  Questionnaire Terbang Layang
+
+		/ JQUERY
+
+		:javascript
+			$(document).ready(function()
+			{
+
+			});
+
+
+	/ BODY
+
+	%body#Main
+	
+		%header
+			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
+			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+			%h2 KUESIONER TERBANG LAYANG 
+	
+		/ MAIN
+
+		%main
+			%form#ActivityQuestionnaireMain
+				%div.ContainerFit
+					%span.Multi.Single.4 KUESIONER TERBANG LAYANG
+					%div.RadioButton
+						%input#RadioButtonPolicyHolderGliding{ :type => "radio", :name => "RadioButtonPolicyHolderGlidingChange", :value => "Gliding" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderGliding" } Gliding
+						%div.Separator
+						%input#RadioButtonPolicyHolderHangGliding{ :type => "radio", :name => "RadioButtonPolicyHolderGlidingChange", :value => "Hang Gliding" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderHangGliding" } Hang Gliding
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 1. Sebutkan jenis terbang layang yang Anda gunakan. 
+				%br
+				%label.Medium.Single.Item Mohon sebutkan apakah menggunakan mesin atau tidak, buatan sendiri atau pabrik.
+				%br
+				%input#TextPolicyHolderJenisKegiatan.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 2. Mohon sebutkan secara rinci lisensi dan sertifikat penerbangan Anda.
+				%br
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin Ijin/Sertifikat
+					%label.Short.Single.Item1.Center.Margin Tanggal Diperoleh
+				%div.ContainerFit
+					%input#TextPolicyHolderIjin1.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderTanggalDiperoleh1.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%input#TextPolicyHolderIjin2.Short.Single.Item.Margin{ :type => "text" }
+					%input#TextPolicyHolderTanggalDiperoleh2.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 3. Apakah Anda bergabung dengan klub atau asosiasi terbang layang?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderBergabungKlubTerbangLayangYes{ :type => "radio", :name => "RadioButtonPolicyHolderBergabungKlubTerbangLayangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBergabungKlubTerbangLayangYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderBergabungKlubTerbangLayangNo{ :type => "radio", :name => "RadioButtonPolicyHolderBergabungKlubTerbangLayangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBergabungKlubTerbangLayangNo" } Tidak
+				%br
+				%input#TextPolicyHolderBergabungKlubTerbangLayang.Full.Multi.Item.Margin{ :type =>"text"}
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 4. Seberapa sering Anda melakukan terbang layang dan berapa jam terbang Anda?
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin 
+					%label.Short.Single.Item1.Center.Margin Total
+					%label.Short.Single.Item1.Center.Margin 1 Tahun Terakhir
+					%label.Short.Single.Item1.Center.Margin 1 Tahun Mendatang (perkiraan)
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin Jumlah Penerbangan
+					%input#TextPolicyHolderTotalPeberbangan1.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolder1TahunTerakhir1.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolder1TahunMendatang1.Short.Single.Item1.Margin{ :type => "text" }
+				%div.ContainerFit
+					%label.Short.Single.Item.Center.Margin Jumlah Jam Terbang
+					%input#TextPolicyHolderTotalPeberbangan2.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolder1TahunTerakhir2.Short.Single.Item1.Margin{ :type => "text" }
+					%input#TextPolicyHolder1TahunMendatang2.Short.Single.Item1.Margin{ :type => "text" }
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 5. Sebutkan tujuan terbang layang Anda.
+				%br
+				%input#TextPolicyHolderTujuanTerbangLayang.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 6. Selain untuk kesenangan, adakah tujuan lain dari Anda melakukan terbang layang, misalnya kegiatan pertanian atau komersil, dll?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderTujuanLainMelakuTerbangLayangYes{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanLainMelakuTerbangLayangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanLainMelakuTerbangLayangYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderTujuanLainMelakuTerbangLayangNo{ :type => "radio", :name => "RadioButtonPolicyHolderTujuanLainMelakuTerbangLayangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderTujuanLainMelakuTerbangLayangNo" } Tidak
+				%br
+				%input#TextPolicyHolderTujuanLainMelakuTerbangLayang.Full.Multi.Item.Margin{ :type =>"text"}
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 7. Apakah Anda berpartisipasi atau akan berpartisipasi dalam aerobatic, perlombaan, pameran atau tes terbang?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderBerpartisipasiYes{ :type => "radio", :name => "RadioButtonPolicyHolderBerpartisipasiChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBerpartisipasiYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderBerpartisipasiNo{ :type => "radio", :name => "RadioButtonPolicyHolderBerpartisipasiChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderBerpartisipasiNo" } Tidak
+				%br
+				%input#TextPolicyHolderBerpartisipasi.Full.Multi.Item.Margin{ :type =>"text"}
+				%br
+				%hr
+				
+				%label#Wrap.Single.PositionerLeft 8. Apakah Anda pernah mengalami kecelakaan terbang layang atau ijin terbang Anda dicabut karena alasan tertentu?
+				%div.RadioButton.Medium.PositionerRight
+					%input#RadioButtonPolicyHolderMegalamiKecelakaanTerbangLayangYes{ :type => "radio", :name => "RadioButtonPolicyHolderMegalamiKecelakaanTerbangLayangChange", :value => "true" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMegalamiKecelakaanTerbangLayangYes" } Ya
+					%div.Separator
+					%input#RadioButtonPolicyHolderMegalamiKecelakaanTerbangLayangNo{ :type => "radio", :name => "RadioButtonPolicyHolderMegalamiKecelakaanTerbangLayangChange", :value => "false" }
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMegalamiKecelakaanTerbangLayangNo" } Tidak
+				%br
+				%input#TextPolicyHolderMegalamiKecelakaanTerbangLayang.Full.Multi.Item.Margin{ :type =>"text"}
+				%br
+				%hr
+				
+				%label.Medium.Single.Item 9. Mohon jelaskan informasi lainnya yang menurut Anda penting.
+				%br
+				%input#TextPolicyHolderJelaskanInformasiPenting.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br
+				%hr
+				
+				%h2 PERNYATAAN DAN KUASA
+				%ol
+					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+				
