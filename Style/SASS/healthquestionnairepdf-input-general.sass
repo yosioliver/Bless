@@ -6,16 +6,57 @@
 
 @import healthquestionnairepdf-initialization-general
 
-	
+
+/* GENERAL */
+
+input.Short
+	width: $input_width_short
+
+input.Medium
+	width: $input_width_medium
+
+input.Long
+	width: $input_width_long
+
+input.Full
+	width: 100%
+
+input.Single
+	height: $input_height_single
+
+input.Double
+	height: $input_height_double
+
+input.Multi
+	height: $input_height_multi
+
+
+/* TEXT */
+
+input[type="text"], input[type="password"], input[type="number"], input[type="email"]
+	padding-left: 5px
+	padding-right: 5px
+	text-align: left
+	vertical-align: top
+	border-top-style: none
+	border-left-style: none
+	border-right-style: none
+	border-bottom-style: solid
+	border-bottom-width: thin
+
+input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot
+	border-bottom-style: dotted
+
+
 /* RADIO BUTTON */
 
-/*input[type="radio"]
-    display: none */
+input[type="radio"]
+    display: none
 input[type="radio"]:checked + .BoxRound
     background-image: url("../../Resource/Input/input_checkbox_checked.svg");
 	
-/* input[type="radio"].Plain
-    display: none */
+input[type="radio"].Plain
+    display: none
 input[type="radio"].Plain + label
 	text-align: center
 	+BorderRadius($general_borderradius_thick)

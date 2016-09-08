@@ -11,9 +11,9 @@
 
 /* HEADER */
 
-$fontsize_header_header: 1em
-$fontsize_header_detail: 0.9em
-$fontsize_header_h1: 1.6em
+$fontsize_header_header: 0.7em
+$fontsize_header_detail: 0.6em
+$fontsize_header_h1: 1.2em
 
 /* FORM */
 
@@ -89,16 +89,27 @@ $signature_height_medium: 72px
 
 /* FORM INITIALIZATION */
 
-$form_width_pure: 150px
-$form_height_pure: 20px
+$form_width_pure: 260px
+$form_height_pure: 28px
 $form_borderwidth_pure: $general_borderwidth_thin
+
+/* INPUT */
+
+$input_width_number: $form_width_pure / 13
+$input_width_short: $form_width_pure * 0.25
+$input_width_medium: $form_width_pure / 2
+$input_width_long: $form_width_pure * 1
+$input_height_single: $form_height_pure + ($form_borderwidth_pure * 4)
+$input_height_double: $form_height_pure * 2
+$input_height_multi: $form_height_pure * 3
 
 /* LABEL */
 
+$label_width_number: $form_width_pure / 13
 $label_width_short: $form_width_pure * 0.5
-$label_width_medium: $form_width_pure + ($form_borderwidth_pure * 4)
+$label_width_medium: $form_width_pure
 $label_width_long: $form_width_pure * 1.5
-$label_height_single: $form_height_pure
+$label_height_single: $form_height_pure + ($form_borderwidth_pure * 4)
 $label_height_double: $form_height_pure * 2
 $label_height_multi: $form_height_pure * 3
 $header_padding_edge: 2px
@@ -107,7 +118,8 @@ $header_padding_edge: 2px
 
 $box_borderwidth_thin: $form_borderwidth_pure
 $box_borderwidth_thick: $form_borderwidth_pure * 2
-$box_size_medium: $form_height_pure
+$box_size_height: $form_height_pure
+$box_size_width: $form_width_pure / 13
 
 
 // TABLE
