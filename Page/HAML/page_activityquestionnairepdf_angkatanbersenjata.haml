@@ -1,0 +1,86 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+				boxGenerator("#TextPolicyHolderTumorSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderTumorFullName1", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderTumorFullName2", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderTumorBirthdayPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorBirthdayYear", 4, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseYear", 4, boxTypeWithoutLabel, null);
+								
+				boxGenerator("#DatePolicyHolderTumorWhenStartDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorWhenStartMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorWhenStartYear", 4, boxTypeWithoutLabel, null)
+				
+				boxGenerator("#DatePolicyHolderTumorOperationDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorOperationMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorOperationYear", 4, boxTypeWithoutLabel, null)
+
+				boxGenerator("#DatePolicyHolderTumorConsultLastDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorConsultLastMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorConsultLastYear", 4, boxTypeWithoutLabel, null)
+
+				boxGenerator("#DatePolicyHolderTumorLastTherapyDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorLastTherapyMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorLastTherapyYear", 4, boxTypeWithoutLabel, null)
+
+				boxGenerator("#DatePolicyHolderTumorLeaveDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorLeaveMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorLeaveYear", 4, boxTypeWithoutLabel, null)
+				
+				boxGenerator("#DatePolicyHolderTumorSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorSignedYear", 4, boxTypeWithoutLabel, null);		
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
+			%span.Header PT Asuransi Jiwa BCA
+			%span.Detail
+			%br
+
+			%h1 KUESIONER UNTUK ANGKATAN BERSENJATA / POLISI
+			%br
+			
+			%div.Note				
+				%ol
+					%li *) <i> Harus diisi oleh Calon Tertanggung. </i>
+					%li **) <i> Bila kolom penjelasan tidak cukup, mohon memberikan penjelasan pada kertas lain. </i>
+					%li ***) <i> Coret yang tidak perlu. </i>
+		/ MAIN
+
+		%main
+			%form
+				%h2 Data Calon Tertanggung
