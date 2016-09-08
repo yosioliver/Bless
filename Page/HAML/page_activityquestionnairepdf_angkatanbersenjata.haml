@@ -15,14 +15,11 @@
 			// DOCUMENT READY
 			$(document).ready(function()
 			{
-				// SECTION GENERAL
-				boxGenerator("#TextPolicyHolderTumorSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderTumorFullName1", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderTumorFullName2", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderTumorBirthdayPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorBirthdayDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorBirthdayMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorBirthdayYear", 4, boxTypeWithoutLabel, null);
+				// SECTION GENERAL				
+				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);	
+				boxGenerator("#DatePolicyHolderBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseDay", 2, boxTypeWithoutLabel, null);
@@ -84,3 +81,17 @@
 		%main
 			%form
 				%h2 Data Calon Tertanggung
+				%fieldset
+					%span.Number.Single.PositionerLeft 1.
+					%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (sesuai dengan KTP)
+					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft					
+					%br
+
+					%span.Number.Single.PositionerLeft 2.
+					%label.Wrap.Medium.PositionerLeft{ :for => "DatePolicyHolderBirthdayDay" } Tanggal lahir
+					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
+					%br
