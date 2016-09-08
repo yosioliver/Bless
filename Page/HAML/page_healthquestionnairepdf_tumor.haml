@@ -100,7 +100,7 @@
 				%fieldset
 
 					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Kapan pertama kali diketahui adanya tumor?
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstDiagnoseDay" } Kapan pertama kali diketahui adanya tumor?
 					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
@@ -108,159 +108,116 @@
 					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
 					
 					%span.Number.PositionerLeft 2
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhen" } Pada bagian tubuh mana tumor tersebut tumbuh?
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhere" } Pada bagian tubuh mana tumor tersebut tumbuh?
 					%br
-					%input#TextProspectiveInsuredTumorRelatedToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }											
+					%input#TextProspectiveInsuredTumorWhere.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%span.Number.PositionerLeft 3
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhen" } Mohon sebutkan diagnosis pasti dari tumor tersebut.
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorDiagnose" } Mohon sebutkan diagnosis pasti dari tumor tersebut.
 					%br
-					%input#TextProspectiveInsuredTumorRelatedToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }											
+					%input#TextProspectiveInsuredTumorDiagnose.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.PositionerLeft 4
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhenLast" } Apakah tumor tersebut telah diangkat/dioperasi?
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTaken" } Apakah tumor tersebut telah diangkat/dioperasi?
 					%br
 					
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredTumorStopDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "ya" }
+						%input#RadioButtonProspectiveInsuredTumorTakenYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorTaken", :value => "ya" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugYes" } Ya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTakenYes" } Ya
 						
-						%input#RadioButtonProspectiveInsuredTumorStopDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "tidak" }
+						%input#RadioButtonProspectiveInsuredTumorTakenNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorTaken", :value => "tidak" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugNo" } Tidak
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTakenNo" } Tidak
 						%br								
 
-					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } a. Tanggal operasi:
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorOperationDay" } a. Tanggal operasi:
 					
-					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorOperationDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorOperationMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorOperationYear.BoxSquare.PositionerRight
 
 					%div.BoxRound.PositionerLeft
-					%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorSpreadToOthers"} b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorMethod"} b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
 
 					%br
-					%input#TextProspectiveInsuredTumorStopDrugIfYesDesc.Line.Short.Single.PositionerLeft{ :type => "text" }					
+					%input#TextProspectiveInsuredTumorMethod.Line.Short.Single.PositionerLeft{ :type => "text" }					
 
 					%br
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhenLast" } c. Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorLastDay" } c. Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
 					%br
 					
-					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Tanggal terakhir konsultasi:					
-					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorLastDay" } Tanggal terakhir konsultasi:					
+					%table#DateProspectiveInsuredTumorLastDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLastMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLastYear.BoxSquare.PositionerRight
+					%br	
 
-					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredTumorInTherapyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorInTherapy", :value => "yes" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorInTherapyYes" } Ya
-						
-						%input#RadioButtonProspectiveInsuredTumorInTherapyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorInTherapy", :value => "no" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorInTherapyNo" } Tidak
-						%br		
-						
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorSpreadToOthers"} Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
-						%br
-
-						%table#TextProspectiveInsuredTumorInTherapyDrug
-						%thead
-							%tr
-								%th Nama Obat
-								%th Dosis
-								%th Frekuensi
-						%tbody
-							%tr
-								%td
-								%td
-								%td
-							%tr
-								%td
-								%td
-								%td		
-							%tr
-								%td
-								%td
-								%td		
-							%tr
-								%td
-								%td
-								%td										
-						%br	
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} Nama Lengkap Dokter:
-						%input#TextProspectiveInsuredTumorInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyPhone"} No. Telepon/Handphone:
-						%input#TextProspectiveInsuredTumorInTherapyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-
-						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospital"} Nama Klinik/Rumah Sakit:
-						%input#TextProspectiveInsuredTumorInTherapyHospital.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
-
-						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
-						%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-						%br
-					
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorDoctName"} Nama Lengkap Dokter:
+					%input#TextProspectiveInsuredTumorDoctName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					%span.Number.PositionerLeft d
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorFeel" } Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorPhone"} No. Telepon/Handphone:
+					%input#TextProspectiveInsuredTumorPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorClinic"} Nama Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredTumorClinic.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorAddress"} Alamat Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredTumorAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+
+					%span.Number.PositionerLeft d.
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTherapy" } Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredTumorCheckupYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "ya" }
+						%input#RadioButtonProspectiveInsuredTumorTherapyDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorTherapy", :value => "obattablet" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupYes" } Obat tablet
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTherapyDrug" } Obat tablet
 												
-						%input#RadioButtonProspectiveInsuredTumorCheckupNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "tidak" }
+						%input#RadioButtonProspectiveInsuredTumorTherapyRadio.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorTherapy", :value => "radioterapi" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupNo" } Radioterapi
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTherapyRadio" } Radioterapi
 												
-						%input#RadioButtonProspectiveInsuredTumorCheckupEkg.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "ekgecg" }
+						%input#RadioButtonProspectiveInsuredTumorTherapyKemo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorTherapy", :value => "kemoterapi" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupEkg" } Kemoterapi
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTherapyKemo" } Kemoterapi
 						%br	
 																		
-						%input#RadioButtonProspectiveInsuredTumorCheckupRontgen.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "rontgendada" }
+						%input#RadioButtonProspectiveInsuredTumorTherapyOther.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorTherapy", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupRontgen" } Lainnya
-						%br					
-						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorCheckupOtherDesc"}
-						Sebutkan.
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorTherapyOther" } Lainnya, Sebutkan.
 						%br
-						%input#TextProspectiveInsuredTumorCheckupOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextProspectiveInsuredTumorTherapyOther.Line.Long.Single.PositionerLeft{ :type => "text" }
 						%br
 						
 					%br
 					%span.Number.PositionerLeft e
-					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorFeel" } Apakah anda pernah diberi informasi tentang prognosa (ramalan) atas tumor tersebut?
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorPrognosa" } Apakah anda pernah diberi informasi tentang prognosa (ramalan) atas tumor tersebut?
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredTumorCheckupYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "ya" }
+						%input#RadioButtonProspectiveInsuredTumorPrognosaYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorPrognosa", :value => "ya" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupYes" } Ya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorPrognosaYes" } Ya
 												
-						%input#RadioButtonProspectiveInsuredTumorCheckupNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "tidak" }
+						%input#RadioButtonProspectiveInsuredTumorPrognosaNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorPrognosa", :value => "tidak" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupNo" } Tidak
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorPrognosaNo" } Tidak
 						%br					
-						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorCheckupOtherDesc"}
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorPrognosa"}
 						Mohon menjelaskan secara rinci pada kolom di bawah ini.
 						%br
-						%input#TextProspectiveInsuredTumorCheckupOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextProspectiveInsuredTumorPrognosa.Line.Long.Single.PositionerLeft{ :type => "text" }
 						%br												
 					
-					
-						%label.Wrap.Single.PositionerRight{ :for => "TableProspectiveInsuredTumorTreatment" } f. Pemeriksaan-pemeriksaan apa saja yang telah dilakukan, termasuk tanggal dan hasil pemeriksaan tersebut.
+						%label.Wrap.Single.PositionerRight{ :for => "TableProspectiveInsuredTumorCheckup" } f. Pemeriksaan-pemeriksaan apa saja yang telah dilakukan, termasuk tanggal dan hasil pemeriksaan tersebut.
 						
-						%table#TableProspectiveInsuredTumorTreatment
+						%table#TableProspectiveInsuredTumorCheckup
 						%thead
 							%tr
 								%th Jenis Pemeriksaan
@@ -270,18 +227,25 @@
 							%tr
 								%td
 								%td
+								%td
 							%tr
 								%td 
 								%td
 								%td
+							%tr
+								%td 
+								%td
+								%td
+							%tr
+								%td 
+								%td
+								%td								
 						%br
 						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorCheckupOtherDesc"}
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorActionDesc"}
 						g. Pengobatan atau tindakan operasi apa saja yang pernah dianjurkan?
 						%br
-						%input#TextProspectiveInsuredTumorCheckupOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
-					
-					%br												
+						%input#TextProspectiveInsuredTumorActionDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br									
 					
 					%span.Number.PositionerLeft 5
@@ -289,51 +253,50 @@
 					%br
 					
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredTumorStopDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "ya" }
+						%input#RadioButtonProspectiveInsuredTumorCurrentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCurrent", :value => "ya" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugYes" } Ya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCurrentYes" } Ya
 						
-						%input#RadioButtonProspectiveInsuredTumorStopDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "tidak" }
+						%input#RadioButtonProspectiveInsuredTumorCurrentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCurrent", :value => "tidak" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugNo" } Tidak
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCurrentNo" } Tidak
 						%br								
 
-					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Tanggal terakhir perawatan:
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorLastTherapyDay" } Tanggal terakhir perawatan:
 					
-					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLastTherapyDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLastTherapyMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLastTherapyYear.BoxSquare.PositionerRight
 					%br
 					
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} Alasan:
-					%input#TextProspectiveInsuredTumorInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorReason"} Alasan:
+					%input#TextProspectiveInsuredTumorReason.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} 
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorTreatment"} 
 					Pengobatan
-					%input#TextProspectiveInsuredTumorInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%input#TextProspectiveInsuredTumorTreatment.Line.Long.Single.PositionerLeft{ :type => "text" }
 					
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyPhone"} Berapa kali dalam 1 (satu) tahun:
-					%input#TextProspectiveInsuredTumorInTherapyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorHowOften"} Berapa kali dalam 1 (satu) tahun:
+					%input#TextProspectiveInsuredTumorHowOften.Line.Long.Single.PositionerLeft{ :type => "text" }
 
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospital"} Nama Lengkap Dokter:
-					%input#TextProspectiveInsuredTumorInTherapyHospital.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorDocterName"} Nama Lengkap Dokter:
+					%input#TextProspectiveInsuredTumorDocterName.Line.Long.Single.PositionerLeft{ :type => "text" }					
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorTelephone"} No. Telepon/Handphone:
+					%input#TextProspectiveInsuredTumorTelephone.Line.Long.Single.PositionerLeft{ :type => "text" }
 
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} No. Telepon/Handphone:
-					%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-
-					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} Nama Klinik/Rumah Sakit:
-					%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorClinicName"} Nama Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredTumorClinicName.Line.Long.Single.PositionerLeft{ :type => "text" }
 					
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
-					%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br					
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorClinicAddrs"} Alamat Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredTumorClinicAddrs.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%br
@@ -342,32 +305,32 @@
 					%br
 					
 					%div.RadioButton
-						%input#RadioButtonProspectiveInsuredTumorStopDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "ya" }
+						%input#RadioButtonProspectiveInsuredTumorLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorLeave", :value => "ya" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugYes" } Ya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorLeaveYes" } Ya
 						
-						%input#RadioButtonProspectiveInsuredTumorStopDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "tidak" }
+						%input#RadioButtonProspectiveInsuredTumorLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorLeave", :value => "tidak" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugNo" } Tidak
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorLeaveNo" } Tidak
 						%br								
 
-					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Jika “Ya”, kapan:
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorLeaveDay" } Jika “Ya”, kapan:
 					
-					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLeaveDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLeaveMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+					%table#DateProspectiveInsuredTumorLeaveYear.BoxSquare.PositionerRight
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} Dan berapa lama?
-					%input#TextProspectiveInsuredTumorInTherapyDocterName.Line.Short.Single.PositionerLeft{ :type => "text" } Hari
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorHowLong"} Dan berapa lama?
+					%input#TextProspectiveInsuredTumorHowLong.Line.Short.Single.PositionerLeft{ :type => "text" } Hari
 					%br
 
 					%br
 					%span.Number.PositionerLeft 7
 					Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon lengkapi pertanyaan pada kolom di bawah ini dan mohon dilampirkan fotokopi hasil pemeriksaan.
 
-					%table#TableProspectiveInsuredTumorTreatment
+					%table#TableProspectiveInsuredTumorLastConsult
 						%thead
 							%tr
 								%th Jenis Pemeriksaan
