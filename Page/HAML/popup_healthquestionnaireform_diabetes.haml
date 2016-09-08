@@ -7,7 +7,7 @@
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpDiabetes', 'PopUpLiver', stringPageInfixTypeCurrent + 'Diabetes', arrayHealthQuestionnaire)" }
 		%h2 Kuesioner Diabetes
 
-	/ MAIN
+	/ FIELDSET
 
 	%fieldset
 		%div.ContainerFit
@@ -15,15 +15,15 @@
 		%br
 		%hr
 		%div.ContainerFit
-			%label#LabelProspectiveInsuredDiabetesFirstKnown.Long.Single.Item3.Margin 1. Kapan pertama kali diketahui menderita diabetes? 
-			%input#DateProspectiveInsuredDiabetesFirstKnown.Short.Single.Item1.Margin{ :type => "text"}
+			%label#LabelFirstKnown.Long.Single.Item3.Margin 1. Kapan pertama kali diketahui menderita diabetes? 
+			%input#DateFirstKnown.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%hr	
 
 		%div.ContainerFit
-			%label#LabelProspectiveInsuredDiabetesFrequencyControl.Long.Single.Item3.Margin 2. a. Berapa kali frekuensi kontrol ke dokter?
-			%input#TextProspectiveInsuredDiabetesFrequencyControlNumber.Short.Single.Item1.Margin{ :type => "text" }
-			%label#Wrap.Single.Item1 kali&nbsp;&nbsp;&nbsp;&nbsp;     per 
-			%input#TextProspectiveInsuredDiabetesFrequencyControlPerWeek.Short.Single.Item1.Margin{ :type => "text"}
+			%label#LabelFrequencyControlNumber.Long.Single.Item3.Margin 2. a. Berapa kali frekuensi kontrol ke dokter?			
+			%input#TextFrequencyControlNumber.Short.Single.Item1.Margin{ :type => "text" }
+			%label#Wrap.Single.Item1 kali&nbsp;&nbsp;&nbsp;&nbsp; per			
+			%input#TextFrequencyControlPerWeek.Short.Single.Item1.Margin{ :type => "text"}
 			%label#Wrap.Single.Item1 Minggu 
 		%br
 			%label#LabelProspectiveInsuredDiabetesInfo.Long.Single.Item3.Margin b. Jelaskan nama dan alamat lengkap dokter yang bisa dikunjungi untuk kontrol?	
@@ -33,34 +33,34 @@
 			%label.Short.Single.Item1.Center.Margin Alamat Dokter
 			%label.Short.Single.Item1.Center.Margin Tanggal Pemeriksaan Terakhir
 		%div.ContainerFit
-			%input#TextProspectiveInsuredDiabetesDoctorName1.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesDoctorLastControlDate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDoctorName1.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDoctorLastControlDate1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextProspectiveInsuredDiabetesDoctorName2.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesDoctorLastControlDate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDoctorName2.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDoctorLastControlDate2.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 
 		%label#LabelProspectiveInsuredDiabetesTherapy.Long.Single.Item3.Margin c. Pengobatan apa saja yang diperoleh?
 		%br
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonProspectiveInsuredDiabetesTherapyInsulin{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesTherapy", :value => "insulin"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesTherapyInsulin" } Insulin
-			%input#TextProspectiveInsuredDiabetesTherapyInsulinDesc.Short.Single.Item1.Margin{ :type => "text"}
+			%input#RadioButtonTherapyInsulin{ :type => "radio", :name => "RadioButtonTherapy", :value => "insulin"}
+			%label.RadioButton{ :for => "RadioButtonTherapyInsulin" } Insulin
+			%input#TextTherapyInsulinDesc.Short.Single.Item1.Margin{ :type => "text"}
 			%label#Wrap.Single.Item1 Unit / hari
 			
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredDiabetesTherapyDiet{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesTherapy", :value => "dietkhusus"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesTherapyDiet" }  Diet khusus, jelaskan
-			%input#TextProspectiveInsuredDiabetesTherapyDietDesc.Long.Single.Item1.Margin{ :type => "text"}
+			%input#RadioButtonTherapyDiet{ :type => "radio", :name => "RadioButtonTherapy", :value => "diet"}
+			%label.RadioButton{ :for => "RadioButtonTherapyDiet" }  Diet khusus, jelaskan
+			%input#TextTherapyDietDesc.Long.Single.Item1.Margin{ :type => "text"}
 			
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredDiabetesTherapyOral{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesTherapy", :value => "oraltablet"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesTherapyOral" } Oral/tablet.
+			%input#RadioButtonTherapyOral{ :type => "radio", :name => "RadioButtonTherapy", :value => "oral"}
+			%label.RadioButton{ :for => "RadioButtonTherapyOral" } Oral/tablet.
 			Mohon menjelaskan secara rinci pada kolom di bawah ini (nama obat, dosis, frekuensi penggunaan dan lain-lain).
 			%br
-			%input#TextProspectiveInsuredDiabetesTherapyOralDesc.Full.Single.Item1.Margin{ :type => "text"}
+			%input#TextTherapyOralDesc.Full.Single.Item1.Margin{ :type => "text"}
 			%div.Separator
 		%br
 		%hr
@@ -68,38 +68,38 @@
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 3. a. Bagaimana frekuensi melakukan pemeriksaan kadar gula dalam urine?
 			%br
-			%input#RadioButtonProspectiveInsuredDiabetesCheckUrineDay{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "setiaphari"}
+			%input#RadioButtonCheckUrineDay{ :type => "radio", :name => "RadioButtonCheckUrine", :value => "everyday"}
 			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesCheckUrineDay" } Setiap hari
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesCheckUrineWeek{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "setiapminggu"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesCheckUrineWeek" }  Setiap minggu
+			%input#RadioButtonCheckUrineWeek{ :type => "radio", :name => "RadioButtonCheckUrine", :value => "everyweek"}
+			%label.RadioButton{ :for => "RadioButtonCheckUrineWeek" }  Setiap minggu
 			%div.Separator
 			
-			%input#RadioButtonProspectiveInsuredDiabetesCheckUrineMonth{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "setiapbulan"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesCheckUrineMonth" } Setiap bulan
+			%input#RadioButtonCheckUrineMonth{ :type => "radio", :name => "RadioButtonCheckUrine", :value => "everymonth"}
+			%label.RadioButton{ :for => "RadioButtonCheckUrineMonth" } Setiap bulan
 			%div.Separator
 			
-			%input#RadioButtonProspectiveInsuredDiabetesCheckNever{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesCheckUrine", :value => "tidakpernah"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesCheckNever" } Tidak pernah
+			%input#RadioButtonCheckUrineNever{ :type => "radio", :name => "RadioButtonCheckUrine", :value => "never"}
+			%label.RadioButton{ :for => "RadioButtonCheckUrineNever" } Tidak pernah
 		%br	
 		%div.ContainerFit
-			%label#LabelProspectiveInsuredDiabetesLastCheckUrine.Long.Single.Item3.Margin  b. Kapan terakhir melakukan pemeriksaan kadar gula dalam urin?
-			%input#DateProspectiveInsuredDiabetesLastCheckUrine.Short.Single.Item1.Margin{ :type => "text"}	   
+			%label#LabelLastCheckUrine.Long.Single.Item3.Margin  b. Kapan terakhir melakukan pemeriksaan kadar gula dalam urin?
+			%input#DateLastCheckUrine.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }	   
 		%br
 			%label#Wrap.Single.PositionerLeft Bagaimana hasilnya?
 			%div.RadioButton.Full.Item
-				%input#RadioButtonProspectiveInsuredDiabetesUrineInfoPlus{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "+" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfoPlus" } +
+				%input#RadioButtonUrineInfoPlus{ :type => "radio", :name => "RadioButtonUrineInfo", :value => "+" }
+				%label.RadioButton{ :for => "RadioButtonUrineInfoPlus" } +
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredDiabetesUrineInfo2Plus{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "++" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfo2Plus" } ++
+				%input#RadioButtonUrineInfo2Plus{ :type => "radio", :name => "RadioButtonUrineInfo", :value => "++" }
+				%label.RadioButton{ :for => "RadioButtonUrineInfo2Plus" } ++
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredDiabetesUrineInfo3Plus{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "+++" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfo3Plus" } +++
+				%input#RadioButtonUrineInfo3Plus{ :type => "radio", :name => "RadioButtonUrineInfo", :value => "+++" }
+				%label.RadioButton{ :for => "RadioButtonUrineInfo3Plus" } +++
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredDiabetesUrineInfo4Plus{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesUrineInfo", :value => "++++" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesUrineInfo4Plus" } ++++	   
+				%input#RadioButtonUrineInfo4Plus{ :type => "radio", :name => "RadioButtonUrineInfo", :value => "++++" }
+				%label.RadioButton{ :for => "RadioButtonUrineInfo4Plus" } ++++	   
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin c. Bagaimana hasil 3 (tiga) pemeriksaan terakhir?
@@ -108,48 +108,48 @@
 			%label.Short.Single.Item1.Center.Margin III	 
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Kadar gula darah
-			%input#TextProspectiveInsuredDiabetesResultGlucoseLevelI.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesResultGlucoseLevelII.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesResultGlucoseLevelIII.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextResultGlucoseLevelI.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextResultGlucoseLevelII.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextResultGlucoseLevelIII.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Tanggal pemeriksaan terakhir
-			%input#TextProspectiveInsuredDiabetesResultLastCheckI.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesResultLastCheckII.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesResultLastCheckIII.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextResultLastCheckI.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextResultLastCheckII.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextResultLastCheckIII.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 
 			%label.medium.Single.Item d. Apakah pernah didapatkan adanya protein/ albumin dalam test urin?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredDiabetesContainAlbuminNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainAlbumin", :value => "tidak" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesContainAlbuminNo" } Tidak
+				%input#RadioButtonContainAlbuminNo{ :type => "radio", :name => "RadioButtonContainAlbumin", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonContainAlbuminNo" } Tidak
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredDiabetesContainAlbuminYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainAlbumin", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesContainAlbuminYes" } Ya
-			%input#TextProspectiveInsuredDiabetesContainAlbuminDesc.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
+				%input#RadioButtonContainAlbuminYes{ :type => "radio", :name => "RadioButtonContainAlbumin", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonContainAlbuminYes" } Ya
+			%input#TextContainAlbuminDesc.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
 		%br
 
 			%label.medium.Single.Item e. Apakah dilakukan pemeriksaan glycosylated haemoglobin (HbA1c)?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredDiabetesContainHaemoglobinNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobin", :value => "tidak" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobinNo" } Tidak
+				%input#RadioButtonContainHaemoglobinNo{ :type => "radio", :name => "RadioButtonContainHaemoglobin", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonContainHaemoglobinNo" } Tidak
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredDiabetesContainHaemoglobinYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobin", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesContainHaemoglobinYes" } Ya
-			%input#TextProspectiveInsuredDiabetesContainHaemoglobinDesc.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
+				%input#RadioButtonContainHaemoglobinYes{ :type => "radio", :name => "RadioButtonContainHaemoglobin", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonContainHaemoglobinYes" } Ya
+			%input#TextContainHaemoglobinDesc.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
 		%br
 		
 		%hr
 			%label#Wrap.Single.PositionerLeft 4. Apakah pernah mengalami perawatan rumah sakit karena diabetes?
 			%div.RadioButton.Medium.PositionerRight
-				%input#RadioButtonProspectiveInsuredDiabetesEverHospitalNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesEverHospital", :value => "tidak" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesEverHospitalNo" } Tidak
+				%input#RadioButtonEverHospitalNo{ :type => "radio", :name => "RadioButtonEverHospital", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonEverHospitalNo" } Tidak
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredDiabetesEverHospitalYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesEverHospital", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesEverHospitalYes" } Ya
+				%input#RadioButtonEverHospitalYes{ :type => "radio", :name => "RadioButtonEverHospital", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonEverHospitalYes" } Ya
 		%br
 		
 			%label#LabelProspectiveInsuredDiabetesEverHospitalIfYes.Long.Single.Item3.Margin Jika "Ya", mohon melengkapi kolom di bawah ini.
@@ -162,52 +162,52 @@
 			%label.Short.Single.Item.Center.Margin Jangka Waktu Perawatan							
 			
 		%div.ContainerFit
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesReason1.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesDoctorName1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesTherapyDate1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesDuration1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesReason1.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesDoctorName1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesTherapyDate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesDuration1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesReason2.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesDoctorName2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesTherapyDate2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredDiabetesEverHospitalIfYesDuration2.Short.Single.Item1.Margin{ :type => "text" }			
+			%input#TextEverHospitalIfYesReason2.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesDoctorName2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesTherapyDate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextEverHospitalIfYesDuration2.Short.Single.Item1.Margin{ :type => "text" }			
 		%br		
 		%hr
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 5. Apakah disertai komplikasi berikut?
 			%br
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsVision{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "gangguanpenglihatan"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsVision" } Gangguan penglihatan
+			%input#RadioButtonWithComplicationsVision{ :type => "radio", :name => "RadioButtonWithComplications", :value => "visiondistruption"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsVision" } Gangguan penglihatan
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodPressure{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "tekanandarahtinggi"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodPressure" }  Tekanan darah tinggi 
+			%input#RadioButtonWithComplicationsBloodPressure{ :type => "radio", :name => "RadioButtonWithComplications", :value => "hypertension"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsBloodPressure" }  Tekanan darah tinggi 
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsKidney{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "gangguanginjaldansalurankemih"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsKidney" } Gangguan ginjal dan/ saluran kemih
+			%input#RadioButtonWithComplicationsKidney{ :type => "radio", :name => "RadioButtonWithComplications", :value => "kidneyproblem"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsKidney" } Gangguan ginjal dan/ saluran kemih
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsSensor{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "gangguansensoriktermasukkebasdanpanasdikaki"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsSensor" } Gangguan sensorik, termasuk kebas dan panas di kaki
+			%input#RadioButtonWithComplicationsSensor{ :type => "radio", :name => "RadioButtonWithComplications", :value => "censorikproblem"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsSensor" } Gangguan sensorik, termasuk kebas dan panas di kaki
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodDisorders{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "kelainandarah"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsBloodDisorders" } Kelainan darah
+			%input#RadioButtonWithComplicationsBloodDisorders{ :type => "radio", :name => "RadioButtonWithComplications", :value => "bloodproblem"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsBloodDisorders" } Kelainan darah
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsDiabeticComa{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "komadiabetikum"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsDiabeticComa" } Koma diabetikum
+			%input#RadioButtonWithComplicationsDiabeticComa{ :type => "radio", :name => "RadioButtonWithComplications", :value => "diabetikum"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsDiabeticComa" } Koma diabetikum
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsHeartDisorders{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "gangguanjantungdanpembuluhdarah"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsHeartDisorders" } Gangguan jantung dan/ pembuluh darah
+			%input#RadioButtonWithComplicationsHeartDisorders{ :type => "radio", :name => "RadioButtonWithComplications", :value => "heartproblem"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsHeartDisorders" } Gangguan jantung dan/ pembuluh darah
 			%div.Separator
 
-			%input#RadioButtonProspectiveInsuredDiabetesWithComplicationsOthers{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiabetesWithComplications", :value => "lainnya"}
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiabetesWithComplicationsOthers" } Lainnya
+			%input#RadioButtonWithComplicationsOthers{ :type => "radio", :name => "RadioButtonWithComplications", :value => "other"}
+			%label.RadioButton{ :for => "RadioButtonWithComplicationsOthers" } Lainnya
 		%br   
 			%input#TextProspectiveInsuredDiabetesWithComplicationsOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr  

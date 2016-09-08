@@ -15,12 +15,12 @@
 		%br
 		%hr
 		%div.ContainerFit
-			%label#LabelPolicyHolder.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan 
-			%input#DateFirstTime.Medium.Single.Item1.Margin{ :type => "text"}
+			%label#LabelFirstTime.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan 
+			%input#DateFirstTime.Medium.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft  b. Berapa tekanan darah saat itu?
-			%input#TextBloodPressure.Medium.Single.Item.Margin{ :type =>"text" }
+			%input#TextNumOfBloodPressure.Medium.Single.Item.Margin{ :type =>"text" }
 		%br	
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
@@ -35,67 +35,67 @@
 		
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item d. Apakah dikonsultasikan ke dokter ?
-			%input#RadioButtonProspectiveInsuredHypertentionDoctorConsultYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionDoctorConsult", :value => "ya" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionDoctorConsultYes" } Ya
+			%input#RadioButtonDoctorConsultYes{ :type => "radio", :name => "RadioButtonDoctorConsult", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonDoctorConsultYes" } Ya
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionDoctorConsultNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionDoctorConsult", :value => "tidak" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionDoctorConsultNo" } Tidak
+			%input#RadioButtonDoctorConsultNo{ :type => "radio", :name => "RadioButtonDoctorConsult", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonDoctorConsultNo" } Tidak
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Dokter
-			%input#TextProspectiveInsuredHypertentionDoctorName.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Alamat Dokter
-			%input#TextProspectiveInsuredHypertentionDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%label.Wrap.Single.PositionerLeft.Margin e. Berapa sering Anda kontrol ke Dokter?
-		%input#TextProspectiveInsuredHypertentionHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "text" }
+		%label.Wrap.Single.PositionerLeft.Margin e. Berapa sering Anda kontrol ke Dokter?		
+		%input#TextHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "text" }
 		%label.Wrap.Single.PositionerLeft.Margin kali per minggu/ bulan/ tahun
 		%br
 		%hr
 
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 2. Apakah kenaikan tekanan darah Anda tersebut berhubungan dengan penyakit sebagai berikut:
-			%br
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToHeart{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "heart" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToHeart" }  Jantung
+			%br			
+			%input#RadioButtonRelatedToHeart{ :type => "radio", :name => "RadioButtonRelatedTo", :value => "heart" }
+			%label.RadioButton{ :for => "RadioButtonRelatedToHeart" }  Jantung
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToBrain{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "brain" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToBrain" } Otak
+			%input#RadioButtonRelatedToBrain{ :type => "radio", :name => "RadioButtonRelatedTo", :value => "brain" }
+			%label.RadioButton{ :for => "RadioButtonRelatedToBrain" } Otak
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToKidney{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "kidney" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToKidney" } Ginjal
+			%input#RadioButtonRelatedToKidney{ :type => "radio", :name => "RadioButtonRelatedTo", :value => "kidney" }
+			%label.RadioButton{ :for => "RadioButtonRelatedToKidney" } Ginjal
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionRelatedToOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionRelatedTo", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionRelatedToOther" }Lainnya, sebutkan 
+			%input#RadioButtonRelatedToOthers{ :type => "radio", :name => "RadioButtonRelatedTo", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonRelatedToOthers" }Lainnya, sebutkan 
 		%br
-		%input#TextProspectiveInsuredHypertentionRelatedToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextRelatedToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr
 		%div.ContainerFit
-			%label#LabelProspectiveInsuredHypertentionWhenStart.Medium.Single.Item3.Margin 3. a. Kapan Anda memulai pengobatan kenaikan tekanan darah tersebut?
-			%input#DateProspectiveInsuredHypertentionWhenStart.Medium.Single.Item1.Margin{ :type => "text"}
+			%label#LabelWhenStart.Medium.Single.Item3.Margin 3. a. Kapan Anda memulai pengobatan kenaikan tekanan darah tersebut?
+			%input#DateWhenStart.Medium.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item  b. Apakah pernah berhenti minum obat?
-			%input#RadioButtonProspectiveInsuredHypertentionStopDrugYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionStopDrug", :value => "ya" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionStopDrugYes" } Ya
+			%input#RadioButtonStopDrugYes{ :type => "radio", :name => "RadioButtonStopDrug", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonStopDrugYes" } Ya
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionStopDrugNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionStopDrug", :value => "tidak" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionStopDrugNo" } Tidak
+			%input#RadioButtonStopDrugNo{ :type => "radio", :name => "RadioButtonStopDrug", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonStopDrugNo" } Tidak
 		%br
 		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
-		%input#TextProspectiveInsuredHypertentionStopDrugIfYesDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextStopDrugIfYesDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item  c. Apakah saat ini masih dalam pengobatan?
-			%input#RadioButtonProspectiveInsuredHypertentionInTherapyYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionInTherapy", :value => "ya" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionInTherapyYes" } Ya
+			%input#RadioButtonInTherapyYes{ :type => "radio", :name => "RadioButtonInTherapy", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonInTherapyYes" } Ya
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionInTherapyNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionInTherapy", :value => "tidak" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionInTherapyNo" } Tidak
+			%input#RadioButtonInTherapyNo{ :type => "radio", :name => "RadioButtonInTherapy", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonInTherapyNo" } Tidak
 		%br
 		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 		%br		
@@ -104,90 +104,90 @@
 			%label.Short.Single.Item1.Center Dosis
 			%label.Short.Single.Item1.Center Frekuensi 
 		%div.ContainerFit
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugName1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugDosis1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugFrequency1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugName1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugDosis1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugFrequency1.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugName2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugDosis2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugFrequency2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugName2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugDosis2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugFrequency2.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugName3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugDosis3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugFrequency3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugName3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugDosis3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugFrequency3.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugName4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugDosis4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugFrequency4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugName4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugDosis4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugFrequency4.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugName5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugDosis5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionInTherapyDrugFrequency5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugName5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugDosis5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextInTherapyDrugFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 		%br		
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
-			%input#TextProspectiveInsuredHypertentionInTherapyDocterName.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextInTherapyDocterName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
-			%input#TextProspectiveInsuredHypertentionInTherapyPhone.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextInTherapyPhone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
-			%input#TextProspectiveInsuredHypertentionInTherapyHospital.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextInTherapyHospital.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
-			%input#TextProspectiveInsuredHypertentionInTherapyHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextInTherapyHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br				
 		%hr
 
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 4. Apakah pernah melakukan pemeriksaan sebagai berikut?
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "ya" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupYes" } Ya
+			%label.medium.Single.Item 4. Apakah pernah melakukan pemeriksaan sebagai berikut?			
+			%input#RadioButtonCheckupYes{ :type => "radio", :name => "RadioButtonCheckup", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonCheckupYes" } Ya
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "tidak" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupNo" } Tidak
+			%input#RadioButtonCheckupNo{ :type => "radio", :name => "RadioButtonCheckup", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonCheckupNo" } Tidak
 			%br
 			%label.medium.Single.Item Jika Ya, jelaskan kapan dan bagaimana hasilnya. 
 			%br
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupEkg{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "ekgecg" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupEkg" } EKG/ ECG
+			%input#RadioButtonCheckupEkg{ :type => "radio", :name => "RadioButtonCheckup", :value => "ekgecg" }
+			%label.RadioButton{ :for => "RadioButtonCheckupEkg" } EKG/ ECG
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupRontgen{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "rontgendada" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupRontgen" }Rontgen dada
+			%input#RadioButtonCheckupRontgen{ :type => "radio", :name => "RadioButtonCheckup", :value => "chestrontgen" }
+			%label.RadioButton{ :for => "RadioButtonCheckupRontgen" } Rontgen dada
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "echocardiogram" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupEchocardiogram" }Echocardiogram
+			%input#RadioButtonCheckupEchocardiogram{ :type => "radio", :name => "RadioButtonCheckup", :value => "echocardiogram" }
+			%label.RadioButton{ :for => "RadioButtonCheckupEchocardiogram" } Echocardiogram
 			%div.Separator			
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupTreadmill{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "treadmill" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupTreadmill" }Treadmill
+			%input#RadioButtonCheckupTreadmill{ :type => "radio", :name => "RadioButtonCheckup", :value => "treadmill" }
+			%label.RadioButton{ :for => "RadioButtonCheckupTreadmill" } Treadmill
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupLaboratorium{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "laboratorium" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupLaboratorium" }Laboratorium
+			%input#RadioButtonCheckupLaboratorium{ :type => "radio", :name => "RadioButtonCheckup", :value => "laboratory" }
+			%label.RadioButton{ :for => "RadioButtonCheckupLaboratorium" } Laboratorium
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionCheckupOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionCheckup", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionCheckupOther" }Lainnya, sebutkan
-			%input#TextProspectiveInsuredHypertentionCheckupOtherName.Line.PositionerLeft
+			%input#RadioButtonCheckupOthers{ :type => "radio", :name => "RadioButtonCheckup", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonCheckupOthers" } Lainnya, sebutkan
+			%input#TextCheckupOtherName.Line.PositionerLeft
 		%br
 		Mohon menjelaskan secara rinci pada kolom di bawah ini.
 		(Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
 		%br
-		%input#TextProspectiveInsuredHypertentionCheckupOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextCheckupOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item  5. Apakah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
-			%input#RadioButtonProspectiveInsuredHypertentionTreatmentYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionTreatment", :value => "ya" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionTreatmentYes" } Ya
+			%input#RadioButtonTreatmentYes{ :type => "radio", :name => "RadioButtonTreatment", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonTreatmentYes" } Ya
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionTreatmentNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionTreatment", :value => "tidak" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionTreatmentNo" } Tidak
+			%input#RadioButtonTreatmentNo{ :type => "radio", :name => "RadioButtonTreatment", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonTreatmentNo" } Tidak
 		%br
 		%label.medium.Single.Item Jika “Ya”, mohon melengkapi kolom di bawah ini.
 		%br
@@ -198,53 +198,53 @@
 			%label.Short.Single.Item1.Center Tanggal perawatan
 			%label.Short.Single.Item1.Center Jangka waktu perawatan  
 		%div.ContainerFit
-			%input#TextProspectiveInsuredHypertentionTreatmentReason1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentDoctor1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentAddress1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentDuration1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentReason1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDoctor1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentAddress1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDuration1.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextProspectiveInsuredHypertentionTreatmentReason2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentDoctor2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentAddress2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentDate2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredHypertentionTreatmentDuration2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentReason2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDoctor2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentAddress2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDuration2.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 6. Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?  
 			%br
-			%input#RadioButtonProspectiveInsuredHypertentionComplicationNothing{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionComplication", :value => "nothing" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionComplicationNothing" } Tidak ada
+			%input#RadioButtonComplicationNothing{ :type => "radio", :name => "RadioButtonComplication", :value => "nothing" }
+			%label.RadioButton{ :for => "RadioButtonComplicationNothing" } Tidak ada
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionComplicationKidney{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionComplication", :value => "kidney" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionComplicationKidney" }Ginjal
+			%input#RadioButtonComplicationKidney{ :type => "radio", :name => "RadioButtonComplication", :value => "kidney" }
+			%label.RadioButton{ :for => "RadioButtonComplicationKidney" } Ginjal
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionComplicationBrain{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionComplication", :value => "brain" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionComplicationBrain" }Otak
+			%input#RadioButtonComplicationBrain{ :type => "radio", :name => "RadioButtonComplication", :value => "brain" }
+			%label.RadioButton{ :for => "RadioButtonComplicationBrain" } Otak
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionComplicationVision{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionComplication", :value => "impairedvision" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionComplicationVision" }Gangguan Penglihatan
+			%input#RadioButtonComplicationVision{ :type => "radio", :name => "RadioButtonComplication", :value => "impairedvision" }
+			%label.RadioButton{ :for => "RadioButtonComplicationVision" } Gangguan Penglihatan
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionComplicationHeart{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionComplication", :value => "heart" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionComplicationHeart" }Hati
+			%input#RadioButtonComplicationLiver{ :type => "radio", :name => "RadioButtonComplication", :value => "liver" }
+			%label.RadioButton{ :for => "RadioButtonComplicationLiver" } Hati
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredHypertentionComplicationOther{ :type => "radio", :name => "RadioButtonProspectiveInsuredHypertentionComplication", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHypertentionComplicationOther" } Lainnya
+			%input#RadioButtonComplicationOthers{ :type => "radio", :name => "RadioButtonComplication", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonComplicationOthers" } Lainnya
 		%br
-		%input#TextProspectiveInsuredHypertentionComplicationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextComplicationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%label.medium.Single.Item 7. Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.
 		%br
-		%input#TextProspectiveInsuredHypertentionAverageBloodPressure.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextAverageBloodPressure.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 		%label.medium.Single.Item 8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br
-		%input#TextProspectiveInsuredHypertentionAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
