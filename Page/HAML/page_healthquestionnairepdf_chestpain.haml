@@ -64,7 +64,7 @@
 		/ HEADER
 
 		%header
-			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
+			%img{ :src => "../../Resource/Logo/logo_bcalife_primary.svg" }
 			%div.Address
 				%span.Header.PositionerRight PT Asuransi Jiwa BCA
 				%br
@@ -165,7 +165,7 @@
 
 					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "NumberPolicyHolderChestPainCurrentAttackTimes" } Hingga saat ini serangan sudah terjadi sebanyak:					
 					%input#NumberPolicyHolderChestPainCurrentAttackTimes.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Separator.PositionerLeft{ :for => "NumberPolicyHolderChestPainCurrentAttackTimes" } Kali
+					%label.Separator.Single.PositionerLeft{ :for => "NumberPolicyHolderChestPainCurrentAttackTimes" } Kali
 					%br					
 										
 					%span.Number.Single.PositionerLeft 4.
@@ -206,12 +206,12 @@
 						%br
 						%input#RadioButtonPolicyHolderChectPainCharacterOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChectPainCharacterOthers"} Lainnya, sebutkan						
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChectPainCharacterOthers"} Lainnya, sebutkan
 						%input#TextPolicyHolderChectPainCharacterOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%span.Number.Single.PositionerLeft 6.
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } Dimanakah letak nyeri dada tersebut?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } Dimanakah letak nyeri dada tersebut?
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderChestPainLocationRight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainLocation", :value => "right" }
@@ -230,123 +230,148 @@
 						%input#TextPolicyHolderChestPainLocationOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
-					%span.Number.PositionerLeft 7
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Apakah nyeri dada tersebut menjalar?
-					%div.RadioButton
+					%span.Number.Single.PositionerLeft 7.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Apakah nyeri dada tersebut menjalar?
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderChestPainSpreadToShoulder.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "shoulder" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToShoulder" } Ke bahu
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToShoulder" } Ke bahu
 						%input#RadioButtonPolicyHolderChestPainSpreadToArm.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "arm" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToArm" } Ke lengan
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToArm" } Ke lengan
 						%input#RadioButtonPolicyHolderChestPainSpreadToJaw.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "jaw" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToJaw" } Ke rahang	
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToJaw" } Ke rahang
 						%input#RadioButtonPolicyHolderChestPainSpreadToBelly.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "belly" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToBelly" } Ke perut
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToBelly" } Ke perut
+						%br
 						%input#RadioButtonPolicyHolderChestPainSpreadToBack.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "back" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToBack" } Ke punggung
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToBack" } Ke punggung
 						%input#RadioButtonPolicyHolderChestPainSpreadToOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToOthers"} Di bagian lain, sebutkan: 
 						%input#TextPolicyHolderChestPainSpreadToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
-					%span.Number.PositionerLeft 8
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappened" } Bagaimana terjadinya nyeri dada tersebut?
-					%div.RadioButton
+					%span.Number.Single.PositionerLeft 8.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappened" } Bagaimana terjadinya nyeri dada tersebut?
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderChestPainHowHappenedSudden.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "sudden" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedSudden" } Mendadak
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedSudden" } Mendadak
 						%input#RadioButtonPolicyHolderChestPainHowHappenedGradually.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "gradually" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedGradually" } Bertahap
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedGradually" } Bertahap
 						%input#RadioButtonPolicyHolderChestPainHowHappenedWhenRest.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "whenrest" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedWhenRest" } Di waktu istirahat
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedWhenRest" } Di waktu istirahat
+						%br
 						%input#RadioButtonPolicyHolderChestPainHowHappenedCertainPostur.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "certainpostur" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedCertainPostur" } Hanya pada postur tertentu
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedCertainPostur" } Hanya pada postur tertentu
 						%input#RadioButtonPolicyHolderChestPainHowHappenedAfterSport.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "aftersport" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedAfterSport" } Hanya pada istirahat sehabis olah raga
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedAfterSport" } Hanya pada istirahat sehabis olah raga
 						%input#RadioButtonPolicyHolderChestPainHowHappenedDeepBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "deepbreath" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedDeepBreath" } Diperburuk dengan nafas dalam
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedDeepBreath" } Diperburuk dengan nafas dalam
+						%br
 						%input#RadioButtonPolicyHolderChestPainHowHappenedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedOthers"} Di bagian lain dari dada, sebutkan: 
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedOthers"} Di bagian lain dari dada, sebutkan: 
 						%input#TextPolicyHolderChestPainSpreadOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 					
-					%span.Number.PositionerLeft 9
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorse" } Kondisi bagaimana yang memperburuk nyeri dada?
-					%div.RadioButton
+					%span.Number.Single.PositionerLeft 9.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorse" } Kondisi bagaimana yang memperburuk nyeri dada?
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderChestPainGettingWorseWhenTired.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainGettingWorse", :value => "whentired" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseWhenTired" } Kelelahan/emosi
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseWhenTired" } Kelelahan/emosi
 						%input#RadioButtonPolicyHolderChestPainGettingWorseWhenPressureOnChest.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainGettingWorseWhenPressureOnChest", :value => "whenpressureonchest" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseWhenPressureOnChest" } Tekanan pada dada
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseWhenPressureOnChest" } Tekanan pada dada
 						%input#RadioButtonPolicyHolderChestPainGettingWorseWhenCoughing.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainGettingWorse", :value => "whencoughing" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseWhenCoughing" } Batuk menghirup nafas dalam
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseWhenCoughing" } Batuk menghirup nafas dalam
+						%br
 						%input#RadioButtonPolicyHolderChestPainGettingWorseOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainGettingWorse", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseOthers"} Lainnya, sebutkan 
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseOthers"} Lainnya, sebutkan 
 						%input#TextPolicyHolderChestPainGettingWorseOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 					
-					%span.Number.PositionerLeft 10
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenRest" } Kondisi bagaimana yang mengurangi nyeri dada?
-					%div.RadioButton
+					%span.Number.Single.PositionerLeft 10.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenRest" } Kondisi bagaimana yang mengurangi nyeri dada?
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderChestPainReducedWhenRest.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "whenrest" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenRest" } Istirahat
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenRest" } Istirahat
 						%input#RadioButtonPolicyHolderChestPainReducedWhenDrinkMilk.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "whendrinkmilk" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenDrinkMilk" } Minum susu
+						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenDrinkMilk" } Minum susu
+						%br
 						%input#RadioButtonPolicyHolderChestPainReducedWhenDrinkDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "whendrinkdrug" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenDrinkDrug" } Minum obat maag
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenDrinkDrug" } Minum obat maag
+						%input#RadioButtonPolicyHolderChestPainReducedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedOthers"} Lainnya, sebutkan
+						%input#TextPolicyHolderChestPainReducedOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%br
 						%input#RadioButtonPolicyHolderChestPainReducedAfterDrinkDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "afterdrinkdrug" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedAfterDrinkDrug" } Setelah minum obat (Jelaskan secara rinci nama obat, dosis dan frekuensi penggunaannya pada kolom di bawah ini).
-						%input#RadioButtonPolicyHolderChestPainReducedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedOthers"} Lainnya, sebutkan
-						%input#TextPolicyHolderChestPainReducedOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						%input#TextPolicyHolderChestPainReducedOtherDesc.Full.Single.PositionerLeft{ :type => "text" }
 					%br				
 					
-					%span.Number.PositionerLeft 11
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainConsulToDoctorNo" } Apakah keluhan nyeri dada tersebut pernah dikonsultasikan ke Dokter?
+					%span.Number.Single.PositionerLeft 11.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainConsulToDoctorNo" } Apakah keluhan nyeri dada tersebut pernah dikonsultasikan ke Dokter?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainConsulToDoctorNo" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainConsulToDoctorNo" } Tidak
 						%input#RadioButtonPolicyHolderConsulToDoctorNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainConsulToDoctor", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainConsulToDoctorYes" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainConsulToDoctorYes" } Ya
 						%input#RadioButtonPolicyHolderChestPainConsulToDoctorYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainConsulToDoctor", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorReason" } Jika “Ya”, mohon berikan alasannya?
-						%input#TextPolicyHolderChestPainConsulToDoctorReason.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "DatePolicyHolderChestPainConsulToDoctorLast" } Tanggal terakhir konsultasi:
-						%table#DatePolicyHolderChestPainConsulToDoctorLastDay.BoxSquare.PositionerRight
-						%span.Separator.Single.PositionerRight /
-						%table#DatePolicyHolderChestPainConsulToDoctorLastMonth.BoxSquare.PositionerRight
-						%span.Separator.Single.PositionerRight /
-						%table#DatePolicyHolderChestPainConsulToDoctorLastYear.BoxSquare.PositionerRight
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorDiagnosis" } Diagnosa:
-						%input#TextPolicyHolderChestPainConsulToDoctorDiagnosis.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorFullNameDoctor" } Nama lengkap dokter:
-						%input#TextPolicyHolderChestPainConsulToDoctorFullNameDoctor.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorPhone" } No. Telepon/Handphone:
-						%input#TextPolicyHolderChestPainConsulToDoctorPhone.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorHospitalName" } Nama Klinik/Rumah Sakit:
-						%input#TextPolicyHolderChestPainConsulToDoctorHospitalName.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorHospitalAddress" } Alamat Klinik/Rumah Sakit:
-						%input#TextPolicyHolderChestPainConsulToDoctorHospitalAddress.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderChestPainConsulToDoctorReason" } Jika “Ya”, mohon berikan alasannya?
+						%input#TextPolicyHolderChestPainConsulToDoctorReason.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainConsulToDoctorLast" } Tanggal terakhir konsultasi:
+					%table#DatePolicyHolderChestPainConsulToDoctorLastDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderChestPainConsulToDoctorLastMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderChestPainConsulToDoctorLastYear.BoxSquare.PositionerLeft
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorDiagnosis" } Diagnosa:
+						%input#TextPolicyHolderChestPainConsulToDoctorDiagnosis.Full.Single.Item{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorFullNameDoctor" } Nama lengkap dokter:
+						%input#TextPolicyHolderChestPainConsulToDoctorFullNameDoctor.Full.Single.Item{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorPhone" } No. Telepon/Handphone:
+						%input#TextPolicyHolderChestPainConsulToDoctorPhone.Full.Single.Item{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorHospitalName" } Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderChestPainConsulToDoctorHospitalName.Full.Single.Item{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderChestPainConsulToDoctorHospitalAddress" } Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderChestPainConsulToDoctorHospitalAddress.Full.Single.Item{ :type => "text" }
 					%br
 					
 					%span.Number.PositionerLeft 12
@@ -425,7 +450,7 @@
 
 					%h2 I. Data (Calon) Tertanggung
 					%div.Note
-						Perlu diperhatikan: 
+						%p Perlu diperhatikan: 
 						%ol
 							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
 							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.

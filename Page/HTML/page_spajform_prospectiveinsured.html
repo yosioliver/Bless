@@ -133,7 +133,7 @@
       <form>
         <!-- %input#ButtonSubmit{ :type => "button", :value => "Submit" } -->
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredCIN'>Nomor CIN</label>
-        <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredCIN' required='true' type='text'>
+        <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredCIN' maxlength='7' required='true' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredFullName'>Nama Lengkap</label>
@@ -161,13 +161,13 @@
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredIDNumber'>Nomor Identitas Diri</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredIDNumber' required='true' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredIDNumber' maxlength='16' required='true' type='text'>
           <label class='Medium Single Item' for='DateProspectiveInsuredActive'>Masa berlaku</label>
           <input class='Medium Single Item' data-field='date' id='DateProspectiveInsuredActive' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredBirthPlace'>Tempat lahir</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredBirthPlace' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredBirthPlace' maxlength='20' type='text'>
           <label class='Medium Single Item' for='DateProspectiveInsuredBirth'>Tanggal lahir</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='DateProspectiveInsuredBirth' required='true' type='text'>
           <label class='Medium Single Item' for='TextProspectiveInsuredAge'>Umur</label>
@@ -237,11 +237,11 @@
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredCompany'>Nama Perusahaan / Instansi / Sekolah</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredCompany' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredCompany' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredMainJob'>Pekerjaan Utama</label>
-          <input class='Full Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredMainJob' type='text'>
+          <input class='Full Single Item' data-input-type='autopopulate' id='TextProspectiveInsuredMainJob' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredWorkScope'>Bidang Usaha</label>
@@ -261,61 +261,61 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeAddress1'>Alamat Tempat Tinggal</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredHomeAddress1' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredHomeAddress1' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeAddress2'></label>
-          <input class='Full Single Item' id='TextProspectiveInsuredHomeAddress2' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredHomeAddress2' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeAddress3'></label>
-          <input class='Full Single Item' id='TextProspectiveInsuredHomeAddress3' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredHomeAddress3' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeCity'></label>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeCity'>Kota</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredHomeCity' required='true' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredHomeCity' maxlength='19' required='true' type='text'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomePostalCode'>Kode Pos</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredHomePostalCode' required='true' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredHomePostalCode' maxlength='6' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredHomeTelephone'></label>
           <label class='MediumFix Single Item' for='TextProspectiveInsuredHomeTelephone'>Nomor telepon</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredHomeTelephone' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredHomeTelephone' maxlength='13' type='text'>
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredHandphone1'>Nomor HP Utama</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredHandphone1' required='true' type='text'>
+        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredHandphone1' maxlength='13' required='true' type='text'>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredHandphone2'>Nomor HP 2</label>
-        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredHandphone2' type='text'>
+        <input class='Long Single PositionerLeft' id='TextProspectiveInsuredHandphone2' maxlength='13' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredEmail'>Email</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredEmail' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredEmail' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredOfficeAddress1'>Alamat kantor</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredOfficeAddress1' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredOfficeAddress1' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredOfficeAddress2'></label>
-          <input class='Full Single Item' id='TextProspectiveInsuredOfficeAddress2' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredOfficeAddress2' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredOfficeAddress3'></label>
-          <input class='Full Single Item' id='TextProspectiveInsuredOfficeAddress3' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredOfficeAddress3' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredOfficeCity'></label>
           <label class='Medium Single Item' for='TextProspectiveInsuredOfficeCity'>Kota</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredOfficeCity' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredOfficeCity' maxlength='19' type='text'>
           <label class='Medum Single Item' for='TextProspectiveInsuredOfficePostalCode'>Kode Pos</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredOfficePostalCode' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredOfficePostalCode' maxlength='6' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredOfficeTelephone'></label>
           <label class='MediumFix Single Item' for='TextProspectiveInsuredOfficeTelephone'>Telp</label>
-          <input class='Medium Single Item' id='TextProspectiveInsuredOfficeTelephone' type='text'>
+          <input class='Medium Single Item' id='TextProspectiveInsuredOfficeTelephone' maxlength='13' type='text'>
         </div>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredCorrespondanceAddress'>Alamat Korespondensi</label>
         <div class='RadioButton PositionerLeft'>
@@ -366,7 +366,7 @@
         <input class='Long Single PositionerLeft' id='TextProspectiveInsuredInsurancePurposeOther' type='text'>
         <br>
         <label class='Medium Single PositionerLeft' for='TextProspectiveInsuredNPWP'>Nomor NPWP</label>
-        <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredNPWP' type='text'>
+        <input class='Medium Single PositionerLeft' id='TextProspectiveInsuredNPWP' maxlength='16' type='text'>
         <label class='Medium Single PositionerLeft' for='DateProspectiveInsuredNPWPActive'>Tanggal Berlaku</label>
         <input class='Medium Single PositionerLeft' data-field='date' id='DateProspectiveInsuredNPWPActive' type='text'>
         <br>
@@ -407,12 +407,12 @@
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredSource'>Jelaskan Sumbernya</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredSource' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredSource' maxlength='30' type='text'>
         </div>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextProspectiveInsuredFundingSource'>Sumber Dana Pembelian Asuransi</label>
-          <input class='Full Single Item' id='TextProspectiveInsuredFundingSource' required='true' type='text'>
+          <input class='Full Single Item' id='TextProspectiveInsuredFundingSource' maxlength='30' required='true' type='text'>
         </div>
         <br>
         <div id='BoxDate'></div>

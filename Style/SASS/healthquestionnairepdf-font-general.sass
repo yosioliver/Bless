@@ -10,6 +10,8 @@
 /* HEADER */
 
 header
+	span
+		margin: 2px !important;
 	span.Header
 		font-size: $fontsize_header_header
 	span.Detail
@@ -30,8 +32,8 @@ header
 /* FORM */
 
 .Note
-	margin-top: $general_space_small
-	margin-bottom: $general_space_small
+	margin-top: $general_space_medium
+	margin-bottom: $general_space_medium
 	padding: $general_space_small
 	text-align: left
 	border-style: solid
@@ -97,15 +99,6 @@ main
 					display: inline-block
 					margin: 0px
 					content: ''
-			label.RadioButton
-				padding: $general_space_tiny
-				vertical-align: middle
-			label.RadioButton.Short
-				width: $label_width_short
-			label.RadioButton:after
-				content: ''
-			label.RadioButton.Medium
-				width: $label_width_short * 1.4
 			label.Wrap, span.Wrap
 				width: auto;
 				min-height: $label_height_single
@@ -221,21 +214,7 @@ main
 				+BorderRadius($general_borderradius_thick)
 			p
 				font-size: $fontsize_form_labelgeneral
-			ol, ul
-				margin-top: 0px
-				margin-right: 0px
-				margin-left: $general_space_medium
-				margin-bottom: 0px
-				padding: 0px
-				font-size: $fontsize_form_labelgeneral
-				li
-					margin-bottom: $general_space_tiny
-					ol, ul
-						li
-							font-size: 1.3
-
-
-			table.SignatureSmall, table.SignatureMedium
+			table.SignatureSmall
 				border-spacing: 0px
 			table.SignatureSmall
 				width: $signature_width_small
@@ -259,34 +238,6 @@ main
 					tr
 						td
 							font-size: $fontsize_signaturesmall_detail
-							text-align: center
-			table.SignatureMedium
-				margin-top: $general_space_large
-				margin-bottom: $general_space_large
-				min-width: $signature_width_small
-				padding: 0px
-				vertical-align: top
-				border-style: solid
-				border-width: $general_borderwidth_thin
-				+BorderRadius($general_borderradius_thick)
-				thead
-					tr
-						th
-							padding: $header_padding_edge						
-							font-size: $fontsize_signaturemedium_header
-							text-align: center
-							border-bottom-style: solid
-							border-width: $general_borderwidth_thin
-							.Note
-								font-size: $fontsize_note_content
-				tbody
-					tr
-						td						
-							height: $signature_height_medium
-				tfoot
-					tr
-						td						
-							font-size: $fontsize_signaturemedium_detail
 							text-align: center
 
 
@@ -347,77 +298,3 @@ table.Square
 			td:first-child
 				text-align: left
 				white-space: normal
-
-table.Round
-	border-spacing: 0
-	thead
-		tr
-			th
-				padding: $general_space_tiny
-				font-size: $fontsize_table_item
-				border-style: solid
-				border-width: $general_borderwidth_thin
-		tr:first-child
-			th:first-child
-				+BorderRadius-TopLeft($general_borderradius_thick)
-			th:last-child
-				+BorderRadius-TopRight($general_borderradius_thick)
-	tbody
-		tr
-			td
-				height: $label_height_single
-				padding: $general_space_tiny
-				font-size: $fontsize_table_item
-				border-style: solid
-				border-width: $general_borderwidth_thin
-		tr:last-child
-			td:first-child
-				+BorderRadius-BottomLeft($general_borderradius_thick)
-			td:last-child
-				+BorderRadius-BottomRight($general_borderradius_thick)
-
-table.Space
-	thead
-		tr
-			th
-				height: $label_height_single
-				padding: $general_space_tiny
-				font-size: 0.9em
-				text-align: center
-				border-style: solid
-				border-width: $general_borderwidth_thin
-	tbody
-		tr
-			td
-				height: $label_height_single
-				padding: $general_space_tiny
-				font-size: 0.9em
-				border-style: solid
-				border-width: $general_borderwidth_thin
-	
-table.BoxSquare
-	border-collapse: collapse
-	font-size: $fontsize_form_labelgeneral
-	tbody
-		tr
-			td
-				width: $box_size_width
-				height: $box_size_height
-				text-align: center !important
-				vertical-align: middle
-				border-style: solid
-				border-width: $box_borderwidth_thin
-	tfoot
-		tr
-			td
-				text-align: center
-				vertical-align: middle
-				border-style: none
-			td.Note
-				margin: 0px
-				padding-top: 2px
-				padding-left: 0px
-				padding-right: 0px
-				padding-bottom: 0px
-				height: auto
-				font-size: $fontsize_form_spannote
