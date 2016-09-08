@@ -1,8 +1,10 @@
 %form#PopUpGland.PopUp
 	
+	/ HEADER
+	
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpCardiac')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpGland')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire, ['Text' + stringPageInfixTypeCurrent + 'Thyroid' + 'Problem'])" }
 		%h2 Pertanyaan Kesehatan
 
 	/ MAIN
@@ -11,7 +13,8 @@
 		%div.ContainerFit
 			%span.Multi.Single.6j Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
 		%br
-		%a.NavigationPopUp{ :href => "../../Page/HTML/.html" } KUESIONER KELAINAN KELENJAR GONDOK 
+		%div.RadioButton
+			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Kelainan Kelenjar Gondok ", :onclick => "buttonPopUpNavigation(this.id, 'PopUpGland', 'PopUpThyroid', stringPageInfixTypeCurrent + 'Thyroid', arrayHealthQuestionnaire)" }
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br

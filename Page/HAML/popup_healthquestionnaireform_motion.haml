@@ -3,8 +3,8 @@
 	/ HEADER
 	
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpCardiac')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpMotion')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Backbone' + 'FirstComlain', 'Date' + stringPageInfixTypeCurrent + 'Joint' + 'FirstArise'])" }
 		%h2 Pertanyaan Kesehatan
 
 	/ MAIN
@@ -14,11 +14,11 @@
 			%span.Multi.Single.6i Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
 		%br
 		%div.RadioButton
-			%a.NavigationPopUp{ :href => "../../Page/HTML/.html" } KUESIONER GANGGUAN TULANG BELAKANG
+			%input#ButtonBackbone.ButtonPrimary{ :type => "button", :value => "Kuesioner Gangguan Tulang Belakang", :onclick => "buttonPopUpNavigation(this.id, 'PopUpMotion', 'PopUpBackbone', stringPageInfixTypeCurrent + 'Backbone', arrayHealthQuestionnaire)" }
 			%div.Separator
-			%a.NavigationPopUp{ :href => "../../Page/HTML/.html" } KUESIONER SENDI
+			%input#ButtonJoint.ButtonPrimary{ :type => "button", :value => "Kuesioner Gangguan Sendi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpMotion', 'PopUpJoint', stringPageInfixTypeCurrent + 'Joint', arrayHealthQuestionnaire)" }
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br
-		%input#TextPolicyHolderKuesionerGangguanTulangBelakangSub.Full.Multi.Item.Margin{ :type =>"text" }
+		%textarea#AreaDetail.Full.Multi
 		%label.Medium.Single (maksimum 250 karakter)

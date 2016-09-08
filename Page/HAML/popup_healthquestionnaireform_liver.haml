@@ -8,16 +8,15 @@
 		%h2 Pertanyaan Kesehatan
 
 	/ FIELDSET
-
-	%main
-		%form#HealthQuestionnaireMain
-			%div.ContainerFit
-				%span.Multi.Single.6g Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
-			%br
-			%div.RadioButton
-				%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Diabetes", :onclick => "buttonPopUpNavigation(this.id, 'PopUpLiver', 'PopUpDiabetes', stringPageInfixTypeCurrent + 'Diabetes', arrayHealthQuestionnaire)" }
-			%hr
-			%label.Medium.Single silahkan memberikan rincian lebih lanjut
-			%br
-			%textarea#AreaDetail.Full.Multi
-			%label.Medium.Single (maksimum 250 karakter)
+	
+	%fieldset
+		%div.ContainerFit
+			%span.Multi.Single.6g Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
+		%br
+		%div.RadioButton
+			%input#ButtonDiabetes.ButtonPrimary{ :type => "button", :value => "Kuesioner Diabetes", :onclick => "buttonPopUpNavigation(this.id, 'PopUpLiver', 'PopUpDiabetes', stringPageInfixTypeCurrent + 'Diabetes', arrayHealthQuestionnaire)" }
+		%hr
+		%label.Medium.Single silahkan memberikan rincian lebih lanjut
+		%br
+		%textarea#AreaDetail.Full.Multi
+		%label.Medium.Single (maksimum 250 karakter)

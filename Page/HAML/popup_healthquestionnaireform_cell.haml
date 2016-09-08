@@ -3,19 +3,20 @@
 	/ HEADER
 	
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpCardiac')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpCell')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose'])" }
 		%h2 Pertanyaan Kesehatan
 
-	/ MAIN
+	/ FIELDSET
 
 	%fieldset
 		%div.ContainerFit
 			%span.Multi.Single.6l Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
 		%br
-		%a.NavigationPopUp{ :href => "../../Page/HTML/.html" } KUESIONER TUMOR
+		%div.RadioButton
+			%input#ButtonTumor.ButtonPrimary{ :type => "button", :value => "Kuesioner Tumor", :onclick => "buttonPopUpNavigation(this.id, 'PopUpCell', 'PopUpTumor', stringPageInfixTypeCurrent + 'Tumor', arrayHealthQuestionnaire)" }
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br
-		%input#TextPolicyHolderKuesionerTumorSub.Full.Multi.Item.Margin{ :type =>"text" }
-		%label.Medium.Single (maksimum 250 karakter
+		%textarea#AreaDetail.Full.Multi
+		%label.Medium.Single (maksimum 250 karakter)

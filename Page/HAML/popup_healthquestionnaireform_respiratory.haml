@@ -4,7 +4,7 @@
 	
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpRespiratory')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'RespiratoryDetail' + 'Problem'])" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'RespiratoryDetail' + 'Disruption'])" }
 		%h2 Pertanyaan Kesehatan
 
 	/ FIELDSET
@@ -14,7 +14,7 @@
 			%span.Multi.Single.6c Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
 		%br		
 		%div.RadioButton
-			%input#ButtonChestPain.ButtonPrimary{ :type => "button", :value => "Kuesioner Gangguan Pernapasan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpRespiratory', 'PopUpRespiratoryDetail', stringPageInfixTypeCurrent + 'RespiratoryDetail', arrayHealthQuestionnaire)" }		
+			%input#ButtonRespiratory.ButtonPrimary{ :type => "button", :value => "Kuesioner Gangguan Pernapasan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpRespiratory', 'PopUpRespiratoryDetail', stringPageInfixTypeCurrent + 'RespiratoryDetail', arrayHealthQuestionnaire)" }		
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br

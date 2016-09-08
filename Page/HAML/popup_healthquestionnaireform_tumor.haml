@@ -1,11 +1,13 @@
 %form#PopUpTumor.PopUp
-
+	
+	/ HEADER
+	
 	%header
-		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-		%h2 KUESIONER TUMOR
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpTumor', 'PopUpCell')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpTumor', 'PopUpCell', stringPageInfixTypeCurrent + 'Tumor', arrayHealthQuestionnaire)" }
+		%h2 Kuesioner Tumor
 
-	/ MAIN
+	/ FIELDSET
 
 	%fieldset
 		%div.ContainerFit
@@ -15,7 +17,7 @@
 
 		%label.medium.Single.Item 1. Kapan pertama kali diketahui adanya tumor?
 		%br    
-		%input#TextPolicyHolderKapanPertamaDiketahuiAdaTumor.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#DateFirstDiagnose.Full.Multi.Item1.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
 
