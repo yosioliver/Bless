@@ -37,9 +37,9 @@
 				boxGenerator("#DatePolicyHolderTumorOperationMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderTumorOperationYear", 4, boxTypeWithoutLabel, null)
 
-				boxGenerator("#DatePolicyHolderTumorLastDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorLastMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorLastYear", 4, boxTypeWithoutLabel, null)
+				boxGenerator("#DatePolicyHolderTumorConsultLastDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorConsultLastMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorConsultLastYear", 4, boxTypeWithoutLabel, null)
 
 				boxGenerator("#DatePolicyHolderTumorLastTherapyDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderTumorLastTherapyMonth", 2, boxTypeWithoutLabel, null);
@@ -139,11 +139,11 @@
 					%br
 					
 					%div.RadioButton
-						%input#RadioButtonPolicyHolderTumorTakenYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTaken", :value => "ya" }
+						%input#RadioButtonPolicyHolderTumorTakenYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTaken", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTakenYes" } Ya
 						
-						%input#RadioButtonPolicyHolderTumorTakenNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTaken", :value => "tidak" }
+						%input#RadioButtonPolicyHolderTumorTakenNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTaken", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTakenNo" } Tidak
 						%br								
@@ -157,73 +157,72 @@
 					%table#DatePolicyHolderTumorOperationYear.BoxSquare.PositionerRight
 
 					%div.BoxRound.PositionerLeft
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorMethod"} b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
 
 					%br
-					%input#TextPolicyHolderTumorMethod.Line.Short.Single.PositionerLeft{ :type => "text" }					
-
+					%input#TextPolicyHolderTumorOperationMethod.Line.Short.Single.PositionerLeft{ :type => "text" }					
 					%br
 					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderTumorLastDay" } c. Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
 					%br
 					
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderTumorLastDay" } Tanggal terakhir konsultasi:					
-					%table#DatePolicyHolderTumorLastDay.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderTumorConsultLastDay" } Tanggal terakhir konsultasi:					
+					%table#DatePolicyHolderTumorConsultLastDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderTumorLastMonth.BoxSquare.PositionerRight
+					%table#DatePolicyHolderTumorConsultLastMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderTumorLastYear.BoxSquare.PositionerRight
+					%table#DatePolicyHolderTumorConsultLastYear.BoxSquare.PositionerRight
 					%br	
 
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorDoctName"} Nama Lengkap Dokter:
-					%input#TextPolicyHolderTumorDoctName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorConsultDoctName"} Nama Lengkap Dokter:
+					%input#TextPolicyHolderTumorConsultDoctName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorPhone"} No. Telepon/Handphone:
-					%input#TextPolicyHolderTumorPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorConsultPhone"} No. Telepon/Handphone:
+					%input#TextPolicyHolderTumorConsultPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorClinic"} Nama Klinik/Rumah Sakit:
-					%input#TextPolicyHolderTumorClinic.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
-
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorConsultClinic"} Nama Klinik/Rumah Sakit:
+					%input#TextPolicyHolderTumorConsultClinic.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorAddress"} Alamat Klinik/Rumah Sakit:
-					%input#TextPolicyHolderTumorAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorConsultAddress"} Alamat Klinik/Rumah Sakit:
+					%input#TextPolicyHolderTumorConsultAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.PositionerLeft d.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapy" } Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
 					%div.RadioButton
-						%input#RadioButtonPolicyHolderTumorTherapyDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "obattablet" }
+						%input#RadioButtonPolicyHolderTumorTherapyDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "drug" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyDrug" } Obat tablet
 												
-						%input#RadioButtonPolicyHolderTumorTherapyRadio.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "radioterapi" }
+						%input#RadioButtonPolicyHolderTumorTherapyRadio.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "radiotherapy" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyRadio" } Radioterapi
 												
-						%input#RadioButtonPolicyHolderTumorTherapyKemo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "kemoterapi" }
+						%input#RadioButtonPolicyHolderTumorTherapyChemo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "chemotherapy" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyKemo" } Kemoterapi
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyChemo" } Kemoterapi
 						%br	
 																		
-						%input#RadioButtonPolicyHolderTumorTherapyOther.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "other" }
+						%input#RadioButtonPolicyHolderTumorTherapyOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapy", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyOther" } Lainnya, Sebutkan.
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyOthers" } Lainnya, Sebutkan.
 						%br
-						%input#TextPolicyHolderTumorTherapyOther.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextPolicyHolderTumorTherapyOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 						%br
 						
 					%br
 					%span.Number.PositionerLeft e
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorPrognosa" } Apakah anda pernah diberi informasi tentang prognosa (ramalan) atas tumor tersebut?
 					%div.RadioButton
-						%input#RadioButtonPolicyHolderTumorPrognosaYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorPrognosa", :value => "ya" }
+						%input#RadioButtonPolicyHolderTumorPrognosaYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorPrognosa", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorPrognosaYes" } Ya
 												
-						%input#RadioButtonPolicyHolderTumorPrognosaNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorPrognosa", :value => "tidak" }
+						%input#RadioButtonPolicyHolderTumorPrognosaNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorPrognosa", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorPrognosaNo" } Tidak
-						%br					
+						%br			
+						
 						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTumorPrognosa"}
 						Mohon menjelaskan secara rinci pada kolom di bawah ini.
 						%br
@@ -264,15 +263,15 @@
 					%br									
 					
 					%span.Number.PositionerLeft 5
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorWhenLast" } Apakah sampai saat ini masih dalam pengobatan?
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorCurrent" } Apakah sampai saat ini masih dalam pengobatan?
 					%br
 					
-					%div.RadioButton
-						%input#RadioButtonPolicyHolderTumorCurrentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorCurrent", :value => "ya" }
+					%div.RadioButton					
+						%input#RadioButtonPolicyHolderTumorCurrentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorCurrent", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorCurrentYes" } Ya
 						
-						%input#RadioButtonPolicyHolderTumorCurrentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorCurrent", :value => "tidak" }
+						%input#RadioButtonPolicyHolderTumorCurrentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorCurrent", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorCurrentNo" } Tidak
 						%br								
@@ -319,12 +318,12 @@
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorWhenLast" } Apakah Anda pernah tidak masuk kerja karena kondisi ini?
 					%br
 					
-					%div.RadioButton
-						%input#RadioButtonPolicyHolderTumorLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorLeave", :value => "ya" }
+					%div.RadioButton					
+						%input#RadioButtonPolicyHolderTumorLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorLeave", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorLeaveYes" } Ya
 						
-						%input#RadioButtonPolicyHolderTumorLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorLeave", :value => "tidak" }
+						%input#RadioButtonPolicyHolderTumorLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorLeave", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorLeaveNo" } Tidak
 						%br								
