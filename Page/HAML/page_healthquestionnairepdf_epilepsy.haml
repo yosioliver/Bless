@@ -1,0 +1,380 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+				boxGenerator("#TextProspectiveInsuredEpilepsySPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredEpilepsyFullName1", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredEpilepsyFullName2", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredEpilepsyBirthdayPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredEpilepsyBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredEpilepsyBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredEpilepsyBirthdayYear", 4, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+				
+				boxGenerator("#DateProspectiveInsuredEpilepsySignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredEpilepsySignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredEpilepsySignedYear", 4, boxTypeWithoutLabel, null);		
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
+			%span.Header PT Asuransi Jiwa BCA
+			%span.Detail
+			%br
+
+			%h1 KUESIONER EPILEPSI DAN KEJANG
+			%br
+
+			%div.Note
+				Perlu diperhatikan:
+				%ol
+					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
+					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
+					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
+					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
+					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+
+		/ MAIN
+
+		%main
+			%form
+				%h2 I. DATA (CALON) TERTANGGUNG
+				%fieldset
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsySPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
+					%table#TextProspectiveInsuredEpilepsySPAJNumber.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.PositionerLeft 2
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
+					%table#TextProspectiveInsuredEpilepsyFullName1.BoxSquare.PositionerLeft
+					%br
+					%table#TextProspectiveInsuredEpilepsyFullName2.BoxSquare.PositionerLeft
+
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
+					%input#TextProspectiveInsuredEpilepsyBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft ,
+					%table#DateProspectiveInsuredEpilepsyBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredEpilepsyBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredEpilepsyBirthdayYear.BoxSquare.PositionerLeft
+					%br
+
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
+				%fieldset
+
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyFirstDiagnoseDay" } Sejak umur berapa Anda terserang epilepsi?
+					%input#TextProspectiveInsuredEpilepsyWhere.Line.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					
+					%span.Number.PositionerLeft 2
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhere" } Berapa kali Anda terserang epilepsi?
+					%input#TextProspectiveInsuredEpilepsyWhere.Line.Short.Single.PositionerLeft{ :type => "text" }
+					kali per (Bulan/Tahun*) *coret yang tidak perlu
+					%br
+					
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyDiagnose" } Kapan terakhir kali Anda terserang epilepsi?
+					%table#DateProspectiveInsuredEpilepsyOperationDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredEpilepsyOperationMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredEpilepsyOperationYear.BoxSquare.PositionerRight
+
+					%br
+
+					%span.Number.PositionerLeft 4
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyTaken" } Pada saat Anda terserang epilepsi, apakah:
+					%br
+					
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyTakenYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyTaken", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyTakenYes" } Hanya hilang kesadaran sejenak tanpa kaku-kaku, kemudian lupa dengan apa yang telah terjadi.
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyTakenNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyTaken", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyTakenNo" } Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
+					%br
+					
+					%span.Number.PositionerLeft 5
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Sebelum  terjadi  serangan,  apakah  Anda  merasakan  adanya  pusing-pusing,  mencium  bau-bauan,  melihat cahaya, atau bunyi-bunyian?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredEpilepsyHowLong.Line.Short.Single.PositionerLeft{ :type => "text" } 
+					%br
+
+
+					%span.Number.PositionerLeft 6
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Apakah Anda pernah dirawat karena epilepsi?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredEpilepsyHowLong.Line.Short.Single.PositionerLeft{ :type => "text" } 
+					%br
+					
+					%br
+					%span.Number.PositionerLeft 7
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Apakah Anda selalu berkonsultasi/berobat ke Dokter?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
+					
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyDoctName"} Nama Lengkap Dokter:
+					%input#TextProspectiveInsuredEpilepsyDoctName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyPhone"} No. Telepon/Handphone:
+					%input#TextProspectiveInsuredEpilepsyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyAddress"} Alamat Lengkap Dokter :
+					%input#TextProspectiveInsuredEpilepsyAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+					
+					%br
+					%span.Number.PositionerLeft 8
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Kapan terakhir kali Anda berkonsultasi dengan dokter?
+					
+					%table#DateProspectiveInsuredEpilepsyOperationDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredEpilepsyOperationMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredEpilepsyOperationYear.BoxSquare.PositionerRight
+
+					%br
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Apakah Anda mendapat obat dokter?
+
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
+					%br
+					%table#TableProspectiveInsuredEpilepsyCheckup
+						%thead
+							%tr
+								%th Nama Obat
+								%th Doses
+								%th Frekuensi										
+						%tbody
+							%tr
+								%td
+								%td
+								%td
+							%tr
+								%td 
+								%td
+								%td
+							%tr
+								%td 
+								%td
+								%td
+							%tr
+								%td 
+								%td
+								%td								
+						%br
+
+
+					%span.Number.PositionerLeft 9
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Apakah Anda masih minum obat secara teratur hingga saat ini?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tidak
+						%br								
+
+
+					%span.Number.PositionerLeft 10
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Apakah Anda pernah menderita penyakit infeksi selaput otak/gegar otak sebelumnya?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tidak
+						%br								
+
+					%span.Number.PositionerLeft 11
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Apakah ada riwayat keluarga Anda yang menderita epilepsi?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredEpilepsyHowLong.Line.Full.Single.PositionerLeft{ :type => "text" } 
+					%br
+
+					%span.Number.PositionerLeft 12
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Apakah Anda menderita penyakit lain seperti di bawah ini:
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Kencing Manis (Diabetes Melitus)
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Darah Tinggi (Hipertensi)
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Tumor
+
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Penyakit komplikasi lainnya, sebutkan 
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredEpilepsyHowLong.Line.Short.Single.PositionerLeft{ :type => "text" } 
+					%br
+					Mohon mengisi Kuesioner sesuai dengan penyakit lainnya yang Anda derita sesuai dengan pilihan pada nomor 12
+					%br								
+
+					%span.Number.PositionerLeft 13
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Apakah Anda pernah melakukan pemeriksaan berikut?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveYes" } Elektroensefalografi (rekaman syaraf otak)
+						
+						%input#RadioButtonProspectiveInsuredEpilepsyLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyLeave", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredEpilepsyLeaveNo" } Rontgen photo tengkorak (kepala)
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredEpilepsyLeaveDay" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredEpilepsyHowLong.Line.Full.Single.PositionerLeft{ :type => "text" } 
+					%br
+
+					%span.Number.PositionerLeft 14
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsyWhenLast" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredEpilepsyHowLong.Line.Full.Single.PositionerLeft{ :type => "text" } 
+					%br
+
+
+					%h2 PERNYATAAN DAN KUASA
+					%div.Note
+						Perlu diperhatikan: 
+						%ol
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsySignedBy" } Ditandatangani
+					%input#TextProspectiveInsuredEpilepsySignedBy.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredEpilepsySigned" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DateProspectiveInsuredEpilepsySignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredEpilepsySignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredEpilepsySignedYear.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual						
+						

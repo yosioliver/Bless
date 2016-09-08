@@ -6,14 +6,14 @@
 
 /* THEME */
 
-$theme_primary_color: #00a6b3
+$theme_primary_color: #0070c0
 $theme_primary_red: 0
-$theme_primary_green: 166
-$theme_primary_blue: 179
-$theme_secondary_color: #b7e8eb
-$theme_secondary_red: 182
-$theme_secondary_green: 232
-$theme_secondary_blue: 235
+$theme_primary_green: 112
+$theme_primary_blue: 192
+$theme_secondary_color: #00b0f0
+$theme_secondary_red: 0
+$theme_secondary_green: 176
+$theme_secondary_blue: 240
 $theme_tertiary_color: #e47d3a
 $theme_tertiary_red: 228
 $theme_tertiary_green: 125
@@ -101,10 +101,7 @@ $button_border_disable: none
 /* SEMANTIC ELEMENTS */
 
 body
-	background-color: $theme_primary_color
-
-main
-    background-color: $theme_quinary_color
+	background-color: $theme_quinary_color
 
 /* NEUTRALIZATION */
 
@@ -120,62 +117,89 @@ h1, h2, h3, h4, h5, h6, p, mark, ol, ul, li
 /* HEADER */
 
 header
-    h1
-        color: $theme_quinary_color
+	span.Header
+		color: $theme_senary_color
+	span.Detail
+		color: $theme_senary_color
+	h1
+		color: $theme_primary_color
+		border-top-color: $theme_primary_color
+		border-bottom-color: $theme_primary_color
 
 /* FORM */
-			
-section
-    h2
-        background-color: $theme_primary_color
-        color: $theme_quinary_color
-    h3
-        background-color: $theme_tertiary_color
-        color: $theme_quinary_color
-    label
-        color: $theme_senary_color
-    span.Separator, span.Description
-        color: $theme_senary_color
-    table.BoxSquare
-        tbody
-            tr
-                td
-                    border-color: $theme_senary_color
-    .BoxRound
-        border-color: $theme_senary_color
-    .Note
-        border-color: $theme_primary_color
-        h3
-            color: $theme_senary_color
-            background-color: transparent
-        ol, ul
-            li
-                color: $theme_senary_color
-    table.SignatureSmall, table.SignatureMedium
-        border-color: $theme_primary_color
-        thead
-            tr
-                th
-                    color: $theme_senary_color
-                    border-bottom-color: $theme_primary_color
-        tbody
-            tr
-                td
-                    color: $theme_senary_color
-                    background-color: $theme_quaternary_color
-        tfoot
-            tr
-                td
-                    color: $theme_senary_color
-    .LineStraight, .LineDot
-        color: $theme_senary_color
-        border-color: $theme_senary_color
 
+.Note
+	border-color: $theme_secondary_color
+
+ol, ul, li
+	color: $theme_senary_color
+
+main
+	form
+		h2
+			color: $theme_quinary_color
+			background-color: $theme_secondary_color
+		fieldset
+			span.Number
+				color: $theme_quinary_color
+				background-color: $theme_secondary_color
+			label
+				color: $theme_senary_color
+			span.Separator, span.Description
+				color: $theme_senary_color
+			table.BoxSquare
+				tbody
+					tr
+						td
+							border-color: $theme_secondary_color
+							background-color: $theme_quaternary_color
+			.BoxRound
+				border-color: $theme_secondary_color
+				background-color: $theme_quaternary_color
+			.Note
+				border-color: $theme_primary_color
+				h3
+					color: $theme_senary_color
+					background-color: transparent
+				ol, ul
+					li
+						color: $theme_senary_color
+			table.SignatureSmall, table.SignatureMedium
+				border-color: $theme_primary_color
+				thead
+					tr
+						th
+							color: $theme_senary_color
+							border-bottom-color: $theme_primary_color
+				tbody
+					tr
+						td
+							color: $theme_senary_color
+							background-color: $theme_quaternary_color
+				tfoot
+					tr
+						td
+							color: $theme_senary_color
+			.LineStraight, .LineDot
+				color: $theme_senary_color
+				border-color: $theme_senary_color
+
+
+/* INPUT */
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"]
+	color: $theme_senary_color
+	background-color: $theme_quaternary_color
+	border-color: $theme_secondary_color
+
+input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot
+	background-color: transparent
+	border-color: $theme_senary_color
 
 input[type="radio"].Plain + label
 	color: $theme_senary_color
 	background-color: transparent
-	
+
 input[type="radio"].Plain:checked + label
 	color: $theme_quinary_color
 	background-color: $theme_primary_color
@@ -214,32 +238,6 @@ section
                 background-color: $theme_secondary_color
             tr:nth-child(even)
                 background-color: $theme_quinary_color
-    table.Round
-        thead
-            tr
-                th
-                    background-color: $theme_quinary_color
-                    color: $theme_senary_color
-                    border-color: $theme_primary_color
-        tbody
-            tr
-                td
-                    background-color: $theme_quinary_color
-                    color: $theme_senary_color
-                    border-color: $theme_primary_color
-    table.Space
-        thead
-            tr
-                th
-                    background-color: $theme_secondary_color
-                    color: $theme_senary_color
-                    border-color: $theme_quinary_color
-        tbody
-            tr
-                td
-                    background-color: $theme_quaternary_color
-                    color: $theme_senary_color
-                    border-color: $theme_quinary_color
 
 					
 /* FOOTER */

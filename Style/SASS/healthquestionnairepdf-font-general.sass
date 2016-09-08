@@ -22,236 +22,272 @@ header
 		font-size: $fontsize_header_h1
 		text-align: center
 		border-top-style: solid
-		border-top-width: $general_borderwidth_thin
+		border-top-width: $general_borderwidth_thick
 		border-bottom-style: solid
 		border-bottom-width: $general_borderwidth_thick
 
 
 /* FORM */
 
+.Note
+	margin-top: $general_space_small
+	margin-bottom: $general_space_small
+	padding: $general_space_small
+	text-align: left
+	border-style: solid
+	border-width: $general_borderwidth_thin
+	p
+		font-size: $fontsize_note_header
+	ol, ul
+		font-size: $fontsize_note_content
+
+ol, ul
+	margin: $general_space_tiny
+	padding-left: $general_space_small
+	
+	li
+		margin-bottom: $general_space_tiny
+
+ul.Checklist
+	list-style-type: none
+	li:before
+		content: "\2713"
+
 main
-	section
+	form
 		h2
-			margin-top: $general_space_tiny
-			margin-bottom: $general_space_tiny
-			padding-top: $header_padding_edge
-			padding-bottom: $header_padding_edge
-			font-size: $fontsize_form_h2
-			text-align: center
-			vertical-align: midde
-		label, span
-			font-size: $fontsize_form_labelgeneral
-			vertical-align: top
-		label.Plain:after, span.Plain:after
-			text-align: center
-			content: ''
-		label:after
-			float: right
-			display: inline-block
-			margin-right: $general_space_tiny
-			content: ' : '
-		label.RadioButton
-			padding: $general_space_tiny
-			vertical-align: middle
-		label.RadioButton.Short
-			width: $label_width_short
-		label.RadioButton:after
-			content: ''
-		label.RadioButton.Medium
-			width: $label_width_short * 1.4
-		label.Wrap, span.Wrap
-			margin-right: $general_space_tiny
-			width: auto;
-		label.Short, span.Short
-			width: $label_width_short
-		label.Medium, span.Medium
-			width: $label_width_medium
-		label.Long, span.Long
-			width: $label_width_long
-		label.FirstIndent, span.FirstIndent
-			margin-left: $general_space_medium
-		label.SecondIndent, span.SecondIndent
-			margin-left: $general_space_medium * 2
-		label.Short.FirstIndent
-			width: $label_width_short - $general_space_medium
-		label.Medium.FirstIndent
-			width: $label_width_medium - $general_space_medium
-		label.Long.FirstIndent
-			width: $label_width_long - $general_space_medium
-		label.Short.SecondIndent
-			width: $label_width_short - $general_space_medium * 2
-		label.Medium.SecondIndent
-			width: $label_width_medium - $general_space_medium * 2
-		label.Long.SecondIndent
-			width: $label_width_long - $general_space_medium * 2
-		label.Single
-			height: $label_height_single
-			line-height: $label_height_single
-		label.Double
-			min-height: $label_height_double
-			vertical-align: top
-		label.Multi
-			min-height: $label_height_multi
-			vertical-align: top
-		label.Box, label.Separator
-			padding-right: $general_space_tiny
-			padding-left: $general_space_tiny
-		label.Separator:after, label.Description:after, label.Note:after
-			margin-right: 0px
-			content: ''
-		span.Separator
-			padding: $general_space_tiny
-			font-size: $fontsize_form_labelgeneral
-		span.Tight
-			padding-left: 0px !important
-			padding-right: 0px !important
-		span.Description, label.Description
+			margin-top: $general_space_medium
+			margin-bottom: $general_space_medium
 			padding-top: $general_space_tiny
 			padding-bottom: $general_space_tiny
-			font-size: $fontsize_form_labeldescription
-		span.Note, label.Note
-			margin: 0px
-			padding: $general_space_tiny
-			font-size: $fontsize_form_spannote
-			border: none
-		table.BoxSquare
-			border-collapse: collapse
-			font-size: $fontsize_form_labelgeneral
-			tbody
-				tr
-					td
-						width: $box_size_medium
-						height: $box_size_medium
-						text-align: center !important
-						vertical-align: middle
-						border-style: solid
-						border-width: $box_borderwidth_thin
-			tfoot
-				tr
-					td
-						text-align: center
-						vertical-align: middle
-						border-style: none
-					td.Note
-						margin: 0px
-						padding-top: 2px
-						padding-left: 0px
-						padding-right: 0px
-						padding-bottom: 0px
-						height: auto
-						font-size: $fontsize_form_spannote
-		.LineDot, .LineStraight
-			margin-right: $general_space_tiny
-			height: $box_size_medium
-		.LineDot
-			border-top-style: none
-			border-right-style: none
-			border-left-style: none
-			border-bottom-style: dotted
-			border-bottom-width: $box_borderwidth_thin
-		.LineStraight
-			border-top-style: none
-			border-right-style: none
-			border-left-style: none
-			border-bottom-style: solid
-			border-bottom-width: $box_borderwidth_thin
-		.BoxRound
-			width: $box_size_medium
-			height: $box_size_medium
-			font-size: $fontsize_form_labelgeneral
+			font-size: $fontsize_form_h2
 			text-align: center
 			vertical-align: middle
-			border-style: solid
-			border-width: $box_borderwidth_thin
-			background-image: none
-			background-size: contain
-			background-repeat: no-repeat
-			background-position: center
-			display: inline-block
-			+BorderRadius($general_borderradius_thick)
-		p
-			font-size: $fontsize_form_labelgeneral
-		ol, ul
-			margin-top: 0px
+			text-transform: uppercase
+		fieldset
+			margin-top: $general_space_medium
+			margin-left: 0px
 			margin-right: 0px
-			margin-left: $general_space_medium
-			margin-bottom: 0px
+			margin-bottom: $general_space_medium
 			padding: 0px
-			font-size: $fontsize_form_labelgeneral
-			li
-				margin-bottom: $general_space_tiny
-				ol, ul
-					li
-						font-size: 1.3
-		.Note
-			margin-top: $general_space_small
-			margin-bottom: $general_space_small
-			text-align: left
-			h3
-				margin-top: 0px
-				margin-bottom: $general_space_tiny
-				padding: 0px
-				font-size: $fontsize_note_header
+			border: none
+			span.Number
+				margin-right: $general_space_medium
+				width: $label_width_number
+				padding-left: 2px
+				padding-right: 2px
+				text-align: center
+			label, span
+				font-size: $fontsize_form_labelgeneral
+				vertical-align: top
+			label.Plain:after, span.Plain:after
+				text-align: center
+				content: ''
+			label:after
+				float: right
+				display: inline-block
+				margin-right: $general_space_tiny
+				content: ' : '
+			.RadioButton
+				label
+					margin-left: $general_space_small
+					margin-right: $general_space_small
+				label:after
+					float: none
+					display: inline-block
+					margin: 0px
+					content: ''
+			label.RadioButton
+				padding: $general_space_tiny
+				vertical-align: middle
+			label.RadioButton.Short
+				width: $label_width_short
+			label.RadioButton:after
+				content: ''
+			label.RadioButton.Medium
+				width: $label_width_short * 1.4
+			label.Wrap, span.Wrap
+				width: auto;
+				min-height: $label_height_single
+				line-height: $label_height_single - 10px
+			label.Short, span.Short
+				width: $label_width_short
+			label.Medium, span.Medium
+				width: $label_width_medium
+			label.Long, span.Long
+				width: $label_width_long
+			.NumberIndent
+				margin-left: 24px + $general_space_medium
+			label.FirstIndent, span.FirstIndent
+				margin-left: $general_space_medium
+			label.SecondIndent, span.SecondIndent
+				margin-left: $general_space_medium * 2
+			label.Short.FirstIndent
+				width: $label_width_short - $general_space_medium
+			label.Medium.FirstIndent
+				width: $label_width_medium - $general_space_medium
+			label.Long.FirstIndent
+				width: $label_width_long - $general_space_medium
+			label.Short.SecondIndent
+				width: $label_width_short - $general_space_medium * 2
+			label.Medium.SecondIndent
+				width: $label_width_medium - $general_space_medium * 2
+			label.Long.SecondIndent
+				width: $label_width_long - $general_space_medium * 2
+			label.Single, span.Single
+				height: $label_height_single
+				line-height: $label_height_single
+			label.Double, span.Double
+				min-height: $label_height_double
+				vertical-align: top
+			label.Multi, span.Multi
+				min-height: $label_height_multi
+				vertical-align: top
+			label.Box, label.Separator
+				padding-right: $general_space_tiny
+				padding-left: $general_space_tiny
+			label.Separator:after, label.Description:after, label.Note:after
+				margin-right: 0px
+				content: ''
+			span.Separator
+				padding: $general_space_tiny
+				font-size: $fontsize_form_labelgeneral
+			span.Tight
+				padding-left: 0px !important
+				padding-right: 0px !important
+			span.Description, label.Description
+				padding-top: $general_space_tiny
+				padding-bottom: $general_space_tiny
+				font-size: $fontsize_form_labeldescription
+			span.Note, label.Note
+				margin: 0px
+				padding: $general_space_tiny
+				font-size: $fontsize_form_spannote
+				border: none
+			table.BoxSquare
+				border-collapse: collapse
+				font-size: $fontsize_form_labelgeneral
+				tbody
+					tr
+						td
+							width: $box_size_width
+							height: $box_size_height
+							text-align: center !important
+							vertical-align: middle
+							border-style: solid
+							border-width: $box_borderwidth_thin
+				tfoot
+					tr
+						td
+							text-align: center
+							vertical-align: middle
+							border-style: none
+						td.Note
+							margin: 0px
+							padding-top: 2px
+							padding-left: 0px
+							padding-right: 0px
+							padding-bottom: 0px
+							height: auto
+							font-size: $fontsize_form_spannote
+			.LineDot, .LineStraight
+				margin-right: $general_space_tiny
+				height: $box_size_height
+			.LineDot
+				border-top-style: none
+				border-right-style: none
+				border-left-style: none
+				border-bottom-style: dotted
+				border-bottom-width: $box_borderwidth_thin
+			.LineStraight
+				border-top-style: none
+				border-right-style: none
+				border-left-style: none
+				border-bottom-style: solid
+				border-bottom-width: $box_borderwidth_thin
+			.BoxRound
+				width: $box_size_width
+				height: $box_size_height
+				font-size: $fontsize_form_labelgeneral
+				text-align: center
+				vertical-align: middle
+				border-style: solid
+				border-width: $box_borderwidth_thin
+				background-image: none
+				background-size: contain
+				background-repeat: no-repeat
+				background-position: center
+				display: inline-block
+				+BorderRadius($general_borderradius_thick)
 			p
-				font-size: $fontsize_note_content
+				font-size: $fontsize_form_labelgeneral
 			ol, ul
-				font-size: $fontsize_note_content
+				margin-top: 0px
+				margin-right: 0px
+				margin-left: $general_space_medium
+				margin-bottom: 0px
+				padding: 0px
+				font-size: $fontsize_form_labelgeneral
 				li
 					margin-bottom: $general_space_tiny
+					ol, ul
+						li
+							font-size: 1.3
 
-		table.SignatureSmall, table.SignatureMedium
-			border-spacing: 0px
-		table.SignatureSmall
-			width: $signature_width_small
-			padding: 0px
-			border-style: solid
-			border-width: $general_borderwidth_thin
-			+BorderRadius($general_borderradius_thick)
-			thead
-				tr
-					th
-						padding: $header_padding_edge
-						font-size: $fontsize_signaturesmall_header
-						text-align: center
-						border-bottom-style: solid
-						border-width: $general_borderwidth_thin
-			tbody
-				tr
-					td
-						height: $signature_height_small
-			tfoot
-				tr
-					td
-						font-size: $fontsize_signaturesmall_detail
-						text-align: center
-		table.SignatureMedium
-			margin-top: $general_space_large
-			margin-bottom: $general_space_large
-			min-width: $signature_width_small
-			padding: 0px
-			vertical-align: top
-			border-style: solid
-			border-width: $general_borderwidth_thin
-			+BorderRadius($general_borderradius_thick)
-			thead
-				tr
-					th
-						padding: $header_padding_edge						
-						font-size: $fontsize_signaturemedium_header
-						text-align: center
-						border-bottom-style: solid
-						border-width: $general_borderwidth_thin
-						.Note
-							font-size: $fontsize_note_content
-			tbody
-				tr
-					td						
-						height: $signature_height_medium
-			tfoot
-				tr
-					td						
-						font-size: $fontsize_signaturemedium_detail
-						text-align: center
+
+			table.SignatureSmall, table.SignatureMedium
+				border-spacing: 0px
+			table.SignatureSmall
+				width: $signature_width_small
+				padding: 0px
+				border-style: solid
+				border-width: $general_borderwidth_thin
+				+BorderRadius($general_borderradius_thick)
+				thead
+					tr
+						th
+							padding: $header_padding_edge
+							font-size: $fontsize_signaturesmall_header
+							text-align: center
+							border-bottom-style: solid
+							border-width: $general_borderwidth_thin
+				tbody
+					tr
+						td
+							height: $signature_height_small
+				tfoot
+					tr
+						td
+							font-size: $fontsize_signaturesmall_detail
+							text-align: center
+			table.SignatureMedium
+				margin-top: $general_space_large
+				margin-bottom: $general_space_large
+				min-width: $signature_width_small
+				padding: 0px
+				vertical-align: top
+				border-style: solid
+				border-width: $general_borderwidth_thin
+				+BorderRadius($general_borderradius_thick)
+				thead
+					tr
+						th
+							padding: $header_padding_edge						
+							font-size: $fontsize_signaturemedium_header
+							text-align: center
+							border-bottom-style: solid
+							border-width: $general_borderwidth_thin
+							.Note
+								font-size: $fontsize_note_content
+				tbody
+					tr
+						td						
+							height: $signature_height_medium
+				tfoot
+					tr
+						td						
+							font-size: $fontsize_signaturemedium_detail
+							text-align: center
 
 
 /* TABLE */
@@ -365,8 +401,8 @@ table.BoxSquare
 	tbody
 		tr
 			td
-				width: $box_size_medium
-				height: $box_size_medium
+				width: $box_size_width
+				height: $box_size_height
 				text-align: center !important
 				vertical-align: middle
 				border-style: solid
