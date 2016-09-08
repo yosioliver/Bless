@@ -8,7 +8,7 @@
 		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
 		%title BCA Life - BLESS, Health Questionnaire 1 Form
 
-		/ JQUERY
+		/ JQUERY 
 
 		:javascript
 			$(document).ready(function()
@@ -56,7 +56,7 @@
 					%input#RadioButtonPremiPaymentFrequencyMonthly.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "monthly", :disabled => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyMonthly" } Bulanan
 					%div.Separator
-					%input#RadioButtonPremiPaymentFrequencyFull.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "full", :disabled => "true" }
+					%input#RadioButtonPremiPaymentFrequencyFull.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "full", :disabled => "true" } 
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyFull" } Sekaligus
 				%br
 
@@ -93,22 +93,22 @@
 
 				%div.ContainerFit
 					%label.LongFix.Double.Item{ :for => "TextPremiPaymentBankAccountDetailsName" } Nama Pemilik Rekening/Kartu Kredit
-					%input#TextPremiPaymentBankAccountDetailsName.Full.Single.Item{ :type => "text", :required => "true" }
+					%input#TextPremiPaymentBankAccountDetailsName.Full.Single.Item{ :type => "text", :required => "true", :maxlength => "27" }
 				%br   
 
 				%div.ContainerFit
 					%label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsNumber" } Nomor Rekening/Kartu Kredit
-					%input#TextPremiPaymentBankAccountDetailsNumber.Full.Single.Item{ :type => "text", :required => "true" }
+					%input#TextPremiPaymentBankAccountDetailsNumber.Full.Single.Item{ :type => "text", :required => "true", :maxlength => "27" }
 				%br
 
 				%div.ContainerFit
 					%label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsBankName" } Nama Bank
-					%input#TextPremiPaymentBankAccountDetailsBankName.Full.Single.Item{ :type => "text", :required => "true" }
+					%input#TextPremiPaymentBankAccountDetailsBankName.Full.Single.Item{ :type => "text", :required => "true", :maxlength => "27" }
 				%br
 
 				%div.ContainerFit
 					%label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsBankBranch" } Nama Cabang
-					%input#TextPremiPaymentBankAccountDetailsBankBranch.Full.Single.Item{ :type => "text", :required => "true" }
+					%input#TextPremiPaymentBankAccountDetailsBankBranch.Full.Single.Item{ :type => "text", :required => "true", :maxlength => "27" }
 				%br
 
 				%div.ContainerFit

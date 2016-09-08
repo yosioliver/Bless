@@ -100,7 +100,7 @@
 			%form
 				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
-				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true" }                       
+				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true", :maxlength => "7" }                     
 				%br
 
 				%div.ContainerFit
@@ -129,13 +129,13 @@
 								
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderIDNumber" } Nomor Identitas Diri
-					%input#TextPolicyHolderIDNumber.Medium.Single.Item{ :type => "text", :required => "true" }
+					%input#TextPolicyHolderIDNumber.Medium.Single.Item{ :type => "text", :required => "true", :maxlength => "16"}
 					%label.Medium.Single.Item{ :for => "DatePolicyHolderActive" } Masa berlaku
 					%input#DatePolicyHolderActive.Medium.Single.Item{ :type => "text", :required => "true", "data-field" => "date" }
 				
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderBirthPlace" } Tempat lahir
-					%input#TextPolicyHolderBirthPlace.Medium.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderBirthPlace.Medium.Single.Item{ :type => "text", :maxlength => "20"}
 					%label.Medium.Single.Item{ :for => "DatePolicyHolderBirth" } Tanggal lahir
 					%input#DatePolicyHolderBirth.Medium.Single.Item{ :type => "text", :required => "true", "data-input-type" => "autopopulate" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderAge" } Umur
@@ -200,7 +200,7 @@
 
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderCompany" } Nama Perusahaan / Instansi / Sekolah
-					%input#TextPolicyHolderCompany.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderCompany.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderMainJob" } Pekerjaan Utama
 					%input#TextPolicyHolderMainJob.Full.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
@@ -218,55 +218,55 @@
 					%input#TextPolicyHolderSideJob.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress1" } Alamat Tempat Tinggal
-					%input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderHomeAddress1.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress2" }
-					%input#TextPolicyHolderHomeAddress2.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderHomeAddress2.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeAddress3" }
-					%input#TextPolicyHolderHomeAddress3.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderHomeAddress3.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeCity" } Kota
-					%input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderHomeCity.Medium.Single.Item{ :type => "text", :maxlength => "19" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
-					%input#TextPolicyHolderHomePostalCode.Medium.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderHomePostalCode.Medium.Single.Item{ :type => "text", :maxlength => "6" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderHomeTelephone" }
 					%label.MediumFix.Single.Item{ :for => "TextPolicyHolderHomeTelephone" } Nomor telepon
-					%input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderHomeTelephone.Medium.Single.Item{ :type => "text", :maxlength => "13"}
 				%br
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } Nomor HP Utama
-				%input#TextPolicyHolderHandphone1.Long.Single.PositionerLeft{ :type => "text", :required => "true" }
+				%input#TextPolicyHolderHandphone1.Long.Single.PositionerLeft{ :type => "text", :maxlength => "13", :required => "true" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } Nomor HP 2
-				%input#TextPolicyHolderHandphone2.Long.Single.PositionerLeft{ :type => "text" }
+				%input#TextPolicyHolderHandphone2.Long.Single.PositionerLeft{ :type => "text", :maxlength => "13" }
 				%br
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderEmail" } Email
-					%input#TextPolicyHolderEmail.Full.Single.Item{ :type => "text" }                
+					%input#TextPolicyHolderEmail.Full.Single.Item{ :type => "text", :maxlength => "30" }                
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress1" } Alamat kantor
-					%input#TextPolicyHolderOfficeAddress1.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderOfficeAddress1.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress2" }
-					%input#TextPolicyHolderOfficeAddress2.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderOfficeAddress2.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress3" }
-					%input#TextPolicyHolderOfficeAddress3.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderOfficeAddress3.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeCity" }
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeCity" } Kota
-					%input#TextPolicyHolderOfficeCity.Medium.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderOfficeCity.Medium.Single.Item{ :type => "text", :maxlength => "19" }
 					%label.Medum.Single.Item{ :for => "TextPolicyHolderOfficePostalCode" } Kode Pos
-					%input#TextPolicyHolderOfficePostalCode.Medium.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderOfficePostalCode.Medium.Single.Item{ :type => "text", :maxlength => "6" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeTelephone" }
 					%label.MediumFix.Single.Item{ :for => "TextPolicyHolderOfficeTelephone" } Telp
-					%input#TextPolicyHolderOfficeTelephone.Medium.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderOfficeTelephone.Medium.Single.Item{ :type => "text", :maxlength => "13" }
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCorrespondanceAddress" } Alamat Korespondensi				
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderCorrespondanceAddressHome.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "home", :required => "true" }
+					%input#RadioButtonPolicyHolderCorrespondanceAddressHome.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "home", :required => "true", }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderCorrespondanceAddressHome" } Alamat Tempat Tinggal
 					%div.Separator
 					%input#RadioButtonPolicyHolderCorrespondanceAddressOffice.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderCorrespondanceAddress", :value => "office", :required => "true" }
@@ -313,7 +313,7 @@
 				%br                               
 
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderNPWP" } Nomor NPWP
-				%input#TextPolicyHolderNPWP.Medium.Single.PositionerLeft{ :type => "text" }
+				%input#TextPolicyHolderNPWP.Medium.Single.PositionerLeft{ :type => "text", :maxlength => "16" }
 				%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderNPWPActive" } Tanggal Berlaku
 				%input#DatePolicyHolderNPWPActive.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
 				%br
@@ -356,7 +356,7 @@
 
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderSource" } Jelaskan Sumbernya
-					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text" }
+					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%br
 
 				%div#BoxDate								
