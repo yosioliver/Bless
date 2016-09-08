@@ -133,7 +133,7 @@
       <form>
         <!-- %input#ButtonSubmit{ :type => "button", :value => "Submit" } -->
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN'>Nomor CIN</label>
-        <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' required='true' type='text'>
+        <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' maxlength='7' required='true' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderFullName'>Nama Lengkap</label>
@@ -161,13 +161,13 @@
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderIDNumber'>Nomor Identitas Diri</label>
-          <input class='Medium Single Item' id='TextPolicyHolderIDNumber' required='true' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderIDNumber' maxlength='16' required='true' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderActive'>Masa berlaku</label>
           <input class='Medium Single Item' data-field='date' id='DatePolicyHolderActive' required='true' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderBirthPlace'>Tempat lahir</label>
-          <input class='Medium Single Item' id='TextPolicyHolderBirthPlace' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderBirthPlace' maxlength='20' type='text'>
           <label class='Medium Single Item' for='DatePolicyHolderBirth'>Tanggal lahir</label>
           <input class='Medium Single Item' data-input-type='autopopulate' id='DatePolicyHolderBirth' required='true' type='text'>
           <label class='Medium Single Item' for='TextPolicyHolderAge'>Umur</label>
@@ -237,7 +237,7 @@
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderCompany'>Nama Perusahaan / Instansi / Sekolah</label>
-          <input class='Full Single Item' id='TextPolicyHolderCompany' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderCompany' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderMainJob'>Pekerjaan Utama</label>
@@ -261,61 +261,61 @@
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress1'>Alamat Tempat Tinggal</label>
-          <input class='Full Single Item' id='TextPolicyHolderHomeAddress1' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderHomeAddress1' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress2'></label>
-          <input class='Full Single Item' id='TextPolicyHolderHomeAddress2' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderHomeAddress2' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeAddress3'></label>
-          <input class='Full Single Item' id='TextPolicyHolderHomeAddress3' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderHomeAddress3' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'></label>
           <label class='Medium Single Item' for='TextPolicyHolderHomeCity'>Kota</label>
-          <input class='Medium Single Item' id='TextPolicyHolderHomeCity' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderHomeCity' maxlength='19' type='text'>
           <label class='Medium Single Item' for='TextPolicyHolderHomePostalCode'>Kode Pos</label>
-          <input class='Medium Single Item' id='TextPolicyHolderHomePostalCode' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderHomePostalCode' maxlength='6' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderHomeTelephone'></label>
           <label class='MediumFix Single Item' for='TextPolicyHolderHomeTelephone'>Nomor telepon</label>
-          <input class='Medium Single Item' id='TextPolicyHolderHomeTelephone' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderHomeTelephone' maxlength='13' type='text'>
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderHandphone1'>Nomor HP Utama</label>
-        <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone1' required='true' type='text'>
+        <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone1' maxlength='13' required='true' type='text'>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderHandphone2'>Nomor HP 2</label>
-        <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone2' type='text'>
+        <input class='Long Single PositionerLeft' id='TextPolicyHolderHandphone2' maxlength='13' type='text'>
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderEmail'>Email</label>
-          <input class='Full Single Item' id='TextPolicyHolderEmail' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderEmail' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderOfficeAddress1'>Alamat kantor</label>
-          <input class='Full Single Item' id='TextPolicyHolderOfficeAddress1' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderOfficeAddress1' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderOfficeAddress2'></label>
-          <input class='Full Single Item' id='TextPolicyHolderOfficeAddress2' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderOfficeAddress2' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderOfficeAddress3'></label>
-          <input class='Full Single Item' id='TextPolicyHolderOfficeAddress3' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderOfficeAddress3' maxlength='30' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderOfficeCity'></label>
           <label class='Medium Single Item' for='TextPolicyHolderOfficeCity'>Kota</label>
-          <input class='Medium Single Item' id='TextPolicyHolderOfficeCity' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderOfficeCity' maxlength='19' type='text'>
           <label class='Medum Single Item' for='TextPolicyHolderOfficePostalCode'>Kode Pos</label>
-          <input class='Medium Single Item' id='TextPolicyHolderOfficePostalCode' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderOfficePostalCode' maxlength='6' type='text'>
         </div>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderOfficeTelephone'></label>
           <label class='MediumFix Single Item' for='TextPolicyHolderOfficeTelephone'>Telp</label>
-          <input class='Medium Single Item' id='TextPolicyHolderOfficeTelephone' type='text'>
+          <input class='Medium Single Item' id='TextPolicyHolderOfficeTelephone' maxlength='13' type='text'>
         </div>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderCorrespondanceAddress'>Alamat Korespondensi</label>
         <div class='RadioButton PositionerLeft'>
@@ -366,7 +366,7 @@
         <input class='Long Single PositionerLeft' id='TextPolicyHolderInsurancePurposeOther' type='text'>
         <br>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderNPWP'>Nomor NPWP</label>
-        <input class='Medium Single PositionerLeft' id='TextPolicyHolderNPWP' type='text'>
+        <input class='Medium Single PositionerLeft' id='TextPolicyHolderNPWP' maxlength='16' type='text'>
         <label class='Medium Single PositionerLeft' for='DatePolicyHolderNPWPActive'>Tanggal Berlaku</label>
         <input class='Medium Single PositionerLeft' data-field='date' id='DatePolicyHolderNPWPActive' type='text'>
         <br>
@@ -407,7 +407,7 @@
         <br>
         <div class='ContainerFit'>
           <label class='Medium Single Item' for='TextPolicyHolderSource'>Jelaskan Sumbernya</label>
-          <input class='Full Single Item' id='TextPolicyHolderSource' type='text'>
+          <input class='Full Single Item' id='TextPolicyHolderSource' maxlength='30' type='text'>
         </div>
         <br>
         <div id='BoxDate'></div>
