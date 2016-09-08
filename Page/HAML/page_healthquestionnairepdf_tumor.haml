@@ -1,0 +1,444 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+				boxGenerator("#TextProspectiveInsuredTumorSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredTumorFullName1", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredTumorFullName2", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredTumorBirthdayPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorBirthdayYear", 4, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+				boxGenerator("#DateProspectiveInsuredTumorFirstTimeDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorFirstTimeMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorFirstTimeYear", 4, boxTypeWithoutLabel, null);
+				
+				
+				boxGenerator("#DateProspectiveInsuredTumorWhenStartDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorWhenStartMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorWhenStartYear", 4, boxTypeWithoutLabel, null)
+				
+				boxGenerator("#DateProspectiveInsuredTumorSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredTumorSignedYear", 4, boxTypeWithoutLabel, null);		
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
+			%span.Header PT Asuransi Jiwa BCA
+			%span.Detail
+			%br
+
+			%h1 KUESIONER TUMOR
+			%br
+
+			%div.Note
+				Perlu diperhatikan:
+				%ol
+					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
+					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
+					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
+					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
+					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+
+		/ MAIN
+
+		%main
+			%form
+				%h2 I. DATA (CALON) TERTANGGUNG
+				%fieldset
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
+					%table#TextProspectiveInsuredTumorSPAJNumber.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.PositionerLeft 2
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextProspectiveInsuredTumorFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
+					%table#TextProspectiveInsuredTumorFullName1.BoxSquare.PositionerLeft
+					%br
+					%table#TextProspectiveInsuredTumorFullName2.BoxSquare.PositionerLeft
+
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
+					%input#TextProspectiveInsuredTumorBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft ,
+					%table#DateProspectiveInsuredTumorBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredTumorBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredTumorBirthdayYear.BoxSquare.PositionerLeft
+					%br
+
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
+				%fieldset
+
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Kapan pertama kali diketahui adanya tumor?
+					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+					
+					%span.Number.PositionerLeft 2
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhen" } Pada bagian tubuh mana tumor tersebut tumbuh?
+					%br
+					%input#TextProspectiveInsuredTumorRelatedToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }											
+					%br
+					
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhen" } Mohon sebutkan diagnosis pasti dari tumor tersebut.
+					%br
+					%input#TextProspectiveInsuredTumorRelatedToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }											
+					%br
+
+					%span.Number.PositionerLeft 4
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhenLast" } Apakah tumor tersebut telah diangkat/dioperasi?
+					%br
+					
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredTumorStopDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredTumorStopDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } a. Tanggal operasi:
+					
+					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+
+					%div.BoxRound.PositionerLeft
+					%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorSpreadToOthers"} b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
+
+					%br
+					%input#TextProspectiveInsuredTumorStopDrugIfYesDesc.Line.Short.Single.PositionerLeft{ :type => "text" }					
+
+					%br
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhenLast" } c. Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Tanggal terakhir konsultasi:					
+					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredTumorInTherapyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorInTherapy", :value => "yes" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorInTherapyYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredTumorInTherapyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorInTherapy", :value => "no" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorInTherapyNo" } Tidak
+						%br		
+						
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorSpreadToOthers"} Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
+						%br
+
+						%table#TextProspectiveInsuredTumorInTherapyDrug
+						%thead
+							%tr
+								%th Nama Obat
+								%th Dosis
+								%th Frekuensi
+						%tbody
+							%tr
+								%td
+								%td
+								%td
+							%tr
+								%td
+								%td
+								%td		
+							%tr
+								%td
+								%td
+								%td		
+							%tr
+								%td
+								%td
+								%td										
+						%br	
+						
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} Nama Lengkap Dokter:
+						%input#TextProspectiveInsuredTumorInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyPhone"} No. Telepon/Handphone:
+						%input#TextProspectiveInsuredTumorInTherapyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospital"} Nama Klinik/Rumah Sakit:
+						%input#TextProspectiveInsuredTumorInTherapyHospital.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
+
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
+						%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+					
+					%br
+					%span.Number.PositionerLeft d
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorFeel" } Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredTumorCheckupYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupYes" } Obat tablet
+												
+						%input#RadioButtonProspectiveInsuredTumorCheckupNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupNo" } Radioterapi
+												
+						%input#RadioButtonProspectiveInsuredTumorCheckupEkg.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "ekgecg" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupEkg" } Kemoterapi
+						%br	
+																		
+						%input#RadioButtonProspectiveInsuredTumorCheckupRontgen.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "rontgendada" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupRontgen" } Lainnya
+						%br					
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorCheckupOtherDesc"}
+						Sebutkan.
+						%br
+						%input#TextProspectiveInsuredTumorCheckupOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						
+					%br
+					%span.Number.PositionerLeft e
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorFeel" } Apakah anda pernah diberi informasi tentang prognosa (ramalan) atas tumor tersebut?
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredTumorCheckupYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupYes" } Ya
+												
+						%input#RadioButtonProspectiveInsuredTumorCheckupNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorCheckup", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorCheckupNo" } Tidak
+						%br					
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorCheckupOtherDesc"}
+						Mohon menjelaskan secara rinci pada kolom di bawah ini.
+						%br
+						%input#TextProspectiveInsuredTumorCheckupOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%br												
+					
+					
+						%label.Wrap.Single.PositionerRight{ :for => "TableProspectiveInsuredTumorTreatment" } f. Pemeriksaan-pemeriksaan apa saja yang telah dilakukan, termasuk tanggal dan hasil pemeriksaan tersebut.
+						
+						%table#TableProspectiveInsuredTumorTreatment
+						%thead
+							%tr
+								%th Jenis Pemeriksaan
+								%th Tanggal Pemeriksaan
+								%th Hasil Pemeriksaann										
+						%tbody
+							%tr
+								%td
+								%td
+							%tr
+								%td 
+								%td
+								%td
+						%br
+						
+						%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorCheckupOtherDesc"}
+						g. Pengobatan atau tindakan operasi apa saja yang pernah dianjurkan?
+						%br
+						%input#TextProspectiveInsuredTumorCheckupOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					
+					%br												
+					%br									
+					
+					%span.Number.PositionerLeft 5
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhenLast" } Apakah sampai saat ini masih dalam pengobatan?
+					%br
+					
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredTumorStopDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredTumorStopDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Tanggal terakhir perawatan:
+					
+					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+					%br
+					
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} Alasan:
+					%input#TextProspectiveInsuredTumorInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} 
+					Pengobatan
+					%input#TextProspectiveInsuredTumorInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyPhone"} Berapa kali dalam 1 (satu) tahun:
+					%input#TextProspectiveInsuredTumorInTherapyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospital"} Nama Lengkap Dokter:
+					%input#TextProspectiveInsuredTumorInTherapyHospital.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} No. Telepon/Handphone:
+					%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} Nama Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+					
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
+					%input#TextProspectiveInsuredTumorInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+					
+					%br
+					%span.Number.PositionerLeft 6
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorWhenLast" } Apakah Anda pernah tidak masuk kerja karena kondisi ini?
+					%br
+					
+					%div.RadioButton
+						%input#RadioButtonProspectiveInsuredTumorStopDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugYes" } Ya
+						
+						%input#RadioButtonProspectiveInsuredTumorStopDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonProspectiveInsuredTumorStopDrug", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredTumorStopDrugNo" } Tidak
+						%br								
+
+					%label.Wrap.PositionerLeft{ :for => "DateProspectiveInsuredTumorFirstTimeDay" } Jika “Ya”, kapan:
+					
+					%table#DateProspectiveInsuredTumorFirstTimeDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DateProspectiveInsuredTumorFirstTimeYear.BoxSquare.PositionerRight
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredTumorInTherapyDocterName"} Dan berapa lama?
+					%input#TextProspectiveInsuredTumorInTherapyDocterName.Line.Short.Single.PositionerLeft{ :type => "text" } Hari
+					%br
+
+					%br
+					%span.Number.PositionerLeft 7
+					Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon lengkapi pertanyaan pada kolom di bawah ini dan mohon dilampirkan fotokopi hasil pemeriksaan.
+
+					%table#TableProspectiveInsuredTumorTreatment
+						%thead
+							%tr
+								%th Jenis Pemeriksaan
+								%th Tanggal Pemeriksaan
+								%th Hasil Pemeriksaann										
+						%tbody
+							%tr
+								%td
+								%td
+								%td
+							%tr
+								%td 
+								%td
+								%td
+							%tr
+								%td
+								%td
+								%td
+							%tr
+								%td
+								%td
+								%td								
+						%br
+						
+					%br
+					%span.Number.PositionerLeft 8
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%br
+					%input#TextProspectiveInsuredTumorAdditionalInfo.Line.Long.Single.PositionerLeft{ :type => "text"}
+
+					%h2 PERNYATAAN DAN KUASA
+					%div.Note
+						Perlu diperhatikan: 
+						%ol
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorSignedBy" } Ditandatangani
+					%input#TextProspectiveInsuredTumorSignedBy.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextProspectiveInsuredTumorSigned" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DateProspectiveInsuredTumorSignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredTumorSignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateProspectiveInsuredTumorSignedYear.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual						
+						
