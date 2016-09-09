@@ -16,17 +16,17 @@
 			$(document).ready(function()
 			{
 				// SECTION GENERAL				
-				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
-				boxGenerator("#DatePolicyHolderBirthdayDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthdayMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
+				boxGenerator("#TextActivityFlightFullName", 24, boxTypeWithoutLabel, null);				
+				boxGenerator("#DateActivityFlightBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateActivityFlightBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateActivityFlightBirthdayYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextActivityFlightSPAJNumber", 24, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 				
-				boxGenerator("#DatePolicyHolderTumorSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorSignedYear", 4, boxTypeWithoutLabel, null);		
+				boxGenerator("#DateActivityFlightTumorSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateActivityFlightTumorSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateActivityFlightTumorSignedYear", 4, boxTypeWithoutLabel, null);		
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -63,20 +63,20 @@
 				/ FIELDSET
 				
 				%fieldset
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (sesuai dengan KTP)
-					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft					
+					%label.Medium.Single.PositionerLeft{ :for => "TextActivityFlightFullName" } Nama Lengkap (sesuai dengan KTP)
+					%table#TextActivityFlightFullName.BoxSquare.PositionerLeft					
 					%br
 
-					%label.Wrap.Medium.PositionerLeft{ :for => "DatePolicyHolderBirthdayDay" } Tanggal lahir
-					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
+					%label.Wrap.Medium.PositionerLeft{ :for => "DateActivityFlightBirthdayDay" } Tanggal lahir
+					%table#DateActivityFlightBirthdayDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
+					%table#DateActivityFlightBirthdayMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
+					%table#DateActivityFlightBirthdayYear.BoxSquare.PositionerLeft
 					%br
 					
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ/Polis
-					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft					
+					%label.Medium.Single.PositionerLeft{ :for => "TextActivityFlightSPAJNumber" } Nomor SPAJ/Polis
+					%table#TextActivityFlightSPAJNumber.BoxSquare.PositionerLeft					
 					%br					
 				
 				/ FIELDSET
@@ -84,42 +84,51 @@
 				%fieldset
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 1. 						
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Apakah Anda terbang sebagai pilot atau navigator?
+						%label.Wrap.Long.PositionerLeft{ :for => "TextActivityFlightPilotOrNavigator" } Apakah Anda terbang sebagai pilot atau navigator?
 						%br		
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%input#TextActivityFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
 						%br
 					
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 2.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Apakah Anda terbang sebagai penumpang?
+						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonActivityFlightPassengerYes" } Apakah Anda terbang sebagai penumpang?
 						%br
 						%div.RadioButton.NumberIndent
-							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%input#RadioButtonActivityFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightPassenger", :value => "ya" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
-							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightPassengerYes" } Ya
+							%input#RadioButtonActivityFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightPassenger", :value => "tidak" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightPassengerNo" } Tidak
 						%br	
 						
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 3.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Apakah Anda memiliki pesawat sendiri?
+						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonActivityFlightHavePlane" } Apakah Anda memiliki pesawat sendiri?
 						%br
 						%div.RadioButton.NumberIndent
-							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							
+							%input#RadioButtonActivityFlightHavePlaneYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightHavePlane", :value => "ya" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
-							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightHavePlaneYes" } Ya
+							
+							%input#RadioButtonActivityFlightHavePlaneNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightHavePlane", :value => "tidak" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightHavePlaneNo" } Tidak
 						%br	
 						
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 4.
-						%label.Full.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+						%label.Full.PositionerLeft{ :for => "TextActivityFlightKindPlane" } Sebutkan jenis pesawat apakah yang Anda terbangkan?
+						%br	
+						%input#TextActivityFlightKindPlane.Full.Single.NumberIndent.PositionerLeft
 						%br
-						%table#TableProspectiveInsuredEpilepsyDrugList.NumberIndent
+
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 5.
+						%label.Full.PositionerLeft{ :for => "TableActivityFlightLicenseList" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki:
+						%br
+						%table#TableActivityFlightLicense.NumberIndent
 						%thead
 							%tr
 								%th Lisensi/Sertifikat
@@ -142,50 +151,45 @@
 								%td 
 								%td
 								%td	
-					
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 5.
-						%label.Full.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki:
-						%br	
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
-						%br
-						
+
+
+
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 6.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
+						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonActivityFlightScope" } Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
 						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%input#RadioButtonActivityFlightScopeYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightScope", :value => "ya" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
-							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightScopeYes" } Ya
+							%input#RadioButtonActivityFlightScopeNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightScope", :value => "tidak" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightScopeNo" } Tidak
 						%br
-						%label.Wrap.Long.NumberIndent{ :for => "TextJobFlightPilotOrNavigator" } Jika ya, mohon jelaskan secara rinci :
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%label.Wrap.Long.NumberIndent{ :for => "TextActivityFlightScopeDesc" } Jika ya, mohon jelaskan secara rinci :
+						%input#TextActivityFlightScopeDesc.Full.Single.NumberIndent.PositionerLeft
 						%br
 
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 7.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
+						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonActivityFlightIsClub" } Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
 						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%input#RadioButtonActivityFlightIsClubYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightIsClub", :value => "ya" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
-							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightIsClubYes" } Ya
+							%input#RadioButtonActivityFlightIsClubNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightIsClub", :value => "tidak" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightIsClubNo" } Tidak
 						%br
-						%label.Wrap.Long.NumberIndent{ :for => "TextJobFlightPilotOrNavigator" } Jika ya, mohon jelaskan secara rinci :
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%label.Wrap.Long.NumberIndent{ :for => "TextActivityFlightIsClubDesc" } Jika ya, mohon jelaskan secara rinci :
+						%input#TextActivityFlightIsClubDesc.Full.Single.NumberIndent.PositionerLeft
 						%br
 
 
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 8.
-						%label.Full.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+						%label.Full.PositionerLeft{ :for => "TableActivityFlightCondition" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
 						%br
-						%table#TableProspectiveInsuredEpilepsyDrugList.NumberIndent
+						%table#TableActivityFlightCondition.NumberIndent
 						%thead
 							%tr
 								%th 
@@ -271,60 +275,60 @@
 
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 9.
-						%label.Full.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Darimana Anda Terbang?:
+						%label.Full.PositionerLeft{ :for => "TextActivityFlightFrom" } Darimana Anda Terbang?:
 						%br	
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%input#TextActivityFlightFrom.Full.Single.NumberIndent.PositionerLeft
 						%br
 
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 10.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Apakah Anda terbang dari bandara control?
+						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonActivityFlightTowerControl" } Apakah Anda terbang dari bandara control?
 						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%input#RadioButtonActivityFlightTowerControlYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightTowerControl", :value => "ya" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
-							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightTowerControlYes" } Ya
+							%input#RadioButtonActivityFlightTowerControlNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightTowerControl", :value => "tidak" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightTowerControlNo" } Tidak
 						%br
-						%label.Wrap.Long.NumberIndent{ :for => "TextJobFlightPilotOrNavigator" } Jika ya, mohon jelaskan secara rinci :
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%label.Wrap.Long.NumberIndent{ :for => "TextActivityFlightPilotTowerControlDesc" } Jika ya, mohon jelaskan secara rinci :
+						%input#TextActivityFlightPilotTowerControlDesc.Full.Single.NumberIndent.PositionerLeft
 						%br
 						
 
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 11.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
+						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonActivityFlightAccident" } Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
 						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%input#RadioButtonActivityFlightAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightAccident", :value => "ya" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
-							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightAccidentYes" } Ya
+							%input#RadioButtonActivityFlightAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightAccident", :value => "tidak" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightAccidentNo" } Tidak
 						%br
-						%label.Wrap.Long.NumberIndent{ :for => "TextJobFlightPilotOrNavigator" } Jika ya, mohon jelaskan secara rinci :
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%label.Wrap.Long.NumberIndent{ :for => "TextActivityFlightAccidentDesc" } Jika ya, mohon jelaskan secara rinci :
+						%input#TextActivityFlightAccidentDesc.Full.Single.NumberIndent.PositionerLeft
 						%br
 
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 12.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
+						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonActivityFlightNoFly" } Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
 						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%input#RadioButtonActivityFlightNoFlyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightNoFly", :value => "ya" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
-							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightNoFlyYes" } Ya
+							%input#RadioButtonActivityFlightNoFlyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityFlightNoFly", :value => "tidak" }
 							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+							%label.Single.PositionerLeft{ :for => "RadioButtonActivityFlightNoFlyNo" } Tidak
 						%br
-						%label.Wrap.Long.NumberIndent{ :for => "TextJobFlightPilotOrNavigator" } Jika ya, mohon jelaskan secara rinci :
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%label.Wrap.Long.NumberIndent{ :for => "TextActivityFlightNoFlyDesc" } Jika ya, mohon jelaskan secara rinci :
+						%input#TextActivityFlightNoFlyDesc.Full.Single.NumberIndent.PositionerLeft
 						%br
 
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 13.
-						%label.Full.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+						%label.Full.PositionerLeft{ :for => "TextActivityFlightHealthCondition" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
 						%br	
-						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%input#TextActivityFlightHealthCondition.Full.Single.NumberIndent.PositionerLeft
 						%br
