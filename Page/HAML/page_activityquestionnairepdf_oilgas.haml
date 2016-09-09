@@ -1,0 +1,232 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL				
+				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+				boxGenerator("#DatePolicyHolderBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+				
+				boxGenerator("#DatePolicyHolderTumorSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderTumorSignedYear", 4, boxTypeWithoutLabel, null);		
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../jqueryLibrary/Resource/Logo/logo_bcalife.svg" }
+			%span.Header PT Asuransi Jiwa BCA
+			%span.Detail
+			%br
+
+			%h1 KUESIONER INDUSTRI PERTAMBANGAN, PERMINYAKAN, DAN GAS
+			%br
+			
+			%div.Note				
+				%ol
+					%li *) <i> Harus diisi oleh Calon Tertanggung. </i>
+					%li **) <i> Bila kolom penjelasan tidak cukup, mohon memberikan penjelasan pada kertas lain. </i>
+					%li ***) <i> Coret yang tidak perlu. </i>
+		/ MAIN
+
+		%main
+			%form
+				%h2 Data Calon Tertanggung
+				
+				/ FIELDSET
+				
+				%fieldset
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Tertanggung:
+					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft					
+					%br
+
+					%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderBirthdayDay" } Tanggal lahir Tertanggung
+					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
+					%br
+					
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ/Polis
+					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft					
+					%br					
+				
+				/ FIELDSET
+				
+				%fieldset
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 1. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+						%br
+
+						%span.Number.Single.PositionerLeft 2. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Jika tidak termasuk dalam daftar di atas, mohon dijelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut.
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+						%br
+
+						%span.Number.Single.PositionerLeft 3. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Sudah berapa lama Anda bekerja dalam bidang Pertambangan/Perminyakkan/Gas?
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+						%br
+
+						%span.Number.Single.PositionerLeft 4. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Mohon dijelaskan berapa persen pekerjaan Anda yang bersifat manual atau fisik dari total pekerjaan Anda serta uraian pekerjaan Anda sehari-hari?
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+						%br
+
+						%span.Number.Single.PositionerLeft 5. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining? Mohon jelaskan.
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+						%br
+
+						%span.Number.Single.PositionerLeft 6. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Dimana lokasi Anda bekerja? (Sebutkan nama lokasi dan daerah/ provinsinya)
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+						%br
+
+						%span.Number.Single.PositionerLeft 7. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut:
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+
+
+						%br
+
+						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } a. Apakah lokasi tersebut ada di darat atau di lepas pantai?
+						%br		
+						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%br
+
+
+
+						%br
+
+						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } b. Bila di darat apakah di permukaan tanah atau di bawah tanah?
+						%br		
+						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%br
+
+						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Jika di bawah tanah, sebutkan kedalamannya
+						%br		
+						%input#TextJobFlightPilotOrNavigator.Full.Single.NumberIndent.PositionerLeft
+						%br
+
+
+
+						%br
+						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } c. Apakah Anda kadang-kadang juga bertugas ke lokasi sebagaimana tersebut di atas?
+						%br	
+						%div.RadioButton.NumberIndent 	
+							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya, berapa frekuensinya dalam 1 (satu) tahun berada di lokasi tersebut dan berapa lama?
+							%input#TextJobFlightPilotOrNavigator.Single.Long.NumberIndent.PositionerLeft
+							%br
+							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+						%br							
+
+
+						%br
+						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } d. Apakah dalam bekerja Anda menggunakan bahan peledak?
+						%br	
+						%div.RadioButton.NumberIndent 	
+							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya
+							%br
+							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+						%br							
+
+
+
+						%br
+						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } e. Apakah Anda melakukan tugas penyelaman?
+						%br	
+						%div.RadioButton.NumberIndent 	
+							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya, mohon mengisi formulir kuesioner menyelam
+							%br
+							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+						%br							
+
+
+					%br
+						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } f. Apakah Anda bertugas di ketinggian tertentu?
+						%br	
+						%div.RadioButton.NumberIndent 	
+							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
+							%input#TextJobFlightPilotOrNavigator.Single.Long.NumberIndent.PositionerLeft
+							%br
+							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+						%br							
+						
+
+						%span.Number.Single.PositionerLeft 8. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Transportasi apa yang Anda gunakan menuju lokasi kerja? Berapa lama waktu yang Anda perlukan untuk menuju lokasi? (Jika menggunakan helikopter, mohon dijelaskan jumlah jam terbang per tahun) dan mengisi formulir kuesioner penerbangan.
+						%br		
+						%textarea#AreaJobFlightPilotOrNavigator.Multi.Full.NumberIndent.PositionerLeft
+						%br
+
+						%span.Number.Single.PositionerLeft 9. 						
+						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda?
+						%br	
+						%div.RadioButton.NumberIndent 	
+							%input#RadioButtonJobFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "ya" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
+							%input#TextJobFlightPilotOrNavigator.Single.Long.NumberIndent.PositionerLeft
+							%br
+							%input#RadioButtonJobFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonJobFlightPassenger", :value => "tidak" }
+							%div.BoxRound.PositionerLeft
+							%label.Single.PositionerLeft{ :for => "RadioButtonJobFlightPassengerNo" } Tidak
+						%br						
+
+						%br
+
+	
