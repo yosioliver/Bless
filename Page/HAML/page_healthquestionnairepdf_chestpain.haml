@@ -27,36 +27,30 @@
 				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
+				
 				boxGenerator("#DatePolicyHolderChestPainLastAttackDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainLastAttackMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainLastAttackYear", 4, boxTypeWithoutLabel, null);
-
 				boxGenerator("#DatePolicyHolderChestPainFirstAttackDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainFirstAttackMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainFirstAttackYear", 4, boxTypeWithoutLabel, null);
-
 				boxGenerator("#DatePolicyHolderChestPainLastAriseDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainLastAriseMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainLastAriseYear", 4, boxTypeWithoutLabel, null);
-				
 				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastYear", 4, boxTypeWithoutLabel, null);
-				
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesYear", 4, boxTypeWithoutLabel, null);
-
 				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);
-
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
 				
-				
-				// FOOTER
+				// SETUP
 				
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
@@ -348,17 +342,17 @@
 					
 					%span.Number.Single.PositionerLeft 12.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTreatment" } Apakah ada pengobatan yang diberikan sehubungan nyeri dada?
-					%div.RadioButton.NumberIndent.PositionerRight
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPaintTreatmentNo" } Tidak
 						%input#RadioButtonPolicyHolderChestPainTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTreatment", :value => "false" }
 						%div.BoxRound.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTreatmentYes" } Ya
 						%input#RadioButtonPolicyHolderChestPainTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTreatment", :value => "true" }
 						%div.BoxRound.PositionerRight
-					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTreatmentReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
-					%br
-					%input#TextPolicyHolderChestPainTreatmentReason.Full.Single.NumberIndent.PositionerLeft{ :type => "text" }
+						%br
+						%label.Single.PositionerLeft{ :for => "TextPolicyHolderChestPainTreatmentReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+						%br
+						%input#TextPolicyHolderChestPainTreatmentReason.Full.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.Single.PositionerLeft 13.
