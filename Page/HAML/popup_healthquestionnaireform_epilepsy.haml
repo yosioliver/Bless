@@ -14,19 +14,19 @@
 			%span.Multi.Single.6f Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
 		%br
 		%hr
-		%div.ContainerFit 
-			%label#Wrap.Single.PositionerLeft 1. Sejak umur berapa Anda terserang epilepsi?
-			%input#TextProspectiveInsuredEpilepsySince.Short.Single.Item.Margin{ :type =>"text" }
+		%div.ContainerFit
+			%label#Wrap.Single.PositionerLeft 1. Sejak umur berapa Anda terserang epilepsi?			
+			%input#TextSince.Short.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 		%div.ContainerFit 
 			%label#Wrap.Single.PositionerLeft 2. Berapa kali terjadi serangan dalam satu bulan atau setahun?
-			%input#TextProspectiveInsuredEpilepsyHowMany.Short.Single.Item.Margin{ :type =>"text" }
+			%input#TextHowMany.Short.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-		%div.ContainerFit 
+		%div.ContainerFit		
 			%label#Wrap.Single.PositionerLeft 3. Kapan terakhir kali serangan terjadi?
-			%input#DateProspectiveInsuredEpilepsyLast.Short.Single.Item.Margin{ :type =>"text" }
+			%input#DateLast.Short.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
 		%div.ContainerFit 
@@ -35,13 +35,12 @@
 
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredEpilepsyWhatHappenLostConsciousness{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyWhatHappen", :value => "lostconsciousness" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyWhatHappenLostConsciousness" } Hanya hilang kesadaran sejenak tanpa kaku-kaku, kemudian lupa dengan apa yang telah terjadi.
-
+				%input#RadioButtonWhatHappenLostConsciousness{ :type => "radio", :name => "RadioButtonWhatHappen", :value => "lostconsciousness" }
+				%label.RadioButton{ :for => "RadioButtonWhatHappenLostConsciousness" } Hanya hilang kesadaran sejenak tanpa kaku-kaku, kemudian lupa dengan apa yang telah terjadi.
 				%br
 
-				%input#RadioButtonProspectiveInsuredEpilepsyWhatHappenSuddenlyFall{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyWhatHappen", :value => "suddenlyfall" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyWhatHappenSuddenlyFall" } Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
+				%input#RadioButtonWhatHappenSuddenlyFall{ :type => "radio", :name => "RadioButtonWhatHappen", :value => "suddenlyfall" }
+				%label.RadioButton{ :for => "RadioButtonWhatHappenSuddenlyFall" } Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
 		%br
 
 		%hr
@@ -49,56 +48,56 @@
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredEpilepsyIsFeelYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyIsFeel", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyIsFeelYes" } ya
+				%input#RadioButtonIsFeelYes{ :type => "radio", :name => "RadioButtonIsFeel", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonIsFeelYes" } ya
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredEpilepsyIsFeelNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyIsFeel", :value => "tidak" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyIsFeelNo" } Tidak
+				%input#RadioButtonIsFeelNo{ :type => "radio", :name => "RadioButtonIsFeel", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonIsFeelNo" } Tidak
 				%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
-			%input#TextProspectiveInsuredEpilepsyIsFeelDesc.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextIsFeelDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 			%label.medium.Single.Item 6. Apakah Anda pernah dirawat karena epilepsi?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredEpilepsyTreatedYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyTreated", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyTreatedYes" } Ya
+				%input#RadioButtonTreatedYes{ :type => "radio", :name => "RadioButtonTreated", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTreatedYes" } Ya
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredEpilepsyTreatedNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyTreated", :value => "tidak"}
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyTreatedNo" } Tidak
-			%input#TextProspectiveInsuredEpilepsyTreatedDesc.Full.Single.Item.Margin{ :type =>"text"}
+				%input#RadioButtonTreatedNo{ :type => "radio", :name => "RadioButtonTreated", :value => "false"}
+				%label.RadioButton{ :for => "RadioButtonTreatedNo" } Tidak
+			%input#TextTreatedDesc.Full.Single.Item.Margin{ :type =>"text"}
 		%br
 		%hr
 		%label.medium.Single.Item 7. Apakah Anda selalu berkonsultasi / berobat ke dokter?
 		%br
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonProspectiveInsuredEpilepsyConsult{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyConsult", :value => "ya" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyConsult" } Ya
+			%input#RadioButtonConsult{ :type => "radio", :name => "RadioButtonConsult", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonConsult" } Ya
 			%div.Separator
-			%input#RadioButtonProspectiveInsuredEpilepsyConsult{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyConsult", :value => "tidak" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyConsult" } Tidak
+			%input#RadioButtonConsult{ :type => "radio", :name => "RadioButtonConsult", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonConsult" } Tidak
 		%label#Wrap.Single.PositionerLeft Nama Dokter
-		%input#TextProspectiveInsuredEpilepsyConsultDoctorName.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
+		%input#TextConsultDoctorName.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
 		%br
 		%label#Wrap.Single.PositionerLeft Telepon/Handphone
-		%input#TextProspectiveInsuredEpilepsyConsultDoctorPhone.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
+		%input#TextConsultDoctorPhone.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
 		%br
 		%label#Wrap.Single.PositionerLeft Alamat Lengkap Dokter
-		%input#TextProspectiveInsuredEpilepsyConsultDoctorAddress.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
+		%input#TextConsultDoctorAddress.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
 		%br
 		%hr 
 		%div.ContainerFit 
 			%label#Wrap.Single.PositionerLeft 8. Kapan terakhir kali Anda berkonsultasi dengan dokter?
-			%input#DateProspectiveInsuredEpilepsyLastconsult.Short.Single.Item.Margin{ :type =>"text" }
+			%input#DateLastconsult.Short.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 		%br
 			%label#Wrap.Single.PositionerLeft Apakah Anda mendapat obat dokter?
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredEpilepsyGetDrugYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyGetDrug", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyGetDrugYes" } Ya
+				%input#RadioButtonGetDrugYes{ :type => "radio", :name => "RadioButtonGetDrug", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonGetDrugYes" } Ya
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredEpilepsyGetDrug{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyGetDrug", :value => "tidak" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyGetDrug" } Tidak
+				%input#RadioButtonGetDrug{ :type => "radio", :name => "RadioButtonGetDrug", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonGetDrug" } Tidak
 		%label#Wrap.Single.PositionerLeft (Jika "Ya", mohon mengisi kolom di bawah ini).
 		%br
 		%div.ContainerFit
@@ -106,55 +105,59 @@
 			%label.Short.Single.Item1.Center.Margin Dosis
 			%label.Short.Single.Item.Center.Margin Frekuensi			
 		%div.ContainerFit
-			%input#TextProspectiveInsuredEpilepsyDrugListName1.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredEpilepsyDrugListDosis1.Short.Single.Item.Margin{ :type => "text" }			
-			%input#TextProspectiveInsuredEpilepsyDrugListFrekuensi1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDrugListName1.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextDrugListDosis1.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextDrugListFrekuensi1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextProspectiveInsuredEpilepsyDrugListName2.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredEpilepsyDrugListDosis2.Short.Single.Item.Margin{ :type => "text" }			
-			%input#TextProspectiveInsuredEpilepsyDrugListFrekuensi2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDrugListName2.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextDrugListDosis2.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextDrugListFrekuensi2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextProspectiveInsuredEpilepsyDrugListName3.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredEpilepsyDrugListDosis3.Short.Single.Item.Margin{ :type => "text" }			
-			%input#TextProspectiveInsuredEpilepsyDrugListFrekuensi3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDrugListName3.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextDrugListDosis3.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextDrugListFrekuensi3.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextProspectiveInsuredEpilepsyDrugListName4.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextProspectiveInsuredEpilepsyDrugListDosis4.Short.Single.Item.Margin{ :type => "text" }			
-			%input#TextProspectiveInsuredEpilepsyDrugListFrekuensi4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDrugListName4.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextDrugListDosis4.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextDrugListFrekuensi4.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 
 		%hr
-		%div.ContainerFit 
-			%label#Wrap.Single.PositionerLeft 9. Apakah Anda masih minum obat secara teratur hingga saat ini?
-			%br
-			%input#RadioButtonProspectiveInsuredEpilepsyConsumDrugYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyConsumDrug", :value => "ya" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyConsumDrugYes" } Ya
-			%div.Separator
-			%input#RadioButtonProspectiveInsuredEpilepsyConsumDrugNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyConsumDrug", :value => "tidak" }
-			%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyConsumDrugNo" } Tidak
-		%hr
-
 		%div.ContainerFit
-		%label.medium.Single.Item 10. Apakah Anda pernah menderita penyakit infeksi selaput otak/gegar otak sebelumnya?
-		%br
-		%input#RadioButtonProspectiveInsuredEpilepsyInfectedYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyInfected", :value => "ya" }
-		%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyInfectedYes" } Ya
-		%div.Separator
-		%input#RadioButtonProspectiveInsuredEpilepsyInfectedNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyInfected", :value => "tidak" }
-		%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyInfectedNo" } Tidak
-		%hr
-		%label.medium.Single.Item 11. Apakah ada riwayat keluarga Anda yang menderita epilepsi ?
-		%br
-		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredEpilepsyHistoryYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyHistory", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyHistoryYes" } Ya
+				%label#Wrap.Single.PositionerLeft 9. Apakah Anda masih minum obat secara teratur hingga saat ini?
+				%br
+				%input#RadioButtonConsumeDrugYes{ :type => "radio", :name => "RadioButtonConsumeDrug", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonConsumeDrugYes" } Ya
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredEpilepsyHistoryNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyHistory", :value => "tidak" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyHistoryNo" } Tidak
+				%input#RadioButtonConsumeDrugNo{ :type => "radio", :name => "RadioButtonConsumeDrug", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonConsumeDrugNo" } Tidak
+		%br
+		%hr
+
+		%div.ContainerFit			
+			%label.medium.Single.Item 10. Apakah Anda pernah menderita penyakit infeksi selaput otak/gegar otak sebelumnya?
+			%br
+			%div.RadioButton.Medium.Item
+				%input#RadioButtonInfectedYes{ :type => "radio", :name => "RadioButtonInfected", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonInfectedYes" } Ya
+				%div.Separator
+				%input#RadioButtonInfectedNo{ :type => "radio", :name => "RadioButtonInfected", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonInfectedNo" } Tidak
+			%br
+			%hr		
+		
+		%div.ContainerFit 
+			%label.medium.Single.Item 11. Apakah ada riwayat keluarga Anda yang menderita epilepsi ?
+			%div.RadioButton.Medium.Item
+				%input#RadioButtonHistoryYes{ :type => "radio", :name => "RadioButtonHistory", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonHistoryYes" } Ya
+				%div.Separator
+				%input#RadioButtonHistoryNo{ :type => "radio", :name => "RadioButtonHistory", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonHistoryNo" } Tidak
 				%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 				%br
-				%input#TextProspectiveInsuredEpilepsyHistoryDesc.Full.Single.Item.Margin{ :type =>"text" }
+				%input#TextHistoryDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -162,20 +165,20 @@
 		%br    
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item		
-				%input#RadioButtonProspectiveInsuredOtherDiseasesDiabetes{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherDiseases", :value => "diabetes" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherDiseasesDiabetes" } Kencing Manis (Diabetes Melitus)
+				%input#RadioButtonOtherDiseasesDiabetes{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "diabetes" }
+				%label.RadioButton{ :for => "RadioButtonOtherDiseasesDiabetes" } Kencing Manis (Diabetes Melitus)
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredOtherDiseasesHipertensi{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherDiseases", :value => "hipertensi" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherDiseasesHipertensi" } Darah Tinggi (Hipertensi)
+				%input#RadioButtonOtherDiseasesHipertensi{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "hypertension" }
+				%label.RadioButton{ :for => "RadioButtonOtherDiseasesHipertensi" } Darah Tinggi (Hipertensi)
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredOtherDiseasesTumor{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherDiseases", :value => "tumor" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherDiseasesTumor" } Tumor
+				%input#RadioButtonOtherDiseasesTumor{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "tumor" }
+				%label.RadioButton{ :for => "RadioButtonOtherDiseasesTumor" } Tumor
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredOtherDiseasesComplication{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherDiseases", :value => "complication" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan 
+				%input#RadioButtonOtherDiseasesComplication{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "complication" }
+				%label.RadioButton{ :for => "RadioButtonOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan 
 				%br
 		
-		%input#TextProspectiveInsuredEpilepsyComplicationDesc.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextComplicationDesc.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -183,21 +186,21 @@
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonProspectiveInsuredEpilepsyCheckupYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyCheckup", :value => "ya" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyCheckupYes" } Ya
+				%input#RadioButtonCheckupTwoYes{ :type => "radio", :name => "RadioButtonCheckupTwo", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonCheckupTwoYes" } Ya
 				%div.Separator
-				%input#RadioButtonProspectiveInsuredEpilepsyCheckupNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredEpilepsyCheckup", :value => "tidak" }
-				%label.RadioButton{ :for => "RadioButtonProspectiveInsuredEpilepsyCheckupNo" } Tidak
+				%input#RadioButtonCheckupTwoNo{ :type => "radio", :name => "RadioButtonCheckupTwo", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonCheckupTwoNo" } Tidak
 				%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 				%br
-				%input#TextProspectiveInsuredEpilepsyCheckupDesc.Full.Single.Item.Margin{ :type =>"text" }
+				%input#TextCheckupTwoDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
 
 		%label.medium.Single.Item 14. Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
 		%br    
-		%input#TextProspectiveInsuredEpilepsyInfo.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 

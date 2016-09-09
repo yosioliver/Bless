@@ -16,19 +16,20 @@
 			$(document).ready(function()
 			{
 				// SECTION GENERAL
-				boxGenerator("#TextPolicyHolderTumorSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderTumorFullName1", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderTumorFullName2", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderTumorBirthdayPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorBirthdayDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorBirthdayMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorBirthdayYear", 4, boxTypeWithoutLabel, null);
+				
+				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName1", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthdayPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
+				
 				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseYear", 4, boxTypeWithoutLabel, null);
-								
+				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseYear", 4, boxTypeWithoutLabel, null);								
 				boxGenerator("#DatePolicyHolderTumorWhenStartDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderTumorWhenStartMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderTumorWhenStartYear", 4, boxTypeWithoutLabel, null)
@@ -49,71 +50,46 @@
 				boxGenerator("#DatePolicyHolderTumorLeaveMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderTumorLeaveYear", 4, boxTypeWithoutLabel, null)
 				
-				boxGenerator("#DatePolicyHolderTumorSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorSignedYear", 4, boxTypeWithoutLabel, null);		
+				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);		
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				
+				// FOOTER
+				
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Kuesioner Tumor");
 			});
 
 
 	/ BODY
 
-	%body#Main
+	%body
 
-		/ HEADER
+		/ HEADER		
 
 		%header
-			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
-			%span.Header PT Asuransi Jiwa BCA
-			%span.Detail
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1
 			%br
 
-			%h1 KUESIONER TUMOR
-			%br
-
-			%div.Note
-				Perlu diperhatikan:
-				%ol
-					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
-					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
-					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
-					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
-					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
 
 		/ MAIN
 
 		%main
 			%form
-				%h2 I. DATA (CALON) TERTANGGUNG
-				%fieldset
-					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
-					%table#TextPolicyHolderTumorSPAJNumber.BoxSquare.PositionerLeft
-					%br
-
-					%span.Number.PositionerLeft 2
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderTumorFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
-					%table#TextPolicyHolderTumorFullName1.BoxSquare.PositionerLeft
-					%br
-					%table#TextPolicyHolderTumorFullName2.BoxSquare.PositionerLeft
-
-					%span.Number.PositionerLeft 3
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
-					%input#TextPolicyHolderTumorBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%span.Separator.Single.PositionerLeft ,
-					%table#DatePolicyHolderTumorBirthdayDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderTumorBirthdayMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderTumorBirthdayYear.BoxSquare.PositionerLeft
-					%br
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				%fieldset
-
 					%span.Number.PositionerLeft 1
 					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderTumorFirstDiagnoseDay" } Kapan pertama kali diketahui adanya tumor?
 					%table#DatePolicyHolderTumorFirstDiagnoseDay.BoxSquare.PositionerRight
@@ -376,47 +352,8 @@
 					%input#TextPolicyHolderTumorAdditionalInfo.Line.Long.Single.PositionerLeft{ :type => "text"}
 					%br 
 					
-					%h2 PERNYATAAN DAN KUASA
-					%div.Note
-						Perlu diperhatikan: 
-						%ol
-							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
-							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
-							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
-							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
-							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
-					%br
-					
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorSignedBy" } Ditandatangani
-					%input#TextPolicyHolderTumorSignedBy.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%span.Separator.Single.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorSigned" } Tanggal
-					%span.Separator.Single.PositionerLeft
-					%table#DatePolicyHolderTumorSignedDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderTumorSignedMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderTumorSignedYear.BoxSquare.PositionerLeft
-					%br
-							
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Pemegang Polis
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Tertanggung
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail Tenaga Penjual						
-						
+				%section#SectionDeclaration
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

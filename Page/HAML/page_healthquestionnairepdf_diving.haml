@@ -94,8 +94,28 @@
 							%input#RadioButtonPolicyHolderDivingCriteriaFreeDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "freediving" }
 							%div.BoxRound.PositionerLeft
 							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaFreeDiving" } FREE Diving
+					%br
+					%hr
+					
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 1. 						
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Andai kuti saat ini?
+						%br
+						
+						%div.RadioButton.NumberIndent												
+							%input#RadioButtonPolicyHolderDivingCriteriaSkinDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skindiving" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkinDiving" } Skin Diving
+							%br											
+							%input#RadioButtonPolicyHolderDivingCriteriaSkubaDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skubadiving" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkubaDiving" } SCUBA Diving
 							%br
-						%hr
+							%input#RadioButtonPolicyHolderDivingCriteriaFreeDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "freediving" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaFreeDiving" } FREE Diving
+					%br
+					%hr
 						
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 2. 						
@@ -113,3 +133,182 @@
 										%td $12/12/2016
 						%br
 						%hr
+						
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 3. 						
+						%label.Full.Single.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
+						%br
+						%div.RadioButton.NumberIndent
+							%table#TablePolicyHolderDivingHistories{ "border" => "1px" }
+								%thead
+									%tr
+										%th 
+										%th 12 bulan terakhir
+										%th 12 bulan y.a.d
+								%tbody
+									%tr
+										%td Lokasi
+										%td 
+										%td
+						%br
+						%hr
+					
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 4. 						
+						%label.Full.Single.PositionerLeft Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
+						%br
+						
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft a. Menyelam seorang diri
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSelfNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationSelfNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationSelf", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipation", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft b. Penyelaman di gua
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInCaveNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationInCaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInCave", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInCaveYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationInCaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInCave", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft c. Eksplorasi Internal kecelakaan
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInternalAccidentalNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationInternalAccidentalNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInternalAccidental", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInternalAccidentalYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationInternalAccidentalYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInternalAccidental", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft d. Menyelam dan menyelamatkan orang di laut
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInSeaNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationInSeaNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInSea", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInSeaYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationInSeaYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInSea", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft e. Ijin penyelamatan atau penyelaman
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationResqueNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationResqueNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationResque", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationResqueYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationResqueYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationResque", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft f. Penggunaan bahan peledak di laut
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationExplosiveInSeaNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationExplosiveInSeaNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationExplosiveInSea", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationExplosiveInSeaYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationExplosiveInSeaYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationExplosiveInSea", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft g. Menyelam untuk mencari abalone
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSeekingAbaloneNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationSeekingAbaloneNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationSeekingAbalone", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSeekingAbaloneYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationSeekingAbaloneYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationSeekingAbalone", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Long.Single.NumberIndent.PositionerLeft h. Meyelam dengan peralatan selain peralatan SCUBA biasa
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationWithoutSCUBAToolsNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationWithoutSCUBAToolsNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationWithoutSCUBATools", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationWithoutSCUBAToolsYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationWithoutSCUBAToolsYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationWithoutSCUBATools", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Long.Single.NumberIndent.PositionerLeft i. Menyelam dengan kedalaman lebih dari 45 meter (150 kaki)
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInDeepSeaNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationInDeepSeaNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInDeepSea", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInDeepSeaYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationInDeepSeaYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInDeepSea", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					
+					%div.RadioButton.NumberIndent						
+						%label.Wrap.Single.PositionerLeft Jika menjawab ‘ya’ untuk pernyataan di atas, mohon menjelaskan lokasi, kapan, frekuensi, dan tujuan di kemudian hari:
+						%br
+						%input#TextPolicyHolderDivingParticipationDetails.Full.Single.Item{ :type => "text" }
+					%br
+					%hr
+					
+					%hr
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 5. 						
+						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
+						%br
+						
+						%div.RadioButton.NumberIndent												
+							%input#RadioButtonPolicyHolderDivingGotAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingGotAccident", :value => "false" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccidentNo" } Tidak
+							%br											
+							%input#RadioButtonPolicyHolderDivingGotAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingGotAccident", :value => "true" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccidentYes" } Ya. Mohon memberikan rincian termasuk tanggal
+						%div.RadioButton.NumberIndent						
+							%input#TextPolicyHolderDivingGotAccidentYesDesc.Full.Single.Item{ :type => "text" }
+						%hr
+					%br
+					%hr
+					
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 6. 						
+						%label.Full.Single.PositionerLeft Mohon memberikan informasi tambahan yang menurut Anda penting
+						%br
+						%br
+						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
+					%br
+					%hr
+					
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
+					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DatePolicyHolderSignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderSignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderSignedYear.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual
+					%br										
+					
+			%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

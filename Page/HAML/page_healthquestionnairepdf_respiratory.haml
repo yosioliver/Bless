@@ -43,67 +43,42 @@
 				boxGenerator("#DatePolicyHolderRespiratoryDetailConsultMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderRespiratoryDetailConsultYear", 4, boxTypeWithoutLabel, null);
 				
-				boxGenerator("#TextPolicyHolderRespiratorySignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderRespiratorySignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderRespiratorySignedYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				
+				// FOOTER
+				
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Kuesioner Gangguan Pernapasan");
 			});
-
 
 	/ BODY
 
-	%body#Main
+	%body
 
-		/ HEADER
+		/ HEADER		
 
 		%header
-			%img{ :src => "../../Resource/Logo/logo_bcalife_healthquestionnaire.svg" }
-			%span.Header PT Asuransi Jiwa BCA
-			%span.Detail
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1
 			%br
 
-			%h1 KUESIONER GANGGUAN PERNAFASAN
-			%br
-
-			%div.Note
-				Perlu diperhatikan:
-				%ol
-					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
-					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
-					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
-					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
-					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
 
 		/ MAIN
 
 		%main
 			%form
-				%h2 I. DATA (CALON) TERTANGGUNG
-				%fieldset
-					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
-					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft
-					%br
-
-					%span.Number.PositionerLeft 2
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
-					%table#TextPolicyHolderFullName1.BoxSquare.PositionerLeft
-					%br
-					%table#TextPolicyHolderFullName2.BoxSquare.PositionerLeft
-
-					%span.Number.PositionerLeft 3
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
-					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%span.Separator.Single.PositionerLeft ,
-					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
-					%br
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				%fieldset
@@ -320,48 +295,9 @@
 					%br
 					%input#TextPolicyHolderRespiratoryAdditionalInfo.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-	
+				
+				%section#SectionDeclaration
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
-					%h2 PERNYATAAN DAN KUASA
-					%div.Note
-						Perlu diperhatikan: 
-						%ol
-							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
-							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
-							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
-							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
-							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
-					%br
-					
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderRespiratorySignedBy" } Ditandatangani
-					%input#TextPolicyHolderRespiratorySignedBy.Medium.Single.PositionerLeft{ :type => "text"}
-					%span.Separator.Single.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderRespiratorySignedDay" } Tanggal
-					%span.Separator.Single.PositionerLeft
-					%table#TextPolicyHolderRespiratorySignedDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#TextPolicyHolderRespiratorySignedMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#TextPolicyHolderRespiratorySignedYear.BoxSquare.PositionerLeft
-					%br
-							
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Pemegang Polis
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Tertanggung
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail Tenaga Penjual
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
