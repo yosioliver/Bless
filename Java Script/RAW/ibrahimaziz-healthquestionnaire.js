@@ -1,3 +1,13 @@
+// GENERATOR
+
+function footerGenerator(stringDetail, intTotalPage)
+{
+	$("footer .Detail").each(function(indexPage)
+	{
+		$(this).text(stringDetail + " Hal " + (indexPage + 1) + " / " + intTotalPage);
+	})
+}
+
 // MULTI POP UP
 
 function showPopUpFromButton(stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -111,6 +121,7 @@ function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJ
 	$(stringPopUpCurrentJQueryID).css("display", "none");
 	$(stringPopUpParentJQueryID).css("display", "block");
 }
+
 
 // POP UP SETTER
 
@@ -569,7 +580,6 @@ function getPrefix(stringKey)
 	}
 	else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
 	{
-		
 		return stringPrefixRadioButton;
 	}
 	else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)

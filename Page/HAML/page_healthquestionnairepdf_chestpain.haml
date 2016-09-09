@@ -422,11 +422,12 @@
 					%input#TextPolicyHolderChestPainAdditionalInfo.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
-					%h2 I. Data (Calon) Tertanggung
+				%h2 I. Data (Calon) Tertanggung
+				%fieldset
 					%div.Note
 						%p Perlu diperhatikan: 
 						%ol
-							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam %span.QuestionnaireTitle Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
 							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
 							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
 							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
@@ -444,28 +445,32 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderSignedYear.BoxSquare.PositionerLeft
 					%br
-							
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Pemegang Polis
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Tertanggung
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail Tenaga Penjual
-					%br
 					
+					%div.ContainerFit
+						%div.Signature.Item1
+							%img
+							%span.Name#TextPolicyHolderSignature
+							%span.Description
+								Nama Lengkap & Tanda tangan
+								%br
+								(Calon) Pemegang Polis
+
+						%div.Signature.Item1
+							%img
+							%span.Name#TextProspectiveInsuredSignature
+							%span.Description
+								Nama Lengkap & Tanda tangan
+								%br
+								(Calon) Tertanggung
+
+						%div.Signature.Item1
+							%img
+							%span.Name#TextSalesSignature
+							%span
+								Nama Lengkap & Tanda tangan
+								%br
+								Tenaga Penjual
+					%br
+
 		%section#SectionFooter
 			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
