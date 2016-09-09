@@ -54,6 +54,11 @@
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				
+				
+				// FOOTER
+				
+				footerGenerator("OP/UW/0114061601", 5);
 			});
 
 
@@ -64,55 +69,21 @@
 		/ HEADER
 
 		%header
-			%img{ :src => "../../Resource/Logo/logo_bcalife_primary.svg" }
-			%div.Address
-				%span.Header.PositionerRight PT Asuransi Jiwa BCA
-				%br
-				%span.Detail.PositionerRight
-					Chase Plaza Lantai 22 | Jl. Jend. Sudirman Kav 21, Jakarta 12920
-					%br
-					Telepon: (021) 21 888 000 | Faks: (021) 2934 7977 | Email: customer@bcalife.co.id
-			%br
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 			%h1 Kuesioner Nyeri Dada
 			%br
 
-			%div.Note
-				%p Perlu diperhatikan:
-				%ol
-					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
-					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
-					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
-					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
-					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
 
 		/ MAIN
 
 		%main
 			%form
-				%h2 I. Data (Calon) Tertanggung
-				%fieldset
-					%span.Number.Single.PositionerLeft 1.
-					%label.Medium.Wrap.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
-					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft
-					%br
-
-					%span.Number.Single.PositionerLeft 2.
-					%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
-					%table#TextPolicyHolderFullName1.BoxSquare.PositionerLeft
-					%table#TextPolicyHolderFullName2.BoxSquare.PositionerLeft
-					%br
-
-					%span.Number.Single.PositionerLeft 3
-					%label.Wrap.Medium.PositionerLeft{ :for => "TextPolicyHolderBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
-					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%span.Separator.Single.PositionerLeft ,
-					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
-					%br
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_prospectiveinsured.haml")).render
 
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
 				%fieldset
@@ -374,52 +345,55 @@
 						%input#TextPolicyHolderChestPainConsulToDoctorHospitalAddress.Full.Single.Item{ :type => "text" }
 					%br
 					
-					%span.Number.PositionerLeft 12
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTreatment" } Apakah ada pengobatan yang diberikan sehubungan nyeri dada?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPaintTreatmentNo" }
+					%span.Number.Single.PositionerLeft 12.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTreatment" } Apakah ada pengobatan yang diberikan sehubungan nyeri dada?
+					%div.RadioButton.NumberIndent.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPaintTreatmentNo" } Tidak
 						%input#RadioButtonPolicyHolderChestPainTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTreatment", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTreatmentYes" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTreatmentYes" } Ya
 						%input#RadioButtonPolicyHolderChestPainTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTreatment", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderChestPainTreatmentReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
-						%input#TextPolicyHolderChestPainTreatmentReason.Short.Single.PositionerLeft{ :type => "text" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTreatmentReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%input#TextPolicyHolderChestPainTreatmentReason.Full.Single.NumberIndent.PositionerLeft{ :type => "text" }
 					%br					
 
-					%span.Number.PositionerLeft 13
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderEverCheck" } Apakah pernah melakukan pemeriksaan sebagai berikut?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEverCheckNo" }
+					%span.Number.Single.PositionerLeft 13.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderEverCheck" } Apakah pernah melakukan pemeriksaan sebagai berikut?
+					%div.RadioButton.PositionerRight
+						%label.Short.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEverCheckNo" } Tidak
 						%input#RadioButtonPolicyHolderEverCheckNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckNo", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEverCheckYes" }
+						%label.Short.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEverCheckYes" } Ya
 						%input#RadioButtonPolicyHolderEverCheckYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckYes", :value => "true" }
 						%div.BoxRound.PositionerRight
-						
-						%input#RadioButtonPolicyHolderEverCheckEkg.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckEkg", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckEkg" } EKG/ ECG
-						
-						%input#RadioButtonPolicyHolderEverCheckRontgen.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckRontgen", :value => "false" }
-						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckRontgen" } Rontgen dada
-						
-						%input#RadioButtonPolicyHolderEverCheckEchocardiogram.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckEchocardiogram", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckEchocardiogram" } Echocardiogram
-
-						%input#RadioButtonPolicyHolderEverCheckLaboratorium.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckLaboratorium", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckLaboratorium" } Laboratorium
-
-						%input#RadioButtonPolicyHolderEverCheckOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckOthers", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckOthers"} Lainnya, sebutkan 
-						
-						%input#TextPolicyHolderEverCheckOthersDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }												
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderEverCheckReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
-						%input#TextPolicyHolderEverCheckReason.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+					%input#RadioButtonPolicyHolderEverCheckEkg.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckEkg", :value => "false" }
+					%div.BoxRound.PositionerLeft
+					%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckEkg" } EKG/ ECG
+					%input#RadioButtonPolicyHolderEverCheckRontgen.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckRontgen", :value => "false" }
+					%div.BoxRound.PositionerLeft
+					%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckRontgen" } Rontgen dada
+					%input#RadioButtonPolicyHolderEverCheckEchocardiogram.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckEchocardiogram", :value => "false" }
+					%div.BoxRound.PositionerLeft
+					%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckEchocardiogram" } Echocardiogram
+					%input#RadioButtonPolicyHolderEverCheckTreadmill.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckTreadmill", :value => "false" }
+					%div.BoxRound.PositionerLeft
+					%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckEchocardiogram" } Echocardiogram
+					%input#RadioButtonPolicyHolderEverCheckLaboratorium.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckLaboratorium", :value => "false" }
+					%div.BoxRound.PositionerLeft
+					%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckLaboratorium" } Laboratorium
+					%br
+					%input#RadioButtonPolicyHolderEverCheckOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEverCheckOthers", :value => "false" }
+					%div.BoxRound.PositionerLeft
+					%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEverCheckOthers"} Lainnya, sebutkan 
+					%input#TextPolicyHolderEverCheckOthersDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }	
+					%br
+					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderEverCheckReason" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+					%br
+					%input#TextPolicyHolderEverCheckReason.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 	
 					%span.Number.PositionerLeft 14
@@ -490,4 +464,8 @@
 						%span.Name
 						%hr
 						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail Tenaga Penjual						
+						%span.Detail Tenaga Penjual
+					%br
+					
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
