@@ -10,15 +10,19 @@
 
 		/ JQUERY
 
-		:javascript
+		:javascript		
 			$(document).ready(function()
-			{
+			{				
 				// GENERATOR
 
-				additionalQuestionGenerator();
-
+				additionalQuestionGenerator();								
 
 				// BUTTON
+
+				buttonPopUpGeneralGenerator();
+				buttonPopUpHealthGenerator();
+				buttonPopUpSPAJProposalGenerator();
+				SPAJProposalGenerator("ButtonAddSPAJProposal");
 
 				$("#BoxDate").DateTimePicker(
 				{
@@ -26,17 +30,11 @@
 					dateFormat: "dd/MM/yyyy"
 				});
 
-				buttonPopUpGeneralGenerator();
-				buttonPopUpHealthGenerator();
-				buttonPopUpSPAJProposalGenerator();
-				SPAJProposalGenerator("ButtonAddSPAJProposal");
-
 				/* $("#MainForm #ButtonDone").click(function()
 				{
 					savetoDB();
-				}); */
+				}); */				
 			});
-
 
 	/ BODY
 
@@ -51,9 +49,9 @@
 			%div.Highlighted
 				%label.Medium.Single Calon
 				%nav.RadioButton{ :style => "margin-left: 80px" }
-					%a.Clear{ :href => "../../Page/HTML/page_healthquestionnaire1_policyholder.html" }  Pemegang Polis
+					%a.Clear.Selected{ :href => "../../Page/HTML/page_healthquestionnaire1_policyholder.html" }  Pemegang Polis
 					%div.Separator
-					%a.Clear.Selected{ :href => "../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html" } Tertanggung
+					%a#ProspectiveInsuredLink.Clear{ :href => "../../Page/HTML/page_healthquestionnaire1_prospectiveinsured.html" } Tertanggung
 
 			%h2 Pertanyaan Kesehatan
 
@@ -136,14 +134,14 @@
 					%hr
 					%li
 						%div.Container
-							%label#LabelProspectiveInsuredHealthDissorder.Item{ :for => "RadioButtonProspectiveInsuredHealthDissorderYes" }
-								Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:							
+							%label#RadioButtonProspectiveInsuredHealthDissorder.Item{ :for => "RadioButtonProspectiveInsuredHealthDissorderYes" }
+								Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
 							%div.RadioButton.Item
-								%input#RadioButtonProspectiveInsuredHealthDissorderYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "true", :required => "true", "data-custom-radiobutton" => "input" }
+								%input#RadioButtonProspectiveInsuredHealthDissorderYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHealthDissorderYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonProspectiveInsuredHealthDissorderNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "false", :required => "true", "data-custom-radiobutton" => "input" }
-								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHealthDissorderNo" } Tidak								
+								%input#RadioButtonProspectiveInsuredHealthDissorderNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "false", "data-custom-radiobutton" => "input" }
+								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredHealthDissorderNo" } Tidak
 						%ol
 							%li
 								%div.Container
@@ -172,56 +170,56 @@
 									%label#LabelProspectiveInsuredRespiratory.Item{ :for => "RadioButtonProspectiveInsuredRespiratoryYes" }
 										Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredRespiratoryYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredRespiratory", :value => "true", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonProspectiveInsuredRespiratoryYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredRespiratory", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRespiratoryYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredRespiratoryNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredRespiratory", :value => "false", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonProspectiveInsuredRespiratoryNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredRespiratory", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRespiratoryNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredRespiratory.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredRespiratory", "data-popup-type" => "health" }
+								%input#ButtonPreviewProspectiveInsuredRespiratory.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelProspectiveInsuredCardiac.Item{ :for => "RadioButtonProspectiveInsuredCardiacYes" }
 										Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredCardiacYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredCardiac", :value => "true", "data-popup-type" => "PopUpCardiac", :required => "true" }
+										%input#RadioButtonProspectiveInsuredCardiacYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredCardiac", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredCardiacYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredCardiacNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredCardiac", :value => "false", "data-popup-type" => "PopUpCardiac", :required => "true" }
+										%input#RadioButtonProspectiveInsuredCardiacNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredCardiac", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredCardiacNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredCardiac", "data-popup-type" => "health" }
+								%input#ButtonPreviewProspectiveInsuredCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelProspectiveInsuredDigest.Item{ :for => "RadioButtonProspectiveInsuredDigestYes" }
 										Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredDigestYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigest", :value => "true", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonProspectiveInsuredDigestYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigest", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredDigestNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigest", :value => "false", "data-popup-type" => "health", :required => "true" }
+										%input#RadioButtonProspectiveInsuredDigestNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredDigest", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDigestNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredDigest.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredDigest", "data-popup-type" => "health" }
+								%input#ButtonPreviewProspectiveInsuredDigest.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelProspectiveInsuredNerve.Item{ :for => "RadioButtonProspectiveInsuredNerveYes" }
 										Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredNerveYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredNerve", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "saraf" }
+										%input#RadioButtonProspectiveInsuredNerveYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredNerve", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredNerveYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredNerveNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredNerve", :value => "false", :required => "true", "data-question-title" => "saraf" }
+										%input#RadioButtonProspectiveInsuredNerveNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredNerve", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredNerveNo" } Tidak
-								%input#ButtonPreviewProspectiveInsurednerve.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredNerve", "data-popup-type" => "hardcopy" }
+								%input#ButtonPreviewProspectiveInsuredNerve.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelProspectiveInsuredLiver.Item{ :for => "RadioButtonProspectiveInsuredLiverYes" }
 										Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredLiverYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredLiver", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "hati" }
+										%input#RadioButtonProspectiveInsuredLiverYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredLiver", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredLiverYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredLiverNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredLiver", :value => "false", :required => "true", "data-question-title" => "hati" }
+										%input#RadioButtonProspectiveInsuredLiverNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredLiver", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredLiverNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredLiver.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredLiver", "data-popup-type" => "hardcopy" }
+								%input#ButtonPreviewProspectiveInsuredLiver.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelProspectiveInsuredReproduction.Item{ :for => "RadioButtonProspectiveInsuredReproductionYes" }
@@ -238,23 +236,23 @@
 									%label#LabelProspectiveInsuredMotion.Item{ :for => "RadioButtonProspectiveInsuredMotionYes" }
 										Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredMotionYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredMotion", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "sendi" }
+										%input#RadioButtonProspectiveInsuredMotionYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredMotion", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredMotionYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredMotionNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredMotion", :value => "false", :required => "true", "data-question-title" => "sendi" }
+										%input#RadioButtonProspectiveInsuredMotionNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredMotion", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredMotionNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredMotion.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredMotion", "data-popup-type" => "health" }
+								%input#ButtonPreviewProspectiveInsuredMotion.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
-									%label#LabelProspectiveInsuredBlood.Item{ :for => "RadioButtonProspectiveInsuredBloodYes" }
+									%label#LabelProspectiveInsuredGland.Item{ :for => "RadioButtonProspectiveInsuredGlandYes" }
 										Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredBloodYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredBlood", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "kelenjar dan darah" }
-										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredBloodYes" } Ya
+										%input#RadioButtonProspectiveInsuredGlandYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredGland", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
+										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredGlandYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredBloodNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredBlood", :value => "false", :required => "true", "data-question-title" => "kelenjar dan darah" }
-										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredBloodNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredBlood.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredBlood", "data-popup-type" => "hardcopy" }
+										%input#RadioButtonProspectiveInsuredGlandNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
+										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredGlandNo" } Tidak
+								%input#ButtonPreviewProspectiveInsuredGland.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelProspectiveInsuredImmune.Item{ :for => "RadioButtonProspectiveInsuredImmuneYes" }
@@ -265,18 +263,18 @@
 										%div.Separator | 
 										%input#RadioButtonProspectiveInsuredImmuneNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredImmune", :value => "false", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredImmuneNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredImmune.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredImmune", "data-popup-type" => "hardcopy" }
+								%input#ButtonPreviewProspectiveInsuredImmune.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredImmune", "data-popup-type" => "health" }
 							%li
 								%div.Container
-									%label#LabelProspectiveInsuredCancer.Item{ :for => "RadioButtonProspectiveInsuredCancerYes" }
+									%label#LabelProspectiveInsuredCell.Item{ :for => "RadioButtonProspectiveInsuredCellYes" }
 										Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonProspectiveInsuredCancerYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredCancer", :value => "true", "data-popup-type" => "hardcopy", :required => "true", "data-question-title" => "kanker" }
-										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredCancerYes" } Ya
+										%input#RadioButtonProspectiveInsuredCellYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredCell", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
+										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredCellYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonProspectiveInsuredCancerNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredCancer", :value => "false", :required => "true", "data-question-title" => "kanker" }
-										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredCancerNo" } Tidak
-								%input#ButtonPreviewProspectiveInsuredCancer.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonProspectiveInsuredCancer", "data-popup-type" => "hardcopy" }
+										%input#RadioButtonProspectiveInsuredCellNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredCell", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
+										%label.RadioButton{ :for => "RadioButtonProspectiveInsuredCellNo" } Tidak
+								%input#ButtonPreviewProspectiveInsuredCell.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelProspectiveInsuredOtherIllness.Item{ :for => "RadioButtonProspectiveInsuredOtherIllnessYes" }
@@ -294,10 +292,10 @@
 							%label#LabelProspectiveInsuredSPAJProposal.Item{ :for => "RadioButtonProspectiveInsuredSPAJProposalYes" }
 								Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
 							%div.RadioButton.Item
-								%input#RadioButtonProspectiveInsuredSPAJProposalYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", :value => "true", "data-popup-type" => "spajproposal", "data-custom-radiobutton" => "input", :required => "true" }
+								%input#RadioButtonProspectiveInsuredSPAJProposalYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", :value => "true", "data-popup-type" => "spajproposal", :required => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSPAJProposalYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonProspectiveInsuredSPAJProposalNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", "data-popup-type" => "spajproposal", "data-custom-radiobutton" => "input", :required => "true" }
+								%input#RadioButtonProspectiveInsuredSPAJProposalNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", :value => "false", "data-popup-type" => "spajproposal", :required => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSPAJProposalNo" } Tidak
 						%input#ButtonAddSPAJProposal.ButtonPrimary{ :type => "button", :value => "Add" }
 						%div#SPAJProposalList
@@ -321,7 +319,7 @@
 								%input#RadioButtonProspectiveInsuredDiagnosticYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiagnostic", :value => "true", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiagnosticYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonProspectiveInsuredDiagnosticNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiagnostic", :value => "false", "data-popup-type" => "general", :required => "true" }
+								%input#RadioButtonProspectiveInsuredDiagnosticNo{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiagnostic", :value => "false", "data-popup-type" => "general", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonProspectiveInsuredDiagnosticNo" } Tidak
 					%hr
 					%li
@@ -407,10 +405,42 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_spajproposal.haml")).render
+			%section#PopUpAlcohol.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_alcohol.haml")).render
+			%section#PopUpRespiratory.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratory.haml")).render
+			%section#PopUpRespiratoryDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_respiratorydetail.haml")).render
 			%section#PopUpCardiac.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_cardiac.haml")).render
 			%section#PopUpChestPain.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_chestpain.haml")).render
-			%section#PopUpHipertensi.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_hipertensi.haml")).render
+			%section#PopUpHypertension.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_hypertension.haml")).render
+			%section#PopUpDigest.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_digest.haml")).render
+			%section#PopUpDigestDetail.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_digestdetail.haml")).render
+			%section#PopUpNerve.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_nerve.haml")).render
+			%section#PopUpEpilepsy.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_epilepsy.haml")).render
+			%section#PopUpLiver.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_liver.haml")).render
+			%section#PopUpDiabetes.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_diabetes.haml")).render
+			%section#PopUpMotion.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_motion.haml")).render
+			%section#PopUpBackbone.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_backbone.haml")).render
+			%section#PopUpJoint.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_joint.haml")).render
+			%section#PopUpGland.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_gland.haml")).render
+			%section#PopUpThyroid.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_thyroid.haml")).render
+			%section#PopUpCell.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_cell.haml")).render
+			%section#PopUpTumor.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_tumor.haml")).render
 			%div#BoxDate
