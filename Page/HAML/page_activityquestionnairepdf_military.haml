@@ -22,34 +22,7 @@
 				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
-				// SECTION MANDATORY
-				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorFirstDiagnoseYear", 4, boxTypeWithoutLabel, null);
-								
-				boxGenerator("#DatePolicyHolderTumorWhenStartDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorWhenStartMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorWhenStartYear", 4, boxTypeWithoutLabel, null)
-				
-				boxGenerator("#DatePolicyHolderTumorOperationDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorOperationMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorOperationYear", 4, boxTypeWithoutLabel, null)
-
-				boxGenerator("#DatePolicyHolderTumorConsultLastDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorConsultLastMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorConsultLastYear", 4, boxTypeWithoutLabel, null)
-
-				boxGenerator("#DatePolicyHolderTumorLastTherapyDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorLastTherapyMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorLastTherapyYear", 4, boxTypeWithoutLabel, null)
-
-				boxGenerator("#DatePolicyHolderTumorLeaveDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorLeaveMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorLeaveYear", 4, boxTypeWithoutLabel, null)
-				
-				boxGenerator("#DatePolicyHolderTumorSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderTumorSignedYear", 4, boxTypeWithoutLabel, null);		
+				// SECTION MANDATORY					
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -61,22 +34,18 @@
 
 	%body#Main
 
-		/ HEADER
+		/ HEADER		
 
 		%header
-			%img{ :src => "../../jqueryLibrary/Resource/Logo/logo_bcalife.svg" }
-			%span.Header PT Asuransi Jiwa BCA
-			%span.Detail
-			%br
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 			%h1 KUESIONER UNTUK ANGKATAN BERSENJATA / POLISI
 			%br
+
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
 			
-			%div.Note				
-				%ol
-					%li *) <i> Harus diisi oleh Calon Tertanggung. </i>
-					%li **) <i> Bila kolom penjelasan tidak cukup, mohon memberikan penjelasan pada kertas lain. </i>
-					%li ***) <i> Coret yang tidak perlu. </i>
 		/ MAIN
 
 		%main
@@ -110,20 +79,188 @@
 				%fieldset
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 1. 						
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
-						%br						
-						%textarea#AreaMilitaryYourUnity.Full.Multi
+						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourUnity" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
 						%br
+						%input#TextPolicyHolderMilitaryYourUnity.Full.Single.Item{ :type => "text" }
+						%br
+						%hr
 					
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 2.
-						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
+						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
 						%br
-						%textarea#AreaMilitaryYourDuty.Full.Multi
+						%input#TextPolicyHolderMilitaryYourDuty.Full.Single.Item{ :type => "text" }
 						%br
+						%hr
 						
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 3.
-						%label.Wrap.Long.PositionerLeft{ :for => "RadioButtonMilitaryRiskActivity" } Apakah Anda melakukan kegiatan yang berisiko tinggi?
-						%br												
+						%label.Wrap.Long.PositionerLeft Apakah Anda melakukan kegiatan yang berisiko tinggi?
+						%br	
+					
+					-#
+						%div.RadioButton
+							%label.Wrap.Single.PositionerRight Tidak						
+							%label.Wrap.Single.PositionerRight Ya
+							%br
+					
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft a. Penjinak senjata					
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamer", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamer", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					
+					%div.RadioButton.NumberIndent
+						%label.Full.Single.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan					
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamer", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamer", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft c. Penyelam					
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityDiverNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityDiverNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityDiver", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityDiverYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityDiverYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityDiver", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft d. Penerbangan					
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityFlightNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityFlightNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityFlight", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityFlightYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityFlightYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityFlight", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft e. Terjun payung					
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityParachuteNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityParachuteNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityParachute", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityParachuteYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityParachuteYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityParachute", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+										
+					%div.RadioButton.NumberIndent
+						%label.Medium.Single.NumberIndent.PositionerLeft f. Misi perdamaian ke luar negeri
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroad", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroad", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					
+					%div.RadioButton.NumberIndent						
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthers"} g. Lainnya
+						%input#TextPolicyHolderChectPainCharacterOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthersNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityOthersNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityOthers", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthersYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityOthersYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityOthers", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					
+					%div.RadioButton.NumberIndent						
+						%label.Wrap.Single.PositionerLeft Jika jawaban ya, mohon memberikan perincian jelas:
+						%br
+						%input#TextPolicyHolderMilitaryRiskActivityDetails.Full.Single.Item{ :type => "text" }
+					%br
+					%hr
+					
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 4. 						
+						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDutyDetails" } Mohon memberikan rincian tugas Anda yang sebenarnya?
+						%br
+						%input#TextPolicyHolderMilitaryYourDutyDetails.Full.Single.Item{ :type => "text" }
+						%br
+						%hr
+						
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 5. 
+						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
+						%br						
+						%div.RadioButton.NumberIndent
+							%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true" }
+							%div.BoxRound.PositionerLeft
+							%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationYes" } Ya
+							%input#RadioButtonPolicyHolderMilitaryInDangerLocationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "false" }
+							%div.BoxRound.PositionerLeft
+							%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
+						%br	
+					%div.RadioButton.NumberIndent						
+						%label.Wrap.Single.PositionerLeft Jika Ya, Jelaskan dimana dan kapan
+						%br
+						%input#TextPolicyHolderMilitaryInDangerLocationWhere.Full.Single.Item{ :type => "text" }
+						%hr
+					
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 6.
+						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
+						%br
+						%input#TextPolicyHolderMilitaryYourDuty.Full.Single.Item{ :type => "text" }
+						%br
+						%hr
+						
+					%h2 I. Data (Calon) Tertanggung
+					%div.Note
+						%p Perlu diperhatikan: 
+						%ol
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
+					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DatePolicyHolderSignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderSignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderSignedYear.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual
+					%br
+					
+			%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					

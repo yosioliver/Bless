@@ -1,0 +1,115 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL				
+				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+				boxGenerator("#DatePolicyHolderBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY					
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER		
+
+		%header
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1 KUESIONER MENYELAM
+			%br
+
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
+			
+		/ MAIN
+
+		%main
+			%form
+				%h2 Data Calon Tertanggung
+				
+				/ FIELDSET
+				
+				%fieldset
+					%span.Number.Single.PositionerLeft 1.
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (sesuai dengan KTP)
+					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft					
+					%br
+
+					%span.Number.Single.PositionerLeft 2.
+					%label.Wrap.Medium.PositionerLeft{ :for => "DatePolicyHolderBirthdayDay" } Tanggal lahir
+					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
+					%br
+					
+					%span.Number.Single.PositionerLeft 3.
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ/Polis
+					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft					
+					%br					
+				
+				/ FIELDSET
+				
+				%fieldset
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 1. 						
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Andai kuti saat ini?
+						%br
+						
+						%div.RadioButton.NumberIndent												
+							%input#RadioButtonPolicyHolderDivingCriteriaSkinDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skindiving" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkinDiving" } Skin Diving
+							%br											
+							%input#RadioButtonPolicyHolderDivingCriteriaSkubaDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skubadiving" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkubaDiving" } SCUBA Diving
+							%br
+							%input#RadioButtonPolicyHolderDivingCriteriaFreeDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "freediving" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaFreeDiving" } FREE Diving
+							%br
+						%hr
+						
+					%div.ContainerQuestion
+						%span.Number.Single.PositionerLeft 2. 						
+						%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki.
+						%br
+						%div.RadioButton.NumberIndent
+							%table#TablePolicyHolderDivingCertificates{ "border" => "1px" }
+								%thead
+									%tr
+										%th Lisensi/ Sertifikat
+										%th Tanggal Perolehan
+								%tbody
+									%tr
+										%td 1234567
+										%td $12/12/2016
+						%br
+						%hr
