@@ -82,6 +82,9 @@
 		%main
 			%form
 				%h2 Data Calon Tertanggung
+				
+				/ FIELDSET
+				
 				%fieldset
 					%span.Number.Single.PositionerLeft 1.
 					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (sesuai dengan KTP)
@@ -101,10 +104,12 @@
 					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ/Polis
 					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft					
 					%br					
-								
+				
+				/ FIELDSET
+				
 				%fieldset
 					%div.ContainerQuestion
 						%span.Number.Single.PositionerLeft 1. 						
-						%label.Wrap.Long.PositionerLeft{ :for => "textarea" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
+						%label.Wrap.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
 						%br						
-						%textarea.Full.Multi
+						%textarea#AreaMilitaryYourUnity.Full.Multi
