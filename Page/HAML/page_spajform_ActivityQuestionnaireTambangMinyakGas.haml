@@ -37,37 +37,37 @@
 				
 				%label.Medium.Single.Item 1. Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator) 
 				%br
-				%input#TextPolicyHolderJabatanAnda.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#AreaActivityOilGasPosition.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%hr
 				
 				%label.Medium.Single.Item 2. Jika tidak termasuk dalam daftar di atas, mohon dijelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut.
 				%br
-				%input#TextPolicyHolderJabatanDanRincianPekerjaan.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#AreaActivityOilGasPositionDesc.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%hr
 				
 				%label.Medium.Single.Item 3. Sudah berapa lama Anda bekerja dalam bidang Pertambangan/Perminyakkan/Gas?
 				%br
-				%input#TextPolicyHolderBerapaLamaBekerja.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#TextActivityOilGasHowLong.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%hr
 				
 				%label.Medium.Single.Item 4. Mohon dijelaskan berapa persen pekerjaan Anda yang bersifat manual atau fisik dari total pekerjaan Anda serta uraian pekerjaan Anda sehari-hari ?
 				%br
-				%input#TextPolicyHolderJelaskanPersenPekerjaan.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#AreaActivityOilGasPercentManual.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%hr
 				
 				%label.Medium.Single.Item 5. Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining? Mohon jelaskan.
 				%br
-				%input#TextPolicyHolderSertaDalamAktifitasTambangTerbuka.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#AreaActivityOilGasMiningActivity.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%hr
 				
 				%label.Medium.Single.Item 6. Dimana lokasi Anda bekerja? (Sebutkan nama lokasi dan daerah/ provinsinya)
 				%br
-				%input#TextPolicyHolderLokasiBekerja.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#AreaActivityOilGasWorkLocation.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%hr
 				
@@ -75,77 +75,74 @@
 				%br
 				%label.Medium.Single.Item a. Apakah lokasi tersebut ada di darat atau di lepas pantai? 
 				%br
-				%input#TextPolicyHolderLokasiTersebut.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#TextActivityOilGasAtSea.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%label.Medium.Single.Item b. Bila di darat apakah di permukaan tanah atau di bawah tanah? 
 				%br
-				%input#TextPolicyHolderDaratDiPermukaanBawahTanah.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#TextActivityOilGasLocationUnderground.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%label.Medium.Single.Item     Jika di bawah tanah, sebutkan kedalamannya  
 				%br
-				%input#TextPolicyHolderSebutkanKedalaman.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#TextActivityOilGasLocationHowDeep.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				
 				%label#Wrap.Single.PositionerLeft c. Apakah Anda kadang-kadang juga bertugas ke lokasi sebagaimana tersebut di atas?
 				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonPolicyHolderBekerjaLokasiTersebutYes{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaLokasiTersebutChange", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaLokasiTersebutYes" } Ya
+					%input#RadioButtonActivityOilGasDutyYes{ :type => "radio", :name => "RadioButtonActivityOilGasDuty", :value => "ya" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasDutyYes" } Ya
 					%div.Separator
-					%input#RadioButtonPolicyHolderBekerjaLokasiTersebutNo{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaLokasiTersebutChange", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaLokasiTersebutNo" } Tidak
+					%input#RadioButtonActivityOilGasDutyNo{ :type => "radio", :name => "RadioButtonActivityOilGasDuty", :value => "tidak" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasDutyNo" } Tidak
 				%br
-				%input#TextPolicyHolderMengalamiKecelakaan.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "berapa frekuensinya dalam 1 (satu) tahun berada di lokasi tersebut dan berapa lama?"}
+				%input#TextPolicyHolderMengalamiKecelakaan.Long.Single.Item1.Margin{ :type =>"text"}
 				%br
 				
 				%label#Wrap.Single.PositionerLeft d. Apakah dalam bekerja Anda menggunakan bahan peledak?
 				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakYes{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakChange", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakYes" } Ya
+					%input#RadioButtonActivityOilGasExplosiveYes{ :type => "radio", :name => "RadioButtonActivityOilGasExplosive", :value => "ya" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasExplosiveYes" } Ya
 					%div.Separator
-					%input#RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakNo{ :type => "radio", :name => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakChange", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderBekerjaMenggunaBahanPeledakNo" } Tidak
+					%input#RadioButtonActivityOilGasExplosiveNo{ :type => "radio", :name => "RadioButtonActivityOilGasExplosive", :value => "tidak" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasExplosiveNo" } Tidak
 				
 				%br
 				
 				%label#Wrap.Single.PositionerLeft e. Apakah Anda melakukan tugas penyelaman?
 				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonPolicyHolderTugasPenyelamanYes{ :type => "radio", :name => "RadioButtonPolicyHolderTugasPenyelamanChange", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasPenyelamanYes" } Ya
+					%input#RadioButtonActivityOilGasDivingYes{ :type => "radio", :name => "RadioButtonActivityOilGasDiving", :value => "ya" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasDivingYes" } Ya
 					%div.Separator
-					%input#RadioButtonPolicyHolderTugasPenyelamanNo{ :type => "radio", :name => "RadioButtonPolicyHolderTugasPenyelamanChange", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasPenyelamanNo" } Tidak
-				%br
-				%input#TextPolicyHolderTugasPenyelaman.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "mohon mengisi formulir kuesioner menyelam"}
-				
+					%input#RadioButtonActivityOilGasDivingNo{ :type => "radio", :name => "RadioButtonActivityOilGasDiving", :value => "tidak" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasDivingNo" } Tidak
 				%br
 				
 				%label#Wrap.Single.PositionerLeft f. Apakah Anda bertugas di ketinggian tertentu?
 				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonPolicyHolderTugasDiKetinggianTertentuYes{ :type => "radio", :name => "RadioButtonPolicyHolderTugasDiKetinggianTertentuChange", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasDiKetinggianTertentuYes" } Ya
+					%input#RadioButtonActivityOilGasHeightYes{ :type => "radio", :name => "RadioButtonActivityOilGasHeight", :value => "ya" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasHeightYes" } Ya
 					%div.Separator
-					%input#RadioButtonPolicyHolderTugasDiKetinggianTertentuNo{ :type => "radio", :name => "RadioButtonPolicyHolderTugasDiKetinggianTertentuChange", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderTugasDiKetinggianTertentuNo" } Tidak
+					%input#RadioButtonActivityOilGasHeightNo{ :type => "radio", :name => "RadioButtonActivityOilGasHeight", :value => "tidak" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasHeightNo" } Tidak
 				%br
-				%input#TextPolicyHolderTugasDiKetinggianTertentu.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "mohon jelaskan berapa meter di atas permukaan laut?"}
+				%input#TextActivityOilGasHeightYesDesc.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "mohon jelaskan berapa meter di atas permukaan laut?"}
 				%br
 				%hr
 				
 				%label.Medium.Single.Item 8. Transportasi apa yang Anda gunakan menuju lokasi kerja? Berapa lama waktu yang Anda perlukan untuk menuju lokasi? (Jika menggunakan helikopter, mohon dijelaskan jumlah jam terbang per tahun) dan mengisi formulir kuesioner penerbangan.
 				%br
-				%input#TextPolicyHolderTransportasiGunaMenujuLokasiKerja.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#AreaActivityOilGasTransportation.Full.Single.Item1.Margin{ :type =>"text" }
 				%br
 				%hr
 				
 				%label#Wrap.Single.PositionerLeft 9. Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda? 
 				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaYes{ :type => "radio", :name => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaChange", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaYes" } Ya
+					%input#RadioButtonActivityOilGasAccidentYes{ :type => "radio", :name => "RadioButtonActivityOilGasAccident", :value => "ya" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasAccidentYes" } Ya
 					%div.Separator
-					%input#RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaNo{ :type => "radio", :name => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaChange", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderMengalamiKecelakaanGangguanKerjaNo" } Tidak
+					%input#RadioButtonActivityOilGasAccidentNo{ :type => "radio", :name => "RadioButtonActivityOilGasAccident", :value => "tidak" }
+					%label.RadioButton{ :for => "RadioButtonActivityOilGasAccidentNo" } Tidak
 				%br
-				%input#TextPolicyHolderMengalamiKecelakaanGangguanKerja.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami?"}
+				%input#TextActivityOilGasAccidentDesc.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami?"}
 				
 				%br
 				%hr
