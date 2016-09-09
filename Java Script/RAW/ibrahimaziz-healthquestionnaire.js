@@ -1,11 +1,17 @@
 // GENERATOR
 
-function footerGenerator(stringDetail, intTotalPage)
+function footerSetterForHealthQuestionnairePDF(stringDetail, intTotalPage)
 {
 	$("footer .Detail").each(function(indexPage)
 	{
 		$(this).text(stringDetail + " Hal " + (indexPage + 1) + " / " + intTotalPage);
 	})
+}
+
+function titleSetterForHealthQuestionnairePDF(stringTitle)
+{
+	$("h1").text(stringTitle);
+	$("span.QuestionnaireTitle").text(stringTitle);
 }
 
 // MULTI POP UP
@@ -505,14 +511,6 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	else
 	{
 		return false;
-	}
-}
-
-function arrayTransfer(arrayTemporary, arrayContent)
-{
-	for (var i = 0; i < arrayTemporary.length; i++)
-	{
-		arrayAdd(arrayContent, arrayTemporary[i].elementID, arrayTemporary[i].Value);
 	}
 }
 

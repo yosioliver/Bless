@@ -58,7 +58,8 @@
 				
 				// FOOTER
 				
-				footerGenerator("OP/UW/0114061601", 5);
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
 			});
 
 
@@ -422,55 +423,8 @@
 					%input#TextPolicyHolderChestPainAdditionalInfo.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
-				%h2 I. Data (Calon) Tertanggung
-				%fieldset
-					%div.Note
-						%p Perlu diperhatikan: 
-						%ol
-							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam %span.QuestionnaireTitle Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
-							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
-							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
-							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
-							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
-					%br
-					
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
-					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%span.Separator.Single.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
-					%span.Separator.Single.PositionerLeft
-					%table#DatePolicyHolderSignedDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderSignedMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderSignedYear.BoxSquare.PositionerLeft
-					%br
-					
-					%div.ContainerFit
-						%div.Signature.Item1
-							%img
-							%span.Name#TextPolicyHolderSignature
-							%span.Description
-								Nama Lengkap & Tanda tangan
-								%br
-								(Calon) Pemegang Polis
-
-						%div.Signature.Item1
-							%img
-							%span.Name#TextProspectiveInsuredSignature
-							%span.Description
-								Nama Lengkap & Tanda tangan
-								%br
-								(Calon) Tertanggung
-
-						%div.Signature.Item1
-							%img
-							%span.Name#TextSalesSignature
-							%span
-								Nama Lengkap & Tanda tangan
-								%br
-								Tenaga Penjual
-					%br
+				%section#SectionDeclaration
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
 		%section#SectionFooter
 			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

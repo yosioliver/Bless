@@ -1,23 +1,51 @@
 %h2 I. Data (Calon) Tertanggung
 %fieldset
-	%span.Number.Single.PositionerLeft 1.
-	%label.Medium.Wrap.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
-	%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft
+	%div.Note
+		%p Perlu diperhatikan: 
+		%ol
+			%li 
+				Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam 
+				%span.QuestionnaireTitle Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+			%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+			%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+			%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+			%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
 	%br
 
-	%span.Number.Single.PositionerLeft 2.
-	%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderFullName1" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
-	%table#TextPolicyHolderFullName1.BoxSquare.PositionerLeft
-	%table#TextPolicyHolderFullName2.BoxSquare.PositionerLeft
-	%br
-
-	%span.Number.Single.PositionerLeft 3
-	%label.Wrap.Medium.PositionerLeft{ :for => "TextPolicyHolderBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
+	%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
 	%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-	%span.Separator.Single.PositionerLeft ,
-	%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
+	%span.Separator.Single.PositionerLeft
+	%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
+	%span.Separator.Single.PositionerLeft
+	%table#DatePolicyHolderSignedDay.BoxSquare.PositionerLeft
 	%span.Separator.Single.PositionerLeft /
-	%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
+	%table#DatePolicyHolderSignedMonth.BoxSquare.PositionerLeft
 	%span.Separator.Single.PositionerLeft /
-	%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
+	%table#DatePolicyHolderSignedYear.BoxSquare.PositionerLeft
+	%br
+
+	%div.ContainerFit
+		%div.Signature.Item1
+			%img
+			%span.Name#TextPolicyHolderSignature
+			%span.Description
+				Nama Lengkap & Tanda tangan
+				%br
+				(Calon) Pemegang Polis
+
+		%div.Signature.Item1
+			%img
+			%span.Name#TextProspectiveInsuredSignature
+			%span.Description
+				Nama Lengkap & Tanda tangan
+				%br
+				(Calon) Tertanggung
+
+		%div.Signature.Item1
+			%img
+			%span.Name#TextSalesSignature
+			%span.Description
+				Nama Lengkap & Tanda tangan
+				%br
+				Tenaga Penjual
 	%br
