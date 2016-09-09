@@ -907,6 +907,14 @@ function arrayFind(arrayObject, stringKey)
     return stringValue;
 }
 
+function arrayTransfer(arrayTemporary, arrayContent)
+{
+	for (var i = 0; i < arrayTemporary.length; i++)
+	{
+		arrayAdd(arrayContent, arrayTemporary[i].elementID, arrayTemporary[i].Value);
+	}
+}
+
 function buttonPopUpGeneralGenerator()
 {
     var stringRadioButtonKey;
@@ -2870,4 +2878,25 @@ stringValue)
            $(stringTextID).val('');
        }
    });
+}
+
+function telephoneStripGenerator(stringInputJavaScriptID)
+{
+	var stringInputValue;
+	var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+  
+	$(stringInputJQueryID).keyup(function()
+	{
+		stringInputValue = $(this).val();
+
+		if (stringInputValue.length == 4)
+		{
+			stringInputValue += stringSeparatorTelephone;
+			$(this).val(stringInputValue);
+		}
+		else
+		{
+
+		}
+	});
 }

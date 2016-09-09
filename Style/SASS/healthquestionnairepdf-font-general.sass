@@ -214,33 +214,35 @@ main
 				+BorderRadius($general_borderradius_thick)
 			p
 				font-size: $fontsize_form_labelgeneral
-			table.SignatureSmall
-				border-spacing: 0px
-			table.SignatureSmall
-				width: $signature_width_small
-				padding: 0px
-				border-style: solid
-				border-width: $general_borderwidth_thin
-				+BorderRadius($general_borderradius_thick)
-				thead
-					tr
-						th
-							padding: $header_padding_edge
-							font-size: $fontsize_signaturesmall_header
-							text-align: center
-							border-bottom-style: solid
-							border-width: $general_borderwidth_thin
-				tbody
-					tr
-						td
-							height: $signature_height_small
-				tfoot
-					tr
-						td
-							font-size: $fontsize_signaturesmall_detail
-							text-align: center
 
 
+/* SIGNATURE */
+
+.Signature
+	margin: $general_space_small
+	text-align: center
+	vertical-align: top
+	img
+		min-height: 160px
+		display: block
+	span.Name, span.Description
+		position: relative
+		display: block
+	span.Name
+		margin-bottom: $general_space_medium
+		padding-left: $general_space_small
+		padding-right: $general_space_small
+		font-size: $fontsize_signature_name
+	span.Name:before
+		float: left
+		content: '('
+	span.Name:after
+		float: right
+		content: ')'
+	span.Description
+		font-size: $fontsize_signature_description
+
+	
 /* TABLE */
 
 table.Square, table.Round, table.Space
