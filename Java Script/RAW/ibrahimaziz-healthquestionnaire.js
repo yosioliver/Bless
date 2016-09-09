@@ -14,6 +14,7 @@ function titleSetterForHealthQuestionnairePDF(stringTitle)
 	$("span.QuestionnaireTitle").text(stringTitle);
 }
 
+
 // MULTI POP UP
 
 function showPopUpFromButton(stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -23,20 +24,63 @@ function showPopUpFromButton(stringPopUpLinkJavaScriptID, stringParentNameWithou
 	setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 }
 
-function showPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
+function showPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue, stringPopUpLinkJavaScriptID, stringInfix, arrayContent, arrayInfix)
 {
 	var stringPopUpLinkJQueryID = stringKres + stringPopUpLinkJavaScriptID;
+	var stringParentNameWithoutPrefix = stringInfix + arrayInfix[0];
 	
 	if (getRadioButtonGeneral(stringRadioButtonName) == stringRadioButtonValue)
 	{
+		setRadioButtonGeneral(stringRadioButtonName, null);
 		$(stringPopUpLinkJQueryID).css("display", "block");
 		setInputFrom(stringPopUpLinkJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
-		arrayAdd(arrayHealthQuestionnaire, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 	}
 	else
 	{
+		var stringInfixForDelete;
+		var stringKeyWithoutPrefix;
+		var stringKeyInfix;
+		var arrayDeleteTemporary = [];
 		
+		for (var i = 0; i < arrayInfix.length; i++)
+		{
+			stringInfixForDelete = stringInfix + arrayInfix[i];
+			
+			for (var j = 0; j < arrayContent.length; j++)
+			{
+				stringKeyWithoutPrefix = releasePrefix(arrayContent[j].elementID);
+				stringKeyInfix = stringKeyWithoutPrefix.substring(0, stringInfixForDelete.length);
+				
+				if (stringInfixForDelete == stringKeyInfix)
+				{
+					arrayAdd(arrayDeleteTemporary, arrayContent[j].elementID, arrayContent[j].Value);
+				}
+				else
+				{
+					
+				}
+			}
+		}
+		
+		for (var k = 0; k < arrayDeleteTemporary.length; k++)
+		{
+			for (var l = 0; l < arrayContent.length; l ++)
+			{
+				if (arrayDeleteTemporary[k].elementID == arrayContent[l].elementID)
+				{
+					arrayContent.splice(l, 1);
+				}
+				else
+				{
+					
+				}
+			}
+		}
+		
+		arrayAdd(arrayContent, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 	}
+	
+	previewArrayObject(arrayContent);
 }
 
 function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -82,11 +126,13 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 	{
 		var stringButtonPreviewJavaScriptID = stringButtonPreviewPrefix + stringParentNameWithoutPrefix;
 		var stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+		var stringRadioButtonName = stringPrefixRadioButton + stringParentNameWithoutPrefix;
 		
 		getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		$(stringButtonPreviewJQueryID).css("display", "block");
 		previewArrayObject(arrayContent);
+		arrayAdd(arrayContent, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 	}
 	else
 	{

@@ -184,10 +184,10 @@
 									%label#LabelPolicyHolderRespiratory.Item{ :for => "RadioButtonPolicyHolderRespiratoryYes" }
 										Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent, arrayHealthQuestionnaire + ['Respiratory', 'RespiratoryDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Respiratory', 'RespiratoryDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryNo" } Tidak
 								%input#ButtonPreviewPolicyHolderRespiratory.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
 							%li
@@ -195,10 +195,10 @@
 									%label#LabelPolicyHolderCardiac.Item{ :for => "RadioButtonPolicyHolderCardiacYes" }
 										Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cardiac', 'ChestPain', 'Hypertension'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)", :required => "true" }
+										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cardiac', 'ChestPain', 'Hypertension'])", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacNo" } Tidak
 								%input#ButtonPreviewPolicyHolderCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" }
 							%li
@@ -206,10 +206,10 @@
 									%label#LabelPolicyHolderDigest.Item{ :for => "RadioButtonPolicyHolderDigestYes" }
 										Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia, Hepatitis dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderDigestYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderDigestYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Digest', 'DigestDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderDigestNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderDigestNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Digest', 'DigestDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNo" } Tidak
 								%input#ButtonPreviewPolicyHolderDigest.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
 							%li
@@ -217,10 +217,10 @@
 									%label#LabelPolicyHolderNerve.Item{ :for => "RadioButtonPolicyHolderNerveYes" }
 										Gangguan fungsi/sistem Saraf dan Otot, Vertigo, Stroke, Sering Pusing atau Pingsan, Epilepsi (kejang), Kelumpuhan, Kesemutan, Baal, Gangguan Kejiwaan dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Nerve', 'Epilepsy'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Nerve', 'Epilepsy'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveNo" } Tidak
 								%input#ButtonPreviewPolicyHolderNerve.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
 							%li
@@ -228,10 +228,10 @@
 									%label#LabelPolicyHolderLiver.Item{ :for => "RadioButtonPolicyHolderLiverYes" }
 										Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Liver', 'Diabetes'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Liver', 'Diabetes'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverNo" } Tidak
 								%input#ButtonPreviewPolicyHolderLiver.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
 							%li
@@ -261,10 +261,10 @@
 									%label#LabelPolicyHolderGland.Item{ :for => "RadioButtonPolicyHolderGlandYes" }
 										Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandNo" } Tidak
 								%input#ButtonPreviewPolicyHolderGland.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
 							%li
@@ -283,10 +283,10 @@
 									%label#LabelPolicyHolderCell.Item{ :for => "RadioButtonPolicyHolderCellYes" }
 										Gangguan fungsi Pertumbuhan Sel, Tumor, Kista, Kanker, Benjolan pada permukaan kulit atau pertumbuhan abnormal lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderCellYes{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderCellYes{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cell', 'Tumor'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderCellNo{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderCellNo{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cell', 'Tumor'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellNo" } Tidak
 								%input#ButtonPreviewPolicyHolderCell.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
 							%li
