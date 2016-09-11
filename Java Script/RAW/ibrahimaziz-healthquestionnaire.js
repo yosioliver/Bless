@@ -132,6 +132,7 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		$(stringButtonPreviewJQueryID).css("display", "block");
 		previewArrayObject(arrayContent);
+		setRadioButtonGeneral(stringRadioButtonName, "true");
 		arrayAdd(arrayContent, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 	}
 	else
@@ -793,7 +794,7 @@ function getFromDatabaseForAmandement(arrayContent, stringPageInfix, stringLayou
 	var arrayPrefixFilter = [stringPrefixText, stringPrefixArea];
 	var stringInfixFilter;
 	var stringSuffixFilter = "Detail";
-	var arrayGeneralForm = ["Smoker", "Junkie", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
+	var arrayGeneralForm = ["SmokeActivity", "Junkie", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
 	var arrayGeneralFormInIndonesia = ["Merokok", "Narkoba dan adiktif", "Bepergian keluar", "Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
 	var stringKey;
 	var stringQuestionPrefix = "Jawaban tambahan kuesioner ";
