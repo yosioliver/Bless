@@ -100,7 +100,8 @@
 				%fieldset
 					%span.Number.Single.PositionerLeft 1
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigest" } Gangguan pencernaan yang pernah Anda alami?
-					%div.RadioButton
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderDigestTukakLambung.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "tukaklambung" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestTukakLambung" } Tukak Lambung
@@ -116,16 +117,16 @@
 						%input#RadioButtonPolicyHolderDigestRadangUsus12Jari.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "radangusus12Jari" }
 						%div.BoxRound.PositionerLeft											
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestRadangUsus12Jari" } Radang Usus 12 Jari
+						%br
 						
 						%input#RadioButtonPolicyHolderDigestMaag.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "maag" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestMaag" } Maag
 						
-						%input#RadioButtonPolicyHolderDigestOther.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "other" }
-						%div.BoxRound.PositionerLeft												
-						%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestOther"} Lainnya, sebutkan						
-						/ %input#TextPolicyHolderDigestOther.LineDot.PositionerLeft						
-						%div#TextPolicyHolderDigestOther.LineDot.PositionerLeft
+						%input#RadioButtonPolicyHolderDigestOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestOthers"} Lainnya, sebutkan
+						%input#TextPolicyHolderDigestOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.Single.PositionerLeft 2
@@ -139,10 +140,10 @@
 					
 					%span.Number.Single.PositionerLeft 3
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDigestFrequencyInMonth" } a. Berapa kali anda mengalami gangguan pencernaan?
-					%div#TextPolicyHolderDigestFrequencyInMonth.Short.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%input#TextPolicyHolderDigestFrequencyInMonth.Short.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestionHowMany" } kali per (bulan/tahun*) *coret yang tidak perlu					
 					%br
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderDigestLastArise" } b. Kapan timbulnya keluahan terakhir?
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderDigestLastArise" } b. Kapan timbulnya keluahan terakhir?
 					%table#DatePolicyHolderDigestLastAriseDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderDigestLastAriseMonth.BoxSquare.PositionerRight
@@ -152,7 +153,8 @@
 
 					%span.Number.Single.PositionerLeft 4
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFeel" } Keluhan apa yang anda rasakan?
-					%div.RadioButton
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderDigestComplainFeltMual.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "mual" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestComplainFeltMual" } Mual
@@ -169,10 +171,10 @@
 						%div.BoxRound.PositionerLeft											
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestComplainFeltNyeriuluhati" } Nyeri Ulu Hati
 												
-						%input#RadioButtonPolicyHolderDigestComplainFeltOther.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "other" }
+						%input#RadioButtonPolicyHolderDigestComplainFeltOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestComplainFeltOther"} Lainnya, sebutkan
-						%div#TextPolicyHolderDigestComplainFeltOther.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestComplainFeltOthers" } Lainnya, sebutkan
+						%input#TextPolicyHolderDigestComplainFeltOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br		
 
 					%span.Number.Single.PositionerLeft 5
@@ -186,7 +188,7 @@
 						%div.BoxRound.PositionerRight
 					%br
 					
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderDigestVomitingBloodLastAriseDay" } b. Jika “Ya”, kapan terakhir Anda mengalaminya?
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderDigestVomitingBloodLastAriseDay" } b. Jika “Ya”, kapan terakhir Anda mengalaminya?
 					%table#DatePolicyHolderDigestVomitingBloodLastAriseDay.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderDigestVomitingBloodLastAriseMonth.BoxSquare.PositionerRight
@@ -194,20 +196,20 @@
 					%table#DatePolicyHolderDigestVomitingBloodLastAriseYear.BoxSquare.PositionerRight
 					%br
 					
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } c. Berapa kali Anda mengalami muntah darah?
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } c. Berapa kali Anda mengalami muntah darah?
 					%input#TextPolicyHolderDigestVomitingBloodAriseTime.Short.Single.PositionerLeft{ :type => "text"}
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestVomitingBloodAriseTime" } kali per (bulan/tahun*) *coret yang tidak perlu					
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestVomitingBloodSolvingWay"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
+					%label.NumberIndent.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestVomitingBloodSolvingWay"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
 					%br
-					
-					%input#TextPolicyHolderDigestVomitingBloodSolvingWay.Full.Single.PositionerLeft{ :type => "text" }										
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestVomitingBloodSolvingWay.Full.Single.PositionerLeft{ :type => "text" }										
 					%br
 					
 					%span.Number.Single.PositionerLeft 6
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestPainComplain" } Jelaskan secara rinci keluhan nyeri yang Anda dirasakan:
 					%br
-					%div.RadioButton
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderDigestPainComplainAtSomeCondition.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestPainComplain", :value => "somecondition" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestPainComplainAtSomeCondition"} Timbul pada kondisi tertentu, jelaskan:
@@ -253,7 +255,8 @@
 					%span.Number.Single.PositionerLeft 7
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestDrugsName" } Mohon jelaskan secara rinci pada kolom di bawah ini mengenai nama obat yang Anda konsumsi dan lama pemakaiannya sehubungan dengan gangguan pencernaan?
 					%br
-					%input#TextPolicyHolderDigestDrugsName.Full.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDrugsName.Full.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%span.Number.Single.PositionerLeft 8
@@ -303,20 +306,20 @@
 					%span.Number.Single.PositionerLeft 9
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestResultOfTheExamination" } Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuktanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
 					%br
-					%input#TextPolicyHolderDigestResultOfTheExamination.Full.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestResultOfTheExamination.Full.Single.PositionerLeft{ :type => "text" }
 					%br
 					
 					%span.Number.Single.PositionerLeft 10
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCare" } Apakah Anda pernah mendapatkan perawatan Rumah Sakit sehubungan dengan gangguan pencernaan tersebut?
 					%br
-					%div.RadioButton
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
-						%input#RadioButtonPolicyHolderDigestHospitalCareNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderDigestHospitalCareYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "true" }
-						%div.BoxRound.PositionerLeft					
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya
+						%input#RadioButtonPolicyHolderDigestHospitalCareNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "false" }
+						%div.BoxRound.PositionerLeft											
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
 					%br					
 						
 					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderDigestHospitalCareWhen" } Jika “Ya”, sejak kapan?
@@ -334,27 +337,23 @@
 					%br						
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalCareHowLong" } Lama perawatan
 					%input#TextPolicyHolderDigestHospitalCareHowLong.Short.Single.PositionerLeft{ :type => "text"}
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } (bulan/tahun*) *coret yang tidak perlu
-					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodDesc"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
-					%br
-					%input#TextPolicyHolderDigestionVomitingBloodDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } (bulan/tahun*) *coret yang tidak perlu										
 					%br	
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalCareDoctorName" } a.	Nama Dokter
-					%input#TextPolicyHolderDigestHospitalCareDoctorName.Short.Single.PositionerLeft{ :type => "text"}
+					%input#TextPolicyHolderDigestHospitalCareDoctorName.Long.Single.PositionerLeft{ :type => "text"}
 					%br	
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalCareDoctorAddress" } b.	Alamat Dokter
-					%input#TextPolicyHolderDigestHospitalCareDoctorAddress.Short.Single.PositionerLeft{ :type => "text" }					
+					%input#TextPolicyHolderDigestHospitalCareDoctorAddress.Long.Single.PositionerLeft{ :type => "text" }					
 					%br					
 					%span.Number.Single.PositionerLeft 11
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestInTreatment" } Apakah Anda sampai saat ini masih dalam pengobatan?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestInTreatmentNo" } Tidak
-						%input#RadioButtonPolicyHolderDigestInTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestInTreatmentYes" } Ya
-						%input#RadioButtonPolicyHolderDigestInTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "true" }
-						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestInTreatmentNo" } Tidak
+						%input#RadioButtonPolicyHolderDigestInTreatmentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestInTreatmentYes" } Ya
+						%input#RadioButtonPolicyHolderDigestInTreatmentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestInTreatment", :value => "true" }
+						%div.BoxRound.PositionerLeft
 					%br	
 					%label.Wrap.Single.PositionerLeft{:for => "TextPolicyHolderVomitingBlood"} Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 					%br
@@ -376,47 +375,46 @@
 								%td				
 						%br					
 					
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentDoctorName" } Nama Lengkap Dokter:
-					%input#TextPolicyHolderDigestTreatmentDoctorName.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentDoctorName" } Nama Lengkap Dokter:
+					%input#TextPolicyHolderDigestTreatmentDoctorName.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentDoctorTelephone" } No. Telepon/Handphone:
-					%input#TextPolicyHolderDigestTreatmentDoctorTelephone.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentDoctorTelephone" } No. Telepon/Handphone:
+					%input#TextPolicyHolderDigestTreatmentDoctorTelephone.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentHospitalName" } Nama Klinik/Rumah Sakit:
-					%input#TextPolicyHolderDigestTreatmentHospitalName.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentHospitalName" } Nama Klinik/Rumah Sakit:
+					%input#TextPolicyHolderDigestTreatmentHospitalName.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentHospitalAddress" } Alamat Klinik/Rumah Sakit:
-					%input#TextPolicyHolderDigestTreatmentHospitalAddress.Short.Single.PositionerLeft{ :type => "text" }				
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestTreatmentHospitalAddress" } Alamat Klinik/Rumah Sakit:
+					%input#TextPolicyHolderDigestTreatmentHospitalAddress.Long.Single.PositionerLeft{ :type => "text" }				
 					%br
 					%br
 					
 					%span.Number.Single.PositionerLeft 12
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTreatment" } Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo" } Tidak
-						%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "false" }
-						%div.BoxRound.PositionerRight						
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes" } Ya
-						%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "true" }
-						%div.BoxRound.PositionerRight						
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" } Jika “Ya”, kapan?.
-						
-						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenDay.BoxSquare.PositionerRight
-						%span.Separator.Single.PositionerRight /
-						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenMonth.BoxSquare.PositionerRight
-						%span.Separator.Single.PositionerRight /
-						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenYear.BoxSquare.PositionerRight
-
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderDigestNoOfficeEntryInYearHowLong" } Berapa lama?
-						
-						%div#TextPolicyHolderDigestNoOfficeEntryInYearHowLong.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" } hari.
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo" } Tidak
+						%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "false" }
+						%div.BoxRound.PositionerLeft						
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes" } Ya
+						%input#RadioButtonPolicyHolderDigestNoOfficeEntryInYearYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestNoOfficeEntryInYear", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" } Jika “Ya”, kapan?
+						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenMonth.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenYear.BoxSquare.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestNoOfficeEntryInYearHowLong" } Berapa lama?
+						%input#TextPolicyHolderDigestNoOfficeEntryInYearHowLong.Short.Single.PositionerLeft{ :type => "text" }
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" } hari.
 					%br					
 
 					%span.Number.Single.PositionerLeft 13
 					%label.Single.PositionerLeft{ :for => "AreaPolicyHolderDigestOtherHealthCondition" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
-					%input#AreaPolicyHolderDigestOtherHealthCondition.Long.Single.PositionerLeft{ :type => "text" }
+					%div.Cointainer.NumberIndent
+						%input#AreaPolicyHolderDigestOtherHealthCondition.Full.Single.PositionerLeft{ :type => "text" }
 					%br	
 
 				%section#SectionDeclaration
