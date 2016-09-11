@@ -792,12 +792,12 @@ function setToHealthQuestionnairePDF(stringLayoutJavaScriptID, arrayContent)
 
 // SETTER FOR AMANDEMENT
 
-function getFromDatabaseForAmandement(arrayContent, stringPageInfix, stringLayoutJavaScriptID)
+function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayoutJavaScriptID)
 {
 	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
 	var arrayPrefixFilter = [stringPrefixText, stringPrefixArea];
 	var stringInfixFilter;
-	var stringSuffixFilter = "Detail";
+	var stringSuffixFilter = stringAmandmentSuffix + stringDetailSuffix;
 	var arrayGeneralForm = ["SmokeActivity", "Junkie", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
 	var arrayGeneralFormInIndonesia = ["Merokok", "Narkoba dan adiktif", "Bepergian keluar", "Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
 	var stringKey;
