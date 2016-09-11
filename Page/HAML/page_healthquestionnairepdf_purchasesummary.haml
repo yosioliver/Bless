@@ -18,8 +18,8 @@
 			{
 				// GENERATOR
 				
-				boxGenerator("#TextPolicyHolderFullName1", 26, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2", 26, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 26, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 26, boxTypeWithoutLabel, null);
 				boxGenerator("#TextIllustrationNumber", 26, boxTypeWithoutLabel, null);
 				
 				boxGenerator("#DatePolicyHolderSignedDay", 2);
@@ -48,13 +48,13 @@
 		%main
 			%form
 				%fieldset
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderFullName1" } Nama Calon Pemegang Polis
-					%table#TextPolicyHolderFullName1.BoxSquare.PositionerRight
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Calon Pemegang Polis
+					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
 					%br
-					%table#TextPolicyHolderFullName2.BoxSquare.PositionerRight
+					%table#TextPolicyHolderFullName2nd.BoxSquare.PositionerLeft
 					%br
 					%label.Wrap.Single.PositionerLeft{ :for => "TextIllustrationNumber" } Nomor Ilustrasi
-					%table#TextIllustrationNumber.BoxSquare.PositionerRight
+					%table#TextIllustrationNumber.BoxSquare.PositionerLeft
 					%br
 
 				%h2 Beberapa KEWAJIBAN Saya
