@@ -831,3 +831,75 @@ function getFromDatabaseForAmandement(arrayContent, stringPageInfix, stringLayou
 		}
 	}
 }
+
+
+// GET FROM DATABASE
+
+function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
+{    
+    for (var i = 0; i < objectContent.length; i++)
+    {        
+        var stringKey = objectContent[i].elementID;
+        var stringValue = objectContent[i].Value;               
+        
+		
+		// GENERAL INPUT TYPE
+		
+        if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)
+        {
+			if (stringPageType == stringPageTypePDF)
+			{
+				setTextPDF(stringKey, stringValue);        
+			}
+			else
+			{
+				setTextForm(stringKey, stringValue);
+			}
+        }
+        else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
+        {
+            setRadioButtonGeneral(stringKey, stringValue);
+        }
+        else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
+        {            
+            setCheckboxGeneral(stringKey, stringValue);
+        }
+        else if (stringKey.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setSelectPDF(stringKey, stringValue);
+            }
+            else
+            {
+                setSelectForm(stringKey, stringValue);
+            }
+        }
+        else if (stringKey.substring(0, stringPrefixDate.length) == stringPrefixDate)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setDatePDF(stringKey, stringValue);
+            }
+            else
+            {
+                setDateForm(stringKey, stringValue);
+            }
+        }
+        else if (stringKey.substring(0, stringAreaPrefix.length) == stringAreaPrefix)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setAreaPDF(stringKey, stringValue);
+            }
+            else
+            {
+                setAreaForm(stringKey, stringValue);
+            }
+        }
+        else
+        {
+            
+        }				
+    }
+}

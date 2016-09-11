@@ -88,7 +88,7 @@ function onSuccess (ret)
 
         if (stringType == "readFromDB")
         {
-            getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+            getFromDatabaseForHealthQuesetionnaire(objectContent.result.readFromDB, stringPageTypeCurrent);
         }
         else
         {
@@ -346,7 +346,7 @@ function AutoPopulate(jsonObject)
     
     if (stringType == "autopopulateFromDB")
     {
-        getFromDatabase(objectContent.result.autopopulateFromDB, stringPageTypeCurrent);                
+        getFromDatabaseForHealthQuestionnaire(objectContent.result.autopopulateFromDB, stringPageTypeCurrent);                
     }
     else
     {
