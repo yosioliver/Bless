@@ -1838,7 +1838,7 @@ function setCheckboxGeneral(stringCheckboxJavaScriptID, stringValue)
 {
 	var stringCheckboxJQueryID = stringKres + stringCheckboxJavaScriptID;
 	
-	$(stringCheckboxJqueryID + "[value='" + stringValue + "']").prop("checked", true);
+	$(stringCheckboxJQueryID + "[value='" + stringValue + "']").prop("checked", true);
 }
 
 function setTextForm(stringID, stringValue)
@@ -2007,7 +2007,7 @@ function getCheckboxGeneral(stringID)
     if ($(stringInputJQueryID).is(":checked") == true)
     {
         // alert("Harap pilih radio button di bawah ini !.");
-		stringCheckboxValue = $(stringInputJQUeryID).val();
+		stringCheckboxValue = $(stringInputJQueryID).val();
     }
     else
     {
@@ -2724,8 +2724,8 @@ function setToDatabase(stringPageType)
     
     $("input[type=checkbox]").each(function()
     {
-        stringValue = getCheckboxGeneral(stringKey);
-        
+		var stringKey = $(this).attr("id");
+        var stringValue = getCheckboxGeneral(stringKey);
         validatePush(objectContent, stringKey, stringValue);
     });
     
