@@ -2002,14 +2002,14 @@ function getCheckboxGeneral(stringID)
 	var stringInputJQueryID = stringKres + stringID;
     var stringCheckboxValue;
     
-    if (validateCheckboxGeneral(stringName) == false)
-    {
-        // alert("Harap pilih radio button di bawah ini !.");
-    }
-    else
-    {
+//    if (validateCheckboxGeneral(stringName) == false)
+//    {
+//        // alert("Harap pilih radio button di bawah ini !.");
+//    }
+//    else
+//    {
         stringCheckboxValue = $(stringInputJQUeryID).val();
-    }
+    //}
     
     return stringCheckboxValue;
 }
@@ -2719,12 +2719,12 @@ function setToDatabase(stringPageType)
         validatePush(objectContent, stringKey, stringValue);
     });
     
-//    $("input[type=checkbox]").each(function()
-//    {
-//        stringValue = setCheckboxGeneral(stringKey);
-//            
-//        validatePush(objectContent, stringKey, stringValue);
-//    });
+    $("input[type=checkbox]").each(function()
+    {
+        stringValue = getCheckboxGeneral(stringKey);
+            
+        validatePush(objectContent, stringKey, stringValue);
+    });
     
     $("input[type=date]").each(function()
     {
