@@ -29,6 +29,12 @@
 					dateSeparator: "/",
 					dateFormat: "dd/MM/yyyy"
 				});
+				
+				$("#BoxTime").DateTimePicker(
+				{
+					timeSeparator: ":",
+					timeFormat: "HH:mm:ss"
+				});
 
 				/* $("#MainForm #ButtonDone").click(function()
 				{
@@ -458,3 +464,4 @@
 			%section#PopUpTumor.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_tumor.haml")).render
 			%div#BoxDate
+			%div#BoxTime
