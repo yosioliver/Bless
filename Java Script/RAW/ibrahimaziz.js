@@ -408,6 +408,10 @@ function releasePrefix(stringKey)
 	{
 		return stringKey.substring(stringPrefixEmail.length, stringKey.length);
 	}
+	else if (stringKey.substring(0, stringTablePrefix.length) == stringTablePrefix)
+	{
+		return stringKey.substring(stringTablePrefix.length, stringKey.length);
+	}
 	else
 	{
 		

@@ -216,37 +216,22 @@ input[type="radio"].Plain:checked + label
 
 /* TABLE */
 
-section
-    table.Square, table.Round, table.Space
-        tbody
-            tr
-                td
-                    table.BoxSquare, table.BoxRound
-                        tbody
-                            tr
-                                td
-                                    border-color: $theme_senary_color
-                                    background-color: transparent
-                            tr:nth-child(odd)
-                                background-color: transparent !important
-                            tr:nth-child(even)
-                                background-color: transparent !important
-    table.Square
-        thead
-            tr
-                th
-                    background-color: $theme_quinary_color
-                    color: $theme_senary_color
-                    border-color: $theme_primary_color
-        tbody
-            tr
-                td
-                    border-color: $theme_primary_color
-                    color: $theme_senary_color
-            tr:nth-child(odd)
-                background-color: $theme_secondary_color
-            tr:nth-child(even)
-                background-color: $theme_quinary_color
+table.Square
+	thead
+		tr
+			th
+				background-color: $theme_quinary_color
+				color: $theme_senary_color
+				border-color: $theme_secondary_color
+	tbody
+		tr
+			td
+				border-color: $theme_secondary_color
+				color: $theme_senary_color
+		tr:nth-child(odd)
+			background-color: $theme_quaternary_color
+		tr:nth-child(even)
+			background-color: $theme_quaternary_color
 
 					
 /* FOOTER */

@@ -245,7 +245,7 @@ main
 	
 /* TABLE */
 
-table.Square, table.Round, table.Space
+table.Square
 	margin-top: $general_space_tiny
 	margin-bottom: $general_space_tiny
 	thead
@@ -263,9 +263,7 @@ table.Square, table.Round, table.Space
 				padding: $general_space_medium
 
 table.Square
-	border-style: solid
-	border-width: $general_borderwidth_thin
-	border-spacing: 0
+	border-spacing: $general_space_tiny
 	thead
 		tr
 			th
@@ -280,13 +278,11 @@ table.Square
 		tr
 			td
 				padding: $general_space_tiny
+				height: $box_size_height - ($general_space_tiny * 2)
 				font-size: $fontsize_table_item
 				text-align: center
 				vertical-align: top
-				border-top-style: none
-				border-right-style: solid
-				border-left-style: solid
-				border-bottom-style: none
+				border-style: solid
 				border-width: $general_borderwidth_thin
 				.PositionerCenter
 					display: inline-block

@@ -854,19 +854,33 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 			if (stringPageType == stringPageTypePDF)
 			{
 				var intMaxString = 26;
+				var stringKeyWithoutPrefix = releasePrefix(stringKey);
+				var stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
+				var stringIDMedication = "HypertensionMedication";
+				var stringKeyForMedication = stringKeyWithoutInfix.substring(0, stringIDMedication.length);
+				var stringKeyForTable;
 				
-				if (stringValue.length > intMaxString)
+				if (stringKeyForMedication == stringIDMedication)
 				{
-					var stringValue1 = stringValue.substring(0, intMaxString);
-					var stringValue2 = stringValue.substring(0, intMaxString);
-					
-					setTextPDF(stringKey, stringValue1);
-					setTextPDF(stringKey + "2nd", stringValue2);
+					stringKeyForTable = stringCellPrefix + stringKeyWithoutPrefix;
+					// alert(stringKres + " " + stringKeyForTable + " " + stringValue)
+					$(stringKres + stringKeyForTable).append(stringValue);
 				}
 				else
 				{
-					setTextPDF(stringKey, stringValue);
-				}     
+					if (stringValue.length > intMaxString)
+					{
+						var stringValue1 = stringValue.substring(0, intMaxString);
+						var stringValue2 = stringValue.substring(0, intMaxString);
+
+						setTextPDF(stringKey, stringValue1);
+						setTextPDF(stringKey + "2nd", stringValue2);
+					}
+					else
+					{
+						setTextPDF(stringKey, stringValue);
+					}
+				} 
 			}
 			else
 			{
@@ -960,5 +974,59 @@ function setDatePDFForHealthQuesetionnaire(stringID, stringContent)
 				setTextGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
 			}			
 		}
+	}
+}
+
+
+// TABLE GENERATOR
+
+var stringPrefixTHead = "THead";
+var stringPrefixTBody = "TBody";
+var stringPrefixTFoot = "TFoot";
+
+function tablePDFStaticGeneralGenerator(stringTableJavaScriptID, arrayHeader, intRow)
+{
+	var stringTableJQueryID = stringKres + stringTableJavaScriptID;
+	var stringInfix = releasePrefix(stringTableJavaScriptID);
+	var stringTableBodyJavaScriptID = stringPrefixTBody + stringInfix;
+	var stringTableBodyJQueryID = stringKres + stringPrefixTBody + stringInfix;
+	var stringTableRowJavaScriptID;
+	var stringTableRowJQueryID;
+	var stringCellJavaScriptID;
+
+	$(stringTableJQueryID).append("<tbody id='" + stringTableBodyJavaScriptID + "'></tbody>");
+
+	for (var i = 0; i < intRow; i++)
+	{
+		stringTableRowJavaScriptID = stringRowPrefix + stringInfix + i;
+		stringTableRowJQueryID = stringKres + stringTableRowJavaScriptID;
+		$(stringTableBodyJQueryID).append("<tr id='" + stringTableRowJavaScriptID + "'></tr>");
+		
+		for (var j = 0; j < arrayHeader.length; j++)
+		{
+			stringCellJavaScriptID = stringCellPrefix + stringInfix + arrayHeader[j] + i;
+			$(stringTableBodyJQueryID + " " + stringTableRowJQueryID).append("<td id='" + stringCellJavaScriptID + "'></td>");
+		}
+	}
+}
+
+//for (var i = 0; i < arrayHeader.length; i++)
+//	{
+//		
+//	}
+
+function releaseInfix(stringKey)
+{
+	if (stringKey.substring(0, stringPolicyHolderPrefix.length) == stringPolicyHolderPrefix)
+	{
+		return stringKey.substring(stringPolicyHolderPrefix.length, stringKey.length);
+	}
+	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringPolicyHolderPrefix)
+	{
+		return stringKey.substring(stringProspectiveInsuredPrefix.length, stringKey.length);
+	}
+	else
+	{
+		
 	}
 }
