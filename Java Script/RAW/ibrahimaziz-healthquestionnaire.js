@@ -793,8 +793,8 @@ function getFromDatabaseForAmandement(arrayContent, stringPageInfix, stringLayou
 	var arrayPrefixFilter = [stringPrefixText, stringPrefixArea];
 	var stringInfixFilter;
 	var stringSuffixFilter = "Detail";
-	var arrayGeneralForm = ["Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
-	var arrayGeneralFormInIndonesia = ["Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
+	var arrayGeneralForm = ["Smoker", "Junkie", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
+	var arrayGeneralFormInIndonesia = ["Merokok", "Narkoba dan adiktif", "Bepergian keluar", "Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
 	var stringKey;
 	var stringQuestionPrefix = "Jawaban tambahan kuesioner ";
 	var intQuestionNumber = 0;
@@ -802,7 +802,6 @@ function getFromDatabaseForAmandement(arrayContent, stringPageInfix, stringLayou
 	for (var i = 0; i < arrayGeneralForm.length; i++)
 	{
 		stringInfixFilter = stringPageInfix + arrayGeneralForm[i];
-		
 		
 		for (var j = 0; j < arrayContent.length; j++)
 		{
@@ -892,7 +891,7 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
         {            
             if (stringPageType == stringPageTypePDF)
             {
-                setDatePDF(stringKey, stringValue);
+                setDatePDFForHealthQuestionnaire(stringKey, stringValue);
             }
             else
             {
@@ -915,4 +914,46 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
             
         }				
     }
+}
+
+var stringIDHour = "Hour";
+var stringIDMinute = "Minute";
+var stringIDSecond = "Second";
+var stringSeparatorTime = ":";
+
+function setDatePDFForHealthQuesetionnaire(stringID, stringContent)
+{
+    var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
+    var arrayDateString = stringContent.split(stringSeparatorDate);
+	var arrayDateID = [stringIDHour, stringIDMinute, stringIDSecond];
+    var arrayDateString = stringContent.split(stringSeparatorTime);
+	
+	if (arrayDateString.length > 1)
+	{
+		for (var i = 0; i < arrayDateString.length; i++)
+		{ 
+			if ($(stringKres + stringID + arrayDateID[i]).is("table") == true)
+			{
+				setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
+			}
+			else
+			{
+				setLineGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
+			}			
+		}
+	}
+	else
+	{
+		for (var i = 0; i < arrayTimeString.length; i++)
+		{ 
+			if ($(stringKres + stringID + arrayTimeID[i]).is("table") == true)
+			{
+				setBoxGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
+			}
+			else
+			{
+				setTextGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
+			}			
+		}
+	}
 }
