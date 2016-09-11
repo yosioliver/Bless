@@ -2346,7 +2346,7 @@ function getFromDatabase(objectContent, stringPageType)
         }
         else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
         {            
-            setRadioCheckboxGeneral(stringKey, stringValue);
+            setCheckboxGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
         {            
