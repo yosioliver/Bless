@@ -198,33 +198,33 @@
 					%label.NumberIndent.Single.PositionerLeft Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 
-						%table#TablePolicyHolderHypertensionMedication.Square
-							%thead
-								%tr
-									%th Nama Obat
-									%th Dosis
-									%th Frekuensi
-						%br	
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyDocterName"} Nama Lengkap Dokter:
-						%input#TextPolicyHolderHypertensionInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyPhone"} No. Telepon/Handphone:
-						%input#TextPolicyHolderHypertensionInTherapyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%table#TablePolicyHolderHypertensionMedication.Square
+						%thead
+							%tr
+								%th Nama Obat
+								%th Dosis
+								%th Frekuensi
+					%br	
 
-						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyHospital"} Nama Klinik/Rumah Sakit:
-						%input#TextPolicyHolderHypertensionInTherapyHospital.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
-
-						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
-						%input#TextPolicyHolderHypertensionInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-						%br
-					
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyDocterName"} Nama Lengkap Dokter:
+					%input#TextPolicyHolderHypertensionInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					%span.Number.PositionerLeft 4
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderHypertensionFeel" } Apakah Anda pernah melakukan pemeriksaan sebagai berikut?
-					%div.RadioButton
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyPhone"} No. Telepon/Handphone:
+					%input#TextPolicyHolderHypertensionInTherapyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyHospital"} Nama Klinik/Rumah Sakit:
+					%input#TextPolicyHolderHypertensionInTherapyHospital.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
+
+					%br
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
+					%input#TextPolicyHolderHypertensionInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
+					%br
+					
+					%span.Number.Single.PositionerLeft 4
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionFeel" } Apakah Anda pernah melakukan pemeriksaan sebagai berikut?
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderHypertensionCheckupOneYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneYes" } Ya
@@ -260,20 +260,13 @@
 											
 						%input#RadioButtonPolicyHolderHypertensionCheckupOneOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneOthers" } Lainnya, sebutkan
-						%input#TextPolicyHolderHypertensionCheckupOtherName.Line.PositionerLeft
-						%br	
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionCheckupOneOtherDesc"}
-						Mohon menjelaskan secara rinci pada kolom di bawah ini.
-						(Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
-						%br
-						%input#TextPolicyHolderHypertensionCheckupOneOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
-						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionCheckupOneOtherDesc" } Lainnya, sebutkan
+						%input#TextPolicyHolderHypertensionCheckupOneOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%br																			
 						
 					%br					
-					%span.Number.PositionerLeft 5
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderHypertensionVomitingBlood" }Apakah Anda pernah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
+					%span.Number.Single.PositionerLeft 5
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionVomitingBlood" }Apakah Anda pernah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerLef{ :for => "RadioButtonPolicyHolderHypertensionTreatmentYes" } Ya
 						%input#RadioButtonPolicyHolderHypertensionTreatmentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionTreatment", :value => "true" }
@@ -309,8 +302,8 @@
 						%br	
 					%br
 					
-					%span.Number.PositionerLeft 6
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplication" } Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?
+					%span.Number.Single.PositionerLeft 6
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplication" } Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?
 
 					%div.RadioButton
 						%input#RadioButtonPolicyHolderHypertensionComplicationNothing.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "nothing" }
@@ -340,15 +333,15 @@
 						%br
 						
 					%br
-					%span.Number.PositionerLeft 7
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderHypertensionAverageBloodPressure" } Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.
+					%span.Number.Signle.PositionerLeft 7
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionAverageBloodPressure" } Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.
 					%br
 					%input#TextPolicyHolderHypertensionAverageBloodPressure.Line.Long.Single.PositionerLeft{ :type => "text"}
 					%br
 					
 					%br
-					%span.Number.PositionerLeft 8
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderHypertensionAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%span.Number.Single.PositionerLeft 8
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%input#TextPolicyHolderHypertensionAdditionalInfo.Line.Long.Single.PositionerLeft{ :type => "text"}
 					%br
