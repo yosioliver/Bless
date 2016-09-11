@@ -2002,14 +2002,15 @@ function getCheckboxGeneral(stringID)
 	var stringInputJQueryID = stringKres + stringID;
     var stringCheckboxValue;
     
-//    if (validateCheckboxGeneral(stringName) == false)
-//    {
-//        // alert("Harap pilih radio button di bawah ini !.");
-//    }
-//    else
-//    {
-        stringCheckboxValue = $(stringInputJQUeryID).val();
-    //}
+    if ($(stringInputJQueryID).is(":checked") == true)
+    {
+        // alert("Harap pilih radio button di bawah ini !.");
+		stringCheckboxValue = $(stringInputJQUeryID).val();
+    }
+    else
+    {
+        
+    }
     
     return stringCheckboxValue;
 }
@@ -2722,7 +2723,7 @@ function setToDatabase(stringPageType)
     $("input[type=checkbox]").each(function()
     {
         stringValue = getCheckboxGeneral(stringKey);
-            
+        
         validatePush(objectContent, stringKey, stringValue);
     });
     
