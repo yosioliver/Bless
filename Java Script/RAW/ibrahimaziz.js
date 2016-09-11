@@ -1240,7 +1240,7 @@ function buttonPopUpBeneficiariesListGenerator()
 			var intID;
 			var arrayInputTemporary = [];
 			
-			intBeneficiariesListID = getLastID(arrayhealthQuestionnaire, "TextBeneficiariesListFullName");
+			intBeneficiariesListID = getLastID(arrayHealthQuestionnaire, "TextBeneficiariesListFullName");
 			
 			if (intBeneficiariesListRecentID == 0)
 			{
