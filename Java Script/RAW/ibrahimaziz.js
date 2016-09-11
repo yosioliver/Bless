@@ -2868,6 +2868,7 @@ function calculateAge(stringBirthdayID, stringAgeID)
 			if( (dateBirthday.getTime() > dateToday.getTime()))
 			{
 				alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+				$(stringBirthdayJQueryID).val("");
 			}
 			else
 			{
