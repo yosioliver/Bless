@@ -16,6 +16,8 @@
 
 			$(document).ready(function()
 			{
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"}]}}'
+			
 				// SECTION GENERAL
 
 				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
@@ -56,6 +58,9 @@
 				
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
+				
+				var objectContent = JSON.parse(jsonDummy);
+				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 

@@ -895,8 +895,8 @@ function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 	alert('1');
     var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
     var arrayDateString = stringContent.split(stringSeparatorDate);
-	var arrayDateID = [stringIDHour, stringIDMinute, stringIDSecond];
-    var arrayDateString = stringContent.split(stringSeparatorTime);
+	var arrayTimeID = [stringIDHour, stringIDMinute, stringIDSecond];
+    var arrayTimeString = stringContent.split(stringSeparatorTime);
 	
 	if (arrayDateString.length > 1)
 	{
