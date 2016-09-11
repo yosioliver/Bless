@@ -783,3 +783,123 @@ function setToHealthQuestionnairePDF(stringLayoutJavaScriptID, arrayContent)
 		}
 	}
 }
+
+
+// SETTER FOR AMANDEMENT
+
+function getFromDatabaseForAmandement(arrayContent, stringPageInfix, stringLayoutJavaScriptID)
+{
+	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	var arrayPrefixFilter = [stringPrefixText, stringPrefixArea];
+	var stringInfixFilter;
+	var stringSuffixFilter = "Detail";
+	var arrayGeneralForm = ["Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
+	var arrayGeneralFormInIndonesia = ["Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
+	var stringKey;
+	var stringQuestionPrefix = "Jawaban tambahan kuesioner ";
+	var intQuestionNumber = 0;
+	
+	for (var i = 0; i < arrayGeneralForm.length; i++)
+	{
+		stringInfixFilter = stringPageInfix + arrayGeneralForm[i];
+		
+		
+		for (var j = 0; j < arrayContent.length; j++)
+		{
+			for (var k = 0; k < arrayPrefixFilter.length; k++)
+			{
+				stringKey = arrayPrefixFilter[k] + stringInfixFilter + stringSuffixFilter;
+				
+				if (stringKey == arrayContent[j].elementID)
+				{
+					intQuestionNumber++;
+
+					$(stringLayoutJQueryID).append
+					(
+						"<span class='Number Single PositionerLeft'>" + intQuestionNumber + ". " + "</span>" + 
+						"<label for='" + arrayContent[j].elementID + "' class='Single PositionerLeft' >" + stringQuestionPrefix + arrayGeneralFormInIndonesia[i] + "</label>" + 
+						"<br>" + 
+						"<textarea id='" + arrayContent[j].elementID + "' class='Full Double PositionerLeft'>" + arrayContent[j].Value + "</textarea>" + 
+						"</br>"
+					);
+				}
+				else
+				{
+
+				}
+			}
+		}
+	}
+}
+
+
+// GET FROM DATABASE
+
+function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
+{    
+    for (var i = 0; i < objectContent.length; i++)
+    {        
+        var stringKey = objectContent[i].elementID;
+        var stringValue = objectContent[i].Value;               
+        
+		
+		// GENERAL INPUT TYPE
+		
+        if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)
+        {
+			if (stringPageType == stringPageTypePDF)
+			{
+				setTextPDF(stringKey, stringValue);        
+			}
+			else
+			{
+				setTextForm(stringKey, stringValue);
+			}
+        }
+        else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
+        {
+            setRadioButtonGeneral(stringKey, stringValue);
+        }
+        else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
+        {            
+            setCheckboxGeneral(stringKey, stringValue);
+        }
+        else if (stringKey.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setSelectPDF(stringKey, stringValue);
+            }
+            else
+            {
+                setSelectForm(stringKey, stringValue);
+            }
+        }
+        else if (stringKey.substring(0, stringPrefixDate.length) == stringPrefixDate)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setDatePDF(stringKey, stringValue);
+            }
+            else
+            {
+                setDateForm(stringKey, stringValue);
+            }
+        }
+        else if (stringKey.substring(0, stringAreaPrefix.length) == stringAreaPrefix)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setAreaPDF(stringKey, stringValue);
+            }
+            else
+            {
+                setAreaForm(stringKey, stringValue);
+            }
+        }
+        else
+        {
+            
+        }				
+    }
+}

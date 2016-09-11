@@ -1792,18 +1792,11 @@ function setSelectPDF(stringID, stringValue)
     setBoxGeneral(stringID, stringValue);
 }
 
-function setCheckboxGeneral(stringName, stringValue)
+function setCheckboxGeneral(stringCheckboxJavaScriptID, stringValue)
 {
-    var radioButton = $("input:checkbox[name=" + stringName + "]");
-    
-    if (radioButton.is(":checked") == false) 
-    {
-        radioButton.filter("[value=" + stringValue + "]").prop("checked", true);
-    }
-    else
-    {
-        
-    }
+	var stringCheckboxJQueryID = stringKres + stringCheckboxJavaScriptID;
+	
+	$(stringCheckboxJqueryID + "[value='" + stringValue + "']").prop("checked", true);
 }
 
 function setTextForm(stringID, stringValue)

@@ -9,34 +9,38 @@
 
 /* GENERAL */
 
-input.Short
+input.Short, textarea.Short
 	width: $input_width_short
 
-input.Medium
+input.Medium, textarea.Medium
 	width: $input_width_medium
 
-input.Long
+input.Long, textarea.Long
 	width: $input_width_long
 
-input.Full
+input.Full, textarea.Full
 	width: 100%
 
-input.Single
+input.Single, textarea.Single
 	height: $input_height_single
 
-input.Double
+input.Double, textarea.Double
 	height: $input_height_double
 
-input.Multi
+input.Multi, textarea.Multi
 	height: $input_height_multi
+
+input.Wrap, textarea.Wrap
+	min-height: $input_height_single
 
 
 /* TEXT */
 
-input[type="text"], input[type="password"], input[type="number"], input[type="email"]
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], textarea
 	padding-left: 5px
 	padding-right: 5px
 	text-align: left
+	font-size: $fontsize_input_general
 	vertical-align: top
 	border-top-style: none
 	border-left-style: none
@@ -44,7 +48,7 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
 	border-bottom-style: solid
 	border-bottom-width: thin
 
-input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot
+input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot, textarea.LineDot
 	border-bottom-style: dotted
 
 
