@@ -190,7 +190,7 @@
 									%label#LabelPolicyHolderRespiratory.Item{ :for => "RadioButtonPolicyHolderRespiratoryYes" }
 										Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent, arrayHealthQuestionnaire + ['Respiratory', 'RespiratoryDetail'])" }
+										%input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Respiratory', 'RespiratoryDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryYes" } Ya
 										%div.Separator | 
 										%input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Respiratory', 'RespiratoryDetail'])" }
@@ -256,10 +256,10 @@
 									%label#LabelPolicyHolderMotion.Item{ :for => "RadioButtonPolicyHolderMotionYes" }
 										Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
+										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
 								%input#ButtonPreviewPolicyHolderMotion.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 							%li
