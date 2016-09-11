@@ -892,6 +892,7 @@ var stringSeparatorTime = ":";
 
 function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 {
+	alert('1');
     var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
     var arrayDateString = stringContent.split(stringSeparatorDate);
 	var arrayDateID = [stringIDHour, stringIDMinute, stringIDSecond];
@@ -899,32 +900,42 @@ function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 	
 	if (arrayDateString.length > 1)
 	{
+		alert('2');
 		for (var i = 0; i < arrayDateString.length; i++)
 		{ 
+			alert('3');
 			if ($(stringKres + stringID + arrayDateID[i]).is("table") == true)
 			{
+				alert('4');
 				setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
 			}
 			else
 			{
+				alert('6');
 				setLineGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
 			}			
 		}
 	}
 	else
 	{
+		alert('7');
 		for (var i = 0; i < arrayTimeString.length; i++)
 		{ 
+			alert('8');
 			if ($(stringKres + stringID + arrayTimeID[i]).is("table") == true)
 			{
+				alert('9');
 				setBoxGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
 			}
 			else
 			{
+				alert('10');
 				setTextGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
 			}			
 		}
+		alert('11');
 	}
+	alert('12');
 }
 
 
