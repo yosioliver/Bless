@@ -890,7 +890,7 @@ var stringIDMinute = "Minute";
 var stringIDSecond = "Second";
 var stringSeparatorTime = ":";
 
-function setDatePDFForHealthQuesetionnaire(stringID, stringContent)
+function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 {
     var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
     var arrayDateString = stringContent.split(stringSeparatorDate);
