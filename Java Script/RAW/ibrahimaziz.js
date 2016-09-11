@@ -1983,6 +1983,10 @@ function setTextPDF(stringID, stringValue)
         {
             setTextGeneral(stringID, stringValue);
         }
+		else if ($(stringJQueryID).is("input[type='text']") == true)
+		{
+			setTextGeneral(stringID, stringValue);
+		}
         else
         {
             setBoxGeneral(stringID, stringValue);
