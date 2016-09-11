@@ -78,6 +78,10 @@ function showPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue,
 		}
 		
 		arrayAdd(arrayContent, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
+		
+		var stringButtonPreviewJavaScriptID = stringButtonPreviewPrefix + stringParentNameWithoutPrefix;
+		var stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+		$(stringButtonPreviewJQueryID).css("display", "none");
 	}
 	
 	previewArrayObject(arrayContent);
