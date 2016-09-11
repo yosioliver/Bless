@@ -857,7 +857,7 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 					var stringValue2 = stringValue.substring(0, intMaxString);
 					
 					setTextPDF(stringKey, stringValue1);
-					setTextPDF(stringKey + "1", stringValue2);
+					setTextPDF(stringKey + "2nd", stringValue2);
 				}
 				else
 				{
