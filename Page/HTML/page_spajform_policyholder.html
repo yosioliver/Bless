@@ -92,6 +92,8 @@
       	radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");
       	
       	telephoneStripGenerator("TextPolicyHolderHomeTelephone");
+      	telephoneStripGenerator("TextPolicyHolderOfficeTelephone");
+      	
       	// FOR TESTING
       	
       	/* $("#ButtonSubmit").click(function()
@@ -211,7 +213,7 @@
           <label class='RadioButton' for='RadioButtonPolicyHolderMaritalStatusMarried'>Menikah</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonPolicyHolderMaritalStatusDivorced' name='RadioButtonPolicyHolderMaritalStatus' required='true' type='radio' value='divorced'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderMaritalStatusDivorced'>Bercerai</label>
+          <label class='RadioButton' for='RadioButtonPolicyHolderMaritalStatusDivorced'>Janda / Duda</label>
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderReligion'>Agama</label>
@@ -346,22 +348,22 @@
         </div>
         <input class='Long Single PositionerLeft' id='TextPolicyHolderRelationAssuredOther' type='text'>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderInsurancePurposeSavings'>Tujuan Pembelian Asuransi</label>
+        <label class='Medium Single PositionerLeft' for='CheckboxPolicyHolderInsurancePurposeSavings'>Tujuan Pembelian Asuransi</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderInsurancePurposeSavings' name='RadioButtonPolicyHolderInsurancePurpose' type='radio' value='savings'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderInsurancePurposeSavings'>Tabungan</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderInsurancePurposeSavings' name='CheckboxPolicyHolderInsurancePurpose' type='checkbox' value='savings'>
+          <label class='RadioButton' for='CheckboxPolicyHolderInsurancePurposeSavings'>Tabungan</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderInsurancePurposeProtection' name='RadioButtonPolicyHolderInsurancePurpose' type='radio' value='protection'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderInsurancePurposeProtection'>Proteksi</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderInsurancePurposeProtection' name='CheckboxPolicyHolderInsurancePurpose' type='checkbox' value='protection'>
+          <label class='RadioButton' for='CheckboxPolicyHolderInsurancePurposeProtection'>Proteksi</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderInsurancePurposeInvestation' name='RadioButtonPolicyHolderInsurancePurpose' type='radio' value='investment'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderInsurancePurposeInvestation'>Investasi</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderInsurancePurposeInvestation' name='CheckboxPolicyHolderInsurancePurpose' type='checkbox' value='investment'>
+          <label class='RadioButton' for='CheckboxPolicyHolderInsurancePurposeInvestation'>Investasi</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderInsurancePurposeEducation' name='RadioButtonPolicyHolderInsurancePurpose' type='radio' value='education'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderInsurancePurposeEducation'>Edukasi</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderInsurancePurposeEducation' name='CheckboxPolicyHolderInsurancePurpose' type='checkbox' value='education'>
+          <label class='RadioButton' for='CheckboxPolicyHolderInsurancePurposeEducation'>Edukasi</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderInsurancePurposeOther' name='RadioButtonPolicyHolderInsurancePurpose' type='radio' value='other'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderInsurancePurposeOther'>Lainnya</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderInsurancePurposeOther' name='CheckboxPolicyHolderInsurancePurpose' type='checkbox' value='other'>
+          <label class='RadioButton' for='CheckboxPolicyHolderInsurancePurposeOther'>Lainnya</label>
         </div>
         <input class='Long Single PositionerLeft' id='TextPolicyHolderInsurancePurposeOther' type='text'>
         <br>
@@ -374,7 +376,7 @@
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderSalaryIDR'>Gaji</label>
         <div class='RadioButton PositionerLeft'>
-          <input checked='true' class='Medium Single' id='RadioButtonPolicyHolderSalaryIDR' name='RadioButtonPolicyHolderSalary' type='radio' value='idr'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderSalaryIDR' name='RadioButtonPolicyHolderSalary' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonPolicyHolderSalaryIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonPolicyHolderSalaryUSD' name='RadioButtonPolicyHolderSalary' type='radio' value='usd'>
@@ -385,7 +387,7 @@
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderRevenueIDR'>Hasil USaha</label>
         <div class='RadioButton PositionerLeft'>
-          <input checked='true' class='Medium Single' id='RadioButtonPolicyHolderRevenueIDR' name='RadioButtonPolicyHolderRevenue' type='radio' value='idr'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderRevenueIDR' name='RadioButtonPolicyHolderRevenue' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonPolicyHolderRevenueIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonPolicyHolderRevenueUSD' name='RadioButtonPolicyHolderRevenue' type='radio' value='usd'>
@@ -396,7 +398,7 @@
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderOtherIncomeIDR'>Penghasilan Lainnya</label>
         <div class='RadioButton PositionerLeft'>
-          <input checked='true' class='Medium Single' id='RadioButtonPolicyHolderOtherIncomeIDR' name='RadioButtonPolicyHolderOtherIncome' type='radio' value='idr'>
+          <input class='Medium Single' id='RadioButtonPolicyHolderOtherIncomeIDR' name='RadioButtonPolicyHolderOtherIncome' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonPolicyHolderOtherIncomeIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonPolicyHolderOtherIncomeUSD' name='RadioButtonPolicyHolderOtherIncome' type='radio' value='usd'>

@@ -1179,6 +1179,40 @@ function buttonDeleteSPAJProposal(stringButtonViewJavaScriptID, stringButtonView
 	tableSPAJProposalGenerator(releasePrefix(stringButtonViewJavaScriptID), "SPAJProposalList", arrayHealthQuestionnaire);
 }
 
+function getLastID(arrayContent, stringKeyFilter)
+{
+	var stringFilter;
+	var stringKey;
+	var stringKeyWithoutPrefix;
+	var intTemporaryID = 0;
+	var intKeyID;
+	
+	for (var i = 0; i < arrayContent.length; i++)
+	{
+		stringFilter = arrayContent[i].elementID.substring(0, stringKeyFilter.length);
+		
+		if (stringKeyFilter == stringFilter)
+		{
+			stringKey = arrayContent[i].elementID;
+			intKeyID = stringKey.substring(stringKeyFilter.length, stringKey.length);
+			
+			if (intTemporaryID < intKeyID)
+			{
+				intTemporaryID = intKeyID;
+			}
+			else
+			{
+				
+			}
+		}
+		else
+		{
+			
+		}
+	}
+	 return intTemporaryID;
+}
+
 function buttonPopUpBeneficiariesListGenerator()
 {
     var stringKey;
@@ -1203,6 +1237,8 @@ function buttonPopUpBeneficiariesListGenerator()
 			var intCurrentSharePercentage;
 			var intID;
 			var arrayInputTemporary = [];
+			
+			intBeneficiariesListID = getLastID(arrayhealthQuestionnaire, "TextBeneficiariesListFullName");
 			
 			if (intBeneficiariesListRecentID == 0)
 			{
@@ -2820,23 +2856,31 @@ function calculateAge(stringBirthdayID, stringAgeID)
     
     $(stringBirthdayJQueryID).change(function()
     {
-        
         if ($(stringBirthdayJQueryID).val().length > 0)
         {
-            var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
-            var dateBirthday = new Date(arrayBirthday[2], parseInt(arrayBirthday[1] - 1, 10), arrayBirthday[0]);
-            var dateToday = new Date();
-            var dateDifference = Math.ceil(dateToday.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 365);
-            var intAge = parseInt(dateDifference);
+			var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
+			var dateBirthday = new Date(arrayBirthday[2], parseInt(arrayBirthday[1] - 1, 10), arrayBirthday[0]);
+			var dateToday = new Date();
 			
-            if (intAge == null || intAge == undefined)
-            {
-                $(stringAgeJQueryID).val("");
-            }
-            else
-            {
-                $(stringAgeJQueryID).val(intAge);
-            }
+			if( (dateBirthday.getTime() > dateToday.getTime()))
+			{
+				alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+			}
+			else
+			{
+				
+				var dateDifference = Math.ceil(dateToday.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 366);
+				var intAge = parseInt(dateDifference);
+
+				if (intAge == null || intAge == undefined)
+				{
+					$(stringAgeJQueryID).val("");
+				}
+				else
+				{
+					$(stringAgeJQueryID).val(intAge);
+				}
+			}
         }
         else
         {

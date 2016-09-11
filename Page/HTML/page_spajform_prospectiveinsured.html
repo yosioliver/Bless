@@ -92,6 +92,8 @@
       	radioButtonOtherGenerator("RadioButtonProspectiveInsuredInsurancePurpose", "#TextProspectiveInsuredInsurancePurposeOther", "other");
       	
       	telephoneStripGenerator("TextProspectiveInsuredHomeTelephone");
+      	telephoneStripGenerator("TextProspectiveInsuredOfficeTelephone");
+      	
       	// FOR TESTING
       	
       	/* $("#ButtonSubmit").click(function()
@@ -211,7 +213,7 @@
           <label class='RadioButton' for='RadioButtonProspectiveInsuredMaritalStatusMarried'>Menikah</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonProspectiveInsuredMaritalStatusDivorced' name='RadioButtonProspectiveInsuredMaritalStatus' required='true' type='radio' value='divorced'>
-          <label class='RadioButton' for='RadioButtonProspectiveInsuredMaritalStatusDivorced'>Bercerai</label>
+          <label class='RadioButton' for='RadioButtonProspectiveInsuredMaritalStatusDivorced'>Janda / Duda</label>
         </div>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredReligion'>Agama</label>
@@ -348,20 +350,20 @@
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredInsurancePurposeSavings'>Tujuan Pembelian Asuransi</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredInsurancePurposeSavings' name='RadioButtonProspectiveInsuredInsurancePurpose' type='radio' value='savings'>
-          <label class='RadioButton' for='RadioButtonProspectiveInsuredInsurancePurposeSavings'>Tabungan</label>
+          <input class='Medium Single' id='CheckboxProspectiveInsuredInsurancePurposeSavings' name='CheckboxProspectiveInsuredInsurancePurpose' type='checkbox' value='savings'>
+          <label class='RadioButton' for='CheckboxProspectiveInsuredInsurancePurposeSavings'>Tabungan</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredInsurancePurposeProtection' name='RadioButtonProspectiveInsuredInsurancePurpose' type='radio' value='protection'>
-          <label class='RadioButton' for='RadioButtonProspectiveInsuredInsurancePurposeProtection'>Proteksi</label>
+          <input class='Medium Single' id='CheckboxProspectiveInsuredInsurancePurposeProtection' name='CheckboxProspectiveInsuredInsurancePurpose' type='checkbox' value='protection'>
+          <label class='RadioButton' for='CheckboxProspectiveInsuredInsurancePurposeProtection'>Proteksi</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredInsurancePurposeInvestation' name='RadioButtonProspectiveInsuredInsurancePurpose' type='radio' value='investment'>
-          <label class='RadioButton' for='RadioButtonProspectiveInsuredInsurancePurposeInvestation'>Investasi</label>
+          <input class='Medium Single' id='CheckboxProspectiveInsuredInsurancePurposeInvestation' name='CheckboxProspectiveInsuredInsurancePurpose' type='checkbox' value='investment'>
+          <label class='RadioButton' for='CheckboxProspectiveInsuredInsurancePurposeInvestation'>Investasi</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredInsurancePurposeEducation' name='RadioButtonProspectiveInsuredInsurancePurpose' type='radio' value='education'>
-          <label class='RadioButton' for='RadioButtonProspectiveInsuredInsurancePurposeEducation'>Edukasi</label>
+          <input class='Medium Single' id='CheckboxProspectiveInsuredInsurancePurposeEducation' name='CheckboxProspectiveInsuredInsurancePurpose' type='checkbox' value='education'>
+          <label class='RadioButton' for='CheckboxProspectiveInsuredInsurancePurposeEducation'>Edukasi</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonProspectiveInsuredInsurancePurposeOther' name='RadioButtonProspectiveInsuredInsurancePurpose' type='radio' value='other'>
-          <label class='RadioButton' for='RadioButtonProspectiveInsuredInsurancePurposeOther'>Lainnya</label>
+          <input class='Medium Single' id='CheckboxProspectiveInsuredInsurancePurposeOther' name='CheckboxProspectiveInsuredInsurancePurpose' type='checkbox' value='other'>
+          <label class='RadioButton' for='CheckboxProspectiveInsuredInsurancePurposeOther'>Lainnya</label>
         </div>
         <input class='Long Single PositionerLeft' id='TextProspectiveInsuredInsurancePurposeOther' type='text'>
         <br>
@@ -374,7 +376,7 @@
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredSalaryIDR'>Gaji</label>
         <div class='RadioButton PositionerLeft'>
-          <input checked='true' class='Medium Single' id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonProspectiveInsuredSalary' type='radio' value='idr'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredSalaryIDR' name='RadioButtonProspectiveInsuredSalary' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredSalaryIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonProspectiveInsuredSalaryUSD' name='RadioButtonProspectiveInsuredSalary' type='radio' value='usd'>
@@ -385,7 +387,7 @@
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredRevenueIDR'>Hasil Usaha</label>
         <div class='RadioButton PositionerLeft'>
-          <input checked='true' class='Medium Single' id='RadioButtonProspectiveInsuredRevenueIDR' name='RadioButtonProspectiveInsuredRevenue' type='radio' value='idr'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredRevenueIDR' name='RadioButtonProspectiveInsuredRevenue' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredRevenueIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonProspectiveInsuredRevenueUSD' name='RadioButtonProspectiveInsuredRevenue' type='radio' value='usd'>
@@ -396,7 +398,7 @@
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonProspectiveInsuredOtherIncomeIDR'>Penghasilan Lainnya</label>
         <div class='RadioButton PositionerLeft'>
-          <input checked='true' class='Medium Single' id='RadioButtonProspectiveInsuredOtherIncomeIDR' name='RadioButtonProspectiveInsuredOtherIncome' type='radio' value='idr'>
+          <input class='Medium Single' id='RadioButtonProspectiveInsuredOtherIncomeIDR' name='RadioButtonProspectiveInsuredOtherIncome' type='radio' value='idr'>
           <label class='RadioButton' for='RadioButtonProspectiveInsuredOtherIncomeIDR'>RP</label>
           <div class='Separator'></div>
           <input class='Medium Single' id='RadioButtonProspectiveInsuredOtherIncomeUSD' name='RadioButtonProspectiveInsuredOtherIncome' type='radio' value='usd'>

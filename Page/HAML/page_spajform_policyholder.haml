@@ -56,6 +56,8 @@
 				radioButtonOtherGenerator("RadioButtonPolicyHolderInsurancePurpose", "#TextPolicyHolderInsurancePurposeOther", "other");
 				
 				telephoneStripGenerator("TextPolicyHolderHomeTelephone");
+				telephoneStripGenerator("TextPolicyHolderOfficeTelephone");
+				
 				// FOR TESTING
 				
 				/* $("#ButtonSubmit").click(function()
@@ -174,7 +176,7 @@
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusMarried" } Menikah
 					%div.Separator
 					%input#RadioButtonPolicyHolderMaritalStatusDivorced.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "divorced", :required => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusDivorced" } Bercerai
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderMaritalStatusDivorced" } Janda / Duda
 				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderReligion" } Agama
@@ -293,22 +295,22 @@
 				%input#TextPolicyHolderRelationAssuredOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderInsurancePurposeSavings" } Tujuan Pembelian Asuransi 
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderInsurancePurposeSavings" } Tujuan Pembelian Asuransi 
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderInsurancePurposeSavings.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "savings" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderInsurancePurposeSavings" } Tabungan
+					%input#CheckboxPolicyHolderInsurancePurposeSavings.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "savings" }
+					%label.RadioButton{ :for => "CheckboxPolicyHolderInsurancePurposeSavings" } Tabungan
 					%div.Separator
-					%input#RadioButtonPolicyHolderInsurancePurposeProtection.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "protection" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderInsurancePurposeProtection" } Proteksi
+					%input#CheckboxPolicyHolderInsurancePurposeProtection.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "protection" }
+					%label.RadioButton{ :for => "CheckboxPolicyHolderInsurancePurposeProtection" } Proteksi
 					%div.Separator                    
-					%input#RadioButtonPolicyHolderInsurancePurposeInvestation.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "investment" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderInsurancePurposeInvestation" } Investasi
+					%input#CheckboxPolicyHolderInsurancePurposeInvestation.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "investment" }
+					%label.RadioButton{ :for => "CheckboxPolicyHolderInsurancePurposeInvestation" } Investasi
 					%div.Separator             
-					%input#RadioButtonPolicyHolderInsurancePurposeEducation.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "education" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderInsurancePurposeEducation" } Edukasi
+					%input#CheckboxPolicyHolderInsurancePurposeEducation.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "education" }
+					%label.RadioButton{ :for => "CheckboxPolicyHolderInsurancePurposeEducation" } Edukasi
 					%div.Separator
-					%input#RadioButtonPolicyHolderInsurancePurposeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderInsurancePurpose", :value => "other" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderInsurancePurposeOther" } Lainnya
+					%input#CheckboxPolicyHolderInsurancePurposeOther.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "other" }
+					%label.RadioButton{ :for => "CheckboxPolicyHolderInsurancePurposeOther" } Lainnya
 				%input#TextPolicyHolderInsurancePurposeOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br                               
 
@@ -323,7 +325,7 @@
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryIDR" } Gaji
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderSalaryIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "idr", :checked => "true" }
+					%input#RadioButtonPolicyHolderSalaryIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "idr" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderSalaryIDR" } RP
 					%div.Separator
 					%input#RadioButtonPolicyHolderSalaryUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "usd" }
@@ -334,7 +336,7 @@
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRevenueIDR" } Hasil USaha
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderRevenueIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "idr", :checked => "true" }
+					%input#RadioButtonPolicyHolderRevenueIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "idr" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderRevenueIDR" } RP
 					%div.Separator
 					%input#RadioButtonPolicyHolderRevenueUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "usd" }
@@ -345,7 +347,7 @@
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } Penghasilan Lainnya
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "idr", :checked => "true" }
+					%input#RadioButtonPolicyHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "idr" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } RP
 					%div.Separator
 					%input#RadioButtonPolicyHolderOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "usd" }
