@@ -180,57 +180,7 @@ function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJ
 }
 
 
-// POP UP SETTER
 
-function textPopUpSetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
-{
-	var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
-	
-	$(stringPopUpJQueryID + " input:text").each(function()
-    {
-        var stringInputJavaScriptID = $(this).attr("id");
-		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
-		$(stringInputJQueryID).val("");
-		
-        var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
-        var stringValue = arrayFind(arrayContent, stringKey);
-        
-        if (stringValue == null || stringValue == undefined)
-        {
-            
-        }
-        else
-        {
-            setTextForm(stringInputJavaScriptID, stringValue);
-        }
-    });
-}
-
-function textPopUpGetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
-{
-	var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
-	
-	$(stringPopUpJQueryID + " form input[type=text]").each(function()
-	{
-		var stringInputJavaScriptID = $(this).attr("id");
-		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
-		$(stringInputJQueryID).val("");
-		
-		var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
-        var stringValue = arrayFind(arrayContent, stringKey);
-		
-		if (validateTextGeneral(stringInputJQueryID) == true)
-		{
-			arrayAdd(arrayContent, stringKey, stringValue);
-		}
-		else
-		{
-			validationMessage("Harap lengkapi form terlebih dahulu !.", null);
-		}
-	});
-}
 
 
 // FOR POP UP
