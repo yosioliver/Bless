@@ -89,6 +89,7 @@ var intSPAJProposalRecentID = 0;
 var stringPageValidationIncome = "income";
 var stringPrefixArea = "Area";
 var stringPageTypeHealthQuestionnairePDF = "HealthQuestionnairePDF";
+var stringAmandmentSuffix = "Amandment";
 
 
 // GENERATOR
@@ -927,7 +928,7 @@ function buttonPopUpGeneralGenerator()
     var stringDetailValue;
     var stringPopUpJavaScriptID = "PopUpGeneral";
     var stringPopUpJQueryID = stringKres + stringPopUpJavaScriptID;
-    var stringInputJavaScriptID = "TextDetail";
+    var stringInputJavaScriptID = "AreaAmandmentDetail";
     var stringInputJQueryID = stringKres + stringInputJavaScriptID;
     
     $("input:button[id^='ButtonPreview']").each(function()
@@ -964,9 +965,10 @@ function buttonPopUpGeneralGenerator()
     {
         stringRadioButtonKey = stringRadioButtonName;
         stringRadioButtonValue = getRadioButtonGeneral(stringRadioButtonName);
-        stringDetailKey = stringPrefixText + stringRadioButtonName.substring(stringPrefixRadioButton.length, stringRadioButtonName.length) + stringDetailSuffix;
+        stringDetailKey = stringPrefixArea + stringRadioButtonName.substring(stringPrefixRadioButton.length, stringRadioButtonName.length) + stringAmandmentSuffix + stringDetailSuffix;
         stringDetailValue = getTextGeneral(stringInputJavaScriptID);
         
+		alert($(stringInputJQueryID).val() + " " + stringInputJavaScriptID + " " + stringInputJQueryID);
         if (validateTextGeneral(stringInputJQueryID) == true)
         {
             arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
@@ -1238,7 +1240,7 @@ function buttonPopUpBeneficiariesListGenerator()
 			var intID;
 			var arrayInputTemporary = [];
 			
-			intBeneficiariesListID = getLastID(arrayhealthQuestionnaire, "TextBeneficiariesListFullName");
+			intBeneficiariesListID = getLastID(arrayHealthQuestionnaire, "TextBeneficiariesListFullName");
 			
 			if (intBeneficiariesListRecentID == 0)
 			{
