@@ -3028,9 +3028,36 @@ stringValue)
        else
        {
            $(stringTextID).prop("readonly", true);
-           $(stringTextID).val('');
+           $(stringTextID).val("");
        }
    });
+}
+
+function checkboxOtherGenerator(stringCheckboxJavaScriptID, stringTextID,
+stringValue)
+{
+	var stringCheckboxJQueryID = stringKres + stringCheckboxJavaScriptID;
+	$(stringTextID).prop("readonly", true);
+
+	$(stringCheckboxJQueryID).change(function()
+	{
+		if ($(stringCheckboxJQueryID).is(":checked") == true)
+		{
+			if (getCheckboxGeneral(stringCheckboxJavaScriptID) == stringValue)
+			{
+			   $(stringTextID).prop("readonly", false);
+			}
+			else
+			{
+			   $(stringTextID).prop("readonly", true);
+			   $(stringTextID).val("");
+			}
+		}
+		else
+		{
+			
+		}
+	});
 }
 
 function telephoneStripGenerator(stringInputJavaScriptID)
