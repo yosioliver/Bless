@@ -1968,7 +1968,7 @@ function setTextPDF(stringID, stringValue)
 			var arrayTelephoneString = stringValue.split(stringSeparatorTelephone);
 			var arrayTelephoneID = [stringIDPrefix, stringIDInfix];
 			var booleanPrefix = $.isNumeric(arrayTelephoneString[0].substring(arrayTelephoneString[0].length - 1, arrayTelephoneString[0]));
-			var booleanSuffix = $.isNumeric(arrayTelephoneString[1].substriong(0, 1));
+			var booleanSuffix = $.isNumeric(arrayTelephoneString[1].substring(0, 1));
 			
 			if (booleanPrefix == true && booleanSuffix == true)
 			{
