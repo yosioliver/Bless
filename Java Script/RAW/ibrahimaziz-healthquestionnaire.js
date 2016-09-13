@@ -790,7 +790,8 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 // GET FROM DATABASE
 
 function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
-{	
+{
+	alert("a");
     for (var i = 0; i < objectContent.length; i++)
     {        
         var stringKey = objectContent[i].elementID;
@@ -807,16 +808,8 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 				var stringKeyWithoutPrefix = releasePrefix(stringKey);
 				var stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
 				var stringIDMedication = "HypertensionMedication";
-				var stringKeyForMedication = stringKeyWithoutInfix.substring(0, stringIDMedication.length);
-				var stringKeyForTable;
 				
-				if (stringKeyForMedication == stringIDMedication)
-				{
-					stringKeyForTable = stringCellPrefix + stringKeyWithoutPrefix;
-					// alert(stringKres + " " + stringKeyForTable + " " + stringValue)
-					$(stringKres + stringKeyForTable).append(stringValue);
-				}
-				else
+				if (stringKeyWithoutInfix == undefined)
 				{
 					if (stringValue.length > intMaxString)
 					{
@@ -830,7 +823,34 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 					{
 						setTextPDF(stringKey, stringValue);
 					}
-				} 
+				}
+				else
+				{
+					var stringKeyForMedication = stringKeyWithoutInfix.substring(0, stringIDMedication.length);
+					var stringKeyForTable;
+				
+					if (stringKeyForMedication == stringIDMedication)
+					{
+						stringKeyForTable = stringCellPrefix + stringKeyWithoutPrefix;
+						// alert(stringKres + " " + stringKeyForTable + " " + stringValue)
+						$(stringKres + stringKeyForTable).append(stringValue);
+					}
+					else
+					{
+						if (stringValue.length > intMaxString)
+						{
+							var stringValue1 = stringValue.substring(0, intMaxString);
+							var stringValue2 = stringValue.substring(0, intMaxString);
+
+							setTextPDF(stringKey, stringValue1);
+							setTextPDF(stringKey + "2nd", stringValue2);
+						}
+						else
+						{
+							setTextPDF(stringKey, stringValue);
+						}
+					} 
+				}
 			}
 			else
 			{
@@ -982,7 +1002,7 @@ function releaseInfix(stringKey)
 	{
 		return stringKey.substring(stringPolicyHolderPrefix.length, stringKey.length);
 	}
-	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringPolicyHolderPrefix)
+	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringProspectiveInsuredPrefix)
 	{
 		return stringKey.substring(stringProspectiveInsuredPrefix.length, stringKey.length);
 	}

@@ -16,15 +16,20 @@
 			
 			$(document).ready(function()
 			{
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextSignedPlace","Value":"Jakarta"},{"elementID":"DateSigned","Value":"12/12/2016"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"}]}}'
+				
 				// GENERATOR
 				
 				boxGenerator("#TextPolicyHolderFullName", 26, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName2nd", 26, boxTypeWithoutLabel, null);
 				boxGenerator("#TextIllustrationNumber", 26, boxTypeWithoutLabel, null);
 				
-				boxGenerator("#DatePolicyHolderSignedDay", 2);
-				boxGenerator("#DatePolicyHolderSignedMonth", 2);
-				boxGenerator("#DatePolicyHolderSignedYear", 4);  
+				boxGenerator("#DateSignedDay", 2);
+				boxGenerator("#DateSignedMonth", 2);
+				boxGenerator("#DateSignedYear", 4); 								
+				
+				var objectContent = JSON.parse(jsonDummy);
+				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 	/ BODY
@@ -91,16 +96,16 @@
 					%br
 					%span.single.PositionerLeft Mengenai hal hal diatas, saya SETUJU dan telah PAHAM atas penjelasan yang diberikan oleh Tenaga Penjual BCA Life. Apabila terdapat perbedaan antara Ringkasan Pembelian dengan Ketentuan Polis, maka yang akan berlaku adalah ketentuan Polis.
 				
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSignedPlace" } Ditandatangani
-					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%label.Wrap.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani
+					%input#TextSignedPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 					%span.Separator.Single.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSignedDay" } Tanggal
+					%label.Wrap.PositionerLeft{ :for => "DateSignedDay" } Tanggal
 					%span.Separator.Single.PositionerLeft
-					%table#DatePolicyHolderSignedDay.BoxSquare.PositionerLeft
+					%table#DateSignedDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderSignedMonth.BoxSquare.PositionerLeft
+					%table#DateSignedMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderSignedYear.BoxSquare.PositionerLeft
+					%table#DateSignedYear.BoxSquare.PositionerLeft
 					%br
 
 					%div.ContainerFit
