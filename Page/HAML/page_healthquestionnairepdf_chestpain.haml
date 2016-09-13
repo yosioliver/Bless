@@ -20,7 +20,7 @@
 			
 				// SECTION GENERAL
 
-				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);				
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
@@ -45,9 +45,9 @@
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesYear", 4, boxTypeWithoutLabel, null);
 				
-				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -58,8 +58,8 @@
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
 				
-				var objectContent = JSON.parse(jsonDummy);
-				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 
@@ -410,10 +410,14 @@
 						%input#RadioButtonPolicyHolderChestPainTakeLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					%label.Single.NumberIndent{ :for => "TextPolicyHolderChestPainTakeLeaveIfYes" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini
-					%br
-					%div.ContainerFit.NumberIndent											
-						%input#TextPolicyHolderChestPainTakeLeaveDesc.Full.Single.PositionerLeft{ :type => "text"}	
+					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainTakeLeaveIfYesDay" } Jika “Ya”, kapan	
+					%table#DatePolicyHolderChestPainTakeLeaveIfYesDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderChestPainTakeLeaveIfYesMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderChestPainTakeLeaveIfYesYear.BoxSquare.PositionerLeft
+					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTakeLeaveDesc" } Berapa lama					
+					%input#NumberPolicyHolderChestPainTakeLeaveHowLong.Short.Single.PositionerLeft{ :type => "number"}
 					%br
 					
 					%span.Number.PositionerLeft 15

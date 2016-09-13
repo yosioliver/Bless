@@ -267,17 +267,18 @@
 				%div.Separator
 				
 				%input#RadioButtonChekUpEverOthers{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "other" }
-				%label.RadioButton{ :for => "RadioButtonChekUpEverOthers" } Laboratorium
-				%div.Separator
-				%label.RadioButton{ :for => "RadioButtonReducedOthers" } Lainnya
+				%label.RadioButton{ :for => "RadioButtonChekUpEverOthers" } Lainnya				
 			%br
 			%div.ContainerFit
-				%input#TextCheckUpEverOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }
+				%input#TextCheckUpEverOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }			
+			%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+			%br
+			%input#TextEverCheckDesc.Full.Single.Item1.Margin{ :type =>"text" }
 			%br
 			%hr
 			
 			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 14. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini?
+				%label.medium.Single.Item 14. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini?				
 				%input#RadioButtonTakeLeaveYes{ :type => "radio", :name => "RadioButtonTakeLeave", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonTakeLeaveYes" } Ya
 				%div.Separator
@@ -285,7 +286,7 @@
 				%label.RadioButton{ :for => "RadioButtonTakeLeaveNo" } Tidak			
 			%br
 			%div.ContainerFit
-			%label#LabelTakeLeaveIfYes.Medium.Single.Item3.Margin Jika "Ya" kapan?
+			%label#LabelTakeLeaveIfYes.Medium.Single.Item3.Margin Jika "Ya" kapan?			
 			%input#DateTakeLeaveIfYes.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }
 			%label#LabelTakeLeaveHowLong.Medium.Single.Item3.Margin dan berapa lama?
 			%input#NumberTakeLeaveHowLong.Medium.Single.Item1.Margin{ :type => "number" }
@@ -295,7 +296,7 @@
 
 			%label.medium.Single.Item 15. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom dibawah ini.
 			%br			
-			%input#TextPolicyHolderChestPainAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
+			%input#TextAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
 			%br
 			%hr
 
