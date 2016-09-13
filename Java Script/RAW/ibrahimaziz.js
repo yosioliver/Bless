@@ -532,7 +532,7 @@ function popUpBeneficiariesListShow(stringKeyID)
         var stringInputJavaScriptID = $(this).attr("id");
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		var stringInputName = $(this).attr("name");
-		
+		setRadioButtonGeneral(stringInputName, null);
         var stringInputNamePrefix = releasePrefix(stringInputName);
         var stringKey = stringPrefixRadioButton + stringBeneficiariesListInfix + stringInputNamePrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
@@ -551,7 +551,7 @@ function popUpBeneficiariesListShow(stringKeyID)
     {
         var stringInputJavaScriptID = $(this).attr("id");
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
-		
+		setSelectForm(stringInputJavaScriptID, null);
         var stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixSelect.length, stringInputJavaScriptID.length);
         var stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
@@ -1347,10 +1347,12 @@ function buttonPopUpBeneficiariesListGenerator()
 			
 			if (intBeneficiariesListRecentID == null)
 			{
+				alert("using last id : " + parseInt(intBeneficiariesListID, 10) + 1);
 				intID = parseInt(intBeneficiariesListID, 10) + 1;
 			}
 			else
 			{
+				alert("using recent id : " + intBeneficiariesListRecentID);
 				intID = intBeneficiariesListRecentID;
 			}
 			
@@ -1653,8 +1655,8 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 				(
 					"<tr>" + 
 						"<td>" + stringContentName + "</td>" + 
-						"<td><input type='button' id='" + stringButtonViewPrefix + stringKeyID + "' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "' onclick='buttonViewBeneficiariesList(this.id, this.name)'/></td>" + 
-						"<td><input type='button' id='" + stringButtonDeletePrefix + stringKeyID + "' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "' onclick='buttonDeleteBeneficiariesList(this.id, this.name)'/></td>" + 
+						"<td><input type='button' id='" + stringButtonViewPrefix + stringKeyID + "' class='ButtonPrimary ButtonView' value='View" + stringKeyID + "' name='" + stringKeyID + "' onclick='buttonViewBeneficiariesList(this.id, this.name)'/></td>" + 
+						"<td><input type='button' id='" + stringButtonDeletePrefix + stringKeyID + "' class='ButtonPrimary ButtonDelete' value='Delete" + stringKeyID + "' name='" + stringKeyID + "' onclick='buttonDeleteBeneficiariesList(this.id, this.name)'/></td>" + 
 					"</tr>"
 				);
 				
@@ -1876,7 +1878,7 @@ function setBoxGeneral(stringID, stringValue)
     {
 		/* if ($(stringJQueryID).is(".chest-pain")) {
     		alert(stringJQueryID + stringValue);
-		} *
+		} */
         $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringValue[i]);
     }
 }
