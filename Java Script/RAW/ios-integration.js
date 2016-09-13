@@ -350,6 +350,7 @@ function savetoDB()
 			setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
 
 			objectContent = arrayHealthQuestionnaire;
+			previewArrayObject(arrayHealthQuestionnaire);
 		}
 		else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
 		{
