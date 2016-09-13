@@ -16,7 +16,7 @@
 
 			$(document).ready(function()
 			{
-				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"}]}}'
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"}]}}'
 			
 				// SECTION GENERAL
 
@@ -58,8 +58,8 @@
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
 				
-				// var objectContent = JSON.parse(jsonDummy);
-				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				var objectContent = JSON.parse(jsonDummy);
+				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 

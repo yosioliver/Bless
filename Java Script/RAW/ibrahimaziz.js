@@ -551,7 +551,7 @@ function popUpBeneficiariesListShow(stringKeyID)
     {
         var stringInputJavaScriptID = $(this).attr("id");
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
-		setSelectForm(stringInputJavaScriptID, null);
+		
         var stringInputIDWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixSelect.length, stringInputJavaScriptID.length);
         var stringKey = stringPrefixSelect + stringBeneficiariesListInfix + stringInputIDWithoutPrefix + stringKeyID;
         var stringValue = arrayFind(arrayBeneficiariesList, stringKey);
@@ -1348,7 +1348,7 @@ function buttonPopUpBeneficiariesListGenerator()
 			if (intBeneficiariesListRecentID == null)
 			{
 				alert("using last id : " + parseInt(intBeneficiariesListID, 10) + 1);
-				intID = parseInt(intBeneficiariesListID, 10) + 1;
+				intID = parseInt(intBeneficiariesListID, 10) + parseInt(1, 10);
 			}
 			else
 			{
@@ -2031,22 +2031,22 @@ function setAreaPDF(stringID, stringValue)
     setBoxGeneral(stringID, stringValue);
 }
 
-function setNumberForm(stringID)
+function setNumberForm(stringID, stringValue)
 {
     return setTextGeneral(stringID, stringValue);
 }
 
-function setNumberPDF(stringID)
+function setNumberPDF(stringID, stringValue)
 {
-    return setBoxGeneral(stringID, stringValue);
+    return setTextGeneral(stringID, stringValue);
 }
 
-function setEmailForm(stringID)
+function setEmailForm(stringID, stringValue)
 {
     return setTextGeneral(stringID), stringValue;
 }
 
-function getEmailPDF(stringID)
+function getEmailPDF(stringID, stringValue)
 {
     return setBoxGeneral(stringID, stringValue);
 }
