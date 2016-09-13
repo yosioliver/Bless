@@ -179,8 +179,51 @@ function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJ
 	$(stringPopUpParentJQueryID).css("display", "block");
 }
 
+function buttonPreviewForMultiPopUp(stringParentNameWithoutPrefix, arrayContent, arrayValidation)
+{
+	alert(arrayHealthQuestionnaire.length);
+	var booleanState = false;
+	
+	if (arrayValidation.length == 0 || arrayValidation == null)
+	{
+		alert("b");
+		booleanState = true;
+	}
+	else
+	{
+		alert("c");
+		var stringRequiredValue;
+		previewArrayObject(arrayHealthQuestionnaire);
+		for (var i = 0; i < arrayValidation.length; i++)
+		{
+			
+			stringRequiredValue = arrayFind(arrayHealthQuestionnaire, arrayValidation[i]);
+			alert(stringRequiredValue + " " + arrayValidation[i]);
+			if (stringRequiredValue != null)
+			{
+				alert("d");
+				booleanState = true;
+			}
+			else
+			{
 
-
+			}
+		}
+	}
+	
+	if (booleanState == true)
+	{
+		alert("e");
+		var stringButtonPreviewJavaScriptID = stringButtonPreviewPrefix + stringParentNameWithoutPrefix;
+		var stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+		
+		$(stringButtonPreviewJQueryID).css("display", "block");
+	}
+	else
+	{
+		
+	}
+}
 
 
 // FOR POP UP
