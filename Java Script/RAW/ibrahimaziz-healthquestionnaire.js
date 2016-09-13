@@ -827,8 +827,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 // GET FROM DATABASE
 
 function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
-{
-	alert("a");
+{	
     for (var i = 0; i < objectContent.length; i++)
     {        
         var stringKey = objectContent[i].elementID;
