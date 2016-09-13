@@ -1315,7 +1315,8 @@ function getLastID(arrayContent, stringKeyFilter)
 			
 		}
 	}
-	 return intTemporaryID;
+	
+	return intTemporaryID;
 }
 
 function buttonPopUpBeneficiariesListGenerator()
@@ -1347,13 +1348,13 @@ function buttonPopUpBeneficiariesListGenerator()
 			
 			if (intBeneficiariesListRecentID == null)
 			{
-				alert("using last id : " + parseInt(intBeneficiariesListID, 10) + 1);
 				intID = parseInt(intBeneficiariesListID, 10) + parseInt(1, 10);
+				// alert("using last id : " + intID);
 			}
 			else
 			{
-				alert("using recent id : " + intBeneficiariesListRecentID);
 				intID = intBeneficiariesListRecentID;
+				// alert("using recent id : " + intID);
 			}
 			
 			if (validateTextGeneral(stringSharePercentageJQueryID) == true)
