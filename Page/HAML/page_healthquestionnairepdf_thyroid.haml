@@ -1,0 +1,440 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName1", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+
+
+				boxGenerator("#DatePolicyHolderThyroidFirstGotDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidFirstGotMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidFirstGotYear", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DatePolicyHolderThyroidLastConsultDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidLastConsultMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidLastConsultYear", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DatePolicyHolderThyroidDateOperationDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidDateOperationMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidDateOperationYear", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+
+
+
+
+				// SECTION MANDATORY
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				
+				// FOOTER				
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Kuesioner Thyroid");
+			});
+
+
+	/ BODY
+
+	%body
+
+		/ HEADER		
+
+		%header
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1
+			%br
+
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
+
+		/ MAIN
+
+		%main
+			%form
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
+
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
+				%fieldset
+					%span.Number.PositionerLeft 1
+					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderThyroidFirstGotDay" } Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
+					%table#DatePolicyHolderThyroidFirstGotYear.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DatePolicyHolderThyroidFirstGotMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DatePolicyHolderThyroidFirstGotDay.BoxSquare.PositionerRight
+					%br
+					
+					%span.Number.PositionerLeft 2
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderThyroidWhere" } Apa diagnosa Dokter untuk gangguan kelenjar gondok (tiroid) Anda?	
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderThyroidTherapyDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTherapy", :value => "drug" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTherapyDrug" } Hipertiroidisme
+												
+						%input#RadioButtonPolicyHolderThyroidTherapyRadio.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTherapy", :value => "radiotherapy" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTherapyRadio" } Hipotiroidisme
+												
+						%input#RadioButtonPolicyHolderThyroidTherapyChemo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTherapy", :value => "chemotherapy" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTherapyChemo" } Tiroiditis
+						%br	
+										
+	
+						%input#RadioButtonPolicyHolderThyroidTherapyDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTherapy", :value => "drug" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTherapyDrug" } Penyakit Hashimoto
+												
+						%input#RadioButtonPolicyHolderThyroidTherapyRadio.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTherapy", :value => "radiotherapy" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTherapyRadio" } Goiter
+												
+						%input#RadioButtonPolicyHolderThyroidTherapyChemo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTherapy", :value => "chemotherapy" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTherapyChemo" } Penyakit Grave
+						%br	
+																		
+						%input#RadioButtonPolicyHolderThyroidTherapyOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTherapy", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTherapyOthers" } Lainnya, sebutkan.
+						%br
+						%input#TextPolicyHolderThyroidTherapyOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }						
+					%br		
+		
+		
+					%br					
+					%span.Number.PositionerLeft 3
+					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderThyroidLastConsultDay" } Mohon melengkapi pada kolom di bawah ini dengan data Dokter dan tempat Anda konsultasi?
+					%br
+					%div.RadioButton.NumberIndent
+						%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderThyroidLastConsult" }Tanggal terakhir konsultasi
+						%table#DatePolicyHolderThyroidLastConsultDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DatePolicyHolderThyroidLastConsultMonth.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DatePolicyHolderThyroidLastConsultYear.BoxSquare.PositionerLeft
+						%br					
+
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultDoctName"} Nama Lengkap Dokter
+						%input#TextPolicyHolderThyroidConsultDoctName.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultPhone"} No. Telepon/Handphone
+						%input#TextPolicyHolderThyroidConsultPhone.Long.Single.PositionerLeft{ :type => "text" }
+
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultClinic"} Nama Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidConsultClinic.Long.Single.PositionerLeft{ :type => "text" }					
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultAddress"} Alamat Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidConsultAddress.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+					
+					%span.Number.PositionerLeft 4
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTaken" } Apakah Anda pernah atau saat ini sedang mengkonsumsi obat sehubungan kelainan kelenjar gondok (tiroid)?
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderThyroidTakenYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTaken", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTakenYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidTakenNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTaken", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTakenNo" } Tidak
+						%br								
+
+						%label.Wrap.PositionerLeft (Jika “Ya”, mohon mengisi kolom di bawah ini).
+						%br
+						%table#TablePolicyHolderThyroidCheckup
+							%thead
+								%tr
+									%th Tanggal Berobat
+									%th Nama Obat
+									%th Dosis	
+									%th Frekuensi	
+							%tbody
+								%tr
+									%td
+									%td
+									%td
+									%td
+								%tr
+									%td 
+									%td
+									%td
+									%td
+								%tr
+									%td 
+									%td
+									%td
+									%td
+						%br
+						%br
+
+						%table#TablePolicyHolderThyroidCheckup
+							%thead
+								%tr
+									%th 
+									%th Tanggal
+									%th Keterangan	
+							%tbody
+								%tr
+									%td Kapan pengobatan dimulai
+									%td
+								%tr
+									%td Kapan pengobatan dihentikan
+									%td
+						%br
+						%br		
+
+						%label.Wrap.Single.PositionerLeft Mohon jelaskan secara rinci pada kolom di bawah ini alasan pengobatan diberhentikan.
+						%br
+						%input#TextPolicyHolderThyroidOperationMethod.Line.Full.Single.PositionerLeft{ :type => "text" }					
+						%br
+					
+						%label.Wrap.Single.PositionerLeft Mohon jelaskan secara rinci pada kolom di bawah ini jika ada pengobatan lainnya.
+						%br
+						%input#TextPolicyHolderThyroidOperationMethod.Line.Full.Single.PositionerLeft{ :type => "text" }					
+						%br
+						
+								
+					%br					
+					%span.Number.PositionerLeft 5
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTaken" } Apakah Anda pernah melakukan pemeriksaan medis sehubungan kelainan kelenjar gondok (tiroid)?
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderThyroidTakenYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTaken", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTakenYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidTakenNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTaken", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTakenNo" } Tidak
+						%br								
+
+						%label.Wrap.PositionerLeft (Jika “Ya”, mohon melengkapi hasil pemeriksaan pada kolom di bawah ini).
+						%br
+						%table#TablePolicyHolderThyroidCheckup
+							%thead
+								%tr
+									%th Jenis Pemeriksaan
+									%th Tanggal
+									%th Hasil
+							%tbody
+								%tr
+									%td T3
+									%td
+									%td
+									%td
+								%tr
+									%td T4
+									%td
+									%td
+									%td
+								%tr
+									%td TSH
+									%td
+									%td
+									%td
+									
+								%tr
+									%td ECG
+									%td
+									%td
+									%td
+									
+								%tr
+									%td Biopsi
+									%td
+									%td
+									%td
+									
+								%tr
+									%td Scan/MRI/USG	
+									%td
+									%td
+									%td																
+									
+						%br
+						%br
+
+					
+					%br
+					%span.Number.PositionerLeft 6
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderThyroidWhenLast" } Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?					
+					%div.RadioButton					
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Tidak
+						%br								
+
+					%div.RadioButton.NumberIndent
+						%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderThyroidLastConsult" } Jika “Ya”, mohon berikan tanggal operasi:
+					
+						%table#DatePolicyHolderThyroidDateOperationDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DatePolicyHolderThyroidDateOperationMonth.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DatePolicyHolderThyroidDateOperationYear.BoxSquare.PositionerLeft
+						%br				
+
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultDoctName"} Lama perawatan di Rumah Sakit:
+						%input#TextPolicyHolderThyroidConsultDoctName.Short.Single.PositionerLeft{ :type => "text" }
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultPhone"} Jenis Operasi:
+						%input#TextPolicyHolderThyroidConsultPhone.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultClinic"} Nama Lengkap Dokter:
+						%input#TextPolicyHolderThyroidConsultClinic.Long.Single.PositionerLeft{ :type => "text" }					
+						%br		
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultClinic"} No. Telepon/Handphone:
+						%input#TextPolicyHolderThyroidConsultClinic.Long.Single.PositionerLeft{ :type => "text" }					
+						%br							
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultClinic"} Nama Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidConsultClinic.Long.Single.PositionerLeft{ :type => "text" }					
+						%br
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultAddress"} Alamat Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidConsultAddress.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+					
+						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderThyroidWhenLast" } Mohon melampirkan hasil Patologi Anatomi operasi tersebut					
+							
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Ada
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Tidak
+						%br						
+	
+						%label.Wrap.PositionerLeft Jika “Tidak”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+						%br
+						%input#TextPolicyHolderThyroidConsultAddress.Full.Single.PositionerLeft{ :type => "text" }
+						%br
+						%label.Wrap.PositionerLeft Menurut Dokter Anda, bagaimana hasil Patology Anatomi tersebut?
+						%br	
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Jinak
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Ganas
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Lainnya, sebutkan
+						%br				
+						%input#TextPolicyHolderThyroidConsultAddress.Full.Single.PositionerLeft{ :type => "text" }
+					%br	
+		
+					%span.Number.PositionerLeft 7
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderThyroidWhenLast" } Apakah ada pengobatan atau tindakan yang dilakukan setelah operasi?		
+					%div.RadioButton.NumberIndent			
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Tidak
+						%br
+						
+						%label.Wrap.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
+						%br
+						
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultDoctName"} Obat:					
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Tidak
+						
+						%input#TextPolicyHolderThyroidConsultDoctName.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultDoctName"} Radioterapi:					
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Tidak
+						
+						%input#TextPolicyHolderThyroidConsultDoctName.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						
+						
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultDoctName"} Kemoterapi:					
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Tidak
+						
+						%input#TextPolicyHolderThyroidConsultDoctName.Long.Single.PositionerLeft{ :type => "text" }
+						%br
+						
+						
+						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderThyroidConsultDoctName"} Lainnya:					
+						%input#RadioButtonPolicyHolderThyroidLeaveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveYes" } Ya
+						
+						%input#RadioButtonPolicyHolderThyroidLeaveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidLeave", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidLeaveNo" } Tidak
+						
+						%input#TextPolicyHolderThyroidConsultDoctName.Long.Single.PositionerLeft{ :type => "text" }
+						%br						
+
+						
+					%br
+					%span.Number.PositionerLeft 8
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderThyroidAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.                     
+	
+					%input#TextPolicyHolderThyroidConsultAddress.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					
+					
+					
+				%section#SectionDeclaration
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
