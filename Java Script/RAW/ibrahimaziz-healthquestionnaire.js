@@ -833,7 +833,6 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
         var stringKey = objectContent[i].elementID;
         var stringValue = objectContent[i].Value;                       		
 		
-		previewArrayObject(objectContent);
 		// GENERAL INPUT TYPE
 		
         if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)
