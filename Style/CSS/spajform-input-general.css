@@ -105,15 +105,15 @@ input:disabled, textarea:disabled {
 }
 
 /* RADIO BUTTON */
-.ContainerLeft .RadioButton {
+.ContainerLeft .RadioButton, .ContainerLeft .Checkbox {
   text-align: left;
 }
 
-.ContainerRight .RadioButton {
+.ContainerRight .RadioButton, .ContainerRight .Checkbox {
   text-align: right;
 }
 
-.ContainerFit .RadioButton {
+.ContainerFit .RadioButton, .ContainerFit .Checkbox {
   text-align: center;
 }
 
@@ -132,6 +132,32 @@ input:disabled, textarea:disabled {
 }
 
 .RadioButton label.RadioButton {
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+  font-size: 0.8em;
+  border-radius: 6px;
+  -ms-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+.Checkbox {
+  display: inline-block;
+}
+
+.Checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.Checkbox .Separator {
+  width: 2px;
+  height: 12px;
+  display: inline-block;
+}
+
+.Checkbox label.Checkbox {
   padding-top: 2px;
   padding-right: 5px;
   padding-right: 5px;

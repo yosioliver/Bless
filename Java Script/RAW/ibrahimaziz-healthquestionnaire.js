@@ -790,17 +790,17 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 // GET FROM DATABASE
 
 function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
-{    
+{	
     for (var i = 0; i < objectContent.length; i++)
     {        
         var stringKey = objectContent[i].elementID;
-        var stringValue = objectContent[i].Value;               
-        
+        var stringValue = objectContent[i].Value;                       		
 		
+		previewArrayObject(objectContent);
 		// GENERAL INPUT TYPE
 		
         if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)
-        {
+        {			
 			if (stringPageType == stringPageTypePDF)
 			{
 				var intMaxString = 26;
@@ -838,15 +838,15 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 			}
         }
         else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
-        {
+        {			
             setRadioButtonGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
-        {            
+        {			
             setCheckboxGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
-        {            
+        {			
             if (stringPageType == stringPageTypePDF)
             {
                 setSelectPDF(stringKey, stringValue);
@@ -857,9 +857,9 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
             }
         }
         else if (stringKey.substring(0, stringPrefixDate.length) == stringPrefixDate)
-        {            
+        {						
             if (stringPageType == stringPageTypePDF)
-            {
+            {				
                 setDatePDFForHealthQuestionnaire(stringKey, stringValue);
             }
             else
@@ -868,7 +868,7 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
             }
         }
         else if (stringKey.substring(0, stringAreaPrefix.length) == stringAreaPrefix)
-        {            
+        {			
             if (stringPageType == stringPageTypePDF)
             {
                 setAreaPDF(stringKey, stringValue);
@@ -891,7 +891,7 @@ var stringIDSecond = "Second";
 var stringSeparatorTime = ":";
 
 function setDatePDFForHealthQuestionnaire(stringID, stringContent)
-{
+{	
     var arrayDateID = [stringIDDay, stringIDMonth, stringIDYear];
     var arrayDateString = stringContent.split(stringSeparatorDate);
 	var arrayTimeID = [stringIDHour, stringIDMinute, stringIDSecond];
@@ -902,11 +902,11 @@ function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 		for (var i = 0; i < arrayDateString.length; i++)
 		{
 			if ($(stringKres + stringID + arrayDateID[i]).is("table") == true)
-			{
+			{				
 				setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
 			}
 			else
-			{
+			{				
 				setLineGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
 			}			
 		}

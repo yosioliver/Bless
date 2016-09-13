@@ -198,6 +198,17 @@ input[type="text"]:read-only, input[type="password"]:read-only
 .RadioButton input[type="radio"]:checked + label.RadioButton
     background-color: $theme_primary_color
     color: $theme_quaternary_color
+	
+.Checkbox
+    .Separator
+        background-color: $theme_primary_color
+    label.Checkbox
+        background-color: transparent
+        color: $theme_primary_color
+
+.Checkbox input[type="checkbox"]:checked + label.Checkbox
+    background-color: $theme_primary_color
+    color: $theme_quaternary_color
 
 select
     background-image: url("../../Resource/Input/input_select_enable.svg")

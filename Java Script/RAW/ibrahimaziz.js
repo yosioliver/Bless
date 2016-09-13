@@ -1072,7 +1072,6 @@ function buttonPopUpGeneralGenerator()
         stringDetailKey = stringPrefixArea + stringRadioButtonName.substring(stringPrefixRadioButton.length, stringRadioButtonName.length) + stringAmandmentSuffix + stringDetailSuffix;
         stringDetailValue = getTextGeneral(stringInputJavaScriptID);
         
-		alert($(stringInputJQueryID).val() + " " + stringInputJavaScriptID + " " + stringInputJQueryID);
         if (validateTextGeneral(stringInputJQueryID) == true)
         {
             arrayAdd(arrayHealthQuestionnaire, stringRadioButtonKey, stringRadioButtonValue);
@@ -1099,7 +1098,7 @@ function previewArrayObject(arrayContent)
 		stringObjectPreview += "key : " + arrayContent[i].elementID + "\nvalue : " + arrayContent[i].Value + "\n";
 	}
 
-	alert(stringObjectPreview);
+	// alert(stringObjectPreview);
 }	
 
 function buttonPopUpHealthGenerator()
@@ -1870,11 +1869,14 @@ function validateSelectGeneral(stringInputJQueryID)
 // SETTER
 
 function setBoxGeneral(stringID, stringValue)
-{
+{	
     var stringJQueryID = stringKres + stringID;
     
     for (var i = 0; i < stringValue.length; i++)
     {
+		/* if ($(stringJQueryID).is(".chest-pain")) {
+    		alert(stringJQueryID + stringValue);
+		} *
         $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringValue[i]);
     }
 }
@@ -2231,7 +2233,7 @@ function numberGenerator(stringNameInfix, indexRow)
 // GET FROM DATABASE
 
 function getFromDatabase(objectContent, stringPageType)
-{    
+{
     for (var i = 0; i < objectContent.length; i++)
     {        
         var stringKey = objectContent[i].elementID;
@@ -3055,7 +3057,8 @@ stringValue)
 		}
 		else
 		{
-			
+			$(stringTextID).prop("readonly", true);
+			$(stringTextID).val("");	
 		}
 	});
 }

@@ -59,8 +59,8 @@
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
 				
-				var objectContent = JSON.parse(jsonDummy);
-				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 
@@ -154,30 +154,30 @@
 					%label.Long.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacter" } Bagaimana sifat nyeri dada yang Anda rasakan?
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterOutOfBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "outofbreath" }
+						%input#RadioButtonPolicyHolderChestPainCharacterOutOfBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "outofbreath" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainChectPainCharacterOutOfBreath" } Sesak Nafas
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterSqueezed.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "squeezed" }
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterOutOfBreath" } Sesak Nafas
+						%input#RadioButtonPolicyHolderChestPainCharacterSqueezed.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "squeezed" }
 						%div.BoxRound.PositionerLeft											
-						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainChectPainCharacterSqueezed" } Dada terasa diremas
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterDepressed.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "depressed" }
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterSqueezed" } Dada terasa diremas
+						%input#RadioButtonPolicyHolderChestPainCharacterDepressed.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "depressed" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainChectPainCharacterDepressed" } Dada terasa tertekan
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterHot.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "hot" }
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterDepressed" } Dada terasa tertekan
+						%input#RadioButtonPolicyHolderChestPainCharacterHot.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "hot" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainChectPainCharacterHot"} Dada terasa panas
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterHot"} Dada terasa panas
 						%br
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterChestTightness.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "chesttightness" }
+						%input#RadioButtonPolicyHolderChestPainCharacterChestTightness.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "chesttightness" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainChectPainCharacterChestTightness" } Dada terasa berat
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterChestPunctured.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "chestpunctured" }
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterChestTightness" } Dada terasa berat
+						%input#RadioButtonPolicyHolderChestPainCharacterChestPunctured.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "chestpunctured" }
 						%div.BoxRound.PositionerLeft											
-						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainChectPainCharacterChestPunctured" } Dada terasa ditusuk-tusuk
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterVaguelyUncomfortable.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "vaguelyuncomfortable" }
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterChestPunctured" } Dada terasa ditusuk-tusuk
+						%input#RadioButtonPolicyHolderChestPainCharacterVaguelyUncomfortable.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "vaguelyuncomfortable" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainChectPainCharacterVaguelyUncomfortable" } Samar-samar tidak nyaman
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterVaguelyUncomfortable" } Samar-samar tidak nyaman
 						%br
-						%input#RadioButtonPolicyHolderChestPainChectPainCharacterOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "other" }
+						%input#RadioButtonPolicyHolderChestPainCharacterOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainCharacter", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainCharacterOthers"} Lainnya, sebutkan
 						%input#TextPolicyHolderChestPainCharacterOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
