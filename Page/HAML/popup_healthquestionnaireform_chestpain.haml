@@ -53,10 +53,10 @@
 			%input#DateLastArise.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }
 		%br				
 		%hr
-
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 5. Bagaimana sifat nyeri dada Anda (mohon beri tanda di kolom yang sesuai) ?
-			%br
+		
+		%label.Medium.Single.Item 5. Bagaimana sifat nyeri dada Anda (mohon beri tanda di kolom yang sesuai) ?
+		%br
+		%div.RadioButton.PositionerLeft			
 			%input#RadioButtonCharacterOutOfBreath{ :type => "radio", :name => "RadioButtonCharacter", :value => "outofbreath" }
 			%label.RadioButton{ :for => "RadioButtonCharacterOutOfBreath" } Sesak Nafas
 			%div.Separator
@@ -87,9 +87,9 @@
 		%br
 		%hr				
 
+		%label.Medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ? (mohon beri tanda di kolom yang sesuai)  ?
+		%br
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ? (mohon beri tanda di kolom yang sesuai)  ?
-			%br
 			%input#RadioButtonLocationMiddle{ :type => "radio", :name => "RadioButtonLocation", :value => "middle" }
 			%label.RadioButton{ :for => "RadioButtonLocationMiddle" } Tengah dada
 			%div.Separator
@@ -105,203 +105,206 @@
 		%input#TextLocationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr				
 
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 7. Apakah nyeri dada tersebut menjalar ? (mohon beri tanda di kolom yang sesuai)
-				%br
-				%input#RadioButtonSpreadToShoulder{ :type => "radio", :name => "RadioButtonSpread", :value => "shoulder" }
-				%label.RadioButton{ :for => "RadioButtonSpreadToShoulder" } Ke bahu
-				%div.Separator
-				%input#RadioButtonSpreadToArm{ :type => "radio", :name => "RadioButtonSpread", :value => "arm" }
-				%label.RadioButton{ :for => "RadioButtonSpreadToArm" } Ke lengan
-				%div.Separator
-				%input#RadioButtonSpreadToJaw{ :type => "radio", :name => "RadioButtonSpread", :value => "jaw" }
-				%label.RadioButton{ :for => "RadioButtonSpreadToJaw" } Ke Rahang
-				%div.Separator
-				%input#RadioButtonSpreadToBelly{ :type => "radio", :name => "RadioButtonSpread", :value => "belly" }
-				%label.RadioButton{ :for => "RadioButtonSpreadToBelly" } Ke Perut
-				%div.Separator
-				%input#RadioButtonSpreadToBack{ :type => "radio", :name => "RadioButtonSpread", :value => "back" }
-				%label.RadioButton{ :for => "RadioButtonSpreadToBack" } Ke Punggung
-				%div.Separator
-				%input#RadioButtonSpreadToOthers{ :type => "radio", :name => "RadioButtonSpread", :value => "other" }
-				%label.RadioButton{ :for => "RadioButtonSpreadToOthers" } Lainnya
-				%br
-			%input#TextSpreadToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%label.Medium.Single.Item 7. Apakah nyeri dada tersebut menjalar ? (mohon beri tanda di kolom yang sesuai)
+		%br
+		%div.RadioButton.PositionerLeft
+			%input#RadioButtonSpreadToShoulder{ :type => "radio", :name => "RadioButtonSpread", :value => "shoulder" }
+			%label.RadioButton{ :for => "RadioButtonSpreadToShoulder" } Ke bahu
+			%div.Separator
+			%input#RadioButtonSpreadToArm{ :type => "radio", :name => "RadioButtonSpread", :value => "arm" }
+			%label.RadioButton{ :for => "RadioButtonSpreadToArm" } Ke lengan
+			%div.Separator
+			%input#RadioButtonSpreadToJaw{ :type => "radio", :name => "RadioButtonSpread", :value => "jaw" }
+			%label.RadioButton{ :for => "RadioButtonSpreadToJaw" } Ke Rahang
+			%div.Separator
+			%input#RadioButtonSpreadToBelly{ :type => "radio", :name => "RadioButtonSpread", :value => "belly" }
+			%label.RadioButton{ :for => "RadioButtonSpreadToBelly" } Ke Perut
+			%div.Separator
+			%input#RadioButtonSpreadToBack{ :type => "radio", :name => "RadioButtonSpread", :value => "back" }
+			%label.RadioButton{ :for => "RadioButtonSpreadToBack" } Ke Punggung
+			%div.Separator
+			%input#RadioButtonSpreadToOthers{ :type => "radio", :name => "RadioButtonSpread", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonSpreadToOthers" } Lainnya
 			%br
-			%hr
+		%input#TextSpreadToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 8. Bagaimana terjadinya nyeri dada tersebut ?
-				%br
-				%input#RadioButtonHowHappenedSudden{ :type => "radio", :name => "RadioButtonHowHappened", :value => "sudden" }
-				%label.RadioButton{ :for => "RadioButtonHowHappenedSudden" } Mendadak
-				%div.Separator
-				%input#RadioButtonHowHappenedSuddenGradually{ :type => "radio", :name => "RadioButtonHowHappened", :value => "gradually" }
-				%label.RadioButton{ :for => "RadioButtonHowHappenedGradually" }  Bertahap
-				%div.Separator
-				%input#RadioButtonHowHappenedWhenRest{ :type => "radio", :name => "RadioButtonHowHappened", :value => " whenrest" }
-				%label.RadioButton{ :for => "RadioButtonHowHappenedWhenRest" } Di waktu Istirahat
-				%div.Separator
-				%input#RadioButtonHowHappenedCertainPostur{ :type => "radio", :name => "RadioButtonHowHappened", :value => "certainpostur" }
-				%label.RadioButton{ :for => "RadioButtonHowHappenedCertainPostur" } Hanya pada postur tertentu
-				%div.Separator
-				%input#RadioButtonHowHappenedAfterSport{ :type => "radio", :name => "RadioButtonHowHappened", :value => "aftersport" }
-				%label.RadioButton{ :for => "RadioButtonHowHappenedAfterSport" } Hanya pada istirahat sehabis exercise 
-				%div.Separator
-				%input#RadioButtonHowHappenedDeepBreath{ :type => "radio", :name => "RadioButtonHowHappened", :value => "deepbreath" }
-				%label.RadioButton{ :for => "RadioButtonHowHappenedDeepBreath" } Diperburuk dengan tarik nafas dalam
-				%div.Separator
-				%input#RadioButtonHowHappenedOthers{ :type => "radio", :name => "RadioButtonHowHappened", :value => "other" }
-				%label.RadioButton{ :for => "RadioButtonHowHappenedOthers" } Lainnya
-				%br				
-			%input#TextHowHappenedOtherDesc.Single.Item1.Margin{ :type =>"text" }
-			%br
-			%hr
+		%label.Medium.Single.Item 8. Bagaimana terjadinya nyeri dada tersebut ?
+		%br
+		%div.RadioButton.PositionerLeft
+			%input#RadioButtonHowHappenedSudden{ :type => "radio", :name => "RadioButtonHowHappened", :value => "sudden" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedSudden" } Mendadak
+			%div.Separator
+			%input#RadioButtonHowHappenedSuddenGradually{ :type => "radio", :name => "RadioButtonHowHappened", :value => "gradually" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedGradually" }  Bertahap
+			%div.Separator
+			%input#RadioButtonHowHappenedWhenRest{ :type => "radio", :name => "RadioButtonHowHappened", :value => " whenrest" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedWhenRest" } Di waktu Istirahat
+			%div.Separator
+			%input#RadioButtonHowHappenedCertainPostur{ :type => "radio", :name => "RadioButtonHowHappened", :value => "certainpostur" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedCertainPostur" } Hanya pada postur tertentu
+			%div.Separator
+			%input#RadioButtonHowHappenedAfterSport{ :type => "radio", :name => "RadioButtonHowHappened", :value => "aftersport" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedAfterSport" } Hanya pada istirahat sehabis exercise 
+			%div.Separator
+			%input#RadioButtonHowHappenedDeepBreath{ :type => "radio", :name => "RadioButtonHowHappened", :value => "deepbreath" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedDeepBreath" } Diperburuk dengan tarik nafas dalam
+			%div.Separator
+			%input#RadioButtonHowHappenedOthers{ :type => "radio", :name => "RadioButtonHowHappened", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedOthers" } Lainnya
+			%br				
+		%input#TextHowHappenedOtherDesc.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 9. Kondisi bagaimana yang memperburuk nyeri dada?
-				%br				
-				%input#RadioButtonGettingWorseWhenTired{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "whentired" }
-				%label.RadioButton{ :for => "RadioButtonGettingWorseWhenTired" }Kelelahan/emosi
-				%div.Separator
-				%input#RadioButtonGettingWorseWhenPressureOnChest{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "whenpressureonchest" }
-				%label.RadioButton{ :for => "RadioButtonGettingWorseWhenPressureOnChest" } Tekanan pada dada
-				%div.Separator
-				%input#RadioButtonGettingWorseWhenCoughing{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "whencoughing" }
-				%label.RadioButton{ :for => "RadioButtonGettingWorseWhenCoughing" } Batuk menghirup nafas dalam
-				%div.Separator				
-				%input#RadioButtonGettingWorseOthers{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "other" }
-				%label.RadioButton{ :for => "RadioButtonGettingWorseOthers" } Lainnya				
-			%input#TextGettingWorseOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
-			%br
-			%hr	
+		%label.Medium.Single.Item 9. Kondisi bagaimana yang memperburuk nyeri dada?
+		%br
+		%div.RadioButton.PositionerLeft			
+			%input#RadioButtonGettingWorseWhenTired{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "whentired" }
+			%label.RadioButton{ :for => "RadioButtonGettingWorseWhenTired" }Kelelahan/emosi
+			%div.Separator
+			%input#RadioButtonGettingWorseWhenPressureOnChest{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "whenpressureonchest" }
+			%label.RadioButton{ :for => "RadioButtonGettingWorseWhenPressureOnChest" } Tekanan pada dada
+			%div.Separator
+			%input#RadioButtonGettingWorseWhenCoughing{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "whencoughing" }
+			%label.RadioButton{ :for => "RadioButtonGettingWorseWhenCoughing" } Batuk menghirup nafas dalam
+			%div.Separator				
+			%input#RadioButtonGettingWorseOthers{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonGettingWorseOthers" } Lainnya			
+		%input#TextGettingWorseOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr	
 
-			%label.medium.Single.Item 10. Kondisi bagaimana yang mengurangi nyeri dada ?
-			%br
-			%div.ContainerLeft
-				%div.RadioButton.Full.Item					
-					%input#RadioButtonReducedWhenRest{ :type => "radio", :name => "RadioButtonReduced", :value => "whenrest" }
-					%label.RadioButton{ :for => "RadioButtonReducedWhenRest" } Istirahat
-					%div.Separator
-					%input#RadioButtonReducedWhenDrinkMilk{ :type => "radio", :name => "RadioButtonReduced", :value => "whendrinkmilk" }
-					%label.RadioButton{ :for => "RadioButtonReducedWhenDrinkMilk" }Minum Susu
-					%div.Separator
-					%input#RadioButtonReducedWhenDrinkDrug{ :type => "radio", :name => "RadioButtonReduced", :value => "whendrinkdrug" }
-					%label.RadioButton{ :for => "RadioButtonReducedWhenDrinkDrug" }Minum Obat maag
-					%div.Separator
-					%input#RadioButtonReducedOthers{ :type => "radio", :name => "RadioButtonReduced", :value => " other" }
-					%label.RadioButton{ :for => "RadioButtonReducedOthers" } Lainnya
-				%input#TextReducedOtherDesc.Long.Single.Item1.Margin{ :type =>"text" }	
-			%br
-			%input#TextReducedOtherDescAdd.Full.Single.Item1.Margin{ :type =>"text" }
-			%hr
+		%label.medium.Single.Item 10. Kondisi bagaimana yang mengurangi nyeri dada ?
+		%br
+		%div.ContainerLeft
+			%div.RadioButton.Full.Item					
+			%input#RadioButtonReducedWhenRest{ :type => "radio", :name => "RadioButtonReduced", :value => "whenrest" }
+			%label.RadioButton{ :for => "RadioButtonReducedWhenRest" } Istirahat
+			%div.Separator
+			%input#RadioButtonReducedWhenDrinkMilk{ :type => "radio", :name => "RadioButtonReduced", :value => "whendrinkmilk" }
+			%label.RadioButton{ :for => "RadioButtonReducedWhenDrinkMilk" }Minum Susu
+			%div.Separator
+			%input#RadioButtonReducedWhenDrinkDrug{ :type => "radio", :name => "RadioButtonReduced", :value => "whendrinkdrug" }
+			%label.RadioButton{ :for => "RadioButtonReducedWhenDrinkDrug" }Minum Obat maag
+			%div.Separator
+			%input#RadioButtonReducedOthers{ :type => "radio", :name => "RadioButtonReduced", :value => " other" }
+			%label.RadioButton{ :for => "RadioButtonReducedOthers" } Lainnya
+		%input#TextReducedOtherDesc.Long.Single.Item1.Margin{ :type =>"text" }	
+		%br
+		%div.RadioButton.Full.Item					
+			%input#RadioButtonReducedAfterDrinkDrug{ :type => "radio", :name => "RadioButtonReduced", :value => "afterdrinkdrug" }
+			%label.RadioButton{ :for => "RadioButtonReducedAfterDrinkDrug" } Setelah minum obat (Jelaskan secara rinci nama obat, dosis dan frekuensi penggunaannya pada kolom di bawah ini).
+		%input#TextReducedOtherDescAdd.Full.Single.Item1.Margin{ :type =>"text" }
+		%hr
 
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 11. Apakah keluhan nyeri dada tersebut pernah dikonsultasikan ke dokter ?
-				%input#RadioButtonConsulToDoctorYes{ :type => "radio", :name => "RadioButtonConsulToDoctor", :value => "true" }				
-				%label.RadioButton{ :for => "RadioButtonConsulToDoctorYes" } Ya
-				%div.Separator
-				%input#RadioButtonConsulToDoctorNo{ :type => "radio", :name => "RadioButtonConsulToDoctor", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonConsulToDoctorNo" } Tidak
-			%br
-			%div.ContainerFit 
-				%label.Long.Single.PositionerLeft Tanggal terakhir konsultasi
-				%input#DateConsulToDoctorLast.Full.Single.Item.Margin{ :type =>"date", "data-field" => "date" }
-			%div.ContainerFit 
-				%label.Long.Single.PositionerLeft Alasan
-				%input#TextConsulToDoctorReason.Full.Single.Item.Margin{ :type =>"text" }
-			%br
-			%div.ContainerFit 
-				%label.Long.Single.PositionerLeft Nama Dokter
-				%input#TextConsulToDoctorFullNameDoctor.Full.Single.Item.Margin{ :type =>"text" }
-			%br
-			%div.ContainerFit 
-				%label.Long.Single.PositionerLeft Alamat Dokter
-				%input#TextPConsulToDoctorHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
-			%br
-			%div.ContainerFit 
-				%label.Long.Single.PositionerLeft Diagnosa
-				%input#TextConsulToDoctorDiagnosis.Full.Single.Item.Margin{ :type =>"text" }
-			%br
-			%hr
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 11. Apakah keluhan nyeri dada tersebut pernah dikonsultasikan ke dokter ?
+			%input#RadioButtonConsulToDoctorYes{ :type => "radio", :name => "RadioButtonConsulToDoctor", :value => "true" }				
+			%label.RadioButton{ :for => "RadioButtonConsulToDoctorYes" } Ya
+			%div.Separator
+			%input#RadioButtonConsulToDoctorNo{ :type => "radio", :name => "RadioButtonConsulToDoctor", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonConsulToDoctorNo" } Tidak
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Tanggal terakhir konsultasi
+			%input#DateConsulToDoctorLast.Full.Single.Item.Margin{ :type =>"date", "data-field" => "date" }
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Alasan
+			%input#TextConsulToDoctorReason.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Nama Dokter
+			%input#TextConsulToDoctorFullNameDoctor.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Alamat Dokter
+			%input#TextPConsulToDoctorHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Diagnosa
+			%input#TextConsulToDoctorDiagnosis.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%hr
 
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 12. Apakah ada pengobatan yang diberikan sehubungan nyeri dada ?
-				%input#RadioButtonTreatmentYes{ :type => "radio", :name => "RadioButtonTreatment", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonTreatmentYes" } Ya
-				%div.Separator
-				%input#RadioButtonTreatmentNo{ :type => "radio", :name => "RadioButtonTreatment", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonTreatmentNo" } Tidak
-			%input#TextPolicyHoldermMemperburukNyeriDada.Full.Single.Item1.Margin{ :type => "text", :placeholder => "berikan nama dan jenis pengobatan" }
-			%br
-			%hr
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 12. Apakah ada pengobatan yang diberikan sehubungan nyeri dada ?
+			%input#RadioButtonTreatmentYes{ :type => "radio", :name => "RadioButtonTreatment", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonTreatmentYes" } Ya
+			%div.Separator
+			%input#RadioButtonTreatmentNo{ :type => "radio", :name => "RadioButtonTreatment", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonTreatmentNo" } Tidak
+		%input#TextPolicyHoldermMemperburukNyeriDada.Full.Single.Item1.Margin{ :type => "text", :placeholder => "berikan nama dan jenis pengobatan" }
+		%br
+		%hr
 
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 13. Apakah pernah melakukan pemeriksaan sebagai berikut?	
-				%input#RadioButtonEverCheckYes{ :type => "radio", :name => "RadioButtonEverCheck", :value => "true" }				
-				%label.RadioButton{ :for => "RadioButtonEverCheckYes" } Ya
-				%div.Separator
-				%input#RadioButtonEverCheckNo{ :type => "radio", :name => "RadioButtonEverCheck", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonEverCheckNo" } Tidak
-			%br
-			%div.RadioButton.PositionerLeft				
-				%input#RadioButtonChekUpEverEkg{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "ekgecg" }				
-				%label.RadioButton{ :for => "RadioButtonPolicyHolderChestPainEverCheckYesEKGECG" } EKG/ECG
-				%div.Separator								
-				
-				%input#RadioButtonChekUpEverRontgen{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "rontgen" }
-				%label.RadioButton{ :for => "RadioButtonChekUpEverRontgen" } Rontgen
-				%div.Separator
-				
-				%input#RadioButtonChekUpEverEchocardiogram{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "echocardiogram" }
-				%label.RadioButton{ :for => "RadioButtonChekUpEverEchocardiogram" } Rontgen
-				%div.Separator
-				
-				%input#RadioButtonChekUpEverTreadmill{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "treadmill" }
-				%label.RadioButton{ :for => "RadioButtonChekUpEverTreadmill" } Treadmill
-				%div.Separator
-				
-				%input#RadioButtonChekUpEverLaboratorium{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "laboratory" }
-				%label.RadioButton{ :for => "RadioButtonChekUpEverLaboratorium" } Laboratorium
-				%div.Separator
-				
-				%input#RadioButtonChekUpEverOthers{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "other" }
-				%label.RadioButton{ :for => "RadioButtonChekUpEverOthers" } Lainnya				
-			%br
-			%div.ContainerFit
-				%input#TextCheckUpEverOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }			
-			%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
-			%br
-			%input#TextEverCheckDesc.Full.Single.Item1.Margin{ :type =>"text" }
-			%br
-			%hr
-			
-			%div.RadioButton.PositionerLeft
-				%label.medium.Single.Item 14. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini?				
-				%input#RadioButtonTakeLeaveYes{ :type => "radio", :name => "RadioButtonTakeLeave", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonTakeLeaveYes" } Ya
-				%div.Separator
-				%input#RadioButtonTakeLeaveNo{ :type => "radio", :name => "RadioButtonTakeLeave", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonTakeLeaveNo" } Tidak			
-			%br
-			%div.ContainerFit
-			%label#LabelTakeLeaveIfYes.Medium.Single.Item3.Margin Jika "Ya" kapan?			
-			%input#DateTakeLeaveIfYes.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }
-			%label#LabelTakeLeaveHowLong.Medium.Single.Item3.Margin dan berapa lama?
-			%input#NumberTakeLeaveHowLong.Medium.Single.Item1.Margin{ :type => "number" }
-			%label.Medium.Single.Item3.Margin Hari
-			%br
-			%hr									
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 13. Apakah pernah melakukan pemeriksaan sebagai berikut?	
+			%input#RadioButtonEverCheckYes{ :type => "radio", :name => "RadioButtonEverCheck", :value => "true" }				
+			%label.RadioButton{ :for => "RadioButtonEverCheckYes" } Ya
+			%div.Separator
+			%input#RadioButtonEverCheckNo{ :type => "radio", :name => "RadioButtonEverCheck", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonEverCheckNo" } Tidak
+		%br
+		%div.RadioButton.PositionerLeft				
+			%input#RadioButtonChekUpEverEkg{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "ekgecg" }				
+			%label.RadioButton{ :for => "RadioButtonPolicyHolderChestPainEverCheckYesEKGECG" } EKG/ECG
+			%div.Separator								
 
-			%label.medium.Single.Item 15. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom dibawah ini.
-			%br			
-			%input#TextAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
-			%br
-			%hr
+			%input#RadioButtonChekUpEverRontgen{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "rontgen" }
+			%label.RadioButton{ :for => "RadioButtonChekUpEverRontgen" } Rontgen
+			%div.Separator
 
-			%h2 PERNYATAAN DAN KUASA
-			%ol
-				%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
-				%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
-				%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
-				%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+			%input#RadioButtonChekUpEverEchocardiogram{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "echocardiogram" }
+			%label.RadioButton{ :for => "RadioButtonChekUpEverEchocardiogram" } Rontgen
+			%div.Separator
+
+			%input#RadioButtonChekUpEverTreadmill{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "treadmill" }
+			%label.RadioButton{ :for => "RadioButtonChekUpEverTreadmill" } Treadmill
+			%div.Separator
+
+			%input#RadioButtonChekUpEverLaboratorium{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "laboratory" }
+			%label.RadioButton{ :for => "RadioButtonChekUpEverLaboratorium" } Laboratorium
+			%div.Separator
+
+			%input#RadioButtonChekUpEverOthers{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonChekUpEverOthers" } Lainnya				
+		%br
+		%div.ContainerFit
+			%input#TextCheckUpEverOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }			
+		%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+		%br
+		%input#TextEverCheckDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 14. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini?				
+			%input#RadioButtonTakeLeaveYes{ :type => "radio", :name => "RadioButtonTakeLeave", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonTakeLeaveYes" } Ya
+			%div.Separator
+			%input#RadioButtonTakeLeaveNo{ :type => "radio", :name => "RadioButtonTakeLeave", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonTakeLeaveNo" } Tidak			
+		%br
+		%div.ContainerFit
+		%label#LabelTakeLeaveIfYes.Medium.Single.Item3.Margin Jika "Ya" kapan?			
+		%input#DateTakeLeaveIfYes.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }
+		%label#LabelTakeLeaveHowLong.Medium.Single.Item3.Margin dan berapa lama?
+		%input#NumberTakeLeaveHowLong.Medium.Single.Item1.Margin{ :type => "number" }
+		%label.Medium.Single.Item3.Margin Hari
+		%br
+		%hr									
+
+		%label.medium.Single.Item 15. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom dibawah ini.
+		%br			
+		%input#TextAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%h2 PERNYATAAN DAN KUASA
+		%ol
+			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.

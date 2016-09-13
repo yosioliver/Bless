@@ -18,20 +18,24 @@
 			%label#LabelFirstTime.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan 
 			%input#DateFirstTime.Medium.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
-		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft  b. Berapa tekanan darah saat itu?
-			%input#TextNumOfBloodPressure.Medium.Single.Item.Margin{ :type =>"text" }
+		
+		%label.Long.Single.PositionerLeft  b. Berapa tekanan darah saat itu?
+		%label.Wrap.Single.PositionerRight.Margin mmHg
+		%input#NumberDiastolic.Short.Single.Margin.PositionerRight{ :type => "number" }
+		%span.Separator.Margin.PositionerRight /
+		%input#NumberSystolic.Short.Single.Margin.PositionerRight{ :type => "number" }						
 		%br	
+
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
 			%br
 			%input#RadioButtonCheckReasonRoutine{ :type => "radio", :name => "RadioButtonCheckReason", :value => "routine" }
-			%label.RadioButton{ :for => "RadioButtonCheckReasonGeneral" } Pemeriksaan rutin
+			%label.RadioButton{ :for => "RadioButtonCheckReasonRoutine" } Pemeriksaan rutin
 			%div.Separator
-			%input#RadioButtonCheckReasonOther{ :type => "radio", :name => "RadioButtonCheckReason", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonCheckReasonOther" }Keluhan lainnya. Mohon jelaskan
+			%input#RadioButtonCheckReasonOthers{ :type => "radio", :name => "RadioButtonCheckReason", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonCheckReasonOthers" }Keluhan lainnya. Mohon jelaskan
 		%br
-		%input#TextCheckReasonOther.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextCheckReasonOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item d. Apakah dikonsultasikan ke dokter ?
@@ -50,7 +54,7 @@
 			%input#TextDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%label.Wrap.Single.PositionerLeft.Margin e. Berapa sering Anda kontrol ke Dokter?		
-		%input#TextHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "text" }
+		%input#NumberHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "number" }
 		%label.Wrap.Single.PositionerLeft.Margin kali per minggu/ bulan/ tahun
 		%br
 		%hr
@@ -130,64 +134,65 @@
 		%br		
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
-			%input#TextInTherapyDocterName.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextInTherapyDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
-			%input#TextInTherapyPhone.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextInTherapyDoctorPhone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
-			%input#TextInTherapyHospital.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextInTherapyHospitalName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextInTherapyHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br				
 		%hr
-
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 4. Apakah pernah melakukan pemeriksaan sebagai berikut?			
-			%input#RadioButtonCheckupOneYes{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneYes" } Ya
+		
+		%label.Single.PositionerLeft 4. Apakah pernah melakukan pemeriksaan sebagai berikut?	
+		%div.RadioButton.PositionerRight
+			%input#RadioButtonCheckUpYes{ :type => "radio", :name => "RadioButtonCheckUp", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpYes" } Ya
 			%div.Separator
-			%input#RadioButtonCheckupOneNo{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneNo" } Tidak
-			%br
-			%label.medium.Single.Item Jika Ya, jelaskan kapan dan bagaimana hasilnya. 
-			%br
-			%input#RadioButtonCheckupOneEkg{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "ekgecg" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneEkg" } EKG/ ECG
-			%div.Separator
-			%input#RadioButtonCheckupOneRontgen{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "chestrontgen" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneRontgen" } Rontgen dada
-			%div.Separator
-			%input#RadioButtonCheckupOneEchocardiogram{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "echocardiogram" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneEchocardiogram" } Echocardiogram
-			%div.Separator			
-			%input#RadioButtonCheckupOneTreadmill{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "treadmill" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneTreadmill" } Treadmill
-			%div.Separator
-			%input#RadioButtonCheckupOneLaboratorium{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "laboratory" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneLaboratorium" } Laboratorium
-			%div.Separator
-			%input#RadioButtonCheckupOneOthers{ :type => "radio", :name => "RadioButtonCheckupOne", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonCheckupOneOthers" } Lainnya, sebutkan
-			%input#TextCheckupOtherName.Line.PositionerLeft
+			%input#RadioButtonCheckUpNo{ :type => "radio", :name => "RadioButtonCheckUp", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpNo" } Tidak			
 		%br
-		Mohon menjelaskan secara rinci pada kolom di bawah ini.
-		(Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+		
+		%div.RadioButton.PositionerCenter
+			%input#RadioButtonCheckUpTypeEKGECG{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "ekgecg" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpTypeEKGECG" } EKG/ ECG
+			%div.Separator
+			%input#RadioButtonCheckUpTypeChestRontgen{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "chestrontgen" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpTypeChestRontgen" } Rontgen dada
+			%div.Separator
+			%input#RadioButtonCheckUpTypeEchocardiogram{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "echocardiogram" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpTypeEchocardiogram" } Echocardiogram
+			%div.Separator			
+			%input#RadioButtonCheckUpTypeTreadmill{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "treadmill" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpTypeTreadmill" } Treadmill
+			%div.Separator
+			%input#RadioButtonCheckUpTypeLaboratorium{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "laboratory" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpTypeLaboratorium" } Laboratorium
+			%div.Separator
+			%input#RadioButtonCheckUpTypeOthers{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonCheckUpTypeOthers" } Lainnya, sebutkan
+			%input#TextCheckUpTypeOtherDesc.Line.PositionerRight
+		%br
+		
+		%label.Single.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini. (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
 		%br
 		%input#TextCheckupOneOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item  5. Apakah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
+		
+		%label.Single.PositionerLeft  5. Apakah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
+		%div.RadioButton.PositionerRight
+			%input#RadioButtonTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonTreatment", :value => "false" }
+			%label.RadioButton.PositionerRight{ :for => "RadioButtonTreatmentNo" } Tidak
+			%div.Separator.PositionerRight
 			%input#RadioButtonTreatmentYes{ :type => "radio", :name => "RadioButtonTreatment", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonTreatmentYes" } Ya
-			%div.Separator
-			%input#RadioButtonTreatmentNo{ :type => "radio", :name => "RadioButtonTreatment", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonTreatmentNo" } Tidak
+			%label.RadioButton.PositionerRight{ :for => "RadioButtonTreatmentYes" } Ya						
 		%br
 		%label.medium.Single.Item Jika “Ya”, mohon melengkapi kolom di bawah ini.
 		%br

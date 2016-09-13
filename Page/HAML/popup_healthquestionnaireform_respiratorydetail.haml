@@ -26,7 +26,7 @@
 			%input#RadioButtonDisruptionOthers{ :type => "radio", :name => "RadioButtonDisruption", :value => "other" }
 			%label.RadioButton{ :for => "RadioButtonDisruptionOthers" } Lainnya
 		%br
-		%input#TextPolicyHolderGangguanFungsi.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextPolicyHolderOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br	
 		%hr
 
@@ -38,43 +38,61 @@
 
 		%label.medium.Single.Item 3. a. Berapa kali serangan dalam 2 (dua) tahun terakhir?
 		%br    
-		%input#TextLastTwoYearsAttack.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#NumberLastTwoYearsAttack.Full.Single.Item1.Margin{ :type => "number" }
 		%br
 		%hr
 
 		%label.medium.Single.Item b. Kapan serangan terakhir?
 		%br    
-		%input#DateWhenLastAttack.Full.Single.Item1.Margin{ :type =>"text", "data-field" => "date" }
+		%input#DateLastAttack.Full.Single.Item1.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
-
+		
+		%div.ContainerFit
+		%label.Medium.Single.Item 4. Berapa kali serangan-serangan tersebut menyebabkan Anda: (Mohon melampirkan resume perawatan yang Anda miliki)
 		%br
-		%label.medium.Single.Item 4. Berapa kali serangan-serangan tersebut menyebabkan Anda: (Mohon melampirkan resume perawatan yang Anda miliki)
+			%Label.Long.Single.PositionerLeft Tidak masuk kerja selama:			
+			%input#NumberAttackCauseAbsentDay.Medium.Single.Item.Margin{ :type => "number" }
+			%span.Separator Hari
+			%input#NumberAttackCauseAbsentWeek.Medium.Single.Item.Margin{ :type => "number" }
+			%span.Separator Minggu
+			%input#NumberAttackCauseAbsentMonth.Medium.Single.Item.Margin{ :type => "number" }
+			%span.Separator Bulan
+			%input#NumberAttackCauseAbsentYear.Medium.Single.Item.Margin{ :type => "number" }
+			%span.Separator Tahun
 		%br
-		%label#LabelPolicyHolder.Wrap.Single.PositionerLeft.Margin Absen dari pekerjaan:
-		%input#TextPolicyHolderHari.Medium.Single.PositionerLeft.Margin{ :type => "text" }
-		%input#TextPolicyHolderBulan.Medium.Single.PositionerLeft.Margin{ :type => "text" }
-		%input#TextPolicyLainnyaTahun.Medium.Single.PositionerLeft.Margin{ :type => "text" }
-		%br
+		
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Dirawat di Rumah Sakit
-			%input#TextPolicyHolderDirawatDiRumahSakit.Full.Single.Item.Margin{ :type =>"text" }
+			%label.Long.Single.PositionerLeft Dirawat di Rumah Sakit			
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Tanggal			
-			%input#DateNumberOfAttackCauseHospital.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
+			%input#DateAttackCauseHospital.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
+		%br		 
+			
+		%label.Long.Single.PositionerLeft Lama Perawatan		
+		%input#NumberAttackCauseHospitalDuration.Short.Single.PositionerLeft{ :type => "number" }		
+		%label.Single.PositionerLeft (hari/minggu/bulan*) *coret yang tidak perlu
 		%br
-		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Lama Perawatan
-			%input#TextNumberOfAttackCauseHospitalDuration.Full.Single.Item.Margin{ :type =>"text" }
-		%br
+		
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Dokter yang merawat
-			%input#TextNumberOfAttackCauseHospitalDoctorName.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextAttackCauseDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
+		
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
+			%input#TextAttackCauseHospitalTelephone.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Nama Klinik/RumahSakit:
+			%input#TextAttackCauseHospitalName.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Alamat Dokter / Rumah Sakit
-			%input#TextNumberOfAttackCauseHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextAttackCauseHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -82,7 +100,7 @@
 			%label.medium.Single.Item 5. Sewaktu tidak ada serangan, apakah ada keluhan-keluhan berikut?
 			%br
 			%input#RadioButtonComplainCaugh.Single{ :type => "radio", :name => "RadioButtonComplain", :value => "caugh" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderbatuk" } batuk
+			%label.RadioButton{ :for => "RadioButtonComplainCaugh" } batuk
 			%div.Separator
 			%input#RadioButtonComplainShortnessBreath.Single{ :type => "radio", :name => "RadioButtonComplain", :value => "shortnessbreath" }
 			%label.RadioButton{ :for => "RadioButtonComplainShortnessBreath" }  napas pendek
@@ -96,12 +114,12 @@
 			%label.medium.Single.Item 6. a. Pengobatan apakah yang digunakan untuk mengatasi gangguan pernapasan?
 			%br
 			%input#RadioButtonTherapyInhaler.Single{ :type => "radio", :name => "RadioButtonTherapy", :value => "inhaler" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderinhaler" } inhaler
+			%label.RadioButton{ :for => "RadioButtonTherapyInhaler" } inhaler
 			%div.Separator
 			%input#RadioButtonTherapyDrug.Single{ :type => "radio", :name => "RadioButtonTherapy", :value => "drugs" }
 			%label.RadioButton{ :for => "RadioButtonTherapyDrug" } Obat-obatan, Jelaskan nama obat dan dosisnya
 		%br
-			%input#TextPolicyHolderJelaskanObatObatLain.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTherapyOtherDesc.Full.Single.Item.Margin{ :type =>"text" }
 
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item b. Kapan obat-obatan tersebut digunakan?
@@ -120,19 +138,47 @@
 				%div.Separator
 				%input#RadioButtonStillConsumedNo{ :type => "radio", :name => "RadioButtonStillConsumed", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonStillConsumedNo" } Tidak
-			%input#TextPolicyHolderAlasanObatObatan.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextStillConsumedDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 7. Kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? (Mohon dilampirkan fotocopi hasil pemeriksaannya) 
+		%label.Medium.Single.Item 7. Kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? (Mohon dilampirkan fotocopi hasil pemeriksaannya) 
 		%br    
 		%input#TextMedicalCheckResult.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 8. Jelaskan tanggal konsultasi terakhir, nama dan alamat lengkap dokter yang biasa dikunjungi untuk gangguan pernapasan. 
+		%label.medium.Single.Item 8. Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
+		%div.ContainerFit		
+		%br
+			%Label.Long.Single.PositionerLeft Tanggal terakhir konsultasi
+			%input#DateConsult.Medium.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Diagnosa			
+			%input#TextConsultDiagnose.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:			
+			%input#TextConsultDoctorName.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft No. Telepon/Handphone:			
+			%input#TextConsultPhone.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft Nama Klinik/RumahSakit:			
+			%input#TextConsultHospitalName.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft AlamatKlinik/RumahSakit:			
+			%input#TextConsultHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%hr
+		
+		%label.Medium.Single.Item 9. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawahini.
 		%br    
-		%input#TextPolicyHolderSeranganDalamDuaTahunB.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
