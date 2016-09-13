@@ -87,8 +87,19 @@ function onSuccess (ret)
         var stringType = Object.keys(objectContent.result)[0];
 
         if (stringType == "readFromDB")
-        {			
-            getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypeCurrent);
+        {
+			if (stringPageTypeCurrent == stringPageTypePDF)
+			{
+				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypeCurrent);
+			}
+			else if (stringPageTypeCurrent == stringPageAmandment)
+			{
+				getFromDatabaseForAmandment(objectContent.result.readFromDB, stringPageInfixType, "FieldsetAmandment");
+			}
+            else
+			{
+				
+			}
         }
         else
         {
