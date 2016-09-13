@@ -1876,7 +1876,7 @@ function setBoxGeneral(stringID, stringValue)
     {
 		/* if ($(stringJQueryID).is(".chest-pain")) {
     		alert(stringJQueryID + stringValue);
-		} *
+		} */
         $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringValue[i]);
     }
 }
