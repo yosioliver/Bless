@@ -675,6 +675,8 @@ function additionalQuestionGenerator()
 				setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
 				
                 stringRadioButtonName = $(this).attr("name");
+				
+				previewArrayObject(arrayHealthQuestionnaire);
             });
         }
         else if ($(this).data("popup-type") == stringPopUpTypeHealth)
@@ -1965,10 +1967,19 @@ function setTextPDF(stringID, stringValue)
 		{
 			var arrayTelephoneString = stringValue.split(stringSeparatorTelephone);
 			var arrayTelephoneID = [stringIDPrefix, stringIDInfix];
-
-			for(var i = 0; i < arrayTelephoneString.length; i++)
+			var booleanPrefix = $.isNumeric(arrayTelephoneString[0].substring(arrayTelephoneString[0].length - 1, arrayTelephoneString[0]));
+			var booleanSuffix = $.isNumeric(arrayTelephoneString[1].substriong(0, 1));
+			
+			if (booleanPrefix == true && booleanSuffix == true)
 			{
-				setBoxGeneral(stringID + arrayTelephoneID[i], arrayTelephoneString[i]);
+				for(var i = 0; i < arrayTelephoneString.length; i++)
+				{
+					setBoxGeneral(stringID + arrayTelephoneID[i], arrayTelephoneString[i]);
+				}
+			}
+			else
+			{
+				setBoxGeneral(stringID, stringValue);
 			}
 		}
 		else
