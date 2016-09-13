@@ -1,23 +1,23 @@
 %h2 I. Data (Calon) Tertanggung
 %fieldset
 	%span.Number.Single.PositionerLeft 1.
-	%label.Medium.Wrap.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
-	%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft
+	%label.Medium.Wrap.PositionerLeft{ :for => "TextSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
+	%table#TextSPAJNumber.BoxSquare.PositionerLeft
 	%br
 
 	%span.Number.Single.PositionerLeft 2.
 	%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
 	%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
-	%table#TextPolicyHolderFullName1.BoxSquare.PositionerLeft
+	%table#TextPolicyHolderFullName2nd.BoxSquare.PositionerLeft
 	%br
 
 	%span.Number.Single.PositionerLeft 3
 	%label.Wrap.Medium.PositionerLeft{ :for => "TextPolicyHolderBirthdayPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
-	%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+	%input#TextProspectiveInsuredBirthPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 	%span.Separator.Single.PositionerLeft ,
-	%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
+	%table#DateProspectiveInsuredBirthDay.BoxSquare.PositionerLeft
 	%span.Separator.Single.PositionerLeft /
-	%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
+	%table#DateProspectiveInsuredBirthMonth.BoxSquare.PositionerLeft
 	%span.Separator.Single.PositionerLeft /
-	%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
+	%table#DateProspectiveInsuredBirthYear.BoxSquare.PositionerLeft
 	%br

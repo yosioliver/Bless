@@ -20,19 +20,19 @@
 			
 				// SECTION GENERAL
 
-				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName1", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthdayPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthdayDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthdayMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 			
 				// SECTION MANDATORY
 				
-				boxGenerator("#DateProspectiveInsuredAmandmentSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredAmandmentSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredAmandmentSignedYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
 				
 				
 				// SETTER
@@ -65,7 +65,7 @@
 		%main
 			%form
 				%section#SectionCustomer
-					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_prospectiveinsured.haml")).render
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 				
 				%h2 Amandemen
 				%fieldset#FieldsetAmandment				
