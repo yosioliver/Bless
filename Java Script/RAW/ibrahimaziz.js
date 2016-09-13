@@ -2706,6 +2706,15 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			arrayHealthQuestionnaire = objectContent;
 			
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'DigestDetail' + 'Problem']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire, ['Text' + stringPageInfixTypeCurrent + 'Thyroid' + 'Problem']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Diabetes' + 'FirstKnown']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Backbone' + 'FirstComplain', 'Date' + stringPageInfixTypeCurrent + 'Joint' + 'FirstArise']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire, ['Text' + stringPageInfixTypeCurrent + 'Epilepsy' + 'Since']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'RespiratoryDetail' + 'Disruption']);
+			
 			if (arrayHealthQuestionnaire.length > 0)
 			{
 				var stringNameInfix;
