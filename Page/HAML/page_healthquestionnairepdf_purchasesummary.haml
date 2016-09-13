@@ -16,7 +16,7 @@
 			
 			$(document).ready(function()
 			{
-				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextSignedPlace","Value":"Jakarta"},{"elementID":"DateSigned","Value":"12/12/2016"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"}]}}'
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextSignedPlace","Value":"Jakarta"},{"elementID":"DateSigned","Value":"12/12/2016"},{"elementID":"TextIllustrationNumber","Value":"1234567890"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"}]}}'
 				
 				// GENERATOR
 				
@@ -28,8 +28,8 @@
 				boxGenerator("#DateSignedMonth", 2);
 				boxGenerator("#DateSignedYear", 4); 								
 				
-				var objectContent = JSON.parse(jsonDummy);
-				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 	/ BODY
