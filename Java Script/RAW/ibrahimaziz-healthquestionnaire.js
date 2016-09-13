@@ -439,7 +439,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
 			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
 			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
-			var stringKey = stringPrefixText + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringKey = stringPrefixNumber + stringInputInfix + stringInputIDWithoutPrefix;
 			var stringValue = getNumberForm(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == stringStateRequired)
@@ -477,7 +477,7 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			var stringInputIDWithoutPrefix = releasePrefix($(this).attr("id"));
 			var stringSpecificInputJavaScriptID = stringLayoutJavaScriptID + " " + stringInputJQueryID;
 			var stringSpecificInputJQueryID = stringKres + stringSpecificInputJavaScriptID;
-			var stringKey = stringPrefixText + stringInputInfix + stringInputIDWithoutPrefix;
+			var stringKey = stringPrefixCheckbox + stringInputInfix + stringInputIDWithoutPrefix;
 			var stringValue = getCheckboxGeneral(stringSpecificInputJavaScriptID);
 
 			if (stringInputRequired == stringStateRequired)
@@ -833,7 +833,6 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
         var stringKey = objectContent[i].elementID;
         var stringValue = objectContent[i].Value;                       		
 		
-		previewArrayObject(objectContent);
 		// GENERAL INPUT TYPE
 		
         if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)

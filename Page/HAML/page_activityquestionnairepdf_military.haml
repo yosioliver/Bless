@@ -23,6 +23,9 @@
 				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY					
+				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -43,8 +46,11 @@
 			%h1 KUESIONER UNTUK ANGKATAN BERSENJATA / POLISI
 			%br
 
-			%section#SectionNote
-				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
+			%div.Note				
+				%ol
+					%li *) <i> Harus diisi oleh Calon Tertanggung. </i>
+					%li **) <i> Bila kolom penjelasan tidak cukup, mohon memberikan penjelasan pada kertas lain. </i>
+					%li ***) <i> Coret yang tidak perlu. </i>	
 			
 		/ MAIN
 
@@ -55,13 +61,12 @@
 				/ FIELDSET
 				
 				%fieldset
-					%span.Number.Single.PositionerLeft 1.
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (sesuai dengan KTP)
+					
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (sesuai KTP)
 					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft					
 					%br
-
-					%span.Number.Single.PositionerLeft 2.
-					%label.Wrap.Medium.PositionerLeft{ :for => "DatePolicyHolderBirthdayDay" } Tanggal lahir
+					
+					%label.Wrap.Medium.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderBirthdayDay" } Tanggal lahir
 					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
@@ -69,8 +74,7 @@
 					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
 					%br
 					
-					%span.Number.Single.PositionerLeft 3.
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ/Polis
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ/Polis
 					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft					
 					%br					
 				
@@ -97,12 +101,6 @@
 						%span.Number.Single.PositionerLeft 3.
 						%label.Wrap.Long.PositionerLeft Apakah Anda melakukan kegiatan yang berisiko tinggi?
 						%br	
-					
-					-#
-						%div.RadioButton
-							%label.Wrap.Single.PositionerRight Tidak						
-							%label.Wrap.Single.PositionerRight Ya
-							%br
 					
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft a. Penjinak senjata					
@@ -216,11 +214,11 @@
 						%br
 						%hr
 						
-					%h2 I. Data (Calon) Tertanggung
+					%h2 PERNYATAAN DAN KUASA
 					%div.Note
 						%p Perlu diperhatikan: 
 						%ol
-							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner ANGKATAN BERSENJATA / POLISI ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
 							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
 							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
 							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.

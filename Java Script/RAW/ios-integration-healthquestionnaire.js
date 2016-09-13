@@ -92,8 +92,9 @@ function onSuccess (ret)
 			{
 				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypeCurrent);
 			}
-			else if (stringPageTypeCurrent == stringPageAmandment)
+			else if (stringPageTypeCurrent == stringPageTypeAmandment)
 			{
+				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypeCurrent);
 				getFromDatabaseForAmandment(objectContent.result.readFromDB, stringPageInfixType, "FieldsetAmandment");
 			}
             else
