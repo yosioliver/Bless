@@ -179,8 +179,45 @@ function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJ
 	$(stringPopUpParentJQueryID).css("display", "block");
 }
 
+function buttonPreviewForMultiPopUp(stringParentNameWithoutPrefix, arrayContent, arrayValidation)
+{
+	var booleanState = false;
+	
+	if (arrayValidation.length == 0 || arrayValidation == null)
+	{
+		booleanState = true;
+	}
+	else
+	{
+		var stringRequiredValue;
+		
+		for (var i = 0; i < arrayValidation.length; i++)
+		{
+			stringRequiredValue = arrayFind(arrayHealthQuestionnaire, arrayValidation[i]);
+			
+			if (stringRequiredValue != null)
+			{
+				booleanState = true;
+			}
+			else
+			{
 
-
+			}
+		}
+	}
+	
+	if (booleanState == true)
+	{
+		var stringButtonPreviewJavaScriptID = stringButtonPreviewPrefix + stringParentNameWithoutPrefix;
+		var stringButtonPreviewJQueryID = stringKres + stringButtonPreviewJavaScriptID;
+		
+		$(stringButtonPreviewJQueryID).css("display", "block");
+	}
+	else
+	{
+		
+	}
+}
 
 
 // FOR POP UP

@@ -631,50 +631,7 @@ function additionalQuestionGenerator()
 
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
 				
-				// HARDCODE QUICK FIX FOR INPUT TEXT
-					
-				var stringInfixHardcode;
-
-				if (stringInfixName.substring(0, 3) == "Pro")
-				{
-					stringInfixHardcode = stringProspectiveInsuredPrefix;
-				}
-				else
-				{
-					stringInfixHardcode = stringPolicyHolderPrefix;
-				}
-				
-				var stringHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Height";
-				var stringHeightJQueryID = stringKres + stringHeightJavaScriptID;
-				var stringHeightValue = getTextForm(stringHeightJavaScriptID);
-				var stringWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "Weight";
-				var stringWeightJQueryID = stringKres + stringHeightJavaScriptID;
-				var stringWeightValue = getTextForm(stringWeightJavaScriptID);
-				var stringBabyHeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyHeight";
-				var stringBabyHeightJQueryID = stringKres + stringHeightJavaScriptID;
-				var stringBabyHeightValue = getTextForm(stringBabyHeightJavaScriptID);
-				var stringBabyWeightJavaScriptID = stringPrefixText + stringInfixHardcode + "BabyWeight";
-				var stringBabyWeightJQueryID = stringKres + stringHeightJavaScriptID;
-				var stringBabyWeightValue = getTextForm(stringBabyWeightJavaScriptID);
-				var stringPregnantWeekJavaScriptID = stringPrefixText + stringInfixHardcode + "PregnantWeek";
-				var stringPregnantWeekJQueryID = stringKres + stringPregnantWeekJavaScriptID;
-				var stringPregnantWeekValue = getTextForm(stringPregnantWeekJavaScriptID);
-				var stringPregnancyJavaScriptID = stringPrefixRadioButton + stringInfixHardcode + "Pregnancy";
-				var stringPregnancyJQueryID = stringKres + stringPregnancyJavaScriptID;
-				var stringPregnancyValue = getRadioButtonGeneral(stringPregnancyJavaScriptID);
-				var stringWeightChangeJavaScriptID = stringPrefixRadioButton + stringInfixHardcode + "WeightChange";
-				var stringWeightChangeJQueryID = stringKres + stringWeightChangeJavaScriptID;
-				var stringWeightChangeValue = getRadioButtonGeneral(stringWeightChangeJavaScriptID);
-				
-				setHardCode(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
-				setHardCode(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
-				setHardCode(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
-				setHardCode(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
-				setHardCode(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
-				setHardCode(arrayHealthQuestionnaire, stringPregnancyJavaScriptID, stringPregnancyValue);
-				setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
-				
-                stringRadioButtonName = $(this).attr("name");
+				stringRadioButtonName = $(this).attr("name");
             });
         }
         else if ($(this).data("popup-type") == stringPopUpTypeHealth)
@@ -1315,7 +1272,8 @@ function getLastID(arrayContent, stringKeyFilter)
 			
 		}
 	}
-	 return intTemporaryID;
+	
+	return intTemporaryID;
 }
 
 function buttonPopUpBeneficiariesListGenerator()
@@ -1347,13 +1305,13 @@ function buttonPopUpBeneficiariesListGenerator()
 			
 			if (intBeneficiariesListRecentID == null)
 			{
-				alert("using last id : " + parseInt(intBeneficiariesListID, 10) + 1);
 				intID = parseInt(intBeneficiariesListID, 10) + parseInt(1, 10);
+				// alert("using last id : " + intID);
 			}
 			else
 			{
-				alert("using recent id : " + intBeneficiariesListRecentID);
 				intID = intBeneficiariesListRecentID;
+				// alert("using recent id : " + intID);
 			}
 			
 			if (validateTextGeneral(stringSharePercentageJQueryID) == true)
@@ -1964,10 +1922,19 @@ function setTextPDF(stringID, stringValue)
 		{
 			var arrayTelephoneString = stringValue.split(stringSeparatorTelephone);
 			var arrayTelephoneID = [stringIDPrefix, stringIDInfix];
-
-			for(var i = 0; i < arrayTelephoneString.length; i++)
+			var booleanPrefix = $.isNumeric(arrayTelephoneString[0].substring(arrayTelephoneString[0].length - 1, arrayTelephoneString[0]));
+			var booleanSuffix = $.isNumeric(arrayTelephoneString[1].substring(0, 1));
+			
+			if (booleanPrefix == true && booleanSuffix == true)
 			{
-				setBoxGeneral(stringID + arrayTelephoneID[i], arrayTelephoneString[i]);
+				for(var i = 0; i < arrayTelephoneString.length; i++)
+				{
+					setBoxGeneral(stringID + arrayTelephoneID[i], arrayTelephoneString[i]);
+				}
+			}
+			else
+			{
+				setBoxGeneral(stringID, stringValue);
 			}
 		}
 		else
