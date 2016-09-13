@@ -90,6 +90,7 @@ var stringPageValidationIncome = "income";
 var stringPrefixArea = "Area";
 var stringPageTypeHealthQuestionnairePDF = "HealthQuestionnairePDF";
 var stringAmandmentSuffix = "Amandment";
+var stringPageTypeAmandment = "Amandment";
 
 
 // GENERATOR
