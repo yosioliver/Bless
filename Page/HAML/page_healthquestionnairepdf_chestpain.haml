@@ -252,16 +252,16 @@
 						%div.BoxRound.PositionerLeft
 						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedDeepBreath" } Diperburuk dengan nafas dalam
 						%br
-						%input#RadioButtonPolicyHolderChestPainHowHappenedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "false" }
+						%input#RadioButtonPolicyHolderChestPainHowHappenedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedOthers"} Di bagian lain dari dada, sebutkan: 
-						%input#TextPolicyHolderChestPainSpreadOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextPolicyHolderChestPainHowHappenedOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 					
 					%span.Number.Single.PositionerLeft 9.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorse" } Kondisi bagaimana yang memperburuk nyeri dada?
 					%br
-					%div.RadioButton.NumberIndent
+					%div.RadioButton.NumberIndent						
 						%input#RadioButtonPolicyHolderChestPainGettingWorseWhenTired.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainGettingWorse", :value => "whentired" }
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseWhenTired" } Kelelahan/emosi
@@ -274,7 +274,7 @@
 						%br
 						%input#RadioButtonPolicyHolderChestPainGettingWorseOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainGettingWorse", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseOthers"} Lainnya, sebutkan 
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainGettingWorseOthers"} Lainnya, sebutkan 						
 						%input#TextPolicyHolderChestPainGettingWorseOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 					
@@ -292,7 +292,7 @@
 						%input#RadioButtonPolicyHolderChestPainReducedWhenDrinkDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "whendrinkdrug" }
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedWhenDrinkDrug" } Minum obat maag
-						%input#RadioButtonPolicyHolderChestPainReducedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "false" }
+						%input#RadioButtonPolicyHolderChestPainReducedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainReduced", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedOthers"} Lainnya, sebutkan
 						%input#TextPolicyHolderChestPainReducedOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
@@ -301,7 +301,7 @@
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainReducedAfterDrinkDrug" } Setelah minum obat (Jelaskan secara rinci nama obat, dosis dan frekuensi penggunaannya pada kolom di bawah ini).
 						%br
-						%input#TextPolicyHolderChestPainReducedOtherDesc.Full.Single.PositionerLeft{ :type => "text" }
+						%input#TextPolicyHolderChestPainReducedOtherDescAdd.Full.Single.PositionerLeft{ :type => "text" }
 					%br				
 					
 					%span.Number.Single.PositionerLeft 11.
@@ -348,7 +348,7 @@
 					
 					%span.Number.Single.PositionerLeft 12.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPaintTreatment" } Apakah ada pengobatan yang diberikan sehubungan nyeri dada?
-					%div.RadioButton.NumberIndent.PositionerRight
+					%div.RadioButton.NumberIndent.PositionerRight					
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPaintTreatmentNo" } Tidak
 						%input#RadioButtonPolicyHolderChestPaintTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPaintTreatment", :value => "false" }
 						%div.BoxRound.PositionerRight
@@ -366,10 +366,10 @@
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainEverCheck" } Apakah pernah melakukan pemeriksaan sebagai berikut?
 					%div.RadioButton.PositionerRight
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainEverCheckNo" } Tidak
-						%input#RadioButtonPolicyHolderChestPainEverCheckNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainEverCheckNo", :value => "false" }
+						%input#RadioButtonPolicyHolderChestPainEverCheckNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainEverCheck", :value => "false" }
 						%div.BoxRound.PositionerRight
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainEverCheckYes" } Ya
-						%input#RadioButtonPolicyHolderChestPainEverCheckYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainEverCheckYes", :value => "true" }
+						%input#RadioButtonPolicyHolderChestPainEverCheckYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainEverCheck", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft					
@@ -403,7 +403,7 @@
 					%span.Number.PositionerLeft 14.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainTakeLeave" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveNo" } Tidak
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveNo" } Tidak						
 						%input#RadioButtonPolicyHolderChestPainTakeLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "false" }
 						%div.BoxRound.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveYes" } Ya
