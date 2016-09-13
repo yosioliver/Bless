@@ -878,6 +878,17 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
                 setAreaForm(stringKey, stringValue);
             }
         }
+		else if (stringKey.substring(0, stringNumberPrefix.length) == stringNumberPrefix)
+        {	
+            if (stringPageType == stringPageTypePDF)
+            {
+                setNumberPDF(stringKey, stringValue);
+            }
+            else
+            {
+                setNumberForm(stringKey, stringValue);
+            }
+        }
         else
         {
             
