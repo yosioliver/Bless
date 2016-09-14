@@ -597,7 +597,7 @@ function SPAJProposalGenerator(stringButtonJavaScriptID)
 	
 	$(stringButtonJQueryID).click(function()
 	{
-		popUpSPAJProposalShow("RadioButtonSPAJProposal", null, "PopUpSPAJProposal", arrayHealthQuestionnaire);
+		popUpSPAJProposalShow("RadioButton" + stringPageInfixTypeCurrent + "SPAJProposal", null, "PopUpSPAJProposal", arrayHealthQuestionnaire);
 	})
 }
 

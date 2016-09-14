@@ -349,7 +349,7 @@ function savetoDB()
 			setHardCode(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
 			setHardCode(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
 			setHardCode(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
-			setHardCode(arrayHealthQuestionnaire, stringPregnantJavaScriptID, stringPregnantWeekValue);
+			setHardCode(arrayHealthQuestionnaire, stringPregnantJavaScriptID, stringPregnantValue);
 			setHardCode(arrayHealthQuestionnaire, stringPregnancyJavaScriptID, stringPregnancyValue);
 			setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
 
