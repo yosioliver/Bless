@@ -268,38 +268,45 @@
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDoctorRecipeYes" } Ya
 						%input#RadioButtonPolicyHolderDigestDoctorRecipeYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDoctorRecipe", :value => "true" }
 						%div.BoxRound.PositionerRight
-					%label.Wrap.Single.PositionerLeft{:for => "TextPolicyHolderVomitingBlood"} Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
-					%br
-					
-							
-					%table
-						%thead
-							%tr
-								%th Nama Obat
-								%th Dosis
-								%th Frekuensi
-						%tbody
-							%tr
-								%td
-								%td
-								%td
-							%tr
-								%td
-								%td
-								%td				
 						%br
+						
+					%label.Wrap.NumberIndent.PositionerLeft{:for => "TextPolicyHolderVomitingBlood"} Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
+					%br
+					%div.ContainerFit.NumberIndent							
+						%table#TableDrugList
+							%thead
+								%tr
+									%th Nama Obat
+									%th Dosis
+									%th Frekuensi
+							%tbody
+								%tr
+									%td
+									%td
+									%td
+								%tr
+									%td
+									%td
+									%td				
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDoctorName" } Nama Lengkap Dokter:
+						%input#TextPolicyHolderDigestDoctorName.Full.Single.Item{ :type => "text" }
+					%br
 					
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDoctorName" } Nama Lengkap Dokter:
-					%input#TextPolicyHolderDigestDoctorName.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDoctorPhoneNo" } No. Telepon/Handphone:
+						%input#TextPolicyHolderDigestDoctorPhoneNo.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDoctorPhoneNo" } No. Telepon/Handphone:
-					%input#TextPolicyHolderDigestDoctorPhoneNo.Long.Single.PositionerLeft{ :type => "text" }
+					
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalName" } No. Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderDigestHospitalName.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalName" } No. Nama Klinik/Rumah Sakit:
-					%input#TextPolicyHolderDigestHospitalName.Long.Single.PositionerLeft{ :type => "text" }
-					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDoctorAddress" } Alamat Klinik/Rumah Sakit:
-					%input#TextPolicyHolderDigestDoctorAddress.Long.Single.PositionerLeft{ :type => "text" }
+					
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDoctorAddress" } Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderDigestDoctorAddress.Full.Single.Item{ :type => "text" }
 					%br
 					
 					
@@ -333,7 +340,7 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderDigestHospitalCareWhenEndMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderDigestHospitalCareWhenEndYear.BoxSquare.PositionerLeft				
+					%table#DatePolicyHolderDigestHospitalCareWhenEndYear.BoxSquare.PositionerLeft	 			
 					%br						
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalCareHowLong" } Lama perawatan
 					%input#TextPolicyHolderDigestHospitalCareHowLong.Short.Single.PositionerLeft{ :type => "text"}
