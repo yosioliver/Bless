@@ -172,7 +172,12 @@
 						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalName.Full.Single.Item{ :type => "text" }
 					%br
 					
-					%div.ContainerFit.NumberIndent
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%div.ContainerFit.NumberIndent{ :style => "margin-top: 30px;"}
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress"} Alamat Klinik/Rumah Sakit:
 						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress.Full.Single.PositionerLeft{ :type => "text" }
 					%br
@@ -298,8 +303,13 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRespiratoryDetailAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }
 					%br
+					
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 				
-				%section#SectionDeclaration
+				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
 		%section#SectionFooter
