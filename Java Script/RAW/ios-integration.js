@@ -334,9 +334,9 @@ function savetoDB()
 			var stringPregnantWeekJavaScriptID = stringPrefixText + stringInfixHardcode + "PregnantWeek";
 			var stringPregnantWeekJQueryID = stringKres + stringPregnantWeekJavaScriptID;
 			var stringPregnantWeekValue = getTextForm(stringPregnantWeekJavaScriptID);
-			var stringPregnantJavaScriptID = stringPrefixText + stringInfixHardcode + "Pregnant";
+			var stringPregnantJavaScriptID = stringPrefixRadioButton + stringInfixHardcode + "Pregnant";
 			var stringPregnantJQueryID = stringKres + stringPregnantJavaScriptID;
-			var stringPregnantValue = getTextForm(stringPregnantJavaScriptID);
+			var stringPregnantValue = getRadioButtonGeneral(stringPregnantJavaScriptID);
 			var stringPregnancyJavaScriptID = stringPrefixRadioButton + stringInfixHardcode + "Pregnancy";
 			var stringPregnancyJQueryID = stringKres + stringPregnancyJavaScriptID;
 			var stringPregnancyValue = getRadioButtonGeneral(stringPregnancyJavaScriptID);
