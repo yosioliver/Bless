@@ -189,11 +189,9 @@
 					%table#DatePolicyHolderEpilepsyLastconsultMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderEpilepsyLastconsultYear.BoxSquare.PositionerLeft
-
 					%br
 
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyGetDrug" } Apakah Anda mendapat obat dokter?
-
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEpilepsyGetDrugNo" } Tidak					
 						%input#RadioButtonPolicyHolderEpilepsyGetDrugNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyGetDrug", :value => "false" }
@@ -204,31 +202,38 @@
 						%br								
 
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TablePolicyHolderEpilepsyDrugList" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
-					%br
+					%br					
+										
 					%div.ContainerFit.NumberIndent
-						%table#TablePolicyHolderEpilepsyDrugList
-							%thead
-								%tr
-									%th Nama Obat
-									%th Dosis
-									%th Frekuensi										
-							%tbody
-								%tr
-									%td
-									%td
-									%td
-								%tr
-									%td 
-									%td
-									%td
-								%tr
-									%td 
-									%td
-									%td
-								%tr
-									%td 
-									%td
-									%td								
+						%label.Short.Single.Item1.Center Nama Obat
+						%label.Short.Single.Item1.Center Dosis
+						%label.Short.Single.Item1.Center Frekuensi
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderEpilepsyDrugListName1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListDosis1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListFrekuensi1.Short.Single.Item1.Margin{ :type => "text" }															
+					%br
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderEpilepsyDrugListName2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListDosis2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListFrekuensi2.Short.Single.Item1.Margin{ :type => "text" }															
+					%br
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderEpilepsyDrugListName3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListDosis3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListFrekuensi3.Short.Single.Item1.Margin{ :type => "text" }															
+					%br
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderEpilepsyDrugListName4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListDosis4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListFrekuensi4.Short.Single.Item1.Margin{ :type => "text" }															
+					%br
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderEpilepsyDrugListName5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListDosis5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderEpilepsyDrugListFrekuensi5.Short.Single.Item1.Margin{ :type => "text" }															
+					%br
+					
 					%br
 
 
