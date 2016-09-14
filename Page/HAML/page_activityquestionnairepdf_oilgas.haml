@@ -24,9 +24,9 @@
 
 				// SECTION MANDATORY
 				
-				boxGenerator("#DateActivityOilGasTumorSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateActivityOilGasTumorSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateActivityOilGasTumorSignedYear", 4, boxTypeWithoutLabel, null);		
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);		
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -82,146 +82,193 @@
 				/ FIELDSET
 				
 				%fieldset
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 1. 						
-						%label.Long.PositionerLeft{ :for => "AreaActivityOilGasPosition" } Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
-						%br		
-						%textarea#AreaActivityOilGasPosition.Multi.Full.NumberIndent.PositionerLeft
-						%br
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 1. 						
+						%label.Full.Wrap.Item{ :for => "AreaActivityOilGasPosition" } Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
+					%div.ContainerFit.NumberIndent
+						%textarea#AreaActivityOilGasPosition.Multi.Full.Item
 
-						%span.Number.Single.PositionerLeft 2. 						
-						%label.Long.PositionerLeft{ :for => "AreaActivityOilGasPositionDesc" } Jika tidak termasuk dalam daftar di atas, mohon dijelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut.
-						%br		
-						%textarea#AreaActivityOilGasPositionDesc.Multi.Full.NumberIndent.PositionerLeft
-						%br
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 2. 						
+						%label.Full.Wrap.Item{ :for => "AreaActivityOilGasPositionDesc" } Jika tidak termasuk dalam daftar di atas, mohon dijelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut.
+					%div.ContainerFit.NumberIndent	
+						%textarea#AreaActivityOilGasPositionDesc.Multi.Full.Item
 
-						%span.Number.Single.PositionerLeft 3. 						
-						%label.Long.PositionerLeft{ :for => "TextActivityOilGasHowLong" } Sudah berapa lama Anda bekerja dalam bidang Pertambangan/Perminyakkan/Gas?
-						%br		
-						%input#TextActivityOilGasHowLong.Multi.Long.NumberIndent.PositionerLeft
-						%br
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 3. 							
+						%label.Full.Wrap.Item{ :for => "TextActivityOilGasHowLong" } Sudah berapa lama Anda bekerja dalam bidang Pertambangan/Perminyakkan/Gas?
+					%div.ContainerFit.NumberIndent
+						%textarea#AreaActivityOilGasHowLong.Multi.Full.Item
 
-						%span.Number.Single.PositionerLeft 4. 						
-						%label.Long.PositionerLeft{ :for => "AreaActivityOilGasPercentManual" } Mohon dijelaskan berapa persen pekerjaan Anda yang bersifat manual atau fisik dari total pekerjaan Anda serta uraian pekerjaan Anda sehari-hari?
-						%br		
-						%textarea#AreaActivityOilGasPercentManual.Multi.Full.NumberIndent.PositionerLeft
-						%br
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 4. 						
+						%label.Full.Wrap.Item{ :for => "AreaActivityOilGasPercentManual" } Mohon dijelaskan berapa persen pekerjaan Anda yang bersifat manual atau fisik dari total pekerjaan Anda serta uraian pekerjaan Anda sehari-hari?
+					%div.ContainerFit.NumberIndent
+						%textarea#AreaActivityOilGasPercentManual.Multi.Full.Item
 
-						%span.Number.Single.PositionerLeft 5. 						
-						%label.Long.PositionerLeft{ :for => "AreaActivityOilGasMiningActivity" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining? Mohon jelaskan.
-						%br		
-						%textarea#AreaActivityOilGasMiningActivity.Multi.Full.NumberIndent.PositionerLeft
-						%br
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 5. 							
+						%label.Full.Wrap.Item{ :for => "AreaActivityOilGasMiningActivity" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining? Mohon jelaskan.
+					%div.ContainerFit.NumberIndent	
+						%textarea#AreaActivityOilGasMiningActivity.Multi.Full.Item
 
-						%span.Number.Single.PositionerLeft 6. 						
-						%label.Long.PositionerLeft{ :for => "AreaActivityOilGasWorkLocation" } Dimana lokasi Anda bekerja? (Sebutkan nama lokasi dan daerah/ provinsinya)
-						%br		
-						%textarea#AreaActivityOilGasWorkLocation.Multi.Full.NumberIndent.PositionerLeft
-						%br
-
-						%span.Number.Single.PositionerLeft 7. 						
-						%label.Long.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut:
-						%br
-
-						%label.Long.NumberIndent.PositionerLeft{ :for => "TextActivityOilGasAtSea" } a. Apakah lokasi tersebut ada di darat atau di lepas pantai?
-						%br		
-						%input#TextActivityOilGasAtSea.Full.Single.NumberIndent.PositionerLeft
-						%br
-
-
-
-						%br
-
-						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } b. Bila di darat apakah di permukaan tanah atau di bawah tanah?
-						%br		
-						%input#TextActivityOilGasLocationUnderground.Full.Single.NumberIndent.PositionerLeft
-						%br
-
-						%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Jika di bawah tanah, sebutkan kedalamannya
-						%br		
-						%input#TextActivityOilGasLocationHowDeep.Full.Single.NumberIndent.PositionerLeft
-						%br
-
-
-						%br
-						%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasDuty" } c. Apakah Anda kadang-kadang juga bertugas ke lokasi sebagaimana tersebut di atas?
-						%br	
-						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonActivityOilGasDutyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDuty", :value => "ya" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDutyYes" } Ya, berapa frekuensinya dalam 1 (satu) tahun berada di lokasi tersebut dan berapa lama?
-							%input#TextActivityOilGasPilotOrNavigator.Single.Long.NumberIndent.PositionerLeft
-							%br
-							%input#RadioButtonActivityOilGasDutyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDuty", :value => "tidak" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDutyNo" } Tidak
-						%br							
-
-
-						%br
-						%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasExplosive" } d. Apakah dalam bekerja Anda menggunakan bahan peledak?
-						%br	
-						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonActivityOilGasExplosiveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasExplosive", :value => "ya" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasExplosiveYes" } Ya
-							%br
-							%input#RadioButtonActivityOilGasExplosiveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasExplosive", :value => "tidak" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasExplosiveNo" } Tidak
-						%br							
-
-
-
-						%br
-						%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasDiving" } e. Apakah Anda melakukan tugas penyelaman?
-						%br	
-						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonActivityOilGasDivingYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDiving", :value => "ya" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDivingYes" } Ya, mohon mengisi formulir kuesioner menyelam
-							%br
-							%input#RadioButtonActivityOilGasDivingNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDiving", :value => "tidak" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDivingNo" } Tidak
-						%br							
-
-
-						%br
-						%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasHeight" } f. Apakah Anda bertugas di ketinggian tertentu?
-						%br	
-						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonActivityOilGasHeightYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasHeight", :value => "ya" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasHeightYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
-							%input#TextActivityOilGasHeightYesDesc.Single.Long.NumberIndent.PositionerLeft
-							%br
-							%input#RadioButtonActivityOilGasHeightNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasHeight", :value => "tidak" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasHeightNo" } Tidak
-						%br							
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 6. 							
+						%label.Full.Wrap.Item{ :for => "AreaActivityOilGasWorkLocation" } Dimana lokasi Anda bekerja? (Sebutkan nama lokasi dan daerah/ provinsinya)
+					%div.ContainerFit.NumberIndent	
+						%textarea#AreaActivityOilGasWorkLocation.Multi.Full.Item
 						
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 7. 							
+						%label.Full.Wrap.Item{ :for => "AreaMilitaryYourUnity" } Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut:
+					%br
 
-						%span.Number.Single.PositionerLeft 8. 						
-						%label.Long.PositionerLeft{ :for => "AreaActivityOilGasTransportation" } Transportasi apa yang Anda gunakan menuju lokasi kerja? Berapa lama waktu yang Anda perlukan untuk menuju lokasi? (Jika menggunakan helikopter, mohon dijelaskan jumlah jam terbang per tahun) dan mengisi formulir kuesioner penerbangan.
-						%br		
-						%textarea#AreaActivityOilGasTransportation.Multi.Full.NumberIndent.PositionerLeft
-						%br
+					%label.Long.NumberIndent.PositionerLeft{ :for => "TextActivityOilGasAtSea" } a. Apakah lokasi tersebut ada di darat atau di lepas pantai?
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextActivityOilGasAtSea.Full.Single.Item
 
-						%span.Number.Single.PositionerLeft 9. 						
-						%label.Long.PositionerLeft{ :for => "RadioButtonActivityOilGasAccident" } Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda?
+					%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } b. Bila di darat apakah di permukaan tanah atau di bawah tanah?
+					%br		
+					%div.ContainerFit.NumberIndent
+						%input#TextActivityOilGasLocationUnderground.Full.Single.Item
+					
+					%label.Long.NumberIndent.PositionerLeft{ :for => "AreaMilitaryYourUnity" } Jika di bawah tanah, sebutkan kedalamannya
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextActivityOilGasLocationHowDeep.Full.Single.Item
+					%br
+
+
+					%br
+					%label.Full.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasDuty" } c. Apakah Anda kadang-kadang juga bertugas ke lokasi sebagaimana tersebut di atas?
+					%br	
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonActivityOilGasDutyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDuty", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDutyYes" } Ya, berapa frekuensinya dalam 1 (satu) tahun berada di lokasi tersebut dan berapa lama?
 						%br	
-						%div.RadioButton.NumberIndent 	
-							%input#RadioButtonActivityOilGasAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasAccident", :value => "ya" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasAccidentYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
-							%input#TextActivityOilGasAccidentDesc.Single.Long.NumberIndent.PositionerLeft
-							%br
-							%input#RadioButtonActivityOilGasAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasAccident", :value => "tidak" }
-							%div.BoxRound.PositionerLeft
-							%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasAccidentNo" } Tidak
-						%br						
-
+						%input#TextActivityOilGasPilotOrNavigator.Full.Single.Item
 						%br
+						%input#RadioButtonActivityOilGasDutyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDuty", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDutyNo" } Tidak
+					%br							
 
-	
+
+					%br
+					%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasExplosive" } d. Apakah dalam bekerja Anda menggunakan bahan peledak?
+					%br	
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonActivityOilGasExplosiveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasExplosive", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasExplosiveYes" } Ya
+						%br
+						%input#RadioButtonActivityOilGasExplosiveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasExplosive", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasExplosiveNo" } Tidak
+					%br							
+
+
+
+					%br
+					%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasDiving" } e. Apakah Anda melakukan tugas penyelaman?
+					%br	
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonActivityOilGasDivingYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDiving", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDivingYes" } Ya, mohon mengisi formulir kuesioner menyelam
+						%br
+						%input#RadioButtonActivityOilGasDivingNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasDiving", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasDivingNo" } Tidak
+					%br							
+
+
+					%br
+					%label.Full.NumberIndent.PositionerLeft{ :for => "RadioButtonActivityOilGasHeight" } f. Apakah Anda bertugas di ketinggian tertentu?
+					%br	
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonActivityOilGasHeightYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasHeight", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasHeightYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
+						%br
+						%input#TextActivityOilGasHeightYesDesc.Single.Full.Item
+						%br
+						%input#RadioButtonActivityOilGasHeightNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasHeight", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasHeightNo" } Tidak
+					%br							
+
+
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 8. 							
+						%label.Full.Wrap.Item{ :for => "AreaActivityOilGasTransportation" } Transportasi apa yang Anda gunakan menuju lokasi kerja? Berapa lama waktu yang Anda perlukan untuk menuju lokasi? (Jika menggunakan helikopter, mohon dijelaskan jumlah jam terbang per tahun) dan mengisi formulir kuesioner penerbangan.
+					%div.ContainerFit.NumberIndent	
+						%textarea#AreaActivityOilGasTransportation.Multi.Full.Item
+
+
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 9. 							
+						%label.Full.Wrap.Item{ :for => "RadioButtonActivityOilGasAccident" } Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda?
+					%br	
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonActivityOilGasAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasAccident", :value => "ya" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasAccidentYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
+						%br
+						%input#TextActivityOilGasAccidentDesc.Full.Single.Item
+						%br
+						%input#RadioButtonActivityOilGasAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonActivityOilGasAccident", :value => "tidak" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonActivityOilGasAccidentNo" } Tidak
+					%br						
+
+					%h2 PERNYATAAN DAN KUASA
+					%div.Note
+						%p Perlu diperhatikan: 
+						%ol
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner INDUSTRI PERTAMBANGAN, PERMINYAKAN, DAN GAS ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
+					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DateSignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateSignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateSignedYear.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual
+					%br
+					
+			%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
