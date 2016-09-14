@@ -2822,7 +2822,8 @@ function setToDatabase(stringPageType)
 		var stringKey = $(this).attr("id");
         var stringValue = getCheckboxGeneral(stringKey);
         // validatePush(objectContent, stringKey, stringValue);
-		objectContent.push({ elementID: stringKey, Value: stringValue });
+		// objectContent.push({ elementID: stringKey, Value: stringValue });
+		arrayAdd(objectContent, stringKey, stringValue);
     });
     
     $("input[type=date]").each(function()
