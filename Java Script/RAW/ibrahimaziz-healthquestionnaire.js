@@ -572,7 +572,6 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		if (stringKeyPrefix == stringPrefixText)
 		{
 			setTextForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixText + stringKeyWithoutInfix, stringValue);
-			alert(stringKey + " " + stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixRadioButton)
 		{
@@ -589,6 +588,7 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		else if (stringKeyPrefix == stringPrefixArea)
 		{
 			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix, stringValue);
+			alert(stringKey + " " + stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
 		{
