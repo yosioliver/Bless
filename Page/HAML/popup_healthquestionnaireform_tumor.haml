@@ -60,39 +60,37 @@
 			%input#DateConsultLast.Long.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Nama Lengkap Dokter:
-			%input#TextConsultDoctName.Long.Single.Item.Margin{ :type => "text" }
+			%input#TextConsultLastDoctorName.Long.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin No. Telepon/Handphone:
-			%input#TextConsultPhone.Long.Single.Item.Margin{ :type => "text" }
+			%input#TextConsultLastTelephone.Long.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Nama Klinik/Rumah Sakit:
-			%input#TextConsultClinic.Long.Single.Item.Margin{ :type => "text" }
+			%input#TextConsultLastClinic.Long.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Alamat Klinik/Rumah Sakit:
-			%input#TextConsultAddress.Long.Single.Item.Margin{ :type => "text" }
+			%input#TextConsultLastAddress.Long.Single.Item.Margin{ :type => "text" }
 		%br
 
 
 		%label.medium.Single.Item d. Pengobatan/ tindakan apa yang diberikan setelah dilakukan operasi tumor (seperti minum obat tablet, radioterapi, kemotherapi, dan sebagainya) ?
 		%br    
-		%div.RadioButton.Medium.PositionerRight		
-			%input#RadioButtonTherapyDrug{ :type => "radio", :name => "RadioButtonTherapy", :value => "drug" }
-			%label.RadioButton{ :for => "RadioButtonTherapyDrug" } Obat tablet
-			%div.Separator
+		%div.RadioButton.PositionerLeft		
+			%input#RadioButtonTherapyAssDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonTherapyAss", :value => "drug" }
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonTherapyAssDrug" } Obat tablet
+			%div.Separator.PositionerLeft
 			
-			%input#RadioButtonTherapyRadio{ :type => "radio", :name => "RadioButtonTherapy", :value => "radiotherapy" }
-			%label.RadioButton{ :for => "RadioButtonTherapyRadio" } Radioterapi
-			%div.Separator
+			%input#RadioButtonTherapyAssRadio.PositionerLeft{ :type => "radio", :name => "RadioButtonTherapyAss", :value => "radiotherapy" }
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonTherapyAssRadio" } Radioterapi
+			%div.Separator.PositionerLeft
 			
-			%input#RadioButtonTherapyChemo{ :type => "radio", :name => "RadioButtonTherapy", :value => "chemotherapy" }
-			%label.RadioButton{ :for => "RadioButtonTherapyChemo" } Kemoterapi
-			%div.Separator
+			%input#RadioButtonTherapyAssChemo.PositionerLeft{ :type => "radio", :name => "RadioButtonTherapyAss", :value => "chemotherapy" }
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonTherapyAssChemo" } Kemoterapi
+			%div.Separator.PositionerLeft
 			
-			%input#RadioButtonTherapyOthers{ :type => "radio", :name => "RadioButtonTherapy", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonTherapyOthers" } Lainnya, Sebutkan.
-			%div.Separator			
-			%br
-			%input#TextTherapyOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+			%input#RadioButtonTherapyAssOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonTherapyAss", :value => "other" }
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonTherapyAssOthers" } Lainnya, Sebutkan.		
+			%input#TextTherapyAssOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 		%br
 
 		%label#Wrap.Single.PositionerLeft e. Apakah anda pernah diberi informasi tentang prognosa (ramalan) atas tumor tersebut?
@@ -106,7 +104,7 @@
 			%label.Wrap.Single.PositionerLeft{ :for => "TextPrognosa"}
 			Mohon menjelaskan secara rinci pada kolom di bawah ini.
 			%br
-			%input#TextPrognosa.Line.Long.Single.PositionerLeft{ :type => "text" }
+			%input#TextPrognosa.Line.Full.Single.PositionerLeft{ :type => "text" }
 		%br
 
 		%label.medium.Single.Item f. Pemeriksaan-pemeriksaan apa saja yang telah dilakukan, termasuk tanggal dan hasil pemeriksaan tersebut.
@@ -170,12 +168,8 @@
 			%input#TextClinicName.Long.Single.Item.Margin{ :type => "text" }	
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Alamat Klinik/Rumah Sakit:
-			%input#TextClinicAddrs.Long.Single.Item.Margin{ :type => "text" }				
-		%br
-		%label.medium.Single.Item Sejak kapan Anda tidak lagi dalam perawatan lanjutan?
-		%br    
-		%input#TextPolicyHolderSejakKapanTidakLagiPerawatan.Full.Single.Item1.Margin{ :type =>"text" }
-		%br
+			%input#TextClinicAddres.Long.Single.Item.Margin{ :type => "text" }				
+		%br		
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 6. Apakah anda pernah tidak masuk kerja karena gangguan ini?  
@@ -185,15 +179,13 @@
 			%div.Separator
 			%input#RadioButtonLeaveNo{ :type => "radio", :name => "RadioButtonLeave", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonLeaveNo" } Tidak
-			%br
-			%label#Wrap.Single.PositionerLeft Jika “Ya”, kapan:
-		%br		
-		%input#DateLeave.Full.Single.Item1.Margin{ :type =>"text", "data-field" => "date" }
-		%br    
-		%label#Wrap.Single.PositionerLeft dan berapa lama?:
-		%input#TextHowLong.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
+		%label#Wrap.Single.PositionerLeft Jika “Ya”, kapan:				
+		%input#DateLeave.Short.Single.PositionerLeft{ :type =>"text", "data-field" => "date" }		    
+		%label#Wrap.Single.PositionerLeft dan berapa lama?:
+		%input#TextLeaveDuration.Short.Single.PositionerLeft{ :type =>"text" }		
 		%label#Wrap.Single.PositionerLeft hari
+		%br
 		%hr
 
 		%label.medium.Single.Item 7. Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon tuliskan tanggal konsultasi, pemeriksaan yang dilakukan dan hasilnya.
