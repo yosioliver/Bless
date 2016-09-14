@@ -841,6 +841,21 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 			if (stringPageType == stringPageTypePDF)
 			{
 				var intMaxString = 26;
+				
+				if (stringValue.length > intMaxString)
+				{
+					var stringValue1 = stringValue.substring(0, intMaxString);
+					var stringValue2 = stringValue.substring(0, intMaxString);
+
+					setTextPDF(stringKey, stringValue1);
+					setTextPDF(stringKey + "2nd", stringValue2);
+				}
+				else
+				{
+					setTextPDF(stringKey, stringValue);
+				}
+				
+				/* var intMaxString = 26;
 				var stringKeyWithoutPrefix = releasePrefix(stringKey);
 				var stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
 				var stringIDMedication = "HypertensionMedication";
@@ -886,7 +901,7 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 							setTextPDF(stringKey, stringValue);
 						}
 					} 
-				}
+				} */
 			}
 			else
 			{
