@@ -28,35 +28,31 @@
 
 				// SECTION MANDATORY
 
-				boxGenerator("#DatePolicyHolderDigestSinceStartedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestSinceStartedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestSinceStartedYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailProblemStartedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailProblemStartedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailProblemStartedYear", 4, boxTypeWithoutLabel, null);
 				
 				lineGenerator("#TextPolicyHolderDigestOther", 5);
 				
-				boxGenerator("#DatePolicyHolderDigestLastAriseDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestLastAriseMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestLastAriseYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailLastComplainDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailLastComplainMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailLastComplainYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DatePolicyHolderDigestionVomitingBloodDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestionVomitingBloodMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestionVomitingBloodYear", 4, boxTypeWithoutLabel, null);
-
-				boxGenerator("#DatePolicyHolderDigestVomitingBloodLastAriseDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestVomitingBloodLastAriseMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestVomitingBloodLastAriseYear", 4, boxTypeWithoutLabel, null);
-
-				boxGenerator("#DatePolicyHolderDigestHospitalCareWhenStartDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestHospitalCareWhenStartMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestHospitalCareWhenStartYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailVomitingBloodLastAriseDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailVomitingBloodLastAriseMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailVomitingBloodLastAriseYear", 4, boxTypeWithoutLabel, null);
 				
-				boxGenerator("#DatePolicyHolderDigestHospitalCareWhenEndDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestHospitalCareWhenEndMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestHospitalCareWhenEndYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareFromDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareFromMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareFromYear", 4, boxTypeWithoutLabel, null);
+				
+				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareToDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareToMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareToYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DatePolicyHolderDigestNoOfficeEntryInYearWhenDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestNoOfficeEntryInYearWhenMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestNoOfficeEntryInYearWhenYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailAbsentSinceDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailAbsentSinceMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailAbsentSinceYear", 4, boxTypeWithoutLabel, null);
 		
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -288,6 +284,38 @@
 										%td
 										%td				
 					%br
+										
+					%br		
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Nama Obat  
+						%label.Short.Single.Item1.Center Dosis
+						%label.Short.Single.Item1.Center Frekuensi 
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailMedicationName1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationDose1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationFrequency1.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailMedicationName2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationDose2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationFrequency2.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailMedicationName3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationDose3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationFrequency3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailMedicationName4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationDose4.Short.Single.Item1.Margin{ :type => "text" }			
+						%input#TextPolicyHolderDigestDetailMedicationFrequency4.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailMedicationName5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationDose5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailMedicationFrequency5.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDetailDoctorName" } Nama Lengkap Dokter:
 						%input#TextPolicyHolderDigestDetailDoctorName.Full.Single.Item{ :type => "text" }
@@ -378,6 +406,37 @@
 										%th Dosis
 										%th Frekuensi			
 						%br					
+					
+					%br		
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Nama Obat  
+						%label.Short.Single.Item1.Center Dosis
+						%label.Short.Single.Item1.Center Frekuensi 
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderDigestDetailInTreatmentName1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentDose1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentFrequency1.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailInTreatmentName2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentDose2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentFrequency2.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailInTreatmentName3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentDose3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentFrequency3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailInTreatmentName4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentDose4.Short.Single.Item1.Margin{ :type => "text" }			
+						%input#TextPolicyHolderDigestDetailInTreatmentFrequency4.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDigestDetailInTreatmentName5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentDose5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailInTreatmentFrequency5.Short.Single.Item1.Margin{ :type => "text" }
+					%br
 					
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDetailInTreatmentDoctorName" } Nama Lengkap Dokter:
