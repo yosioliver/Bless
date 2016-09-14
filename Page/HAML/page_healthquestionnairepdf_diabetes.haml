@@ -36,9 +36,9 @@
 				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineYear", 4, boxTypeWithoutLabel, null);	
 		
-				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);	
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);	
 						
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -89,7 +89,7 @@
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequency" } a. Berapa kali frekuensi kontrol ke dokter?
 					%input#NumberPolicyHolderDiabetesFrequencyControlNumber.Short.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyWeek" } kali per
-					%input#NumberPolicyHolderDiabetesControlFrequencyWeek.Short.Single.PositionerLeft{ :type => "number" } 
+					%input#NumberPolicyHolderDiabetesControlFrequencyWeek.Short.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyWeek" } minggu
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDiabetesControlFrequencyWeek" }b. Mohon melengkapi kolom di bawah ini dengan nama dan alamat lengkap dokter yang biasa dikunjungi untuk kontrol?
@@ -249,32 +249,37 @@
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsVision.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "visiondistruption" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsVision" } Gangguan penglihatan
+												
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsBloodPressure.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "hypertension" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsBloodPressure" } Tekanan darah tinggi
+						
 						%br
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsKidney.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "kidneyproblem" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsKidney" } Gangguan ginjal dan/ saluran kemih
+						
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsSensor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "censorikproblem" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsSensor" } Gangguan sensorik, termasuk kebas dan panas di kaki
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsSensor" } Gangguan sensorik, termasuk kebas dan panas di kaki
 						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders" } Kelainan darah
-						%input#RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "bloodproblem" }
-						%div.BoxRound.PositionerLeft
 						
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsDiabeticComa" } Koma diabetikum
-						%input#RadioButtonPolicyHolderDiabetesWithComplicationsDiabeticComa.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "diabetikum" }
-						%div.BoxRound.PositionerRight	
+						%input#RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "bloodproblem" }	
+						%div.BoxRound.PositionerLeft
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders" } Kelainan darah		
+						
+						%input#RadioButtonPolicyHolderDiabetesWithComplicationsDiabeticComa.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "diabetikum" }
+						%div.BoxRound.PositionerLeft
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsDiabeticComa" } Koma diabetikum
+						%br
 												
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsHeartDisorders" } Gangguan jantung dan/pembuluh darah
-						%input#RadioButtonPolicyHolderDiabetesWithComplicationsHeartDisorders.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "heartproblem" }
-						%div.BoxRound.PositionerRight							
-												
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsOthers" } Lainnya, sebutkan
-						%input#RadioButtonPolicyHolderDiabetesWithComplicationsOthers.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "other" }
-						%div.BoxRound.PositionerRight	
+						%input#RadioButtonPolicyHolderDiabetesWithComplicationsHeartDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "heartproblem" }
+						%div.BoxRound.PositionerLeft
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsHeartDisorders" } Gangguan jantung dan/pembuluh darah
+																		
+						%input#RadioButtonPolicyHolderDiabetesWithComplicationsOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsOthers" } Lainnya, sebutkan
 						%input#TextPolicyHolderDiabetesWithComplicationsOthersDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }		
 					%br
 					
