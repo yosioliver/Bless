@@ -213,16 +213,15 @@
 								%td					
 					%br
 						
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminNo" } 	d.	Apakah pernah didapatkan adanya protein/albumin dalam test urine?
-
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminNo" } d.	Apakah pernah didapatkan adanya protein/albumin dalam test urine?
 					%div.RadioButton					
-						%input#RadioButtonPolicyHolderDiabetesContainAlbuminNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesContainAlbumin", :value => "true" }
+						%input#RadioButtonPolicyHolderDiabetesContainAlbuminYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesContainAlbumin", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminNo" } Ya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminYes" } Ya
 	
-						%input#RadioButtonPolicyHolderDiabetesContainAlbuminYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesContainAlbumin", :value => "false" }
+						%input#RadioButtonPolicyHolderDiabetesContainAlbuminNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesContainAlbumin", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminYes" } Tidak	
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminNo" } Tidak	
 						%br
 						
 						Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
@@ -231,7 +230,6 @@
 						%br
 						
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } 	e.	Apakah dilakukan pemeriksaan glycosylated haemoglobin (HbA1c)?
-
 					%div.RadioButton
 						%input#RadioButtonPolicyHolderDiabetesContainHaemoglobinNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesContainHaemoglobin", :value => "tidak" }
 						%div.BoxRound.PositionerLeft
@@ -249,7 +247,7 @@
 						
 						
 					%span.Number.PositionerLeft 4
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } 	Apakah pernah mengalami perawatan di rumah sakit karena diabetes?
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesEverHospital" } Apakah pernah mengalami perawatan di rumah sakit karena diabetes?
 					%div.RadioButton			
 						%input#RadioButtonPolicyHolderDiabetesEverHospitalNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesEverHospital", :value => "false" }
 						%div.BoxRound.PositionerLeft
@@ -323,9 +321,9 @@
 					%br
 					
 					%span.Number.PositionerLeft 6
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } 	Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.                                                         
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.                                                         
 					%br								
-					%input#TextPolicyHolderPainLocationOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%input#TextPolicyHolderDiabetesAdditionalInfo.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br								
 
 				%section#SectionDeclaration
