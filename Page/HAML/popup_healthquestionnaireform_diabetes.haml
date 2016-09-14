@@ -133,7 +133,7 @@
 			%input#DateResultLastCheckIII.Short.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 		%br
 
-		%label.medium.Single.Item d. Apakah pernah didapatkan adanya protein/albumin dalam test urin?
+		%label.Single.PositionerLeft d. Apakah pernah didapatkan adanya protein/albumin dalam test urin?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
@@ -145,7 +145,7 @@
 			%input#TextContainAlbuminDesc.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
 		%br
 
-		%label.medium.Single.Item e. Apakah dilakukan pemeriksaan glycosylated haemoglobin (HbA1c)?
+		%label.Single.PositionerLeft e. Apakah dilakukan pemeriksaan glycosylated haemoglobin (HbA1c)?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
@@ -167,31 +167,48 @@
 			%label.RadioButton{ :for => "RadioButtonEverHospitalYes" } Ya
 		%br
 		
-		%label#LabelProspectiveInsuredDiabetesEverHospitalIfYes.Long.Single.Item3.Margin Jika "Ya", mohon melengkapi kolom di bawah ini.
+		%label.Single.PositionerLeft Jika "Ya", mohon melengkapi kolom di bawah ini.
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Alasan Perawatan
 			%label.Short.Single.Item.Center.Margin Nama Dokter
 			%label.Short.Single.Item.Center.Margin Alamat Dokter
 			%label.Short.Single.Item.Center.Margin Tanggal Perawatan
-			%label.Short.Single.Item.Center.Margin Jangka Waktu Perawatan							
-			
+			%label.Short.Single.Item.Center.Margin Jangka Waktu Perawatan			
 		%div.ContainerFit
-			%input#TextEverHospitalIfYesReason1.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesDoctorName1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesTherapyDate1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesDuration1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalReason1.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextHospitalDoctorName1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalTherapyDate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDuration1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextEverHospitalIfYesReason2.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesDoctorName2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesTherapyDate2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextEverHospitalIfYesDuration2.Short.Single.Item1.Margin{ :type => "text" }			
+			%input#TextHospitalReason2.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextHospitalDoctorName2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalTherapyDate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDuration2.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextHospitalReason3.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextHospitalDoctorName3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDoctorAddress3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalTherapyDate3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDuration3.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextHospitalReason4.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextHospitalDoctorName4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDoctorAddress4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalTherapyDate4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDuration4.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextHospitalReason5.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextHospitalDoctorName5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDoctorAddress5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalTherapyDate5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextHospitalDuration5.Short.Single.Item1.Margin{ :type => "text" }
 		%br		
 		%hr
 		
-		%label.medium.Single.Item 5. Apakah kondisi Diabetes Mellitus ini disertai komplikasi organ lain sebagai berikut?
+		%label.Single.PositionerLeft 5. Apakah kondisi Diabetes Mellitus ini disertai komplikasi organ lain sebagai berikut?
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonWithComplicationsVision{ :type => "radio", :name => "RadioButtonWithComplications", :value => "visiondistruption"}
