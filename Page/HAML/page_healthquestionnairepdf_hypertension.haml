@@ -305,13 +305,60 @@
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TablePolicyHolderHypertensionTreatment" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
 					%table#TablePolicyHolderHypertensionTreatment.Square.NumberIndent.PositionerLeft
-						%thead
-							%tr
-								%th Alasan Perawatan
-								%th Nama Dokter
-								%th Alamat Dokter
-								%th Tanggal Perawatan
-								%th Jangka Waktu Perawatan
+						-#	%thead
+								%tr
+									%th Alasan Perawatan
+									%th Nama Dokter
+									%th Alamat Dokter
+									%th Tanggal Perawatan
+									%th Jangka Waktu Perawatan
+							%br
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Alasan Perawatan  
+						%label.Short.Single.Item1.Center Nama Dokter
+						%label.Short.Single.Item1.Center Alamat Dokter
+						%label.Short.Single.Item1.Center Tanggal Perawatan
+						%label.Short.Single.Item1.Center Jangka Waktu Perawatan
+												
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderHypertensionTreatmentReason1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDoctor1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentAddress1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDuration1.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderHypertensionTreatmentReason2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDoctor2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentAddress2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDate2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDuration2.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderHypertensionTreatmentReason3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDoctor3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentAddress3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDate3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDuration3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderHypertensionTreatmentReason4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDoctor4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentAddress4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDate4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDuration4.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderHypertensionTreatmentReason5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDoctor5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentAddress5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDate5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHypertensionTreatmentDuration5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 6
@@ -341,17 +388,18 @@
 						%input#TextPolicyHolderHypertensionComplicationOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 						%br
 					%br
-
-					%span.Number.Single.PositionerLeft 7.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionAverageBloodPressure" } Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.
+					
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 7.
+						%label.Wrap.Full.Item{ :for => "TextPolicyHolderHypertensionAverageBloodPressure" } Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHypertensionAverageBloodPressure.Line.Full.Single.PositionerLeft{ :type => "text"}
 					%br
-
-					%span.Number.Single.PositionerLeft 8.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
-					%br
+					
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 8.
+						%label.Wrap.Full.Item{ :for => "TextPolicyHolderHypertensionAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHypertensionAdditionalInfo.Line.Full.Single.PositionerLeft{ :type => "text"}
 					%br
