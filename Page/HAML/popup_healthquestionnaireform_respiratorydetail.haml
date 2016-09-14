@@ -49,30 +49,35 @@
 		%hr
 		
 		%div.ContainerFit
-		%label.Medium.Single.Item 4. Berapa kali serangan-serangan tersebut menyebabkan Anda: (Mohon melampirkan resume perawatan yang Anda miliki)
+		%label.Single.Item 4. Berapa kali serangan-serangan tersebut menyebabkan Anda: (Mohon melampirkan resume perawatan yang Anda miliki)
 		%br
-			%Label.Long.Single.PositionerLeft Tidak masuk kerja selama:			
-			%input#NumberAttackCauseAbsentDay.Medium.Single.Item.Margin{ :type => "number" }
-			%span.Separator Hari
-			%input#NumberAttackCauseAbsentWeek.Medium.Single.Item.Margin{ :type => "number" }
-			%span.Separator Minggu
-			%input#NumberAttackCauseAbsentMonth.Medium.Single.Item.Margin{ :type => "number" }
-			%span.Separator Bulan
-			%input#NumberAttackCauseAbsentYear.Medium.Single.Item.Margin{ :type => "number" }
-			%span.Separator Tahun
+		%div.RadioButton.PositionerLeft
+			%input#RadioButtonAttackCauseAbsent{ :type => "radio", :name => "RadioButtonAttackCause", :value => "absent" }
+			%label.RadioButton{ :for => "RadioButtonAttackCauseAbsent" } Tidak masuk kerja selama:
+		%br
+		%span.Separator.PositionerRight Tahun
+		%input#NumberAttackCauseAbsentYear.Short.Single.PositionerRight{ :type => "number" }
+		%span.Separator.PositionerRight Bulan
+		%input#NumberAttackCauseAbsentMonth.Short.Single.PositionerRight{ :type => "number" }
+		%span.Separator.PositionerRight Minggu
+		%input#NumberAttackCauseAbsentWeek.Short.Single.PositionerRight{ :type => "number" }
+		%span.Separator.PositionerRight Hari
+		%input#NumberAttackCauseAbsentDay.Short.Single.PositionerRight{ :type => "number" }
 		%br
 		
-		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Dirawat di Rumah Sakit			
+		%div.RadioButton.PositionerLeft
+			%input#RadioButtonAttackCauseHospital{ :type => "radio", :name => "RadioButtonAttackCause", :value => "hospital" }
+			%label.RadioButton{ :for => "RadioButtonAttackCauseHospital" } Dirawat di Rumah Sakit
+		%br
+		%div.ContainerFit
+			%label.Long.Single.Item Tanggal
+			%input#DateAttackCauseHospital.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Tanggal			
-			%input#DateAttackCauseHospital.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
-		%br		 
-			
-		%label.Long.Single.PositionerLeft Lama Perawatan		
-		%input#NumberAttackCauseHospitalDuration.Short.Single.PositionerLeft{ :type => "number" }		
-		%label.Single.PositionerLeft (hari/minggu/bulan*) *coret yang tidak perlu
+			%label.Long.Single.Item Lama Perawatan
+			%div.Full.Single{ :style => "width: 100%;" }
+				%input#TextAttackCauseHospitalDuration.Single.Item{ :type => "text" }		
+				%label.Single.Item (hari/minggu/bulan*) *coret yang tidak perlu
 		%br
 		
 		%div.ContainerFit 
