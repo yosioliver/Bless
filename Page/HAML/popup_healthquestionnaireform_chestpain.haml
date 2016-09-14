@@ -76,7 +76,7 @@
 			%label.RadioButton{ :for => "RadioButtonCharacterChestPunctured" }Dada terasa ditusuk-tusuk
 			%div.Separator
 			%input#RadioButtonCharacterVaguelyUncomfortable{ :type => "radio", :name => "RadioButtonCharacter", :value => "vaguelyuncomfortable" }
-			%label.RadioButton{ :for => "RadioButtonChestPainCharacterSamarsamarTidakNyaman" }Samar-samar , tidak nyaman
+			%label.RadioButton{ :for => "RadioButtonCharacterVaguelyUncomfortable" }Samar-samar , tidak nyaman
 			%div.Separator
 			%input#RadioButtonCharacterOthers{ :type => "radio", :name => "RadioButtonCharacter", :value => "other" }
 			%label.RadioButton{ :for => "RadioButtonCharacterOthers" }Lainnya
@@ -136,7 +136,7 @@
 			%input#RadioButtonHowHappenedSudden{ :type => "radio", :name => "RadioButtonHowHappened", :value => "sudden" }
 			%label.RadioButton{ :for => "RadioButtonHowHappenedSudden" } Mendadak
 			%div.Separator
-			%input#RadioButtonHowHappenedSuddenGradually{ :type => "radio", :name => "RadioButtonHowHappened", :value => "gradually" }
+			%input#RadioButtonHowHappenedGradually{ :type => "radio", :name => "RadioButtonHowHappened", :value => "gradually" }
 			%label.RadioButton{ :for => "RadioButtonHowHappenedGradually" }  Bertahap
 			%div.Separator
 			%input#RadioButtonHowHappenedWhenRest{ :type => "radio", :name => "RadioButtonHowHappened", :value => " whenrest" }
@@ -177,9 +177,8 @@
 		%hr	
 
 		%label.medium.Single.Item 10. Kondisi bagaimana yang mengurangi nyeri dada ?
-		%br
-		%div.ContainerLeft
-			%div.RadioButton.Full.Item					
+		%br		
+		%div.RadioButton.PositionerLeft				
 			%input#RadioButtonReducedWhenRest{ :type => "radio", :name => "RadioButtonReduced", :value => "whenrest" }
 			%label.RadioButton{ :for => "RadioButtonReducedWhenRest" } Istirahat
 			%div.Separator
@@ -211,21 +210,25 @@
 			%label.Long.Single.PositionerLeft Tanggal terakhir konsultasi
 			%input#DateConsulToDoctorLast.Full.Single.Item.Margin{ :type =>"date", "data-field" => "date" }
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Alasan
-			%input#TextConsulToDoctorReason.Full.Single.Item.Margin{ :type =>"text" }
+			%label.Long.Single.PositionerLeft Diagnosa:
+			%input#TextConsulToDoctorDiagnosis.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Nama Dokter
+			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextConsulToDoctorFullNameDoctor.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Alamat Dokter
-			%input#TextPConsulToDoctorHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
+			%input#TextConsulToDoctorPhone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Diagnosa
-			%input#TextConsulToDoctorDiagnosis.Full.Single.Item.Margin{ :type =>"text" }
+			%label.Long.Single.PositionerLeft Nama Klinik/RumahSakit:
+			%input#TextConsulToDoctorHospitalName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
+		%div.ContainerFit 
+			%label.Long.Single.PositionerLeft AlamatKlinik/RumahSakit:
+			%input#TextConsulToDoctorHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
+		%br		
 		%hr
 
 		%div.RadioButton.PositionerLeft
@@ -235,7 +238,7 @@
 			%div.Separator
 			%input#RadioButtonTreatmentNo{ :type => "radio", :name => "RadioButtonTreatment", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonTreatmentNo" } Tidak
-		%input#TextPolicyHoldermMemperburukNyeriDada.Full.Single.Item1.Margin{ :type => "text", :placeholder => "berikan nama dan jenis pengobatan" }
+		%input#TextTreatmentReason.Full.Single.Item1.Margin{ :type => "text", :placeholder => "berikan nama dan jenis pengobatan" }
 		%br
 		%hr
 
@@ -249,7 +252,7 @@
 		%br
 		%div.RadioButton.PositionerLeft				
 			%input#RadioButtonChekUpEverEkg{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "ekgecg" }				
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderChestPainEverCheckYesEKGECG" } EKG/ECG
+			%label.RadioButton{ :for => "RadioButtonChekUpEverEkg" } EKG/ECG
 			%div.Separator								
 
 			%input#RadioButtonChekUpEverRontgen{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "rontgen" }
@@ -257,7 +260,7 @@
 			%div.Separator
 
 			%input#RadioButtonChekUpEverEchocardiogram{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "echocardiogram" }
-			%label.RadioButton{ :for => "RadioButtonChekUpEverEchocardiogram" } Rontgen
+			%label.RadioButton{ :for => "RadioButtonChekUpEverEchocardiogram" } Echocardiogram
 			%div.Separator
 
 			%input#RadioButtonChekUpEverTreadmill{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "treadmill" }

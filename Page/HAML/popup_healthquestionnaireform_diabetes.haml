@@ -13,7 +13,8 @@
 		%div.ContainerFit
 			%span.Multi.Single.6g Gangguan fungsi/sistem Hati dan Pankreas, Kencing Manis (Diabetes Melitus), Batu Empedu, Tumor Hati, penyakit Limpa dan lainnya?
 		%br
-		%hr
+		%h\
+		
 		
 		%div.ContainerFit			
 			%label#LabelFirstKnown.Medium.Single.Item.Margin 1. Kapan pertama kali diketahui menderita diabetes? 
@@ -23,9 +24,9 @@
 
 		%div.ContainerFit
 			%label#LabelFrequencyControlNumber.Long.Single.Item3.Margin 2. a. Berapa kali frekuensi kontrol ke dokter?			
-			%input#TextFrequencyControlNumber.Short.Single.Item1.Margin{ :type => "text" }
+			%input#NumberControlFrequency.Short.Single.Item1.Margin{ :type => "number" }
 			%label#Wrap.Single.Item1 kali&nbsp;&nbsp;&nbsp;&nbsp; per			
-			%input#TextFrequencyControlPerWeek.Short.Single.Item1.Margin{ :type => "text"}
+			%input#NumberControlFrequencyWeek.Short.Single.Item1.Margin{ :type => "number"}
 			%label#Wrap.Single.Item1 Minggu 
 		%br
 			%label#LabelProspectiveInsuredDiabetesInfo.Long.Single.Item3.Margin b. Jelaskan nama dan alamat lengkap dokter yang bisa dikunjungi untuk kontrol?	
@@ -47,18 +48,16 @@
 		%label#LabelProspectiveInsuredDiabetesTherapy.Long.Single.Item3.Margin c. Pengobatan apa saja yang diperoleh?
 		%br
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonTherapyInsulin{ :type => "radio", :name => "RadioButtonTherapy", :value => "insulin"}
+			%input#RadioButtonTherapyInsulin{ :type => "radio", :name => "RadioButtonTherapy", :value => "insulin" }
 			%label.RadioButton{ :for => "RadioButtonTherapyInsulin" } Insulin
-			%input#TextTherapyInsulinDesc.Short.Single.Item1.Margin{ :type => "text"}
-			%label#Wrap.Single.Item1 Unit / hari
-			
+			%input#NumberTherapyInsulinDesc.Short.Single.Item1.Margin{ :type => "number" }
+			%label#Wrap.Single.Item1 Unit / hari			
 			%div.Separator
-			%input#RadioButtonTherapyDiet{ :type => "radio", :name => "RadioButtonTherapy", :value => "diet"}
+			%input#RadioButtonTherapyDiet{ :type => "radio", :name => "RadioButtonTherapy", :value => "diet" }
 			%label.RadioButton{ :for => "RadioButtonTherapyDiet" }  Diet khusus, jelaskan
-			%input#TextTherapyDietDesc.Long.Single.Item1.Margin{ :type => "text"}
-			
+			%input#TextTherapyDietDesc.Long.Single.Item1.Margin{ :type => "text" }			
 			%div.Separator
-			%input#RadioButtonTherapyOral{ :type => "radio", :name => "RadioButtonTherapy", :value => "oral"}
+			%input#RadioButtonTherapyOral{ :type => "radio", :name => "RadioButtonTherapy", :value => "oral" }
 			%label.RadioButton{ :for => "RadioButtonTherapyOral" } Oral/tablet.
 			Mohon menjelaskan secara rinci pada kolom di bawah ini (nama obat, dosis, frekuensi penggunaan dan lain-lain).
 			%br
@@ -120,7 +119,7 @@
 			%input#TextResultLastCheckIII.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 
-			%label.medium.Single.Item d. Apakah pernah didapatkan adanya protein/ albumin dalam test urin?
+			%label.medium.Single.Item d. Apakah pernah didapatkan adanya protein/albumin dalam test urin?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
@@ -178,7 +177,7 @@
 		%br		
 		%hr
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 5. Apakah disertai komplikasi berikut?
+			%label.medium.Single.Item 5. Apakah kondisi Diabetes Mellitus ini disertai komplikasi organ lain sebagai berikut?
 			%br
 			%input#RadioButtonWithComplicationsVision{ :type => "radio", :name => "RadioButtonWithComplications", :value => "visiondistruption"}
 			%label.RadioButton{ :for => "RadioButtonWithComplicationsVision" } Gangguan penglihatan
@@ -212,7 +211,14 @@
 			%label.RadioButton{ :for => "RadioButtonWithComplicationsOthers" } Lainnya
 		%br   
 			%input#TextProspectiveInsuredDiabetesWithComplicationsOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }
-		%hr  
+		%br
+		%hr
+		
+		%label.medium.Single.Item 6. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini. 
+		%br		
+		%input#TextAdditionalInfo.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
 		%h2 PERNYATAAN DAN KUASA
 		%ol
