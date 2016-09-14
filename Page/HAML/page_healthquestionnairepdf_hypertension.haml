@@ -13,13 +13,14 @@
 		:javascript
 
 			// DOCUMENT READY
+
 			$(document).ready(function()
 			{
 				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderHypertensionMedicationName0","Value":"Decolgen."},{"elementID":"TextPolicyHolderHypertensionMedicationDose0","Value":"15 mg."},{"elementID":"TextPolicyHolderHypertensionMedicationFrequency0","Value":"1 kali sehari."},{"elementID":"TextPolicyHolderHypertensionMedicationName1","Value":"Panadol."},{"elementID":"TextPolicyHolderHypertensionMedicationDose1","Value":"20 mg."},{"elementID":"TextPolicyHolderHypertensionMedicationFrequency1","Value":"2 kali sehari."},{"elementID":"TextPolicyHolderHypertensionMedicationName2","Value":"Vitamin C."},{"elementID":"TextPolicyHolderHypertensionMedicationDose2","Value":"100 mg."},{"elementID":"TextPolicyHolderHypertensionMedicationFrequency2","Value":"1 kali sehari."}]}}'
-			
+
 				// SECTION GENERAL
-				
-				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
+
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
@@ -28,29 +29,29 @@
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
-				
+
 				boxGenerator("#DatePolicyHolderHypertensionFirstTimeDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderHypertensionFirstTimeMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderHypertensionFirstTimeYear", 4, boxTypeWithoutLabel, null);
-								
+
 				boxGenerator("#DatePolicyHolderHypertensionWhenStartDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderHypertensionWhenStartMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderHypertensionWhenStartYear", 4, boxTypeWithoutLabel, null)
-				
-				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);			
-				
+
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);			
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				// SETTER
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Tekanan Darah Tinggi");
 				tablePDFStaticGeneralGenerator("TablePolicyHolderHypertensionMedication", ["Name", "Dose", "Frequency"], 5);
-				
+
 				var objectContent = JSON.parse(jsonDummy);
 				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
@@ -77,48 +78,48 @@
 			%form				
 				%section#SectionCustomer
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
-					
+
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				%fieldset
-					%span.Number.Single.PositionerLeft 1
+					%span.Number.Single.PositionerLeft 1.
 					%label.Long.Wrap.PositionerLeft{ :for => "DatePolicyHolderHypertensionFirstTime" } a. Kapan pertama kali Anda mengetahui menderita tekanan darah tinggi?
-					%table#DatePolicyHolderHypertensionFirstTimeDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderHypertensionFirstTimeMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderHypertensionFirstTimeYear.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderHypertensionFirstTimeDay.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DatePolicyHolderHypertensionFirstTimeMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DatePolicyHolderHypertensionFirstTimeYear.BoxSquare.PositionerRight
 					%br
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionNumOfBloodPressure1" } b. Berapa tekanan darah Anda saat itu
-					%input#TextPolicyHolderHypertensionNumOfBloodPressure1.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Wrap.PositionerLeft /
-					%input#TextPolicyHolderHypertensionNumOfBloodPressure2.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Wrap.PositionerLeft mmHg
+					%label.Single.NumberIndent.PositionerLeft{ :for => "NumberPolicyHolderHypertensionSystolic" } b. Berapa tekanan darah Anda saat itu
+					%label.Single.PositionerRight mmHg
+					%input#NumberPolicyHolderHypertensionDiastolic.Short.Single.PositionerRight{ :type => "number" }
+					%span.Separator.PositionerRight /
+					%input#NumberPolicyHolderHypertensionSystolic.Short.Single.PositionerRight{ :type => "number" }
 					%br
-					
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionPainLocation" } c. Mengapa Anda saat itu melakukan pemeriksaan tekanan darah?
+
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionCheckReason" } c. Mengapa Anda saat itu melakukan pemeriksaan tekanan darah?
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft					
 						%input#RadioButtonPolicyHolderHypertensionCheckReasonRoutine.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckReason", :value => "routine" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckReasonRoutine" } Pemeriksaan Rutin															
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckReasonRoutine" } Pemeriksaan Rutin
 						%input#RadioButtonPolicyHolderHypertensionCheckReasonOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckReason", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckReasonOthers" } Keluhan Lainnya (mohon jelaskan secara rinci pada kolom di bawah ini).
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckReasonOthers" } Keluhan Lainnya (mohon jelaskan secara rinci pada kolom di bawah ini).
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderHypertensionCheckReasonDesc.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderHypertensionCheckReasonOtherDesc.Full.Single.Item{ :type => "text" }
 					%br										
-					
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionPainLocation" } d. Apakah dikonsultasikan ke Dokter?
-					%div.RadioButton											
-						%input#RadioButtonPolicyHolderHypertensionDoctorConsultYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionDoctorConsult", :value => "true" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionDoctorConsultYes" } Ya															
-						%input#RadioButtonPolicyHolderHypertensionDoctorConsultNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionDoctorConsult", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionDoctorConsultNo" } Tidak 
-						%br
-					
+
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionDoctorConsult" } d. Apakah dikonsultasikan ke Dokter?
+					%div.RadioButton.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionDoctorConsultNo" } Tidak 
+						%input#RadioButtonPolicyHolderHypertensionDoctorConsultNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionDoctorConsult", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionDoctorConsultYes" } Ya
+						%input#RadioButtonPolicyHolderHypertensionDoctorConsultYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionDoctorConsult", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon mengisi kolom di bawah ini.
 					%br	
 					%div.ContainerFit.NumberIndent
@@ -130,75 +131,70 @@
 						%input#TextPolicyHolderHypertensionDoctorAddress.Full.Single.Item{ :type => "text" }
 					%br	
 
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionHowOftenCheckupToDoctor" } e. Berapa sering Anda kontrol ke Dokter
-					%input#TextPolicyHolderHypertensionHowOftenCheckupToDoctor.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Wrap.PositionerLeft kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
+					%label.Single.NumberIndent.PositionerLeft{ :for => "NumberPolicyHolderHypertensionHowOftenCheckupToDoctor" } e. Berapa sering Anda kontrol ke Dokter
+					%input#NumberPolicyHolderHypertensionHowOftenCheckupToDoctor.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Single.Margin.PositionerLeft kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 					%br							
-							
-					%span.Number.Single.PositionerLeft 2
+
+					%span.Number.Single.PositionerLeft 2.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionWhen" } Apakah kenaikan tekanan darah Anda tersebut berhubungan dengan penyakit sebagai berikut:
-					%div.RadioButton
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderHypertensionRelatedToHeart.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionRelatedTo", :value => "heart" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToHeart" } Jantung
-											
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToHeart" } Jantung
 						%input#RadioButtonPolicyHolderHypertensionRelatedToBrain.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionRelatedTo", :value => "brain" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToBrain" } Otak
-											
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToBrain" } Otak
+
 						%input#RadioButtonPolicyHolderHypertensionRelatedToKidney.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionRelatedTo", :value => "kidney" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToKidney" } Ginjal
-
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToKidney" } Ginjal
+						%br
 						%input#RadioButtonPolicyHolderHypertensionRelatedToOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionRelatedTo", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToOthers" } Lainnya, sebutkan									
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionRelatedToOthers" } Lainnya, sebutkan
 						%input#TextPolicyHolderHypertensionRelatedToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }											
 					%br
-					
-					%span.Number.Single.PositionerLeft 3
+
+					%span.Number.Single.PositionerLeft 3.
 					%label.Single.PositionerLeft{ :for => "DatePolicyHolderHypertensionWhenStartDay" } a. Kapan Anda memulai pengobatan kenaikan tekanan darah tersebut
-					%table#DatePolicyHolderHypertensionWhenStartDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderHypertensionWhenStartMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderHypertensionWhenStartYear.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderHypertensionWhenStartYear.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DatePolicyHolderHypertensionWhenStartMonth.BoxSquare.PositionerRight
+					%span.Separator.Single.PositionerRight /
+					%table#DatePolicyHolderHypertensionWhenStartDay.BoxSquare.PositionerRight
 					%br
-					
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionWhenLast" } b.	Apakah Anda pernah berhenti minum obat?					
-					%div.RadioButton
-						%input#RadioButtonPolicyHolderHypertensionStopDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionStopDrug", :value => "true" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionStopDrugYes" } Ya
-						
-						%input#RadioButtonPolicyHolderHypertensionStopDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionStopDrug", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionStopDrugNo" } Tidak
-						%br		
-												
+
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionWhenLast" } b.	Apakah Anda pernah berhenti minum obat?
+					%div.RadioButton.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionStopDrugNo" } Tidak
+						%input#RadioButtonPolicyHolderHypertensionStopDrugNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionStopDrug", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionStopDrugYes" } Ya
+						%input#RadioButtonPolicyHolderHypertensionStopDrugYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionStopDrug", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br		
+
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon mengisi kolom di bawah ini. rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHypertensionStopDrugIfYesDesc.Full.Single.Item{ :type => "text" }
-						
 					%br				
 
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHypertensionWhenLast" } c.	Apakah Anda saat ini masih dalam pengobatan?
-					
-					%div.RadioButton
-						%input#RadioButtonPolicyHolderHypertensionInTherapyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionInTherapy", :value => "true" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionInTherapyYes" } Ya
-						
-						%input#RadioButtonPolicyHolderHypertensionInTherapyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionInTherapy", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionInTherapyNo" } Tidak
-						%br		
-											
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionInTherapy" } c.	Apakah Anda saat ini masih dalam pengobatan?
+					%div.RadioButton.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionInTherapyNo" } Tidak
+						%input#RadioButtonPolicyHolderHypertensionInTherapyNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionInTherapy", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionInTherapyYes" } Ya
+						%input#RadioButtonPolicyHolderHypertensionInTherapyYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionInTherapy", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br		
+
 					%label.NumberIndent.Single.PositionerLeft Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
-
-					%table#TablePolicyHolderHypertensionMedication.Square
+					%table#TablePolicyHolderHypertensionMedication.Square.NumberIndent.PositionerLeft
 						%thead
 							%tr
 								%th Nama Obat
@@ -206,144 +202,118 @@
 								%th Frekuensi
 					%br	
 
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyDocterName"} Nama Lengkap Dokter:
-					%input#TextPolicyHolderHypertensionInTherapyDocterName.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderHypertensionInTherapyDoctorName"} Nama Lengkap Dokter:
+						%input#TextPolicyHolderHypertensionInTherapyDoctorName.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyPhone"} No. Telepon/Handphone:
-					%input#TextPolicyHolderHypertensionInTherapyPhone.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderHypertensionInTherapyDoctorPhone"} No. Telepon/Handphone:
+						%input#TextPolicyHolderHypertensionInTherapyDoctorPhone.Full.Single.Item{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderHypertensionInTherapyHospitalName"} Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderHypertensionInTherapyHospitalName.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderHypertensionInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderHypertensionInTherapyHospitalAddress.Full.Single.Item{ :type => "text" }					
+					%br
 
-					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyHospital"} Nama Klinik/Rumah Sakit:
-					%input#TextPolicyHolderHypertensionInTherapyHospital.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
-
-					%br
-					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionInTherapyHospitalAddress"} Alamat Klinik/Rumah Sakit:
-					%input#TextPolicyHolderHypertensionInTherapyHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
-					%br
-					
-					%span.Number.Single.PositionerLeft 4
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionFeel" } Apakah Anda pernah melakukan pemeriksaan sebagai berikut?
+					%span.Number.Single.PositionerLeft 4.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckUp" } Apakah Anda pernah melakukan pemeriksaan sebagai berikut?
+					%div.RadioButton.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionCheckUpNo" } Tidak
+						%input#RadioButtonPolicyHolderHypertensionCheckUpNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUp", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionCheckUpYes" } Ya
+						%input#RadioButtonPolicyHolderHypertensionCheckUpYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUp", :value => "true" }
+						%div.BoxRound.PositionerRight
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "true" }
+						%input#RadioButtonPolicyHolderHypertensionCheckUpTypeEKGECG.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUpType", :value => "ekgecg" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneYes" } Ya
-												
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "false" }
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupTipeEKGECG" } EKG/ ECG
+						%input#RadioButtonPolicyHolderHypertensionCheckUpTypeChestRontgen.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUpType", :value => "chestrontgen" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneNo" } Tidak
-												
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneEkg.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "ekgecg" }
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckUpTypeChestRontgen" } Rontgen dada
+						%input#RadioButtonPolicyHolderHypertensionCheckUpTypeEchocardiogram.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUpType", :value => "echocardiogram" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneEkg" } EKG/ ECG
-						%br	
-																		
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneRontgen.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "chestrontgen" }
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckUpTypeEchocardiogram" } Echocardiogram
+						%input#RadioButtonPolicyHolderHypertensionCheckUpTypeTreadmill.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUpType", :value => "treadmill" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneRontgen" } Rontgen dada
-						%br	
-																		
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneEchocardiogram.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "echocardiogram" }
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckUpTypeTreadmill" } Treadmill
+						%input#RadioButtonPolicyHolderHypertensionCheckUpTypeLaboratorium.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUpType", :value => "laboratory" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneEchocardiogram" } Echocardiogram
-						%br	
-																		
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneTreadmill.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "treadmill" }
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckUpTypeLaboratorium" } Laboratorium
+						%br
+						%input#RadioButtonPolicyHolderHypertensionCheckUpTypeOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckUpType", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneTreadmill" } Treadmill
-						%br	
-											
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneLaboratorium.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "laboratory" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionCheckupOneLaboratorium" } Laboratorium
-						%br	
-											
-						%input#RadioButtonPolicyHolderHypertensionCheckupOneOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionCheckupOne", :value => "other" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionCheckupOneOtherDesc" } Lainnya, sebutkan
-						%input#TextPolicyHolderHypertensionCheckupOneOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-						%br																			
-						
-					%br					
-					%span.Number.Single.PositionerLeft 5
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionVomitingBlood" }Apakah Anda pernah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerLef{ :for => "RadioButtonPolicyHolderHypertensionTreatmentYes" } Ya
-						%input#RadioButtonPolicyHolderHypertensionTreatmentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionTreatment", :value => "true" }
-						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionCheckUpTypeOtherDesc" } Lainnya, sebutkan
+						%input#TextPolicyHolderHypertensionCheckUpOneOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br																			
 
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionTreatmentNo" } Tidak
-						%input#RadioButtonPolicyHolderHypertensionTreatmentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionTreatment", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						
-						%label.Wrap.Single.PositionerRight{ :for => "TablePolicyHolderHypertensionTreatment" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
-						
-						%table#TablePolicyHolderHypertensionTreatment
+					%br					
+					%span.Number.Single.PositionerLeft 5.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionTreatment" }Apakah Anda pernah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
+					%div.RadioButton.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionTreatmentNo" } Tidak
+						%input#RadioButtonPolicyHolderHypertensionTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionTreatment", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHypertensionTreatmentYes" } Ya
+						%input#RadioButtonPolicyHolderHypertensionTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionTreatment", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TablePolicyHolderHypertensionTreatment" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
+					%table#TablePolicyHolderHypertensionTreatment.Square.NumberIndent.PositionerLeft
 						%thead
 							%tr
 								%th Alasan Perawatan
 								%th Nama Dokter
 								%th Alamat Dokter
 								%th Tanggal Perawatan
-								%th Jangka Waktu Perawatan										
-						%tbody
-							%tr
-								%td
-								%td
-								%td
-								%td
-								%td	
-							%tr
-								%td 
-								%td
-								%td		
-								%td 
-								%td								
-						%br	
+								%th Jangka Waktu Perawatan
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 6
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplication" } Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?
-
-					%div.RadioButton
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderHypertensionComplicationNothing.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "nothing" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationNothing" } Tidak ada				
-						
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationNothing" } Tidak ada				
 						%input#RadioButtonPolicyHolderHypertensionComplicationKidney.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "kidney" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationKidney" } Ginjal
-						
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationKidney" } Ginjal
+						%br
 						%input#RadioButtonPolicyHolderHypertensionComplicationBrain.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "brain" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationBrain" } Otak
-						
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationBrain" } Otak
 						%input#RadioButtonPolicyHolderHypertensionComplicationVision.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "impairedvision" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationVision" } Gangguan Penglihatan
-						
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationVision" } Gangguan Penglihatan
+						%br
 						%input#RadioButtonPolicyHolderHypertensionComplicationLiver.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "liver" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationLiver" } Hati
-						
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationLiver" } Hati
 						%input#RadioButtonPolicyHolderHypertensionComplicationOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationOthers" } Lainnya, sebutkan 
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationOthers" } Lainnya, sebutkan
 						%input#TextPolicyHolderHypertensionComplicationOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 						%br
-						
 					%br
-					%span.Number.Signle.PositionerLeft 7
+
+					%span.Number.Single.PositionerLeft 7.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionAverageBloodPressure" } Jelaskan rata-rata tekanan darah dalam 12 (dua belas) bulan terakhir (termasuk tanggal pemeriksaannya) pada kolom di bawah ini.
 					%br
-					%input#TextPolicyHolderHypertensionAverageBloodPressure.Line.Long.Single.PositionerLeft{ :type => "text"}
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderHypertensionAverageBloodPressure.Line.Full.Single.PositionerLeft{ :type => "text"}
 					%br
-					
-					%br
-					%span.Number.Single.PositionerLeft 8
+
+					%span.Number.Single.PositionerLeft 8.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHypertensionAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
-					%input#TextPolicyHolderHypertensionAdditionalInfo.Line.Long.Single.PositionerLeft{ :type => "text"}
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderHypertensionAdditionalInfo.Line.Full.Single.PositionerLeft{ :type => "text"}
 					%br
 
 				%section#SectionDeclaration

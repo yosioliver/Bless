@@ -18,9 +18,9 @@
 			{
 				// SECTION GENERAL
 
-				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName1", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
@@ -31,21 +31,21 @@
 				boxGenerator("#DatePolicyHolderRespiratoryDetailFirstTimeAriseMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderRespiratoryDetailFirstTimeAriseYear", 4, boxTypeWithoutLabel, null);
 			
-				boxGenerator("#DatePolicyHolderRespiratoryDetailWhenLastAttackDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderRespiratoryDetailWhenLastAttackMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderRespiratoryDetailWhenLastAttackYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderRespiratoryDetailLastAttackDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderRespiratoryDetailLastAttackMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderRespiratoryDetailLastAttackYear", 4, boxTypeWithoutLabel, null);
 			
-				boxGenerator("#DatePolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderRespiratoryDetailAttackCauseHospitalDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderRespiratoryDetailAttackCauseHospitalMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderRespiratoryDetailAttackCauseHospitalYear", 4, boxTypeWithoutLabel, null);
 				
 				boxGenerator("#DatePolicyHolderRespiratoryDetailConsultDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderRespiratoryDetailConsultMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderRespiratoryDetailConsultYear", 4, boxTypeWithoutLabel, null);
 				
-				boxGenerator("#DatePolicyHolderSignedDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderSignedYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
 				
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -82,132 +82,133 @@
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				%fieldset
-					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruption" } Apakah gangguan pernapasan yang Anda derita?		
-					%div.RadioButton					
+					%span.Number.Single.PositionerLeft 1
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruption" } Apakah gangguan pernapasan yang Anda derita?
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderRespiratoryDetailDisruptionAsthma.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "asthma" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionAsthma" } Asma
-						
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionAsthma" } Asma
 						%input#RadioButtonPolicyHolderRespiratoryDisruptionBronchitis.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "bronchitis" }
 						%div.BoxRound.PositionerLeft											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionBronchitis" } Bronchitis
-						
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionBronchitis" } Bronchitis
 						%input#RadioButtonPolicyHolderRespiratoryDisruptionTBC.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "tbc" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionTBC" } TBC	
-						
-						%input#RadioButtonPolicyHolderRespiratoryDisruptionOther.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "other" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionOthers"} Lainnya, sebutkan  
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionTBC" } TBC	
 						%br
-						%div#TextPolicyHolderRespiratoryDisruptionOthers.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%input#RadioButtonPolicyHolderRespiratoryDisruptionOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionOtherDesc"} Lainnya, sebutkan
+						%input#TextPolicyHolderRespiratoryDisruptionOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
-					%span.Number.PositionerLeft 2
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailFirstTimeAriseDay" } Kapan pertama kali Anda merasakan gejala-gejala tersebut?
-					%table#DatePolicyHolderRespiratoryDetailFirstTimeAriseDay.BoxSquare.PositionerRight
+					%span.Number.Single.PositionerLeft 2.
+					%label.Single.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailFirstTimeAriseDay" } Kapan pertama kali Anda merasakan gejala-gejala tersebut?
+					%table#DatePolicyHolderRespiratoryDetailFirstTimeAriseYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderRespiratoryDetailFirstTimeAriseMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderRespiratoryDetailFirstTimeAriseYear.BoxSquare.PositionerRight
+					%table#DatePolicyHolderRespiratoryDetailFirstTimeAriseDay.BoxSquare.PositionerRight
 					%br
 					
-					%span.Number.PositionerLeft 3
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailLastTwoYearsAttack" } a. Berapa kali serangan dalam 2 (dua) tahun terakhir?
-					%input#TextPolicyHolderRespiratoryDetailLastTwoYearsAttack.Short.Single.PositionerLeft{ :type => "text" }
+					%span.Number.Single.PositionerLeft 3.
+					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderRespiratoryDetailLastTwoYearsAttack" } a. Berapa kali serangan dalam 2 (dua) tahun terakhir?
+					%input#NumberPolicyHolderRespiratoryDetailLastTwoYearsAttack.Short.Single.PositionerLeft{ :type => "number" }
 					%br
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailWhenLastAttackDay" } b. Kapan serangan terakhir?
-					%table#DatePolicyHolderRespiratoryDetailWhenLastAttackDay.BoxSquare.PositionerRight
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailLastAttackDay" } b. Kapan serangan terakhir?
+					%table#DatePolicyHolderRespiratoryDetailLastAttackYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderRespiratoryDetailWhenLastAttackMonth.BoxSquare.PositionerRight
+					%table#DatePolicyHolderRespiratoryDetailLastAttackMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderRespiratoryDetailWhenLastAttackYear.BoxSquare.PositionerRight
+					%table#DatePolicyHolderRespiratoryDetailLastAttackDay.BoxSquare.PositionerRight
 					%br					
 
-					%span.Number.PositionerLeft 4
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryNumberOfAttackCause" } Berapa kali serangan-serangan tersebut menyebabkan Anda:
+					%span.Number.Single.PositionerLeft 4.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryAttackCause" } Berapa kali serangan-serangan tersebut menyebabkan Anda:
 					%br
-					(Mohon melampirkan resume perawatan yang Anda miliki)
+					%span.Single.NumberIndent.PositionerLeft (Mohon melampirkan resume perawatan yang Anda miliki)
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
+						%input#RadioButtonPolicyHolderRespiratoryAttackCauseAbsent.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryAttackCause", :value => "absent" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryAttackCauseAbsent" } Tidak masuk kerja, selama
+					%label.Single.PositionerRight{ :for => "NumberPolicyHolderRespiratoryAttackCauseAbsentYear"} Tahun
+					%input#NumberPolicyHolderRespiratoryAttackCauseAbsentYear.Short.Single.PositionerRight{ :type => "number" }
+					%label.Single.PositionerRight{ :for => "NumberPolicyHolderRespiratoryAttackCauseAbsentMonth"} Bulan
+					%input#NumberPolicyHolderRespiratoryAttackCauseAbsentMonth.Short.Single.PositionerRight{ :type => "number" }
+					%label.Single.PositionerRight{ :for => "NumberPolicyHolderRespiratoryNumberOfAttackCauseAbsentWeek"} Minggu
+					%input#NumberPolicyHolderRespiratoryAttackCauseNumberWeek.Short.Single.PositionerRight{ :type => "number" }
+					%label.Single.PositionerRight{ :for => "TextPolicyHolderRespiratoryAttackCauseAbsentDay"} Hari
+					%input#NumberPolicyHolderRespiratoryAttackCauseAbsentDay.Short.Single.PositionerRight{ :type => "number" }
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
+						%input#RadioButtonPolicyHolderRespiratoryAttackCauseHospital.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryAttackCause", :value => "Hospital" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryAttackCauseHospital" } Dirawat di Rumah Sakit
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailAttackCauseHospitalDay" } Tanggal perawatan:
+					%table#DatePolicyHolderRespiratoryDetailAttackCauseHospitalYear.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderRespiratoryDetailAttackCauseHospitalMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderRespiratoryDetailAttackCauseHospitalDay.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "NumberPolicyHolderRespiratoryDetailAttackCauseHospitalDuration"} Lama perawatan:
+					%input#NumberPolicyHolderRespiratoryDetailAttackCauseHospitalDuration.Long.Single.PositionerLeft{ :type => "number" }
+					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderRespiratoryNumberOfAttackCauseHospitalDuration"} (hari/minggu/bulan*) *coret yang tidak perlu
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseDoctorName"} Nama Lengkap Dokter
+						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalDoctorName.Full.Single.Item{ :type => "text" }
+					%br
 
-					%div.RadioButton
-						%input#RadioButtonPolicyHolderRespiratoryNumberOfAttackCauseLeave.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryNumberOfAttackCause", :value => "Take Leave" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryNumberOfAttackCauseLeave" } Tidak masuk kerja, selama:
-						%input#TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveDay.Line.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveDay"} Hari  
-						%br
-						%input#TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveWeek.Line.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveWeek"} Minggu  
-						%br
-						%input#TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveMonth.Line.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveMonth"} Bulan  
-						%br
-						%input#TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveYear.Line.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryNumberOfAttackCauseLeaveYear"} Tahun  
-						%br				
-												
-						%input#RadioButtonPolicyHolderRespiratoryNumberOfAttackCauseHospital.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryNumberOfAttackCause", :value => "Hospital" }
-						%div.BoxRound.PositionerLeft
-						%b
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryNumberOfAttackCauseHospital" } Dirawat di Rumah Sakit
-						%br						
-						%label.Wrap.Single.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalDay" } Tanggal perawatan:
-						%table#DatePolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalDay.BoxSquare.PositionerLeft
-						%span.Separator.Single.PositionerLeft /
-						%table#DatePolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalMonth.BoxSquare.PositionerLeft
-						%span.Separator.Single.PositionerLeft /
-						%table#DatePolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalYear.BoxSquare.PositionerLeft
-						%br
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalDuration"} Lama perawatan:
-						%input#TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalDuration.Line.Long.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryNumberOfAttackCauseHospitalDuration"} (hari/minggu/bulan*) *coret yang tidak perlu
-						%br
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalDoctorName"} Nama Lengkap Dokter	%input#TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalDoctorName.Line.Long.Single.PositionerLeft{ :type => "text" }
-						%br
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalPhone"} No. Telepon/Handphone:	%input#TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalPhone.Line.Long.Single.PositionerLeft{ :type => "text" }
-						%br
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalKlinikName"} Nama Klinik/Rumah Sakit:	%input#TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalKlinikName.LineDot.Long.Single.PositionerLeft{ :type => "text" }					
-						%br
-						
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalAddress"} Alamat Klinik/Rumah Sakit:	%input#TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalAddress.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-						%br
-						%input#TextPolicyHolderRespiratoryDetailNumberOfAttackCauseHospitalAddress2.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-						%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalTelephone"} No. Telepon/Handphone:
+						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalTelephone.Full.Single.Item{ :type => "text" }
+					%br
+
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalName"} Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalName.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress"} Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress"}
+						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress2nd.Full.Single.PositionerLeft{ :type => "text" }
+					%br
 										
-					%span.Number.PositionerLeft 5
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryComplainCaugh" } Sewaktu tidak ada serangan, apakah ada keluhan-keluhan berikut?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerLef{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainCaugh" } Batuk   
+					%span.Number.Single.PositionerLeft 5.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryComplainCaugh" } Sewaktu tidak ada serangan, apakah ada keluhan-keluhan berikut?
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderRespiratoryDetailComplainCaugh.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailComplain", :value => "caugh" }
 						%div.BoxRound.PositionerLeft
-
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainShortnessBreath" } Nafas Pendek
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainCaugh" } Batuk
 						%input#RadioButtonPolicyHolderRespiratoryDetailComplainShortnessBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailComplain", :value => "shortnessbreath" }
 						%div.BoxRound.PositionerLeft
-						
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainNgikSound" } Berbunyi “ngik”
-						%input#RadioButtonPolicyHolderRespiratoryDetailComplainNgikSound.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailComplain", :value => "ngiksound" }
-						%div.BoxRound.PositionerRight
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainShortnessBreath" } Nafas Pendek
+						%input#RadioButtonPolicyHolderRespiratoryDetailComplainNgikSound.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailComplain", :value => "ngiksound" }
+						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainNgikSound" } Berbunyi “ngik”
 					%br
 					
-					%span.Number.PositionerLeft 6
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapy" } 	a.	Pengobatan apakah yang digunakan untuk mengatasi gangguan pernapasan?
-
-					%div.RadioButton
-					
+					%span.Single.Number.PositionerLeft 6.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapy" } a.	Pengobatan apakah yang digunakan untuk mengatasi gangguan pernapasan?
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderRespiratoryDetailTherapyInhaler.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailTherapy", :value => "inhaler" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapyInhaler" } Inhaler																
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapyInhaler" } Inhaler																
 						%input#RadioButtonPolicyHolderRespiratoryDetailTherapyDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailTherapy", :value => "drugs" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapyDrug" } Obat-obatan  (Jelaskan nama obat, dosis dan frekuensi penggunaannya pada kolom di bawah ini).
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapyDrug" } Obat-obatan (Jelaskan nama obat, dosis dan frekuensi penggunaannya pada kolom di bawah ini).
 						%br
 											
-					%table
+					%table.Square.NumberIndent.PositionerLeft#TablePolicyHolderRespiratoryDetail
 						%thead
 							%tr
 								%th Nama Obat
@@ -222,78 +223,80 @@
 								%td
 								%td
 								%td								
-						%br	
+					%br	
 						
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumption" } 	b. Kapan obat-obatan tersebut dikonsumsi?
-
-					%div.RadioButton
-					
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumption" } b. Kapan obat-obatan tersebut dikonsumsi?
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "everyday" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay" } Setiap hari																
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay" } Setiap hari
 						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "whenattacked" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked" } Hanya saat serangan
-						%br						
-										
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } 	c. Apakah obat-obatan tersebut masih digunakan sampai sekarang?
-
-					%div.RadioButton
-					
-						%input#RadioButtonPolicyHolderRespiratoryDetailStillConsumedYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailStillConsumed", :value => "true" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailStillConsumed" } c. Apakah obat-obatan tersebut masih digunakan sampai sekarang?
+					%div.RadioButton.NumberIndent.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailStillConsumedNo" } Tidak
+						%input#RadioButtonPolicyHolderRespiratoryDetailStillConsumedNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailStillConsumed", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailStillConsumedYes" } Ya
+						%input#RadioButtonPolicyHolderRespiratoryDetailStillConsumedYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailStillConsumed", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.RadioButton.NumberIndent.PositionerLeft
+						%input#RadioButtonPolicyHolderRespiratoryDetailStillConsumedDesc.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailStillConsumed", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailStillConsumedYes" } Ya
-						
-						%input#RadioButtonPolicyHolderRespiratoryDetailStillConsumedNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailStillConsumed", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailStillConsumedNo" } Tidak
-						%br														
-					
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryStillConsumedDesc"} Mohon menjelaskan alasannya secara rinci pada kolom di bawah ini.
-						%br
-						%input#TextPolicyHolderRespiratoryStillConsumedDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryStillConsumedDesc"} Mohon menjelaskan alasannya secara rinci pada kolom di bawah ini.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderRespiratoryStillConsumedDesc.Full.Single.PositionerLeft{ :type => "text" }
 					%br					
 
-					%span.Number.PositionerLeft 7
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailMedicalCheckResult" } Sehubungan dengan gangguan pernapasan, kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? (Mohon dilampirkan fotokopi hasil pemeriksaan).
+					%span.Number.Single.PositionerLeft 7.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailMedicalCheckResult" } Sehubungan dengan gangguan pernapasan, kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? (Mohon dilampirkan fotokopi hasil pemeriksaan).
 					%br
-					%input#TextPolicyHolderRespiratoryDetailMedicalCheckResult.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderRespiratoryDetailMedicalCheckResult.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 8.
+					%label.Single.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailConsultDay" } Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailConsultDay" } Tanggal terakhir konsultasi:
+					%table#DatePolicyHolderRespiratoryDetailConsultDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderRespiratoryDetailConsultMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderRespiratoryDetailConsultYear.BoxSquare.PositionerLeft
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailConsultDiagnose" } Diagnosa:
+						%input#TextPolicyHolderRespiratorDetailDiagnose.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailConsultDoctorName" } Nama Lengkap Dokter:
+						%input#TextPolicyHolderRespiratoryDetailConsultDoctorName.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailConsultPhone" } No. Telepon/Handphone:
+						%input#TextPolicyHolderRespiratoryDetailConsultPhone.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailConsultHospitalName" } Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderRespiratoryDetailConsultHospitalName.Full.Single.PositionerLeft{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Multi.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailConsultHospitalAddress" } Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderRespiratoryDetailConsultHospitalAddress.Full.Single.PositionerLeft{ :type => "text" }
 					%br
 					%br
 					
-					%span.Number.PositionerLeft 8
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailConsultDay" } Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
+					%span.Number.Single.PositionerLeft 9.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailConsultDay" } Tanggal terakhir konsultasi:
-					%table#DatePolicyHolderRespiratoryDetailConsultDay.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderRespiratoryDetailConsultMonth.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderRespiratoryDetailConsultYear.BoxSquare.PositionerRight
-					%br					
-					
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDataDoctorHospitalDiagnosa" } Diagnosa:
-					%input#TextPolicyHolderRespiratoryDataDoctorHospitalDiagnosa.Short.Single.PositionerLeft{ :type => "text" }
-					%br
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDataDoctorHospitalDoctorName" } Nama Lengkap Dokter:
-					%input#TextPolicyHolderRespiratoryDataDoctorHospitalDoctorName.Short.Single.PositionerLeft{ :type => "text" }
-					%br
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDataDoctorHospitalPhone" } No. Telepon/Handphone:
-					%input#TextPolicyHolderRespiratoryDataDoctorHospitalPhone.Short.Single.PositionerLeft{ :type => "text" }
-					%br
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDataDoctorHospitalClinicName" } Nama Klinik/Rumah Sakit:
-					%input#TextPolicyHolderRespiratoryDataDoctorHospitalClinicName.Short.Single.PositionerLeft{ :type => "text" }				
-					%br
-					%label.Wrap.Multi.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDataDoctorHospitalAddress" } Alamat Klinik/Rumah Sakit:
-					%input#TextPolicyHolderRespiratoryDataDoctorHospitalAddress.Short.Single.PositionerLeft{ :type => "text" }
-					%br
-					%br
-					
-					%span.Number.PositionerLeft 9
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderRespiratoryAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
-					%br
-					%input#TextPolicyHolderRespiratoryAdditionalInfo.Line.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderRespiratoryDetailAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }
 					%br
 				
 				%section#SectionDeclaration
