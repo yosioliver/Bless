@@ -190,8 +190,8 @@
 					%br
 					%label.Wrap.NumberIndent.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderTumorTherapyAssOtherDesc.Line.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderTumorTherapyAssOtherDescAdd.Line.Full.Single.Item{ :type => "text" }
 					%br					
 					%label.Wrap.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorPrognosa" } e. Apakah anda pernah diberi informasi tentang prognosa (ramalan) atas tumor tersebut?
 					%div.RadioButton
@@ -228,30 +228,30 @@
 						%label.Short.Single.Item1.Center Tanggal Pemeriksaan
 						%label.Short.Single.Item1.Center Hasil Pemeriksaan						
 												
-					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailCheckupType1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailCheckupDate1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailCheckupResult1.Short.Single.Item1.Margin{ :type => "text" }															
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTumorCheckupType1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupDate1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupResult1.Short.Single.Item1.Margin{ :type => "text" }															
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailDrugName2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugDose2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugFrequency2.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorCheckupType2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupDate2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupResult2.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailDrugName3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugDose3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugFrequency3.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorCheckupType3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupDate3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupResult3.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailDrugName4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugDose4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugFrequency4.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorCheckupType4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupDate4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupResult4.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailDrugName5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugDose5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDrugFrequency5.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorCheckupType5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupDate5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorCheckupResult5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 						
 					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorActionDesc"} g. Pengobatan atau tindakan operasi apa saja yang pernah dianjurkan?
@@ -297,7 +297,7 @@
 					
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderTumorDocterName"} Nama Lengkap Dokter
-						%input#TextPolicyHolderTumorDocterName.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderTumorDoctorName.Full.Single.Item{ :type => "text" }
 					%br
 					
 					%div.ContainerFit.NumberIndent
@@ -361,32 +361,31 @@
 						%label.Short.Single.Item1.Center Tanggal Pemeriksaan
 						%label.Short.Single.Item1.Center Hasil Pemeriksaan
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailKindOfChecking1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDateOfChecking1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailResultOfChecking1.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorKindOfChecking1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorDateOfChecking1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorResultOfChecking1.Short.Single.Item1.Margin{ :type => "text" }															
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailKindOfChecking2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDateOfChecking2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailResultOfChecking2.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorKindOfChecking2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorDateOfChecking2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorResultOfChecking2.Short.Single.Item1.Margin{ :type => "text" }															
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailKindOfChecking3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDateOfChecking3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailResultOfChecking3.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorKindOfChecking3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorDateOfChecking3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorResultOfChecking3.Short.Single.Item1.Margin{ :type => "text" }															
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailKindOfChecking4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDateOfChecking4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailResultOfChecking4.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorKindOfChecking4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorDateOfChecking4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorResultOfChecking4.Short.Single.Item1.Margin{ :type => "text" }															
 					%br
 					%div.ContainerFit.NumberIndent					
-						%input#TextPolicyHolderRespiratoryDetailKindOfChecking5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailDateOfChecking5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRespiratoryDetailResultOfChecking5.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderTumorKindOfChecking5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorDateOfChecking5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTumorResultOfChecking5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					
-					%br
+										
 					%span.Number.Single.PositionerLeft 8.
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
