@@ -202,8 +202,13 @@
 						%input#TextPolicyHolderDigestDetailVomittingBloodSolving.Full.Single.PositionerLeft{ :type => "text" }										
 					%br
 					
-					%span.Number.Single.PositionerLeft 6.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestPainComplain" } Jelaskan secara rinci keluhan nyeri yang Anda dirasakan:
+					%section#SectionFooter{ :style => "margin-top: 150px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestPainComplain", :style => "margin-top: 30px;"} Jelaskan secara rinci keluhan nyeri yang Anda dirasakan:
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderDigestDetailPainComplainCondition.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailPainComplain", :value => "condition" }
@@ -384,8 +389,13 @@
 						%input#TextPolicyHolderDigestDetailHospitalCareDoctorAddress.Full.Single.Item{ :type => "text" }					
 					%br	
 					
-					%span.Number.Single.PositionerLeft 11.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailInTreatment" } Apakah Anda sampai saat ini masih dalam pengobatan?
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{:style => "margin-top: 30px;"} 11.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailInTreatment", :style => "margin-top: 30px;" } Apakah Anda sampai saat ini masih dalam pengobatan?
 					%div.RadioButton.PositionerRight
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailInTreatmentNo" } Tidak
 						%input#RadioButtonPolicyHolderDigestDetailInTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailInTreatment", :value => "false" }

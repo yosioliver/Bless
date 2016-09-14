@@ -362,9 +362,14 @@
 						%input#TextPolicyHolderHypertensionTreatmentDate5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderHypertensionTreatmentDuration5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
+					
+					%section#SectionFooter{ :style => "margin-top: 100px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					 
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 6
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplication" } Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplication", :style => "margin-top: 30px;"} Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderHypertensionComplicationNothing.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "nothing" }
@@ -405,13 +410,8 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHypertensionAdditionalInfo.Line.Full.Single.PositionerLeft{ :type => "text"}
 					%br
-					
-					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
-					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
+				%section#SectionDeclaration
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
 		%section#SectionFooter
