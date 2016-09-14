@@ -42,10 +42,11 @@
 				%input#RadioButtonWhatHappenSuddenlyFall{ :type => "radio", :name => "RadioButtonWhatHappen", :value => "suddenlyfall" }
 				%label.RadioButton{ :for => "RadioButtonWhatHappenSuddenlyFall" } Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
 		%br
-
 		%hr
-			%label.medium.Single.Item 5. Sebelum terjadi serangan, apakah dirasakan adanya pusing-pusing, mencium bau-bauan, melihat cahaya, atau bunyi-bunyian?
+		
+		%label.Msedium.Single.Item 5. Sebelum terjadi serangan, apakah dirasakan adanya pusing-pusing, mencium bau-bauan, melihat cahaya, atau bunyi-bunyian?
 		%br
+		
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonIsFeelYes{ :type => "radio", :name => "RadioButtonIsFeel", :value => "true" }
@@ -57,7 +58,8 @@
 			%input#TextIsFeelDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-			%label.medium.Single.Item 6. Apakah Anda pernah dirawat karena epilepsi?
+		
+		%label.Medium.Single.Item 6. Apakah Anda pernah dirawat karena epilepsi?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton.Medium.Item
@@ -69,36 +71,37 @@
 			%input#TextTreatedDesc.Full.Single.Item.Margin{ :type =>"text"}
 		%br
 		%hr
-		%label.medium.Single.Item 7. Apakah Anda selalu berkonsultasi / berobat ke dokter?
+		
+		%label.Medium.Single.Item 7. Apakah Anda selalu berkonsultasi / berobat ke dokter?
 		%br
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonConsult{ :type => "radio", :name => "RadioButtonConsult", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonConsult" } Ya
+			%input#RadioButtonConsultYes{ :type => "radio", :name => "RadioButtonConsult", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonConsultYes" } Ya
 			%div.Separator
-			%input#RadioButtonConsult{ :type => "radio", :name => "RadioButtonConsult", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonConsult" } Tidak
-		%label#Wrap.Single.PositionerLeft Nama Dokter
+			%input#RadioButtonConsultNo{ :type => "radio", :name => "RadioButtonConsult", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonConsultNo" } Tidak
+		%label.Wrap.Single.PositionerLeft Nama Lengkap Dokter:
 		%input#TextConsultDoctorName.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
 		%br
-		%label#Wrap.Single.PositionerLeft Telepon/Handphone
-		%input#TextConsultDoctorPhone.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
+		%label.Wrap.Single.PositionerLeft No. Telepon/Handphone:
+		%input#TextConsultDoctorTelephone.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
 		%br
-		%label#Wrap.Single.PositionerLeft Alamat Lengkap Dokter
+		%label.Wrap.Single.PositionerLeft Alamat Lengkap Dokter:
 		%input#TextConsultDoctorAddress.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
 		%br
 		%hr 
 		%div.ContainerFit 
-			%label#Wrap.Single.PositionerLeft 8. Kapan terakhir kali Anda berkonsultasi dengan dokter?
+			%label.Wrap.Single.PositionerLeft 8. Kapan terakhir kali Anda berkonsultasi dengan dokter?
 			%input#DateLastconsult.Short.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 		%br
-			%label#Wrap.Single.PositionerLeft Apakah Anda mendapat obat dokter?
+			%label.Wrap.Single.PositionerLeft Apakah Anda mendapat obat dokter?
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonGetDrugYes{ :type => "radio", :name => "RadioButtonGetDrug", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonGetDrugYes" } Ya
 				%div.Separator
-				%input#RadioButtonGetDrug{ :type => "radio", :name => "RadioButtonGetDrug", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonGetDrug" } Tidak
-		%label#Wrap.Single.PositionerLeft (Jika "Ya", mohon mengisi kolom di bawah ini).
+				%input#RadioButtonGetDrugNo{ :type => "radio", :name => "RadioButtonGetDrug", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonGetDrugNo" } Tidak
+		%label.Wrap.Single.PositionerLeft (Jika "Ya", mohon mengisi kolom di bawah ini).
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Name Obat
@@ -125,7 +128,7 @@
 		%hr
 		%div.ContainerFit
 			%div.RadioButton.Medium.Item
-				%label#Wrap.Single.PositionerLeft 9. Apakah Anda masih minum obat secara teratur hingga saat ini?
+				%label.Wrap.Single.PositionerLeft 9. Apakah Anda masih minum obat secara teratur hingga saat ini?
 				%br
 				%input#RadioButtonConsumeDrugYes{ :type => "radio", :name => "RadioButtonConsumeDrug", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonConsumeDrugYes" } Ya
@@ -168,17 +171,16 @@
 				%input#RadioButtonOtherDiseasesDiabetes{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "diabetes" }
 				%label.RadioButton{ :for => "RadioButtonOtherDiseasesDiabetes" } Kencing Manis (Diabetes Melitus)
 				%div.Separator
-				%input#RadioButtonOtherDiseasesHipertensi{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "hypertension" }
-				%label.RadioButton{ :for => "RadioButtonOtherDiseasesHipertensi" } Darah Tinggi (Hipertensi)
+				%input#RadioButtonOtherDiseasesHypertension{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "hypertension" }
+				%label.RadioButton{ :for => "RadioButtonOtherDiseasesHypertension" } Darah Tinggi (Hipertensi)
 				%div.Separator
 				%input#RadioButtonOtherDiseasesTumor{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "tumor" }
 				%label.RadioButton{ :for => "RadioButtonOtherDiseasesTumor" } Tumor
 				%div.Separator
 				%input#RadioButtonOtherDiseasesComplication{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "complication" }
 				%label.RadioButton{ :for => "RadioButtonOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan 
-				%br
-		
-		%input#TextComplicationDesc.Full.Multi.Item1.Margin{ :type =>"text" }
+				%br		
+		%input#TextOtherDiseasesDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
