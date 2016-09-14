@@ -226,10 +226,14 @@
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToOthers"} Di bagian lain, sebutkan: 
 						%input#TextPolicyHolderChestPainSpreadToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-					%br					
+					%br
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 8.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappened" } Bagaimana terjadinya nyeri dada tersebut?
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 8.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappened", :style => "margin-top: 30px;"  } Bagaimana terjadinya nyeri dada tersebut?
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderChestPainHowHappenedSudden.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "sudden" }
@@ -398,10 +402,15 @@
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderChestPainEverCheckDesc.Full.Single.PositionerLeft{ :type => "text" }
-					%br										
+					%br
+					
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 	
-					%span.Number.Single.PositionerLeft 14.
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainTakeLeave" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"}  14.
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainTakeLeave", :style => "margin-top: 30px;" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveNo" } Tidak						
 						%input#RadioButtonPolicyHolderChestPainTakeLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "false" }
