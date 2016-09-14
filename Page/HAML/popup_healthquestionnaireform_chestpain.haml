@@ -206,6 +206,10 @@
 			%input#RadioButtonConsulToDoctorNo{ :type => "radio", :name => "RadioButtonConsulToDoctor", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonConsulToDoctorNo" } Tidak
 		%br
+			%label.Full.Single.PositionerLeft Jika “Ya”, mohonberikanalasannya:
+			%br				
+			%input#TextConsulToDoctorReason.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Tanggal terakhir konsultasi
 			%input#DateConsulToDoctorLast.Full.Single.Item.Margin{ :type =>"date", "data-field" => "date" }
