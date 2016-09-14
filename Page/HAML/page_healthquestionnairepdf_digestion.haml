@@ -98,10 +98,11 @@
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				%fieldset
-					%span.Number.Single.PositionerLeft 1
+					%span.Number.Single.PositionerLeft 1.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigest" } Gangguan pencernaan yang pernah Anda alami?
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
+
 						%input#RadioButtonPolicyHolderDigestTukakLambung.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "tukaklambung" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestTukakLambung" } Tukak Lambung
@@ -141,7 +142,7 @@
 					%span.Number.Single.PositionerLeft 3
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDigestFrequencyInMonth" } a. Berapa kali anda mengalami gangguan pencernaan?
 					%input#TextPolicyHolderDigestFrequencyInMonth.Short.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestionHowMany" } kali per (bulan/tahun*) *coret yang tidak perlu					
+					%label.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderDigestionHowMany" } kali per (bulan/tahun*) *coret yang tidak perlu					
 					%br
 					%label.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderDigestLastArise" } b. Kapan timbulnya keluahan terakhir?
 					%table#DatePolicyHolderDigestLastAriseYear.BoxSquare.PositionerRight
@@ -198,7 +199,7 @@
 					
 					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } c. Berapa kali Anda mengalami muntah darah?
 					%input#TextPolicyHolderDigestVomitingBloodAriseTime.Short.Single.PositionerLeft{ :type => "text"}
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestVomitingBloodAriseTime" } kali per (bulan/tahun*) *coret yang tidak perlu					
+					%label.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderDigestVomitingBloodAriseTime" } kali per (bulan/tahun*) *coret yang tidak perlu					
 					%br
 					%label.NumberIndent.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestVomitingBloodSolvingWay"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
 					%br
@@ -310,23 +311,23 @@
 					%br
 					
 					
-					%span.Number.Single.PositionerLeft 9
+					%span.Number.Single.PositionerLeft 9.
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestResultOfTheExamination" } Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuktanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDigestResultOfTheExamination.Full.Single.PositionerLeft{ :type => "text" }
 					%br
 					
-					%span.Number.Single.PositionerLeft 10
+					%span.Number.Single.PositionerLeft 10.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCare" } Apakah Anda pernah mendapatkan perawatan Rumah Sakit sehubungan dengan gangguan pencernaan tersebut?
 					%div.RadioButton
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak					
 						%input#RadioButtonPolicyHolderDigestHospitalCareNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "false" }
 						%div.BoxRound.PositionerRight
-						
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
+
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya		
 						%input#RadioButtonPolicyHolderDigestHospitalCareYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya		
 					%br
 						
 					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderDigestHospitalCareWhen" } Jika “Ya”, sejak kapan?
@@ -335,7 +336,7 @@
 					%table#DatePolicyHolderDigestHospitalCareWhenStartMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderDigestHospitalCareWhenStartYear.BoxSquare.PositionerLeft				
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderDigestionVomitingBlood3Day" } s/d
+					%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderDigestionVomitingBlood3Day" } s/d
 					%table#DatePolicyHolderDigestHospitalCareWhenEndDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderDigestHospitalCareWhenEndMonth.BoxSquare.PositionerLeft
@@ -345,7 +346,7 @@
 					
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalCareHowLong" } Lama perawatan
 					%input#TextPolicyHolderDigestHospitalCareHowLong.Short.Single.PositionerLeft{ :type => "text"}
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } (bulan/tahun*) *coret yang tidak perlu										
+					%label.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } (bulan/tahun*) *coret yang tidak perlu										
 					%br	
 					
 					%div.ContainerFit.NumberIndent
@@ -358,7 +359,7 @@
 						%input#TextPolicyHolderDigestHospitalCareDoctorAddress.LonFullg.Single.Item{ :type => "text" }					
 					%br	
 					
-					%span.Number.Single.PositionerLeft 11
+					%span.Number.Single.PositionerLeft 11.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestInTreatment" } Apakah Anda sampai saat ini masih dalam pengobatan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestInTreatmentNo" } Tidak
@@ -410,7 +411,7 @@
 					%br
 				
 					
-					%span.Number.Single.PositionerLeft 12
+					%span.Number.Single.PositionerLeft 12.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTreatment" } Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestNoOfficeEntryInYearNo" } Tidak
@@ -428,13 +429,13 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenYear.BoxSquare.PositionerLeft
 					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestNoOfficeEntryInYearHowLong"}
-					%span.Separator.Single.PositionerLeft Berapa lama?
+					%label.Separator.Single.PositionerLeft Berapa lama?
 					%input#TextPolicyHolderDigestNoOfficeEntryInYearHowLong.Short.Single.PositionerLeft{ :type => "text" }
 					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" }
-					%span.Separator.Single.PositionerLeft hari.
+					%label.Separator.Single.PositionerLeft hari.
 					%br			
 
-					%span.Number.Single.PositionerLeft 13
+					%span.Number.Single.PositionerLeft 13.
 					%label.Single.PositionerLeft{ :for => "AreaPolicyHolderDigestOtherHealthCondition" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
