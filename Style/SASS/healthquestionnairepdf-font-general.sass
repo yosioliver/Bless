@@ -73,12 +73,15 @@ main
 			margin-bottom: $general_space_medium
 			padding: 0px
 			border: none
-			span.Number
+			span.Number, span.NumberFix
 				margin-right: $general_space_medium
 				width: $label_width_number
 				padding-left: 2px
 				padding-right: 2px
 				text-align: center
+			span.NumberFix
+				min-width: $label_width_number
+				max-width: $label_width_number
 			label, span
 				font-size: $fontsize_form_labelgeneral
 				vertical-align: top
