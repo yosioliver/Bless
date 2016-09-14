@@ -319,16 +319,17 @@
 					
 					%span.Number.Single.PositionerLeft 10
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCare" } Apakah Anda pernah mendapatkan perawatan Rumah Sakit sehubungan dengan gangguan pencernaan tersebut?
-					%div.RadioButton.NumberIndent.PositionerRight
+					%div.RadioButton
+						%input#RadioButtonPolicyHolderDigestHospitalCareNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "false" }
+						%div.BoxRound.PositionerRight
+						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
 						%input#RadioButtonPolicyHolderDigestHospitalCareYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya
-						%input#RadioButtonPolicyHolderDigestHospitalCareNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestHospitalCare", :value => "false" }
-						%div.BoxRound.PositionerRightPositionerRight											
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
-					%br					
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareYes" } Ya		
+					%br
 						
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderDigestHospitalCareWhen" } Jika “Ya”, sejak kapan?
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderDigestHospitalCareWhen" } Jika “Ya”, sejak kapan?
 					%table#DatePolicyHolderDigestHospitalCareWhenStartDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderDigestHospitalCareWhenStartMonth.BoxSquare.PositionerLeft
@@ -340,8 +341,9 @@
 					%table#DatePolicyHolderDigestHospitalCareWhenEndMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderDigestHospitalCareWhenEndYear.BoxSquare.PositionerLeft	 			
-					%br						
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalCareHowLong" } Lama perawatan
+					%br	
+					
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestHospitalCareHowLong" } Lama perawatan
 					%input#TextPolicyHolderDigestHospitalCareHowLong.Short.Single.PositionerLeft{ :type => "text"}
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestionVomitingBloodHowMany" } (bulan/tahun*) *coret yang tidak perlu										
 					%br	
@@ -419,17 +421,18 @@
 						%div.BoxRound.PositionerRight
 						%br
 				
-					%div.ContainerFit.NumberIndent
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" } Jika “Ya”, kapan?
-						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenDay.BoxSquare.PositionerLeft
-						%span.Separator.Single.PositionerLeft /
-						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenMonth.BoxSquare.PositionerLeft
-						%span.Separator.Single.PositionerLeft /
-						%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenYear.BoxSquare.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestNoOfficeEntryInYearHowLong" } Berapa lama?
-						%input#TextPolicyHolderDigestNoOfficeEntryInYearHowLong.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" } hari.
-					%br					
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" } Jika “Ya”, kapan?
+					%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderDigestNoOfficeEntryInYearWhenYear.BoxSquare.PositionerLeft
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderDigestNoOfficeEntryInYearHowLong"}
+					%span.Separator.Single.PositionerLeft Berapa lama?
+					%input#TextPolicyHolderDigestNoOfficeEntryInYearHowLong.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderTreatmentReason" }
+					%span.Separator.Single.PositionerLeft hari.
+					%br			
 
 					%span.Number.Single.PositionerLeft 13
 					%label.Single.PositionerLeft{ :for => "AreaPolicyHolderDigestOtherHealthCondition" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
