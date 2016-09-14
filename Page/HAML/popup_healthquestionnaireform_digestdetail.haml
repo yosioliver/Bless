@@ -56,20 +56,20 @@
 		
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 4. Keluhan apa yang dirasakan:
-			%input#RadioButtonComplainNausea.Single{ :type => "radio", :name => "RadioButtonComplain", :value => "nausea" }
-			%label.RadioButton{ :for => "RadioButtonComplainNausea" } Mual
+			%input#RadioButtonComplainAssNausea.Single{ :type => "radio", :name => "RadioButtonComplainAss", :value => "nausea" }
+			%label.RadioButton{ :for => "RadioButtonComplainAssNausea" } Mual
 			%div.Separator
-			%input#RadioButtonComplainGag.Single{ :type => "radio", :name => "RadioButtonComplain", :value => "gag" }
-			%label.RadioButton{ :for => "RadioButtonComplain" } Muntah
+			%input#RadioButtonComplainAssGag.Single{ :type => "radio", :name => "RadioButtonComplainAss", :value => "gag" }
+			%label.RadioButton{ :for => "RadioButtonComplainAssGag" } Muntah
 			%div.Separator
-			%input#RadioButtonComplainVomittingBlod.Single{ :type => "radio", :name => "RadioButtonComplain", :value => "vomittingblood" }
-			%label.RadioButton{ :for => "RadioButtonComplainVomittingBlood" } muntah darah
+			%input#RadioButtonComplainAssVomittingBlood.Single{ :type => "radio", :name => "RadioButtonComplainAss", :value => "vomittingblood" }
+			%label.RadioButton{ :for => "RadioButtonComplainAssVomittingBlood" } Muntah darah
 			%div.Separator
-			%input#RadioButtonComplainHeartburn.Single{ :type => "radio", :name => "RadioButtonComplain", :value => "heartburn" }
-			%label.RadioButton{ :for => "RadioButtonComplainHeartburn" } nyeri ulu hati
+			%input#RadioButtonComplainAssHeartburn.Single{ :type => "radio", :name => "RadioButtonComplainAss", :value => "heartburn" }
+			%label.RadioButton{ :for => "RadioButtonComplainAssHeartburn" } Nyeri ulu hati
 			%div.Separator
-			%input#RadioButtonComplainOthers.Single{ :type => "radio", :name => "RadioButtonComplain", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonComplainOthers" } lainnya
+			%input#RadioButtonComplainAssOthers.Single{ :type => "radio", :name => "RadioButtonComplainAss", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonComplainAssOthers" } lainnya
 		%br
 			%input#TextComplainOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr
@@ -81,21 +81,21 @@
 			%label.RadioButton{ :for => "RadioButtonVomitingBloodNo" } Tidak
 			%div.Separator
 			%input#RadioButtonVomitingBloodYes{ :type => "radio", :name => "RadioButtonVomitingBlood", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonVomitingBloodYes" } Ya				
+			%label.RadioButton{ :for => "RadioButtonVomitingBloodYes" } Ya			
 		%br
 		%div.ContainerFit 
-			%label#DateVomitingBloodLastArise.Long.Single.Item3.Margin Jika "Ya", kapan terakhir Anda mengalaminya?
-			%input#DateVomitingBloodLastArise.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%label#DateVomittingBloodLastArise.Long.Single.Item3.Margin Jika "Ya", kapan terakhir Anda mengalaminya?
+			%input#DateVomittingBloodLastArise.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
 
 		%div.ContainerFit 
-			%label#LabelVomitingBloodAriseTime.Long.Single.Item3.Margin Berapa kali Anda mengalami muntah darah?
-			%input#TextVomitingBloodAriseTime.Short.Single.Item1.Margin{ :type => "text" }
+			%label#LabelVomittingBloodAriseTime.Long.Single.Item3.Margin Berapa kali Anda mengalami muntah darah?
+			%input#TextVomittingBloodAriseTime.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 
 		%label.medium.Single.Item Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
 		%br
-		%input#TextVomitingBloodSolving.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextVomittingBloodSolving.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 
 		%hr

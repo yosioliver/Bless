@@ -38,9 +38,9 @@
 				boxGenerator("#DatePolicyHolderDigestDetailLastComplainMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDigestDetailLastComplainYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DatePolicyHolderDigestDetailVomitingBloodLastAriseDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestDetailVomitingBloodLastAriseMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDigestDetailVomitingBloodLastAriseYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailVomittingBloodLastAriseDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailVomittingBloodLastAriseMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderDigestDetailVomittingBloodLastAriseYear", 4, boxTypeWithoutLabel, null);
 				
 				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareFromDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDigestDetailHospitalCareFromMonth", 2, boxTypeWithoutLabel, null);
@@ -151,25 +151,25 @@
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFeel" } Keluhan apa yang anda rasakan?
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderDigestDetailComplainNausea.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "nausea" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainAssNausea.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainAss", :value => "nausea" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainNausea" } Mual
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainAssNausea" } Mual
 						
-						%input#RadioButtonPolicyHolderDigestDetailComplainGag.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "gag" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainAssGag.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainAss", :value => "gag" }
 						%div.BoxRound.PositionerLeft											
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainGag" } Muntah
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainAssGag" } Muntah
 						
-						%input#RadioButtonPolicyHolderDigestDetailComplainVomittingBlood.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestComplainFelt", :value => "vomittingblood" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainAssVomittingBlood.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainAss", :value => "vomittingblood" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainVomittingBlood" } Muntah Darah
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainAssVomittingBlood" } Muntah Darah
 						
-						%input#RadioButtonPolicyHolderDigestDetailComplainHeartburn.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "heartburn" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainAssHeartburn.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainAss", :value => "heartburn" }
 						%div.BoxRound.PositionerLeft											
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainHeartburn" } Nyeri Ulu Hati
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainAssHeartburn" } Nyeri Ulu Hati
 						
-						%input#RadioButtonPolicyHolderDigestDetailComplainOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "other" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainAssOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainAss", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestComplainFeltOthers" } Lainnya, sebutkan
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainAssOthers" } Lainnya, sebutkan
 						%input#TextPolicyHolderDigestDetailComplainOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br		
 
@@ -185,21 +185,21 @@
 					%br
 					
 					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderDigestDetailVomitingBloodLastAriseDay" } b. Jika “Ya”, kapan terakhir Anda mengalaminya?
-					%table#DatePolicyHolderDigestDetailVomitingBloodLastAriseYear.BoxSquare.PositionerRight
+					%table#DatePolicyHolderDigestDetailVomittingBloodLastAriseYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderDigestDetailVomitingBloodLastAriseMonth.BoxSquare.PositionerRight
+					%table#DatePolicyHolderDigestDetailVomittingBloodLastAriseMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderDigestDetailVomitingBloodLastAriseDay.BoxSquare.PositionerRight
+					%table#DatePolicyHolderDigestDetailVomittingBloodLastAriseDay.BoxSquare.PositionerRight
 					%br
 					
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestDetailVomitingBloodAriseTime" } c. Berapa kali Anda mengalami muntah darah?
-					%input#TextPolicyHolderDigestDetailVomitingBloodAriseTime.Short.Single.PositionerLeft{ :type => "text"}
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestDetailVomittingBloodAriseTime" } c. Berapa kali Anda mengalami muntah darah?
+					%input#TextPolicyHolderDigestDetailVomittingBloodAriseTime.Short.Single.PositionerLeft{ :type => "text"}
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDetailVomitingBloodAriseTime" } kali per (bulan/tahun*) *coret yang tidak perlu
 					%br
 					%label.NumberIndent.Detail.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDetailVomitingBloodSolvin"} Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderDigestDetailVomitingBloodSolving.Full.Single.PositionerLeft{ :type => "text" }										
+						%input#TextPolicyHolderDigestDetailVomittingBloodSolving.Full.Single.PositionerLeft{ :type => "text" }										
 					%br
 					
 					%span.Number.Single.PositionerLeft 6.
