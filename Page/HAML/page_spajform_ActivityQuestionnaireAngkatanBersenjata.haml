@@ -12,13 +12,13 @@
 	%fieldset
 		%div.ContainerFit
 			%label.medium.Single.Item 1. Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini? 
-		%input#TextPolicyHolderMilitaryYourUnity.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextUnit.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 2. Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?  
-		%input#TextPolicyHolderMilitaryYourDuty.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextDuty.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -26,89 +26,89 @@
 		%br
 		%label.medium.Single.Item a. Penjinak senjata 
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamer", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerYes" } Ya
+			%input#RadioButtonRiskActivityWeaponTamerYes{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityWeaponTamerYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamer", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerNo" } Tidak
+			%input#RadioButtonRiskActivityWeaponTamerNo{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityWeaponTamerNo" } Tidak
 		%br
 		%label.medium.Single.Item b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan 
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamer", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerYes" } Ya
+			%input#RadioButtonRiskActivityExplosiveTamerYes{ :type => "radio", :name => "RadioButtonRiskActivityExplosiveTamer", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityExplosiveTamerYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamer", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerNo" } Tidak
+			%input#RadioButtonRiskActivityExplosiveTamerNo{ :type => "radio", :name => "RadioButtonRiskActivityExplosiveTamer", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityExplosiveTamerNo" } Tidak
 		%br
 		%label.medium.Single.Item c. Penyelam
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityDiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityDiver", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityDiverYes" } Ya
+			%input#RadioButtonRiskActivityDiverYes{ :type => "radio", :name => "RadioButtonRiskActivityDiver", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityDiverYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityDiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityDiver", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityDiverNo" } Tidak
+			%input#RadioButtonRiskActivityDiverNo{ :type => "radio", :name => "RadioButtonRiskActivityDiver", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityDiverNo" } Tidak
 		%br
 		%label.medium.Single.Item d. Penerbangan
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityFlightYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityFlight", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityFlightYes" } Ya
+			%input#RadioButtonRiskActivityFlightYes{ :type => "radio", :name => "RadioButtonRiskActivityFlight", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityFlightYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityFlightNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityFlight", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityFlightNo" } Tidak
+			%input#RadioButtonRiskActivityFlightNo{ :type => "radio", :name => "RadioButtonRiskActivityFlight", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityFlightNo" } Tidak
 		%br
 		%label.medium.Single.Item e. Terjun payung
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityParachuteYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityParachute", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityParachuteYes" } Ya
+			%input#RadioButtonRiskActivityParachuteYes{ :type => "radio", :name => "RadioButtonRiskActivityParachute", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityParachuteYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityParachuteNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityParachute", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityParachuteNo" } Tidak
+			%input#RadioButtonActivityParachuteNo{ :type => "radio", :name => "RadioButtonRiskActivityParachute", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityParachuteNo" } Tidak
 		%br
 		%label.medium.Single.Item f. Misi perdamaian ke luar negeri
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroad", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadYes" } Ya
+			%input#RadioButtonRiskActivityAbroadMissionYes{ :type => "radio", :name => "RadioButtonRiskActivityAbroadMission", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityAbroadMissionYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroad", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadNo" } Tidak
+			%input#RadioButtonRiskActivityAbroadMissionNo{ :type => "radio", :name => "RadioButtonRiskActivityAbroadMission", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityAbroadMissionNo" } Tidak
 		%br
 		%label.medium.Single.Item g. Lainnya
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityOthersYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityOthers", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthersYes" } Ya
+			%input#RadioButtonRiskActivityOthersYes{ :type => "radio", :name => "RadioButtonRiskActivityOthersYes", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryRiskActivityOthersNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityOthers", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthersNo" } Tidak
+			%input#RadioButtonRiskActivityOthersNo{ :type => "radio", :name => "RadioButtonRiskActivityOthersYes", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersNo" } Tidak
 		%br
 			%label.medium.Single.Item Jika jawaban ya, mohon memberikan perincian jelas:
 		%br
-		%input#TextPolicyHolderMilitaryRiskActivityDetails.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextRiskActivityOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 4. Mohon memberikan rincian tugas Anda yang sebenarnya?   
-		%input#TextPolicyHolderMilitaryYourDutyDetails.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextActivityDutyDetails.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 5. Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya? 				
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationYes" } Ya
+			%input#RadioButtonInDangerLocationYes{ :type => "radio", :name => "RadioButtonInDangerLocation", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonInDangerLocationYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyHolderMilitaryInDangerLocationNo{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
+			%input#RadioButtonInDangerLocationNo{ :type => "radio", :name => "RadioButtonInDangerLocation", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonInDangerLocationNo" } Tidak
 		%br				
 		%label.medium.Single.Item Jika Ya, Jelaskan dimana dan kapan
-		%input#TextPolicyHolderMilitaryInDangerLocationWhere.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextInDangerLocationDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 6. Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:    
-		%input#TextPolicyHolderProsesPengajianAnsurans.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextOtherInfo.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
