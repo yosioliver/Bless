@@ -79,67 +79,62 @@
 				/ FIELDSET
 				
 				%fieldset
-					%div.ContainerQuestion
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 1. 						
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Andai ikuti saat ini?
+					%span.Number.Single.PositionerLeft 1. 						
+					%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Andai ikuti saat ini?
+					%br
+
+					%div.RadioButton.NumberIndent												
+						%input#RadioButtonPolicyHolderDivingCriteriaSkinDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skindiving" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkinDiving" } Skin Diving
+						%br											
+						%input#RadioButtonPolicyHolderDivingCriteriaSkubaDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skubadiving" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkubaDiving" } SCUBA Diving
 						%br
-						
-						%div.RadioButton.NumberIndent												
-							%input#RadioButtonPolicyHolderDivingCriteriaSkinDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skindiving" }
-							%div.BoxRound.PositionerLeft
-							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkinDiving" } Skin Diving
-							%br											
-							%input#RadioButtonPolicyHolderDivingCriteriaSkubaDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skubadiving" }
-							%div.BoxRound.PositionerLeft
-							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkubaDiving" } SCUBA Diving
-							%br
-							%input#RadioButtonPolicyHolderDivingCriteriaFreeDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "freediving" }
-							%div.BoxRound.PositionerLeft
-							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaFreeDiving" } FREE Diving
+						%input#RadioButtonPolicyHolderDivingCriteriaFreeDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "freediving" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaFreeDiving" } FREE Diving
 					%br
 					%hr
 						
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 2. 						
-						%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki.
-						%br
-						%div.RadioButton.NumberIndent
-							%table#TablePolicyHolderDivingCertificates{ "border" => "1px" }
-								%thead
-									%tr
-										%th Lisensi/ Sertifikat
-										%th Tanggal Perolehan
-								%tbody
-									%tr
-										%td 1234567
-										%td $12/12/2016
-						%br
-						%hr
+					%span.Number.Single.PositionerLeft 2. 						
+					%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki.
+					%br
+					%div.RadioButton.NumberIndent
+						%table#TablePolicyHolderDivingCertificates{ "border" => "1px" }
+							%thead
+								%tr
+									%th Lisensi/ Sertifikat
+									%th Tanggal Perolehan
+							%tbody
+								%tr
+									%td 1234567
+									%td $12/12/2016
+					%br
+					%hr
 						
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 3. 						
-						%label.Full.Single.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
-						%br
-						%div.RadioButton.NumberIndent
-							%table#TablePolicyHolderDivingHistories{ "border" => "1px" }
-								%thead
-									%tr
-										%th 
-										%th 12 bulan terakhir
-										%th 12 bulan y.a.d
-								%tbody
-									%tr
-										%td Lokasi
-										%td 
-										%td
-						%br
+					%span.Number.Single.PositionerLeft 3. 						
+					%label.Full.Single.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
+					%br
+					%div.RadioButton.NumberIndent
+						%table#TablePolicyHolderDivingHistories{ "border" => "1px" }
+							%thead
+								%tr
+									%th 
+									%th 12 bulan terakhir
+									%th 12 bulan y.a.d
+							%tbody
+								%tr
+									%td Lokasi
+									%td 
+									%td
+					%br
 						%hr
 					
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 4. 						
-						%label.Full.Single.PositionerLeft Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
-						%br
+					%span.Number.Single.PositionerLeft 4. 					
+					%label.Full.Single.PositionerLeft Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
+					%br
 						
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft a. Menyelam seorang diri
@@ -223,38 +218,35 @@
 						%div.BoxRound.PositionerRight
 					%br
 					
-					%div.RadioButton.NumberIndent						
-						%label.Wrap.Single.PositionerLeft Jika menjawab ‘ya’ untuk pernyataan di atas, mohon menjelaskan lokasi, kapan, frekuensi, dan tujuan di kemudian hari:
-						%br
+					%label.Wrap.Single.NumberIndent.PositionerLeft Jika menjawab ‘ya’ untuk pernyataan di atas, mohon menjelaskan lokasi, kapan, frekuensi, dan tujuan di kemudian hari:
+					%br
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingParticipationDetails.Full.Single.Item{ :type => "text" }
 					%br
-					%hr
 					
 					%hr
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 5. 						
-						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccident" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
-						%br
-						
-						%div.RadioButton.NumberIndent												
-							%input#RadioButtonPolicyHolderDivingGotAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingGotAccident", :value => "false" }
-							%div.BoxRound.PositionerLeft
-							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccidentNo" } Tidak
-							%br											
-							%input#RadioButtonPolicyHolderDivingGotAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingGotAccident", :value => "true" }
-							%div.BoxRound.PositionerLeft
-							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccidentYes" } Ya. Mohon memberikan rincian termasuk tanggal
-						%div.RadioButton.NumberIndent						
-							%input#TextPolicyHolderDivingGotAccidentYesDesc.Full.Single.Item{ :type => "text" }
-						%hr
+					%span.Number.Single.PositionerLeft 5. 						
+					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccident" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
+					%br
+
+					%div.RadioButton.NumberIndent												
+						%input#RadioButtonPolicyHolderDivingGotAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingGotAccident", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccidentNo" } Tidak
+						%br											
+						%input#RadioButtonPolicyHolderDivingGotAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingGotAccident", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingGotAccidentYes" } Ya. Mohon memberikan rincian termasuk tanggal
+					%br	
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderDivingGotAccidentYesDesc.Full.Single.Item{ :type => "text" }
 					%br
 					%hr
 					
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 6. 						
-						%label.Full.Single.PositionerLeft Mohon memberikan informasi tambahan yang menurut Anda penting
-						%br
-						%br
+					%span.Number.Single.PositionerLeft 6. 						
+					%label.Full.Single.PositionerLeft Mohon memberikan informasi tambahan yang menurut Anda penting
+					%br
+					%div.ContainerFit.NumberIndent					
 						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
 					%br
 					%hr
