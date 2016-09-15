@@ -259,39 +259,8 @@
 					%br
 					%hr
 					
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
-					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%span.Separator.Single.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
-					%span.Separator.Single.PositionerLeft
-					%table#DatePolicyHolderSignedDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderSignedMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderSignedYear.BoxSquare.PositionerLeft
-					%br
-							
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Pemegang Polis
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Tertanggung
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail Tenaga Penjual
-					%br										
-					
-			%section#SectionFooter
+				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+
+		%section#SectionFooter
 			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

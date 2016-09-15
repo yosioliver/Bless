@@ -41,19 +41,15 @@
 		/ HEADER
 
 		%header
-			%img{ :src => "../../jqueryLibrary/Resource/Logo/logo_bcalife.svg" }
-			%span.Header PT Asuransi Jiwa BCA
-			%span.Detail
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1 KUESIONER MENYELAM
 			%br
 
-			%h1 KUESIONER PENERBANGAN
-			%br
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
 			
-			%div.Note				
-				%ol
-					%li *) <i> Harus diisi oleh Calon Tertanggung. </i>
-					%li **) <i> Bila kolom penjelasan tidak cukup, mohon memberikan penjelasan pada kertas lain. </i>
-					%li ***) <i> Coret yang tidak perlu. </i>
 		/ MAIN
 
 		%main
@@ -336,51 +332,9 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightOtherInfo.Full.Single.Item
 					%br
+					
+				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
-					%h2 PERNYATAAN DAN KUASA
-					%div.Note
-						%p Perlu diperhatikan: 
-						%ol
-							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner  PENERBANGAN ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
-							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
-							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
-							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
-							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
-					%br
-					
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
-					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-					%span.Separator.Single.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
-					%span.Separator.Single.PositionerLeft
-					%table#DateSignedDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DateSignedMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DateSignedYear.BoxSquare.PositionerLeft
-					%br
-							
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Pemegang Polis
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail (Calon) Tertanggung
-						
-					%div.Signature.Horizontal30of100
-						%img
-						%span.Name
-						%hr
-						%span.Header Nama Lengkap & Tanda tangan
-						%span.Detail Tenaga Penjual
-					%br
-					
-			%section#SectionFooter
+		%section#SectionFooter
 			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
