@@ -138,15 +138,15 @@
 					%hr
 					%li
 						%div.Container
-							%label#LabelPolicyHolderExtremeSport.Item{ :for => "RadioButtonPolicyHolderExtremeSportYes" }
+							%label#LabelPolicyHolderActivity.Item{ :for => "RadioButtonPolicyHolderActivityYes" }
 								Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))? (Jika jawaban “Ya” mohon melengkapi kuesioner yang sesuai hobi/kegiatan/pekerjaan tersebut dan dilampirkan bersama SPAJ ini).
 							%div.RadioButton.Item
-								%input#RadioButtonPolicyHolderExtremeSportYes{ :type => "radio", :name => "RadioButtonPolicyHolderExtremeSport", :value => "true", "data-popup-type" => "general", :required => "true" }
-								%label.RadioButton{ :for => "RadioButtonPolicyHolderExtremeSportYes" } Ya
+								%input#RadioButtonPolicyHolderActivityYes{ :type => "radio", :name => "RadioButtonPolicyHolderActivity", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpActivity', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Activity', 'Military', 'Diving', 'Flight', 'Hiking', 'Mining', 'Paragliding', 'Foreigner', 'Racing', 'Traveling'])", :required => "true" }
+								%label.RadioButton{ :for => "RadioButtonPolicyHolderActivityYes" } Ya
 								%div.Separator | 
-								%input#RadioButtonPolicyHolderExtremeSportNo{ :type => "radio", :name => "RadioButtonPolicyHolderExtremeSport", :value => "false", "data-popup-type" => "general", :required => "true" }
+								%input#RadioButtonPolicyHolderActivityNo{ :type => "radio", :name => "RadioButtonPolicyHolderActivity", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpActivity', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Activity', 'Military', 'Diving', 'Flight', 'Hiking', 'Mining', 'Paragliding', 'Foreigner', 'Racing', 'Traveling'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderExtremeSportNo" } Tidak
-						%input#ButtonPreviewPolicyHolderExtremeSport.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderExtremeSport", "data-popup-type" => "general" }
+						%input#ButtonPreviewPolicyHolderActivity.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpActivity', stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire)" }
 					%hr
 					%li
 						%div.Container
@@ -433,8 +433,16 @@
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderNo" } Tidak
 						%input#ButtonPreviewPolicyHolderHeartDissorder.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderHeartDissorder", "data-popup-type" => "general" }
 					%hr
-			%section#PopUpGeneral.PopUp
-				= Haml::Engine.new(File.read("popup_healthquestionnaireform_general.haml")).render
+			%section#PopUpActivity.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_activity.haml")).render
+			%section#PopUpMilitary.PopUp
+				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireAngkatanBersenjata.haml")).render
+			%section#PopUpDiving.PopUp
+				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireMenyelam.haml")).render
+			%section#PopUpMining.PopUp
+				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireTambangMinyakGas.haml")).render
+			%section#PopUpFlight.PopUp
+				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireAngkatanPenerbangan.haml")).render
 			%section#PopUpHealth.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp

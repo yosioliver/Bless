@@ -615,13 +615,20 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		var stringSectionInfix = getInfixSection(stringKeyWithoutPrefix);
 	}
 	
+	
+	// QUICK FIX FOR MULTI POP UP.
+	
 	var stringAmandmentDetailKey = stringPrefixArea + stringSectionInfix + stringPopUpSuffix + "AmandmentDetail";
 	var stringAmandmentDetail = arrayFind(arrayContent, stringAmandmentDetailKey);
-	alert(stringAmandmentDetailKey + " " + stringAmandmentDetail);
-	$(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail").val(stringAmandmentDetail);
-	// alert(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix + " - " + stringAmandmentDetail);
 	
-	// $(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail").val("Test");
+	if (stringAmandmentDetail == null)
+	{
+		
+	}
+	else
+	{
+		$(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail").val(stringAmandmentDetail);
+	}
 }
 
 function getInfixSection(stringContent)

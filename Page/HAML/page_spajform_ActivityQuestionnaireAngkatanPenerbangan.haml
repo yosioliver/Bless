@@ -1,278 +1,243 @@
-!!! 5
+%form#PopUpFlight.PopUp
 
-%html
+	/ HEADER
 
-	/ HEAD
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpFlight', 'PopUpActivity')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpFlight', 'PopUpActivity', stringPageInfixTypeCurrent + 'Flight', arrayHealthQuestionnaire)" }
+		%h2 Kuesioner Penerbangan							 
 
-	%head
-		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life - BLESS, Health Questionnaire 6c Form
+	/ MAIN
 
-		/ JQUERY
+	%fieldset
+		%div.ContainerFit
+			%label.medium.Single.Item 1. Apakah Anda terbang sebagai pilot atau navigator?
+		%input#TextActivityFlightPilotOrNavigator.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-		:javascript
-			$(document).ready(function()
-			{
+		%label.medium.Single.Item 2.Apakah Anda terbang sebagai penumpang?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonActivityFlightPassengerYes{ :type => "radio", :name => "RadioButtonActivityFlightPassenger", :value => "ya" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightPassengerYes" } Ya
+			%div.Separator
+			%input#RadioButtonActivityFlightPassengerNo{ :type => "radio", :name => "RadioButtonActivityFlightPassenger", :value => "tidak" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightPassengerNo" } Tidak
+		%br
+		%hr
 
-			});
+		%label.medium.Single.Item 3.Apakah Anda memiliki pesawat sendiri?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonActivityFlightHavePlaneYes{ :type => "radio", :name => "RadioButtonActivityFlightHavePlane", :value => "ya" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightHavePlaneYes" } Ya
+			%div.Separator
+			%input#RadioButtonActivityFlightHavePlaneNo{ :type => "radio", :name => "RadioButtonActivityFlightHavePlane", :value => "tidak" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightHavePlaneNo" } Tidak
+		%br
+		%hr
 
+		%div.ContainerFit
+		%label.medium.Single.Item 4. Sebutkan jenis pesawat apakah yang Anda terbangkan? 
+		%input#TextActivityFlightKindPlane.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-	/ BODY
+		%label.medium.Single.Item  5. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
+		%div.ContainerFit
+			%label.Short.Single.Item1.Center Lisensi/ Sertifikat	  
+			%label.Short.Single.Item1.Center Tanggal Perolehan
+			%label.Short.Single.Item1.Center Tanggal Perpanjangan
 
-	%body#Main
-	
-		%header
-		 									
-		
-			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-			%h2 KUESIONER PENERBANGAN							 
+		%div.ContainerFit
+			%input#TableActivityFlightLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TableActivityFlightLicenseObtain1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TableActivityFlightLicenseExtention1.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%div.ContainerFit
+			%input#TableActivityFlightLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TableActivityFlightLicenseObtain2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TableActivityFlightLicenseExtention2.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%hr
 
-		/ MAIN
+		%div.ContainerFit
+		%label.medium.Single.Item 6. Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonActivityFlightScopeYes{ :type => "radio", :name => "RadioButtonActivityFlightScope", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightScopeYes" } Ya
+			%div.Separator
+			%input#RadioButtonActivityFlightScopeNo{ :type => "radio", :name => "RadioButtonActivityFlightScope", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightScopeNo" } Tidak
+		%br
+		%label.medium.Single.Item Jika ya, mohon jelaskan secara rinci :	
+		%input#TextActivityFlightScopeDesc.Full.Single.Item1.Margin{ :type =>"text"}
+		%br
+		%hr
 
-		%main
-			%form#HealthQuestionnaireMain
-				%div.ContainerFit
-					%span.Multi.Single.4 PENERBANGAN 
-				%hr
-				%br
-			
-				%div.ContainerFit
-					%label.medium.Single.Item 1. Apakah Anda terbang sebagai pilot atau navigator?
-				%input#TextActivityFlightPilotOrNavigator.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 2.Apakah Anda terbang sebagai penumpang?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonActivityFlightPassengerYes{ :type => "radio", :name => "RadioButtonActivityFlightPassenger", :value => "ya" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightPassengerYes" } Ya
-					%div.Separator
-					%input#RadioButtonActivityFlightPassengerNo{ :type => "radio", :name => "RadioButtonActivityFlightPassenger", :value => "tidak" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightPassengerNo" } Tidak
-				%br
-				%hr
-				
-				%label.medium.Single.Item 3.Apakah Anda memiliki pesawat sendiri?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonActivityFlightHavePlaneYes{ :type => "radio", :name => "RadioButtonActivityFlightHavePlane", :value => "ya" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightHavePlaneYes" } Ya
-					%div.Separator
-					%input#RadioButtonActivityFlightHavePlaneNo{ :type => "radio", :name => "RadioButtonActivityFlightHavePlane", :value => "tidak" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightHavePlaneNo" } Tidak
-				%br
-				%hr
-				
-				%div.ContainerFit
-				%label.medium.Single.Item 4. Sebutkan jenis pesawat apakah yang Anda terbangkan? 
-				%input#TextActivityFlightKindPlane.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item  5. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
-				%div.ContainerFit
-					%label.Short.Single.Item1.Center Lisensi/ Sertifikat	  
-					%label.Short.Single.Item1.Center Tanggal Perolehan
-					%label.Short.Single.Item1.Center Tanggal Perpanjangan
-				
-				%div.ContainerFit
-					%input#TableActivityFlightLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TableActivityFlightLicenseObtain1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TableActivityFlightLicenseExtention1.Short.Single.Item1.Margin{ :type => "text" }
-				%br
-				%div.ContainerFit
-					%input#TableActivityFlightLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TableActivityFlightLicenseObtain2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TableActivityFlightLicenseExtention2.Short.Single.Item1.Margin{ :type => "text" }
-				%br
-				%hr
-				
-				%div.ContainerFit
-				%label.medium.Single.Item 6. Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonActivityFlightScopeYes{ :type => "radio", :name => "RadioButtonActivityFlightScope", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightScopeYes" } Ya
-					%div.Separator
-					%input#RadioButtonActivityFlightScopeNo{ :type => "radio", :name => "RadioButtonActivityFlightScope", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightScopeNo" } Tidak
-				%br
-				%label.medium.Single.Item Jika ya, mohon jelaskan secara rinci :	
-				%input#TextActivityFlightScopeDesc.Full.Single.Item1.Margin{ :type =>"text"}
-				%br
-				%hr
-				
-				%div.ContainerFit
-				%label.medium.Single.Item 7.Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonActivityFlightIsClubYes{ :type => "radio", :name => "RadioButtonActivityFlightIsClub", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightIsClubYes" } Ya
-					%div.Separator
-					%input#RadioButtonActivityFlightIsClubNo{ :type => "radio", :name => "RadioButtonActivityFlightIsClub", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightIsClubNo" } Tidak
-				%br
-				%label.medium.Single.Item Jika ya, mohon jelaskan secara rinci :	
-				%input#TextActivityFlightIsClubDesc.Full.Single.Item1.Margin{ :type =>"text"}
-				%br
-				
-				%hr
-				%label.medium.Single.Item  8. Berapa sering dan jumlah jam terbang Anda:
-				%br
-				%div.ContainerFit
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin
-					%label.Short.Single.Item1.Center Tujuan	  
-					%label.Short.Single.Item1.Center 
-					%label.Short.Single.Item1.Center Jumlah Penerbangan
-					%label.Short.Single.Item1.Center 
-					%label.Short.Single.Item1.Center 
-					%label.Short.Single.Item1.Center Jumlah Jam Terbang
-					%label.Short.Single.Item1.Center 				
-				%br	
-				%div.ContainerFit
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin 
-					%label.Short.Single.Item1.Center 	  
-					%label.Short.Single.Item1.Center Total
-					%label.Short.Single.Item1.Center 12 buln terakhir					
-					%label.Short.Single.Item1.Center 12 bulan y.a.d
-					%label.Short.Single.Item1.Center Total
-					%label.Short.Single.Item1.Center 12 buln terakhir					
-					%label.Short.Single.Item1.Center 12 bulan y.a.d					
-				%br
-				
-				%div.ContainerFit 
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan berjadwal
-					%input#TextActivityFlightDesctination1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFly1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFly1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFly1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFlight1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFlight1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFlight1.Short.Single.Item1.Margin{ :type => "text" }		
-				%br	
-				
-				%div.ContainerFit 
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan tdk 
-					%input#TextActivityFlightDesctination2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFly2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFly2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFly2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFlight2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFlight2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFlight2.Short.Single.Item1.Margin{ :type => "text" }		
-				%br	
-				
-				%div.ContainerFit 
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan komersial 
-					%input#TextActivityFlightDesctination3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFly3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFly3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFly3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFlight3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFlight3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFlight3.Short.Single.Item1.Margin{ :type => "text" }		
-				%br
-				
-				%div.ContainerFit 
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan Pribadi 
-					%input#TextActivityFlightDesctination4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFly4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFly4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFly4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFlight4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFlight4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFlight4.Short.Single.Item1.Margin{ :type => "text" }		
-				%br	
-				
-				%div.ContainerFit 
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Helikopter 
-					%input#TextActivityFlightDesctination5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFly5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFly5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFly5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFlight5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFlight5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFlight5.Short.Single.Item1.Margin{ :type => "text" }		
-				%br	
-					
-				%div.ContainerFit 
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Terbang layang 
-					%input#TextActivityFlightDesctination6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFly6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFly6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFly6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFlight6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFlight6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFlight6.Short.Single.Item1.Margin{ :type => "text" }		
-				%br	
-				
-				%div.ContainerFit 
-					%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Lainnya 
-					%input#TextActivityFlightDesctination7.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFly7.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFly7.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFly7.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightAllTotalFlight7.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightLast12MonthFlight7.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextActivityFlightNext12MonthFlight7.Short.Single.Item1.Margin{ :type => "text" }	
-				%br
-				%hr
-				
-				%label.medium.Single.Item 9. Darimana Anda terbang?
-				%input#TextPolicyHolderDarimanaDiterbangkan.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 10. Apakah Anda terbang dari bandara control?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonActivityFlightTowerControlYes{ :type => "radio", :name => "RadioButtonActivityFlightTowerControl", :value => "ya" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightTowerControlYes" } Ya
-					%div.Separator
-					%input#RadioButtonActivityFlightTowerControlNo{ :type => "radio", :name => "RadioButtonActivityFlightTowerControl", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightTowerControlNo" } Tidak
-				%br
-				%input#TextActivityFlightPilotTowerControlDesc.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 11. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonActivityFlightAccidentYes{ :type => "radio", :name => "RadioButtonActivityFlightAccident", :value => "ya" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightAccidentYes" } Ya
-					%div.Separator
-					%input#RadioButtonActivityFlightAccidentNo{ :type => "radio", :name => "RadioButtonActivityFlightAccident", :value => "tidak" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightAccidentNo" } Tidak
-				
-				%input#TextActivityFlightAccidentDesc.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 12. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonActivityFlightNoFlyYes{ :type => "radio", :name => "RadioButtonActivityFlightNoFly", :value => "ya" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightNoFlyYes" } Ya
-					%div.Separator
-					%input#RadioButtonActivityFlightNoFlyNo{ :type => "radio", :name => "RadioButtonActivityFlightNoFly", :value => "tidak" }
-					%label.RadioButton{ :for => "RadioButtonActivityFlightNoFlyNo" } Tidak
-				
-				%input#TextPolicyHolderKecelakaanTerbang.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
-				%input#TextActivityFlightHealthCondition.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%h2 PERNYATAAN DAN KUASA
-				%ol
-					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
-					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
-					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
-					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
-				
-				
-				
-					
-				
-				
-					
-				
+		%div.ContainerFit
+		%label.medium.Single.Item 7.Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonActivityFlightIsClubYes{ :type => "radio", :name => "RadioButtonActivityFlightIsClub", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightIsClubYes" } Ya
+			%div.Separator
+			%input#RadioButtonActivityFlightIsClubNo{ :type => "radio", :name => "RadioButtonActivityFlightIsClub", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightIsClubNo" } Tidak
+		%br
+		%label.medium.Single.Item Jika ya, mohon jelaskan secara rinci :	
+		%input#TextActivityFlightIsClubDesc.Full.Single.Item1.Margin{ :type =>"text"}
+		%br
+
+		%hr
+		%label.medium.Single.Item  8. Berapa sering dan jumlah jam terbang Anda:
+		%br
+		%div.ContainerFit
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin
+			%label.Short.Single.Item1.Center Tujuan	  
+			%label.Short.Single.Item1.Center 
+			%label.Short.Single.Item1.Center Jumlah Penerbangan
+			%label.Short.Single.Item1.Center 
+			%label.Short.Single.Item1.Center 
+			%label.Short.Single.Item1.Center Jumlah Jam Terbang
+			%label.Short.Single.Item1.Center 				
+		%br	
+		%div.ContainerFit
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin 
+			%label.Short.Single.Item1.Center 	  
+			%label.Short.Single.Item1.Center Total
+			%label.Short.Single.Item1.Center 12 buln terakhir					
+			%label.Short.Single.Item1.Center 12 bulan y.a.d
+			%label.Short.Single.Item1.Center Total
+			%label.Short.Single.Item1.Center 12 buln terakhir					
+			%label.Short.Single.Item1.Center 12 bulan y.a.d					
+		%br
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan berjadwal
+			%input#TextActivityFlightDesctination1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFly1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFly1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFly1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFlight1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFlight1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFlight1.Short.Single.Item1.Margin{ :type => "text" }		
+		%br	
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan tdk 
+			%input#TextActivityFlightDesctination2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFly2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFly2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFly2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFlight2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFlight2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFlight2.Short.Single.Item1.Margin{ :type => "text" }		
+		%br	
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan komersial 
+			%input#TextActivityFlightDesctination3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFly3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFly3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFly3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFlight3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFlight3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFlight3.Short.Single.Item1.Margin{ :type => "text" }		
+		%br
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Penerbangan Pribadi 
+			%input#TextActivityFlightDesctination4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFly4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFly4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFly4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFlight4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFlight4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFlight4.Short.Single.Item1.Margin{ :type => "text" }		
+		%br	
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Helikopter 
+			%input#TextActivityFlightDesctination5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFly5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFly5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFly5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFlight5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFlight5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFlight5.Short.Single.Item1.Margin{ :type => "text" }		
+		%br	
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Terbang layang 
+			%input#TextActivityFlightDesctination6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFly6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFly6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFly6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFlight6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFlight6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFlight6.Short.Single.Item1.Margin{ :type => "text" }		
+		%br	
+
+		%div.ContainerFit 
+			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin Lainnya 
+			%input#TextActivityFlightDesctination7.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFly7.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFly7.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFly7.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightAllTotalFlight7.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightLast12MonthFlight7.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextActivityFlightNext12MonthFlight7.Short.Single.Item1.Margin{ :type => "text" }	
+		%br
+		%hr
+
+		%label.medium.Single.Item 9. Darimana Anda terbang?
+		%input#TextPolicyHolderDarimanaDiterbangkan.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 10. Apakah Anda terbang dari bandara control?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonActivityFlightTowerControlYes{ :type => "radio", :name => "RadioButtonActivityFlightTowerControl", :value => "ya" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightTowerControlYes" } Ya
+			%div.Separator
+			%input#RadioButtonActivityFlightTowerControlNo{ :type => "radio", :name => "RadioButtonActivityFlightTowerControl", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightTowerControlNo" } Tidak
+		%br
+		%input#TextActivityFlightPilotTowerControlDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 11. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonActivityFlightAccidentYes{ :type => "radio", :name => "RadioButtonActivityFlightAccident", :value => "ya" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightAccidentYes" } Ya
+			%div.Separator
+			%input#RadioButtonActivityFlightAccidentNo{ :type => "radio", :name => "RadioButtonActivityFlightAccident", :value => "tidak" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightAccidentNo" } Tidak
+
+		%input#TextActivityFlightAccidentDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 12. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonActivityFlightNoFlyYes{ :type => "radio", :name => "RadioButtonActivityFlightNoFly", :value => "ya" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightNoFlyYes" } Ya
+			%div.Separator
+			%input#RadioButtonActivityFlightNoFlyNo{ :type => "radio", :name => "RadioButtonActivityFlightNoFly", :value => "tidak" }
+			%label.RadioButton{ :for => "RadioButtonActivityFlightNoFlyNo" } Tidak
+
+		%input#TextPolicyHolderKecelakaanTerbang.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+		%input#TextActivityFlightHealthCondition.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%h2 PERNYATAAN DAN KUASA
+		%ol
+			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
