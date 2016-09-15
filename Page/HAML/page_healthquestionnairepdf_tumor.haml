@@ -167,7 +167,12 @@
 						%input#TextPolicyHolderTumorConsultLastAddress.Full.Single.Item{ :type => "text" }
 					%br
 					
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapy" } d. Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
+					%section#SectionFooter{ :style => "margin-top: 100px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapy", :style => "margin-top: 30px;" } d. Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderTumorTherapyAssDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapyAss", :value => "drug" }
@@ -340,10 +345,15 @@
 					%input#TextPolicyHolderTumorLeaveDuration.Line.Single.PositionerLeft{ :type => "text" }
 					%label.Separator.Single.PositionerLeft Hari
 					%br
+					
+					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 					%br
-					%span.Number.Single.PositionerLeft 7.
-					%label.Wrap.PositionerLeft Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon lengkapi pertanyaan pada kolom di bawah ini dan mohon dilampirkan fotokopi hasil pemeriksaan.
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 50px;"} 7.
+					%label.Wrap.PositionerLeft{ :style => "margin-top: 50px;"} Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon lengkapi pertanyaan pada kolom di bawah ini dan mohon dilampirkan fotokopi hasil pemeriksaan.
 					%br
 					
 					-#
