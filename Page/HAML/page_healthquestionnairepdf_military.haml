@@ -82,17 +82,17 @@
 				
 				%fieldset
 					%span.Number.Single.PositionerLeft 1. 						
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourUnity" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryUnit" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderMilitaryYourUnity.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderMilitaryUnit.Full.Single.Item{ :type => "text" }
 					%br
 					
 					%span.Number.Single.PositionerLeft 2.
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderMilitaryYourDuty.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderMilitaryDuty.Full.Single.Item{ :type => "text" }
 					%br
 						
 					%span.Number.Single.PositionerLeft 3.
@@ -111,11 +111,11 @@
 					
 					%div.RadioButton.NumberIndent
 						%label.Full.Single.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan					
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerNo" } Tidak
-						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamer", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamer", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerYes" } Ya
-						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosivesTamer", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamer", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					
@@ -151,11 +151,11 @@
 										
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft f. Misi perdamaian ke luar negeri
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadNo" } Tidak
-						%input#RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroad", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityAbroadMissionNo" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityAbroadMissionNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityAbroadMission", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadYes" } Ya
-						%input#RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroadYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityMissionAbroad", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityAbroadMissionYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryRiskActivityAbroadMissionYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityAbroadMission", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					
@@ -170,23 +170,22 @@
 						%div.BoxRound.PositionerRight
 					%br
 					
-											
-					%label.Wrap.Single.NumberIndent.PositionerLeft Jika jawaban ya, mohon memberikan perincian jelas:
+					%label.Single.NumberIndent.PositionerLeft Jika jawaban ya, mohon memberikan perincian jelas:{ :for => "TextPolicyHolderMilitaryRiskActivityOtherDesc" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderMilitaryRiskActivityDetails.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderMilitaryRiskActivityOtherDesc.Full.Single.Item{ :type => "text" }
 					%br
 				
-					%span.Number.Single.PositionerLeft 4. 						
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDutyDetails" } Mohon memberikan rincian tugas Anda yang sebenarnya?
+					%span.Number.Single.PositionerLeft 4.
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryDutyDetails" } Mohon memberikan rincian tugas Anda yang sebenarnya?
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderMilitaryYourDutyDetails.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderMilitaryDutyDetails.Full.Single.Item{ :type => "text" }
 					%br
-						
+					
 					%span.Number.Single.PositionerLeft 5. 
 					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
-					%br						
+					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true" }
 						%div.BoxRound.PositionerLeft
@@ -195,16 +194,16 @@
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
 					%br	
-					%label.Wrap.Single.NumberIndent.PositionerLeft Jika Ya, Jelaskan dimana dan kapan
+					%label.Single.NumberIndent.PositionerLeft Jika Ya, Jelaskan dimana dan kapan{ :for => "TextPolicyHolderMilitaryInDangerLocationDesc"}
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderMilitaryInDangerLocationWhere.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderMilitaryInDangerLocationDesc.Full.Single.Item{ :type => "text" }
 					
 					%span.Number.Single.PositionerLeft 6.
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo" } Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
 					%br
 					%div.ContainerFit.NumberIndent	
-						%input#TextPolicyHolderMilitaryYourDuty.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderMilitaryOtherInfo.Full.Single.Item{ :type => "text" }
 					%br
 						
 					%h2 PERNYATAAN DAN KUASA
@@ -253,5 +252,4 @@
 					%br
 					
 			%section#SectionFooter
-			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+				= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
