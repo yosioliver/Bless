@@ -68,7 +68,6 @@
 				titleSetterForHealthQuestionnairePDF("Kuesioner Gangguan Pencernaan");
 			});
 
-
 	/ BODY
 
 	%body
@@ -102,11 +101,11 @@
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailProblemPepticUlcer" } Tukak Lambung
 						
-						%input#RadioButtonPolicyHolderDigestDetailProblemEnteritis.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailProblem", :value => "tukakusus" }
+						%input#RadioButtonPolicyHolderDigestDetailProblemEnteritis.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailProblem", :value => "enteritirs" }
 						%div.BoxRound.PositionerLeft											
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailProblemEnteritis" } Tukak Usus
 						
-						%input#RadioButtonPolicyHolderDigestDetailProblemIntestinalUlcer.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailProblem", :value => "radangususbesar" }
+						%input#RadioButtonPolicyHolderDigestDetailProblemIntestinalUlcer.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailProblem", :value => "intestinalulcer" }
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailProblemIntestinalUlcer" } Radang Usus Besar	
 						
@@ -115,14 +114,14 @@
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailProblemEnteritis12Fingers" } Radang Usus 12 Jari
 						%br
 						
-						%input#RadioButtonPolicyHolderDigestDetailProblemUlcer.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailProblem", :value => "ulcer" }
+						%input#RadioButtonPolicyHolderDigestDetailProblemUlcer.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailProblem", :value => "maag" }
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailProblemUlcer" } Maag
 						
 						%input#RadioButtonPolicyHolderDigestDetailProblemOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailProblem", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailProblemOthers"} Lainnya, sebutkan
-						%input#TextPolicyHolderDigestOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextPolicyHolderDigestDetailProblemOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.Single.PositionerLeft 2.
@@ -174,13 +173,13 @@
 					%br		
 
 					%span.Number.Single.PositionerLeft 5.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestVomitingBlood" } a.	Apakah Anda pernah mengalami muntah darah?
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailVomitingBlood" } a.	Apakah Anda pernah mengalami muntah darah?
 					%div.RadioButton
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailVomitingBloodNo" } Tidak   
 						%input#RadioButtonPolicyHolderDigestDetailVomitingBloodNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailVomitingBlood", :value => "false" }
 						%div.BoxRound.PositionerRight
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailVomitingBloodYes" } Ya
-						%input#RadioButtonPolicyHolderDigestDetailVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailVomitingBlood", :value => "true" }
+						%input#RadioButtonPolicyHolderDigestDetailVomitingBloodYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailVomitingBlood", :value => "true" }						
 						%div.BoxRound.PositionerRight
 					%br
 					
@@ -210,45 +209,45 @@
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestPainComplain", :style => "margin-top: 30px;"} Jelaskan secara rinci keluhan nyeri yang Anda dirasakan:
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderDigestDetailPainComplainCondition.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailPainComplain", :value => "condition" }
+					%div.RadioButton.NumberIndent.PositionerLeft					
+						%input#RadioButtonPolicyHolderDigestDetailComplainCondition.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "condition" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailPainComplainCondition"} Timbul pada kondisi tertentu, jelaskan:
-						%input#TextPolicyHolderDigestDetailPainComplainConditionDesc.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainCondition"} Timbul pada kondisi tertentu, jelaskan:
+						%input#TextPolicyHolderDigestDetailComplainConditionDesc.Long.Single.PositionerLeft{ :type => "text" }
 						%br
-						%input#RadioButtonPolicyHolderDigestDetailPainComplainDecrease.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailPainComplain", :value => "decrease" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainDecrease.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "decrease" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailPainComplainDecrease"} Nyeri berkurang bila sedang makan
-						%input#RadioButtonPolicyHolderDigestDetailPainComplainIncrease.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailPainComplain", :value => "increase" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainDecrease"} Nyeri berkurang bila sedang makan
+						%input#RadioButtonPolicyHolderDigestDetailComplainIncrease.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "increase" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailPainComplainIncrease"} Nyeri bertambah bila sedang makan
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainIncrease"} Nyeri bertambah bila sedang makan
 						%br
-						%input#RadioButtonPolicyHolderDigestDetailPainComplainPainSpread.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailPainComplain", :value => "spread" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainSpread.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplain", :value => "spread" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailPainComplainPainSpread"} Nyeri menjalar ke bagian tubuh lain:
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainSpread"} Nyeri menjalar ke bagian tubuh lain:
 						
-						%input#RadioButtonPolicyHolderDigestDetailSpreadHead.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailSpread", :value => "head" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainSpreadHead.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainSpread", :value => "head" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailSpreadHead"} Kepala
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainSpreadHead"} Kepala
 						
-						%input#RadioButtonPolicyHolderDigestDetailSpreadChest.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailSpread", :value => "chest"  }						
+						%input#RadioButtonPolicyHolderDigestDetailComplainSpreadChest.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainSpread", :value => "chest"}
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailSpreadChest"} Dada
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainSpreadChest"} Dada
 						
-						%input#RadioButtonPolicyHolderDigestDetailSpreadStomach.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailSpread", :value => "stomach"  }						
+						%input#RadioButtonPolicyHolderDigestDetailComplainSpreadStomach.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainSpread", :value => "stomach"  }						
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailSpreadStomach"} Perut
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainSpreadStomach"} Perut
 						
-						%input#RadioButtonPolicyHolderDigestDetailSpreadArm.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailSpread", :value => "arm"  }
+						%input#RadioButtonPolicyHolderDigestDetailComplainSpreadArm.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainSpread", :value => "arm"  }
 						
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailSpreadArm"} Lengan
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainSpreadArm"} Lengan
 						%br
 						
-						%input#RadioButtonPolicyHolderDigestDetailSpreadOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailSpread", :value => "other" }
+						%input#RadioButtonPolicyHolderDigestDetailComplainSpreadOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailComplainSpread", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailSpreadOthers"} Lainnya, sebutkan
-						%input#TextPolicyHolderDigestDetailSpreadOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailComplainSpreadOthers"} Lainnya, sebutkan
+					%input#TextPolicyHolderDigestDetailComplainSpreadOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.Single.PositionerLeft 7.
@@ -260,12 +259,12 @@
 					
 					%span.Number.Single.PositionerLeft 8.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailDoctorRecipe" } Apakah obat yang Anda peroleh tersebut berdasarkan resep dokter?
-					%div.RadioButton
-						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDoctorRecipeNo" } Tidak
-						%input#RadioButtonPolicyHolderDigestDoctorRecipeNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDoctorRecipe", :value => "false" }
+					%div.RadioButton						
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailDoctorRecipeNo" } Tidak
+						%input#RadioButtonPolicyHolderDigestDetailDoctorRecipeNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailDoctorRecipe", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDoctorRecipeYes" } Ya
-						%input#RadioButtonPolicyHolderDigestDoctorRecipeYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDoctorRecipe", :value => "true" }
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailDoctorRecipeYes" } Ya
+						%input#RadioButtonPolicyHolderDigestDetailDoctorRecipeYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailDoctorRecipe", :value => "true" }
 						%div.BoxRound.PositionerRight
 						%br
 					%label.Wrap.NumberIndent.PositionerLeft{:for => "TextPolicyHolderVomitingBlood"} Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
@@ -374,8 +373,8 @@
 					%table#DatePolicyHolderDigestDetailHospitalCareToYear.BoxSquare.PositionerLeft
 					%br
 					
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestDetailHospitalCareDuration" } Lama perawatan
-					%input#TextPolicyHolderDigestDetailHospitalCareDuraion.Short.Single.PositionerLeft{ :type => "text"}
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDigestDetailHospitalCareDuration" } Lama perawatan					
+					%input#TextPolicyHolderDigestDetailHospitalCareDuration.Short.Single.PositionerLeft{ :type => "text"}
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDigestDetailHospitalCareDuration" } (bulan/tahun*) *coret yang tidak perlu										
 					%br	
 					
@@ -496,7 +495,7 @@
 					%span.Number.Single.PositionerLeft 13.
 					%label.Single.PositionerLeft{ :for => "AreaPolicyHolderDigestDetailHealthCondition" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent
+					%div.ContainerFit.NumberIndent					
 						%textarea#AreaPolicyHolderDigestDetailHealthCondition.Full.Single.Item
 					%br	
 

@@ -81,26 +81,23 @@
 				/ FIELDSET
 				
 				%fieldset
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 1. 						
-						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourUnity" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
-						%br
+					%span.Number.Single.PositionerLeft 1. 						
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourUnity" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
+					%br
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryYourUnity.Full.Single.Item{ :type => "text" }
-						%br
-						%hr
+					%br
 					
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 2.
-						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
-						%br
+					%span.Number.Single.PositionerLeft 2.
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
+					%br
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryYourDuty.Full.Single.Item{ :type => "text" }
-						%br
-						%hr
+					%br
 						
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 3.
-						%label.Wrap.Long.PositionerLeft Apakah Anda melakukan kegiatan yang berisiko tinggi?
-						%br	
+					%span.Number.Single.PositionerLeft 3.
+					%label.Wrap.Long.PositionerLeft Apakah Anda melakukan kegiatan yang berisiko tinggi?
+					%br	
 					
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft a. Penjinak senjata					
@@ -173,46 +170,42 @@
 						%div.BoxRound.PositionerRight
 					%br
 					
-					%div.RadioButton.NumberIndent						
-						%label.Wrap.Single.PositionerLeft Jika jawaban ya, mohon memberikan perincian jelas:
-						%br
+											
+					%label.Wrap.Single.NumberIndent.PositionerLeft Jika jawaban ya, mohon memberikan perincian jelas:
+					%br
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryRiskActivityDetails.Full.Single.Item{ :type => "text" }
 					%br
-					%hr
-					
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 4. 						
-						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDutyDetails" } Mohon memberikan rincian tugas Anda yang sebenarnya?
-						%br
+				
+					%span.Number.Single.PositionerLeft 4. 						
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDutyDetails" } Mohon memberikan rincian tugas Anda yang sebenarnya?
+					%br
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryYourDutyDetails.Full.Single.Item{ :type => "text" }
-						%br
-						%hr
+					%br
 						
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 5. 
-						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
-						%br						
-						%div.RadioButton.NumberIndent
-							%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true" }
-							%div.BoxRound.PositionerLeft
-							%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationYes" } Ya
-							%input#RadioButtonPolicyHolderMilitaryInDangerLocationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "false" }
-							%div.BoxRound.PositionerLeft
-							%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
-						%br	
-					%div.RadioButton.NumberIndent						
-						%label.Wrap.Single.PositionerLeft Jika Ya, Jelaskan dimana dan kapan
-						%br
+					%span.Number.Single.PositionerLeft 5. 
+					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
+					%br						
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationYes" } Ya
+						%input#RadioButtonPolicyHolderMilitaryInDangerLocationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
+					%br	
+					%label.Wrap.Single.NumberIndent.PositionerLeft Jika Ya, Jelaskan dimana dan kapan
+					%br
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryInDangerLocationWhere.Full.Single.Item{ :type => "text" }
-						%hr
 					
-					%div.ContainerQuestion
-						%span.Number.Single.PositionerLeft 6.
-						%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
-						%br
+					%span.Number.Single.PositionerLeft 6.
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryYourDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
+					%br
+					%div.ContainerFit.NumberIndent	
 						%input#TextPolicyHolderMilitaryYourDuty.Full.Single.Item{ :type => "text" }
-						%br
-						%hr
+					%br
 						
 					%h2 PERNYATAAN DAN KUASA
 					%div.Note
