@@ -263,22 +263,36 @@
 								%div.Container
 									%label#LabelPolicyHolderMotion.Item{ :for => "RadioButtonPolicyHolderMotionYes" }
 										Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
+									-#
+										%div.RadioButton.Item
+											%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
+											%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
+											%div.Separator | 
+											%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
+											%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
+										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", "data-question-title" => "Gerak", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
+										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", "data-question-title" => "Gerak", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
 								%input#ButtonPreviewPolicyHolderMotion.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
 							%li
 								%div.Container
 									%label#LabelPolicyHolderGland.Item{ :for => "RadioButtonPolicyHolderGlandYes" }
 										Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
+									-#
+										%div.RadioButton.Item
+											%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
+											%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandYes" } Ya
+											%div.Separator | 
+											%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
+											%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandNo" } Tidak
 									%div.RadioButton.Item
-										%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
+										%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", "data-question-title" => "Kelenjat dan Darah", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandYes" } Ya
 										%div.Separator | 
-										%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
+										%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", "data-question-title" => "Kelenjat dan Darah", "data-popup-type" => "hardcopy" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandNo" } Tidak
 								%input#ButtonPreviewPolicyHolderGland.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
 							%li
