@@ -1,0 +1,34 @@
+%form#PopUpActivity.PopUp
+
+	/ HEADER
+
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpActivity')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpActivity', stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime'])" }
+		%h2 Pertanyaan Kesehatan
+
+	/ FIELDSET
+
+	%fieldset
+		%label#LabelDetail.Multi.Single
+			4. Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))?
+		%br
+		%div.RadioButton
+			%input#ButtonDiving.ButtonPrimary{ :type => "button", :value => "Menyelam", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpDiving', stringPageInfixTypeCurrent + 'Diving', arrayHealthQuestionnaire)" }
+			%div.Separator
+			%input#ButtonHiking.ButtonPrimary{ :type => "button", :value => "Mendaki gunung dan panjat tebing Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpHiking', stringPageInfixTypeCurrent + 'Hiking', arrayHealthQuestionnaire)" }
+			%div.Separator
+			%input#ButtonRacing.ButtonPrimary{ :type => "button", :value => "Olahraga balap", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpRacing', stringPageInfixTypeCurrent + 'Racing', arrayHealthQuestionnaire)" }
+			%div.Separator
+			%input#ButtonParagliding.ButtonPrimary{ :type => "button", :value => "Paralayang", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpParagliding', stringPageInfixTypeCurrent + 'Paragliding', arrayHealthQuestionnaire)" }
+			%div.Separator
+			%input#ButtonMining.ButtonPrimary{ :type => "button", :value => "Pertambangan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpMining', stringPageInfixTypeCurrent + 'Mining', arrayHealthQuestionnaire)" }
+			%div.Separator
+			%input#ButtonTraveling.ButtonPrimary{ :type => "button", :value => "Perjalan ke luar negeri", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpTraveling', stringPageInfixTypeCurrent + 'Traveling', arrayHealthQuestionnaire)" }
+			%div.Separator
+			%input#ButtonFlight.ButtonPrimary{ :type => "button", :value => "Penerbangan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpFlight', stringPageInfixTypeCurrent + 'Flight', arrayHealthQuestionnaire)" }
+		%hr
+		%label.Medium.Single silahkan memberikan rincian lebih lanjut
+		%br
+		%textarea#AreaAmandmentDetail.Full.Multi
+		%label.Medium.Single (maksimum 250 karakter)
