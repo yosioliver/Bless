@@ -1,0 +1,360 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL				
+				boxGenerator("#TextPolicyHolderFlightFullName", 24, boxTypeWithoutLabel, null);				
+				boxGenerator("#DatePolicyHolderFlightBirthdayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderFlightBirthdayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderFlightBirthdayYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFlightSPAJNumber", 24, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+				
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);		
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%img{ :src => "../../jqueryLibrary/Resource/Logo/logo_bcalife.svg" }
+			%span.Header PT Asuransi Jiwa BCA
+			%span.Detail
+			%br
+
+			%h1 KUESIONER PENERBANGAN
+			%br
+			
+			%div.Note				
+				%ol
+					%li *) <i> Harus diisi oleh Calon Tertanggung. </i>
+					%li **) <i> Bila kolom penjelasan tidak cukup, mohon memberikan penjelasan pada kertas lain. </i>
+					%li ***) <i> Coret yang tidak perlu. </i>
+		/ MAIN
+
+		%main
+			%form
+				%h2 Data Calon Tertanggung
+				
+				/ FIELDSET
+				
+				%fieldset
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFlightFullName" } Nama Lengkap (sesuai dengan KTP)
+					%table#TextPolicyHolderFlightFullName.BoxSquare.PositionerLeft					
+					%br
+
+					%label.Wrap.Medium.PositionerLeft{ :for => "DatePolicyHolderFlightBirthdayDay" } Tanggal lahir
+					%table#DatePolicyHolderFlightBirthdayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderFlightBirthdayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderFlightBirthdayYear.BoxSquare.PositionerLeft
+					%br
+					
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFlightSPAJNumber" } Nomor SPAJ/Polis
+					%table#TextPolicyHolderFlightSPAJNumber.BoxSquare.PositionerLeft					
+					%br					
+				
+				/ FIELDSET
+				
+				%fieldset
+					%span.Number.Single.PositionerLeft 1. 						
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightJob" } Apakah Anda terbang sebagai pilot atau navigator?
+					%br		
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightJob.Full.Single.Item
+					%br
+					
+					%span.Number.Single.PositionerLeft 2.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Apakah Anda terbang sebagai penumpang?
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Ya
+						%input#RadioButtonPolicyHolderFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerNo" } Tidak
+					%br	
+						
+					%span.Number.Single.PositionerLeft 3.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlane" } Apakah Anda memiliki pesawat sendiri?
+					%br
+					%div.RadioButton.NumberIndent
+
+						%input#RadioButtonPolicyHolderFlightHavePlaneYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightHavePlane", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneYes" } Ya
+
+						%input#RadioButtonPolicyHolderFlightHavePlaneNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightHavePlane", :value => "falsek" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneNo" } Tidak
+					%br	
+						
+					%span.Number.Single.PositionerLeft 4.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightPlaneType" } Sebutkan jenis pesawat apakah yang Anda terbangkan?
+					%br
+
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightPlaneType.Full.Single.Item.PositionerLeft
+					%br
+
+					%span.Number.Single.PositionerLeft 5.
+					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightLicenseList" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki:
+					%br
+					-#
+						%div.ContainerFit							
+							%table#TablePolicyHolderFlightLicense.NumberIndent
+								%thead
+									%tr
+										%th Lisensi/Sertifikat
+										%th Tanggal Perolehan
+										%th Tanggal Perpanjangan
+						%br				
+
+					%span.Number.Single.PositionerLeft 6.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightScope" } Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonPolicyHolderFlightScopeYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightScope", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightScopeYes" } Ya
+						%input#RadioButtonPolicyHolderFlightScopeNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightScope", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightScopeNo" } Tidak
+					%br
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightScopeDesc" } Jika ya, mohon jelaskan secara rinci :
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightScopeDesc.Full.Single.Item.PositionerLeft
+					%br
+
+					%span.Number.Single.PositionerLeft 7.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightClub" } Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonPolicyHolderFlightClubYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightClub", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightClubYes" } Ya
+						%input#RadioButtonPolicyHolderFlightClubNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightClub", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightClubNo" } Tidak
+					%br
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightIsClubDesc" } Jika ya, mohon jelaskan secara rinci :
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightIsClubDesc.Full.Single.Item.PositionerLeft
+					%br
+
+					%span.Number.Single.PositionerLeft 8.
+					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightCondition" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini
+					%br
+					-#
+						%div.ContainerFit
+							%table#TablePolicyHolderFlightCondition.NumberIndent
+								%thead
+									%tr
+										%th 
+										%th Tujuan
+										%th Total
+										%th 12 bulan terakhir
+										%th 12 bulan y.a.d
+										%th Total
+										%th 12 bulan terakhir
+										%th 12 bulan y.a.d
+
+								%tbody
+									%tr
+										%td Penerbangan berjadwal
+										%td 
+										%td
+										%td 
+										%td
+										%td 
+										%td	
+										%td									
+									%tr
+										%td Penerbangan tdk berjadwal
+										%td
+										%td								
+										%td 
+										%td
+										%td 
+										%td	
+										%td																	
+									%tr
+										%td Penerbangan komersial
+										%td
+										%td
+										%td 
+										%td
+										%td 
+										%td	
+										%td																	
+									%tr
+										%td Penerbangan Pribadi
+										%td
+										%td
+										%td 
+										%td
+										%td 
+										%td	
+										%td									
+
+									%tr
+										%td Helikopter
+										%td
+										%td
+										%td 
+										%td
+										%td 
+										%td	
+										%td									
+
+									%tr
+										%td Terbang layang
+										%td
+										%td
+										%td 
+										%td
+										%td 
+										%td	
+										%td									
+
+									%tr
+										%td Lainnya
+										%td
+										%td	
+										%td 
+										%td
+										%td 
+										%td	
+										%td	
+						%br
+					
+					%span.Number.Single.PositionerLeft 9.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightFrom" } Darimana Anda Terbang?
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightFrom.Full.Single.Item.PositionerLeft
+					%br
+
+					%span.Number.Single.PositionerLeft 10.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAirportControl" } Apakah Anda terbang dari bandara control?
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonPolicyHolderFlightAirportControlYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightAirportControl", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAirportControlYes" } Ya
+						%input#RadioButtonPolicyHolderFlightAirportControlNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightAirportControl", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAirportControlNo" } Tidak
+					%br
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightPilotAirportControlDesc" } Jika ya, mohon jelaskan secara rinci:
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightAirportControlDesc.Full.Single.Item.PositionerLeft
+					%br
+						
+					%span.Number.Single.PositionerLeft 11.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAccident" } Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonPolicyHolderFlightAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightAccident", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAccidentYes" } Ya
+						%input#RadioButtonPolicyHolderFlightAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightAccident", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAccidentNo" } Tidak
+					%br
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightAccidentDesc" } Jika ya, mohon jelaskan secara rinci :
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightAccidentDesc.Full.Single.Item
+					%br
+
+					%span.Number.Single.PositionerLeft 12.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightNoFly" } Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
+					%div.RadioButton.NumberIndent 	
+						%input#RadioButtonPolicyHolderFlightNoFlyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightNoFly", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightNoFlyYes" } Ya
+						%input#RadioButtonPolicyHolderFlightNoFlyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightNoFly", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightNoFlyNo" } Tidak
+					%br
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightNoFlyDesc" } Jika ya, mohon jelaskan secara rinci :
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightNoFlyDesc.Full.Single.Item
+					%br
+
+					%span.Number.Single.PositionerLeft 13.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightOtherInfo" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+					%br	
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderFlightOtherInfo.Full.Single.Item
+					%br
+
+					%h2 PERNYATAAN DAN KUASA
+					%div.Note
+						%p Perlu diperhatikan: 
+						%ol
+							%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner  PENERBANGAN ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+					
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Ditandatangani
+					%input#TextPolicyHolderBirthdayPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderSigned" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DateSignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateSignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateSignedYear.BoxSquare.PositionerLeft
+					%br
+							
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Pemegang Polis
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail (Calon) Tertanggung
+						
+					%div.Signature.Horizontal30of100
+						%img
+						%span.Name
+						%hr
+						%span.Header Nama Lengkap & Tanda tangan
+						%span.Detail Tenaga Penjual
+					%br
+					
+			%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
