@@ -1579,7 +1579,7 @@ function buttonPopUpSPAJProposalGenerator()
 			});
 
 			tableSPAJProposalGenerator(stringTriggerInfix, "SPAJProposalList", arrayHealthQuestionnaire);
-			previewArrayObject(arrayHealthQuestionnaire);
+			// previewArrayObject(arrayHealthQuestionnaire);
 		}
     });
 }
@@ -2227,7 +2227,6 @@ function getFromDatabase(objectContent, stringPageType)
         var stringKey = objectContent[i].elementID;
         var stringValue = objectContent[i].Value;               
         
-		
 		// GENERAL INPUT TYPE
 		
         if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)
@@ -3080,5 +3079,26 @@ function telephoneStripGenerator(stringInputJavaScriptID)
 		{
 
 		}
+	});
+}
+
+function inputListener()
+{
+	$("input").change(function()
+	{
+		booleanInputChangeState = true;
+		alert("input = " + booleanInputChangeState);
+	});
+	
+	$("textarea").change(function()
+	{
+		booleanInputChangeState = true;
+		alert("textarea = " + booleanInputChangeState);
+	});
+	
+	$("select").change(function()
+	{
+		booleanInputChangeState = true;
+		alert("select = " + booleanInputChangeState);
 	});
 }

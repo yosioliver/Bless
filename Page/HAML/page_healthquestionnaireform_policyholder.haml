@@ -447,6 +447,8 @@
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderNo" } Tidak
 						%input#ButtonPreviewPolicyHolderHeartDissorder.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderHeartDissorder", "data-popup-type" => "general" }
 					%hr
+			%section#PopUpGeneral.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_general.haml")).render
 			%section#PopUpActivity.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_activity.haml")).render
 			%section#PopUpMilitary.PopUp
