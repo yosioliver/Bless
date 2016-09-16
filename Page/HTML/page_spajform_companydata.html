@@ -47,6 +47,11 @@
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
     <!-- JQUERY -->
     <script>
+      var stringPageTypeCurrent = stringPageTypeForm;
+      var stringPageSectionCurrent = stringPageSectionForm;
+      var stringPageValidationCurrent = 0;
+      var booleanInputChangeState = false;
+      
       $(document).ready(function()
       {
       	// SETTER
@@ -56,6 +61,7 @@
       	// GETTER
       
       	// radioButtonGetter("WeightChange");
+      	inputListener();
       
       	$("#BoxDate").DateTimePicker(
       	{
