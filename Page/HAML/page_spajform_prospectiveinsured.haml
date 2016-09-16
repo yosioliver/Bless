@@ -15,6 +15,10 @@
 			{
 				// INITIALIZATION
 
+				var stringPageTypeCurrent = stringPageTypeForm;
+				var stringPageSectionCurrent = stringPageSectionForm;
+				var stringPageValidationCurrent = stringPageValidationIncome;
+				var booleanInputChangeState = false;
 				// var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
 
 				$("#BoxDate").DateTimePicker(
@@ -57,6 +61,8 @@
 				
 				telephoneStripGenerator("TextProspectiveInsuredHomeTelephone");
 				telephoneStripGenerator("TextProspectiveInsuredOfficeTelephone");
+				
+				inputListener(booleanInputChangeState);
 				
 				// FOR TESTING
 				

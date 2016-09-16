@@ -957,15 +957,15 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
 			}
         }
         else if (stringKey.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
-        {			
+        {
             setRadioButtonGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
-        {			
+        {
             setCheckboxGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
-        {			
+        {
             if (stringPageType == stringPageTypePDF)
             {
                 setSelectPDF(stringKey, stringValue);
@@ -976,9 +976,9 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
             }
         }
         else if (stringKey.substring(0, stringPrefixDate.length) == stringPrefixDate)
-        {						
+        {
             if (stringPageType == stringPageTypePDF)
-            {				
+            {
                 setDatePDFForHealthQuestionnaire(stringKey, stringValue);
             }
             else
@@ -987,7 +987,7 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
             }
         }
         else if (stringKey.substring(0, stringAreaPrefix.length) == stringAreaPrefix)
-        {			
+        {
             if (stringPageType == stringPageTypePDF)
             {
                 setAreaPDF(stringKey, stringValue);
@@ -998,7 +998,7 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
             }
         }
 		else if (stringKey.substring(0, stringNumberPrefix.length) == stringNumberPrefix)
-        {	
+        {
             if (stringPageType == stringPageTypePDF)
             {
                 setNumberPDF(stringKey, stringValue);

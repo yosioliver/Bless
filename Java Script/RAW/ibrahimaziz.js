@@ -3082,23 +3082,20 @@ function telephoneStripGenerator(stringInputJavaScriptID)
 	});
 }
 
-function inputListener()
+function inputListener(booleanInputChangeState)
 {
 	$("input").change(function()
 	{
 		booleanInputChangeState = true;
-		alert("input = " + booleanInputChangeState);
 	});
 	
 	$("textarea").change(function()
 	{
 		booleanInputChangeState = true;
-		alert("textarea = " + booleanInputChangeState);
 	});
 	
 	$("select").change(function()
 	{
 		booleanInputChangeState = true;
-		alert("select = " + booleanInputChangeState);
 	});
 }

@@ -15,9 +15,11 @@
 			// INTIALIZATION
 			
 			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"}]}}'
+			var stringPageTypeCurrent = stringPageTypeForm;
 			var stringPageSectionCurrent = stringPageSectionHealthQuestionnaire;
 			var stringPageValidation = 0;
 			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var booleanInputChangeState = false;
 		
 			$(document).ready(function()
 			{
@@ -39,6 +41,8 @@
 					timeSeparator: ":",
 					timeFormat: "HH:mm:ss"
 				});
+				
+				inputListener(booleanInputChangeState);
 				
 				/* $("#MainForm #ButtonDone").click(function()
 				{
