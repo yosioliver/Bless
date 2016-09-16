@@ -278,10 +278,10 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRespiratoryDetailStillConsumedDesc.Full.Single.PositionerLeft{ :type => "text" }
 					%br					
-
+					
 					%span.Number.Single.PositionerLeft 7.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailMedicalCheckResult" } Sehubungan dengan gangguan pernapasan, kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? (Mohon dilampirkan fotokopi hasil pemeriksaan).
-					%br
+					%label.Wrap.PositionerLeft Sehubungan dengan gangguan pernapasan, kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? (Mohon dilampirkan fotokopi hasil pemeriksaan).
+					%br					
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRespiratoryDetailMedicalCheckResult.Full.Single.PositionerLeft{ :type => "text" }
 					%br
@@ -321,8 +321,8 @@
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
-					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 9.
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAdditionalInfo",:style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%span.Number.Single.PositionerLeft 9.
+					%label.Wrap.PositionerLeft Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRespiratoryDetailAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }
