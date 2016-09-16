@@ -2001,7 +2001,20 @@ function setAreaForm(stringID, stringValue)
 
 function setAreaPDF(stringID, stringValue)
 {
-    setBoxGeneral(stringID, stringValue);
+	var stringJQueryID = stringKres + stringID;
+        
+	if ($(stringJQueryID).is("div") == true)
+	{
+		setLineGeneral(stringID, stringValue);
+	}
+	else if ($(stringJQueryID).is("input[type='text']") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+	else
+	{
+		setBoxGeneral(stringID, stringValue);
+	}
 }
 
 function setNumberForm(stringID, stringValue)
