@@ -91,6 +91,7 @@ var stringPrefixArea = "Area";
 var stringPageTypeHealthQuestionnairePDF = "HealthQuestionnairePDF";
 var stringAmandmentSuffix = "Amandment";
 var stringPageTypeAmandment = "Amandment";
+var stringStateNotChecked = "Not Checked";
 
 
 // GENERATOR
@@ -1900,7 +1901,7 @@ function setCheckboxGeneral(stringCheckboxJavaScriptID, stringValue)
 {
 	var stringCheckboxJQueryID = stringKres + stringCheckboxJavaScriptID;
 	
-	if (stringValue == null)
+	if (stringValue == stringStateNotChecked)
 	{
 		$(stringCheckboxJQueryID).prop("checked", false);
 	}
@@ -2109,7 +2110,7 @@ function getCheckboxGeneral(stringID)
 	}
     else
     {
-        stringCheckboxValue = null;
+        stringCheckboxValue = stringStateNotChecked;
     }
     
     return stringCheckboxValue;
