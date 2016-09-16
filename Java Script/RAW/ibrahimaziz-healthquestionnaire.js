@@ -84,7 +84,7 @@ function showPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue,
 		$(stringButtonPreviewJQueryID).css("display", "none");
 	}
 	
-	previewArrayObject(arrayContent);
+	// previewArrayObject(arrayContent);
 }
 
 function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -135,7 +135,7 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 		getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		$(stringButtonPreviewJQueryID).css("display", "block");
-		previewArrayObject(arrayContent);
+		// previewArrayObject(arrayContent);
 		setRadioButtonGeneral(stringRadioButtonName, "true");
 		arrayAdd(arrayContent, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 	}
@@ -162,7 +162,7 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 	{
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		$(stringPopUpParentJQueryID).css("display", "block");
-		previewArrayObject(arrayContent);
+		// previewArrayObject(arrayContent);
 	}
 	else
 	{
@@ -379,7 +379,6 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			}
 			else
 			{
-				// alert(stringKey + " " + stringValue);
 				arrayValidatePush(arrayInputTemporary, stringKey, stringValue);
 			}
 		});
@@ -518,10 +517,6 @@ function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			var stringKey = stringPrefixArea + stringInputInfix + stringInputIDWithoutPrefix;
 			var stringValue = getAreaForm(stringSpecificInputJavaScriptID);
 
-			
-			alert(stringLayoutJQueryID + " - " + stringKey + " - " + stringValue);
-			
-			
 			if (stringInputRequired == stringStateRequired)
 			{
 				if (validateTextGeneral(stringSpecificInputJQueryID) == false)
@@ -592,7 +587,6 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		else if (stringKeyPrefix == stringPrefixArea)
 		{
 			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix, stringValue);
-			// alert(stringKeyWithoutInfix + " " + stringKeyWithoutPrefix);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
 		{

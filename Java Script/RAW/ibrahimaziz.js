@@ -1579,7 +1579,7 @@ function buttonPopUpSPAJProposalGenerator()
 			});
 
 			tableSPAJProposalGenerator(stringTriggerInfix, "SPAJProposalList", arrayHealthQuestionnaire);
-			previewArrayObject(arrayHealthQuestionnaire);
+			// previewArrayObject(arrayHealthQuestionnaire);
 		}
     });
 }

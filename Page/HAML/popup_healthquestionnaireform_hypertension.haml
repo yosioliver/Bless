@@ -46,21 +46,21 @@
 			%label.RadioButton{ :for => "RadioButtonDoctorConsultNo" } Tidak
 		%br
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Nama Dokter
+			%label.Long.Single.PositionerLeft Nama Dokter{ :for => "TextDoctorName" }
 			%input#TextDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
-			%label.Long.Single.PositionerLeft Alamat Dokter
+			%label.Long.Single.PositionerLeft Alamat Dokter{ :for => "TextDoctorAddress" }
 			%input#TextDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%label.Wrap.Single.PositionerLeft.Margin e. Berapa sering Anda kontrol ke Dokter?		
-		%input#NumberHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "number" }
-		%label.Wrap.Single.PositionerLeft.Margin kali per minggu/ bulan/ tahun
+		%label.Single.PositionerLeft.Margin{ :for => "TextHowOftenCheckupToDoctor" } e. Berapa sering Anda kontrol ke Dokter?		
+		%input#TextHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "text" }
+		%label.Single.PositionerLeft.Margin kali per minggu/ bulan/ tahun
 		%br
 		%hr
 
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 2. Apakah kenaikan tekanan darah Anda tersebut berhubungan dengan penyakit sebagai berikut:
+			%label.Single.Item 2. Apakah kenaikan tekanan darah Anda tersebut berhubungan dengan penyakit sebagai berikut:
 			%br			
 			%input#RadioButtonRelatedToHeart{ :type => "radio", :name => "RadioButtonRelatedTo", :value => "heart" }
 			%label.RadioButton{ :for => "RadioButtonRelatedToHeart" }  Jantung
