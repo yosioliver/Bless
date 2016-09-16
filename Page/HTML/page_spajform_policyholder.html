@@ -104,10 +104,11 @@
       	
       	// FOR TESTING
       	
-      	/* $("#ButtonSubmit").click(function()
+      	$("#ButtonSubmit").click(function()
       	{
+      		alert(booleanInputChangeState);
       		savetoDB();
-      	}); */
+      	});
       	
       	$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
       		if (this.value == 'home') {
@@ -141,7 +142,7 @@
     <!-- MAIN -->
     <main>
       <form>
-        <!-- %input#ButtonSubmit{ :type => "button", :value => "Submit" } -->
+        <input id='ButtonSubmit' type='button' value='Submit'>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN'>Nomor CIN</label>
         <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' maxlength='7' required='true' type='text'>
         <br>
