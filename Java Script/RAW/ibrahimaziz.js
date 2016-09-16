@@ -3083,7 +3083,7 @@ function telephoneStripGenerator(stringInputJavaScriptID)
 	});
 }
 
-function inputListener(booleanInputChangeState)
+function inputListener()
 {
 	$("input").change(function()
 	{

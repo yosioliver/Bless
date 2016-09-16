@@ -99,14 +99,14 @@
       	telephoneStripGenerator("TextPolicyHolderHomeTelephone");
       	telephoneStripGenerator("TextPolicyHolderOfficeTelephone");
       	
-      	inputListener(booleanInputChangeState);
+      	inputListener();
       	
       	// FOR TESTING
       	
       	$("#ButtonSubmit").click(function()
       	{
       		alert(booleanInputChangeState);
-      		savetoDB();
+      		// savetoDB();
       	});
       	
       	$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
