@@ -3087,18 +3087,18 @@ function inputListener()
 	$("input").change(function()
 	{
 		booleanInputChangeState = true;
-		alert("input = " + booleanInputChangeState);
+		// alert("input = " + booleanInputChangeState);
 	});
 	
 	$("textarea").change(function()
 	{
 		booleanInputChangeState = true;
-		alert("textarea = " + booleanInputChangeState);
+		// alert("textarea = " + booleanInputChangeState);
 	});
 	
 	$("select").change(function()
 	{
 		booleanInputChangeState = true;
-		alert("select = " + booleanInputChangeState);
+		// alert("select = " + booleanInputChangeState);
 	});
 }
