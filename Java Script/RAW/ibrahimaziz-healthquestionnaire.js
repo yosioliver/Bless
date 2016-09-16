@@ -818,8 +818,8 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	var arrayPrefixFilter = [stringPrefixText, stringPrefixArea];
 	var stringInfixFilter;
 	var stringSuffixFilter = stringAmandmentSuffix + stringDetailSuffix;
-	var arrayGeneralForm = ["SmokeActivity", "Junkie", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
-	var arrayGeneralFormInIndonesia = ["Merokok", "Narkoba dan adiktif", "Bepergian keluar", "Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
+	var arrayGeneralForm = ["SmokeActivity", "Junkie", "Activity", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Cell", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
+	var arrayGeneralFormInIndonesia = ["Merokok", "Narkoba dan adiktif", "Aktifitas", "Bepergian keluar", "Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Sel", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
 	var stringKey;
 	var stringQuestionPrefix = "Jawaban tambahan kuesioner ";
 	var intQuestionNumber = 0;
