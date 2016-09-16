@@ -1833,9 +1833,6 @@ function setBoxGeneral(stringID, stringValue)
     
     for (var i = 0; i < stringValue.length; i++)
     {
-		/* if ($(stringJQueryID).is(".chest-pain")) {
-    		alert(stringJQueryID + stringValue);
-		} */
         $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringValue[i]);
     }
 }
@@ -2001,7 +1998,24 @@ function setAreaForm(stringID, stringValue)
 
 function setAreaPDF(stringID, stringValue)
 {
-    setBoxGeneral(stringID, stringValue);
+	var stringJQueryID = stringKres + stringID;
+        
+	if ($(stringJQueryID).is("div") == true)
+	{
+		setLineGeneral(stringID, stringValue);
+	}
+	else if ($(stringJQueryID).is("input[type='text']") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+	else if ($(stringJQueryID).is("textarea") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+	else
+	{
+		setBoxGeneral(stringID, stringValue);
+	}
 }
 
 function setNumberForm(stringID, stringValue)
@@ -2819,9 +2833,9 @@ function setToDatabase(stringPageType)
     {
 		var stringKey = $(this).attr("id");
         var stringValue = getCheckboxGeneral(stringKey);
-        validatePush(objectContent, stringKey, stringValue);
+        // validatePush(objectContent, stringKey, stringValue);
 		// objectContent.push({ elementID: stringKey, Value: stringValue });
-		// arrayAdd(objectContent, stringKey, stringValue);
+		arrayAdd(objectContent, stringKey, stringValue);
     });
     
     $("input[type=date]").each(function()
