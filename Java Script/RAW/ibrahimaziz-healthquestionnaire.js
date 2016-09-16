@@ -878,15 +878,31 @@ function getFromDatabaseForHealthQuestionnaire(objectContent, stringPageType)
         {			
 			if (stringPageType == stringPageTypePDF)
 			{
-				var intMaxString = 26;
+				var stringKeyJQueryID = stringKres + stringKey;
 				
-				if (stringValue.length > intMaxString)
+				if ($(stringKeyJQueryID).is("table") == true)
 				{
-					var stringValue1 = stringValue.substring(0, intMaxString);
-					var stringValue2 = stringValue.substring(0, intMaxString);
+					var intMaxString = $(stringKeyJQueryID + " tbody tr td").length;
+				
+					if (stringValue.length > intMaxString)
+					{
+						if ($(stringKeyJQueryID + "2nd").length > 0)
+						{
+							var stringValue1 = stringValue.substring(0, intMaxString);
+							var stringValue2 = stringValue.substring(intMaxString, stringValue.length);
 
-					setTextPDF(stringKey, stringValue1);
-					setTextPDF(stringKey + "2nd", stringValue2);
+							setTextPDF(stringKey, stringValue1);
+							setTextPDF(stringKey + "2nd", stringValue2);
+						}
+						else
+						{
+							setTextPDF(stringKey, stringValue);
+						}
+					}
+					else
+					{
+						setTextPDF(stringKey, stringValue);
+					}
 				}
 				else
 				{

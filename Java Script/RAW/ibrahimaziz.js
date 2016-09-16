@@ -1833,9 +1833,6 @@ function setBoxGeneral(stringID, stringValue)
     
     for (var i = 0; i < stringValue.length; i++)
     {
-		/* if ($(stringJQueryID).is(".chest-pain")) {
-    		alert(stringJQueryID + stringValue);
-		} */
         $(stringJQueryID + " tbody tr " + stringJQueryID + i).append(stringValue[i]);
     }
 }
@@ -2008,6 +2005,10 @@ function setAreaPDF(stringID, stringValue)
 		setLineGeneral(stringID, stringValue);
 	}
 	else if ($(stringJQueryID).is("input[type='text']") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+	else if ($(stringJQueryID).is("textarea") == true)
 	{
 		setTextGeneral(stringID, stringValue);
 	}
