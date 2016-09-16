@@ -14,10 +14,10 @@
 		
 			// INITIALIZATION
 			
-			// var stringPageTypeCurrent = stringPageTypeForm;
-			// var stringPageSectionCurrent = stringPageSectionForm;
-			// var stringPageValidationCurrent = stringPageValidationIncome;
-			// var booleanInputChangeState = false;
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = stringPageValidationIncome;
+			var booleanInputChangeState = false;
 			
 			// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
 		
@@ -64,14 +64,14 @@
 				telephoneStripGenerator("TextPolicyHolderHomeTelephone");
 				telephoneStripGenerator("TextPolicyHolderOfficeTelephone");
 				
-				// inputListener(booleanInputChangeState);
+				inputListener();
 				
 				// FOR TESTING
 				
 				$("#ButtonSubmit").click(function()
 				{
 					alert(booleanInputChangeState);
-					savetoDB();
+					// savetoDB();
 				});
 				
 				$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
@@ -109,7 +109,7 @@
 
 		%main
 			%form
-				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
+				%input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
 				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true", :maxlength => "7" }                     
 				%br

@@ -11,6 +11,12 @@
 		/ JQUERY
 
 		:javascript
+		
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = 0;
+			var booleanInputChangeState = false;
+		
 			$(document).ready(function()
 			{
 				// SETTER
@@ -20,6 +26,7 @@
 				// GETTER
 
 				// radioButtonGetter("WeightChange");
+				inputListener();
 
 				$("#BoxDate").DateTimePicker(
 				{

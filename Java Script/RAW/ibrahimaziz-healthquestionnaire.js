@@ -559,6 +559,8 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	var stringKeyWithoutPrefix;
 	var stringKeyWithoutInfix;
 	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	var stringPopUpSuffix = stringLayoutJavaScriptID.substring("PopUp".length, stringLayoutJavaScriptID.length);
+	var stringSectionInfix;
 	
 	for (var i = 0; i < arrayContent.length; i++)
 	{
@@ -586,6 +588,7 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		}
 		else if (stringKeyPrefix == stringPrefixArea)
 		{
+			alert("set area = " + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix + " --> " + stringValue)
 			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
@@ -605,10 +608,8 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 			
 		}
 		
-		var stringPopUpSuffix = stringLayoutJavaScriptID.substring("PopUp".length, stringLayoutJavaScriptID.length);
-		var stringSectionInfix = getInfixSection(stringKeyWithoutPrefix);
+		stringSectionInfix = getInfixSection(stringKeyWithoutPrefix);
 	}
-	
 	
 	// QUICK FIX FOR MULTI POP UP.
 	
@@ -623,6 +624,8 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	{
 		$(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail").val(stringAmandmentDetail);
 	}
+	
+	alert(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail" + " --> " + stringAmandmentDetail);
 }
 
 function getInfixSection(stringContent)
@@ -818,8 +821,8 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	var arrayPrefixFilter = [stringPrefixText, stringPrefixArea];
 	var stringInfixFilter;
 	var stringSuffixFilter = stringAmandmentSuffix + stringDetailSuffix;
-	var arrayGeneralForm = ["SmokeActivity", "Junkie", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
-	var arrayGeneralFormInIndonesia = ["Merokok", "Narkoba dan adiktif", "Bepergian keluar", "Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
+	var arrayGeneralForm = ["SmokeActivity", "Junkie", "Activity", "Abroad", "Respiratory", "Cardiac", "Digest", "Nerve", "Liver", "Motion", "Gland", "Cell", "Claim", "Diagnostic", "PregnancyIllness", "FemaleAbnormality", "PapSmear", "HeartDissorder"];
+	var arrayGeneralFormInIndonesia = ["Merokok", "Narkoba dan adiktif", "Aktifitas", "Bepergian keluar", "Pernapasan", "Jantung", "Pencernaan", "Saraf", "Hati", "Gerak", "Sel", "Kelenjar", "Klaim SPAJ", "Pemeriksaan", "Sakit Kehamilan", "Kelainan Wanita", "Pap Smear", "Kelainan Jantung"];
 	var stringKey;
 	var stringQuestionPrefix = "Jawaban tambahan kuesioner ";
 	var intQuestionNumber = 0;
