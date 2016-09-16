@@ -88,18 +88,18 @@
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderRespiratoryDetailDisruptionAsthma.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "asthma" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionAsthma" } Asma
-						%input#RadioButtonPolicyHolderRespiratoryDisruptionBronchitis.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "bronchitis" }
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailDisruptionAsthma" } Asma
+						%input#RadioButtonPolicyHolderRespiratoryDetailDisruptionBronchitis.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "bronchitis" }
 						%div.BoxRound.PositionerLeft											
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionBronchitis" } Bronchitis
 						%input#RadioButtonPolicyHolderRespiratoryDisruptionTBC.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "tbc" }
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionTBC" } TBC	
 						%br
-						%input#RadioButtonPolicyHolderRespiratoryDisruptionOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "other" }
+						%input#RadioButtonPolicyHolderRespiratoryDetailDisruptionOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailDisruption", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruptionOtherDesc"} Lainnya, sebutkan
-						%input#TextPolicyHolderRespiratoryDisruptionOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailDisruptionOtherDesc"} Lainnya, sebutkan
+						%input#TextPolicyHolderRespiratoryDetailDisruptionOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br					
 
 					%span.Number.Single.PositionerLeft 2.
@@ -128,10 +128,10 @@
 					%br
 					%span.Single.NumberIndent.PositionerLeft (Mohon melampirkan resume perawatan yang Anda miliki)
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderRespiratoryAttackCauseAbsent.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryAttackCause", :value => "absent" }
+					%div.RadioButton.NumberIndent.PositionerLeft					
+						%input#RadioButtonPolicyHolderRespiratoryDetailAttackCauseAbsent.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailAttackCause", :value => "absent" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryAttackCauseAbsent" } Tidak masuk kerja, selama
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailAttackCauseAbsent" } Tidak masuk kerja, selama
 					%label.Single.PositionerRight{ :for => "NumberPolicyHolderRespiratoryDetailAttackCauseAbsentYear"} Tahun
 					%input#NumberPolicyHolderRespiratoryDetailAttackCauseAbsentYear.Short.Single.PositionerRight{ :type => "number" }
 					%label.Single.PositionerRight{ :for => "NumberPolicyHolderRespiratoryDetailAttackCauseAbsentMonth"} Bulan
@@ -142,9 +142,9 @@
 					%input#NumberPolicyHolderRespiratoryDetailAttackCauseAbsentDay.Short.Single.PositionerRight{ :type => "number" }
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderRespiratoryAttackCauseHospital.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryAttackCause", :value => "Hospital" }
+						%input#RadioButtonPolicyHolderRespiratoryDetailAttackCauseHospital.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailAttackCause", :value => "Hospital" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryAttackCauseHospital" } Dirawat di Rumah Sakit
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailAttackCauseHospital" } Dirawat di Rumah Sakit
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailAttackCauseHospitalDay" } Tanggal perawatan:
 					%table#DatePolicyHolderRespiratoryDetailAttackCauseHospitalYear.BoxSquare.PositionerLeft
@@ -153,8 +153,8 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderRespiratoryDetailAttackCauseHospitalDay.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "NumberPolicyHolderRespiratoryDetailAttackCauseHospitalDuration"} Lama perawatan:
-					%input#NumberPolicyHolderRespiratoryDetailAttackCauseHospitalDuration.Long.Single.PositionerLeft{ :type => "number" }
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalDuration"} Lama perawatan:
+					%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalDuration.Long.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderRespiratoryNumberOfAttackCauseHospitalDuration"} (hari/minggu/bulan*) *coret yang tidak perlu
 					%br
 					%div.ContainerFit.NumberIndent
