@@ -590,7 +590,7 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		}
 		else if (stringKeyPrefix == stringPrefixArea)
 		{
-			alert("set area = " + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix + " --> " + stringValue)
+			// alert("set area = " + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix + " --> " + stringValue)
 			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
@@ -627,7 +627,7 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		$(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail").val(stringAmandmentDetail);
 	}
 	
-	alert(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail" + " --> " + stringAmandmentDetail);
+	// alert(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail" + " --> " + stringAmandmentDetail);
 }
 
 function getInfixSection(stringContent)
