@@ -103,7 +103,7 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	var booleanState = false;
 	
-	if (arrayValidation.length == 0 || arrayValidation == null)
+	if (arrayValidation == null)
 	{
 		booleanState = true;
 	}
@@ -138,6 +138,8 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 		// previewArrayObject(arrayContent);
 		setRadioButtonGeneral(stringRadioButtonName, "true");
 		arrayAdd(arrayContent, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
+		
+		$(stringPopUpCurrentJQueryID + " textarea").val("");
 	}
 	else
 	{

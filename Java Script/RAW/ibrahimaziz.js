@@ -1658,7 +1658,7 @@ function tableSPAJProposalGenerator(stringTriggerKey, stringContainerJavaScriptI
 				$(stringContainerJQueryID).append
 				(
 					"<div style='display: block; margin-bottom: -15px;'>" + 
-					"<input type='button' id='" + stringPrefixText + stringTriggerKey + "' class='ButtonView PositionerLeft' value='View " + arrayContent[i].Value + "' name='" + stringKeyID + "' onclick='buttonViewSPAJProposal(this.id, this.name)'/>" + 
+					"<input type='button' id='" + stringPrefixText + stringTriggerKey + "' class='ButtonView PositionerLeft' style='min-width: 200px; text-align: left;' value='View " + arrayContent[i].Value + "' name='" + stringKeyID + "' onclick='buttonViewSPAJProposal(this.id, this.name)'/>" + 
 					"<input type='button' id='" + stringPrefixText + stringTriggerKey + "' class='ButtonDelete PositionerLeft' value='Delete' name='" + stringKeyID + "' onclick='buttonDeleteSPAJProposal(this.id, this.name)'/><br/>" + 
 					"</div><br>"
 				);

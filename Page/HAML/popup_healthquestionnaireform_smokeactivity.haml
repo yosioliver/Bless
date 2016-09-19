@@ -1,0 +1,18 @@
+%form#FormPopUpSmokeActivity.PopUp
+
+	/ HEADER
+
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpSmokeActivity')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpSmokeActivity', stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, null)" }
+		%h2 Pertanyaan Kesehatan
+
+	/ FIELDSET
+
+	%fieldset
+		%div.ContainerFit
+			%label.Wrap{ :for => "NumberAmount" } Apakah Anda merokok dalam 12 (dua belas) bulan terakhir (termasuk rokok elektronik atau produk tembakau lainnya)?
+		%br
+		%hr
+		%label#LabelNote.Wrap{ :for => "NumberAmount" } silahkan memberikan rincian lebih lanjut
+		%input#NumberAmount.Short.Single{ :type => "number" }

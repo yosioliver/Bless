@@ -121,12 +121,12 @@
 							%label#LabelPolicyHolderSmokeActivity.Item{ :for => "RadioButtonPolicyHolderSmokeActivityYes" }
 								Apakah Anda merokok dalam 12 (dua belas) bulan terakhir (termasuk rokok elektronik atau produk tembakau lainnya)?
 							%div.RadioButton.Item
-								%input#RadioButtonPolicyHolderSmokeActivityYes{ :type => "radio", :name => "RadioButtonPolicyHolderSmokeActivity", :value => "true", "data-popup-type" => "general", :required => "true" }
+								%input#RadioButtonPolicyHolderSmokeActivityYes{ :type => "radio", :name => "RadioButtonPolicyHolderSmokeActivity", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpSmokeActivity', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['SmokeActivity'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderSmokeActivityYes" } Ya
 								%div.Separator
-								%input#RadioButtonPolicyHolderSmokeActivityNo{ :type => "radio", :name => "RadioButtonPolicyHolderSmokeActivity", :value => "false", "data-popup-type" => "general", :required => "true" }
+								%input#RadioButtonPolicyHolderSmokeActivityNo{ :type => "radio", :name => "RadioButtonPolicyHolderSmokeActivity", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpSmokeActivity', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['SmokeActivity'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderSmokeActivityNo" } Tidak
-						%input#ButtonPreviewPolicyHolderSmokeActivity.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderSmokeActivity", "data-popup-type" => "general" }
+						%input#ButtonPreviewPolicyHolderSmokeActivity.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpSmokeActivity', stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire)" }
 					%hr
 					%li
 						%div.Container
@@ -453,6 +453,8 @@
 					%hr
 			%section#PopUpGeneral.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_general.haml")).render
+			%section#PopUpSmokeActivity.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_smokeactivity.haml")).render
 			%section#PopUpActivity.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_activity.haml")).render
 			%section#PopUpMilitary.PopUp
