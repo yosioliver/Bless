@@ -10,14 +10,14 @@
 	/ MAIN
 
 	%fieldset
+		%label.Single.Item 1. Apakah Anda terbang sebagai pilot atau navigator?
 		%div.ContainerFit
-			%label.medium.Single.Item 1. Apakah Anda terbang sebagai pilot atau navigator?
-		%input#TextJob.Full.Single.Item1.Margin{ :type =>"text" }
+			%input#TextJob.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 2.Apakah Anda terbang sebagai penumpang?
-		%div.RadioButton.Medium.PositionerRight
+		%label.Single.Item 2.Apakah Anda terbang sebagai penumpang?
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonPassengerYes{ :type => "radio", :name => "RadioButtonPassenger", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonPassengerYes" } Ya
 			%div.Separator
@@ -26,8 +26,8 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 3.Apakah Anda memiliki pesawat sendiri?
-		%div.RadioButton.Medium.PositionerRight
+		%label.Single.Item 3.Apakah Anda memiliki pesawat sendiri?
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonHavePlaneYes{ :type => "radio", :name => "RadioButtonHavePlane", :value => "ya" }
 			%label.RadioButton{ :for => "RadioButtonHavePlaneYes" } Ya
 			%div.Separator
@@ -36,13 +36,13 @@
 		%br
 		%hr
 
+		%label.medium.Single.Item 4. Sebutkan jenis pesawat apakah yang Anda terbangkan?
 		%div.ContainerFit
-		%label.medium.Single.Item 4. Sebutkan jenis pesawat apakah yang Anda terbangkan? 
-		%input#TextPlaneType.Full.Single.Item1.Margin{ :type =>"text" }
+			%input#TextPlaneType.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.medium.Single.Item  5. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
+		%label.Single.Item  5. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
 		%div.ContainerFit
 			%label.Short.Single.Item1.Center Lisensi/ Sertifikat	  
 			%label.Short.Single.Item1.Center Tanggal Perolehan
@@ -71,22 +71,21 @@
 		%br
 		%hr
 
-		%div.ContainerFit
-		%label.medium.Single.Item 6. Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
-		%div.RadioButton.Medium.PositionerRight
+		%label.Single.Item 6. Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonScopeYes{ :type => "radio", :name => "RadioButtonScope", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonScopeYes" } Ya
 			%div.Separator
 			%input#RadioButtonScopeNo{ :type => "radio", :name => "RadioButtonScope", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonScopeNo" } Tidak
 		%br
-		%label.medium.Single.Item Jika ya, mohon jelaskan secara rinci :	
+		%label.Single.Item Jika ya, mohon jelaskan secara rinci :
+		%div.ContainerFit
 		%input#TextScopeDesc.Full.Single.Item1.Margin{ :type =>"text"}
 		%br
 		%hr
 
-		%div.ContainerFit
-		%label.medium.Single.Item 7.Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
+		%label.Single.Item 7.Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonClubYes{ :type => "radio", :name => "RadioButtonClub", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonClubYes" } Ya
@@ -94,12 +93,11 @@
 			%input#RadioButtonClubNo{ :type => "radio", :name => "RadioButtonClub", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonClubNo" } Tidak
 		%br
-		%label.medium.Single.Item Jika ya, mohon jelaskan secara rinci :	
+		%label.Single.Item Jika ya, mohon jelaskan secara rinci :	
 		%input#TextIsClubDesc.Full.Single.Item1.Margin{ :type =>"text"}
 		%br
-
 		%hr
-		%label.medium.Single.Item  8. Berapa sering dan jumlah jam terbang Anda:
+		%label.Single.Item  8. Berapa sering dan jumlah jam terbang Anda:
 		%br
 		%div.ContainerFit
 			%label#LabelPolicyHolderNarkotika.LongFix.Single.Item3.Margin
@@ -200,13 +198,13 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 9. Darimana Anda terbang?
+		%label.Single.Item 9. Darimana Anda terbang?
 		%input#TextFrom.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 10. Apakah Anda terbang dari bandara control?
-		%div.RadioButton.Medium.PositionerRight
+		%label.Single.Item 10. Apakah Anda terbang dari bandara control?
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonAirportControlYes{ :type => "radio", :name => "RadioButtonAirportControl", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAirportControlYes" } Ya
 			%div.Separator
@@ -217,8 +215,8 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 11. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
-		%div.RadioButton.Medium.PositionerRight
+		%label.Single.Item 11. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonAccidentYes{ :type => "radio", :name => "RadioButtonAccident", :value => "ya" }
 			%label.RadioButton{ :for => "RadioButtonAccidentYes" } Ya
 			%div.Separator
@@ -229,8 +227,8 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 12. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
-		%div.RadioButton.Medium.PositionerRight
+		%label.Single.Item 12. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonNoFlyYes{ :type => "radio", :name => "RadioButtonNoFly", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonNoFlyYes" } Ya
 			%div.Separator
