@@ -47,19 +47,15 @@
 		/ HEADER
 
 		%header
-			%img{ :src => "../../jqueryLibrary/Resource/Logo/logo_bcalife.svg" }
-			%span.Header PT Asuransi Jiwa BCA
-			%span.Detail
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1
 			%br
 
-			%h1 KUESIONER INDUSTRI PERTAMBANGAN, PERMINYAKAN, DAN GAS
-			%br
-			
-			%div.Note				
-				%ol
-					%li *) <i> Harus diisi oleh Calon Tertanggung. </i>
-					%li **) <i> Bila kolom penjelasan tidak cukup, mohon memberikan penjelasan pada kertas lain. </i>
-					%li ***) <i> Coret yang tidak perlu. </i>
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
+		
 		/ MAIN
 
 		%main
@@ -86,6 +82,8 @@
 					%br					
 				
 				/ FIELDSET
+				
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				
 				%fieldset
 					%div.ContainerFit
