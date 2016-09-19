@@ -84,7 +84,7 @@ function showPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue,
 		$(stringButtonPreviewJQueryID).css("display", "none");
 	}
 	
-	// previewArrayObject(arrayContent);
+	previewArrayObject(arrayContent);
 }
 
 function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -135,11 +135,10 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 		getInputFrom(stringPopUpCurrentJavaScriptID, arrayContent, stringParentNameWithoutPrefix);
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		$(stringButtonPreviewJQueryID).css("display", "block");
-		// previewArrayObject(arrayContent);
 		setRadioButtonGeneral(stringRadioButtonName, "true");
 		arrayAdd(arrayContent, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
 		
-		$(stringPopUpCurrentJQueryID + " textarea").val("");
+		resetInputFrom(stringPopUpCurrentJavaScriptID);
 	}
 	else
 	{
@@ -152,6 +151,7 @@ function buttonPopUpCancel(stringPopUpCurrentJavaScriptID)
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
 	
 	$(stringPopUpCurrentJQueryID).css("display", "none");
+	resetInputFrom(stringPopUpCurrentJavaScriptID);
 }
 
 function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -164,7 +164,7 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 	{
 		$(stringPopUpCurrentJQueryID).css("display", "none");
 		$(stringPopUpParentJQueryID).css("display", "block");
-		// previewArrayObject(arrayContent);
+		resetInputFrom(stringPopUpCurrentJavaScriptID);
 	}
 	else
 	{
@@ -179,6 +179,7 @@ function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJ
 	
 	$(stringPopUpCurrentJQueryID).css("display", "none");
 	$(stringPopUpParentJQueryID).css("display", "block");
+	resetInputFrom(stringPopUpCurrentJavaScriptID);
 }
 
 function buttonPreviewForMultiPopUp(stringParentNameWithoutPrefix, arrayContent, arrayValidation)
@@ -223,6 +224,51 @@ function buttonPreviewForMultiPopUp(stringParentNameWithoutPrefix, arrayContent,
 
 
 // FOR POP UP
+
+function resetInputFrom(stringLayoutJavaScriptID)
+{
+	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
+	
+	$(stringLayoutJQueryID + " input[type='text']").each(function()
+	{
+		$(this).val("");
+	});
+	
+	$(stringLayoutJQueryID + " input[type='date']").each(function()
+	{
+		$(this).val("");
+	});
+	
+	$(stringLayoutJQueryID + " input[type='number']").each(function()
+	{
+		$(this).val("");
+	});
+	
+	$(stringLayoutJQueryID + " input[type='email']").each(function()
+	{
+		$(this).val("");
+	});
+	
+	$(stringLayoutJQueryID + " input[type='radio']").each(function()
+	{
+		setRadioButtonGeneral($(this).attr("name"), null);
+	});
+	
+	$(stringLayoutJQueryID + " input[type='checkbox']").each(function()
+	{
+		setCheckboxGeneral($(this).attr("id"), stringStateNotChecked);
+	});
+	
+	$(stringLayoutJQueryID + " select").each(function()
+	{
+		$(this).val("");
+	});
+	
+	$(stringLayoutJQueryID + " textarea").each(function()
+	{
+		$(this).val("");
+	});
+}
 
 function getInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 {
