@@ -60,27 +60,8 @@
 
 		%main
 			%form
-				%h2 Data Calon Tertanggung
-				
-				/ FIELDSET
-				
-				%fieldset
-					%label.Medium.Single.PositionerLeft{ :for => "TextActivityOilGasFullName" } Nama Tertanggung:
-					%table#TextActivityOilGasFullName.BoxSquare.PositionerLeft					
-					%br
-
-					%label.Medium.Single.PositionerLeft{ :for => "DateActivityOilGasBirthdayDay" } Tanggal lahir Tertanggung
-					%table#DateActivityOilGasBirthdayDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DateActivityOilGasBirthdayMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DateActivityOilGasBirthdayYear.BoxSquare.PositionerLeft
-					%br
-					
-					%label.Medium.Single.PositionerLeft{ :for => "TextActivityOilGasSPAJNumber" } Nomor SPAJ/Polis
-					%table#TextActivityOilGasSPAJNumber.BoxSquare.PositionerLeft					
-					%br					
-				
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render				
 				/ FIELDSET
 				
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG

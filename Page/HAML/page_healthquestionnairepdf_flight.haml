@@ -31,6 +31,9 @@
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Penerbangan");
 			});
 
 
@@ -54,27 +57,8 @@
 
 		%main
 			%form
-				%h2 Data Calon Tertanggung
-				
-				/ FIELDSET
-				
-				%fieldset
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFlightFullName" } Nama Lengkap (sesuai dengan KTP)
-					%table#TextPolicyHolderFlightFullName.BoxSquare.PositionerLeft					
-					%br
-
-					%label.Wrap.Medium.PositionerLeft{ :for => "DatePolicyHolderFlightBirthdayDay" } Tanggal lahir
-					%table#DatePolicyHolderFlightBirthdayDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderFlightBirthdayMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderFlightBirthdayYear.BoxSquare.PositionerLeft
-					%br
-					
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFlightSPAJNumber" } Nomor SPAJ/Polis
-					%table#TextPolicyHolderFlightSPAJNumber.BoxSquare.PositionerLeft					
-					%br					
-				
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render					
 				/ FIELDSET
 				
 				%fieldset
