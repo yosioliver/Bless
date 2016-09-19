@@ -185,7 +185,7 @@ function buttonPreviewForMultiPopUp(stringParentNameWithoutPrefix, arrayContent,
 {
 	var booleanState = false;
 	
-	if (arrayValidation.length == 0 || arrayValidation == null)
+	if (arrayValidation == null)
 	{
 		booleanState = true;
 	}
