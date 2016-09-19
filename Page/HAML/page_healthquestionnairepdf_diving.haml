@@ -59,7 +59,6 @@
 				/ FIELDSET
 				
 				%fieldset
-
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Tertanggung
 					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft					
 					%br
@@ -78,6 +77,8 @@
 				
 				/ FIELDSET
 				
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
+				
 				%fieldset
 					%span.Number.Single.PositionerLeft 1. 						
 					%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Andai ikuti saat ini?
@@ -87,7 +88,7 @@
 						%input#RadioButtonPolicyHolderDivingCriteriaSkinDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skindiving" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkinDiving" } Skin Diving
-						%br											
+						%br
 						%input#RadioButtonPolicyHolderDivingCriteriaSCUBADiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "SCUBAdiving" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSCUBADiving" } SCUBA Diving
@@ -251,8 +252,8 @@
 					%br
 					%hr
 					
-					%span.Number.Single.PositionerLeft 6. 						
-					%label.Full.Single.PositionerLeft Mohon memberikan informasi tambahan yang menurut Anda penting{ :for => "TextPolicyHolderDivingAdditionalInformation" }
+					%span.Number.Single.PositionerLeft{ :for => "TextPolicyHolderDivingAdditionalInformation" } 6. 						
+					%label.Full.Single.PositionerLeft Mohon memberikan informasi tambahan yang menurut Anda penting
 					%br
 					%div.ContainerFit.NumberIndent					
 						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
