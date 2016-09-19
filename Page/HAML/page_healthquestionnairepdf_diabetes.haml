@@ -86,8 +86,8 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesFrequencyControl" } a. Berapa kali frekuensi kontrol ke dokter?					
-					%input#NumberPolicyHolderDiabetesFrequencyControl.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyAmount" } a. Berapa kali frekuensi kontrol ke dokter?				
+					%input#NumberPolicyHolderDiabetesControlFrequencyAmount.Short.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyWeek" } kali per
 					%input#NumberPolicyHolderDiabetesControlFrequencyWeek.Short.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyWeek" } minggu
@@ -191,25 +191,44 @@
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } c. Mohon melengkapi kolom di bawah ini dengan hasil 3 (tiga) pemeriksaan terakhir?
 					%br
-					%table#TextPolicyHolderDiabetesResult.Square.NumberIndent.PositionerLeft
-						%thead
-							%tr
-								%th Jenis Pemeriksaan
-								%th I
-								%th II
-								%th III								
-						%tbody
-							%tr
-								%th Kadar gula darah
-								%td
-								%td					
-								%td					
+					
+					-#
+						%table#TextPolicyHolderDiabetesResult.Square.NumberIndent.PositionerLeft
+							%thead
+								%tr
+									%th Jenis Pemeriksaan
+									%th I
+									%th II
+									%th III								
+							%tbody
+								%tr
+									%th Kadar gula darah
+									%td
+									%td					
+									%td					
 
-							%tr
-								%th Tanggal pemeriksaan terakhir
-								%td
-								%td					
-								%td					
+								%tr
+									%th Tanggal pemeriksaan terakhir
+									%td
+									%td					
+									%td					
+						%br
+						
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Jenis Pemeriksaan  
+						%label.Short.Single.Item1.Center I
+						%label.Short.Single.Item1.Center II
+						%label.Short.Single.Item1.Center III						
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderHypertensionMedicationName1.Short.Single.Item1.Margin{ :type => "text", :value => "Kadar gula darah", :disabled => "true" }	
+						%input#NumberPolicyHolderResultGlucoseLevelI.Short.Single.Item1.Margin{ :type => "number" }
+						%input#NumberPolicyHolderResultGlucoseLevelII.Short.Single.Item1.Margin{ :type => "number" }
+						%input#NumberPolicyHolderResultGlucoseLevelIII.Short.Single.Item1.Margin{ :type => "number" }
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderHypertensionMedicationName1.Short.Single.Item1.Margin{ :type => "text", :value => "Tanggal pemeriksaan terakhir", :disabled => "true" } 						
+						%input#DatePolicyHolderDiabetesResultLastCheckI.Short.Single.Item1.Margin{ :type => "text" }
+						%input#DatePolicyHolderDiabetesResultLastCheckII.Short.Single.Item1.Margin{ :type => "text" }
+						%input#DatePolicyHolderDiabetesResultLastCheckIII.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminNo" } d.	Apakah pernah didapatkan adanya protein/albumin dalam test urine?
