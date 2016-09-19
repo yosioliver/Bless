@@ -61,26 +61,8 @@
 
 		%main
 			%form
-				%h2 Data Calon Tertanggung
-				
-				/ FIELDSET
-				
-				%fieldset
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (sesuai KTP)
-					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft					
-					%br
-					
-					%label.Wrap.Medium.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderBirthdayDay" } Tanggal lahir
-					%table#DatePolicyHolderBirthdayDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBirthdayYear.BoxSquare.PositionerLeft
-					%br
-					
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ/Polis
-					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft					
-					%br					
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
 				
 				/ FIELDSET
 				
