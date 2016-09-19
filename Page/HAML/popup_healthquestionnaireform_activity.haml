@@ -4,7 +4,7 @@
 
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpActivity')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpActivity', stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, null)" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpActivity', stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, ['Area' + stringPageInfixTypeCurrent + 'Activity' + 'AmandmentDetail'])" }
 		%h2 Pertanyaan Kesehatan
 
 	/ FIELDSET
@@ -37,5 +37,5 @@
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br
-		%textarea#AreaAmandmentDetail.Full.Multi
+		%textarea#AreaAmandmentDetail.Full.Multi{ :required => "true" }
 		%label.Medium.Single (maksimum 250 karakter)

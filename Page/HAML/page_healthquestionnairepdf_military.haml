@@ -13,16 +13,19 @@
 		:javascript
 
 			// DOCUMENT READY
+			
 			$(document).ready(function()
 			{
-				// SECTION GENERAL				
+				// SECTION GENERAL
+				
 				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
 				boxGenerator("#DatePolicyHolderBirthdayDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthdayMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthdayYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
-				// SECTION MANDATORY					
+				// SECTION MANDATORY
+				
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
@@ -30,6 +33,11 @@
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				
+				// SETUP
+				
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Angkatan Bersenjata");
 			});
 
 
