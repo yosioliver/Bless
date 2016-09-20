@@ -58,8 +58,8 @@
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
 				
-				// var objectContent = JSON.parse(jsonDummy);
-				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				var objectContent = JSON.parse(jsonDummy);
+				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 
@@ -135,9 +135,9 @@
 					%label.Separator.Single.PositionerLeft{ :for => "DatePolicyHolderChestPainLastAttackDurationHour" } Jam
 					%br
 					
-					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainCurrentAttackTimes" } Hingga saat ini serangan sudah terjadi sebanyak:
-					%input#TextPolicyHolderChestPainCurrentAttackTimes.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderChestPainCurrentAttackTimes" } Kali
+					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "NumberPolicyHolderChestPainCurrentAttackTimes" } Hingga saat ini serangan sudah terjadi sebanyak:
+					%input#NumberPolicyHolderChestPainCurrentAttackTimes.Short.Single.PositionerLeft{ :type => "number" }
+					%label.Separator.Single.PositionerLeft{ :for => "NumberPolicyHolderChestPainCurrentAttackTimes" } Kali
 					%br					
 										
 					%span.Number.Single.PositionerLeft 4.
