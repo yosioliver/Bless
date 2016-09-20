@@ -2021,22 +2021,22 @@ function setAreaPDF(stringID, stringValue)
 
 function setNumberForm(stringID, stringValue)
 {
-    return setTextGeneral(stringID, stringValue);
+    setTextGeneral(stringID, stringValue);
 }
 
 function setNumberPDF(stringID, stringValue)
 {
-    return setTextGeneral(stringID, stringValue);
+    setTextPDF(stringID, stringValue);
 }
 
 function setEmailForm(stringID, stringValue)
 {
-    return setTextGeneral(stringID), stringValue;
+    setTextGeneral(stringID), stringValue;
 }
 
 function getEmailPDF(stringID, stringValue)
 {
-    return setBoxGeneral(stringID, stringValue);
+    setBoxGeneral(stringID, stringValue);
 }
 
 
@@ -2671,6 +2671,17 @@ function getFromDatabase(objectContent, stringPageType)
                 setAreaForm(stringKey, stringValue);
             }
         }
+		else if (stringKey.substring(0, stringNumberPrefix.length) == stringNumberPrefix)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setNumberPDF(stringKey, stringValue);
+            }
+            else
+            {
+                setNumberForm(stringKey, stringValue);
+            }
+        }
         else
         {
             
@@ -2725,7 +2736,7 @@ function getFromDatabase(objectContent, stringPageType)
 			arrayHealthQuestionnaire = objectContent;
 			
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, ['Area' + stringPageInfixTypeCurrent + 'Activity' + 'AmandmentDetail']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, ['Area' + stringPageInfixTypeCurrent + 'SmokeActivity' + 'SAmandmentDetail']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, ['Number' + stringPageInfixTypeCurrent + 'SmokeActivity' + 'Amount']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'DigestDetail' + 'Problem']);
