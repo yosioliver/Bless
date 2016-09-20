@@ -636,7 +636,6 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		}
 		else if (stringKeyPrefix == stringPrefixArea)
 		{
-			// alert("set area = " + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix + " --> " + stringValue)
 			setAreaForm(stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + stringKeyWithoutInfix, stringValue);
 		}
 		else if (stringKeyPrefix == stringPrefixNumber)
@@ -659,6 +658,7 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		stringSectionInfix = getInfixSection(stringKeyWithoutPrefix);
 	}
 	
+	
 	// QUICK FIX FOR MULTI POP UP.
 	
 	var stringAmandmentDetailKey = stringPrefixArea + stringSectionInfix + stringPopUpSuffix + "AmandmentDetail";
@@ -666,14 +666,12 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 	
 	if (stringAmandmentDetail == null)
 	{
-		
+		$(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail").val("");
 	}
 	else
 	{
 		$(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail").val(stringAmandmentDetail);
 	}
-	
-	// alert(stringKres + stringLayoutJavaScriptID + " " + stringKres + stringPrefixArea + "AmandmentDetail" + " --> " + stringAmandmentDetail);
 }
 
 function getInfixSection(stringContent)

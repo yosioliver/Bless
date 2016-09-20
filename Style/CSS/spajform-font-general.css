@@ -213,20 +213,20 @@ main hr {
 }
 
 /* TABLE */
-table.Square {
+table.Square, table.Space {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-table.Square tbody tr td table.BoxSquare, table.Square tbody tr td table.BoxRound {
+table.Square tbody tr td table.BoxSquare, table.Square tbody tr td table.BoxRound, table.Space tbody tr td table.BoxSquare, table.Space tbody tr td table.BoxRound {
   margin-bottom: 5px;
 }
 
-table.Square tbody tr td table.BoxSquare tbody tr td, table.Square tbody tr td table.BoxRound tbody tr td {
+table.Square tbody tr td table.BoxSquare tbody tr td, table.Square tbody tr td table.BoxRound tbody tr td, table.Space tbody tr td table.BoxSquare tbody tr td, table.Space tbody tr td table.BoxRound tbody tr td {
   padding: 0px !important;
 }
 
-table.Square tbody tr td.Child {
+table.Square tbody tr td.Child, table.Space tbody tr td.Child {
   padding: 15px;
 }
 
@@ -239,7 +239,7 @@ table.Square {
 table.Square thead tr th {
   width: 86px;
   padding: 5px;
-  font-size: 0.8em;
+  font-size: 0.75em;
   border-style: solid;
   border-width: 1px;
 }
@@ -250,7 +250,7 @@ table.Square thead tr th:first-child {
 
 table.Square tbody tr td {
   padding: 5px;
-  font-size: 0.75em;
+  font-size: 0.7em;
   text-align: center;
   vertical-align: top;
   border-top-style: none;
@@ -274,6 +274,37 @@ table.Square tbody tr td span, table.Square tbody tr td label {
 }
 
 table.Square tbody tr td:first-child {
+  text-align: left;
+  white-space: normal;
+}
+
+table.Space {
+  width: 100%;
+  width-border-style: none;
+}
+
+table.Space thead tr th {
+  width: auto;
+  padding: 5px;
+  font-sze: 0.75em;
+  border-style: solid;
+  border-width: 1px;
+}
+
+table.Space thead tr th:first-child {
+  width: auto !important;
+}
+
+table.Space tbody tr td {
+  padding: 5px;
+  font-size: 0.7em;
+  text-align: center;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 1px;
+}
+
+table.Space tbody tr td:first-child {
   text-align: left;
   white-space: normal;
 }
