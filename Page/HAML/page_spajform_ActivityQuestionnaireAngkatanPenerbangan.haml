@@ -27,10 +27,10 @@
 	
 		%label.Single.PoitionerLeft 3.Apakah Anda memiliki pesawat sendiri?
 		%div.RadioButton.PositionerRight
-			%input#RadioButtonHavePlaneYes{ :type => "radio", :name => "RadioButtonHavePlane", :value => "ya" }
+			%input#RadioButtonHavePlaneYes{ :type => "radio", :name => "RadioButtonHavePlane", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonHavePlaneYes" } Ya
 			%div.Separator
-			%input#RadioButtonHavePlaneNo{ :type => "radio", :name => "RadioButtonHavePlane", :value => "tidak" }
+			%input#RadioButtonHavePlaneNo{ :type => "radio", :name => "RadioButtonHavePlane", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonHavePlaneNo" } Tidak
 		%br
 		%hr
@@ -214,7 +214,7 @@
 			%input#RadioButtonAirportControlNo{ :type => "radio", :name => "RadioButtonAirportControl", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonAirportControlNo" } Tidak
 		%br
-		%input#TextPilotTowerControlDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextAirportControlDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 

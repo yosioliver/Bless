@@ -66,7 +66,7 @@
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightJob" } Apakah Anda terbang sebagai pilot atau navigator?
 					%br		
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightJob.Full.Single.Item
+						%input#TextPolicyHolderFlightJob.Full.Single.Item{ :type => "text" }
 					%br
 					
 					%span.Number.Single.PositionerLeft 2.
@@ -85,12 +85,11 @@
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlane" } Apakah Anda memiliki pesawat sendiri?
 					%br
 					%div.RadioButton.NumberIndent
-
 						%input#RadioButtonPolicyHolderFlightHavePlaneYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightHavePlane", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneYes" } Ya
 
-						%input#RadioButtonPolicyHolderFlightHavePlaneNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightHavePlane", :value => "falsek" }
+						%input#RadioButtonPolicyHolderFlightHavePlaneNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightHavePlane", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneNo" } Tidak
 					%br	
@@ -100,7 +99,7 @@
 					%br
 
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightPlaneType.Full.Single.Item.PositionerLeft
+						%input#TextPolicyHolderFlightPlaneType.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 5.
@@ -154,7 +153,7 @@
 					%br
 					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightScopeDesc" } Jika ya, mohon jelaskan secara rinci :
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightScopeDesc.Full.Single.Item.PositionerLeft
+						%input#TextPolicyHolderFlightScopeDesc.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 7.
@@ -169,7 +168,7 @@
 					%br
 					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightIsClubDesc" } Jika ya, mohon jelaskan secara rinci :
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightIsClubDesc.Full.Single.Item.PositionerLeft
+						%input#TextPolicyHolderFlightIsClubDesc.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 8.
@@ -262,7 +261,7 @@
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightFrom" } Darimana Anda Terbang?
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightFrom.Full.Single.Item.PositionerLeft
+						%input#TextPolicyHolderFlightFrom.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 10.
@@ -276,8 +275,8 @@
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAirportControlNo" } Tidak
 					%br
 					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightPilotAirportControlDesc" } Jika ya, mohon jelaskan secara rinci:
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightAirportControlDesc.Full.Single.Item.PositionerLeft
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderFlightAirportControlDesc.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
 						
 					%span.Number.Single.PositionerLeft 11.
@@ -292,7 +291,7 @@
 					%br
 					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightAccidentDesc" } Jika ya, mohon jelaskan secara rinci :
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightAccidentDesc.Full.Single.Item
+						%input#TextPolicyHolderFlightAccidentDesc.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 12.
@@ -307,14 +306,14 @@
 					%br
 					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightNoFlyDesc" } Jika ya, mohon jelaskan secara rinci :
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightNoFlyDesc.Full.Single.Item
+						%input#TextPolicyHolderFlightNoFlyDesc.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 13.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightOtherInfo" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
 					%br	
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderFlightOtherInfo.Full.Single.Item
+						%input#TextPolicyHolderFlightOtherInfo.Full.Single.Item{ :type => "text" }
 					%br
 					
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
