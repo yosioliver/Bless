@@ -2100,7 +2100,26 @@ function setNumberForm(stringID, stringValue)
 
 function setNumberPDF(stringID, stringValue)
 {
-    setTextPDF(stringID, stringValue);
+	if ($(stringJQueryID).is("div") == true)
+	{
+		setLineGeneral(stringID, stringValue);
+	}
+	else if ($(stringJQueryID).is("td") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+	else if ($(stringJQueryID).is("input[type='text']") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+	else if ($(stringJQueryID).is("input[type='number']") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+	else
+	{
+		setBoxGeneral(stringID, stringValue);
+	}
 }
 
 function setEmailForm(stringID, stringValue)
