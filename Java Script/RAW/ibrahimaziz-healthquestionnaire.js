@@ -658,6 +658,7 @@ function setInputFrom(stringLayoutJavaScriptID, arrayContent, stringInputInfix)
 		stringSectionInfix = getInfixSection(stringKeyWithoutPrefix);
 	}
 	
+	
 	// QUICK FIX FOR MULTI POP UP.
 	
 	var stringAmandmentDetailKey = stringPrefixArea + stringSectionInfix + stringPopUpSuffix + "AmandmentDetail";
