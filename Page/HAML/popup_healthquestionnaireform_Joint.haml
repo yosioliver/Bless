@@ -18,18 +18,18 @@
 		%label.medium.Single.Item 1. Apakah Anda pernah menderita artritis / rematik / kelainan sendi lainnya?
 		%br
 		%div.RadioButton.Medium.Item
-			%input#RadioButtonPolicyMenderitaSendiYes{ :type => "radio", :name => "RadioButtonPolicyMenderitaSendiChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyMenderitaSendiYes" } Ya
+			%input#RadioButtonArtritisYes{ :type => "radio", :name => "RadioButtonPolicyAtritis", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonAtritisYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyMenderitaSendiNo{ :type => "radio", :name => "RadioButtonPolicyMenderitaSendiChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyMenderitaSendiNo" } Tidak
-		%input#TextPolicyHolderMenderitaSendi.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
+			%input#RadioButtonAtritisNo{ :type => "radio", :name => "RadioButtonAtritis", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonAtritisNo" } Tidak
+		%input#TextPolicyAtritis.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
 		%br
 		%hr
 
-		%label.medium.Single.Item 2. Jika Ya, kapan pertama kali keluhan tersebut timbul?
+		%label.Single.Item 2. Jika Ya, kapan pertama kali keluhan tersebut timbul?
 		%br
-		%input#DateFirstArise.Full.Multi.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
+		%input#DateAtritisComplain.Full.Multi.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%hr
 
