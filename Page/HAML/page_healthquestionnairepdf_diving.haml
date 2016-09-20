@@ -93,19 +93,19 @@
 						%label.Short.Single.Item1.Center Tanggal Perolehan						
 					%div.ContainerFit.NumberIndent					
 						%input#TextPolicyHolderDivingCertificateLicense1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderCertificateDate1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDivingCertificateDate1.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent					
 						%input#TextPolicyHolderDivingCertificateLicense2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderCertificateDate2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDivingCertificateDate2.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent					
 						%input#TextPolicyHolderDivingCertificateLicense3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderCertificateDate3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDivingCertificateDate3.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent					
 						%input#TextPolicyHolderDivingCertificateLicense4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderCertificateDate4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDivingCertificateDate4.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent					
 						%input#TextPolicyHolderDivingCertificateLicense5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderCertificateDate5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDivingCertificateDate5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%hr
 						
@@ -133,8 +133,8 @@
 						%label.Short.Single.Item1.Center 12 bulan yang akan datang												
 					%div.ContainerFit.NumberIndent
 						%input.Short.Single.Item1.Margin{ :type => "text", :value => "Lokasi", :disabled => "true" }	
-						%input#TextPolicyHolderDivingHistoryLocationLast12Months.Short.Single.Item1.Margin{ :type => "number" }
-						%input#TextPolicyHolderDivingHistoryLocationNext12Months.Short.Single.Item1.Margin{ :type => "number" }						
+						%input#TextPolicyHolderDivingHistoryLocationLast12Months.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDivingHistoryLocationNext12Months.Short.Single.Item1.Margin{ :type => "text" }						
 					%div.ContainerFit.NumberIndent
 						%input.Short.Single.Item1.Margin{ :type => "text", :value => "Kedalaman rata-rata", :disabled => "true" }						
 						%input#TextPolicyHolderDivingHistoryAvgDepthLast12Months.Short.Single.Item1.Margin{ :type => "text" }
@@ -166,29 +166,29 @@
 					%br
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft b. Penyelaman di gua
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInCaveNo" } Tidak
-						%input#RadioButtonPolicyHolderDivingParticipationInCaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInCave", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationCaveNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationCaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationCave", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInCaveYes" } Ya
-						%input#RadioButtonPolicyHolderDivingParticipationInCaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInCave", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationCaveYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationCaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationCave", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft c. Eksplorasi Internal kecelakaan
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInternalAccidentalNo" } Tidak
-						%input#RadioButtonPolicyHolderDivingParticipationInternalAccidentalNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInternalAccidental", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInternalAccidentNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationInternalAccidentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInternalAccident", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInternalAccidentalYes" } Ya
-						%input#RadioButtonPolicyHolderDivingParticipationInternalAccidentalYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInternalAccidental", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInternalAccidentYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationInternalAccidentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInternalAccident", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft d. Menyelam dan menyelamatkan orang di laut
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInSeaNo" } Tidak
-						%input#RadioButtonPolicyHolderDivingParticipationInSeaNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInSea", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSeaNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationSeaNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationSea", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationInSeaYes" } Ya
-						%input#RadioButtonPolicyHolderDivingParticipationInSeaYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationInSea", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSeaYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationSeaYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationSea", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.RadioButton.NumberIndent
@@ -202,20 +202,20 @@
 					%br
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft f. Penggunaan bahan peledak di laut
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationExplosiveInSeaNo" } Tidak
-						%input#RadioButtonPolicyHolderDivingParticipationExplosiveInSeaNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationExplosiveInSea", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationExplosiveNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationExplosiveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationExplosive", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationExplosiveInSeaYes" } Ya
-						%input#RadioButtonPolicyHolderDivingParticipationExplosiveInSeaYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationExplosiveInSea", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationExplosiveYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationExplosiveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationExplosive", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft g. Menyelam untuk mencari abalone
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSeekingAbaloneNo" } Tidak
-						%input#RadioButtonPolicyHolderDivingParticipationSeekingAbaloneNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationSeekingAbalone", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationAbaloneNo" } Tidak
+						%input#RadioButtonPolicyHolderDivingParticipationAbaloneNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationAbalone", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSeekingAbaloneYes" } Ya
-						%input#RadioButtonPolicyHolderDivingParticipationSeekingAbaloneYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationSeekingAbalone", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationAbaloneYes" } Ya
+						%input#RadioButtonPolicyHolderDivingParticipationAbaloneYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationAbalone", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.RadioButton.NumberIndent
