@@ -402,8 +402,7 @@
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderChestPainEverCheckDesc.Full.Single.PositionerLeft{ :type => "text" }
-					%br
-					
+					%br					
 					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					
 					%header
@@ -426,7 +425,8 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderChestPainTakeLeaveIfYesYear.BoxSquare.PositionerLeft
 					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTakeLeaveDesc" } Berapa lama					
-					%input#NumberPolicyHolderChestPainTakeLeaveHowLong.Short.Single.PositionerLeft{ :type => "number"}
+					%input#NumberPolicyHolderChestPainTakeLeaveHowLong.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Single.PositionerLeft Hari
 					%br
 					
 					%span.Number.Single.PositionerLeft 15
