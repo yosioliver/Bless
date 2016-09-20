@@ -15,14 +15,14 @@
 		%br
 		%hr
 
-		%label.Single.Item 2. Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?  
-		%input#TextDuty.Full.Single.Item1.Margin{ :type =>"text" }
+		%label.Single.PositionerLeft 2. Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?  
+		%input#TextDuty.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Single.Item 3. Apakah Anda melakukan kegiatan yang berisiko tinggi?
+		%label.Single.PositionerLeft 3. Apakah Anda melakukan kegiatan yang berisiko tinggi?
 		%br
-		%label.Single.Item a. Penjinak senjata 
+		%label.Single.PositionerLeft a. Penjinak senjata 
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityWeaponTamerYes{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityWeaponTamerYes" } Ya
@@ -30,7 +30,7 @@
 			%input#RadioButtonRiskActivityWeaponTamerNo{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityWeaponTamerNo" } Tidak
 		%br
-		%label.Single.Item b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan 
+		%label.Single.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan 
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityExplosiveTamerYes{ :type => "radio", :name => "RadioButtonRiskActivityExplosiveTamer", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityExplosiveTamerYes" } Ya
@@ -38,7 +38,7 @@
 			%input#RadioButtonRiskActivityExplosiveTamerNo{ :type => "radio", :name => "RadioButtonRiskActivityExplosiveTamer", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityExplosiveTamerNo" } Tidak
 		%br
-		%label.Single.Item c. Penyelam
+		%label.Single.PositionerLeft c. Penyelam
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityDiverYes{ :type => "radio", :name => "RadioButtonRiskActivityDiver", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityDiverYes" } Ya
@@ -46,7 +46,7 @@
 			%input#RadioButtonRiskActivityDiverNo{ :type => "radio", :name => "RadioButtonRiskActivityDiver", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityDiverNo" } Tidak
 		%br
-		%label.Single.Item d. Penerbangan
+		%label.Single.PositionerLeft d. Penerbangan
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityFlightYes{ :type => "radio", :name => "RadioButtonRiskActivityFlight", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityFlightYes" } Ya
@@ -54,7 +54,7 @@
 			%input#RadioButtonRiskActivityFlightNo{ :type => "radio", :name => "RadioButtonRiskActivityFlight", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityFlightNo" } Tidak
 		%br
-		%label.Single.Item e. Terjun payung
+		%label.Single.PositionerLeft e. Terjun payung
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityParachuteYes{ :type => "radio", :name => "RadioButtonRiskActivityParachute", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityParachuteYes" } Ya
@@ -62,7 +62,7 @@
 			%input#RadioButtonRiskActivityParachuteNo{ :type => "radio", :name => "RadioButtonRiskActivityParachute", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityParachuteNo" } Tidak
 		%br
-		%label.Single.Item f. Misi perdamaian ke luar negeri
+		%label.Single.PositionerLeft f. Misi perdamaian ke luar negeri
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityAbroadMissionYes{ :type => "radio", :name => "RadioButtonRiskActivityAbroadMission", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityAbroadMissionYes" } Ya
@@ -70,7 +70,7 @@
 			%input#RadioButtonRiskActivityAbroadMissionNo{ :type => "radio", :name => "RadioButtonRiskActivityAbroadMission", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityAbroadMissionNo" } Tidak
 		%br
-		%label.Single.Item g. Lainnya
+		%label.Single.PositionerLeft g. Lainnya
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityOthersYes{ :type => "radio", :name => "RadioButtonRiskActivityOthers", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersYes" } Ya
@@ -79,9 +79,9 @@
 			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersNo" } Tidak
 			%input#TextRiskActivityOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-			%label.Single.Item Jika jawaban ya, mohon memberikan perincian jelas:
+		%label.Single.PositionerLeft Jika jawaban ya, mohon memberikan perincian jelas:
 		%br
-		%input#TextRiskActivityOtherDescAdd.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextRiskActivityOtherDescAdd.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -103,11 +103,12 @@
 		%br
 		%hr
 
-		%label.medium.Single.PositionerLeft 6. Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:    
+		%label.Single.PositionerLeft 6. Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:    
 		%input#TextOtherInfo.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
 
+	%div.Note
 		%h2 PERNYATAAN DAN KUASA
 		%ol
 			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.

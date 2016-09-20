@@ -127,7 +127,7 @@ main
         border-top: none
         border-bottom: solid
         border-width: $general_borderwidth_thin
-
+	
 //label.Short:first-child, span.Short:first-child
 //	max-width: $label_width_short
 //label.Medium:first-child, span.Medium:first-child
@@ -140,7 +140,7 @@ main
 		
 /* TABLE */
 
-table.Square
+table.Square, table.Space
     margin-top: $general_space_tiny
     margin-bottom: $general_space_tiny
     tbody
@@ -193,6 +193,32 @@ table.Square
             td:first-child
                 text-align: left
                 white-space: normal
+			
+table.Space
+	width: 100%
+    border-style: none
+	thead
+		tr
+			th
+				width: auto
+				padding: $general_space_tiny
+				font-sze: $fontsize_table_header
+				border-style: solid
+				border-width: $general_borderwidth_thin
+			th:first-child
+				width: auto !important
+	tbody
+		tr
+			td
+				padding: $general_space_tiny
+				font-size: $fontsize_table_item
+				text-align: center
+				vertical-align: middle
+				border-style: solid
+				border-width: $general_borderwidth_thin
+			td:first-child
+				text-align: left
+				white-space: normal
 
 
 /* POP UP */

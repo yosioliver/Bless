@@ -92,6 +92,10 @@ var stringPageTypeHealthQuestionnairePDF = "HealthQuestionnairePDF";
 var stringAmandmentSuffix = "Amandment";
 var stringPageTypeAmandment = "Amandment";
 var stringStateNotChecked = "Not Checked";
+var stringStateNotSelected = "Not Selected";
+var stringNationality;
+var arrayRelationshipWithProspectiveInsured = [];
+var arrayNationality = [];
 
 
 // GENERATOR
@@ -870,6 +874,26 @@ function arrayFind(arrayObject, stringKey)
     return stringValue;
 }
 
+function arrayOptionFind(arrayObject, stringKey)
+{
+    var stringValue = null;
+    
+    for (var i = 0; i < arrayObject.length; i++)
+    {
+        if (arrayObject[i].value === stringKey) 
+        {
+            stringValue = arrayObject[i].text;
+            break;
+        }
+        else
+        {
+            
+        }
+    }
+    
+    return stringValue;
+}
+
 function arrayTransfer(arrayTemporary, arrayContent)
 {
 	for (var i = 0; i < arrayTemporary.length; i++)
@@ -1589,8 +1613,14 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 {
 	var stringTableJQueryID = stringKres + stringTableJavaScriptID;
 	var stringContentName;
-	var stringInputIDSuffix = "FullName";
-	var stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix;
+	var stringContentBirthday;
+	var stringContentRelation;
+	var stringNameIDSuffix = "FullName";
+	var stringBirthdayIDSuffix = "Birthday";
+	var stringRelationshipIDSuffix = "Relationship";
+	var stringKeyName = stringPrefixText + stringBeneficiariesListInfix + stringNameIDSuffix;
+	var stringKeyBirthday = stringPrefixDate + stringBeneficiariesListInfix + stringBirthdayIDSuffix;
+	var stringKeyRelationship = stringPrefixSelect + stringBeneficiariesListInfix + stringRelationshipIDSuffix;
 	var stringKeyID;
 	var stringFlag = 0;
 	
@@ -1598,9 +1628,14 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 	
 	for (var i = 0; i < arrayContent.length; i++)
 	{
-		stringKeyID = arrayContent[i].elementID.substring(stringKey.length, arrayContent[i].elementID.length);
-		stringKey = stringPrefixText + stringBeneficiariesListInfix + stringInputIDSuffix + stringKeyID;
-		stringContentName = arrayFind(arrayContent, stringKey);
+		stringKeyID = arrayContent[i].elementID.substring(stringKeyName.length, arrayContent[i].elementID.length);
+		stringKeyName = stringPrefixText + stringBeneficiariesListInfix + stringNameIDSuffix + stringKeyID;
+		stringKeyBirthday = stringPrefixDate + stringBeneficiariesListInfix + stringBirthdayIDSuffix + stringKeyID;
+		stringKeyRelationship = stringPrefixSelect + stringBeneficiariesListInfix + stringRelationshipIDSuffix + stringKeyID;
+		stringContentName = arrayFind(arrayContent, stringKeyName);
+		stringContentBirthday = arrayFind(arrayContent, stringKeyBirthday);
+		stringContentRelationship = arrayFind(arrayContent, stringKeyRelationship);
+		stringContentRelationship = arrayOptionFind(arrayRelationshipWithProspectiveInsured, stringContentRelationship);
 
 		if (stringFlag == 0 || stringFlag != stringKeyID)
 		{
@@ -1614,8 +1649,10 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 				(
 					"<tr>" + 
 						"<td>" + stringContentName + "</td>" + 
-						"<td><input type='button' id='" + stringButtonViewPrefix + stringKeyID + "' class='ButtonPrimary ButtonView' value='View" + stringKeyID + "' name='" + stringKeyID + "' onclick='buttonViewBeneficiariesList(this.id, this.name)'/></td>" + 
-						"<td><input type='button' id='" + stringButtonDeletePrefix + stringKeyID + "' class='ButtonPrimary ButtonDelete' value='Delete" + stringKeyID + "' name='" + stringKeyID + "' onclick='buttonDeleteBeneficiariesList(this.id, this.name)'/></td>" + 
+						"<td>" + stringContentBirthday + "</td>" + 
+						"<td>" + stringContentRelationship + "</td>" + 
+						"<td><input type='button' id='" + stringButtonViewPrefix + stringKeyID + "' class='ButtonPrimary ButtonView' value='View' name='" + stringKeyID + "' onclick='buttonViewBeneficiariesList(this.id, this.name)'/></td>" + 
+						"<td><input type='button' id='" + stringButtonDeletePrefix + stringKeyID + "' class='ButtonPrimary ButtonDelete' value='Delete' name='" + stringKeyID + "' onclick='buttonDeleteBeneficiariesList(this.id, this.name)'/></td>" + 
 					"</tr>"
 				);
 				
@@ -1626,6 +1663,43 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		{
 			
 		}
+	}
+}
+
+
+
+function initiateArrayRelationshipWithProspectiveInsured(objectContent)
+{
+	objectContent.push({ value: stringStateNotSelected, text: "Please Select" });
+	objectContent.push({ value: "self", text: "Diri Sendiri" });
+	objectContent.push({ value: "parent", text: "Orang Tua" });
+	objectContent.push({ value: "child", text: "Anak" });
+	objectContent.push({ value: "spouse", text: "Pasangan" });
+	objectContent.push({ value: "brother", text: "Saudara Laki-Laki" });
+	objectContent.push({ value: "sister", text: "Saudara Perempuan" });
+	objectContent.push({ value: "grandparent", text: "Kakek / Nenek" });
+	objectContent.push({ value: "grandchildren", text: "Cucu" });
+	objectContent.push({ value: "aunt", text: "Bibi" });
+	objectContent.push({ value: "uncle", text: "Paman" });
+	objectContent.push({ value: "nephew", text: "Keponakan Laki-Laki" });
+	objectContent.push({ value: "niece", text: "Keponakan Perempuan" });
+	objectContent.push({ value: "employee", text: "Pekerja" });
+	objectContent.push({ value: "employer", text: "Pemberi Kerja" });
+	objectContent.push({ value: "other", text: "Lainnya" });
+	objectContent.push({ value: "heir", text: "Ahli Waris" });
+	objectContent.push({ value: "guardian", text: "Wali" });
+	objectContent.push({ value: "creditordebitor", text: "Kreditor / Debitor" });
+	objectContent.push({ value: "charity", text: "Amal" });
+	objectContent.push({ value: "heirlaw", text: "Ahli Waris Hukum" });
+}
+
+function generateSelectOption(stringSelectJavaScriptID, arrayOption)
+{
+	var stringSelectJQueryID = stringKres + stringSelectJavaScriptID;
+	
+	for (var i = 0; i < arrayOption.length; i++)
+	{
+		$(stringSelectJQueryID).append("<option value='" + arrayOption[i].value + "'>" + arrayOption[i].text + "</option>");
 	}
 }
 
@@ -2021,22 +2095,22 @@ function setAreaPDF(stringID, stringValue)
 
 function setNumberForm(stringID, stringValue)
 {
-    return setTextGeneral(stringID, stringValue);
+    setTextGeneral(stringID, stringValue);
 }
 
 function setNumberPDF(stringID, stringValue)
 {
-    return setTextGeneral(stringID, stringValue);
+    setTextPDF(stringID, stringValue);
 }
 
 function setEmailForm(stringID, stringValue)
 {
-    return setTextGeneral(stringID), stringValue;
+    setTextGeneral(stringID), stringValue;
 }
 
 function getEmailPDF(stringID, stringValue)
 {
-    return setBoxGeneral(stringID, stringValue);
+    setBoxGeneral(stringID, stringValue);
 }
 
 
@@ -2671,6 +2745,17 @@ function getFromDatabase(objectContent, stringPageType)
                 setAreaForm(stringKey, stringValue);
             }
         }
+		else if (stringKey.substring(0, stringNumberPrefix.length) == stringNumberPrefix)
+        {            
+            if (stringPageType == stringPageTypePDF)
+            {
+                setNumberPDF(stringKey, stringValue);
+            }
+            else
+            {
+                setNumberForm(stringKey, stringValue);
+            }
+        }
         else
         {
             
@@ -2725,7 +2810,7 @@ function getFromDatabase(objectContent, stringPageType)
 			arrayHealthQuestionnaire = objectContent;
 			
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, ['Area' + stringPageInfixTypeCurrent + 'Activity' + 'AmandmentDetail']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, ['Area' + stringPageInfixTypeCurrent + 'SmokeActivity' + 'SAmandmentDetail']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, ['Number' + stringPageInfixTypeCurrent + 'SmokeActivity' + 'Amount']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'DigestDetail' + 'Problem']);
