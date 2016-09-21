@@ -2122,7 +2122,7 @@ function setNumberPDF(stringID, stringValue)
 
 function setEmailForm(stringID, stringValue)
 {
-    setTextGeneral(stringID), stringValue;
+    setTextGeneral(stringID, stringValue);
 }
 
 function setEmailPDF(stringID, stringValue)
