@@ -27,6 +27,7 @@
 				lineGenerator("#TextSalesDeclarationRelationshipWithProspectiveInsuredOther", 8);
 				boxGenerator("#TextSalesDeclarationIncomeSource", 29, boxTypeWithoutLabel, null);
 				boxGenerator("#TextSalesDeclarationIncomeBruto", 29, boxTypeWithoutLabel, null);
+				lineGenerator("#TextSalesDeclarationPurposeOther", 8);
 				
 				
 				// FOOTER AND HEADER
@@ -241,26 +242,38 @@
 				%table#TextSalesDeclarationIncomeBruto.BoxSquare.PositionerLeft
 				%br
 
-				%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } 1. Apakah hubungan Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
-				%br
+				%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } 14. Alasan pengajuan asuransi jiwa
 				%input#RadioButtonSalesDeclarationPurposeSaving{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "saving" }
 				%div.BoxRound.PositionerLeft
 				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } Tabungan
-
 				%input#RadioButtonSalesDeclarationPurposeProtection{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "protection" }
 				%div.BoxRound.PositionerLeft
 				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeProtection" } Proteksi
-
 				%input#RadioButtonSalesDeclarationPurposeInvestment{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "investment" }
 				%div.BoxRound.PositionerLeft
 				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeInvestment" } Investasi
-
 				%input#RadioButtonSalesDeclarationPurposeEducation{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "education" }
 				%div.BoxRound.PositionerLeft
 				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeEducation" } Iklan
-
-				%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "other" }
+				%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther{ :type => "radio", :name => "RadioButtonSalesDeclarationPurposeOther", :value => "other" }
 				%div.BoxRound.PositionerLeft
-				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther" } Lainnya, sebutkan
-				%div#TextSalesDeclarationRelationshipWithProspectiveInsuredOther.LineDot.PositionerLeft
+				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeOther" } Lainnya, sebutkan
+				%div#TextSalesDeclarationPurposeOther.LineDot.PositionerLeft
+				%br
+
+				%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } 15. Jika ada, berikan informasi lain yang menurut Anda dapat membantu BCA Life dalam mengevaluasi pengajuan ini
+				%br
+				%label.Note.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" }Apabila diperlukan dapat mempergunakan lembar tambahan.
+				%br
+
+				%table.SignatureMedium.PositionerCenter{ :style => "height: 80px; width: 100%; margin-top: 0px; margin-bottom: 0px;"}
+					%tbody
+						%tr
+							%td
+					%tfoot
+						%tr
+							%td
+				%br
+
+				%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } Saya menyatakan bahwa semua keterangan dalam Laporan Tenaga Penjual ini adalah keterangan yang benar. Saya tidak menyembunyikan keterangan-keterangan yang dapat mempengaruhi penerimaan pengajuan ini dari Calon Tertanggungan/Calon Pemegang Polis. Saya tidak pernah memberikan informasi kepada Calon Tertanggung/Calon Pemegang Polis yang bertentangan dengan ketentuan-ketentuan yang terdapat di dalam Polis. Apabila di kemudian hari terdapat pernyataan dalam Laporan Tenaga Penjual ini yang tidak benar, Saya bersedia bertanggung jawab atas kerugian yang timbul akibat kesalahan tersebut. Saya menyatakan bahwa proses penjualan yang Saya lakukan sudah sesuai dengan proses penjualan yang Saya terima selama proses pelatihan.
 				%br
