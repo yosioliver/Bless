@@ -52,8 +52,14 @@
 		/ HEADER
  
 		%header
-			%h1 SURAT PENGAJUAN ASURANSI JIWA (SPAJ)
+			%h1 LAPORAN TENAGA PENJUAL
 			%img{ :src => "../../Resource/Logo/logo_bcalife.svg" }
+			%br
+			%span.Header.PositionerLeft{ :style => "margin-top: -20px;" } PT Asuransi Jiwa BCA (BCA Life)
+			%br
+			%span.Detail.PositionerLeft Chase Plaza Lantai 22 | Jl. Jend. Sudirman Kav. 21, Jakarta 12920
+			%br
+			%span.Detail.PositionerLeft Telp: (021) 21 888 000, Faks: (021) 2934 7977 | Email: customer@bcalife.co.id
 			%br
 
 
@@ -61,6 +67,13 @@
 
 		%main
 			%section#SectionSalesProfile
+
+				Informasi Penting
+				%ol{ :style => "margin-top: 5px; margin-bottom: 5px;" }
+					%li Wajib mengisi dengan benar dan lengkap pertanyaan di bawah ini sesuai dengan keadaan sebenarnya. 
+					%li Diisi menggunakan tinta hitam dan menggunakan huruf besar/kapital.
+					%li Gunakan tanda silang (X) pada pilihan kolom kotak dan wajib menandatangani setiap koreksi penulisan.
+
 				%h2 PERNYATAAN TENAGA PENJUAL
 
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Pemegang Polis
@@ -265,7 +278,6 @@
 				%br
 				%label.Note.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" }Apabila diperlukan dapat mempergunakan lembar tambahan.
 				%br
-
 				%table.SignatureMedium.PositionerCenter{ :style => "height: 80px; width: 100%; margin-top: 0px; margin-bottom: 0px;"}
 					%tbody
 						%tr
@@ -274,6 +286,62 @@
 						%tr
 							%td
 				%br
-
 				%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } Saya menyatakan bahwa semua keterangan dalam Laporan Tenaga Penjual ini adalah keterangan yang benar. Saya tidak menyembunyikan keterangan-keterangan yang dapat mempengaruhi penerimaan pengajuan ini dari Calon Tertanggungan/Calon Pemegang Polis. Saya tidak pernah memberikan informasi kepada Calon Tertanggung/Calon Pemegang Polis yang bertentangan dengan ketentuan-ketentuan yang terdapat di dalam Polis. Apabila di kemudian hari terdapat pernyataan dalam Laporan Tenaga Penjual ini yang tidak benar, Saya bersedia bertanggung jawab atas kerugian yang timbul akibat kesalahan tersebut. Saya menyatakan bahwa proses penjualan yang Saya lakukan sudah sesuai dengan proses penjualan yang Saya terima selama proses pelatihan.
+				%br
+
+				%br
+				%label.Single.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani di
+				%div#TextSignedPlace.LineStraight.PositionerLeft
+				%label.Single.PositionerLeft{ :for => "DateSignedDay" } Pada Tanggal 
+				%div#DateSignedDay.LineStraight.PositionerLeft
+				%label.Single.Separator.PositionerLeft{ :for => "DateSignedMonth" } /
+				%div#DateSignedMonth.LineStraight.PositionerLeft
+				%label.Single.Separator.PositionerLeft{ :for => "DateSignedYear" } /
+				%div#DateSignedYear.LineStraight.PositionerLeft
+				%span.Single.Wrap.PositionerLeft (Tanggal/Bulan/Tahun).
+
+				%br
+				%table.SignatureMedium.Horizontal25of100
+					%thead
+						%tr
+							%th Calon Pemegang Polis
+					%tbody
+						%tr
+							%td
+					%tfoot
+						%tr
+							%td Nama Lengkap & Tanda tangan
+				%table.SignatureMedium.Horizontal25of100
+					%thead
+						%tr
+							%th Calon Tertanggung
+					%tbody
+						%tr
+							%td
+					%tfoot
+						%tr
+							%td Nama Lengkap & Tanda tangan
+				%table.SignatureMedium.Horizontal25of100
+					%thead
+						%tr
+							%th 
+								Orang Tua/Wali yang sah 
+								%br
+								%span.Note (jika Usia Calon Tertanggung < 21 Tahun)
+					%tbody
+						%tr
+							%td
+					%tfoot
+						%tr
+							%td Nama Lengkap & Tanda tangan
+				%table.SignatureMedium.Horizontal25of100
+					%thead
+						%tr
+							%th Tenaga Penjual
+					%tbody
+						%tr
+							%td
+					%tfoot
+						%tr
+							%td Nama Lengkap & Tanda tangan
 				%br
