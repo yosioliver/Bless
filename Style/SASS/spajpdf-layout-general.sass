@@ -83,11 +83,14 @@ main
         .ContainerRight
             justify-content: flex-end
         .ContainerFit.InnerFieldset
-        	margin-top: $general_space_medium
+        	margin-top: $general_space_tiny
         	margin-left: -$general_space_medium
         	margin-right: -$general_space_medium
-        	margin-top: $general_space_medium
-        	padding: $general_space_medium
+        	margin-top: $general_space_tiny
+        	padding-top: $general_space_tiny
+        	padding-left: $general_space_medium
+        	padding-right: $general_space_medium
+        	padding-bottom: $general_space_tiny
         	.Item.Column:first-child
         		padding-right: $general_space_medium
         		border-right-style: solid
@@ -187,6 +190,23 @@ div.FullFix
 			th
 				width: $signature_width_medium
 				height: 45px
+	tbody
+		tr
+			td
+				width: $signature_width_medium
+	tfoot
+		tr
+			td
+				width: $signature_width_medium
+
+.Horizontal50of100
+	width: 48%
+	display: inline-block
+	thead
+		tr
+			th
+				width: $signature_width_medium
+				height: 30px
 	tbody
 		tr
 			td

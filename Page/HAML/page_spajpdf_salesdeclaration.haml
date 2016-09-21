@@ -28,7 +28,15 @@
 				boxGenerator("#TextSalesDeclarationIncomeSource", 29, boxTypeWithoutLabel, null);
 				boxGenerator("#TextSalesDeclarationIncomeBruto", 29, boxTypeWithoutLabel, null);
 				lineGenerator("#TextSalesDeclarationPurposeOther", 8);
-				
+				lineGenerator("#TextSignedPlace", 8);
+				lineGenerator("#DateSignedDay", 2);
+				lineGenerator("#DateSignedMonth", 2);
+				lineGenerator("#DateSignedYear", 4);
+				boxGenerator("#TextSalesDeclarationAgentCode", 13, boxTypeWithoutLabel, null);
+				boxGenerator("#TextSalesDeclarationLicenseCode", 13, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSalesDeclarationActiveDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateSalesDeclarationActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateSalesDeclarationActiveYear", 4, boxTypeWithBottomLabel, labelYear);
 				
 				// FOOTER AND HEADER
 
@@ -289,59 +297,59 @@
 				%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } Saya menyatakan bahwa semua keterangan dalam Laporan Tenaga Penjual ini adalah keterangan yang benar. Saya tidak menyembunyikan keterangan-keterangan yang dapat mempengaruhi penerimaan pengajuan ini dari Calon Tertanggungan/Calon Pemegang Polis. Saya tidak pernah memberikan informasi kepada Calon Tertanggung/Calon Pemegang Polis yang bertentangan dengan ketentuan-ketentuan yang terdapat di dalam Polis. Apabila di kemudian hari terdapat pernyataan dalam Laporan Tenaga Penjual ini yang tidak benar, Saya bersedia bertanggung jawab atas kerugian yang timbul akibat kesalahan tersebut. Saya menyatakan bahwa proses penjualan yang Saya lakukan sudah sesuai dengan proses penjualan yang Saya terima selama proses pelatihan.
 				%br
 
+				%div{ :style => "margin-top: 20px;" }
+					%label.Single.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani di
+					%div#TextSignedPlace.LineStraight.PositionerLeft
+					%label.Single.PositionerLeft{ :for => "DateSignedDay" } Pada Tanggal 
+					%div#DateSignedDay.LineStraight.Positionereft
+					%label.Single.Separator.PositionerLeft{ :for => "DateSignedMonth" } /
+					%div#DateSignedMonth.LineStraight.PositionerLeft
+					%label.Single.Separator.PositionerLeft{ :for => "DateSignedYear" } /
+					%div#DateSignedYear.LineStraight.PositionerLeft
+					%span.Single.Wrap.PositionerLeft (Tanggal/Bulan/Tahun).
 				%br
-				%label.Single.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani di
-				%div#TextSignedPlace.LineStraight.PositionerLeft
-				%label.Single.PositionerLeft{ :for => "DateSignedDay" } Pada Tanggal 
-				%div#DateSignedDay.LineStraight.PositionerLeft
-				%label.Single.Separator.PositionerLeft{ :for => "DateSignedMonth" } /
-				%div#DateSignedMonth.LineStraight.PositionerLeft
-				%label.Single.Separator.PositionerLeft{ :for => "DateSignedYear" } /
-				%div#DateSignedYear.LineStraight.PositionerLeft
-				%span.Single.Wrap.PositionerLeft (Tanggal/Bulan/Tahun).
 
+				%div.ContainerFit{ :style => "margin-top: 20px;" }
+					%div.Item{ :style => "width: 40%;" }
+						%table.SignatureMedium.Horizontal50of100
+							%thead
+								%tr
+									%th Tenaga Penjual
+							%tbody
+								%tr
+									%td
+							%tfoot
+								%tr
+									%td Nama Lengkap & Tanda tangan
+						%table.SignatureMedium.Horizontal50of100
+							%thead
+								%tr
+									%th Atasan Tenaga Penjual
+							%tbody
+								%tr
+									%td
+							%tfoot
+								%tr
+									%td Nama Lengkap & Tanda tangan
+					%div.Item{ :style => "width: 60%; padding-left: 20px;" }
+						%label.Single.PositionerLeft{ :for => "TextSalesDeclarationAgentCode" } 
+							%b WAJIB DILENGKAPI
+						%br
+						%label.Medium.Wrap.PositionerLeft{ :for => "TextSalesDeclarationAgentCode" } Kode Tenaga Penjual
+						%table#TextSalesDeclarationAgentCode.BoxSquare.PositionerLeft
+						%br
+						%label.Medium.Wrap.PositionerLeft{ :for => "TextSalesDeclarationLicenseCode" } Kode Lisensi
+						%table#TextSalesDeclarationLicenseCode.BoxSquare.PositionerLeft
+						%br
+						%label.Medium.Wrap.PositionerLeft{ :for => "DateSalesDeclarationActiveDay" } Masa Berlaku Lisensi 
+						%table#DateSalesDeclarationActiveDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft{ :for => "DateSalesDeclarationActiveMonth" } /
+						%table#DateSalesDeclarationActiveMonth.BoxSquare.PositionerLeft
+						%label.Separator.Single.PositionerLeft{ :for => "DateSalesDeclarationActiveYear" } /
+						%table#DateSalesDeclarationActiveYear.BoxSquare.PositionerLeft
+						%br
+					%br
 				%br
-				%table.SignatureMedium.Horizontal25of100
-					%thead
-						%tr
-							%th Calon Pemegang Polis
-					%tbody
-						%tr
-							%td
-					%tfoot
-						%tr
-							%td Nama Lengkap & Tanda tangan
-				%table.SignatureMedium.Horizontal25of100
-					%thead
-						%tr
-							%th Calon Tertanggung
-					%tbody
-						%tr
-							%td
-					%tfoot
-						%tr
-							%td Nama Lengkap & Tanda tangan
-				%table.SignatureMedium.Horizontal25of100
-					%thead
-						%tr
-							%th 
-								Orang Tua/Wali yang sah 
-								%br
-								%span.Note (jika Usia Calon Tertanggung < 21 Tahun)
-					%tbody
-						%tr
-							%td
-					%tfoot
-						%tr
-							%td Nama Lengkap & Tanda tangan
-				%table.SignatureMedium.Horizontal25of100
-					%thead
-						%tr
-							%th Tenaga Penjual
-					%tbody
-						%tr
-							%td
-					%tfoot
-						%tr
-							%td Nama Lengkap & Tanda tangan
-				%br
+
+				%section.SectionFooter{ :style => "margin-top: -90px;" }
+					= Haml::Engine.new(File.read("footer_spajpdf_last.haml")).render
