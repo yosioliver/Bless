@@ -91,10 +91,10 @@
 				%label.medium.Single ("Jika Ya, mohon tuliskan nama obat dan dosisnya")
 		%br
 		%div.ContainerFit 
-			%label.Short.Single.Item.Margin Tanggal Berobat
-			%label.Short.Single.Item.Margin Nama Obat
-			%label.Short.Single.Item.Margin Dosis
-			%label.Short.Single.Item.Margin Frekuensi
+			%label.Short.Single.Item.Margin.Center Tanggal Berobat
+			%label.Short.Single.Item.Margin.Center Nama Obat
+			%label.Short.Single.Item.Margin.Center Dosis
+			%label.Short.Single.Item.Margin.Center Frekuensi
 		%div.ContainerFit 
 			%input#DateMedicine1.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextMedicineName1.Full.Single.Item.Margin{ :type =>"text" }
@@ -110,14 +110,74 @@
 			%input#TextMedicineName3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextMedicineDosage3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextMedicineFrequency3.Full.Single.Item.Margin{ :type =>"text" }
-		--
+		%br
+		
 		%div.ContainerFit
-			%label#LabelPolicyHolderAlcohol.LongFix.Single.Item3.Margin Jika ada pengobatan lain, mohon jelaskan
-			%input#TextPolicyHolderTreadmillTanggal.Long.Single.Item1.Margin{ :type => "text" }
-		%br	
+			%label.Medium.Single.PositionerLeft 
+			%label.Short.Single.Item1.Center Tanggal
+			%label.Short.Single.Item1.Center Keterangan
+		%div.ContainerFit				
+			%label.Medium.Single.PositionerLeft Kapan pengobatan dimulai
+			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Medium.Single.PositionerLeft Kapan pengobatan dihentikan
+			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%label.Medium.Single.Item Mohon jelaskan secara rinci pada kolom di bawah ini alasan pengobatan diberhentikan.
+		%br
+		%input#TextOffShore.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%label.Medium.Single.Item Mohon jelaskan secara rinci pada kolom di bawah ini jika ada pengobatan lainnya.
+		%br
+		%input#TextOffShore.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+		%label.Medium.Single.Item 5. Apakah Anda pernah melakukan pemeriksaan medis sehubungan kelainan kelenjar gondok (tiroid)?
+		%br
+		%div.ContainerFit 
+			%div.RadioButton
+				%input#RadioButtonTakenYes{ :type => "radio", :name => "RadioButtonTaken", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTakenYes" } Ya
+				%div.Separator
+				%input#RadioButtonTakenNo{ :type => "radio", :name => "RadioButtonTaken", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTakenNo" } Tidak
+				%label.medium.Single (Jika "Ya", mohon melengkapi hasil pemeriksaan pada kolom di bawah ini).
+		%br
+		%div.ContainerFit
+			%label.Medium.Single.PositionerLeft Jenis Pemeriksaan
+			%label.Short.Single.Item1.Center Tanggal
+			%label.Short.Single.Item1.Center Hasil
+		%div.ContainerFit				
+			%label.Medium.Single.PositionerLeft T3
+			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Medium.Single.PositionerLeft T4
+			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit				
+			%label.Medium.Single.PositionerLeft TSH
+			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Medium.Single.PositionerLeft ECG
+			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit				
+			%label.Medium.Single.PositionerLeft Biopsi
+			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%label.Medium.Single.PositionerLeft Scan/MRI/USG
+			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
 
+		%br
+		%hr
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 6. Apakah telah dilakukan operasi sehubungan kelainan kelenjar gondok?
+			%label.medium.Single.Item 6. Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
 			%input#RadioButtonpengobatanYes{ :type => "radio", :name => "RadioButtonpengobatan", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonpengobatanYes" } Ya
 			%div.Separator
@@ -125,66 +185,82 @@
 			%label.RadioButton{ :for => "RadioButtonpengobatanNo" } Tidak
 		%br	
 		%div.ContainerFit
-			%label#LabelPolicyHolderAlcohol.LongFix.Single.Item3.Margin Tanggal operasi
-			%input#TextPolicyHolderTanggalOperasi.Long.Single.Item1.Margin{ :type => "text" }
+			%label.Medium.Single.PositionerLeft Jika “Ya”, mohon berikan tanggal operasi:
+			%input#DatePolicyHolderTanggalOperasi.Short.Single.Item1.Margin{ :type => "text" , "data-field" => "date" }
 		%br
 		%div.ContainerFit
-			%label#LabelPolicyHolderAlcohol.LongFix.Single.Item3.Margin Lama perawatan di Rumah Sakit
-			%input#TextPolicyHolderLamaPerawatan.Long.Single.Item1.Margin{ :type => "text" }
+			%label.Medium.Single.PositionerLeft Lama perawatan di Rumah Sakit:
+			%input#TextPolicyHolderLamaPerawatan.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%label#LabelPolicyHolderAlcohol.LongFix.Single.Item3.Margin Nama Rumah Sakit
-			%input#TextPolicyHolderNamaRumahSakit.Long.Single.Item1.Margin{ :type => "text" }
+			%label.Medium.Single.PositionerLeft Jenis Operasi:
+			%input#TextPolicyHolderNamaRumahSakit.Short.Single.Item1.Margin{ :type => "text" }
 		%br	
 		%div.ContainerFit
-			%label#LabelPolicyHolderAlcohol.LongFix.Single.Item3.Margin Nama dokter spesialis yang merawat
-			%input#TextPolicyHolderNamaDokterSpesialis.Long.Single.Item1.Margin{ :type => "text" }
+			%label.Medium.Single.PositionerLeft Nama Lengkap Dokter:
+			%input#TextPolicyHolderNamaDokterSpesialis.Short.Single.Item1.Margin{ :type => "text" }
 		%br	
 		%div.ContainerFit
-			%label#LabelPolicyHolderAlcohol.LongFix.Single.Item3.Margin Jenis Operasi
-			%input#TextPolicyHolderJenisOperasi.Long.Single.Item1.Margin{ :type => "text" }
+			%label.Medium.Single.PositionerLeft No. Telepon/Handphone:
+			%input#TextPolicyHolderJenisOperasi.Short.Single.Item1.Margin{ :type => "text" }
 		%br
-		%label.medium.Single.Item Mohon melampirkan hasil Patologi Anatomi operasi tersebut
+		%div.ContainerFit
+			%label.Medium.Single.PositionerLeft	Nama Klinik/Rumah Sakit:
+			%input#TextPolicyHolderJenisOperasi.Short.Single.Item1.Margin{ :type => "text" }
 		%br
-		%div.ContainerFit 
-			%div.RadioButton.Medium.Item
-				%input#RadioButtonPolicyMalampirPatologiYes{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiChange", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonPolicyMalampirPatologiYes" } Ada
-				%div.Separator
+		%div.ContainerFit
+			%label.Medium.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
+			%input#TextPolicyHolderJenisOperasi.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%label.Medium.Single.Item Mohon melampirkan hasil Patologi Anatomi operasi tersebut
+		%div.RadioButton.Medium.Item
+			%input#RadioButtonPolicyMalampirPatologiYes{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyMalampirPatologiYes" } Ada
+			%div.Separator
 
-				%input#RadioButtonPolicyMalampirPatologiNo{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiChange", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonPolicyMalampirPatologiNo" } Tidak ada
-			%input#RadioButtonPolicyMalampirPatologi.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => "mohon jelaskan"}
+			%input#RadioButtonPolicyMalampirPatologiNo{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyMalampirPatologiNo" } Tidak ada
 		%br
-		%label.medium.Single.Item Menurut yang dikatakan Dokter Anda, bagaimana hasil Patology Anatomi tersebut
+		%label.medium.Single.Item Jika "Tidak", mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
-		%div.ContainerFit 
-			%div.RadioButton.Medium.Item
-				%input#RadioButtonPolicyJinak{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Jinak" }
-				%label.RadioButton{ :for => "RadioButtonPolicyJinak" } Jinak
-				%div.Separator
+		%input#RadioButtonPolicyMalampirPatologi.Full.Multi.Item.Margin{ :type =>"text" }
+		%br
+		%label.medium.Single.Item Menurut Dokter Anda, bagaimana hasil Patology Anatomi tersebut?
+		%br
+		%div.RadioButton.PositionerLeft
+			%input#RadioButtonPolicyJinak{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Jinak" }
+			%label.RadioButton{ :for => "RadioButtonPolicyJinak" } Jinak
+			%div.Separator
 
-				%input#RadioButtonPolicyGanas{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Ganas" }
-				%label.RadioButton{ :for => "RadioButtonPolicyGanas" } Ganas ada
-				%div.Separator
+			%input#RadioButtonPolicyGanas{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Ganas" }
+			%label.RadioButton{ :for => "RadioButtonPolicyGanas" } Ganas
+			%div.Separator
 
-				%input#RadioButtonPolicyLainnya{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Lainnya" }
-				%label.RadioButton{ :for => "RadioButtonPolicyLainnya" } Lainnya ada
-			%input#RadioButtonPolicyMalampirPatologi.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
+			%input#RadioButtonPolicyLainnya{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Lainnya" }
+			%label.RadioButton{ :for => "RadioButtonPolicyLainnya" } Lainnya, sebutkan 
+		%br
+		%input#RadioButtonPolicyMalampirPatologi.Full.Multi.Item.Margin{ :type =>"text" , :placeholder => ""}
 		%br
 		%hr
+		
+		%label.medium.Single.Item 7. Apakah ada pengobatan atau tindakan yang dilakukan setelah operasi?
+		%div.RadioButton.PositionerRight
+			%input#RadioButtonItemObatYes{ :type => "radio", :name => "RadioButtonItemObat", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonItemObatYes" } Ya
+			%div.Separator
+			%input#RadioButtonItemObatNo{ :type => "radio", :name => "RadioButtonItemObat", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonItemObatNo" } Tidak
 		%br
-		%label.medium.Single.Item 7. Pengobatan atau tindakan apa yang dilakukan setelah operasi?
-		%br
+		%label.medium.Single.Item Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Obat
-				%input#RadioButtonItemObatYes{ :type => "radio", :name => "RadioButtonItemObat", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonItemObatYes" } Ya
+				%input#RadioButtonObatYes{ :type => "radio", :name => "RadioButtonObat", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonObatYes" } Ya
 				%div.Separator
-				%input#RadioButtonItemObatNo{ :type => "radio", :name => "RadioButtonItemObat", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonItemObatNo" } Tidak
-			%input#TextInputPolicyMalampirPatologi.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
+				%input#RadioButtonObatNo{ :type => "radio", :name => "RadioButtonObat", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonObatNo" } Tidak
+			%input#TextInputPolicyObat.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Radioterapi
@@ -213,7 +289,7 @@
 				%label.RadioButton{ :for => "RadioButtonLainnyaNo" } Tidak
 			%input#TextInputPolicyLainnya.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
 		%hr	
-		%label.medium.Single.Item 8. Mohon memberikan informasi tambahan tentang kondisi kesehatan Anda saat ini
+		%label.medium.Single.Item 8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br    
 		%input#TextPolicyHolderTambahanTentangKondisi.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
@@ -221,7 +297,8 @@
 
 		%h2 PERNYATAAN DAN KUASA
 		%ol
-			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
-			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
-			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
-			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+			%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Gangguan Kelenjar Gondok (Tiroid) ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak   asuransi Jiwa/Kesehatan/Kecelakaan.
+			%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+			%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+			%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+			%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
