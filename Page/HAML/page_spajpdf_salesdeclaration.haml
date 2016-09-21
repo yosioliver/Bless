@@ -1,0 +1,266 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_spajpdf_header.haml")).render
+		%title BCA Life - BLESS, SPAJ PDF
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+
+			$(document).ready(function()
+			{
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderSPAJProposalCompanyName1","Value":"Info Connect sdn bhd"},{"elementID":"TextPolicyHolderSPAJProposalPolicyNumber1","Value":"123456"},{"elementID":"DatePolicyHolderSPAJProposalPublished1","Value":"01/09/2013"},{"elementID":"TextPolicyHolderSPAJProposalBasicSumAssured1","Value":"30000"},{"elementID":"TextPolicyHolderSPAJProposalDecision1","Value":"oke !"},{"elementID":"RadioButtonProspectiveInsuredJunkie","Value":"false"},{"elementID":"RadioButtonPolicyHolderExtremeSport","Value":"true"},{"elementID":"RadioButtonPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextPolicyHolderAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredAbroad","Value":"false"},{"elementID":"TextProspectiveInsuredVisionDiseaseName","Value":"belekan"},{"elementID":"TextProspectiveInsuredVisionSickFrom","Value":"01/07/2016"},{"elementID":"TextProspectiveInsuredVisionSickDuration","Value":"2 minggu"},{"elementID":"TextProspectiveInsuredVisionDoctorName","Value":"anto"},{"elementID":"TextProspectiveInsuredVisionHosipital","Value":"rsib"},{"elementID":"TextProspectiveInsuredVisionAddress","Value":"bintaro"},{"elementID":"TextProspectiveInsuredVisionTelephone","Value":"123"},{"elementID":"TextProspectiveInsuredENTDiseaseName","Value":"congean"},{"elementID":"TextProspectiveInsuredENTSickFrom","Value":"02/08/2017"},{"elementID":"TextProspectiveInsuredRespiratoryDiseaseName","Value":"pilek"},{"elementID":"TextProspectiveInsuredRespiratorySickFrom","Value":"03/09/2018"},{"elementID":"TextProspectiveInsuredCardiacDiseaseName","Value":"sesek"},{"elementID":"TextProspectiveInsuredCardiacDoctorName","Value":"surianto"},{"elementID":"TextPolicyHolderVisionDiseaseName","Value":"belekan"},{"elementID":"TextPolicyHolderVisionSickFrom","Value":"01/07/2016"},{"elementID":"TextPolicyHolderVisionSickDuration","Value":"2 minggu"},{"elementID":"TextPolicyHolderVisionDoctorName","Value":"anto"},{"elementID":"TextPolicyHolderVisionHosipital","Value":"rsib"},{"elementID":"TextPolicyHolderVisionAddress","Value":"bintaro"},{"elementID":"TextPolicyHolderVisionTelephone","Value":"123"},{"elementID":"TextPolicyHolderENTDiseaseName","Value":"congean"},{"elementID":"TextPolicyHolderRespiratoryDiseaseName","Value":"pilek"},{"elementID":"TextPolicyHolderCardiacDiseaseName","Value":"sesek"},{"elementID":"TextPolicyHolderCardiacDoctorName","Value":"surianto"},{"elementID":"AreaKanwilAgent","Value":"jakarta"},{"elementID":"TextPolicyHolderHandphone1","Value":"0818-146139"},{"elementID":"TextBeneficiariesListFullName1","Value":"Satri Kharima"},{"elementID":"DateBeneficiariesListBirthday1","Value":"01/02/1990"},{"elementID":"SelectBeneficiariesListRelationship1","Value":"family"},{"elementID":"RadioButtonBeneficiariesListSex1","Value":"male"},{"elementID":"SelectBeneficiariesListNationality1","Value":"indonesia"},{"elementID":"TextBeneficiariesListFullName1","Value":"Faiz Baraja"},{"elementID":"DateBeneficiariesListBirthday1","Value":"02/03/1990"},{"elementID":"SelectBeneficiariesListRelationship1","Value":"family"},{"elementID":"RadioButtonBeneficiariesListSex1","Value":"male"},{"elementID":"SelectBeneficiariesListNationality1","Value":"indonesia"},{"elementID":"TextBeneficiariesListFullName1","Value":"Erwin Lim"},{"elementID":"DateBeneficiariesListBirthday1","Value":"03/04/1990"},{"elementID":"SelectBeneficiariesListRelationship1","Value":"family"},{"elementID":"RadioButtonBeneficiariesListSex1","Value":"male"},{"elementID":"SelectBeneficiariesListNationality1","Value":"indonesia"},{"elementID":"TextPolicyHolderFullName","Value":"Emma Green - Geller"},{"elementID":"NumberPolicyHolderSmokeActivityAmount","Value":"12"}]}}'
+
+
+				// SECTION GENERAL
+
+				boxGenerator("#TextProspectiveInsuredFullName", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+				lineGenerator("#TextSalesDeclarationRelationshipWithProspectiveInsuredOther", 8);
+				boxGenerator("#TextSalesDeclarationIncomeSource", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextSalesDeclarationIncomeBruto", 29, boxTypeWithoutLabel, null);
+				
+				
+				// FOOTER AND HEADER
+
+				headerGenerator(".HeaderGeneral table");
+				footerGenerator("OP/NB/0104/031602", "8");
+
+
+				// SETTER
+
+				var objectContent = JSON.parse(jsonDummy);
+				getFromDatabase(objectContent.result.readFromDB, stringPageTypePDF);				
+				
+				// setHeader("123456");
+			});
+
+
+	/ BODY
+
+	%body#A4
+
+		/ HEADER
+ 
+		%header
+			%h1 SURAT PENGAJUAN ASURANSI JIWA (SPAJ)
+			%img{ :src => "../../Resource/Logo/logo_bcalife.svg" }
+			%br
+
+
+		/ MAIN
+
+		%main
+			%section#SectionSalesProfile
+				%h2 PERNYATAAN TENAGA PENJUAL
+
+				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Pemegang Polis
+				%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
+				%br
+				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredFullName" } Nama Calon Tertanggung
+				%table#TextProspectiveInsuredFullName.BoxSquare.PositionerLeft
+				%br
+				%label.Medium.Single.PositionerLeft{ :for => "TextSPAJNumber" } Nomor SPAJ
+				%table#TextSPAJNumber.BoxSquare.PositionerLeft
+				%br
+
+				%div.ContainerFit.InnerFieldset
+					%div.Item.Column{ :style => "width: 50%;" }
+						%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFamily" } 1. Apakah hubungan Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
+						%br
+						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFamily{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "family" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFamily" } Keluarga
+						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredReference{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "reference" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredReference" } Referensi
+						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredStranger{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "stranger" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredStranger" } Tidak Kenal
+						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAdvertisement{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "advertisement" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAdvertisement" } Iklan
+						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFriend{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "friend" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFriend", :style => "width: 50px;" } Teman / Kerabat
+						%br
+						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAgency{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "agency" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAgency" } Keagenan
+						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther" } Lainnya, sebutkan
+						%div#TextSalesDeclarationRelationshipWithProspectiveInsuredOther.LineDot.PositionerLeft
+						%br
+
+						%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationKnowProspectiveInsuredStranger" } 2. Sudah berapa lama Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
+						%br
+						%input#RadioButtonSalesDeclarationKnowProspectiveInsuredStranger{ :type => "radio", :name => "RadioButtonSalesDeclarationKnowProspectiveInsured", :value => "stranger" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationKnowProspectiveInsuredStranger" } Tidak kenal
+						%input#RadioButtonSalesDeclarationKnowProspectiveInsuredLessThan1Year{ :type => "radio", :name => "RadioButtonSalesDeclarationKnowProspectiveInsured", :value => "lessthan1year" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationKnowProspectiveInsuredLessThan1Year" } < 1 Tahun
+						%input#RadioButtonSalesDeclarationKnowProspectiveInsuredLessThan5Year{ :type => "radio", :name => "RadioButtonSalesDeclarationKnowProspectiveInsured", :value => "lessthan5years" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationKnowProspectiveInsuredLessThan5Year" } < 5 Tahun
+						%input#RadioButtonSalesDeclarationKnowProspectiveInsuredEntireLife{ :type => "radio", :name => "RadioButtonSalesDeclarationKnowProspectiveInsured", :value => "entirelife" }
+						%div.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationKnowProspectiveInsuredEntireLife" } Selama hidup
+						%br
+
+						%div.ContainerFit
+							%label.Item{ :for => "RadioButtonSalesDeclarationHealthYes" } 3. Apakah Calon Tertanggung saat ini dalam keadaan sehat?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationHealthYes" } Tidak
+								%input#RadioButtonSalesDeclarationHealthYes{ :type => "radio", :name => "RadioButtonSalesDeclarationHealth", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationHealthNo" } Ya
+								%input#RadioButtonSalesDeclarationHealthNo{ :type => "radio", :name => "RadioButtonSalesDeclarationHealth", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%div.ContainerFit
+							%label.Item{ :for => "RadioButtonSalesDeclarationWithoutSecrecyYes" } 4. Apakah sudah dijelaskan kepada Calon Tertanggung/   Ya Calon Pemegang Polis untuk menjawab seluruh pertanyaan dalam SPAJ dengan benar dan tanpa ada hal yang dirahasiakan?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationWithoutSecrecyYes" } Tidak
+								%input#RadioButtonSalesDeclarationWithoutSecrecyYes{ :type => "radio", :name => "RadioButtonSalesDeclarationWithoutSecrecy", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationWithoutSecrecyNo" } Ya
+								%input#RadioButtonSalesDeclarationWithoutSecrecyNo{ :type => "radio", :name => "RadioButtonSalesDeclarationWithoutSecrecy", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclarationDenyClaimYes" } 5. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban yang tidak benar akan berakibat batalnya perjanjian asuransi jiwa ini dan Penanggung berhak menolak Klaim yang diajukan?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationDenyClaimYes" } Tidak
+								%input#RadioButtonSalesDeclarationDenyClaimYes{ :type => "radio", :name => "RadioButtonSalesDeclarationDenyClaim", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationDenyClaimNo" } Ya
+								%input#RadioButtonSalesDeclarationDenyClaimNo{ :type => "radio", :name => "RadioButtonSalesDeclarationDenyClaim", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" } 6. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban keputusan Underwriting atas pengajuan permohonan asuransi jiwa ini dapat ditolak, ditunda, dikenakan tambahan Premi atau diturunkan Uang Pertanggungannya?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" } Tidak
+								%input#RadioButtonSalesDeclarationStillConsiderationYes{ :type => "radio", :name => "RadioButtonSalesDeclarationStillConsideration", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationStillConsiderationNo" } Ya
+								%input#RadioButtonSalesDeclarationStillConsiderationNo{ :type => "radio", :name => "RadioButtonSalesDeclarationStillConsideration", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclarationFaceToFaceYes" } 7. Apakah Anda bertemu atau melihat langsung Calon Tertanggung/Calon Pemegang Polis pada saat pengisian atau penandatanganan SPAJ? (Penandatanganan SPAJ harus dihadapan Tenaga Penjual).
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationFaceToFaceYes" } Tidak
+								%input#RadioButtonSalesDeclarationFaceToFaceYes{ :type => "radio", :name => "RadioButtonSalesDeclarationFaceToFace", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationFaceToFaceNo" } Ya
+								%input#RadioButtonSalesDeclarationFaceToFaceNo{ :type => "radio", :name => "RadioButtonSalesDeclarationFaceToFace", :value => "true" }
+								%div.BoxRound.PositionerRight
+				
+					%div.Item.Column{ :style => "width: 50%;" }
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclaration60DaysLimitYes" } 8. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa pengajuan asuransi akan dianggap batal, apabila persyaratan pengajuan asuransi jiwa tidak dilengkapi dalam waktu 60 (enam puluh) Hari Kalender sejak SPAJ terdaftar di Kantor Pusat BCA Life?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclaration60DaysLimitYes" } Tidak
+								%input#RadioButtonSalesDeclaration60DaysLimitYes{ :type => "radio", :name => "RadioButtonSalesDeclaration60DaysLimit", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclaration60DaysLimitNo" } Ya
+								%input#RadioButtonSalesDeclaration60DaysLimitNo{ :type => "radio", :name => "RadioButtonSalesDeclaration60DaysLimit", :value => "true" }
+								%div.BoxRound.PositionerRight
+					
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclarationSelfVerifiedYes" } 9. Apakah Anda telah melakukan verifikasi terhadap identitas diri dan kelengkapan dokumen lainnya yang telah diberikan kepada Anda?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationSelfVerifiedYes" } Tidak
+								%input#RadioButtonSalesDeclarationSelfVerifiedYes{ :type => "radio", :name => "RadioButtonSalesDeclarationSelfVerified", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationSelfVerifiedNo" } Ya
+								%input#RadioButtonSalesDeclarationSelfVerifiedNo{ :type => "radio", :name => "RadioButtonSalesDeclarationSelfVerified", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclarationThirdPartyYes" } 10. Apakah ada pihak lain selain Calon Pemegang Polis/ Calon Tertanggung yang meminta atau berkepentingan atau menginstruksikan untuk mengajukan permohonan asuransi ini? Jika “Ya” apakah Anda telah meminta Calon Pemegang Polis untuk melakukan formulir Pihak Ketiga?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationThirdPartyYes" } Tidak
+								%input#RadioButtonSalesDeclarationThirdPartyYes{ :type => "radio", :name => "RadioButtonSalesDeclarationThirdParty", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationThirdPartyNo" } Ya
+								%input#RadioButtonSalesDeclarationThirdPartyNo{ :type => "radio", :name => "RadioButtonSalesDeclarationThirdParty", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclarationConsitutionYes" } 11. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa Penerima Manfaat yang ditunjuk, sudah sesuai dengan peraturan perundang-undangan yang berlaku di Indonesia?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationConsitutionYes" } Tidak
+								%input#RadioButtonSalesDeclarationConsitutionYes{ :type => "radio", :name => "RadioButtonSalesDeclarationConsitution", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationConsitutionNo" } Ya
+								%input#RadioButtonSalesDeclarationConsitutionNo{ :type => "radio", :name => "RadioButtonSalesDeclarationConsitution", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationConsitutionYes" } 
+							%b 12. Khusus untuk produk dengan manfaat Terminal Illness (TI):
+						%br
+
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclaration90DaysLimitYes" } a. Apakah sudah dijelaskan bahwa terdapat masa tunggu Klaim selama 90 (sembilan puluh) Hari Kalender sejak Tanggal Mulai Asuransi atau sejak tanggal pemulihan Polis terakhir?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclaration90DaysLimitYes" } Tidak
+								%input#RadioButtonSalesDeclaration90DaysLimitYes{ :type => "radio", :name => "RadioButtonSalesDeclaration90DaysLimit", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclaration90DaysLimitNo" } Ya
+								%input#RadioButtonSalesDeclaration90DaysLimitNo{ :type => "radio", :name => "RadioButtonSalesDeclaration90DaysLimit", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+						%div.ContainerFit
+							%label.Full.Item{ :for => "RadioButtonSalesDeclarationBasicSumAssuredYes" } b. Apakah sudah dijelaskan bahwa manfaat Terminal Illness sebesar 20% Uang Pertanggungan atau maksimal Rp 3,000,000,000,- (tiga miliar rupiah) per Tertanggung?
+							%div.MediumFix.Item
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationBasicSumAssuredYes" } Tidak
+								%input#RadioButtonSalesDeclarationBasicSumAssuredYes{ :type => "radio", :name => "RadioButtonSalesDeclarationBasicSumAssured", :value => "false" }
+								%div.BoxRound.PositionerRight
+								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationBasicSumAssuredNo" } Ya
+								%input#RadioButtonSalesDeclarationBasicSumAssuredNo{ :type => "radio", :name => "RadioButtonSalesDeclarationBasicSumAssured", :value => "true" }
+								%div.BoxRound.PositionerRight
+
+				%label.Single.PositionerLeft{ :for => "TextSalesDeclarationIncomeSource" } 13. Sebutkan sumber dan total penghasilan Calon Pemegang Polis perbulan
+				%br
+				%label.Medium.Wrap.PositionerLeft{ :for => "TextSalesDeclarationIncomeSource" } Sumber penghasilan
+				%table#TextSalesDeclarationIncomeSource.BoxSquare.PositionerLeft
+				%br
+				%label.Medium.Wrap.PositionerLeft{ :for => "TextSalesDeclarationIncomeBruto" } Total Penghasilan Kotor/Tahun
+				%table#TextSalesDeclarationIncomeBruto.BoxSquare.PositionerLeft
+				%br
+
+				%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } 1. Apakah hubungan Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
+				%br
+				%input#RadioButtonSalesDeclarationPurposeSaving{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "saving" }
+				%div.BoxRound.PositionerLeft
+				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } Tabungan
+
+				%input#RadioButtonSalesDeclarationPurposeProtection{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "protection" }
+				%div.BoxRound.PositionerLeft
+				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeProtection" } Proteksi
+
+				%input#RadioButtonSalesDeclarationPurposeInvestment{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "investment" }
+				%div.BoxRound.PositionerLeft
+				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeInvestment" } Investasi
+
+				%input#RadioButtonSalesDeclarationPurposeEducation{ :type => "radio", :name => "RadioButtonSalesDeclarationPurpose", :value => "education" }
+				%div.BoxRound.PositionerLeft
+				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeEducation" } Iklan
+
+				%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "other" }
+				%div.BoxRound.PositionerLeft
+				%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther" } Lainnya, sebutkan
+				%div#TextSalesDeclarationRelationshipWithProspectiveInsuredOther.LineDot.PositionerLeft
+				%br
