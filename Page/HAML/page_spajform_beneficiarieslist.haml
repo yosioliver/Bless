@@ -2,72 +2,72 @@
 
 %html
 
-	/ HEAD
+    / HEAD
 
-	%head
-		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life - BLESS, Health Questionnaire 1 Form
+    %head
+        = Haml::Engine.new(File.read("include_spajform_header.haml")).render
+        %title BCA Life - BLESS, Health Questionnaire 1 Form
 
-		/ JQUERY
+        / JQUERY
 
-		:javascript
-			var stringPageTypeCurrent = stringPageTypeForm;
-			var stringPageSectionCurrent = stringPageSectionBeneficiariesList;
-			var stringPageValidationCurrent = 0;
-			var booleanInputChangeState = false;
-		
-			$(document).ready(function()
-			{ 
-				// GENERATOR
+        :javascript
+            var stringPageTypeCurrent = stringPageTypeForm;
+            var stringPageSectionCurrent = stringPageSectionBeneficiariesList;
+            var stringPageValidationCurrent = 0;
+            var booleanInputChangeState = false;
 
-				beneficiariesListGenerator("ButtonAdd");
-				buttonPopUpBeneficiariesListGenerator();
-				initiateArrayRelationshipWithProspectiveInsured(arrayRelationshipWithProspectiveInsured);
-				generateSelectOption("SelectRelationship", arrayRelationshipWithProspectiveInsured);
+            $(document).ready(function()
+            {
+                // GENERATOR
 
-				$("#BoxDate").DateTimePicker(
-				{
-					dateSeparator: "/",
-					dateFormat: "dd/MM/yyyy"
-				});
-				
-				calculateAge("DateBirthday", "TextAge");
-				inputListener();
-				
-				// FOR TESTING
-				
-				/* $("#ButtonSubmit").click(function()
-				{
-					savetoDB();
-				}); */
-			});
+                beneficiariesListGenerator("ButtonAdd");
+                buttonPopUpBeneficiariesListGenerator();
+                initiateArrayRelationshipWithProspectiveInsured(arrayRelationshipWithProspectiveInsured);
+                generateSelectOption("SelectRelationship", arrayRelationshipWithProspectiveInsured);
 
-	/ BODY
+                $("#BoxDate").DateTimePicker(
+                {
+                    dateSeparator: "/",
+                    dateFormat: "dd/MM/yyyy"
+                });
 
-	%body#Main
+                calculateAge("DateBirthday", "TextAge");
+                inputListener();
 
-		/ MAIN
+                // FOR TESTING
 
-		%main
-			%form
-				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
-				%label.Medium.Single.PositionerLeft{ :for => "TextBeneficiariesListSharedPercentage" } Total Percentage :
-				%input#TextBeneficiariesListSharePercentage.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
-				%br
+                /* $("#ButtonSubmit").click(function()
+                {
+                    savetoDB();
+                }); */
+            });
 
-				%input#ButtonAdd.ButtonPrimary.PositionerLeft{ :type => "button", :style => "margin-top: 20px; margin-bottom: 20px;" , :value => "Tambah Penerima Manfaat" }
-				%br
+    / BODY
 
-				%table.Space#TableBeneficiariesList
-					%thead
-						%tr
-							%th Nama Penerima Manfaat
-							%th Tanggal Lahir
-							%th Hubungan dengan Calon Tertanggung
-							%th{ :colspan => "2" } Action                     
-					%tbody
+    %body#Main
 
-			%section#PopUpBeneficiariesList.PopUp
-				= Haml::Engine.new(File.read("popup_spajform_beneficiarieslist.haml")).render
-				
-			%div#BoxDate
+        / MAIN
+
+        %main
+            %form
+                / %input#ButtonSubmit{ :type => "button", :value => "Submit" }
+                %label.Medium.Single.PositionerLeft{ :for => "TextBeneficiariesListSharedPercentage" } Total Percentage :
+                %input#TextBeneficiariesListSharePercentage.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+                %br
+
+                %input#ButtonAdd.ButtonPrimary.PositionerLeft{ :type => "button", :style => "margin-top: 20px; margin-bottom: 20px;" , :value => "Tambah Penerima Manfaat" }
+                %br
+
+                %table.Space#TableBeneficiariesList
+                    %thead
+                        %tr
+                            %th Nama Penerima Manfaat
+                            %th Tanggal Lahir
+                            %th Hubungan dengan Calon Tertanggung
+                            %th{ :colspan => "2" } Action
+                    %tbody
+
+            %section#PopUpBeneficiariesList.PopUp
+                = Haml::Engine.new(File.read("popup_spajform_beneficiarieslist.haml")).render
+
+            %div#BoxDate

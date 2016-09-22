@@ -344,6 +344,135 @@ main section .Note {
   -webkit-border-radius: 2px;
 }
 
+main section .ContainerFit, main section .ContainerLeft, main section .ContainerRight {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+main section .ContainerFit .Item, main section .ContainerLeft .Item, main section .ContainerRight .Item {
+  flex-grow: 1;
+}
+
+main section .ContainerFit .Item1, main section .ContainerLeft .Item1, main section .ContainerRight .Item1 {
+  flex-grow: 1;
+}
+
+main section .ContainerFit .Item2, main section .ContainerLeft .Item2, main section .ContainerRight .Item2 {
+  flex-grow: 2;
+}
+
+main section .ContainerFit .Item3, main section .ContainerLeft .Item3, main section .ContainerRight .Item3 {
+  flex-grow: 3;
+}
+
+main section .ContainerFit .Margin, main section .ContainerLeft .Margin, main section .ContainerRight .Margin {
+  margin: 5px;
+}
+
+main section .ContainerFit .Center, main section .ContainerLeft .Center, main section .ContainerRight .Center {
+  text-align: center;
+}
+
+main section .ContainerFit .Left, main section .ContainerLeft .Left, main section .ContainerRight .Left {
+  text-align: left;
+}
+
+main section .ContainerFit .Right, main section .ContainerLeft .Right, main section .ContainerRight .Right {
+  text-align: right;
+}
+
+main section .ContainerFit {
+  justify-content: space-between;
+}
+
+main section .ContainerLeft {
+  justify-content: flex-start;
+}
+
+main section .ContainerRight {
+  justify-content: flex-end;
+}
+
+main section .ContainerFit.InnerFieldset {
+  margin-top: 5px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
+
+main section .ContainerFit.InnerFieldset .Item.Column:first-child {
+  padding-right: 15px;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+main section .ContainerFit.InnerFieldset .Item.Column:last-child {
+  padding-left: 15px;
+}
+
+main section .ContainerFit.InnerFieldset .Item.Column label {
+  margin-top: 5px;
+}
+
+main section .ContainerFit.InnerFieldset .Item.Column label:after {
+  content: '';
+}
+
+main section .ContainerFit.InnerFieldset label.RadioButton {
+  margin-top: 0px !important;
+}
+
+div.Short {
+  min-width: 75px;
+  width: 75px;
+}
+
+div.Medium {
+  min-width: 154px;
+  width: 154px;
+}
+
+div.Long {
+  min-width: 225px;
+  width: 225px;
+}
+
+div.Full {
+  width: 100%;
+}
+
+div.ShortFix {
+  min-width: 75px;
+  min-width-width: 75px;
+  min-width-max-width: 75px;
+}
+
+div.MediumFix {
+  min-width: 123.2px;
+  min-width-width: 123.2px;
+  min-width-max-width: 154px;
+}
+
+div.LongFix {
+  min-width: 225px;
+  min-width-width: 225px;
+  min-width-max-width: 225px;
+}
+
+div.FullFix {
+  min-width: 100%;
+  min-width-width: 100%;
+  min-width-max-width: 100%;
+}
+
 /* FOOTER */
 .FooterContainer, .FooterContainerLast {
   position: absolute;
@@ -419,5 +548,23 @@ main section .Note {
 }
 
 .Horizontal25of100 tfoot tr td {
+  width: 288px;
+}
+
+.Horizontal50of100 {
+  width: 48%;
+  display: inline-block;
+}
+
+.Horizontal50of100 thead tr th {
+  width: 288px;
+  height: 30px;
+}
+
+.Horizontal50of100 tbody tr td {
+  width: 288px;
+}
+
+.Horizontal50of100 tfoot tr td {
   width: 288px;
 }

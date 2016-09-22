@@ -15,14 +15,13 @@
 		%br
 		%div.RadioButton
 			%input#ButtonDiving.ButtonPrimary{ :type => "button", :value => "Menyelam", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpDiving', stringPageInfixTypeCurrent + 'Diving', arrayHealthQuestionnaire)" }
+			%div.Separator			
+			%input#ButtonHiking.ButtonPrimary{ :type => "button", :value => "Mendaki gunung dan panjat tebing Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpHiking', stringPageInfixTypeCurrent + 'Hiking', arrayHealthQuestionnaire)" }
 			%div.Separator
-			-#
-				%input#ButtonHiking.ButtonPrimary{ :type => "button", :value => "Mendaki gunung dan panjat tebing Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpHiking', stringPageInfixTypeCurrent + 'Hiking', arrayHealthQuestionnaire)" }
-				%div.Separator
-				%input#ButtonRacing.ButtonPrimary{ :type => "button", :value => "Olahraga balap", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpRacing', stringPageInfixTypeCurrent + 'Racing', arrayHealthQuestionnaire)" }
-				%div.Separator
-				%input#ButtonParagliding.ButtonPrimary{ :type => "button", :value => "Paralayang", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpParagliding', stringPageInfixTypeCurrent + 'Paragliding', arrayHealthQuestionnaire)" }
-				%div.Separator
+			%input#ButtonRacing.ButtonPrimary{ :type => "button", :value => "Olahraga balap", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpRacing', stringPageInfixTypeCurrent + 'Racing', arrayHealthQuestionnaire)" }
+			%div.Separator
+			%input#ButtonParagliding.ButtonPrimary{ :type => "button", :value => "Paralayang", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpParagliding', stringPageInfixTypeCurrent + 'Paragliding', arrayHealthQuestionnaire)" }
+			%div.Separator
 			%input#ButtonMining.ButtonPrimary{ :type => "button", :value => "Pertambangan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpMining', stringPageInfixTypeCurrent + 'Mining', arrayHealthQuestionnaire)" }
 			%div.Separator
 			-#
@@ -37,5 +36,5 @@
 		%hr
 		%label.Medium.Single silahkan memberikan rincian lebih lanjut
 		%br
-		%textarea#AreaAmandmentDetail.Full.Multi{ :required => "true" }
+		%textarea#AreaAmandmentDetail.Full.Multi{ :required => "true", :value => " " }
 		%label.Medium.Single (maksimum 250 karakter)

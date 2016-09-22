@@ -147,12 +147,16 @@
 						%input.Short.Single.Item1.Margin{ :type => "text", :value => "Jumlah penyelaman", :disabled => "true" }						
 						%input#TextPolicyHolderDivingHistoryNumOfDiveLast12Months.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingHistoryNumOfDiveNext12Months.Short.Single.Item1.Margin{ :type => "text" }
-					%br
-					
+					%br					
 					%hr
 					
-					%span.Number.Single.PositionerLeft 4. 					
-					%label.Full.Single.PositionerLeft Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
+					%section#SectionFooter{ :style => "margin-top: 30px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 4. 					
+					%label.Full.Single.PositionerLeft{ :style => "margin-top: 30px;"} Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
 					%br
 						
 					%div.RadioButton.NumberIndent
@@ -245,7 +249,7 @@
 					
 					%hr
 					%span.Number.Single.PositionerLeft 5. 						
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDV" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
+					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
 					%br
 					%div.RadioButton.NumberIndent												
 						%input#RadioButtonPolicyHolderDivingAccidentDVNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingAccidentDV", :value => "false" }
@@ -268,6 +272,11 @@
 						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
 					%br
 					%hr
+					
+					%section#SectionFooter{ :style => "margin-top: 550px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render

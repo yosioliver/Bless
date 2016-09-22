@@ -1,0 +1,223 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+			
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+				
+				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+				
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+				
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				
+				// SETUP
+				
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Olahraga Motor / Sepeda Motor");
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1 KUESIONER OLAHRAGA MOTOR / SEPEDA MOTOR
+			%br
+
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
+			
+		/ MAIN
+
+		%main
+			%form
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
+				
+				/ FIELDSET
+				
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
+				
+				%fieldset
+					%span.Number.Single.PositionerLeft 1. 						
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderRacingActivity" } Apakah jenis kegiatan olah raga motor yang Anda lakukan?
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderRacingActivity.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 2.
+					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingVehicleModel" } Apakah jenis kendaraan bermotor yang Ada kendaran? (Sebutkan model, tahun pembuatan, ukuran mesin, dan kategori secara terperinci)
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderRacingVehicleModel.Full.Single.Item{ :type => "text" }
+					%br
+						
+					%span.Number.Single.PositionerLeft 3.
+					%label.Wrap.Full.PositionerLeft Sebutkan tujuan kegiatan olah raga motor/ sepeda motor yang Anda lakukan
+					%br	
+					
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Hiburan
+						%input#RadioButtonPolicyHolderFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerNo" } Amatir
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Perlombaan
+						%input#RadioButtonPolicyHolderFlightPassengerNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerNo" } Profesional
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Sponsor
+					%br
+				
+					%span.Number.Single.PositionerLeft 4.
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderRacingActiveDuration" } Berapa lama Anda aktif dalam olah raga ini?
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderRacingActiveDuration.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 5. 
+					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingPlace" } Di mana Anda melakukan perlombaan? (Sebutkan nama semua acara yang diselenggarakan)
+					%br
+					%div.RadioButton.NumberIndent
+						%input#TextPolicyHolderRacingPlace.Full.Single.Item{ :type => "text" }	
+					%br
+															
+					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft 6.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
+					%br
+					
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Lisensi/Sertifikat
+						%label.Short.Single.Item1.Center Tanggal Perolehan
+						%label.Short.Single.Item1.Center Tanggal Perpanjangan
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderFlightLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text" }					
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderFlightLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text" }					
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderFlightLicenseCertificate3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateExtention3.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderFlightLicenseCertificate4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateExtention4.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderFlightLicenseCertificate5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderFlightLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text" }					
+					%br
+					
+					%span.Number.Single.PositionerLeft 7.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo" } Apakah Anda berpartisipasi atau berniat untuk berpartisipasi dalam setiap kompetisi?
+					%br					
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Tidak
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Ya. Jelaskan secara rinci
+					%br					
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderMilitaryInDangerLocationDesc.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 8.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo" } Apakah Anda anggota suatu klub atau asosiasi balap?
+					%br					
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Tidak
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Ya. Jelaskan secara rinci
+					%br					
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderMilitaryInDangerLocationDesc.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 9.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo" } Pernahkah Anda mengalami kecelakaan atau pelanggaran pengunaan/pencabutan lisensi?
+					%br					
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Tidak
+					%br
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderFlightPassengerYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightPassenger", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightPassengerYes" } Ya. Jelaskan secara rinci
+					%br					
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderMilitaryInDangerLocationDesc.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 10.
+					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingAdditionalInfo" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderRacingAdditionalInfo.Full.Single.Item{ :type => "text" }
+					%br
+					
+				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
