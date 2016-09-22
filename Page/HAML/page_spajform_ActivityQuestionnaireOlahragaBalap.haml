@@ -17,46 +17,46 @@
 
 		%div.ContainerFit
 			%label.medium.Single.Item 1. Apakah jenis kegiatan olah raga motor yang Anda lakukan?
-		%input#TextPolicyHolderKegiatanOlahraga.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextRCActivity.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 2. Apakah jenis kendaraan bermotor yang Ada kendaran? (Sebutkan model, tahun pembuatan, ukuran mesin, dan kategori secara terperinci)
 		%br	
-		%input#TextPolicyHolderKegiatanOlahraga.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextRCVehicleModel.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 3. Sebutkan tujuan kegiatan olah raga motor/ sepeda motor yang Anda lakukan: ?
 			%br
-			%input#RadioButtonHiburan{ :type => "radio", :name => "RadioButtonTujuanKegiatan", :value => "Hiburan" }
-			%label.RadioButton{ :for => "RadioButtonHiburan" } Hiburan 
+			%input#RadioButtonRCActivityPurposeEntertainment{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "entertainment" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeEntertainment" } Hiburan 
 			%div.Separator
-			%input#RadioButtonAmatir{ :type => "radio", :name => "RadioButtonTujuanKegiatan", :value => "Amatir" }
-			%label.RadioButton{ :for => "RadioButtonAmatir" } Amatir 
+			%input#RadioButtonRCActivityPurposeAmateur{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "amateur" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeAmateur" } Amatir 
 			%div.Separator
-			%input#RadioButtonPerlombaan{ :type => "radio", :name => "RadioButtonTujuanKegiatan", :value => "Perlombaan" }
-			%label.RadioButton{ :for => "RadioButtonPerlombaan" } Perlombaan 
+			%input#RadioButtonRCActivityPurposeCompetition{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "competition" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeCompetition" } Perlombaan 
 			%div.Separator
-			%input#RadioButtonProfesional{ :type => "radio", :name => "RadioButtonTujuanKegiatan", :value => "Profesional" }
-			%label.RadioButton{ :for => "RadioButtonProfesional" } Profesional 
+			%input#RadioButtonRCActivityPurposeProfessional{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "professional" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeProfessional" } Profesional 
 			%div.Separator
-			%input#RadioButtonSponsor{ :type => "radio", :name => "RadioButtonTujuanKegiatan", :value => "Sponsor" }
-			%label.RadioButton{ :for => "RadioButtonSponsor" } Sponsor
+			%input#RadioButtonRCActivityPurposeSponsor{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "sponsor" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeSponsor" } Sponsor
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 4. Berapa lama Anda aktif dalam olah raga ini?
-		%input#TextPolicyHolderAktifDalamOlahraga.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextRCStillActive.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 5. Di mana Anda melakukan perlombaan? (Sebutkan nama semua acara yang diselenggarakan)
-		%input#TextPolicyHolderdimanaMelakukanPerlombaan.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextRCPlace.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -67,65 +67,64 @@
 			%label.Short.Single.Item1.Center.Margin Tanggal Perolehan		
 			%label.Short.Single.Item1.Center.Margin Tanggal Perpanjangan
 		%div.ContainerFit
-
-			%input#TextPolicyHolderLisensi1.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerolehan1.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerpanjangan1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextRCLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextPolicyHolderLisensi2.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerolehan2.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerpanjangan2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextRCLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextPolicyHolderLisensi3.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerolehan3.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerpanjangan3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextRCLicenseCertificate3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention3.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextPolicyHolderLisensi4.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerolehan4.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerpanjangan4.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextRCLicenseCertificate4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention4.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextPolicyHolderLisensi5.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerolehan5.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderTanggalPerpanjangan5.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextRCLicenseCertificate5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text" }
 		%hr	
 
 		%label#Wrap.Single.PositionerLeft 7. Apakah Anda berpartisipasi atau berniat untuk berpartisipasi dalam setiap
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes" } Ya
+			%input#RadioButtonRCParticipatingYes{ :type => "radio", :name => "RadioButtonRCParticipating", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRCParticipatingYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo" } Tidak
+			%input#RadioButtonRCParticipatingNo{ :type => "radio", :name => "RadioButtonRCParticipating", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRCParticipatingNo" } Tidak
 		%br
-		%input#TextPolicyHolderberpartisipasi.Full.Multi.Item1.Margin{ :type =>"text"}
+		%input#TextRCParticipatingLocationDesc.Full.Multi.Item1.Margin{ :type =>"text"}
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 8. Apakah Anda anggota suatu klub atau asosiasi balap?
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyRadioButtonPolicyAsosiasiBalapChangeYes{ :type => "radio", :name => "RadioButtonPolicyAsosiasiBalapChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyAsosiasiBalapChangeYes" } Ya
+			%input#RadioButtonRCClubMemberYes{ :type => "radio", :name => "RadioButtonRCClubMember", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRCClubMemberYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyRadioButtonPolicyAsosiasiBalapChangeNo{ :type => "radio", :name => "RadioButtonPolicyAsosiasiBalapChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyAsosiasiBalapChangeNo" } Tidak
+			%input#RadioButtonRCClubMemberNo{ :type => "radio", :name => "RadioButtonRCClubMember", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRCClubMemberNo" } Tidak
 		%br
-		%input#TextPolicyHolderAsosiasiBalap.Full.Multi.Item1.Margin{ :type =>"text"}
+		%input#TextRCClubMemberDesc.Full.Multi.Item1.Margin{ :type =>"text"}
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 9. Pernahkah Anda mengalami kecelakaan atau pelanggaran
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyRadioButtonPolicyMengalamiKecelakaanChangeYes{ :type => "radio", :name => "RadioButtonPolicyMengalamiKecelakaanChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyMengalamiKecelakaanChangeYes" } Ya
+			%input#RadioButtonRCAccidentYes{ :type => "radio", :name => "RadioButtonRCAccident", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRCAccidentYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyRadioButtonPolicyMengalamiKecelakaanChangeNo{ :type => "radio", :name => "RadioButtonPolicyMengalamiKecelakaanChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyMengalamiKecelakaanChangeNo" } Tidak
+			%input#RadioButtonRCAccidentNo{ :type => "radio", :name => "RadioButtonRCAccident", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRCAccidentNo" } Tidak
 		%br
-		%input#TextPolicyHolderMengalamiKecelakaan.Full.Multi.Item1.Margin{ :type =>"text"}
+		%input#TextRCAccidentDesc.Full.Multi.Item1.Margin{ :type =>"text"}
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 10. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
 		%br	
-		%input#TextPolicyHolderInformasiLain.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextRCAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 		

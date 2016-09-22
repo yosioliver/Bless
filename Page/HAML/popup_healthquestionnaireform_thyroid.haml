@@ -16,7 +16,7 @@
 
 		%div.ContainerFit
 			%label#Wrap.Single.Full.PositionerLeft 1. Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
-			%input#DateFirstGotDay.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
+			%input#DateTHFirstGot.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
 
@@ -83,11 +83,11 @@
 		%br
 		%div.ContainerFit 
 			%div.RadioButton
-				%input#RadioButtonTakenYes{ :type => "radio", :name => "RadioButtonTaken", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonTakenYes" } Ya
+				%input#RadioButtonTRConsumeDrugYes{ :type => "radio", :name => "RadioButtonTRConsumeDrug", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTRConsumeDrugYes" } Ya
 				%div.Separator
-				%input#RadioButtonTakenNo{ :type => "radio", :name => "RadioButtonTaken", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonTakenNo" } Tidak
+				%input#RadioButtonTRConsumeDrugNo{ :type => "radio", :name => "RadioButtonTRConsumeDrug", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTRConsumeDrugNo" } Tidak
 				%label.medium.Single ("Jika Ya, mohon tuliskan nama obat dan dosisnya")
 		%br
 		%div.ContainerFit 
@@ -136,13 +136,13 @@
 		%hr
 		%label.Medium.Single.Item 5. Apakah Anda pernah melakukan pemeriksaan medis sehubungan kelainan kelenjar gondok (tiroid)?
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%div.RadioButton
-				%input#RadioButtonTakenYes{ :type => "radio", :name => "RadioButtonTaken", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonTakenYes" } Ya
+				%input#RadioButtonTRMedicalCheckYes{ :type => "radio", :name => "RadioButtonTRMedicalCheck", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTRMedicalCheckYes" } Ya
 				%div.Separator
-				%input#RadioButtonTakenNo{ :type => "radio", :name => "RadioButtonTaken", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonTakenNo" } Tidak
+				%input#RadioButtonTRMedicalCheckNo{ :type => "radio", :name => "RadioButtonTRMedicalCheck", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTRMedicalCheckNo" } Tidak
 				%label.medium.Single (Jika "Ya", mohon melengkapi hasil pemeriksaan pada kolom di bawah ini).
 		%br
 		%div.ContainerFit

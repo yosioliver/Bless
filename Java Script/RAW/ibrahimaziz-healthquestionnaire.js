@@ -84,7 +84,7 @@ function showPopUpFromRadioButton(stringRadioButtonName, stringRadioButtonValue,
 		$(stringButtonPreviewJQueryID).css("display", "none");
 	}
 	
-	previewArrayObject(arrayContent);
+	// previewArrayObject(arrayContent);
 }
 
 function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaScriptID, stringPopUpLinkJavaScriptID, stringParentNameWithoutPrefix, arrayContent)
@@ -101,7 +101,7 @@ function buttonPopUpNavigation(stringButtonJavaScriptID, stringPopUpCurrentJavaS
 function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithoutPrefix, arrayContent, arrayValidation)
 {
 	var stringPopUpCurrentJQueryID = stringKres + stringPopUpCurrentJavaScriptID;
-	var booleanState = false;
+	var booleanState = false;		
 	
 	if (arrayValidation == null)
 	{
@@ -112,16 +112,16 @@ function buttonPopUpDone(stringPopUpCurrentJavaScriptID, stringParentNameWithout
 		var stringRequiredValue;
 		
 		for (var i = 0; i < arrayValidation.length; i++)
-		{
+		{						
 			stringRequiredValue = arrayFind(arrayHealthQuestionnaire, arrayValidation[i]);
 			
 			if (stringRequiredValue != null)
-			{
+			{				
 				booleanState = true;
 			}
 			else
 			{
-
+				
 			}
 		}
 	}
@@ -168,8 +168,8 @@ function buttonSubPopUpDone(stringPopUpCurrentJavaScriptID, stringPopUpParentJav
 	}
 	else
 	{
-		
-	}
+			
+	}	
 }
 
 function buttonSubPopUpCancel(stringPopUpCurrentJavaScriptID, stringPopUpParentJavaScriptID)
