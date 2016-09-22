@@ -25,9 +25,9 @@
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 
-				boxGenerator("#DatePolicyHolderThyroidFirstGotDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderThyroidFirstGotMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderThyroidFirstGotYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidTHFirstGotDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidTHFirstGotMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderThyroidTHFirstGotYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderThyroidLastConsultDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderThyroidLastConsultMonth", 2, boxTypeWithoutLabel, null);
@@ -81,12 +81,12 @@
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 				%fieldset
 					%span.Number.PositionerLeft 1
-					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderThyroidFirstGotDay" } Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
-					%table#DatePolicyHolderThyroidFirstGotYear.BoxSquare.PositionerRight
+					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderThyroidTHFirstGotDay" } Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
+					%table#DatePolicyHolderThyroidTHFirstGotYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderThyroidFirstGotMonth.BoxSquare.PositionerRight
+					%table#DatePolicyHolderThyroidTHFirstGotMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderThyroidFirstGotDay.BoxSquare.PositionerRight
+					%table#DatePolicyHolderThyroidTHFirstGotDay.BoxSquare.PositionerRight
 					%br
 					
 					%span.Number.PositionerLeft 2
@@ -159,13 +159,13 @@
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTaken" } Apakah Anda pernah atau saat ini sedang mengkonsumsi obat sehubungan kelainan kelenjar gondok (tiroid)?
 					%br
 					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderThyroidTakenYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTaken", :value => "true" }
+						%input#RadioButtonPolicyHolderThyroidTRConsumeDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTRConsumeDrug", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTakenYes" } Ya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTRConsumeDrugYes" } Ya
 						
-						%input#RadioButtonPolicyHolderThyroidTakenNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTaken", :value => "false" }
+						%input#RadioButtonPolicyHolderThyroidTRConsumeDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTRConsumeDrug", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTakenNo" } Tidak
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTRConsumeDrugNo" } Tidak
 						%br								
 
 						%label.Wrap.PositionerLeft (Jika “Ya”, mohon mengisi kolom di bawah ini).
@@ -248,14 +248,14 @@
 					%span.Number.PositionerLeft 5
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidDifferentTest" } Apakah Anda pernah melakukan pemeriksaan medis sehubungan kelainan kelenjar gondok (tiroid)?
 					%br
-					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderThyroidDifferentTestYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidDifferentTest", :value => "true" }
+					%div.RadioButton.NumberIndent						
+						%input#RadioButtonPolicyHolderThyroidTRMedicalCheckYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTRMedicalCheck", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidDifferentTestYes" } Ya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTRMedicalCheckYes" } Ya
 						
-						%input#RadioButtonPolicyHolderThyroidDifferentTestNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidDifferentTest", :value => "false" }
+						%input#RadioButtonPolicyHolderThyroidTRMedicalCheckNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTRMedicalCheck", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidDifferentTestNo" } Tidak
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTRMedicalCheckNo" } Tidak
 						%br								
 
 						%label.Wrap.PositionerLeft (Jika “Ya”, mohon melengkapi hasil pemeriksaan pada kolom di bawah ini).
