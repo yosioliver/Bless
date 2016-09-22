@@ -25,34 +25,34 @@
 		%br
 
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonTherapyDrug.Single{ :type => "radio", :name => "RadioButtonTherapy", :value => "drug" }
-			%label.RadioButton{ :for => "RadioButtonTherapyDrug" } Hipertiroidisme
+			%input#RadioButtonTHTherapyHyperthyroidisme.Single{ :type => "radio", :name => "RadioButtonTHTherapy", :value => "hyperthyroidisme" }
+			%label.RadioButton{ :for => "RadioButtonTHTherapyHyperthyroidisme" } Hipertiroidisme
 			%div.Separator
 
-			%input#RadioButtonTherapyRadio.Medium.Single{ :type => "radio", :name => "RadioButtonTherapy", :value => "radiotherapy" }
-			%label.RadioButton{ :for => "RadioButtonTherapyRadio" } Hipotiroidisme
+			%input#RadioButtonTHTherapyHypothyroidisme.Medium.Single{ :type => "radio", :name => "RadioButtonTHTherapy", :value => "hypothyroidisme" }
+			%label.RadioButton{ :for => "RadioButtonTHTherapyHypothyroidisme" } Hipotiroidisme
 			%div.Separator
 
-			%input#RadioButtonTherapyChemo.Medium.Single{ :type => "radio", :name => "RadioButtonTherapy", :value => "chemotherapy" }
-			%label.RadioButton{ :for => "RadioButtonTherapyChemo" } Tiroiditis
+			%input#RadioButtonTHTherapyThyroiditis.Medium.Single{ :type => "radio", :name => "RadioButtonTHTherapy", :value => "thyroiditis" }
+			%label.RadioButton{ :for => "RadioButtonTHTherapyThyroiditis" } Tiroiditis
 			%div.Separator
 
-			%input#RadioButtonTherapyDrug.Medium.Single{ :type => "radio", :name =>"RadioButtonTherapy", :value => "drug" }
-			%label.RadioButton{ :for => "RadioButtonTherapyDrug" } Penyakit Hashimoto
+			%input#RadioButtonTHTherapyHasimoto.Medium.Single{ :type => "radio", :name =>"RadioButtonTHTherapy", :value => "hasimoto" }
+			%label.RadioButton{ :for => "RadioButtonTHTherapyHasimoto" } Penyakit Hashimoto
 			%div.Separator
 
-			%input#RadioButtonTherapyRadio{ :type => "radio", :name =>"RadioButtonTherapy", :value => "radiotherapy" }
-			%label.RadioButton{ :for => "RadioButtonTherapyRadio" } Goiter
+			%input#RadioButtonTHTherapyGoiter{ :type => "radio", :name =>"RadioButtonTHTherapy", :value => "goiter" }
+			%label.RadioButton{ :for => "RadioButtonTHTherapyGoiter" } Goiter
 			%div.Separator
 
-			%input#RadioButtonTherapyChemo{ :type => "radio", :name =>"RadioButtonTherapy", :value => "chemotherapy" }
-			%label.RadioButton{ :for => "RadioButtonTherapyChemo" } Penyakit Grave
+			%input#RadioButtonTHTherapyGrave{ :type => "radio", :name =>"RadioButtonTHTherapy", :value => "grave" }
+			%label.RadioButton{ :for => "RadioButtonTHTherapyGrave" } Penyakit Grave
 			%div.Separator
 
-			%input#RadioButtonTherapyOthers{ :type => "radio", :name =>"RadioButtonTherapy", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonTherapyOthers" } lainnya
+			%input#RadioButtonTHTherapyOthers{ :type => "radio", :name =>"RadioButtonTHTherapy", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonTHTherapyOthers" } lainnya
 		%br
-		%input#TextTherapyOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextTHTherapyOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -60,34 +60,34 @@
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Tanggal terakhir konsultasi
-			%input#DateLastConsult.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
+			%input#DateTHLastConsult.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
-			%input#TextConsultDoctName.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHConsultDoctName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
-			%input#TextConsultPhone.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHConsultPhone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
-			%input#TextConsultClinic.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHConsultClinic.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
-			%input#TextConsultAddress.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHConsultAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 		%label.medium.Single.Item 4. Apakah Anda pernah atau saat ini sedang mengkonsumsi obat sehubungan kelainan kelenjar gondok (tiroid)?
 		%br
 		%div.ContainerFit 
 			%div.RadioButton
-				%input#RadioButtonTRConsumeDrugYes{ :type => "radio", :name => "RadioButtonTRConsumeDrug", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonTRConsumeDrugYes" } Ya
+				%input#RadioButtonTHConsumeDrugYes{ :type => "radio", :name => "RadioButtonTHConsumeDrug", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTHConsumeDrugYes" } Ya
 				%div.Separator
-				%input#RadioButtonTRConsumeDrugNo{ :type => "radio", :name => "RadioButtonTRConsumeDrug", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonTRConsumeDrugNo" } Tidak
+				%input#RadioButtonTHConsumeDrugNo{ :type => "radio", :name => "RadioButtonTHConsumeDrug", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTHConsumeDrugNo" } Tidak
 				%label.medium.Single ("Jika Ya, mohon tuliskan nama obat dan dosisnya")
 		%br
 		%div.ContainerFit 
@@ -96,20 +96,32 @@
 			%label.Short.Single.Item.Margin.Center Dosis
 			%label.Short.Single.Item.Margin.Center Frekuensi
 		%div.ContainerFit 
-			%input#DateMedicine1.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
-			%input#TextMedicineName1.Full.Single.Item.Margin{ :type =>"text" }
-			%input#TextMedicineDosage1.Full.Single.Item.Margin{ :type =>"text" }
-			%input#TextMedicineFrequency1.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDate1.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTHMedicationName1.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDose1.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationFrequency1.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit 
-			%input#DateMedicine2.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
-			%input#TextMedicineName2.Full.Single.Item.Margin{ :type =>"text" }
-			%input#TextMedicineDosage2.Full.Single.Item.Margin{ :type =>"text" }
-			%input#TextMedicineFrequency2.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDate2.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTHMedicationName2.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDose2.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationFrequency2.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit 
-			%input#DateMedicine3.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
-			%input#TextMedicineName3.Full.Single.Item.Margin{ :type =>"text" }
-			%input#TextMedicineDosage3.Full.Single.Item.Margin{ :type =>"text" }
-			%input#TextMedicineFrequency3.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDate3.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTHMedicationName3.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDose3.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationFrequency3.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%input#TextTHMedicationDate4.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTHMedicationName4.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDose4.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationFrequency4.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%div.ContainerFit 
+			%input#TextTHMedicationDate5.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTHMedicationName5.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationDose5.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextTHMedicationFrequency5.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		
 		%div.ContainerFit
@@ -118,31 +130,31 @@
 			%label.Short.Single.Item1.Center Keterangan
 		%div.ContainerFit				
 			%label.Medium.Single.PositionerLeft Kapan pengobatan dimulai
-			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Kapan pengobatan dihentikan
-			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%label.Medium.Single.Item Mohon jelaskan secara rinci pada kolom di bawah ini alasan pengobatan diberhentikan.
 		%br
-		%input#TextOffShore.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextTHMedicationStopReasonDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%label.Medium.Single.Item Mohon jelaskan secara rinci pada kolom di bawah ini jika ada pengobatan lainnya.
 		%br
-		%input#TextOffShore.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextTHMedicationStopReasonOtherMedicine.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 		%label.Medium.Single.Item 5. Apakah Anda pernah melakukan pemeriksaan medis sehubungan kelainan kelenjar gondok (tiroid)?
 		%br
 		%div.ContainerFit
 			%div.RadioButton
-				%input#RadioButtonTRMedicalCheckYes{ :type => "radio", :name => "RadioButtonTRMedicalCheck", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonTRMedicalCheckYes" } Ya
+				%input#RadioButtonTHMedicalCheckYes{ :type => "radio", :name => "RadioButtonTHMedicalCheck", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTHMedicalCheckYes" } Ya
 				%div.Separator
-				%input#RadioButtonTRMedicalCheckNo{ :type => "radio", :name => "RadioButtonTRMedicalCheck", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonTRMedicalCheckNo" } Tidak
+				%input#RadioButtonTHMedicalCheckNo{ :type => "radio", :name => "RadioButtonTHMedicalCheck", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTHMedicalCheckNo" } Tidak
 				%label.medium.Single (Jika "Ya", mohon melengkapi hasil pemeriksaan pada kolom di bawah ini).
 		%br
 		%div.ContainerFit
@@ -151,147 +163,147 @@
 			%label.Short.Single.Item1.Center Hasil
 		%div.ContainerFit				
 			%label.Medium.Single.PositionerLeft T3
-			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextT3Date.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextT3Result.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft T4
-			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextT4Date.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextT4Result.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit				
 			%label.Medium.Single.PositionerLeft TSH
-			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTSHDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTSHResult.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft ECG
-			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextECGDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextECGResult.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit				
 			%label.Medium.Single.PositionerLeft Biopsi
-			%input#TextPolicyHolderThyroidMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextBiopsyDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextBiopsyResult.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Scan/MRI/USG
-			%input#TextPolicyHolderThyroidMedicationStopDate.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextPolicyHolderThyroidMedicationStopReason.Short.Single.Item1.Margin{ :type => "text" }
-
+			%input#TextScanMRIUSGDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextScanMRIUSGResult.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
+		
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 6. Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
-			%input#RadioButtonpengobatanYes{ :type => "radio", :name => "RadioButtonpengobatan", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonpengobatanYes" } Ya
+			%input#RadioButtonTHOperationYes{ :type => "radio", :name => "RadioButtonTHOperation", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonTHOperationYes" } Ya
 			%div.Separator
-			%input#RadioButtonpengobatanNo{ :type => "radio", :name => "RadioButtonpengobatan", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonpengobatanNo" } Tidak
+			%input#RadioButtonTHOperationNo{ :type => "radio", :name => "RadioButtonTHOperation", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonTHOperationNo" } Tidak
 		%br	
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Jika “Ya”, mohon berikan tanggal operasi:
-			%input#DatePolicyHolderTanggalOperasi.Short.Single.Item1.Margin{ :type => "text" , "data-field" => "date" }
+			%input#DateTHOperationDate.Short.Single.Item1.Margin{ :type => "text" , "data-field" => "date" }
 		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Lama perawatan di Rumah Sakit:
-			%input#TextPolicyHolderLamaPerawatan.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHHospitalTreatmentDuration.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Jenis Operasi:
-			%input#TextPolicyHolderNamaRumahSakit.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHOperationType.Short.Single.Item1.Margin{ :type => "text" }
 		%br	
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Nama Lengkap Dokter:
-			%input#TextPolicyHolderNamaDokterSpesialis.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHDoctorName.Short.Single.Item1.Margin{ :type => "text" }
 		%br	
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft No. Telepon/Handphone:
-			%input#TextPolicyHolderJenisOperasi.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHHospitalTelephone.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft	Nama Klinik/Rumah Sakit:
-			%input#TextPolicyHolderJenisOperasi.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHHospitalName.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
-			%input#TextPolicyHolderJenisOperasi.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHHospitalAddress.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%label.Medium.Single.Item Mohon melampirkan hasil Patologi Anatomi operasi tersebut
 		%div.RadioButton.Medium.Item
-			%input#RadioButtonPolicyMalampirPatologiYes{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyMalampirPatologiYes" } Ada
+			%input#RadioButtonAttachOperationResultYes{ :type => "radio", :name => "RadioButtonAttachOperationResult", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonAttachOperationResultYes" } Ada
 			%div.Separator
 
-			%input#RadioButtonPolicyMalampirPatologiNo{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyMalampirPatologiNo" } Tidak ada
+			%input#RadioButtonAttachOperationResultNo{ :type => "radio", :name => "RadioButtonAttachOperationResult", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonAttachOperationResultNo" } Tidak ada
 		%br
 		%label.medium.Single.Item Jika "Tidak", mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
-		%input#RadioButtonPolicyMalampirPatologi.Full.Multi.Item.Margin{ :type =>"text" }
+		%input#TextExplainOperationResultNo.Full.Multi.Item.Margin{ :type =>"text" }
 		%br
 		%label.medium.Single.Item Menurut Dokter Anda, bagaimana hasil Patology Anatomi tersebut?
 		%br
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonPolicyJinak{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Jinak" }
-			%label.RadioButton{ :for => "RadioButtonPolicyJinak" } Jinak
+			%input#RadioButtonPathologyResultNormal{ :type => "radio", :name => "RadioButtonPathologyResult", :value => "normal" }
+			%label.RadioButton{ :for => "RadioButtonPathologyResultNormal" } Jinak
 			%div.Separator
 
-			%input#RadioButtonPolicyGanas{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Ganas" }
-			%label.RadioButton{ :for => "RadioButtonPolicyGanas" } Ganas
+			%input#RadioButtonPathologyResultDanger{ :type => "radio", :name => "RadioButtonPathologyResult", :value => "danger" }
+			%label.RadioButton{ :for => "RadioButtonPathologyResultDanger" } Ganas
 			%div.Separator
 
-			%input#RadioButtonPolicyLainnya{ :type => "radio", :name => "RadioButtonPolicyMalampirPatologiAnatomi", :value => "Lainnya" }
-			%label.RadioButton{ :for => "RadioButtonPolicyLainnya" } Lainnya, sebutkan 
+			%input#RadioButtonPathologyResultOthers{ :type => "radio", :name => "RadioButtonPathologyResult", :value => "other" }
+			%label.RadioButton{ :for => "RadioButtonPathologyResultOthers" } Lainnya, sebutkan 
 		%br
-		%input#RadioButtonPolicyMalampirPatologi.Full.Multi.Item.Margin{ :type =>"text" , :placeholder => ""}
+		%input#TextPathologyResultOtherDesc.Full.Multi.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 		
 		%label.medium.Single.Item 7. Apakah ada pengobatan atau tindakan yang dilakukan setelah operasi?
 		%div.RadioButton.PositionerRight
-			%input#RadioButtonItemObatYes{ :type => "radio", :name => "RadioButtonItemObat", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonItemObatYes" } Ya
+			%input#RadioButtonMedicineAfterOperationYes{ :type => "radio", :name => "RadioButtonMedicineAfterOperation", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonMedicineAfterOperationYes" } Ya
 			%div.Separator
-			%input#RadioButtonItemObatNo{ :type => "radio", :name => "RadioButtonItemObat", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonItemObatNo" } Tidak
+			%input#RadioButtonMedicineAfterOperationNo{ :type => "radio", :name => "RadioButtonMedicineAfterOperation", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonMedicineAfterOperationNo" } Tidak
 		%br
 		%label.medium.Single.Item Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Obat
-				%input#RadioButtonObatYes{ :type => "radio", :name => "RadioButtonObat", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonObatYes" } Ya
+				%input#RadioButtonTHMedicineNameYes{ :type => "radio", :name => "RadioButtonTHMedicineName", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTHMedicineNameYes" } Ya
 				%div.Separator
-				%input#RadioButtonObatNo{ :type => "radio", :name => "RadioButtonObat", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonObatNo" } Tidak
-			%input#TextInputPolicyObat.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
+				%input#RadioButtonTHMedicineNameNo{ :type => "radio", :name => "RadioButtonTHMedicineName", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTHMedicineNameNo" } Tidak
+			%input#TextTHMedicineName.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Radioterapi
-				%input#RadioButtonRadioterapiYes{ :type => "radio", :name => "RadioButtonRadioterapi", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonRadioterapiYes" } Ya
+				%input#RadioButtonTHRadioTherapyYes{ :type => "radio", :name => "RadioButtonTHRadioTherapy", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTHRadioTherapyYes" } Ya
 				%div.Separator
-				%input#RadioButtonRadioterapiNo{ :type => "radio", :name => "RadioButtonRadioterapi", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonRadioterapiNo" } Tidak
-			%input#TextInputPolicyRadioterapi.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
+				%input#RadioButtonTHRadioTherapyNo{ :type => "radio", :name => "RadioButtonTHRadioTherapy", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTHRadioTherapyNo" } Tidak
+			%input#TextTHRadioTherapy.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Kemoterapi
-				%input#RadioButtonKemoterapiYes{ :type => "radio", :name => "RadioButtonKemoterapi", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonKemoterapiYes" } Ya
+				%input#RadioButtonTHChemoTherapyYes{ :type => "radio", :name => "RadioButtonTHChemoTherapy", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTHChemoTherapyYes" } Ya
 				%div.Separator
-				%input#RadioButtonKemoterapiNo{ :type => "radio", :name => "RadioButtonKemoterapi", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonKemoterapiNo" } Tidak
-			%input#TextInputPolicyKemoterapi.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
+				%input#RadioButtonTHChemoTherapyNo{ :type => "radio", :name => "RadioButtonTHChemoTherapy", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTHChemoTherapyNo" } Tidak
+			%input#TextTHChemoTherapy.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Lainnya
-				%input#RadioButtonLainnyaYes{ :type => "radio", :name => "RadioButtonLainnya", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonLainnyaYes" } Ya
+				%input#RadioButtonTHOtherTreatmentYes{ :type => "radio", :name => "RadioButtonTHOtherTreatment", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonTHOtherTreatmentYes" } Ya
 				%div.Separator
-				%input#RadioButtonLainnyaNo{ :type => "radio", :name => "RadioButtonLainnya", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonLainnyaNo" } Tidak
-			%input#TextInputPolicyLainnya.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
+				%input#RadioButtonTHOtherTreatmentNo{ :type => "radio", :name => "RadioButtonTHOtherTreatment", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonTHOtherTreatmentNo" } Tidak
+			%input#TextTHOtherTreatment.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
 		%hr	
 		%label.medium.Single.Item 8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
-		%br    
-		%input#TextPolicyHolderTambahanTentangKondisi.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%input#TextTHAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
