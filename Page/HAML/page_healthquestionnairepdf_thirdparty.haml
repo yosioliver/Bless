@@ -1,0 +1,803 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// DOCUMENT READY
+
+			$(document).ready(function()
+			{
+				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"},{"elementID":"TextPolicyHolderFullName","Value":"Ariani Jollanda Pondaag"},{"elementID":"TextSPAJNumber","Value":"123456789012"}]}}'
+
+				// SECTION POLICYHOLDER
+
+				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomeAddress", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomeAddress2nd", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomeCity", 17, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomePostalCode", 6, boxTypeWithoutLabel, null);
+				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomeCity", 2);
+				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomePostalCode", 4);
+				boxGenerator("#TextPolicyHolderHomeTelephonePrefix", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomeTelephoneSuffix", 12, boxTypeWithoutLabel, null);
+				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomeTelephonePrefix", 2);
+				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomeTelephoneSuffix", 1);
+				boxGenerator("#TextPolicyHolderHandphone1", 13, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHandphone2", 13, boxTypeWithoutLabel, null);
+				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHandphone1", 2);
+				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHandphone2", 1);
+				boxGenerator("#TextPolicyHolderEmail", 29, boxTypeWithoutLabel, null);
+
+				// SECTION THIRD PARTY RELATED
+
+				boxGenerator("#TextThirdPartyCIN", 7, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyFullName", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyFullName2nd", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyIDNumber", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyActiveDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyActiveMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyActiveYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyBirthPlace", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyBirthYear", 4, boxTypeWithoutLabel, null);
+				lineGenerator("#LineThirdPartyNationalityWNA", 4);
+				boxGenerator("#TextThirdPartyCompany", 25, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyMainJob", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyWorkScope", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyPosition", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyJobDescription", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartySideJob", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyHomeAddress", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyHomeAddress2nd", 30, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyHomeCity", 2)
+				boxGenerator("#TextThirdPartyHomeCity", 19, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyHomePostalCode", 3)
+				boxGenerator("#TextThirdPartyHomePostalCode", 6, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyHomeTelephonePrefix", 2)
+				boxGenerator("#TextThirdPartyHomeTelephonePrefix", 4, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyHomeTelephoneInfix", 1)
+				boxGenerator("#TextThirdPartyHomeTelephoneInfix", 9, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyOfficeAddress1", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyOfficeAddress2", 30, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyOfficeCity", 2)
+				boxGenerator("#TextThirdPartyOfficeCity", 19, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyOfficePostalCode", 3)
+				boxGenerator("#TextThirdPartyOfficePostalCode", 6, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyOfficeTelephonePrefix", 2)
+				boxGenerator("#TextThirdPartyOfficeTelephonePrefix", 4, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyOfficeTelephoneInfix", 1)
+				boxGenerator("#TextThirdPartyOfficeTelephoneInfix", 9, boxTypeWithoutLabel, null);
+				lineGenerator("#LineThirdPartyOtherRelationship", 5);
+				lineGenerator("#TextThirdPartyInsurancePurposeOther", 5);
+				boxGenerator("#TextThirdPartyEmail", 30, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyHandhone1", 1)
+				boxGenerator("#TextThirdPartyHandphone1", 13, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyHandhone2", 1)
+				boxGenerator("#TextThirdPartyHandphone2", 13, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyNPWP", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyNPWPActiveDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateThirdPartyNPWPActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateThirdPartyNPWPActiveYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#TextThirdPartySalary", 17, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyRevenue", 17, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyOtherIncome", 17, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartySource", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyFundingSource", 27, boxTypeWithoutLabel, null);
+
+				// THIRD PARTY NON PERSON
+
+				boxGenerator("#TextThirdPartyCompanyName", 30, boxTypeWithoutLabel, null);
+				lineGenerator("#LineThirdPartyCompanyTypeOther", 11);
+				lineGenerator("#LineThirdPartyComanyIDTypeOther", 11);
+				boxGenerator("#TextThirdPartyCompanyNoAnggaranDasar", 21, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#TextThirdPartyCompanyNoSIUP", 21, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanySIUPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateThirdPartyCompanySIUPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateThirdPartyCompanySIUPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#TextThirdPartyCompanyNoTDP", 21, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#TextThirdPartyCompanyNoSKDP", 21, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#TextThirdPartyCompanyNoNPWP", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoNPWPDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateThirdPartyCompanyNoNPWPMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateThirdPartyCompanyNoNPWPYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#TextThirdPartyCompanySector", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyCompanyAddress", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyCompanyCity", 19, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyCompanyPostalCode", 3);
+				boxGenerator("#TextThirdPartyCompanyPostalCode", 6, boxTypeWithoutLabel, null);
+
+				// boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				// boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				// boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+
+				// SETUP
+
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Kuesioner Pihak Ketiga");
+
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+			});
+
+
+	/ BODY
+
+	%body
+
+		/ HEADER
+
+		%header
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1
+			%br
+
+			%div.Note
+				%p Perlu diperhatikan:
+				%ul
+					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
+					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
+					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
+
+			%div.Note
+				%p Perlu diperhatikan:
+				%ol
+					%li Wajib diisi oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung dengan tinta hitam, huruf cetak, jelas dan memberi tanda (√) pada kotak sesuai pilihan.
+					%li Wajib menandatangani setiap koreksi penulisan (jika ada).
+					%li Penulisan tanggal selalu mempergunakan format Tanggal-Bulan-Tahun.
+					%li Apabila diperlukan dapat mempergunakan lembar terpisah pada kertas HVS A4 yang diisi dan ditandatangani oleh (Calon) Pemegang Polis, (Calon) Tertanggung dan Tenaga Penjual.
+					%li Apabila telah diisi lengkap oleh (Calon) Pemegang Polis dan/atau (Calon) Tertanggung wajib diserahkan ke Kantor Pusat PT Asuransi Jiwa BCA (“Penanggung”).
+
+		/ MAIN
+
+		%main
+			%form
+				%h2.Plain II. Wajib Dilengkapi (Calon) Tertanggung
+
+				%fieldset
+					%span.Number.Plain.Single.PositionerLeft 1.
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ / Polis
+					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 2.
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap
+					%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
+					%br
+					%table#TextPolicyHolderFullName2nd.BoxSquare.MediumWithNumberIndent.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 3.
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHomeAddress" } Nama Lengkap
+					%table#TextPolicyHolderHomeAddress.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri, diise dengan lengkap mengkonfirmasikan nomor rumah, RT, RW, kelurahan & kecamatan)
+					%table#TextPolicyHolderHomeAddress2nd.BoxSquare.PositionerLeft
+					%br
+					%label#LabelPolicyHolderHomeCity.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeCity" } Kota
+					%table#TextPolicyHolderHomeCity.BoxSquare.PositionerLeft
+					%label#LabelPolicyHolderHomePostalCode.Single.PositionerLeft{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
+					%table#TextPolicyHolderHomePostalCode.BoxSquare.PositionerLeft
+					%br
+					%label#LabelPolicyHolderHomeTelephonePrefix.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeTelephonePrefix" } Telp
+					%table#TextPolicyHolderHomeTelephonePrefix.BoxSquare.PositionerLeft
+					%label#LabelPolicyHolderHomeTelephoneSuffix.Single.PositionerLeft{ :for => "TextPolicyHolderHomeTelephoneSuffix" } -
+					%table#TextPolicyHolderHomeTelephoneSuffix.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 4.
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } Nomor Ponsel
+					%label#LabelPolicyHolderHandphone1.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } 1.
+					%table#TextPolicyHolderHandphone1.BoxSquare.PositionerLeft
+					%label#LabelPolicyHolderHandphone2.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } 2.
+					%table#TextPolicyHolderHandphone2.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 6.
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderEmail" } Alamat Email
+					%table#TextPolicyHolderEmail.BoxSquare.PositionerLeft
+					%br
+
+				%h2.Plain II. Pertanyaan yang Berhubungan dengan Pihak Ketiga
+
+				%fieldset
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAsking" } Apakah dalam pengajuan asuransi anda, selain anda dan calon tertanggung ada pihak ketiga yang
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 1.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingYes" } Meminta anda untuk mengajukan asuransi ini
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyAskingYes{ :type => "radio", :name => "RadioButtonThirdPartyAsking", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingYes" } Ya
+						%input#RadioButtonThirdPartyAskingNo{ :type => "radio", :name => "RadioButtonThirdPartyAsking", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingNo" } Tidak
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAskingSpouse" } Bila "Ya", hubungan dengan anda
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyAskingRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "spouse" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipSpouse" } Suami / Istri
+						%input#RadioButtonThirdPartyAskingRelationshipChild{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "child" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipChild" } Anak
+						%input#RadioButtonThirdPartyAskingRelationshipParent{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "parent" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipParent" } Orang Tua
+						%input#RadioButtonThirdPartyAskingRelationshipSibling{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "sibling" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipSibling" } Saudara
+						%br
+						%input#RadioButtonThirdPartyAskingRelationshipOther{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipOther" } Lainnya, sebutkan
+						%input#TextThirdPartyAskingRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 2.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorYes" } Menjadi pembayar premi polis asuransi ini
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyPremiPayorYes{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayor", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorYes" } Ya
+						%input#RadioButtonThirdPartyPremiPayorNo{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayor", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorNo" } Tidak
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorSpouse" } Bila "Ya", hubungan dengan anda
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyPremiPayorRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "spouse" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipSpouse" } Suami / Istri
+						%input#RadioButtonThirdPartyPremiPayorRelationshipChild{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "child" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipChild" } Anak
+						%input#RadioButtonThirdPartyPremiPayorRelationshipParent{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "parent" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipParent" } Orang Tua
+						%input#RadioButtonThirdPartyPremiPayorRelationshipSibling{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "sibling" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipSibling" } Saudara
+						%br
+						%input#RadioButtonThirdPartyPremiPayorRelationshipOther{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipOther" } Lainnya, sebutkan
+						%input#TextThirdPartyPremiPayorRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 3.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Meminta hak atas manfaat polis
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyBeneficiaryYes{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiary", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Ya
+						%input#RadioButtonThirdPartyBeneficiaryNo{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiary", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryNo" } Tidak
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiarySpouse" } Bila "Ya", hubungan dengan anda
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyBeneficiaryRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "spouse" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipSpouse" } Suami / Istri
+						%input#RadioButtonThirdPartyBeneficiaryRelationshipChild{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "child" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipChild" } Anak
+						%input#RadioButtonThirdPartyBeneficiaryRelationshipParent{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "parent" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipParent" } Orang Tua
+						%input#RadioButtonThirdPartyBeneficiaryRelationshipSibling{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "sibling" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipSibling" } Saudara
+						%br
+						%input#RadioButtonThirdPartyBeneficiaryRelationshipOther{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipOther" } Lainnya, sebutkan
+						%input#TextThirdPartyBeneficiaryRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
+					%br
+
+				%h2.Plain II. Data Calon Pihak Ketiga Perorangan
+
+				%fieldset
+					%span.Number.Plain.Single.PositionerLeft 1.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCIN" } Nomor CIN
+					%table#TextThirdPartyCIN.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 2.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyFullName" } Nama Lengkap
+					%table#TextThirdPartyFullName.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyFullName2nd" } (Sesuai dengan identitas diri)
+					%table#TextThirdPartyFullName2nd.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 3.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Meminta hak atas manfaat polis
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyBeneficiaryYes{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiary", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Ya
+						%input#RadioButtonThirdPartyBeneficiaryNo{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiary", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryNo" } Tidak
+						%input#RadioButtonThirdPartyBeneficiaryRelationshipSibling{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "sibling" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipSibling" } Saudara
+						%input#RadioButtonThirdPartyBeneficiaryRelationshipOther{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipOther" } Lainnya, sebutkan
+						%input#TextThirdPartyBeneficiaryRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 4.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyIDNumber" } Nomor Identitas Diri
+					%table#TextThirdPartyIDNumber.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyActiveDay" } (Sesuai dengan identitas diri)
+					%label#LabelThirdPartyActive.Single.PositionerLeft{ :for => "DateThirdPartyActiveDay" } Masa Berlaku
+					%table#DateThirdPartyActiveDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThirdPartyActiveMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThirdPartyActiveYear.BoxSquare.PositionerLeft
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DateThirdPartyActiveYear" } (Tanggal / Bulan / Tahun)
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 5.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBirthPlace" } Tempat Kelahiran
+					%table#TextThirdPartyBirthPlace.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyBirthDay" } (Sesuai dengan identitas diri)
+					%label#LabelThirdPartyBirth.Single.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
+					%table#DateThridPartyBirthDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThridPartyBirthMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThridPartyBirthYear.BoxSquare.PositionerLeft
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyBirthYear" } (Tanggal / Bulan / Tahun)
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 6.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Kewarganegaraan
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyNationalityWNI{ :type => "radio", :name => "RadioButtonThirdPartyNationality", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyNationalityWNI" } WNI
+						%input#RadioButtonThirdPartyNationalityWNA{ :type => "radio", :name => "RadioButtonThirdPartyNationality", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyNationalityWNA" } WNA
+						%input#TextThirdPartyBeneficiaryNationalityWNA.Medium.Single.PositionerLeft{ :type => "text" }
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 7.
+					%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonThirdPartyUSACitizenYes" } Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyUSACitizenYes{ :type => "radio", :name => "RadioButtonThirdPartyUSACitizen", :value => "true" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyUSACitizenYes" } YA
+						%input#RadioButtonThirdPartyUSACitizenNo{ :type => "radio", :name => "RadioButtonThirdPartyUSACitizen", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyUSACitizenNo" } TIDAK
+					%br
+					%span.NumberIndent.PositionerLeft (Jika jawaban "YA" mohon lampirkan formulir W8 / W9)
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 8.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartySexMale" } Jenis Kelamin
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartySexMale{ :type => "radio", :name => "RadioButtonThirdPartySex", :value => "male" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartySexMale" } Laki Laki
+						%input#RadioButtonThirdPartySexFemale{ :type => "radio", :name => "RadioButtonThirdPartySex", :value => "female" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartySexFemale" } Wanita
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 9.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyMaritalStatusSingle" } Status Pernikahan
+					%div.RadioButton
+						%input#RadioButtonThirdPartyMaritalStatusSingle{ :type => "radio", :name => "RadioButtonThirdPartyMaritalStatus", :value => "single" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyMaritalStatusSingle" } Belum Menikah
+						%input#RadioButtonThirdPartyMaritalStatusMarried{ :type => "radio", :name => "RadioButtonThirdPartyMaritalStatus", :value => "married" }
+						%div#RadioButtonThirdPartyMaritalStatusMarried.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyMaritalStatusMarried" } Menikah
+						%input#RadioButtonThirdPartyMaritalStatusWidower{ :type => "radio", :name => "RadioButtonThirdPartyMaritalStatus", :value => "divorced" }
+						%div#RadioButtonThirdPartyMaritalStatusWidower.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyMaritalStatusWidower" } Janda / Duda
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 10.
+					%label.Short.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionIslam" } Agama
+					%div.RadioButton
+						%input#RadioButtonThirdPartyReligionIslam{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "islam" }
+						%div#RadioButtonThirdPartyReligionIslam.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionIslam" } Islam
+						%input#RadioButtonThirdPartyReligionCatholic{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "katolik" }
+						%div#RadioButtonThirdPartyReligionCatholic.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionCatholic" } Kristen Katolik
+						%input#RadioButtonThirdPartyReligionProtestan{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "kristen" }
+						%div#RadioButtonThirdPartyReligionProtestan.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionProtestan" } Kristen Protestan
+						%input#RadioButtonThirdPartyReligionHindu{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "hindu" }
+						%div#RadioButtonThirdPartyReligionHindu.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionHindu" } Hindu
+						%input#RadioButtonThirdPartyReligionBudha{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "budha" }
+						%div#RadioButtonThirdPartyReligionBudha.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionBudha" } Budha
+						%input#RadioButtonThirdPartyReligionKongHuChu{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "konghuchu" }
+						%div#RadioButtonThirdPartyReligionKongHuChu.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionKongHuChu" } Kong Hu Chu
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 11.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompany" } a. Nama Perusahaan/Instansi/Sekolah
+					%table#TextThirdPartyCompany.BoxSquare.PositionerLeft
+					%br
+
+					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyMainJob" } Pekerjaan Utama
+					%table#TextThirdPartyMainJob.BoxSquare.PositionerLeft
+					%br
+
+					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyWorkScope" } Bidang Usaha
+					%table#TextThirdPartyWorkScope.BoxSquare.PositionerLeft
+					%br
+
+					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyPosition" } Jabatan
+					%table#TextThirdPartyPosition.BoxSquare.PositionerLeft
+					%br
+
+					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyJobDescription" } Uraian Pekerjaan
+					%table#TextThirdPartyJobDescription.BoxSquare.PositionerLeft
+					%br
+
+					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartySideJob" } b. Pekerjaan Tambahan
+					%table#TextThirdPartySideJob.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 12.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHomeAddress" } Nama Lengkap
+					%table#TextThirdPartyHomeAddress.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri, diise dengan lengkap mengkonfirmasikan nomor rumah, RT, RW, kelurahan & kecamatan)
+					%table#TextThirdPartyHomeAddress2nd.BoxSquare.PositionerLeft
+					%br
+					%label#LabelThirdPartyHomeCity.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeCity" } Kota
+					%table#TextThirdPartyHomeCity.BoxSquare.PositionerLeft
+					%label#LabelThirdPartyHomePostalCode.Single.PositionerLeft{ :for => "TextThirdPartyHomePostalCode" } Kode Pos
+					%table#TextThirdPartyHomePostalCode.BoxSquare.PositionerLeft
+					%br
+					%label#LabelThirdPartyHomeTelephonePrefix.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeTelephonePrefix" } Telp
+					%table#TextThirdPartyHomeTelephonePrefix.BoxSquare.PositionerLeft
+					%label#LabelThirdPartyHomeTelephoneSuffix.Single.PositionerLeft{ :for => "TextThirdPartyHomeTelephoneSuffix" } -
+					%table#TextThirdPartyHomeTelephoneSuffix.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 13.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHandphone1" } Nomor Ponsel
+					%label#LabelThirdPartyHandphone1.Single.PositionerLeft{ :for => "TextThirdPartyHandphone1" } 1.
+					%table#TextThirdPartyHandphone1.BoxSquare.PositionerLeft
+					%label#LabelThirdPartyHandphone2.Single.PositionerLeft{ :for => "TextThirdPartyHandphone2" } 2.
+					%table#TextThirdPartyHandphone2.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 14.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyEmail" } Alamat Email
+					%table#TextThirdPartyEmail.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 15.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHomeAddress" } Nama Lengkap
+					%table#TextThirdPartyHomeAddress.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri, diise dengan lengkap mengkonfirmasikan nomor rumah, RT, RW, kelurahan & kecamatan)
+					%table#TextThirdPartyHomeAddress2nd.BoxSquare.PositionerLeft
+					%br
+					%label#LabelThirdPartyHomeCity.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeCity" } Kota
+					%table#TextThirdPartyHomeCity.BoxSquare.PositionerLeft
+					%label#LabelThirdPartyHomePostalCode.Single.PositionerLeft{ :for => "TextThirdPartyHomePostalCode" } Kode Pos
+					%table#TextThirdPartyHomePostalCode.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 16.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceHomeAddress" } Alamat Korespondensi
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyCorrespondanceHomeAddress{ :type => "radio", :name => "RadioButtonThirdPartyCorrespondanceAddress", :value => "home" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceHomeAddress" } Alamat Tempat Tinggal
+						%input#RadioButtonThirdPartyCorrespondanceOfficeAddress{ :type => "radio", :name => "RadioButtonThirdPartyCorrespondanceAddress", :value => "office" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceOfficeAddress" } Alamat Kantor
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 17.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredSelf" } Hubungan dengan Calon Tertangung
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonThirdPartyRelationAssuredSelf{ :type => "radio", :name => "RadioButtonThirdPartyRelationAssured", :value => "self" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredSelf" } Diri Sendiri
+						%input#RadioButtonThirdPartyRelationAssuredSpouse{ :type => "radio", :name => "RadioButtonThirdPartyRelationAssured", :value => "spouse" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredSpouse" } Suami / Istri
+						%input#RadioButtonThirdPartyRelationAssuredFamily{ :type => "radio", :name => "RadioButtonThirdPartyRelationAssured", :value => "family" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredFamily" } Orang Tua / Anak
+						%input#RadioButtonThirdPartyRelationAssuredColleague{ :type => "radio", :name => "RadioButtonThirdPartyRelationAssured", :value => "colleague" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredColleague" } Perusahaan / Karyawan
+						%br
+						%input#RadioButtonThirdPartyRelationAssuredOther{ :type => "radio", :name => "RadioButtonThirdPartyRelationAssured", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredOther" } Lainnya, sebutkan
+						%div#LineThirdPartyOtherRelationship.LineDot.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 18.
+					%label.Medium.Single.PositionerLeft{ :for => "CheckboxThirdPartyInsurancePurpose" } Tujuan Pembelian Asuransi
+					%div.RadioButton
+						%input#CheckboxThirdPartyInsurancePurposeSavings{ :type => "checkbox", :name => "CheckboxThirdPartyInsurancePurpose", :value => "savings" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyInsurancePurposeSavings" } Tabungan
+						%input#CheckboxThirdPartyInsurancePurposeProtection{ :type => "checkbox", :name => "CheckboxThirdPartyInsurancePurpose", :value => "protection" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyInsurancePurposeProtection" } Proteksi
+						%input#CheckboxThirdPartyInsurancePurposeInvestation{ :type => "checkbox", :name => "CheckboxThirdPartyInsurancePurpose", :value => "investment" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyInsurancePurposeInvestation" } Investasi
+						%input#CheckboxThirdPartyInsurancePurposeEducation{ :type => "checkbox", :name => "CheckboxThirdPartyInsurancePurpose", :value => "education" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyInsurancePurposeEducation" } Edukasi
+						%input#CheckboxThirdPartyInsurancePurposeOther{ :type => "checkbox", :name => "CheckboxThirdPartyInsurancePurpose", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyInsurancePurposeOther" } Lainnya, sebutkan
+						%div#TextThirdPartyInsurancePurposeOther.LineDot.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 19.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBirthPlace" } Nomor NPWP (jika ada)
+					%table#TextThirdPartyBirthPlace.BoxSquare.PositionerLeft
+					%br
+					%label#LabelThirdPartyBirth.Single.MediumWithNumberIndent.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
+					%table#DateThridPartyBirthDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThridPartyBirthMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThridPartyBirthYear.BoxSquare.PositionerLeft
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyBirthYear" } (Tanggal / Bulan / Tahun)
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 20.
+					%label.Wrap.Single.PositionerLeft{ :for => "BoxThirdPartySalaryIDR" } Penghasilan Kotor Per Tahun
+					%br
+
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartySalaryIDR" } Gaji
+					%div.RadioButton
+						%input#RadioButtonThirdPartySalaryIDR{ :type => "radio", :name => "RadioButtonThirdPartySalary", :value => "idr" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartySalaryIDR" } Rp
+						%input#RadioButtonThirdPartySalaryUSD{ :type => "radio", :name => "RadioButtonThirdPartySalary", :value => "usd" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartySalaryUSD" } USD
+						%label.Single.PositionerLeft{ :for => "TextThirdPartySalary" } Jumlah Penghasilan / tahun
+						%table#TextThirdPartySalary.BoxSquare.PositionerLeft
+					%br
+
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyRevenueIDR" } Hasil Usaha
+					%div.RadioButton
+						%input#RadioButtonThirdPartyRevenueIDR{ :type => "radio", :name => "RadioButtonThirdPartyRevenue", :value => "idr" }
+						%div#RadioButtonThirdPartyRevenueIDR.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRevenueIDR" } Rp
+						%input#RadioButtonThirdPartyRevenueUSD{ :type => "radio", :name => "RadioButtonThirdPartyRevenue", :value => "usd" }
+						%div#RadioButtonThirdPartyRevenueUSD.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRevenueUSD" } USD
+						%label.Single.PositionerLeft{ :for => "TextThirdPartyRevenue" } Jumlah Penghasilan / tahun
+						%table#TextThirdPartyRevenue.BoxSquare.PositionerLeft
+					%br
+
+					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "RadioButtonThirdPartyOtherIncomeIDR" } Penghasilan Lainnya
+					%div.RadioButton
+						%input#RadioButtonThirdPartyOtherIncomeIDR{ :type => "radio", :name => "RadioButtonThirdPartyOtherIncome", :value => "idr" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyOtherIncomeIDR" } Rp
+						%input#RadioButtonThirdPartyOtherIncomeUSD{ :type => "radio", :name => "RadioButtonThirdPartyOtherIncome", :value => "usd" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyOtherIncomeUSD" } USD
+						%label.Single.PositionerLeft{ :for => "TextThirdPartyOtherIncome" } Jumlah Penghasilan / tahun
+						%table#TextThirdPartyOtherIncome.BoxSquare.PositionerLeft
+						%br
+
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextThirdPartySource" } Jelaskan Sumbernya
+					%table#TextThirdPartySource.BoxSquare.PositionerLeft
+					%br
+				%br
+
+				%h2.Plain Data Calon Pihak Ketiga Non Perorangan
+
+				%fieldset
+					%span.Number.Plain.Single.PositionerLeft 1.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyName" } Nama Perusahaan
+					%table#TextThirdPartyCompanyName.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 2.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyTypePT" } Jenis Perusahaan
+					%div.RadioButton
+						%input#RadioButtonThirdPartyCompanyTypePT{ :type => "radio", :name => "RadioButtonThirdPartyCompanyType", :value => "pt" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyTypePT" } Perseroan Terbatas
+						%input#RadioButtonThirdPartyCompanyTypeYayasan{ :type => "radio", :name => "RadioButtonThirdPartyCompanyType", :value => "yayasan" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyTypeYayasan" } Yayasan
+						%input#RadioButtonThirdPartyCompanyTypeBUMN{ :type => "radio", :name => "RadioButtonThirdPartyCompanyType", :value => "bumn" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyTypeBUMN" } BUMN
+						%input#RadioButtonThirdPartyCompanyTypeOther{ :type => "radio", :name => "RadioButtonThirdPartyCompanyType", :value => "lainnya" }
+						%div.BoxRound.PositionerLeft
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyTypeOther" } Lainnya, sebutkan
+						%div#TextThirdPartyCompanyTypeOther.LineDot.PositionerLeft
+					%br
+
+					// QUICK FIX START
+
+					%span.Number.Plain.Single.PositionerLeft 3.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyNoAnggaranDasar" } Nomor Anggaran Dasar/Akta Pendirian
+					%table#TextThirdPartyCompanyNoAnggaranDasar.BoxSquare.PositionerLeft
+					%br
+					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
+						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoAnggaranDasarExpiredDay" } Tanggal Berlaku
+						%table#DateThirdPartyCompanyNoAnggaranDasarExpiredDay.BoxSquare.PositionerLeft
+						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoAnggaranDasarExpiredMonth" } /
+						%table#DateThirdPartyCompanyNoAnggaranDasarExpiredMonth.BoxSquare.PositionerLeft
+						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoAnggaranDasarExpiredYear" } /
+						%table#DateThirdPartyCompanyNoAnggaranDasarExpiredYear.BoxSquare.PositionerLeft
+						%br
+
+					%span.Number.Plain.Single.PositionerLeft 4.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyNoSIUP" } Nomor Surat Ijin Usaha
+					%table#TextThirdPartyCompanyNoSIUP.BoxSquare.PositionerLeft
+					%br
+					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
+						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanySIUPExpiredDay" } Tanggal Berlaku
+						%table#DateThirdPartyCompanySIUPExpiredDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanySIUPExpiredMonth" } /
+						%table#DateThirdPartyCompanySIUPExpiredMonth.BoxSquare.PositionerLeft
+						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanySIUPExpiredYear" } /
+						%table#DateThirdPartyCompanySIUPExpiredYear.BoxSquare.PositionerLeft
+						%br
+
+					%span.Number.Plain.Single.PositionerLeft 5.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyNoTDP" } Nomor TDP
+					%table#TextThirdPartyCompanyNoTDP.BoxSquare.PositionerLeft
+					%br
+					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
+						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoTDPExpiredDay" } Tanggal Berlaku
+						%table#DateThirdPartyCompanyNoTDPExpiredDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoTDPExpiredMonth" } /
+						%table#DateThirdPartyCompanyNoTDPExpiredMonth.BoxSquare.PositionerLeft
+						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoTDPExpiredYear" } /
+						%table#DateThirdPartyCompanyNoTDPExpiredYear.BoxSquare.PositionerLeft
+						%br
+
+					%span.Number.Plain.Single.PositionerLeft 6.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyNoSKDP" } Nomor SKDP (Domisili)
+					%table#TextThirdPartyCompanyNoSKDP.BoxSquare.PositionerLeft
+					%br
+
+					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
+						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoSKDPExpiredDay" } Tanggal Berlaku
+						%table#DateThirdPartyCompanyNoSKDPExpiredDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoSKDPExpiredMonth" } /
+						%table#DateThirdPartyCompanyNoSKDPExpiredMonth.BoxSquare.PositionerLeft
+						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoSKDPExpiredYear" } /
+						%table#DateThirdPartyCompanyNoSKDPExpiredYear.BoxSquare.PositionerLeft
+						%br
+
+					%span.Number.Plain.Single.PositionerLeft 7.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBirthPlace" } Nomor NPWP (jika ada)
+					%table#TextThirdPartyBirthPlace.BoxSquare.PositionerLeft
+					%br
+					%label#LabelThirdPartyBirth.Single.MediumWithNumberIndent.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
+					%table#DateThridPartyBirthDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThridPartyBirthMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateThridPartyBirthYear.BoxSquare.PositionerLeft
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyBirthYear" } (Tanggal / Bulan / Tahun)
+					%br
+
+					// QUICK FIX END
+
+					%span.Number.Plain.Single.PositionerLeft 8.
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanySector" } Bidang Usaha
+					%table#TextThirdPartyCompanySector.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 9.
+					%label.Medium.Multi.PositionerLeft{ :for => "TextThirdPartyCompanyAddress" } Alamat Perusahaan (sesuai SKDP)
+					%table#TextThirdPartyCompanyAddress.BoxSquare.PositionerLeft
+					%label#LabelThirdPartyCompanyCity.Box.Single.PositionerLeft{ :for => "TextThirdPartyCompanyCity" } Kota
+					%table#TextThirdPartyCompanyCity.BoxSquare.PositionerLeft
+					%label#LabelThirdPartyCompanyPostalCode.Box.Single.PositionerLeft{ :for => "TextThirdPartyCompanyPostalCode" } Kode Pos
+					%table#TextThirdPartyCompanyPostalCode.BoxSquare.PositionerLeft
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 10.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset1" } Aset Perusahaan (Rp)
+					%div.RadioButton
+						%input#RadioButtonThirdPartyCompanyAsset1{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100juta" }
+						%div#RadioButtonThirdPartyCompanyAsset1.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset1" } <100 Juta
+						%input#RadioButtonThirdPartyCompanyAsset2{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100juta1miliar" }
+						%div#RadioButtonThirdPartyCompanyAsset2.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset2" } 100 Juta - 1 Miliar
+						%input#RadioButtonThirdPartyCompanyAsset3{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "1miliar10miliar" }
+						%div#RadioButtonThirdPartyCompanyAsset3.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset3" } >1 Miliar - 10 Miliar
+						%input#RadioButtonThirdPartyCompanyAsset4{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "10miliar100miliar" }
+						%div#RadioButtonThirdPartyCompanyAsset4.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset4" } >10 Miliar - 100 Miliar
+						%input#RadioButtonThirdPartyCompanyAsset5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100miliarlebih" }
+						%div#RadioButtonThirdPartyCompanyAsset5.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset5" } >100 Miliar
+					%br
+
+					%span.Number.Plain.Single.PositionerLeft 11.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue1" } Aset Perusahaan (Rp)
+					%div.RadioButton
+						%input#RadioButtonThirdPartyCompanyRevenue1{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "100juta" }
+						%div#RadioButtonThirdPartyCompanyRevenue1.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue1" } <100 Juta
+
+						%input#RadioButtonThirdPartyCompanyRevenue2{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "100juta500juta" }
+						%div#RadioButtonThirdPartyCompanyRevenue2.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue2" } 100 Juta - 500 Juta
+
+						%input#RadioButtonThirdPartyCompanyRevenue3{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "500juta1miliar" }
+						%div#RadioButtonThirdPartyCompanyRevenue3.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue3" } >500 Juta - 1 Miliar
+
+						%input#RadioButtonThirdPartyCompanyRevenue4{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "1miliar10miliar" }
+						%div#RadioButtonThirdPartyCompanyRevenue4.BoxRound.PositionerLeft
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue4" } >1 Miliar - 10 Miliar
+
+						%input#RadioButtonThirdPartyCompanyRevenue5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "10miliar" }
+						%div#RadioButtonThirdPartyCompanyRevenue5.BoxRound.PositionerLeft
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue5" } >10 Miliar
+					%br
+
+				%div.Note
+					%ol
+						%li
+							Pihak Ketiga Perorangan
+							%ul
+								%li a
+
+				%section#SectionDeclaration
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

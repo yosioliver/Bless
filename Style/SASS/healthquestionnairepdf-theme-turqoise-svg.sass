@@ -139,10 +139,16 @@ main
 		h2
 			color: $theme_quinary_color
 			background-color: $theme_secondary_color
+		h2.Plain
+			color: $theme_senary_color
+			background-color: transparent
 		fieldset
 			span.Number, span.NumberFix
 				color: $theme_quinary_color
 				background-color: $theme_secondary_color
+			span.Plain
+				color: $theme_senary_color
+				background-color: transparent
 			label
 				color: $theme_senary_color
 			span.Separator, span.Description
@@ -213,6 +219,14 @@ input[type="radio"].Plain:checked + label
 	color: $theme_quinary_color
 	background-color: $theme_primary_color
 
+input[type="checkbox"].Plain + label
+	color: $theme_senary_color
+	background-color: transparent
+
+input[type="checkbox"].Plain:checked + label
+	color: $theme_quinary_color
+	background-color: $theme_primary_color
+
 
 /* TABLE */
 
@@ -233,7 +247,7 @@ table.Square
 		tr:nth-child(even)
 			background-color: $theme_quaternary_color
 
-					
+
 /* FOOTER */
 
 footer
