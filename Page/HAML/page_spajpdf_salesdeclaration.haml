@@ -32,11 +32,11 @@
 				lineGenerator("#DateSignedDay", 2);
 				lineGenerator("#DateSignedMonth", 2);
 				lineGenerator("#DateSignedYear", 4);
-				boxGenerator("#TextSalesDeclarationAgentCode", 13, boxTypeWithoutLabel, null);
-				boxGenerator("#TextSalesDeclarationLicenseCode", 13, boxTypeWithoutLabel, null);
-				boxGenerator("#DateSalesDeclarationActiveDay", 2, boxTypeWithBottomLabel, labelDay);
-				boxGenerator("#DateSalesDeclarationActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
-				boxGenerator("#DateSalesDeclarationActiveYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#TextAgentCode", 13, boxTypeWithoutLabel, null);
+				boxGenerator("#TextLicenseNumber", 13, boxTypeWithoutLabel, null);
+				boxGenerator("#DateActiveAgentExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
+				boxGenerator("#DateActiveAgentExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
+				boxGenerator("#DateActiveAgentExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
 
 				// FOOTER AND HEADER
 
@@ -297,7 +297,7 @@
 					%label.Single.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani di
 					%div#TextSignedPlace.LineStraight.PositionerLeft
 					%label.Single.PositionerLeft{ :for => "DateSignedDay" } Pada Tanggal
-					%div#DateSignedDay.LineStraight.Positionereft
+					%div#DateSignedDay.LineStraight.PositionerLeft
 					%label.Single.Separator.PositionerLeft{ :for => "DateSignedMonth" } /
 					%div#DateSignedMonth.LineStraight.PositionerLeft
 					%label.Single.Separator.PositionerLeft{ :for => "DateSignedYear" } /
@@ -334,15 +334,15 @@
 						%label.Medium.Wrap.PositionerLeft{ :for => "TextAgentCode" } Kode Tenaga Penjual
 						%table#TextAgentCode.BoxSquare.PositionerLeft
 						%br
-						%label.Medium.Wrap.PositionerLeft{ :for => "TextLicenseCode" } Kode Lisensi
-						%table#TextLicenseCode.BoxSquare.PositionerLeft
+						%label.Medium.Wrap.PositionerLeft{ :for => "TextLicenseNumber" } Kode Lisensi
+						%table#TextLicenseNumber.BoxSquare.PositionerLeft
 						%br
-						%label.Medium.Wrap.PositionerLeft{ :for => "DateActiveDay" } Masa Berlaku Lisensi
-						%table#DateActiveDay.BoxSquare.PositionerLeft
-						%span.Separator.Single.PositionerLeft{ :for => "DateActiveMonth" } /
-						%table#DateActiveMonth.BoxSquare.PositionerLeft
-						%label.Separator.Single.PositionerLeft{ :for => "DateActiveYear" } /
-						%table#DateActiveYear.BoxSquare.PositionerLeft
+						%label.Medium.Wrap.PositionerLeft{ :for => "DateActiveAgentExpiredDay" } Masa Berlaku Lisensi
+						%table#DateActiveAgentExpiredDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft{ :for => "DateActiveAgentExpiredMonth" } /
+						%table#DateActiveAgentExpiredMonth.BoxSquare.PositionerLeft
+						%label.Separator.Single.PositionerLeft{ :for => "DateActiveAgentExpiredYear" } /
+						%table#DateActiveAgentExpiredYear.BoxSquare.PositionerLeft
 						%br
 					%br
 				%br
