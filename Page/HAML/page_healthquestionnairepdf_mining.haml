@@ -16,25 +16,25 @@
 			$(document).ready(function()
 			{
 				// SECTION GENERAL
-				
-				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+
+				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
-				
+
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);		
-				
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				// SETUP
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Tambang dan Gas");
 			});
@@ -55,62 +55,62 @@
 
 			%section#SectionNote
 				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
-		
+
 		/ MAIN
 
 		%main
 			%form
 				%section#SectionCustomer
-					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render				
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
 				/ FIELDSET
-				
+
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				
+
 				%fieldset
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 1. 						
+						%span.NumberFix.Single.Item 1.
 						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningPosition" } Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
 					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningPosition.Multi.Full.Item
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 2. 						
+						%span.NumberFix.Single.Item 2.
 						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningPositionDesc" } Jika tidak termasuk dalam daftar di atas, mohon dijelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut.
-					%div.ContainerFit.NumberIndent	
+					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningPositionDesc.Multi.Full.Item
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 3. 							
+						%span.NumberFix.Single.Item 3.
 						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningDuration" } Sudah berapa lama Anda bekerja dalam bidang Pertambangan/Perminyakkan/Gas?
 					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningDuration.Multi.Full.Item
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 4. 						
+						%span.NumberFix.Single.Item 4.
 						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningAreaPercent" } Mohon dijelaskan berapa persen pekerjaan Anda yang bersifat manual atau fisik dari total pekerjaan Anda serta uraian pekerjaan Anda sehari-hari?
 					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningAreaPercent.Multi.Full.Item
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 5. 							
+						%span.NumberFix.Single.Item 5.
 						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningOutdoor" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining? Mohon jelaskan.
-					%div.ContainerFit.NumberIndent	
+					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningOutdoor.Multi.Full.Item
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 6. 							
+						%span.NumberFix.Single.Item 6.
 						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningWorkLocation" } Dimana lokasi Anda bekerja? (Sebutkan nama lokasi dan daerah/ provinsinya)
-					%div.ContainerFit.NumberIndent	
+					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningWorkLocation.Multi.Full.Item
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%div.ContainerFit
-						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;"} 7. 							
+						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;"} 7.
 						%label.Full.Wrap.Item{ :for => "AreaMilitaryYourUnity", :style => "margin-top: 30px;" } Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut:
 					%br
 
@@ -120,10 +120,10 @@
 						%input#TextPolicyHolderMiningOffShore.Full.Single.Item{ :type => "text" }
 
 					%label.Long.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMiningUnderGround" } b. Bila di darat apakah di permukaan tanah atau di bawah tanah?
-					%br		
+					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMiningUnderground.Full.Single.Item{ :type => "text" }
-					
+
 					%label.Long.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMiningUndergroundDepth" } Jika di bawah tanah, sebutkan kedalamannya
 					%br
 					%div.ContainerFit.NumberIndent
@@ -131,22 +131,22 @@
 					%br
 
 					%label.Full.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningDuty" } c. Apakah Anda kadang-kadang juga bertugas ke lokasi sebagaimana tersebut di atas?
-					%br	
-					%div.RadioButton.NumberIndent 	
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMiningDutyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningDuty", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningDutyYes" } Ya, berapa frekuensinya dalam 1 (satu) tahun berada di lokasi tersebut dan berapa lama?
-						%br	
+						%br
 						%input#TextPolicyHolderMiningDutyDesc.Full.Single.Item{ :type => "text" }
 						%br
 						%input#RadioButtonPolicyHolderMiningDutyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningDuty", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningDutyNo" } Tidak
-					%br							
+					%br
 
 					%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningExplosive" } d. Apakah dalam bekerja Anda menggunakan bahan peledak?
-					%br	
-					%div.RadioButton.NumberIndent 	
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMiningUsingExplosiveYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningUsingExplosive", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningUsingExplosiveYes" } Ya
@@ -154,11 +154,11 @@
 						%input#RadioButtonPolicyHolderMiningUsingExplosiveNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningUsingExplosive", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningUsingExplosiveNo" } Tidak
-					%br							
+					%br
 
 					%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningDivingDuty" } e. Apakah Anda melakukan tugas penyelaman?
-					%br	
-					%div.RadioButton.NumberIndent 	
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMiningUsingDivingDutyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningDivingDuty", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningDivingDutyYes" } Ya, mohon mengisi formulir kuesioner menyelam
@@ -166,13 +166,13 @@
 						%input#RadioButtonPolicyHolderMiningDivingDutyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningDivingDuty", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningDivingDutyNo" } Tidak
-					%br							
+					%br
 
 
 					%br
 					%label.Full.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningHeight" } f. Apakah Anda bertugas di ketinggian tertentu?
-					%br	
-					%div.RadioButton.NumberIndent 	
+					%br
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMiningHeightYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningHeight", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningHeightYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
@@ -182,38 +182,38 @@
 						%input#RadioButtonPolicyHolderMiningHeightNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningHeight", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningHeightNo" } Tidak
-					%br							
+					%br
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 8. 							
+						%span.NumberFix.Single.Item 8.
 						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningTransportation" } Transportasi apa yang Anda gunakan menuju lokasi kerja? Berapa lama waktu yang Anda perlukan untuk menuju lokasi? (Jika menggunakan helikopter, mohon dijelaskan jumlah jam terbang per tahun) dan mengisi formulir kuesioner penerbangan.
-					%div.ContainerFit.NumberIndent	
+					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningTransportation.Multi.Full.Item
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 9. 							
+						%span.NumberFix.Single.Item 9.
 						%label.Full.Wrap.Item{ :for => "RadioPolicyHolderMiningAccidentOL" } Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda?
-					%br										
-					
+					%br
+
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMiningAccidentOLYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningAccidentOL", :value => "true" }
 						%div.BoxRound.PositionerLeft{:style => "margin-top: 30px;"}
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningAccidentOLYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
 						%br
-						%input#TextPolicyHolderMiningAccidentOLDesc.Full.Single.Item
+						%input#TextPolicyHolderMiningAccidentOLDesc.Full.Single.Item{ :type => "text" }
 						%br
 						%input#RadioButtonPolicyHolderMiningAccidentOLNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningAccidentOL", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningAccidentOLNo" } Tidak
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 220px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
-		
+
 		%section#SectionFooter
 			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
