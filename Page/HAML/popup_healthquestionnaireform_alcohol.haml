@@ -9,8 +9,7 @@
 
 	%fieldset
 		%form#HealthQuestionnaireMain
-			%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderWeightChangeYes" }
-				Apakah saat ini Anda mengonsumsi alkohol/ obat-obatan?
+			%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderWeightChangeYes" } 1. Apakah saat ini Anda mengkonsumsi alkohol/obat-obatan?
 			%div.RadioButton.PositionerRight
 				%input#RadioButtonPolicyHolderWeightChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderWeightChange", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderWeightChangeYes" } Ya
@@ -103,12 +102,14 @@
 			%hr
 			%br
 
-			%label.medium.Single.Item 2  Jelaskan alasan Anda berhenti menggunakan alkohol/ obat-obatan tersebut diatas?
+			%label.medium.Single.Item 2. Jika Anda telah berhenti menggunakan alkohol/obat-obatan tersebut diatas.
+			%br
+			%label.medium.Single.Item Mohon menjelaskan secara rinci pada kolom di bawah ini atas saran/permintaan siapa dan sejak kapan Anda berhenti. 
 			%br
 			%input#TextPolicyHolderAlasanBerhentiAlcaholTo.Full.Multi.Item1.Margin{ :type =>"text" }
 			%br
 
-			%label.medium.Single.Item 3  Apakah Anda pernah melakukan konsultasi atau mendapatkan terapi dari dokter karena kondisi ini?
+			%label.medium.Single.Item 3. Apakah Anda pernah melakukan konsultasi atau mendapatkan terapi dari dokter karena penggunaan alkohol/obat-obatan?
 			%br
 
 			%div.ContainerFit
@@ -135,7 +136,7 @@
 			%br
 			%hr
 
-			%label.medium.Single.Item 4  Pernahkah Anda mengalami kondisi medis atau gangguan yang berhubungan dengan penggunaan alkohol/ obat-obatan, misal hepatitis, HIV, kesehatan mental, dan lain-lain?
+			%label.medium.Single.Item 4.  Pernahkah Anda mengalami kondisi medis atau gangguan yang berhubungan dengan penggunaan alkohol/obat-obatan? (Misal hepatitis, HIV, kesehatan mental, dan lain-lain)
 			%br
 			%div.ContainerFit
 				%div.RadioButton.Medium.Item
@@ -148,8 +149,8 @@
 			%br
 			%hr
 
-			%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMermelukanRawatanChangeYes" }
-				5  Apakah memerlukan perawatan di rumah sakit? Jika YA, mohon jelaskan kapan, nama dokter/ nama rumah sakit?
+			
+			%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMermelukanRawatanChangeYes" } 5. Apakah Anda menjalani perawatan di rumah sakit karena penggunaan alkohol/obat-obatan?
 			%div.RadioButton.PositionerRight
 				%input#RadioButtonPolicyHolderMermelukanRawatanChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanChange", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanChangeYes" } Ya
@@ -157,9 +158,15 @@
 				%input#RadioButtonPolicyHolderMermelukanRawatanChangeNo{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanChange", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanChangeNo" } Tidak
 			%br
+				%label.Single.PositionerLeft Jika “Ya”, mohon mengisi secara rinci pada kolom di bawah ini.
+			%br
 			%div.ContainerFit
 				%label.Long.Single.PositionerLeft Nama Dokter
 				%input#TextPolicyHolderNamaDokterRumahSakitMemerlukan.Full.Single.Item.Margin{ :type =>"text" }
+				%br
+			%div.ContainerFit
+				%label.Long.Single.PositionerLeft No. Telp/Hp
+				%input#TextPolicyHolderAlamatDokterMemerlukan.Full.Single.Item.Margin{ :type =>"text" }
 				%br
 			%div.ContainerFit
 				%label.Long.Single.PositionerLeft Alamat Dokter
@@ -167,8 +174,9 @@
 				%br
 			%hr
 
+			
 			%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMermelukanRawatanChangeYes" }
-				6 Apakah saat ini masih mendapatkan perawatan?
+				6. Apakah Anda saat ini masih mendapatkan perawatan?
 			%div.RadioButton.PositionerRight
 				%input#RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChange", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeYes" } Ya
@@ -176,10 +184,15 @@
 				%input#RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeNo{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChange", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeNo" } Tidak
 			%br
-
+			%label.Single.PositionerLeft (Jika “Ya”, mohon mengisi kolom di bawah ini).
+			%br
 			%div.ContainerFit
 				%label.Long.Single.PositionerLeft Nama Dokter
 				%input#TextPolicyHolderNamaDokterRumahSakitMemerlukanSaatIni.Full.Single.Item.Margin{ :type =>"text" }
+				%br
+			%div.ContainerFit
+				%label.Long.Single.PositionerLeft No. Telp/Hp
+				%input#TextPolicyHolderAlamatDokterMemerlukanSaatIni.Full.Single.Item.Margin{ :type =>"text" }
 				%br
 			%div.ContainerFit
 				%label.Long.Single.PositionerLeft Alamat Dokter
@@ -187,19 +200,36 @@
 				%br
 			%hr
 
-			%label.Wrap.Single.PositionerLeft 7  Apakah Anda pernah tidak masuk kerja karena kondisi ini ? Mohon tuliskan tanggal dan lamanya tidak masuk kerja?
+			%label.Wrap.Single.PositionerLeft 7. Apakah Anda pernah tidak masuk kerja karena kondisi ini? 
+			%div.RadioButton.PositionerRight
+				%input#RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChange", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeYes" } Ya
+				%div.Separator
+				%input#RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeNo{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChange", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeNo" } Tidak
 			%br
-			%input#TextPolicyHolderAlasanKerenaTidakMasukKerja.Full.Multi.Margin{ :type =>"text" }
+			%label.Single.PositionerLeft Jika “Ya”, kapan:
+			%br
+			%input#DatePolicyHolderAlasanKerenaTidakMasukKerja.Full.Single.Margin{ :type =>"text" , "data-field" => "date" }
 			%br
 			%hr
 
-			%label.Wrap.Single.PositionerLeft 8  Apakah pernah melakukan pemeriksaan kesehatan sehubungan penggunaan alkohol/obat-obatan?
+			%label.Wrap.Single.PositionerLeft 8. Apakah pernah melakukan pemeriksaan kesehatan sehubungan penggunaan alkohol/obat-obatan?
+			%div.RadioButton.PositionerRight
+				%input#RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChange", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeYes" } Ya
+				%div.Separator
+				%input#RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeNo{ :type => "radio", :name => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChange", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonPolicyHolderMermelukanRawatanSaatIniChangeNo" } Tidak
+			%br
+			%label.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci dan berapa lama terjadinya pada kolom di bawah ini.
 			%br
 			%input#TextPolicyHolderAlasanKerenaPemeriksaanKesehatan.Full.Multi.Item1.Margin{ :type =>"text" }
 			%br
 			%hr
 
-			%label.Wrap.Single.PositionerLeft 9  Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini					%br
+			%label.Wrap.Single.PositionerLeft 9. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+			%br
 			%input#TextPolicyHolderAlasanInformasiLainAlcahol.Full.Multi.PositionerLeft.Margin{ :type =>"text" }
 			%br
 			%hr
@@ -207,6 +237,8 @@
 			%h2 PERNYATAAN DAN KUASA
 
 			%ol
-				%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
-				%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
-				%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+				%li Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam Kuesioner Alkohol dan Penggunaan Obat-obatan ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak   asuransi Jiwa/Kesehatan/Kecelakaan.
+				%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+				%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+				%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+				%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
