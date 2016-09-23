@@ -196,15 +196,15 @@
 					%br
 
 					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderMiningAccidentOLYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningAccidentOL", :value => "true" }
-						%div.BoxRound.PositionerLeft{:style => "margin-top: 30px;"}
+						%input#RadioButtonPolicyHolderMiningMNAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningMNAccident", :value => "true" }
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningAccidentOLYes" } Ya, Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami
 						%br
-						%input#TextPolicyHolderMiningAccidentOLDesc.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderMiningMNAccidentDesc.Full.Single.Item{ :type => "text" }
 						%br
-						%input#RadioButtonPolicyHolderMiningAccidentOLNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningAccidentOL", :value => "false" }
+						%input#RadioButtonPolicyHolderMiningMNAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningMNAccident", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningAccidentOLNo" } Tidak
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningMNAccidentNo" } Tidak
 					%br
 
 					%section#SectionFooter{ :style => "margin-top: 220px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
