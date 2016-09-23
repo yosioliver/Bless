@@ -1,7 +1,7 @@
 %form#PopUpThyroid.PopUp
-	
+
 	/ HEADER
-	
+
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpThyroid', 'PopUpGland')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpThyroid', 'PopUpGland', stringPageInfixTypeCurrent + 'Thyroid', arrayHealthQuestionnaire)" }
@@ -11,11 +11,11 @@
 
 	%fieldset
 		%div.ContainerFit
-			%span.Multi.Single.6j Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
+			%span.Multi.Single 6j Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
 		%br
 
 		%div.ContainerFit
-			%label#Wrap.Single.Full.PositionerLeft 1. Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
+			%label#Wrap.Single.Full.PositionerLeft{ :for => "DateTHFirstGot" } 1. Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
 			%input#DateTHFirstGot.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
@@ -58,30 +58,30 @@
 
 		%label#Wrap.Single.PositionerLeft 3. Mohon melengkapi pada kolom di bawah ini dengan data Dokter dan tempat Anda konsultasi?
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Tanggal terakhir konsultasi
 			%input#DateTHLastConsult.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextTHConsultDoctName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextTHConsultPhone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextTHConsultClinic.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextTHConsultAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 		%label.medium.Single.Item 4. Apakah Anda pernah atau saat ini sedang mengkonsumsi obat sehubungan kelainan kelenjar gondok (tiroid)?
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%div.RadioButton
 				%input#RadioButtonTHConsumeDrugYes{ :type => "radio", :name => "RadioButtonTHConsumeDrug", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonTHConsumeDrugYes" } Ya
@@ -90,45 +90,45 @@
 				%label.RadioButton{ :for => "RadioButtonTHConsumeDrugNo" } Tidak
 				%label.medium.Single ("Jika Ya, mohon tuliskan nama obat dan dosisnya")
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Short.Single.Item.Margin.Center Tanggal Berobat
 			%label.Short.Single.Item.Margin.Center Nama Obat
 			%label.Short.Single.Item.Margin.Center Dosis
 			%label.Short.Single.Item.Margin.Center Frekuensi
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextTHMedicationDate1.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTHMedicationName1.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationDose1.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationFrequency1.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextTHMedicationDate2.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTHMedicationName2.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationDose2.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationFrequency2.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextTHMedicationDate3.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTHMedicationName3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationDose3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationFrequency3.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextTHMedicationDate4.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTHMedicationName4.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationDose4.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationFrequency4.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextTHMedicationDate5.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTHMedicationName5.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationDose5.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextTHMedicationFrequency5.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		
+
 		%div.ContainerFit
-			%label.Medium.Single.PositionerLeft 
+			%label.Medium.Single.PositionerLeft
 			%label.Short.Single.Item1.Center Tanggal
 			%label.Short.Single.Item1.Center Keterangan
-		%div.ContainerFit				
+		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Kapan pengobatan dimulai
 			%input#TextTHMedicationStartDate.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTHMedicationStartReason.Short.Single.Item1.Margin{ :type => "text" }
@@ -161,7 +161,7 @@
 			%label.Medium.Single.PositionerLeft Jenis Pemeriksaan
 			%label.Short.Single.Item1.Center Tanggal
 			%label.Short.Single.Item1.Center Hasil
-		%div.ContainerFit				
+		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft T3
 			%input#TextT3Date.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextT3Result.Short.Single.Item1.Margin{ :type => "text" }
@@ -169,7 +169,7 @@
 			%label.Medium.Single.PositionerLeft T4
 			%input#TextT4Date.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextT4Result.Short.Single.Item1.Margin{ :type => "text" }
-		%div.ContainerFit				
+		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft TSH
 			%input#TextTSHDate.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTSHResult.Short.Single.Item1.Margin{ :type => "text" }
@@ -177,7 +177,7 @@
 			%label.Medium.Single.PositionerLeft ECG
 			%input#TextECGDate.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextECGResult.Short.Single.Item1.Margin{ :type => "text" }
-		%div.ContainerFit				
+		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Biopsi
 			%input#TextBiopsyDate.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextBiopsyResult.Short.Single.Item1.Margin{ :type => "text" }
@@ -187,7 +187,7 @@
 			%input#TextScanMRIUSGResult.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
-		
+
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 6. Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
 			%input#RadioButtonTHOperationYes{ :type => "radio", :name => "RadioButtonTHOperation", :value => "true" }
@@ -195,7 +195,7 @@
 			%div.Separator
 			%input#RadioButtonTHOperationNo{ :type => "radio", :name => "RadioButtonTHOperation", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonTHOperationNo" } Tidak
-		%br	
+		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Jika “Ya”, mohon berikan tanggal operasi:
 			%input#DateTHOperationDate.Short.Single.Item1.Margin{ :type => "text" , "data-field" => "date" }
@@ -207,11 +207,11 @@
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Jenis Operasi:
 			%input#TextTHOperationType.Short.Single.Item1.Margin{ :type => "text" }
-		%br	
+		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextTHDoctorName.Short.Single.Item1.Margin{ :type => "text" }
-		%br	
+		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextTHHospitalTelephone.Short.Single.Item1.Margin{ :type => "text" }
@@ -249,12 +249,12 @@
 			%div.Separator
 
 			%input#RadioButtonPathologyResultOthers{ :type => "radio", :name => "RadioButtonPathologyResult", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonPathologyResultOthers" } Lainnya, sebutkan 
+			%label.RadioButton{ :for => "RadioButtonPathologyResultOthers" } Lainnya, sebutkan
 		%br
 		%input#TextPathologyResultOtherDesc.Full.Multi.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-		
+
 		%label.medium.Single.Item 7. Apakah ada pengobatan atau tindakan yang dilakukan setelah operasi?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonMedicineAfterOperationYes{ :type => "radio", :name => "RadioButtonMedicineAfterOperation", :value => "true" }
@@ -281,7 +281,7 @@
 				%div.Separator
 				%input#RadioButtonTHRadioTherapyNo{ :type => "radio", :name => "RadioButtonTHRadioTherapy", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonTHRadioTherapyNo" } Tidak
-			%input#TextTHRadioTherapy.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
+			%input#TextTHRadioTherapy.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Kemoterapi
@@ -290,7 +290,7 @@
 				%div.Separator
 				%input#RadioButtonTHChemoTherapyNo{ :type => "radio", :name => "RadioButtonTHChemoTherapy", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonTHChemoTherapyNo" } Tidak
-			%input#TextTHChemoTherapy.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
+			%input#TextTHChemoTherapy.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
 		%div.ContainerFit
 			%div.RadioButton.PositionerLeft
 				%label.medium.Single.Item  Lainnya
@@ -299,8 +299,8 @@
 				%div.Separator
 				%input#RadioButtonTHOtherTreatmentNo{ :type => "radio", :name => "RadioButtonTHOtherTreatment", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonTHOtherTreatmentNo" } Tidak
-			%input#TextTHOtherTreatment.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}	
-		%hr	
+			%input#TextTHOtherTreatment.Medium.Single.Item.Margin{ :type =>"text" , :placeholder => ""}
+		%hr
 		%label.medium.Single.Item 8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br
 		%input#TextTHAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }

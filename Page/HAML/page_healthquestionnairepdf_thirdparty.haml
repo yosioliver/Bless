@@ -127,9 +127,15 @@
 				labelGenerator("#LabelThirdPartyCompanyPostalCode", 3);
 				boxGenerator("#TextThirdPartyCompanyPostalCode", 6, boxTypeWithoutLabel, null);
 
-				// boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
-				// boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
-				// boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+				// SECTION DECLARATION
+
+				boxGenerator("#TextThirdPartyAccountHolder", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyAccountNumber", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyBankName", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyBankBranch", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
 
 				// SETUP
 
@@ -801,11 +807,77 @@
 						%li
 							Pihak Ketiga Non Perorangan
 							%ul
-								%li Untuk WNI melampirkan fotokopi identitas diri (KTP / Paspor) sedangkan untuk WNA melampirkan Paspor & KITAS yang masih berlaku dan jelas atas nama pemegang polis atau pihak ketiga.
+								%li Fotokopi kartu identitas diri penerima kuasa / petugas yang ditunjuk oleh pihak ketiga untuk menandatangani formulir ini.
 								%li Melampirkan akta lahir / akta pernikahan / kartu keluarga atau surat lain yang dapat membuktikan secara hukum hubungan antara pemegang polis dan pihak ketiga.
 
-				%section#SectionDeclaration
-					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+				%h2.Plain Data Rekening Bank Pihak Ketiga
+
+				%fieldset
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextThirdPartyAccountHolder" } Nama Pemilik Rekening
+					%table#TextThirdPartyAccountHolder.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextThirdPartyAccountNumber" } Nomor Rekening
+					%table#TextThirdPartyAccountNumber.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextThirdPartyBankName" } Nama Bank
+					%table#TextThirdPartyBankName.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextThirdPartyBankBranch" } Cabang
+					%table#TextThirdPartyBankBranch.BoxSquare.PositionerLeft
+					%br
+
+				%h2.Plain F. Pernyataan Dan Kuasa
+
+				%fieldset
+					%div.Note
+						%p Perlu diperhatikan:
+						%ol
+							%li
+								Saya/Kami menyatakan bahwa Saya/Kami telah memahami dan menyetujui untuk mengisi secara lengkap dan benar semua informasi dalam
+								%span.QuestionnaireTitle Kuesioner Nyeri Dada ini sesuai dengan keadaan sebenarnya sebagai bagian dari kontrak asuransi Jiwa/Kesehatan/Kecelakaan.
+							%li Saya memberi kuasa kepada setiap Dokter/Rumah Sakit/Klinik/Puskesmas/Laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan Saya, untuk mengungkapkan kepada Penanggung mengenai semua keterangan tentang catatan riwayat kesehatan Saya.
+							%li Kuasa ini merupakan hal yang tidak terpisahkan dari SPAJ dan akan mengikat Saya, Penerima Manfaat/Ahli Waris, dan keluarga Saya (jika ada).
+							%li Kuasa ini tetap berlaku pada waktu Saya masih hidup maupun sesudah Saya meninggal dunia. Salinan/fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+							%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
+					%br
+
+					%label.Wrap.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani
+					%input#TextSignedPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+					%span.Separator.Single.PositionerLeft
+					%label.Wrap.PositionerLeft{ :for => "DateSignedDay" } Tanggal
+					%span.Separator.Single.PositionerLeft
+					%table#DateSignedDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateSignedMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DateSignedYear.BoxSquare.PositionerLeft
+					%br
+
+					%div.ContainerFit
+						%div.Signature.Item1
+							%img
+							%span.Name#TextPolicyHolderSignature
+							%span.Description
+								Nama Lengkap & Tanda tangan
+								%br
+								(Calon) Pemegang Polis
+
+						%div.Signature.Item1
+							%img
+							%span.Name#TextProspectiveInsuredSignature
+							%span.Description
+								Nama Lengkap & Tanda tangan
+								%br
+								(Calon) Tertanggung
+
+						%div.Signature.Item1
+							%img
+							%span.Name#TextSalesSignature
+							%span.Description
+								Nama Lengkap & Tanda tangan
+								%br
+								Tenaga Penjual
+					%br
 
 		%section#SectionFooter
 			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

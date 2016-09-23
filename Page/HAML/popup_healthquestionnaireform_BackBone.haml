@@ -1,7 +1,7 @@
 %form#PopUpBackbone.PopUp
 
 	/ HEADER
-	
+
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpBackbone', 'PopUpMotion')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpBackbone', 'PopUpMotion', stringPageInfixTypeCurrent + 'Backbone', arrayHealthQuestionnaire)" }
@@ -14,34 +14,33 @@
 			%span.Multi.Single.6i Gangguan fungsi/sistem Tulang, Otot, Sendi, Kulit?
 		%br
 		%hr
-
-			%label#Wrap.Single.PositionerLeft 1. Apakah Anda pernah menderita hernia/spondylosis/kelainan tulang belakang lainnya?
-			%div.RadioButton.Medium.PositionerRight
-				%input#RadioButtonPolicyHolderBackboneLeaveYes{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneLeave", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHolderBackboneLeaveYes" } Ya
-				%div.Separator
-				%input#RadioButtonPolicyHolderBackboneLeaveNo{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneLeave", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHolderBackboneLeaveNo" } Tidak
+		%label#Wrap.Single.PositionerLeft{ :for => "RadioButtonDissorderYes" } 1. Apakah Anda pernah menderita hernia/spondylosis/kelainan tulang belakang lainnya?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonDissorderYes{ :type => "radio", :name => "RadioButtonDissorder", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonDissorderYes" } Ya
+			%div.Separator
+			%input#RadioButtonDissorderNo{ :type => "radio", :name => "RadioButtonDissorder", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonDissorderNo" } Tidak
 		%br
-		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
-		%input#TextPolicyHolderBackboneOperationMethod.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+		%label.Single.Item{ :for => "TextDissorderDescription" } Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%input#TextDissorderDescription.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 
 		%br
 		%hr
 
-		%label.medium.Single.Item 2. Kapan pertama kali keluhan tersebut dirasakan?
+		%label.Single.Item 2. Kapan pertama kali keluhan tersebut dirasakan?
 		%br
 		%input#DateFirstComplain.Full.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 3. Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
+		%label.Single.Item 3. Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
 		%br
 		%input#TextPolicyHolderBackboneConsultPhone.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 4. Mohon menjelaskan secara rinci pada kolom di bawah ini dan pada bagian tubuh mana?
+		%label.Single.Item 4. Mohon menjelaskan secara rinci pada kolom di bawah ini dan pada bagian tubuh mana?
 		%br
 		%input#TextPolicyHolderBackboneOperationMethod.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
@@ -60,13 +59,13 @@
 		%br
 		%hr
 
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft 6. Kapan mengalami hambatan?
 			%input#DatePolicyHolderBackboneLastCheckupYear1.Full.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 7. Mohon menjelaskan secara rinci pada kolom di bawah ini menurut Dokter apa penyebab diagnosis  gangguan tulang belakang tersebut? 
+		%label.medium.Single.Item 7. Mohon menjelaskan secara rinci pada kolom di bawah ini menurut Dokter apa penyebab diagnosis  gangguan tulang belakang tersebut?
 		%br
 		%label.medium.Single.Item (Kecelakaan, Proses penuaan, kecelakaan sewaktu berolahraga, dan sebagainya).
 		%input#TextPolicyHolderBackboneOperationCauseDiagnosisOfSpinalDisordersMethod.Full.Multi.PositionerLeft.Margin{ :type => "text" }
@@ -80,7 +79,7 @@
 				%input#RadioButtonPolicyHolderBackboneUndergoCheckupNo{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneUndergoCheckup", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderBackboneUndergoCheckupNo" } Tidak
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Jika "Ya", mohon berikan tanggal pemeriksaan:
 			%input#DatePolicyHolderBackboneUndergoCheckupYear.Full.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%br
@@ -102,7 +101,7 @@
 		%input#TextPolicyHolderBackboneOperationUsingStickMethod.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
 		%hr
-		
+
 			%label#Wrap.Single.PositionerLeft 10. Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
 			%div.RadioButton.Medium.PositionerRight
 				%input#RadioButtonPolicyHolderBackboneSurgeryForAbnormalitiesYes{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneSurgeryForAbnormalities", :value => "true" }
@@ -110,26 +109,26 @@
 				%div.Separator
 				%input#RadioButtonPolicyHolderBackboneSurgeryForAbnormalitiesNo{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneSurgeryForAbnormalities", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderBackboneSurgeryForAbnormalitiesNo" } Tidak
-		%br		
-		%div.ContainerFit 
+		%br
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Jika "Ya", mohon berikan tanggal operasi:
 			%input#DatePolicyHolderBackboneSurgeryForAbnormalitiesYear.Full.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextPolicyHolderBackboneConsultDoktorName.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextPolicyHolderBackboneConsultTelephone.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextPolicyHolderBackboneConsultClinicName.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextPolicyHolderBackboneConsultClinicAddress.Full.Multi.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-		
+
 		%label.medium.Single.Item 11. Mohon jelaskan dengan rinci jenis pengobatan Anda saat ini dan dahulu pada kolom di bawah ini.
 		%br
 			%label#Wrap.Single.PositionerLeft Apakah diberi suntikan?
@@ -139,85 +138,85 @@
 				%div.Separator
 				%input#RadioButtonPolicyHolderBackbonetypeOfTreatmentNo{ :type => "radio", :name => "RadioButtonPolicyHolderBackbonetypeOfTreatment", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonPolicyHolderBackbonetypeOfTreatmentNo" } Tidak
-				
+
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Short.Single.Item.Margin Tanggal Berobat
 			%label.Short.Single.Item.Margin Nama Obat
 			%label.Short.Single.Item.Margin Dosis
 			%label.Short.Single.Item.Margin Frekuensi
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextPolicyHolderBackBoneDateTreatment.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextPolicyHolderBackBoneDrugName1.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneDose1.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneFrequency.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextPolicyHolderBackBoneDateTreatment2.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextPolicyHolderBackBoneDrugName2.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneDose2.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneFrequency2.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextPolicyHolderBackBoneDateTreatment3.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextPolicyHolderBackBoneDrugName3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneDose3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneFrequency3.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextPolicyHolderBackBoneDateTreatment4.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextPolicyHolderBackBoneDrugName4.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneDose4.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneFrequency4.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%input#TextPolicyHolderBackBoneDateTreatment5.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextPolicyHolderBackBoneDrugName5.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneDose5.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextPolicyHolderBackBoneFrequency5.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextPolicyHolderBackboneDokterNameTreatment.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextPolicyHolderBackbonePhoneNumberTreatment.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextPolicyHolderBackboneClinicNameTreatment.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextPolicyHolderBackboneClinicAddressTreatment.Full.Multi.Item.Margin{ :type =>"text" }
-		
+
 		%br
 		%hr
 		%label#Wrap.Single.PositionerLeft 12. Saat ini dengan Dokter siapa Anda melakukan kontrol?
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextPolicyHolderBackboneDokterNameCurrent.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextPolicyHolderBackbonePhoneNumberCurrent.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextPolicyHolderBackboneClinicNameCurrent.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextPolicyHolderBackboneClinicAddressCurrent.Full.Multi.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label#Wrap.Single.PositionerLeft 13. Seberapa sering Anda kontrol?
 			%input#TextPolicyHolderBackboneControlTimes.Short.Single.Item.Margin{ :type =>"text" }
-			%label#Wrap.Single kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu 
+			%label#Wrap.Single kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 		%br
 		%hr
-		
-		%div.ContainerFit 
+
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft 14. Kapan terakhir kali Anda kontrol?
 			%input#DatePolicyHolderBackboneLastControlYear.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%hr
-		
-			%label#Wrap.Single.PositionerLeft 15. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ? 
+
+			%label#Wrap.Single.PositionerLeft 15. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 			%div.RadioButton.Medium.PositionerRight
 				%input#RadioButtonBackboneAbsentfromWorkYes{ :type => "radio", :name => "RadioButtonBackboneAbsentfromWork", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonBackboneAbsentfromWorkYes" } Ya
@@ -225,21 +224,21 @@
 				%input#RadioButtonBackboneAbsentfromWorkNo{ :type => "radio", :name => "RadioButtonBackboneAbsentfromWork", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonBackboneAbsentfromWorkNo" } Tidak
 		%br
-		%div.ContainerFit 
-			%label#Wrap.Single.PositionerLeft Jika "Ya", kapan: 
+		%div.ContainerFit
+			%label#Wrap.Single.PositionerLeft Jika "Ya", kapan:
 			%input#DateBackboneDateMomentCheckupYear.Long.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%label#Wrap.Single.PositionerLeft  Dan berapa lama?
 			%input#TextLeaveNumber.Short.Single.Item.Margin{ :type =>"text" }
-		
+
 		%br
 		%hr
 			%div.ContainerFit
-				%label#Wrap.Single.PositionerLeft 16. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.	
-			%br	
+				%label#Wrap.Single.PositionerLeft 16. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+			%br
 				%input#TextPolicyHolderBackboneImportantOperationMethod.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
 		%hr
-	
+
 	%div.Note
 		%h2 PERNYATAAN DAN KUASA
 		%ol
