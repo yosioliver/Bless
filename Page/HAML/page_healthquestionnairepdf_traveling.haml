@@ -2,308 +2,297 @@
 
 %html
 
-    / HEAD
+	/ HEAD
 
-    %head
-        = Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
-        %title BCA Life - BLESS, Health Questionnaire 1 Form
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
 
-        / JQUERY
+		/ JQUERY
 
-        :javascript
+		:javascript
 
-            // DOCUMENT READY
-            $(document).ready(function()
-            {
-                // SECTION GENERAL				
-                boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
-                boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-                boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-                boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
-                boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
+			// DOCUMENT READY
+			$(document).ready(function()
+			{
+				// SECTION GENERAL				
+				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
-                boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
-                boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
-                boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
 
-                // SECTION MANDATORY					
+				// SECTION MANDATORY					
 
-                boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
-                boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
-                boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
 
-                footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-                titleSetterForHealthQuestionnairePDF("Menyelam");
-            });
+				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				titleSetterForHealthQuestionnairePDF("Perjalanan Ke Luar Negeri/Tinggal di Luar Negeri");
+			});
 
 
-    / BODY
+	/ BODY
 
-    %body#Main
+	%body#Main
 
-        / HEADER		
+		/ HEADER		
 
-        %header
-            %section#SectionHeader
-                = Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+		%header
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-            %h1 KUESIONER MENYELAM
-            %br
+			%h1 KUESIONER UNTUK PERJALANAN KE LUAR NEGERI/TINGGAL DI LUAR NEGERI
+			%br
 
-            %section#SectionNote
-                = Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
 
-        / MAIN
+		/ MAIN
 
-        %main
-            %form
-                %section#SectionCustomer
-                    = Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
+		%main
+			%form
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
 
-                / FIELDSET
+				/ FIELDSET
 
-                %h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
+				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 
-                %fieldset
-                    %span.Number.Single.PositionerLeft 1.
-                    %label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Apakah alasan utama untuk melakukan perjalanan atau bertempat tinggal di luar negeri ?
-                    %br
-                    %div.RadioButton.NumberIndent
-                        %div.BoxRound.PositionerLeft
-                        %label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToBack" } Bisnis
-                        %input#RadioButtonPolicyHolderChestPainSpreadToOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "other" }
-                        %div.BoxRound.PositionerLeft
-                        %label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToBack" } Liburan
-                        %input#RadioButtonPolicyHolderChestPainSpreadToOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainSpread", :value => "other" }
-                        %div.BoxRound.PositionerLeft
-                        %label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpreadToOthers"} Lainnya, sebutkan: 
-                        %input#TextPolicyHolderChestPainSpreadToOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
-                    %br
+				%fieldset
+					%span.Number.Single.PositionerLeft 1.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTravelingTVReason" } Apakah alasan utama untuk melakukan perjalanan atau bertempat tinggal di luar negeri ?
+					%br
+					%div.RadioButton.NumberIndent						
+						%input#RadioButtonPolicyHolderTravelingTVReasonBusiness.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTravelingTVReason", :value => "business" }
+						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTravelingTVReasonBusiness" } Bisnis
+						%input#RadioButtonPolicyHolderTravelingTVReasonVacation.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTravelingTVReason", :value => "vacation" }
+						%div.BoxRound.PositionerLeft											
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTravelingTVReasonVacation" } Liburan
+						%input#RadioButtonPolicyHolderTravelingTVReasonOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTravelingTVReason", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTravelingTVReasonOthers" } Lainnya, sebutkan						
+						%input#TextPolicyHolderTravelingTVReasonOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br
 
-                    %span.Number.Single.PositionerLeft 2.
-                    %label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan rencana bepergian dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini ?
-                    %br
+					%span.Number.Single.PositionerLeft 2.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan rencana bepergian dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini ?
+					%br
 
-                    -#
-                        %div.ContainerFit.NumberIndent
-                            %table#TablePolicyHolderTumorCheckup
-                                %thead
-                                    %tr
-                                        %th Jenis Pemeriksaan
-                                        %th Tanggal Pemeriksaan
-                                        %th Hasil Pemeriksaan							
-                        %br
+					-#
+						%div.ContainerFit.NumberIndent
+							%table#TablePolicyHolderTumorCheckup
+								%thead
+									%tr
+										%th Jenis Pemeriksaan
+										%th Tanggal Pemeriksaan
+										%th Hasil Pemeriksaan							
+						%br
 
-                    %div.ContainerFit.NumberIndent
-                        %label.Short.Single.Item1.Center Negara  
-                        %label.Short.Single.Item1.Center Kota
-                        %label.Short.Single.Item1.Center Tanggal Tiba
-                        %label.Short.Single.Item1.Center Tanggal Berangkat
-                        %label.Short.Single.Item1.Center Tipe Visa
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Negara  
+						%label.Short.Single.Item1.Center Kota
+						%label.Short.Single.Item1.Center Tanggal Tiba
+						%label.Short.Single.Item1.Center Tanggal Berangkat
+						%label.Short.Single.Item1.Center Tipe Visa
 
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara1.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota1.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba1.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat1.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa1.Short.Single.Item1.Margin{ :type => "text" }													
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara2.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota2.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba2.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat2.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa2.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba1.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa1.Short.Single.Item1.Margin{ :type => "text" }													
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba2.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa2.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
 
-                    %span.Number.Single.PositionerLeft 3.
-                    %label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan perjalanan yang telah dilakukan dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini ?
-                    %br
+					%span.Number.Single.PositionerLeft 3.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan perjalanan yang telah dilakukan dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini ?
+					%br
 
-                    -#
-                        %div.ContainerFit.NumberIndent
-                            %table#TablePolicyHolderTumorCheckup
-                                %thead
-                                    %tr
-                                        %th Jenis Pemeriksaan
-                                        %th Tanggal Pemeriksaan
-                                        %th Hasil Pemeriksaan							
-                        %br
+					-#
+						%div.ContainerFit.NumberIndent
+							%table#TablePolicyHolderTumorCheckup
+								%thead
+									%tr
+										%th Jenis Pemeriksaan
+										%th Tanggal Pemeriksaan
+										%th Hasil Pemeriksaan							
+						%br
 
-                    %div.ContainerFit.NumberIndent
-                        %label.Short.Single.Item1.Center Negara  
-                        %label.Short.Single.Item1.Center Kota
-                        %label.Short.Single.Item1.Center Tanggal Tiba
-                        %label.Short.Single.Item1.Center Tanggal Berangkat
-                        %label.Short.Single.Item1.Center Tipe Visa
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Negara  
+						%label.Short.Single.Item1.Center Kota
+						%label.Short.Single.Item1.Center Tanggal Tiba
+						%label.Short.Single.Item1.Center Tanggal Berangkat
+						%label.Short.Single.Item1.Center Tipe Visa
 
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara1.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota1.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba1.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat1.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa1.Short.Single.Item1.Margin{ :type => "text" }													
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara2.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota2.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba2.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat2.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa2.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
-                    %div.ContainerFit.NumberIndent						
-                        %input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
-                        %input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
-                        %input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
-                    %br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba1.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa1.Short.Single.Item1.Margin{ :type => "text" }													
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba2.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa2.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
+					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderTravelingNegara3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingKota3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTanggalTiba3.Short.Single.Item1.Margin{ :type => "text"}
+						%input#TextPolicyHolderTravelingTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderTravelingTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
+					%br
 
-                    %span.Number.Single.PositionerLeft 4.
-                    %label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorWhere" } Sebutkan kewarganegaraan Anda.
-                    %br
-                    (Jika lebih dari 1 kewarganegaraan mohon sebutkan seluruhnya pada kolom di bawah ini).
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorWhere.Full.Single.Item{ :type => "text" }
-                        %br
+					%span.Number.Single.PositionerLeft 4.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTumorWhere" } Sebutkan kewarganegaraan Anda.
+					%br
+					%label.Full.Single.PositionerLeft.NumberIndent (Jika lebih dari 1 kewarganegaraan mohon sebutkan seluruhnya pada kolom di bawah ini).
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorWhere.Full.Single.Item{ :type => "text" }
+						%br
 
-                    %span.Number.Single.PositionerLeft 5.
-                    %label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorWhere" } Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal, pada kolom di bawah ini:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorWhere.Full.Single.Item{ :type => "text" }
-                        %br
+					%span.Number.Single.PositionerLeft 5.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorWhere" } Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal, pada kolom di bawah ini:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorWhere.Full.Single.Item{ :type => "text" }
+						%br
 
-                    %span.Number.Single.PositionerLeft 6.
-                    %label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTaken" } Jika Anda berencana untuk berada di negara manapun selama lebih dari 21 hari, harap memberikan rincian sebagai berikut:
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} a. Jenis tempat tinggal Anda:
-                    %br
-                    (Misal: apartemen, rumah, hotel, tempat penampungan sementara, dan lain lain)
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%span.Number.Single.PositionerLeft 6.
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTaken" } Jika Anda berencana untuk berada di negara manapun selama lebih dari 21 hari, harap memberikan rincian sebagai berikut:
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} a. Jenis tempat tinggal Anda:
+					%br
+					%label.Full.Single.PositionerLeft.NumberIndent (Misal: apartemen, rumah, hotel, tempat penampungan sementara, dan lain lain)
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} b. Alamat lengkap tempat tinggal Anda:
+					%br
+					%label.Full.Single.PositionerLeft.NumberIndent (Termasuk nama jalan dan nomor, kota, kode pos, negara)
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} c. Seberapa jauh jarak fasilitas medis dari tempat tinggal Anda:
+					%br
+					%label.Full.Single.PositionerLeft.NumberIndent (Jarak menuju praktek dokter dan/atau rumah sakit).
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%span.Number.Single.PositionerLeft 7.
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTaken" } Jika perjalanan Anda untuk tujuan bisnis, harap memberikan rincian sebagai berikut:
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} a. Nama perusahaan/tempat usaha:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} b. Jenis usaha:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} c. Tugas dan tanggung jawab:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} d. Tanggal dimulai:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} e. Remunerasi tahunan:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} f. Sebutkan dengan rinci cara mendapatkan perawatan kesehatan dan cara atau prosedur dalam kasus penyakit berat atau cedera:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} g. Sarana transportasi yang tersedia di negara tersebut:
+					%br
+					%label.Full.Single.PositionerLeft.NumberIndent (Misal: angkutan umum atau pribadi, pesawat pribadi, dan lain-lain).
+					%br
 
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} b. Alamat lengkap tempat tinggal Anda:
-                    %br
-                    (Termasuk nama jalan dan nomor, kota, kode pos, negara)
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} c. Seberapa jauh jarak fasilitas medis dari tempat tinggal Anda:
-                    %br
-                    (Jarak menuju praktek dokter dan/atau rumah sakit).
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                        
-                    
-                    %span.Number.Single.PositionerLeft 7.
-                    %label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTaken" } Jika perjalanan Anda untuk tujuan bisnis, harap memberikan rincian sebagai berikut:
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} a. Nama perusahaan/tempat usaha:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} b. Jenis usaha:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} c. Tugas dan tanggung jawab:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} d. Tanggal dimulai:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} e. Remunerasi tahunan:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} f. Sebutkan dengan rinci cara mendapatkan perawatan kesehatan dan cara atau prosedur dalam kasus penyakit berat atau cedera:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %br
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} g. Sarana transportasi yang tersedia di negara tersebut:
-                    %br
-                    (Misal: angkutan umum atau pribadi, pesawat pribadi, dan lain-lain).
-                    %br
-                    
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} h. Sebutkan alat/perangkat pengaman y   ang disiapkan/dipergunakan oleh pemberi kerja pada saat melakukan pekerjaan:
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} i. Apakah Anda terikat dengan suatu kontrak atau perjanjian?
-                    %br
-                    Mohon menjelaskan secara rinci pada kolom di bawah ini.
-                    %br
-                    (Tanggal mulai, durasi dan lain-lain serta memberikan fotokopi kontrak atau perjanjian jika tersedia).
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} h. Sebutkan alat/perangkat pengaman y   ang disiapkan/dipergunakan oleh pemberi kerja pada saat melakukan pekerjaan:
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} i. Apakah Anda terikat dengan suatu kontrak atau perjanjian?
+					%br
+					Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%label.Full.Single.PositionerLeft.NumberIndent (Tanggal mulai, durasi dan lain-lain serta memberikan fotokopi kontrak atau perjanjian jika tersedia).
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
 
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
-                    
-                    %span.Number.Single.PositionerLeft 8.
-                    %label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorWhere" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
-                    %br
-                    %div.ContainerFit.NumberIndent
-                        %input#TextPolicyHolderTumorWhere.Full.Single.Item{ :type => "text" }
-                        %br
+					%span.Number.Single.PositionerLeft 8.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTumorWhere" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTumorWhere.Full.Single.Item{ :type => "text" }
+						%br
 
-                    
-                %section#SectionDeclaration{ :style => "margin-top: 30px;"}
-                    = Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
-        %section#SectionFooter
-            = Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

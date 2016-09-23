@@ -1,196 +1,180 @@
-!!! 5
+%form#PopUpTraveling.PopUp
 
-%html
+	/ HEADER
 
-	/ HEAD
+	%header		 											
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpTraveling', 'PopUpActivity')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpTraveling', 'PopUpActivity', stringPageInfixTypeCurrent + 'Traveling', arrayHealthQuestionnaire)" }
+		%h2 Kuesioner Untuk Perjalanan Ke Luar Negeri/Tinggal Di Luar Negeri
 
-	%head
-		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life -  Questionnaire Perjalanan Ke Luar Negeri
+	/ FIELDSET
 
-		/ JQUERY
+	%fieldset
+		%div.ContainerFit
+			%span.Multi.Single.4 KUESIONER UNTUK PERJALANAN KE LUAR NEGERI/TINGGAL DI LUAR NEGERI
+		%br
+		%hr
 
-		:javascript
-			$(document).ready(function()
-			{
+		%div.ContainerFit
+			%label.Medium.Single.Item 1. Apakah alasan utama untuk melakukan perjalanan atau bertempat tinggal di luar negeri?
+			%div.RadioButton
+				%input#RadioButtonTVReasonVacation{ :type => "radio", :name => "RadioButtonTVReason", :value => "vacation" }
+				%label.RadioButton{ :for => "RadioButtonTVReasonVacation" } Liburan
+				%div.Separator
+				%input#RadioButtonTVReasonBusiness{ :type => "radio", :name => "RadioButtonTVReason", :value => "business" }
+				%label.RadioButton{ :for => "RadioButtonTVReasonBusiness" } Bisnis
+				%div.Separator
+				%input#RadioButtonTVReasonOthers{ :type => "radio", :name => "RadioButtonTVReason", :value => "other" }
+				%label.RadioButton{ :for => "RadioButtonTVReasonOthers" } Lainnya, sebutkan
+			%input#TextTVReasonOtherDesc.Short.Single.Item.Margin{ :type =>"text" }
+		%br
+		%hr
 
-			});
+		%label.Medium.Single.Item 2. Sebutkan dengan rinci rencana bepergian dalam 12 bulan yang akan datang:
+		%br
+		%div.ContainerFit
+			%label.Short.Single.Item.Center.Margin Negara
+			%label.Short.Single.Item1.Center.Margin Kota
+			%label.Short.Single.Item1.Center.Margin Tanggal Tiba
+			%label.Short.Single.Item1.Center.Margin Tanggal Berangkat
+			%label.Short.Single.Item1.Center.Margin Tipe Visa
+		%div.ContainerFit
+			%input#TextPolicyHolderNegara1.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderKota1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalTiba1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalBerangkat1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTipeVisa1.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextPolicyHolderNegara2.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderKota2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalTiba2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalBerangkat2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTipeVisa2.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextPolicyHolderNegara3.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderKota3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalTiba3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%hr
 
+		%label.Medium.Single.Item 3. Sebutkan dengan rinci perjalanan yang telah dilakukan dalam 12 bulan terakhir:
+		%br
+		%div.ContainerFit
+			%label.Short.Single.Item.Center.Margin Negara
+			%label.Short.Single.Item1.Center.Margin Kota
+			%label.Short.Single.Item1.Center.Margin Tanggal Tiba
+			%label.Short.Single.Item1.Center.Margin Tanggal Berangkat
+			%label.Short.Single.Item1.Center.Margin Tipe Visa
+		%div.ContainerFit
+			%input#TextPolicyHolderNegara4.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderKota4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalTiba4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalBerangkat4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTipeVisa4.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextPolicyHolderNegara5.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderKota5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalTiba5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalBerangkat5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTipeVisa5.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextPolicyHolderNegara6.Short.Single.Item.Margin{ :type => "text" }
+			%input#TextPolicyHolderKota6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalTiba6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTanggalBerangkat6.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextPolicyHolderTipeVisa6.Short.Single.Item1.Margin{ :type => "text" }
+		%br
+		%hr
 
-	/ BODY
+		%div.ContainerFit 
+			%label#Wrap.Single.PositionerLeft 4. Sebutkan tempat kelahiran Anda?
+			%input#TextPolicyHolderTempatLahir.Short.Single.Item.Margin{ :type =>"text" }
+		%br
+		%hr
 
-	%body#Main
-	
-		%header
-			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-			%h2 KUESIONER UNTUK PERJALANAN KE LUAR NEGERI/TINGGAL DI LUAR NEGERI
-	
-		/ MAIN
+		%label.Medium.Single.Item 5. Sebutkan kewarganegaraan Anda (Jika lebih dari 1 kewarganegaraan, mohon disebutkan seluruhnya)
+		%br
+		%input#TextPolicyHolderKewarganegaraan.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-		%main
-			%form#ActivityQuestionnaireMain
-				%div.ContainerFit
-					%span.Multi.Single.4 KUESIONER UNTUK PERJALANAN KE LUAR NEGERI/TINGGAL DI LUAR NEGERI
-				%br
-				%hr
-				
-				%div.ContainerFit
-					%label.Medium.Single.Item 1. Apakah alasan utama untuk melakukan perjalanan atau bertempat tinggal di luar negeri?
-					%div.RadioButton
-						%input#RadioButtonPolicyHolderLiburan{ :type => "radio", :name => "RadioButtonPolicyHolderAlasanPerjalananChange", :value => "Liburan" }
-						%label.RadioButton{ :for => "RadioButtonPolicyHolderLiburan" } Liburan
-						%div.Separator
-						%input#RadioButtonPolicyHolderBisnis{ :type => "radio", :name => "RadioButtonPolicyHolderAlasanPerjalananChange", :value => "Bisnis" }
-						%label.RadioButton{ :for => "RadioButtonPolicyHolderBisnis" } Bisnis
-				%br
-				%hr
-				
-				%label.Medium.Single.Item 2. Sebutkan dengan rinci rencana bepergian dalam 12 bulan yang akan datang:
-				%br
-				%div.ContainerFit
-					%label.Short.Single.Item.Center.Margin Negara
-					%label.Short.Single.Item1.Center.Margin Kota
-					%label.Short.Single.Item1.Center.Margin Tanggal Tiba
-					%label.Short.Single.Item1.Center.Margin Tanggal Berangkat
-					%label.Short.Single.Item1.Center.Margin Tipe Visa
-				%div.ContainerFit
-					%input#TextPolicyHolderNegara1.Short.Single.Item.Margin{ :type => "text" }
-					%input#TextPolicyHolderKota1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalTiba1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalBerangkat1.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTipeVisa1.Short.Single.Item1.Margin{ :type => "text" }
-				%div.ContainerFit
-					%input#TextPolicyHolderNegara2.Short.Single.Item.Margin{ :type => "text" }
-					%input#TextPolicyHolderKota2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalTiba2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalBerangkat2.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTipeVisa2.Short.Single.Item1.Margin{ :type => "text" }
-				%div.ContainerFit
-					%input#TextPolicyHolderNegara3.Short.Single.Item.Margin{ :type => "text" }
-					%input#TextPolicyHolderKota3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalTiba3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalBerangkat3.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTipeVisa3.Short.Single.Item1.Margin{ :type => "text" }
-				%br
-				%hr
-				
-				%label.Medium.Single.Item 3. Sebutkan dengan rinci perjalanan yang telah dilakukan dalam 12 bulan terakhir:
-				%br
-				%div.ContainerFit
-					%label.Short.Single.Item.Center.Margin Negara
-					%label.Short.Single.Item1.Center.Margin Kota
-					%label.Short.Single.Item1.Center.Margin Tanggal Tiba
-					%label.Short.Single.Item1.Center.Margin Tanggal Berangkat
-					%label.Short.Single.Item1.Center.Margin Tipe Visa
-				%div.ContainerFit
-					%input#TextPolicyHolderNegara4.Short.Single.Item.Margin{ :type => "text" }
-					%input#TextPolicyHolderKota4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalTiba4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalBerangkat4.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTipeVisa4.Short.Single.Item1.Margin{ :type => "text" }
-				%div.ContainerFit
-					%input#TextPolicyHolderNegara5.Short.Single.Item.Margin{ :type => "text" }
-					%input#TextPolicyHolderKota5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalTiba5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalBerangkat5.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTipeVisa5.Short.Single.Item1.Margin{ :type => "text" }
-				%div.ContainerFit
-					%input#TextPolicyHolderNegara6.Short.Single.Item.Margin{ :type => "text" }
-					%input#TextPolicyHolderKota6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalTiba6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTanggalBerangkat6.Short.Single.Item1.Margin{ :type => "text" }
-					%input#TextPolicyHolderTipeVisa6.Short.Single.Item1.Margin{ :type => "text" }
-				%br
-				%hr
-				
-				%div.ContainerFit 
-					%label#Wrap.Single.PositionerLeft 4. Sebutkan tempat kelahiran Anda?
-					%input#TextPolicyHolderTempatLahir.Short.Single.Item.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.Medium.Single.Item 5. Sebutkan kewarganegaraan Anda (Jika lebih dari 1 kewarganegaraan, mohon disebutkan seluruhnya)
-				%br
-				%input#TextPolicyHolderKewarganegaraan.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.Medium.Single.Item 6. Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal:
-				%br
-				%input#TextPolicyHolderAsetDimiliki.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.Medium.Single.Item 7. Jika Anda berencana untuk berada di negara manapun selama lebih dari 21 hari, harap membrikan rincian sebagai berikut:
-				%br
-				
-				%label.Medium.Single.Item a. Jenis tempat tinggal (misal: apartemen, rumah, hotel, tempat penampungan sementara, dll)
-				%br
-				%input#TextPolicyHolderJenisTempatTinggal.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				
-				%label.Medium.Single.Item b. Alamat (termasuk nama jalan dan nomor, kota, kode pos, negara):
-				%br
-				%input#TextPolicyHolderAlamat.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item c. Fasilitas medis (jarak menuju praktek dokter dan rumah sakit)
-				%br
-				%input#TextPolicyHolderFasilitasMedis.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%label.Medium.Single.Item 8. Jika perjalanan Anda untuk tujuan bisnis, harap memberikan rincian sebagai berikut:
-				%br
-				
-				%label.Medium.Single.Item a. Nama bisnis:
-				%br
-				%input#TextPolicyHolderNamaBisnis.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item b. Jenis usaha:
-				%br
-				%input#TextPolicyHolderJenisUsaha.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item c. Tugas dan tanggung jawab:
-				%br
-				%input#TextPolicyHolderTugasDanTanggungJawab.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item d. Tanggal dimulai:
-				%br
-				%input#TextPolicyHolderTanggalDimulai.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item e. Remunrisasi tahunan:
-				%br
-				%input#TextPolicyHolderRemunrisasiTahunan.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item f. Sebutkan dengan rinci cara mendapatkan perawatan kesehatan dan cara atau prosedur dalam kasus penyakit berat atau cidera:
-				%br
-				%input#TextPolicyHolderCaraMedapatkanPerawatanKesehatan.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item g. Alat perjalanan di negara tersebut (misalnya angkutan umum atau pribadi, pesawat pribadi, dll):
-				%br
-				%input#TextPolicyHolderAlatPerjalanan.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item h. Tindakan pengamanan yang disiapkan oleh pemberi kerja:
-				%br
-				%input#TextPolicyHolderTindakanPengamanan.Full.Single.Item1.Margin{ :type =>"text" }
-				
-				%label.Medium.Single.Item i. Apakah Anda terikat dengan suatu kontrak atau perjanjian? Jika ya, sebutkan dengan terperinci, tanggal mulai dan durasi, dll (silahkan juga menyertakan salinan kontrak atau perjanjian ini jika tersedia):
-				%br
-				%input#TextPolicyHolderTerikatKontrakPerjanjian.Full.Multi.Item1.Margin{ :type =>"text" }
-				
-				%br
-				%hr
-				
-				%label.Medium.Single.Item 9. Mohon berikan informasi tambahan yang Anda rasa penting
-				%br
-				%input#TextPolicyHolderInformasiTambahan.Full.Multi.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-				
-				%h2 PERNYATAAN DAN KUASA
-				%ol
-					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
-					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
-					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
-					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+		%label.Medium.Single.Item 6. Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal:
+		%br
+		%input#TextPolicyHolderAsetDimiliki.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.Medium.Single.Item 7. Jika Anda berencana untuk berada di negara manapun selama lebih dari 21 hari, harap membrikan rincian sebagai berikut:
+		%br
+
+		%label.Medium.Single.Item a. Jenis tempat tinggal (misal: apartemen, rumah, hotel, tempat penampungan sementara, dll)
+		%br
+		%input#TextPolicyHolderJenisTempatTinggal.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+
+		%label.Medium.Single.Item b. Alamat (termasuk nama jalan dan nomor, kota, kode pos, negara):
+		%br
+		%input#TextPolicyHolderAlamat.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item c. Fasilitas medis (jarak menuju praktek dokter dan rumah sakit)
+		%br
+		%input#TextPolicyHolderFasilitasMedis.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.Medium.Single.Item 8. Jika perjalanan Anda untuk tujuan bisnis, harap memberikan rincian sebagai berikut:
+		%br
+
+		%label.Medium.Single.Item a. Nama bisnis:
+		%br
+		%input#TextPolicyHolderNamaBisnis.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item b. Jenis usaha:
+		%br
+		%input#TextPolicyHolderJenisUsaha.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item c. Tugas dan tanggung jawab:
+		%br
+		%input#TextPolicyHolderTugasDanTanggungJawab.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item d. Tanggal dimulai:
+		%br
+		%input#TextPolicyHolderTanggalDimulai.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item e. Remunrisasi tahunan:
+		%br
+		%input#TextPolicyHolderRemunrisasiTahunan.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item f. Sebutkan dengan rinci cara mendapatkan perawatan kesehatan dan cara atau prosedur dalam kasus penyakit berat atau cidera:
+		%br
+		%input#TextPolicyHolderCaraMedapatkanPerawatanKesehatan.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item g. Alat perjalanan di negara tersebut (misalnya angkutan umum atau pribadi, pesawat pribadi, dll):
+		%br
+		%input#TextPolicyHolderAlatPerjalanan.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item h. Tindakan pengamanan yang disiapkan oleh pemberi kerja:
+		%br
+		%input#TextPolicyHolderTindakanPengamanan.Full.Single.Item1.Margin{ :type =>"text" }
+
+		%label.Medium.Single.Item i. Apakah Anda terikat dengan suatu kontrak atau perjanjian? Jika ya, sebutkan dengan terperinci, tanggal mulai dan durasi, dll (silahkan juga menyertakan salinan kontrak atau perjanjian ini jika tersedia):
+		%br
+		%input#TextPolicyHolderTerikatKontrakPerjanjian.Full.Multi.Item1.Margin{ :type =>"text" }
+
+		%br
+		%hr
+
+		%label.Medium.Single.Item 9. Mohon berikan informasi tambahan yang Anda rasa penting
+		%br
+		%input#TextPolicyHolderInformasiTambahan.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%h2 PERNYATAAN DAN KUASA
+		%ol
+			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
