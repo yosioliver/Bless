@@ -4,13 +4,13 @@
 
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpMining', 'PopUpActivity')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpMining', 'PopUp', stringPageInfixTypeCurrent + 'Mining', arrayHealthQuestionnaire)" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpMining', 'PopUpActivity', stringPageInfixTypeCurrent + 'Mining', arrayHealthQuestionnaire)" }
 		%h2 Kuesioner Industri Pertambangan, Perminyakan dan Gas
 
 	/ FIELDSET
 
 	%fieldset
-		%label.Medium.Single.Item 1. Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator) 
+		%label.Medium.Single.Item 1. Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
 		%br
 		%textarea#AreaPosition.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -46,17 +46,17 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 7. Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut: 
+		%label.Medium.Single.Item 7. Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut:
 		%br
-		%label.Medium.Single.Item a. Apakah lokasi tersebut ada di darat atau di lepas pantai? 
+		%label.Medium.Single.Item a. Apakah lokasi tersebut ada di darat atau di lepas pantai?
 		%br
 		%input#TextOffShore.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-		%label.Medium.Single.Item b. Bila di darat apakah di permukaan tanah atau di bawah tanah? 
+		%label.Medium.Single.Item b. Bila di darat apakah di permukaan tanah atau di bawah tanah?
 		%br
 		%input#TextUnderground.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-		%label.Medium.Single.Item     Jika di bawah tanah, sebutkan kedalamannya  
+		%label.Medium.Single.Item     Jika di bawah tanah, sebutkan kedalamannya
 		%br
 		%input#TextUndergroundDepth.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -109,7 +109,7 @@
 		%br
 		%hr
 
-		%label#Wrap.Single.PositionerLeft 9. Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda? 
+		%label#Wrap.Single.PositionerLeft 9. Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda?
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonAccidentOLYes{ :type => "radio", :name => "RadioButtonAccidentOL", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAccidentOLYes" } Ya
