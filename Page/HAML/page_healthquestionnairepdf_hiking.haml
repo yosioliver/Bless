@@ -17,18 +17,18 @@
 			$(document).ready(function()
 			{
 				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"},{"elementID":"TextPolicyHolderFullName","Value":"Ariani Jollanda Pondaag"},{"elementID":"TextSPAJNumber","Value":"123456789012"}]}}'
-			
+
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);				
+				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
-				
+
 				boxGenerator("#DatePolicyHolderJointAtritisComplainDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderJointAtritisComplainMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderJointAtritisComplainYear", 4, boxTypeWithoutLabel, null);
@@ -44,20 +44,20 @@
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesYear", 4, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				// SETUP
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Mendaki");
-				
+
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
@@ -83,171 +83,171 @@
 
 		%main
 			%form
-				%section#SectionCustomer					 				
+				%section#SectionCustomer
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
 				%fieldset
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 1.
-						%label.Wrap.Item{ :for => "TextPolicyHolderJointComplainDetail" } Mohon sebutkan jenis kegiatan pendakian gunung/panjat tebing yang Anda lakukan misalnya bouldering, hiking, pendakian es, pendakian dalam ruangan, mountainnering, tracking, dan lain-lain?
+						%label.Wrap.Item{ :for => "TextPolicyHolderHikingHKType" } Mohon sebutkan jenis kegiatan pendakian gunung/panjat tebing yang Anda lakukan misalnya bouldering, hiking, pendakian es, pendakian dalam ruangan, mountainnering, tracking, dan lain-lain?
 					%br
-					%label.Single.NumberIndent{ :for => "TextPolicyHolderJointComplainDetail" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent{ :for => "TextPolicyHolderHikingHKType" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointComplainDetail.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKType.Full.Single{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 2.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Sudah berapa bulan/tahun Anda melakukan olah raga ini?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingHKHowLong" } Sudah berapa bulan/tahun Anda melakukan olah raga ini?
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHikingHKHowLong" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointComplainDetail.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKHowLong.Full.Single{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 3.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Berapa kali dalam 1 (satu) bulan Anda melakukan olah raga ini?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingHKFrequency" } Berapa kali dalam 1 (satu) bulan Anda melakukan olah raga ini?
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Mohon jelaskan secara rinci pada kolom di bawah ini, termasuk jika olah raga ini Anda lakukan tidak rutin dalam 1 (satu) bulan.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHikingHKFrequency" } Mohon jelaskan secara rinci pada kolom di bawah ini, termasuk jika olah raga ini Anda lakukan tidak rutin dalam 1 (satu) bulan.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointComplainDetail.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKFrequency.Full.Single{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 4.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Dimana/lokasi yang paling sering Anda datangi untuk melakukan olah raga ini?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingHKLocation" } Dimana/lokasi yang paling sering Anda datangi untuk melakukan olah raga ini?
 					%br
-					%label.Single.NumberIndent{ :for => "TextPolicyHolderJointComplainDetail" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent{ :for => "TextPolicyHolderHikingHKLocation" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointComplainDetail.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKLocation.Full.Single{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 5.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Dimana/lokasi yang paling sering Anda datangi untuk melakukan olah raga ini?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingHKUPLocation1" } Dimana/lokasi yang paling sering Anda datangi untuk melakukan olah raga ini?
 					%br
-					%label.Single.NumberIndent{ :for => "TextPolicyHolderJointComplainDetail" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent{ :for => "TextPolicyHolderHikingHKUPLocation1" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						/ %label.Short.Single.Item1.Center No.
 						%label.Short.Single.Item1.Center Negara dan Lokasi
 						%label.Short.Single.Item1.Center Waktu Pendakian
-					%div.ContainerFit.NumberIndent										
-						/ %input#DatePolicyHolderJointHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderJointHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						/ %input#DatePolicyHolderJointHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderJointHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						/ %input#DatePolicyHolderJointHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderJointHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						/ %input#DatePolicyHolderJointHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderJointHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						/ %input#DatePolicyHolderJointHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderJointHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
-					
-					%span.Number.Single.PositionerLeft 6. 
+					%div.ContainerFit.NumberIndent
+						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
+						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
+						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
+						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
+						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
+						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+
+					%span.Number.Single.PositionerLeft 6.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Mohon sebutkan peralatan apa saja yang digunakan sewaktu melakukan olah raga ini.
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Apakah diberi suntikan?
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAltimeter.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "altimeter" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsAltimeter.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "altimeter" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAltimeter" } Altimeter
-						%input#RadioButtonPolicyHolderHikingToolsGPS.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "GPS" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsAltimeter" } Altimeter
+						%input#CheckboxPolicyHolderHikingToolsGPS.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "GPS" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsGPS" } Global Positioning System (GPS)
-						%input#RadioButtonPolicyHolderHikingToolsHikingShoes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "hikingshoes" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsGPS" } Global Positioning System (GPS)
+						%input#CheckboxPolicyHolderHikingToolsHikingShoes.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "hikingshoes" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsHikingShoes" } Sepatu Daki
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHikingShoes" } Sepatu Daki
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "anchor" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "anchor" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAnchor" } Jangkar
-						%input#RadioButtonPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "flashlight" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsAnchor" } Jangkar
+						%input#CheckboxPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "flashlight" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenThank" } Senter
-						%input#RadioButtonPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingToolsOxygenTank", :value => "oxygentank" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsOxygenThank" } Senter
+						%input#CheckboxPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "oxygentank" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "anchor" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsCam.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "cam" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAnchor" } Jangkar
-						%input#RadioButtonPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "flashlight" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsCam" } Cams, Camatots, Spring Loaded Cam Devices
+						%input#CheckboxPolicyHolderHikingToolsHeavyWinterClothing.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "heavywinterclothing" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenThank" } Senter
-						%input#RadioButtonPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingToolsOxygenTank", :value => "oxygentank" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHeavyWinterClothing" } Heavy Winter Clothing
+						%input#CheckboxPolicyHolderHikingToolsPerlonRopesAndCarabiners.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "perlonropesandcarabiners" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsPerlonRopesAndCarabiners" } Perlon Ropes & Carabiners
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "anchor" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsHandphone.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "handphone" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAnchor" } Jangkar
-						%input#RadioButtonPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "flashlight" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHandphone" } Cellular / Mobile Telephone
+						%input#CheckboxPolicyHolderHikingToolsHelm.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "helm" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenThank" } Senter
-						%input#RadioButtonPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingToolsOxygenTank", :value => "oxygentank" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHelm" } Helm
+						%input#CheckboxPolicyHolderHikingToolsBeaks.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "beaks" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsBeaks" } Pitons or Toucans (beaks)
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "anchor" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsChocksAndNutsHexes.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "chockandnutshexes" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAnchor" } Jangkar
-						%input#RadioButtonPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "flashlight" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsChocksAndNutsHexes" } Chocks and Nuts, Hexes
+						%input#CheckboxPolicyHolderHikingToolsAxe.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "axe" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenThank" } Senter
-						%input#RadioButtonPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingToolsOxygenTank", :value => "oxygentank" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsAxe" } Kapak
+						%input#CheckboxPolicyHolderHikingToolsPortaledge.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "portaledge" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsPortaledge" } Portaledge
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "anchor" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsClimbingHarness.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "climbingharness" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAnchor" } Jangkar
-						%input#RadioButtonPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "flashlight" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsClimbingHarness" } Climbing Harness
+						%input#CheckboxPolicyHolderHikingToolsIceScrews.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "icescrews" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenThank" } Senter
-						%input#RadioButtonPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingToolsOxygenTank", :value => "oxygentank" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsIceScrews" } Ice Screws
+						%input#CheckboxPolicyHolderHikingToolsTwoWayRadio.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "twowayradio" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsTwoWayRadio" } Two Way Radio
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "anchor" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsIceBoots.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "iceboots" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAnchor" } Jangkar
-						%input#RadioButtonPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "flashlight" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsIceBoots" } Sepatu Es
+						%input#CheckboxPolicyHolderHikingToolsNavigation.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "navigation" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenThank" } Senter
-						%input#RadioButtonPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingToolsOxygenTank", :value => "oxygentank" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsNavigation" } Peta & Kompas
+						%input#CheckboxPolicyHolderHikingToolsSnowPicket.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "snowpicket" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsSnowPicket" } Snow Picket
 					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "anchor" }
+					%div.Checkbox.NumberIndent.PositionerLeft
+						%input#CheckboxPolicyHolderHikingToolsLadders.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "etriersorwebladders" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsAnchor" } Jangkar
-						%input#RadioButtonPolicyHolderHikingToolsFlashlight.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingTools", :value => "flashlight" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsLadders" } Etriers or Web ladders
+						%input#CheckboxPolicyHolderHikingToolsJumars.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "jumars" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenThank" } Senter
-						%input#RadioButtonPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingToolsOxygenTank", :value => "oxygentank" }
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsJumars" } Mechanical Ascenders (jumars)
+						%input#CheckboxPolicyHolderHikingToolsStoppers.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "stoppers" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsStoppers" } Stoppers
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 7.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Dimana/lokasi yang paling sering Anda datangi untuk melakukan olah raga ini?
 					%br
@@ -257,124 +257,122 @@
 						%label.Short.Single.Item1.Center Derajat
 						%label.Short.Single.Item1.Center Tanggal
 						%label.Short.Single.Item1.Center Rencana tinggi dan derajat pendakian
-					%div.ContainerFit.NumberIndent										
+					%div.ContainerFit.NumberIndent
 						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
+					%div.ContainerFit.NumberIndent
 						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
+					%div.ContainerFit.NumberIndent
 						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
+					%div.ContainerFit.NumberIndent
 						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
+					%div.ContainerFit.NumberIndent
 						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-					
+
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 8.
-						%label.Wrap.Item{ :for => "TextPolicyHolderJointOtherInformation" } Apakah Anda seorang anggota suatu Perkumpulan Pendaki  Gunung/Panjat Tebing  atau Asosiasi Pendaki Gunung/Panjat
-					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Tebing?
+						%label.Wrap.Item{ :for => "RadioButtonPolicyHolderHikingHKAssociationYes" } Apakah Anda seorang anggota suatu Perkumpulan Pendaki  Gunung/Panjat Tebing  atau Asosiasi Pendaki Gunung/Panjat Tebing?
 					%div.RadioButton.PositionerLeft
-						%input#RadioButtonPolicyHolderJointHaveOperationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "false" }
+						%input#RadioButtonPolicyHolderHikingHKAssociationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKAssociation", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointHaveOperationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "true" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKAssociationNo" } Tidak
+						%input#RadioButtonPolicyHolderHikingHKAssociationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKAssociation", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationYes" } Ya
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKAssociationYes" } Ya
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Jika “Ya”, mohon menjelaskan secara rinci dengan melengkapi kolom di bawah ini (Nama asosiasi/perkumpulan, tanggal bergabung, lokasi perkumpulan dan aktivitas rutin).
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKAssociationDesc" } Jika “Ya”, mohon menjelaskan secara rinci dengan melengkapi kolom di bawah ini (Nama asosiasi/perkumpulan, tanggal bergabung, lokasi perkumpulan dan aktivitas rutin).
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointWalkingStick.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKAssociationDesc.Full.Single{ :type => "text" }
 					%br
-					
-					%span.Number.Single.PositionerLeft 9. 
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Apakah Anda pernah mendaki seorang diri atau di malam hari?
+
+					%span.Number.Single.PositionerLeft 9.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKSelfOrNight" } Apakah Anda pernah mendaki seorang diri atau di malam hari?
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKSelfOrNight" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointHaveOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKSelfOrNightNo" } Tidak
+						%input#RadioButtonPolicyHolderHikingHKSelfOrNightNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKSelfOrNight", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationYes" } Ya
-						%input#RadioButtonPolicyHolderJointHaveOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKSelfOrNightYes" } Ya
+						%input#RadioButtonPolicyHolderHikingHKSelfOrNightYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKSelfOrNight", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointWalkingStick.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKSelfOrNightDesc.Full.Single{ :type => "text" }
 					%br
-					
+
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 10.
 						%label.Wrap.Item{ :for => "TextPolicyHolderJointOtherInformation" } Apakah Anda mendaki hanya untuk sekedar?
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Olah raga
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKSport" } Olah raga
 					%div.RadioButton.PositionerLeft
-						%input#RadioButtonPolicyHolderJointHaveOperationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "false" }
+						%input#RadioButtonPolicyHolderHikingHKSportNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKSport", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointHaveOperationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "true" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKSportNo" } Tidak
+						%input#RadioButtonPolicyHolderHikingHKSportYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKSport", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationYes" } Ya
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKSportYes" } Ya
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Pekerjaan
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKJob" } Pekerjaan
 					%div.RadioButton.PositionerLeft
-						%input#RadioButtonPolicyHolderJointHaveOperationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "false" }
+						%input#RadioButtonPolicyHolderHikingHKJobNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKJob", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointHaveOperationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "true" }
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKJobNo" } Tidak
+						%input#RadioButtonPolicyHolderHikingHKJobYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKJob", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationYes" } Ya
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKJobYes" } Ya
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKJob" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointWalkingStick.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKJob.Full.Single{ :type => "text" }
 					%br
-					
-					%span.Number.Single.PositionerLeft 11. 
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Pernahkah Anda mengalami kecelakaan sewaktu mendaki gunung/panjat tebing?
+
+					%span.Number.Single.PositionerLeft 11.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKAccident" } Pernahkah Anda mengalami kecelakaan sewaktu mendaki gunung/panjat tebing?
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKAccident" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointHaveOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKAccidentNo" } Tidak
+						%input#RadioButtonPolicyHolderHikingHKAccidentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKAccident", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationYes" } Ya
-						%input#RadioButtonPolicyHolderJointHaveOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKAccidentYes" } Ya
+						%input#RadioButtonPolicyHolderHikingHKAccidentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderHikingHKAccident", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointWalkingStick.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKAccident.Full.Single{ :type => "text" }
 					%br
-					
+
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 12.
-						%label.Wrap.Item{ :for => "TextPolicyHolderJointOtherInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.                                                                                                                                                                                             
+						%label.Wrap.Item{ :for => "TextPolicyHolderHikingHKAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointOtherInformation.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderHikingHKAdditionalInformation.Full.Single{ :type => "text" }
 					%br
-					
+
 				%section#SectionDeclaration
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
