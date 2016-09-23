@@ -113,86 +113,85 @@
 		%hr
 
 		%div.ContainerFit 
-			%label#Wrap.Single.PositionerLeft 4. Sebutkan tempat kelahiran Anda?
-			%input#TextPolicyHolderTempatLahir.Short.Single.Item.Margin{ :type =>"text" }
+			%label#Wrap.Single.PositionerLeft 4. Sebutkan kewarganegaraan Anda?
+			%input#TextMyNationality.Short.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Medium.Single.Item 5. Sebutkan kewarganegaraan Anda (Jika lebih dari 1 kewarganegaraan, mohon disebutkan seluruhnya)
+		%label.Medium.Single.Item 5. Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal, pada kolom di bawah ini
 		%br
-		%input#TextPolicyHolderKewarganegaraan.Full.Single.Item1.Margin{ :type =>"text" }
-		%br
-		%hr
-
-		%label.Medium.Single.Item 6. Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal:
-		%br
-		%input#TextPolicyHolderAsetDimiliki.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextAbroadAsset.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Medium.Single.Item 7. Jika Anda berencana untuk berada di negara manapun selama lebih dari 21 hari, harap membrikan rincian sebagai berikut:
+		%label.Medium.Single.Item 6. Jika Anda berencana untuk berada di negara manapun selama lebih dari 21 hari, harap memberikan rincian sebagai berikut
 		%br
-
 		%label.Medium.Single.Item a. Jenis tempat tinggal (misal: apartemen, rumah, hotel, tempat penampungan sementara, dll)
 		%br
-		%input#TextPolicyHolderJenisTempatTinggal.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextTVStay.Full.Single.Item1.Margin{ :type =>"text" }
+		
+		%label.Medium.Single.Item b. Alamat lengkap tempat tinggal Anda: (Termasuk nama jalan dan nomor, kota, kode pos, negara).
 		%br
-
-		%label.Medium.Single.Item b. Alamat (termasuk nama jalan dan nomor, kota, kode pos, negara):
+		%input#TextTVAddress.Full.Single.Item1.Margin{ :type =>"text" }
+		
+		%label.Medium.Single.Item c. Seberapa jauh jarak fasilitas medis dari tempat tinggal Anda: (Jarak menuju praktek dokter dan/atau rumah sakit).
 		%br
-		%input#TextPolicyHolderAlamat.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item c. Fasilitas medis (jarak menuju praktek dokter dan rumah sakit)
-		%br
-		%input#TextPolicyHolderFasilitasMedis.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextTVHospitalDistance.Full.Single.Item1.Margin{ :type =>"text" }		
 		%br
 		%hr
 
-		%label.Medium.Single.Item 8. Jika perjalanan Anda untuk tujuan bisnis, harap memberikan rincian sebagai berikut:
+		%label.Medium.Single.Item 7. Jika perjalanan Anda untuk tujuan bisnis, harap memberikan rincian sebagai berikut
 		%br
 
-		%label.Medium.Single.Item a. Nama bisnis:
+		%label.Medium.Single.Item a. Nama perusahaan/tempat usaha:
 		%br
-		%input#TextPolicyHolderNamaBisnis.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextTVCompanyName.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
 
 		%label.Medium.Single.Item b. Jenis usaha:
 		%br
-		%input#TextPolicyHolderJenisUsaha.Full.Single.Item1.Margin{ :type =>"text" }
-
+		%input#TextTVBusinessType.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		
 		%label.Medium.Single.Item c. Tugas dan tanggung jawab:
 		%br
-		%input#TextPolicyHolderTugasDanTanggungJawab.Full.Single.Item1.Margin{ :type =>"text" }
-
+		%input#TextTVJobsDescription.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		
 		%label.Medium.Single.Item d. Tanggal dimulai:
 		%br
-		%input#TextPolicyHolderTanggalDimulai.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item e. Remunrisasi tahunan:
+		%input#TextTVTripStarted.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-		%input#TextPolicyHolderRemunrisasiTahunan.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item f. Sebutkan dengan rinci cara mendapatkan perawatan kesehatan dan cara atau prosedur dalam kasus penyakit berat atau cidera:
+		
+		%label.Medium.Single.Item e. Remunerasi tahunan:
 		%br
-		%input#TextPolicyHolderCaraMedapatkanPerawatanKesehatan.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item g. Alat perjalanan di negara tersebut (misalnya angkutan umum atau pribadi, pesawat pribadi, dll):
+		%input#TextTVAnnualRenumeration.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-		%input#TextPolicyHolderAlatPerjalanan.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item h. Tindakan pengamanan yang disiapkan oleh pemberi kerja:
+		
+		%label.Medium.Single.Item f. Sebutkan dengan rinci cara mendapatkan perawatan kesehatan dan cara atau prosedur dalam kasus penyakit berat atau cedera:
 		%br
-		%input#TextPolicyHolderTindakanPengamanan.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item i. Apakah Anda terikat dengan suatu kontrak atau perjanjian? Jika ya, sebutkan dengan terperinci, tanggal mulai dan durasi, dll (silahkan juga menyertakan salinan kontrak atau perjanjian ini jika tersedia):
+		%input#TextTVInjuryProcedure.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-		%input#TextPolicyHolderTerikatKontrakPerjanjian.Full.Multi.Item1.Margin{ :type =>"text" }
-
+		
+		%label.Medium.Single.Item g. Sarana transportasi yang tersedia di negara tersebut: (Misal: angkutan umum atau pribadi, pesawat pribadi, dan lain-lain).
+		%br
+		%input#TextTVTransportation.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		
+		%label.Medium.Single.Item h. Sebutkan alat/perangkat pengaman yang disiapkan/dipergunakan oleh pemberi kerja pada saat melakukan pekerjaan:
+		%br
+		%input#TextTVSafetyEquipment.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		
+		%label.Medium.Single.Item i. Apakah Anda terikat dengan suatu kontrak atau perjanjian? Mohon menjelaskan secara rinci pada kolom di bawah ini. (Tanggal mulai, durasi dan lain-lain serta memberikan fotokopi kontrak atau perjanjian jika tersedia).
+		%br
+		%input#TextTVContract.Full.Single.Item1.Margin{ :type =>"text" }				
 		%br
 		%hr
 
-		%label.Medium.Single.Item 9. Mohon berikan informasi tambahan yang Anda rasa penting
+		%label.Medium.Single.Item 8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br
-		%input#TextPolicyHolderInformasiTambahan.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextTVAdditionalInformation.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
