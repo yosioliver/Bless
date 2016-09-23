@@ -1,0 +1,22 @@
+%form#PopUpGland.PopUp
+
+	/ HEADER
+
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpJunkie')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpJunkie', stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire, )" }
+		%h2 Pertanyaan Kesehatan
+
+	/ MAIN
+
+	%fieldset
+		%div.ContainerFit
+			%span.Multi.Single 3. Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
+		%br
+		%div.RadioButton
+			%input#ButtonAlcohol.ButtonPrimary{ :type => "button", :value => "Kuesioner Alkohol", :onclick => "buttonPopUpNavigation(this.id, 'PopUpJunkie', 'PopUpAlcohol', stringPageInfixTypeCurrent + 'Alcohol', arrayHealthQuestionnaire)" }
+		%hr
+		%label.Medium.Single silahkan memberikan rincian lebih lanjut
+		%br
+		%textarea#AreaAmandmentDetail.Full.Multi
+		%label.Medium.Single (maksimum 250 karakter)

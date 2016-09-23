@@ -11,21 +11,21 @@
 		/ JQUERY
 
 		:javascript
-		
+
 			// INTIALIZATION
-			
+
 			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
 			var stringPageTypeCurrent = stringPageTypeForm;
 			var stringPageSectionCurrent = stringPageSectionHealthQuestionnaire;
 			var stringPageValidation = 0;
 			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
 			var booleanInputChangeState = false;
-		
+
 			$(document).ready(function()
 			{
 				// GENERATOR
 
-				additionalQuestionGenerator();								
+				additionalQuestionGenerator();
 
 				// BUTTON
 
@@ -37,43 +37,43 @@
 				$("#BoxDate").DateTimePicker(
 				{
 					dateSeparator: "/",
-					dateFormat: "dd/MM/yyyy", 
+					dateFormat: "dd/MM/yyyy",
 					timeSeparator: ":",
 					timeFormat: "HH:mm:ss"
 				});
-				
+
 				inputListener();
-				
+
 				/* $("#MainForm #ButtonDone").click(function()
 				{
 					savetoDB();
 				}); */
-				
+
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
 			});
-			
+
 			function CheckRelationshipStatus(RealtionshipStatus)
 			{
 				if (RealtionshipStatus == "self")
 				{
 					$('#ProspectiveInsuredLink').click(function(e) {
-						e.preventDefault();						
-					});	
+						e.preventDefault();
+					});
 				}
 				else
 				{
-					
+
 				}
 			}
-			
-			
+
+
 	/ BODY
 
 	%body#Main
 
 		/ HEADER
-	
+
 		%header#MainForm
 			%h1
 			/ %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
@@ -88,7 +88,7 @@
 			%h2 Pertanyaan Kesehatan
 
 		/ MAIN
-	
+
 		%main
 			%form#HealthQuestionnaireMain
 				%ol
@@ -133,12 +133,12 @@
 							%label#LabelPolicyHolderJunkie.Item{ :for => "RadioButtonPolicyHolderJunkieYes" }
 								Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
 							%div.RadioButton.Item
-								%input#RadioButtonPolicyHolderJunkieYes{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "true", "data-popup-type" => "general", :required => "true" }
+								%input#RadioButtonPolicyHolderJunkieYes{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpJunkie', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Junkie', 'Activity'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderJunkieYes" } Ya
-								%div.Separator | 
-								%input#RadioButtonPolicyHolderJunkieNo{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "false", "data-popup-type" => "general", :required => "true" }
+								%div.Separator |
+								%input#RadioButtonPolicyHolderJunkieNo{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpJunkie', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Junkie', 'Activity'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderJunkieNo" } Tidak
-						%input#ButtonPreviewPolicyHolderJunkie.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderJunkie", "data-popup-type" => "general" }
+						%input#ButtonPreviewPolicyHolderJunkie.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpJunkie', stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire)" }
 					%hr
 					%li
 						%div.Container
@@ -147,7 +147,7 @@
 							%div.RadioButton.Item
 								%input#RadioButtonPolicyHolderActivityYes{ :type => "radio", :name => "RadioButtonPolicyHolderActivity", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpActivity', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Activity', 'Military', 'Diving', 'Flight', 'Hiking', 'Mining', 'Paragliding', 'Foreigner', 'Racing', 'Traveling'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderActivityYes" } Ya
-								%div.Separator | 
+								%div.Separator |
 								%input#RadioButtonPolicyHolderActivityNo{ :type => "radio", :name => "RadioButtonPolicyHolderActivity", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpActivity', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Activity', 'Military', 'Diving', 'Flight', 'Hiking', 'Mining', 'Paragliding', 'Foreigner', 'Racing', 'Traveling'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderActivityNo" } Tidak
 						%input#ButtonPreviewPolicyHolderActivity.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpActivity', stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire)" }
@@ -159,7 +159,7 @@
 							%div.RadioButton.Item
 								%input#RadioButtonPolicyHolderAbroadYes{ :type => "radio", :name => "RadioButtonPolicyHolderAbroad", :value => "true", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderAbroadYes" } Ya
-								%div.Separator | 
+								%div.Separator |
 								%input#RadioButtonPolicyHolderAbroadNo{ :type => "radio", :name => "RadioButtonPolicyHolderAbroad", :value => "false", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderAbroadNo" } Tidak
 						%input#ButtonPreviewPolicyHolderAbroad.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderAbroad", "data-popup-type" => "general" }
@@ -171,7 +171,7 @@
 							%div.RadioButton.Item
 								%input#RadioButtonPolicyHolderHealthDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHealthDissorder", :value => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderHealthDissorderYes" } Ya
-								%div.Separator | 
+								%div.Separator |
 								%input#RadioButtonPolicyHolderHealthDissorderNo{ :type => "radio", :name => "RadioButtonPolicyHolderHealthDissorder", :value => "false", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderHealthDissorderNo" } Tidak
 						%ol
@@ -182,7 +182,7 @@
 									%div#LabelVision.RadioButton.Item
 										%input#RadioButtonPolicyHolderVisionYes{ :type => "radio", :name => "RadioButtonPolicyHolderVision", :value => "true", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderVisionYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderVisionNo{ :type => "radio", :name => "RadioButtonPolicyHolderVision", :value => "false", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderVisionNo" } Tidak
 								%input#ButtonPreviewPolicyHolderVision.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderVision", "data-popup-type" => "health" }
@@ -193,7 +193,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderENTYes{ :type => "radio", :name => "RadioButtonPolicyHolderENT", :value => "true", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderENTYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderENTNo{ :type => "radio", :name => "RadioButtonPolicyHolderENT", :value => "false", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderENTNo" } Tidak
 								%input#ButtonPreviewPolicyHolderENT.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderENT", "data-popup-type" => "health" }
@@ -204,7 +204,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderRespiratoryYes{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Respiratory', 'RespiratoryDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderRespiratoryNo{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratory", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpRespiratory', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Respiratory', 'RespiratoryDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderRespiratoryNo" } Tidak
 								%input#ButtonPreviewPolicyHolderRespiratory.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpRespiratory', stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire)" }
@@ -215,7 +215,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderCardiacYes{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cardiac', 'ChestPain', 'Hypertension'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderCardiacNo{ :type => "radio", :name => "RadioButtonPolicyHolderCardiac", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCardiac', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cardiac', 'ChestPain', 'Hypertension'])", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCardiacNo" } Tidak
 								%input#ButtonPreviewPolicyHolderCardiac.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpCardiac', stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire)" }
@@ -226,7 +226,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderDigestYes{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Digest', 'DigestDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderDigestNo{ :type => "radio", :name => "RadioButtonPolicyHolderDigest", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpDigest', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Digest', 'DigestDetail'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderDigestNo" } Tidak
 								%input#ButtonPreviewPolicyHolderDigest.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpDigest', stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire)" }
@@ -237,7 +237,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderNerveYes{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Nerve', 'Epilepsy'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderNerveNo{ :type => "radio", :name => "RadioButtonPolicyHolderNerve", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpNerve', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Nerve', 'Epilepsy'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderNerveNo" } Tidak
 								%input#ButtonPreviewPolicyHolderNerve.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpNerve', stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire)" }
@@ -248,7 +248,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderLiverYes{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Liver', 'Diabetes'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderLiverNo{ :type => "radio", :name => "RadioButtonPolicyHolderLiver", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpLiver', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Liver', 'Diabetes'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderLiverNo" } Tidak
 								%input#ButtonPreviewPolicyHolderLiver.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpLiver', stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire)" }
@@ -259,7 +259,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderReproductionYes{ :type => "radio", :name => "RadioButtonPolicyHolderReproduction", :value => "true", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderReproductionYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderReproductionNo{ :type => "radio", :name => "RadioButtonPolicyHolderReproduction", :value => "false", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderReproductionNo" } Tidak
 								%input#ButtonPreviewPolicyHolderReproduction.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderReproduction", "data-popup-type" => "health" }
@@ -270,14 +270,14 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpMotion', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Motion', 'Backbone', 'Joint'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
 									-#
 										%div.RadioButton.Item
 											%input#RadioButtonPolicyHolderMotionYes{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "true", :required => "true", "data-question-title" => "Gerak", "data-popup-type" => "hardcopy" }
 											%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionYes" } Ya
-											%div.Separator | 
+											%div.Separator |
 											%input#RadioButtonPolicyHolderMotionNo{ :type => "radio", :name => "RadioButtonPolicyHolderMotion", :value => "false", :required => "true" }
 											%label.RadioButton{ :for => "RadioButtonPolicyHolderMotionNo" } Tidak
 								%input#ButtonPreviewPolicyHolderMotion.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpMotion', stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire)" }
@@ -288,14 +288,14 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpGland', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Gland', 'Thyroid'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandNo" } Tidak
 									-#
 										%div.RadioButton.Item
 											%input#RadioButtonPolicyHolderGlandYes{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "true", :required => "true", "data-question-title" => "Kelenjat dan Darah", "data-popup-type" => "hardcopy" }
 											%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandYes" } Ya
-											%div.Separator | 
+											%div.Separator |
 											%input#RadioButtonPolicyHolderGlandNo{ :type => "radio", :name => "RadioButtonPolicyHolderGland", :value => "false", :required => "true" }
 											%label.RadioButton{ :for => "RadioButtonPolicyHolderGlandNo" } Tidak
 								%input#ButtonPreviewPolicyHolderGland.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpGland', stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire)" }
@@ -306,7 +306,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderImmuneYes{ :type => "radio", :name => "RadioButtonPolicyHolderImmune", :value => "true", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderImmuneYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderImmuneNo{ :type => "radio", :name => "RadioButtonPolicyHolderImmune", :value => "false", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderImmuneNo" } Tidak
 								%input#ButtonPreviewPolicyHolderImmune.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderImmune", "data-popup-type" => "health" }
@@ -317,7 +317,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderCellYes{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "true", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cell', 'Tumor'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderCellNo{ :type => "radio", :name => "RadioButtonPolicyHolderCell", :value => "false", :required => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpCell', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Cell', 'Tumor'])" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderCellNo" } Tidak
 								%input#ButtonPreviewPolicyHolderCell.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpCell', stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire)" }
@@ -328,7 +328,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderOtherIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIllness", :value => "true", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIllnessYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderOtherIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIllness", :value => "false", "data-popup-type" => "health", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIllnessNo" } Tidak
 								%input#ButtonPreviewPolicyHolderOtherIllness.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderOtherIllness", "data-popup-type" => "health" }
@@ -340,7 +340,7 @@
 							%div.RadioButton.Item
 								%input#RadioButtonPolicyHolderSPAJProposalYes{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", :value => "true", "data-popup-type" => "spajproposal", :required => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderSPAJProposalYes" } Ya
-								%div.Separator | 
+								%div.Separator |
 								%input#RadioButtonPolicyHolderSPAJProposalNo{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", :value => "false", "data-popup-type" => "spajproposal", :required => "true", "data-custom-radiobutton" => "input" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderSPAJProposalNo" } Tidak
 						%input#ButtonAddSPAJProposal.ButtonPrimary{ :type => "button", :value => "Add" }
@@ -353,7 +353,7 @@
 							%div.RadioButton.Item
 								%input#RadioButtonPolicyHolderClaimYes{ :type => "radio", :name => "RadioButtonPolicyHolderClaim", :value => "true", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderClaimYes" } Ya
-								%div.Separator | 
+								%div.Separator |
 								%input#RadioButtonPolicyHolderClaimNo{ :type => "radio", :name => "RadioButtonPolicyHolderClaim", :value => "false", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderClaimNo" } Tidak
 						%input#ButtonPreviewPolicyHolderClaim.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderClaim", "data-popup-type" => "general" }
@@ -365,19 +365,19 @@
 							%div.RadioButton.Item
 								%input#RadioButtonPolicyHolderDiagnosticYes{ :type => "radio", :name => "RadioButtonPolicyHolderDiagnostic", :value => "true", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderDiagnosticYes" } Ya
-								%div.Separator | 
+								%div.Separator |
 								%input#RadioButtonPolicyHolderDiagnosticNo{ :type => "radio", :name => "RadioButtonPolicyHolderDiagnostic", :value => "false", "data-popup-type" => "general", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderDiagnosticNo" } Tidak
 						%input#ButtonPreviewPolicyHolderDiagnostic.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderDiagnostic", "data-popup-type" => "general" }
 					%hr
 					%li
-						%label.PositionerLeft{ :for => "PregnancyYes" } Khusus Calon Tertanggung anak-anak (usia ≤ 5 (lima) tahun): 
+						%label.PositionerLeft{ :for => "PregnancyYes" } Khusus Calon Tertanggung anak-anak (usia ≤ 5 (lima) tahun):
 						%br
 						%label.PositionerLeft{ :for => "PregnancyYes" } Waktu lahir
 						%div.RadioButton.PositionerLeft
 							%input#RadioButtonPolicyHolderPregnancyNormal{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancy", :value => "true" }
 							%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyNormal" } Cukup Bulan
-							%div.Separator | 
+							%div.Separator |
 							%input#RadioButtonPolicyHolderPregnancyPrematur{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancy", :value => "false" }
 							%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyPrematur" } Prematur
 						%br
@@ -402,7 +402,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderPregnantStateYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "true", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnantStateYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderPregnantStateNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "false", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnantStateNo" } Tidak
 							%li
@@ -412,7 +412,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderPregnancyIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "true", "data-popup-type" => "general", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyIllnessYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderPregnancyIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "false", "data-popup-type" => "general", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyIllnessNo" } Tidak
 								%input#ButtonPreviewPolicyHolderPregnancyIllness.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderPregnancyIllness", "data-popup-type" => "general" }
@@ -423,7 +423,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderFemaleAbnormalityYes{ :type => "radio", :name => "RadioButtonPolicyHolderFemaleAbnormality", :value => "true", "data-popup-type" => "general", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderFemaleAbnormalityYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderFemaleAbnormalityNo{ :type => "radio", :name => "RadioButtonPolicyHolderFemaleAbnormality", :value => "false", "data-popup-type" => "general", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderFemaleAbnormalityNo" } Tidak
 								%input#ButtonPreviewPolicyHolderFemaleAbnormality.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderFemaleAbnormality", "data-popup-type" => "general" }
@@ -434,7 +434,7 @@
 									%div.RadioButton.Item
 										%input#RadioButtonPolicyHolderPapSmearYes{ :type => "radio", :name => "RadioButtonPolicyHolderPapSmear", :value => "true", "data-popup-type" => "general", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderPapSmearYes" } Ya
-										%div.Separator | 
+										%div.Separator |
 										%input#RadioButtonPolicyHolderPapSmearNo{ :type => "radio", :name => "RadioButtonPolicyHolderPapSmear", :value => "false", "data-popup-type" => "general", :required => "true" }
 										%label.RadioButton{ :for => "RadioButtonPolicyHolderPapSmearNo" } Tidak
 								%input#ButtonPreviewPolicyHolderPapSmear.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderPapSmear", "data-popup-type" => "general" }
@@ -446,7 +446,7 @@
 							%div.RadioButton.Item
 								%input#RadioButtonPolicyHolderHeartDissorderYes{ :type => "radio", :name => "RadioButtonPolicyHolderHeartDissorder", :value => "true", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderYes" } Ya
-								%div.Separator | 
+								%div.Separator |
 								%input#RadioButtonPolicyHolderHeartDissorderNo{ :type => "radio", :name => "RadioButtonPolicyHolderHeartDissorder", :value => "false", "data-popup-type" => "general", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderHeartDissorderNo" } Tidak
 						%input#ButtonPreviewPolicyHolderHeartDissorder.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderHeartDissorder", "data-popup-type" => "general" }
@@ -473,6 +473,8 @@
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_spajproposal.haml")).render
+			%section#PopUpJunkie.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_junkie.haml")).render
 			%section#PopUpAlcohol.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_alcohol.haml")).render
 			%section#PopUpRespiratory.PopUp
