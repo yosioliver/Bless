@@ -17,18 +17,18 @@
 			$(document).ready(function()
 			{
 				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"},{"elementID":"TextPolicyHolderFullName","Value":"Ariani Jollanda Pondaag"},{"elementID":"TextSPAJNumber","Value":"123456789012"}]}}'
-			
+
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);				
+				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
-				
+
 				boxGenerator("#DatePolicyHolderJointAtritisComplainDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderJointAtritisComplainMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderJointAtritisComplainYear", 4, boxTypeWithoutLabel, null);
@@ -44,20 +44,20 @@
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesYear", 4, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				// SETUP
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Sendi");
-				
+
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
@@ -83,13 +83,13 @@
 
 		%main
 			%form
-				%section#SectionCustomer					 				
+				%section#SectionCustomer
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
 				%fieldset
 					%span.Number.Single.PositionerLeft 1.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointAtritis" } Apakah Anda pernah menderita artritis/rematik/kelainan sendi lainnya?
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointAtritisNo" } Apakah Anda pernah menderita artritis/rematik/kelainan sendi lainnya?
 					%div.RadioButton.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointAtritisNo" } Tidak
 						%input#RadioButtonPolicyHolderJointAtritisNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointAtritis", :value => "false" }
@@ -98,13 +98,13 @@
 						%input#RadioButtonPolicyHolderJointAtritisYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointAtritis", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointAtritis" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointAtritisDescription" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointAtritis.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderJointAtritisDescription.Full.Single{ :type => "text" }
 					%br
-				
-					%span.Number.Single.PositionerLeft 2. 
+
+					%span.Number.Single.PositionerLeft 2.
 					%label.Medium.Wrap.PositionerLeft{ :for => "DatePolicyHolderJointAtritisComplainDay" } Kapan pertama kali keluhan tersebut dirasakan?
 					%table#DatePolicyHolderJointAtritisComplainDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
@@ -112,52 +112,36 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderJointAtritisComplainYear.BoxSquare.PositionerLeft
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 3.
 					%label.Medium.Wrap.PositionerLeft{ :for => "TextPolicyHolderJointAtritisComplainAmount" } Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderJointAtritisComplainAmount.Full.Single{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 4.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointAtritisComplainLocation" }Mohon menjelaskan secara rinci pada kolom di bawah ini dan pada bagian tubuh mana?
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderJointAtritisComplainLocation.Full.Single{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 5.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointLimitedActivity" } Apakah aktivitas Anda mengalami hambatan?
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNLimitedActivity" } Apakah aktivitas Anda mengalami hambatan?
 					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointLimitedActivityNo" } Tidak
-						%input#RadioButtonPolicyHolderJointLimitedActivityNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointLimitedActivity", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNLimitedActivityNo" } Tidak
+						%input#RadioButtonPolicyHolderJointJNLimitedActivityNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNLimitedActivity", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJoinAtritisYes" } Ya
-						%input#RadioButtonPolicyHolderJointLimitedActivityYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointLimitedActivity", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNLimitedActivityYes" } Ya
+						%input#RadioButtonPolicyHolderJointJNLimitedActivityYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNLimitedActivity", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointLimitedActivity" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNLimitedActivityDescription" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointLimitedActivity.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderJointLimitedActivityDescription.Full.Single{ :type => "text" }
 					%br
-					
-					%span.Number.Single.PositionerLeft 6.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointCertainLocation" } Apakah Anda mengalami gangguan fungsi sendi atau bagian tubuh tertentu ?
-					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointCertainLocationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointCertainLocationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointCertainLocation", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointCertainLocationYes" } Ya
-						%input#RadioButtonPolicyHolderJointCertainLocationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointCertainLocation", :value => "true" }
-						%div.BoxRound.PositionerRight
-					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointAtritis" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
-					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointCertainLocation.Full.Single{ :type => "text" }
-					%br
-					
+
 					%span.Number.Single.PositionerLeft 6.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointCertainLocation" } Apakah Anda mengalami gangguan fungsi sendi atau bagian tubuh tertentu ?
 					%div.RadioButton.PositionerRight
@@ -173,94 +157,94 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderJointCertainLocation.Full.Single{ :type => "text" }
 					%br
-					
+
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 7.
-						%label.Wrap.Item{ :for => "TextPolicyHolderJointComplainDetail" } Mohon menjelaskan secara rinci pada kolom di bawah ini, kapan dan apa penyebab diagnosis dokter atas gangguan sendi yang Anda derita serta apa diagnosis tersebut? (Kecelakaan, Proses penentuan, Kecelakaan sewaktu berolahraga, dan sebagainya).
+						%label.Wrap.Item{ :for => "TextPolicyHolderJointJNComplainDetail" } Mohon menjelaskan secara rinci pada kolom di bawah ini, kapan dan apa penyebab diagnosis dokter atas gangguan sendi yang Anda derita serta apa diagnosis tersebut? (Kecelakaan, Proses penentuan, Kecelakaan sewaktu berolahraga, dan sebagainya).
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointComplainDetail.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderJointJNComplainDetail.Full.Single{ :type => "text" }
 					%br
-					
-					%span.Number.Single.PositionerLeft 8.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointXRay" } Apakah Anda pernah menjalani X-ray atau pemeriksaan lainnya?
-					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointXRayNo" } Tidak
-						%input#RadioButtonPolicyHolderJointXRayNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointXRay", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointXRayYes" } Ya
-						%input#RadioButtonPolicyHolderJointXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointXRay", :value => "true" }
-						%div.BoxRound.PositionerRight
-					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointXRayDay" } Kapan pertama kali keluhan tersebut dirasakan?
-					%table#DatePolicyHolderJointXRayDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderJointXRayMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderJointXRayYear.BoxSquare.PositionerLeft
-					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointXRay" } Mohon jelaskan secara rinci pada kolom di bawah ini hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan sendi ini. (Lampirkan fotokopi hasil pemeriksaan)
-					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointXRay.Full.Single{ :type => "text" }
-					%br
-					
-					%span.Number.Single.PositionerLeft 9.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointWalkingStick" } Apakah Anda menggunakan tongkat untuk berjalan atau alat bantu lainnya?
-					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointWalkingStickNo" } Tidak
-						%input#RadioButtonPolicyHolderJointWalkingStickNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointWalkingStick", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointWalkingStickYes" } Ya
-						%input#RadioButtonPolicyHolderJointWalkingStickYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointWalkingStick", :value => "true" }
-						%div.BoxRound.PositionerRight
-					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointWalkingStick" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
-					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointWalkingStick.Full.Single{ :type => "text" }
-					%br
-					
-					%span.Number.Single.PositionerLeft 10. 
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
-					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointHaveOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationYes" } Ya
-						%input#RadioButtonPolicyHolderJointHaveOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "true" }
-						%div.BoxRound.PositionerRight
-					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointHaveOperationDay" } Jika “Ya”, mohon berikan tanggal operasi:
-					%table#DatePolicyHolderJointHaveOperationDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderJointHaveOperationMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderJointHaveOperationYear.BoxSquare.PositionerLeft
-					%br
-					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTUPDoctorName" } Nama Lengkap Dokter
-						%input#TextPolicyHolderJointJTUPDoctorName.Full.Single.Item{ :type => "text" }
-					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTUPDoctorTelephone" } No. Telepon/Handphone:
-						%input#TextPolicyHolderJointJTUPDoctorTelephone.Full.Single.Item{ :type => "text" }
-					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTUPHospitalName" } Nama Klinik/Rumah Sakit:
-						%input#TextPolicyHolderJointJTUPHospitalName.Full.Single.Item{ :type => "text" }
-					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTUPHospitalAddress" } Alamat Klinik/Rumah Sakit:
-						%input#TextPolicyHolderJointJTUPHospitalAddress.Full.Single.Item{ :type => "text" }
 
-					%span.Number.Single.PositionerLeft 11. 
+					%span.Number.Single.PositionerLeft 8.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNXRay" } Apakah Anda pernah menjalani X-ray atau pemeriksaan lainnya?
+					%div.RadioButton.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNXRayNo" } Tidak
+						%input#RadioButtonPolicyHolderJointJNXRayNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNXRay", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNXRayYes" } Ya
+						%input#RadioButtonPolicyHolderJointJNXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNXRay", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointJNXRayDay" } Kapan pertama kali keluhan tersebut dirasakan?
+					%table#DatePolicyHolderJointJNXRayDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderJointJNXRayMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderJointJNXRayYear.BoxSquare.PositionerLeft
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointJNXRayDescription" } Mohon jelaskan secara rinci pada kolom di bawah ini hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan sendi ini. (Lampirkan fotokopi hasil pemeriksaan)
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderJointJNXRayDescription.Full.Single{ :type => "text" }
+					%br
+
+					%span.Number.Single.PositionerLeft 9.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNWalkingStick" } Apakah Anda menggunakan tongkat untuk berjalan atau alat bantu lainnya?
+					%div.RadioButton.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNWalkingStickNo" } Tidak
+						%input#RadioButtonPolicyHolderJointJNWalkingStickNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNWalkingStick", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNWalkingStickYes" } Ya
+						%input#RadioButtonPolicyHolderJointJNWalkingStickYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNWalkingStick", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointJNWalkingStickDescription" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderJointJNWalkingStickDescription.Full.Single{ :type => "text" }
+					%br
+
+					%span.Number.Single.PositionerLeft 10.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNSuggestSurgery" } Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
+					%div.RadioButton.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNSuggestSurgeryNo" } Tidak
+						%input#RadioButtonPolicyHolderJointJNSuggestSurgeryNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNSuggestSurgery", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNSuggestSurgeryYes" } Ya
+						%input#RadioButtonPolicyHolderJointJNSuggestSurgeryYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNSuggestSurgery", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointJNSuggestSurgeryDay" } Jika “Ya”, mohon berikan tanggal operasi:
+					%table#DatePolicyHolderJointJNSuggestSurgeryDay.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderJointJNSuggestSurgeryMonth.BoxSquare.PositionerLeft
+					%span.Separator.Single.PositionerLeft /
+					%table#DatePolicyHolderJointJNSuggestSurgeryYear.BoxSquare.PositionerLeft
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNTOPDoctorName" } Nama Lengkap Dokter
+						%input#TextPolicyHolderJointJNUPDoctorName.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNUPDoctorTelephone" } No. Telepon/Handphone:
+						%input#TextPolicyHolderJointJNUPDoctorTelephone.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNUPHospitalName" } Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderJointJNUPHospitalName.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNUPHospitalAddress" } Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderJointJNUPHospitalAddress.Full.Single.Item{ :type => "text" }
+
+					%span.Number.Single.PositionerLeft 11.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Mohon jelaskan dengan rinci jenis pengobatan Anda saat ini dan sebelumnya pada kolom di bawah ini.
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Apakah diberi suntikan?
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNInjection" } Apakah diberi suntikan?
 					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationNo" } Tidak
-						%input#RadioButtonPolicyHolderJointHaveOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNInjectionNo" } Tidak
+						%input#RadioButtonPolicyHolderJointJNInjectionNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNInjection", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointHaveOperationYes" } Ya
-						%input#RadioButtonPolicyHolderJointHaveOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointHaveOperation", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNInjectionYes" } Ya
+						%input#RadioButtonPolicyHolderJointJNInjectionYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNInjection", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%div.ContainerFit.NumberIndent
@@ -268,76 +252,76 @@
 						%label.Short.Single.Item1.Center Nama Obat
 						%label.Short.Single.Item1.Center Dosis
 						%label.Short.Single.Item1.Center Frekuensi
-					%div.ContainerFit.NumberIndent										
-						%input#DatePolicyHolderJointJTUPTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDrugName1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDose1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPFrequency1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						%input#DatePolicyHolderJointJTUPTreatmentDate2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDrugName2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDose2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPFrequency2.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						%input#DatePolicyHolderJointJTUPTreatmentDate3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDrugName3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDose3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPFrequency3.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						%input#DatePolicyHolderJointJTUPTreatmentDate4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDrugName4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDose4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPFrequency4.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent										
-						%input#DatePolicyHolderJointJTUPTreatmentDate5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDrugName5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPDose5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointJTUPFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTMIDDLEDoctorName" } Nama Lengkap Dokter
-						%input#TextPolicyHolderJointJTMIDDLEDoctorName.Full.Single.Item{ :type => "text" }
+						%input#DatePolicyHolderJointJNUPTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDrugName1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDose1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPFrequency1.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTMIDDLEDoctorTelephone" } No. Telepon/Handphone:
-						%input#TextPolicyHolderJointJTMIDDLEDoctorTelephone.Full.Single.Item{ :type => "text" }
+						%input#DatePolicyHolderJointJNUPTreatmentDate2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDrugName2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDose2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPFrequency2.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTMIDDLEHospitalName" } Nama Klinik/Rumah Sakit:
-						%input#TextPolicyHolderJointJTMIDDLEHospitalName.Full.Single.Item{ :type => "text" }
+						%input#DatePolicyHolderJointJNUPTreatmentDate3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDrugName3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDose3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPFrequency3.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTMIDDLEHospitalAddress" } Alamat Klinik/Rumah Sakit:
-						%input#TextPolicyHolderJointJTMIDDLEHospitalAddress.Full.Single.Item{ :type => "text" }
-					
-					%span.Number.Single.PositionerLeft 12. 
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJTBOTTOMDoctorName" } Saat ini dengan Dokter siapa Anda melakukan kontrol?
+						%input#DatePolicyHolderJointJNUPTreatmentDate4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDrugName4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDose4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPFrequency4.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%input#DatePolicyHolderJointJNUPTreatmentDate5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDrugName5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPDose5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPFrequency5.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNMIDDLEDoctorName" } Nama Lengkap Dokter
+						%input#TextPolicyHolderJointJNMIDDLEDoctorName.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNMIDDLEDoctorTelephone" } No. Telepon/Handphone:
+						%input#TextPolicyHolderJointJNMIDDLEDoctorTelephone.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNMIDDLEHospitalName" } Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderJointJNMIDDLEHospitalName.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNMIDDLEHospitalAddress" } Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderJointJNMIDDLEHospitalAddress.Full.Single.Item{ :type => "text" }
+
+					%span.Number.Single.PositionerLeft 12.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNBOTTOMDoctorName" } Saat ini dengan Dokter siapa Anda melakukan kontrol?
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTBOTTOMDoctorName" } Nama Lengkap Dokter
-						%input#TextPolicyHolderJointJTBOTTOMDoctorName.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNBOTTOMDoctorName" } Nama Lengkap Dokter
+						%input#TextPolicyHolderJointJNBOTTOMDoctorName.Full.Single.Item{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTBOTTOMDoctorTelephone" } No. Telepon/Handphone:
-						%input#TextPolicyHolderJointJTBOTTOMDoctorTelephone.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNBOTTOMDoctorTelephone" } No. Telepon/Handphone:
+						%input#TextPolicyHolderJointJNBOTTOMDoctorTelephone.Full.Single.Item{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTBOTTOMHospitalName" } Nama Klinik/Rumah Sakit:
-						%input#TextPolicyHolderJointJTBOTTOMHospitalName.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNBOTTOMHospitalName" } Nama Klinik/Rumah Sakit:
+						%input#TextPolicyHolderJointJNBOTTOMHospitalName.Full.Single.Item{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJTBOTTOMHospitalAddress" } Alamat Klinik/Rumah Sakit:
-						%input#TextPolicyHolderJointJTBOTTOMHospitalAddress.Full.Single.Item{ :type => "text" }
-					
-					%span.Number.Single.PositionerLeft 13. 
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNBOTTOMHospitalAddress" } Alamat Klinik/Rumah Sakit:
+						%input#TextPolicyHolderJointJNBOTTOMHospitalAddress.Full.Single.Item{ :type => "text" }
+
+					%span.Number.Single.PositionerLeft 13.
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderJointCheckUpFrequency" } Seberapa sering Anda kontrol?
 					%input#NumberPolicyHolderJointCheckUpFrequency.Tiny.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderJointCheckUpFrequency" } kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 					%br
-					
-					%span.Number.Single.PositionerLeft 14. 
-					%label.Medium.Wrap.PositionerLeft{ :for => "DatePolicyHolderJointLastCheckUpDay" } Kapan terakhir kali Anda kontrol?
-					%table#DatePolicyHolderJointLastCheckUpDay.BoxSquare.PositionerLeft
+
+					%span.Number.Single.PositionerLeft 14.
+					%label.Medium.Wrap.PositionerLeft{ :for => "DatePolicyHolderJointJNLastCheckUpDay" } Kapan terakhir kali Anda kontrol?
+					%table#DatePolicyHolderJointJNLastCheckUpDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderJointLastCheckUpMonth.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderJointJNLastCheckUpMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderJointLastCheckUpYear.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderJointJNLastCheckUpYear.BoxSquare.PositionerLeft
 					%br
-					
-					%span.Number.Single.PositionerLeft 15. 
+
+					%span.Number.Single.PositionerLeft 15.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderJointOffFromWork" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini?
 					%div.RadioButton.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointOffFromWorkNo" } Tidak
@@ -354,18 +338,18 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderJointOfficeOffFromWorkYear.BoxSquare.PositionerLeft
 					%label.Single.PositionerLeft{ :for => "DatePolicyHolderJointOfficeOffFromWorkDuration" } Dan berapa lama?
-					%input#NumberPolicyHolderJointOfficeOffFromWorkDuration.Tiny.Single.PositionerLeft{ :type => "number" }
+					%input#TextPolicyHolderJointOfficeOffFromWorkDuration.Tiny.Single.PositionerLeft{ :type => "text" }
 					%span.Single.PositionerLeft Hari
 					%br
-					
+
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 16.
-						%label.Wrap.Item{ :for => "TextPolicyHolderJointOtherInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%label.Wrap.Item{ :for => "TextPolicyHolderJointJNAdditioinalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointOtherInformation.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderJointJNAdditionalInformation.Full.Single{ :type => "text" }
 					%br
-					
+
 				%section#SectionDeclaration
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
