@@ -10,22 +10,20 @@
 	/ MAIN
 
 	%fieldset
-		%label.Single.PoitionerLeft 1. Apakah Anda terbang sebagai pilot atau navigator?
-		%input#TextJob.Full.Single.Margin{ :type =>"text" }
-		%br
-		%hr
-	
-		%label.Single.PoitionerLeft 2.Apakah Anda terbang sebagai penumpang?
+		%label.Single.PoitionerLeft 1. Anda terbang sebagai ?
 		%div.RadioButton.PositionerRight
-			%input#RadioButtonPassengerYes{ :type => "radio", :name => "RadioButtonPassenger", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPassengerYes" } Ya
+			%input#RadioButtonFLJobPilot{ :type => "radio", :name => "RadioButtonFLJob", :value => "pilot" }
+			%label.RadioButton{ :for => "RadioButtonFLJobPilot" } Pilot
 			%div.Separator
-			%input#RadioButtonPassengerNo{ :type => "radio", :name => "RadioButtonPassenger", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPassengerNo" } Tidak
+			%input#RadioButtonFLJobStewardess{ :type => "radio", :name => "RadioButtonFLJob", :value => "stewardess" }
+			%label.RadioButton{ :for => "RadioButtonFLJobStewardess" } Pramugari
+			%div.Separator
+			%input#RadioButtonFLJobNavigator{ :type => "radio", :name => "RadioButtonFLJob", :value => "navigator" }
+			%label.RadioButton{ :for => "RadioButtonFLJobNavigator" } Navigator
 		%br
 		%hr
 	
-		%label.Single.PoitionerLeft 3.Apakah Anda memiliki pesawat sendiri?
+		%label.Single.PoitionerLeft 2. Apakah Anda memiliki pesawat sendiri?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonHavePlaneYes{ :type => "radio", :name => "RadioButtonHavePlane", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonHavePlaneYes" } Ya
@@ -34,14 +32,17 @@
 			%label.RadioButton{ :for => "RadioButtonHavePlaneNo" } Tidak
 		%br
 		%hr
-
-		%label.Single.PoitionerLeft 4. Sebutkan jenis pesawat apakah yang Anda terbangkan?
+		
+		%label.Single.PoitionerLeft 3. Sebutkan jenis pesawat apakah yang Anda terbangkan?
+		%br
+		%label.Single.PoitionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
 		%div.ContainerFit
 			%input#TextPlaneType.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
-
-		%label.Single.PoitionerLeft  5. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
+		
+		%label.Single.PoitionerLeft  4. Mohon sebutkan secara rinci lisensi dan/atau sertifikat penerbangan yang Anda miliki.
 		%div.ContainerFit
 			%label.Short.Single.Item1.Center Lisensi/ Sertifikat	  
 			%label.Short.Single.Item1.Center Tanggal Perolehan
@@ -70,7 +71,7 @@
 		%br
 		%hr
 	
-		%label.Single.PoitionerLeft 6. Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
+		%label.Single.PoitionerLeft 5. Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonScopeYes{ :type => "radio", :name => "RadioButtonScope", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonScopeYes" } Ya
@@ -82,22 +83,21 @@
 		%input#TextScopeDesc.Full.Single.Margin{ :type =>"text"}
 		%br
 		%hr
-
-		%label.Single.PoitionerLeft 7.Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
+		
+		%label.Single.PoitionerLeft 6. Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonClubYes.PositionerRight{ :type => "radio", :name => "RadioButtonClub", :value => "true" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonClubYes" } Ya
 			%div.Separator.PositionerRight
 			%input#RadioButtonClubNo.PositionerRight{ :type => "radio", :name => "RadioButtonClub", :value => "false" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonClubNo" } Tidak
-		%br
-		
+		%br		
 		%label.Single.Item Jika ya, mohon jelaskan secara rinci :	
 		%input#TextIsClubDesc.Full.Single.Item1.Margin{ :type =>"text"}
 		%br
-		%hr
+		%hr													
 	
-		%label.Single.PoitionerLeft  8. Berapa sering dan jumlah jam terbang Anda:
+		%label.Single.PoitionerLeft  7. Mohon lengkapi kolom pertanyaan dibawah ini sesuai dengan jumlah jam terbang Anda
 		%br
 		
 		%div{ :style => "overflow-x: scroll; max-width: 580px;" }
@@ -201,12 +201,12 @@
 		%br
 		%hr
 	
-		%label.Single.PoitionerLeft 9. Darimana Anda terbang?
+		%label.Single.PoitionerLeft 8. Nama lokasi/tempat/bandara mulai penerbangan?
 		%input#TextFrom.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 	
-		%label.Single.PoitionerLeft 10. Apakah Anda terbang dari bandara control?
+		%label.Single.PoitionerLeft 9. Apakah Anda terbang dari bandara control?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonAirportControlYes{ :type => "radio", :name => "RadioButtonAirportControl", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAirportControlYes" } Ya
@@ -218,7 +218,7 @@
 		%br
 		%hr
 
-		%label.Single.PoitionerLeft 11. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
+		%label.Single.PoitionerLeft 10. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonAccidentFLYes{ :type => "radio", :name => "RadioButtonAccidentFL", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAccidentFLYes" } Ya
@@ -230,7 +230,7 @@
 		%br
 		%hr
 
-		%label.Single.PoitionerLeft 12. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
+		%label.Single.PoitionerLeft 11. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonNoFlyYes{ :type => "radio", :name => "RadioButtonNoFly", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonNoFlyYes" } Ya
@@ -241,7 +241,7 @@
 		%br
 		%hr
 
-		%label.medium.Single.PoitionerLeft 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+		%label.medium.Single.PoitionerLeft 12. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
 		%input#TextOtherInfo.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
