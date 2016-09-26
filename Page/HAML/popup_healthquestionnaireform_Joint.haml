@@ -18,7 +18,7 @@
 		%label.medium.Single.Item{ :for => "RadioButtonAtritis" } 1. Apakah Anda pernah menderita artritis / rematik / kelainan sendi lainnya?
 		%br
 		%div.RadioButton.Medium.Item
-			%input#RadioButtonArtritisYes{ :type => "radio", :name => "RadioButtonAtritis", :value => "true" }
+			%input#RadioButtonAtritisYes{ :type => "radio", :name => "RadioButtonAtritis", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAtritisYes" } Ya
 			%div.Separator
 			%input#RadioButtonAtritisNo{ :type => "radio", :name => "RadioButtonAtritis", :value => "false" }
@@ -29,7 +29,7 @@
 
 		%label.Single.Item{ :for => "DateAtritisComplain" } 2. Jika Ya, kapan pertama kali keluhan tersebut timbul?
 		%br
-		%input#DateAtritisComplain.Full.Multi.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
+		%input#DateAtritisComplain.Medium.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%hr
 
@@ -41,7 +41,7 @@
 
 		%label.medium.Single.Item{ :for => "TextArtritisComplainLocation" } 4. Mohon jelaskan dan bagian tubuh mana ?
 		%br
-		%input#TextArtritisComplainLocation.Full.Multi.PositionerLeft.Margin{ :type => "text" }
+		%input#TextAtritisComplainLocation.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
 		%hr
 
@@ -53,6 +53,7 @@
 			%input#RadioButtonJNLimitedActivityNo{ :type => "radio", :name => "RadioButtonJNLimitedActivity", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonJNLimitedActivityNo" } Tidak
 		%br
+		%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%input#TextJNLimitedActivityDescription.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
 		%hr
@@ -65,6 +66,7 @@
 			%input#RadioButtonCertainLocationNo{ :type => "radio", :name => "RadioButtonCertainLocation", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonCertainLocationNo" } Tidak
 		%br
+		%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%input#TextCertainLocationDescription.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
 		%hr
@@ -125,10 +127,10 @@
 			%input#TextJNUPDoctorTelephone.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
-			%input#TextJNUPClinicName.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextJNUPHospitalName.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
-			%input#TextJNUPClinicAddress.Full.Multi.Item.Margin{ :type =>"text" }
+			%input#TextJNUPHospitalAddress.Full.Multi.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -149,27 +151,27 @@
 			%label.Short.Single.Item.Margin Dosis
 			%label.Short.Single.Item.Margin Frekuensi
 		%div.ContainerFit
-			%input#DateJNUPTreatmentDate1.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextJNUPTreatmentDate1.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextJNUPDrugName1.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPDose1.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPFrequency1.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
-			%input#DateJNUPTreatmentDate2.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextJNUPTreatmentDate2.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextJNUPDrugName2.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPDose2.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPFrequency2.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
-			%input#DateJNUPTreatmentDate3.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextJNUPTreatmentDate3.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextJNUPDrugName3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPDose3.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPFrequency3.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
-			%input#DateJNUPTreatmentDate4.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextJNUPTreatmentDate4.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextJNUPDrugName4.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPDose4.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPFrequency4.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
-			%input#DateJNUPTreatmentDate5.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextJNUPTreatmentDate5.Full.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextJNUPDrugName5.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPDose5.Full.Single.Item.Margin{ :type =>"text" }
 			%input#TextJNUPFrequency5.Full.Single.Item.Margin{ :type =>"text" }
@@ -229,9 +231,9 @@
 		%br
 		%div.ContainerFit
 			%label.Wrap.Single.PositionerLeft Jika "Ya", kapan:
-			%input#DateOffFromWork.Medium.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#DateOfficeOffFromWork.Medium.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%label.Wrap.Single.PositionerLeft  Dan berapa lama?
-			%input#TexOffFromWorkDuration.Medium.Single.Item.Margin{ :type => "text" }
+			%input#TextOfficeOffFromWorkDuration.Medium.Single.Item.Margin{ :type => "text" }
 			%label#Wrap.Single.PositionerLeft  Hari
 		%br
 		%hr

@@ -25,45 +25,37 @@
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 
-				boxGenerator("#DatePolicyHolderBackboneFirstGotDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneFirstGotMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneFirstGotYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DatePolicyHolderBackboneLastConsultDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastConsultMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastConsultYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstLimitedActivityDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstLimitedActivityMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstLimitedActivityYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DateBackboneDateCheckupDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateBackboneDateCheckupMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateBackboneDateCheckupYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBXRayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBXRayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBXRayYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderBackboneLastCheckupDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBackboneLastCheckupMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBackboneLastCheckupYear", 4, boxTypeWithoutLabel, null);
 
+				boxGenerator("#DatePolicyHolderBackboneSuggestSurgeryDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneSuggestSurgeryMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneSuggestSurgeryYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupDay1", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupMonth1", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupYear1", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBLastConsultDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBLastConsultMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBLastConsultYear", 4, boxTypeWithoutLabel, null);
 
-
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupDay2", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupMonth2", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupYear2", 4, boxTypeWithoutLabel, null);
-
-
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupDay3", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupMonth3", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBackboneLastCheckupYear3", 4, boxTypeWithoutLabel, null);
-
-
+				boxGenerator("#DatePolicyHolderBackboneBBAbsentDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBAbsentMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBAbsentYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
-
-
-
 
 				// SECTION MANDATORY
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
@@ -154,8 +146,7 @@
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent{ :for => "TextPolicyHolderBackboneBBLimitedActivityDescription" }
-						%input#TextPolicyHolderBackboneBBLimitedActivityDescription.Full.Single.Item{ :type => "text" }
-					}
+						%input#TextPolicyHolderBackboneBBLimitedActivityDescription.Full.Single.Item{ :type => "text" }					
 					%br
 
 					%span.Number.Single.PositionerLeft 6.
@@ -182,17 +173,16 @@
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBXRayNo" } Tidak
 						%input#RadioButtonPolicyHolderBackboneBBXRayNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBXRay", :value => "false" }
 						%div.BoxRound.PositionerRight
-
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBXRayYes" } Ya
-						%input#RadioButtonPolicyHolderBackboneBBXRayYes.PositionerRight{ :type => "radio", :name => "BBXRay", :value => "true" }
+						%input#RadioButtonPolicyHolderBackboneBBXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBXRay", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon berikan tanggal pemeriksaan
-					%table#DatePolicyHolderBackboneUndergoCheckupDay.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBXRayDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBackboneUndergoCheckupMonth.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBXRayMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBackboneUndergoCheckupYear.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBXRayYear.BoxSquare.PositionerLeft
 					%br
 					%label.NumberIndent.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBXRayYes"} Mohon jelaskan secara rinci pada kolom di bawah ini hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan tulang belakang ini. (Lampirkan fotokopi hasil pemeriksaan)
 					%br
@@ -210,7 +200,7 @@
 						%input#RadioButtonPolicyHolderBackboneNNWalkingStickYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneWalkingStick", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					%label.NumberIndent.Single.PositionerLeft { :for => "TextPolicyHolderBackboneBBWalkingStickDescription" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.NumberIndent.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBWalkingStickDescription" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderBackboneBBWalkingStickDescription.Full.Single.Item{ :type => "text" }
@@ -236,20 +226,20 @@
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBDoctorName"} Nama Lengkap Dokter:
-						%input#TextPolicyHolderBackboneBBDoctorName.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBTOPDoctorName.Full.Single.Item{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBDoctorTelephone"} No. Telepon/Handphone:
-						%input#TextPolicyHolderBackboneBBDoctorTelephone.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBTOPDoctorTelephone.Full.Single.Item{ :type => "text" }
 					%br
 
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBClinicName"} Nama Klinik/Rumah Sakit
-						%input#TextPolicyHolderBackboneBBClinicName.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBTOPClinicName.Full.Single.Item{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBClinicAddress"} Alamat Klinik/Rumah Sakit
-						%input#TextPolicyHolderBackboneBBClinicAddress.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBTOPClinicAddress.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 11.
@@ -257,9 +247,9 @@
 					%label.NumberIndent.Single.PositionerLeft Apakah diberi suntikan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBInjectionNo" } Tidak
-						%input#RadioButtonPolicyHolderBackboneBBInjectionNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBInjection", :value => "false" }
+						%input#RadioButtonPolicyHolderBackboneBBInjectionNo.PositionerRight{ :type => "radio",
+						:name => "RadioButtonPolicyHolderBackboneBBInjection", :value => "false" }
 						%div.BoxRound.PositionerRight
-
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBInjectionYes" } Ya
 						%input#RadioButtonPolicyHolderBackboneBBInjectionYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBInjection", :value => "true" }
 						%div.BoxRound.PositionerRight
@@ -272,51 +262,51 @@
 						%label.Short.Single.Item1.Center Frekuensi
 
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderBackboneBBMiddleDateTreatment.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDrugName.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDose.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleFrequency.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDateTreatment1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDrugName1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDose1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEFrequency1.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderBackboneBBMiddleDateTreatment2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDrugName2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDose2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleFrequency2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDateTreatment2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDrugName2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDose2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEFrequency2.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderBackboneBBMiddleDateTreatment3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDrugName3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDose3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleFrequency3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDateTreatment3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDrugName3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDose3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEFrequency3.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderBackboneBBMiddleDateTreatment4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDrugName4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDose4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleFrequency4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDateTreatment4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDrugName4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDose4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEFrequency4.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderBackboneBBMiddleDateTreatment5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDrugName5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleDose5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderBackboneBBMiddleFrequency5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDateTreatment5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDrugName5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEDose5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBMIDDLEFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBMiddleDoctorName"} Nama Lengkap Dokter:
-						%input#TextPolicyHolderBackboneBBMiddleDoctorName.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBOTTOMDoctorName"} Nama Lengkap Dokter:
+						%input#TextPolicyHolderBackboneBBBOTTOMDoctorName.Full.Single.Item{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBMiddleDoctorTelephone"} No. Telepon/Handphone:
-						%input#TextPolicyHolderBackboneBBMiddleTelephone.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBOTTOMDoctorTelephone"} No. Telepon/Handphone:
+						%input#TextPolicyHolderBackboneBBBOTTOMDoctorTelephone.Full.Single.Item{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBMiddleClinicName"} Nama Klinik/Rumah Sakit
-						%input#TextPolicyHolderBackboneBBMiddleClinicName.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBOTTOMClinicName"} Nama Klinik/Rumah Sakit
+						%input#TextPolicyHolderBackboneBBBOTTOMClinicName.Full.Single.Item{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBMiddleClinicAddress"} Alamat Klinik/Rumah Sakit
-						%input#TextPolicyHolderBackboneBBMiddleClinicAddress.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBOTTOMClinicAddress"} Alamat Klinik/Rumah Sakit
+						%input#TextPolicyHolderBackboneBBBOTTOMClinicAddress.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 12
@@ -324,65 +314,65 @@
 					%br
 
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottomDoctorName"} Nama Lengkap Dokter:
-						%input#TextPolicyHolderBackboneBBBottomDoctorName.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottom2DoctorName"} Nama Lengkap Dokter:
+						%input#TextPolicyHolderBackboneBBBottom2DoctorName.Full.Single.Item{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottomDoctorTelephone"} No. Telepon/Handphone:
-						%input#TextPolicyHolderBackboneBBBottomDoctorTelephone.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottom2DoctorTelephone"} No. Telepon/Handphone:
+						%input#TextPolicyHolderBackboneBBBottom2DoctorTelephone.Full.Single.Item{ :type => "text" }
 					%br
 
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottomClinicName"} Nama Klinik/Rumah Sakit
-						%input#TextPolicyHolderBackboneBBBottomClinicName.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottom2ClinicName"} Nama Klinik/Rumah Sakit
+						%input#TextPolicyHolderBackboneBBBottom2ClinicName.Full.Single.Item{ :type => "text" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottomClinicAddress"} Alamat Klinik/Rumah Sakit
-						%input#TextPolicyHolderBackboneBBBottomClinicAddress.Full.Single.Item{ :type => "text" }
+						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottom2ClinicAddress"} Alamat Klinik/Rumah Sakit
+						%input#TextPolicyHolderBackboneBBBottom2ClinicAddress.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 13
 					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBControlAmount" } Seberapa sering Anda kontrol?
-					%input#TextPolicyHolderBackboneControlAmount.Short.Single.PositionerLeft{ :type => "text" }
+					%input#TextPolicyHolderBackboneBBControlAmount.Short.Single.PositionerLeft{ :type => "text" }
 					%label.Long.Separator.Single.PositionerLeft kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 					%br
 
 					%span.Number.Single.PositionerLeft 14.
 					%label.Full.Single.PositionerLeft{ :for => "DatePolicyHolderBackboneBBLastConsultDay" } Kapan terakhir kali Anda kontrol?
-					%table#DatePolicyHolderBackboneBBLastControlDay.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBLastConsultDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBackboneBBLastControlMonth.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBLastConsultMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderBackboneBBLastControlYear.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBLastConsultYear.BoxSquare.PositionerLeft
 					%br
 
 					%br
 					%span.Number.Single.PositionerLeft 15
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBAbsent" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBAbsent" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonBackboneBBAbsentNo" } Tidak
-						%input#RadioButtonBackboneBBAbsentNo.PositionerRight{ :type => "radio", :name => "RadioButtonBackboneBBAbsent", :value => "false" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBAbsentNo" } Tidak
+						%input#RadioButtonPolicyHolderBackboneBBAbsentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBAbsent", :value => "false" }
 						%div.BoxRound.PositionerRight
-
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonBackboneBBAbsentYes" } Ya
-						%input#RadioButtonBackboneBBAbsentYes.PositionerRight{ :type => "radio", :name => "RadioButtonBackboneBBAbsent", :value => "true" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBAbsentYes" } Ya
+						%input#RadioButtonPolicyHolderBackboneBBAbsentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBAbsent", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, kapan
-					%table#DateBackboneBBAbsentDay.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBAbsentDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateBackboneBBAbsentMonth.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBAbsentMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateBackboneBBAmountYear.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderBackboneBBAbsentYear.BoxSquare.PositionerLeft
 					%label.NumberIndent.Single.PositionerLeft Dan berapa lama ?
-					%input#TextPolicyHolderBackboneBBAbsentDuration.Full.Single.PositionerLeft{ :type => "text" }
+					%input#TextPolicyHolderBackboneBBAbsentAmount.Short.Single.PositionerLeft{ :type => "text" }
+					%label.NumberIndent.Single.PositionerLeft Hari
 					%br
 
 					%span.Number.Single.PositionerLeft 16
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderBBAditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderBackboneBBAditionalInformation.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderBackboneBBAdditionalInformation.Full.Single.Item{ :type => "text" }
 					%br
 				%section#SectionDeclaration
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render

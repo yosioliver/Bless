@@ -32,18 +32,18 @@
 				boxGenerator("#DatePolicyHolderJointAtritisComplainDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderJointAtritisComplainMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderJointAtritisComplainYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainFirstAttackDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainFirstAttackMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainFirstAttackYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainLastAriseDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainLastAriseMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainLastAriseYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNXRayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNXRayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNXRayYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNSuggestSurgeryDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNSuggestSurgeryMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNSuggestSurgeryYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNLastCheckUpDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNLastCheckUpMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointJNLastCheckUpYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointOfficeOffFromWorkDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointOfficeOffFromWorkMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderJointOfficeOffFromWorkYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -119,7 +119,7 @@
 						%input#TextPolicyHolderJointAtritisComplainAmount.Full.Single{ :type => "text" }
 					%br
 
-					%span.Number.Single.PositionerLeft 4.
+					%span.Number.Single.PositionerLeft 4.					
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointAtritisComplainLocation" }Mohon menjelaskan secara rinci pada kolom di bawah ini dan pada bagian tubuh mana?
 					%br
 					%div.ContainerFit.NumberIndent
@@ -138,8 +138,8 @@
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNLimitedActivityDescription" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointLimitedActivityDescription.Full.Single{ :type => "text" }
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderJointJNLimitedActivityDescription.Full.Single{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 6.
@@ -154,8 +154,8 @@
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointCertainLocation" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointCertainLocation.Full.Single{ :type => "text" }
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderJointCertainLocationDescription.Full.Single{ :type => "text" }
 					%br
 
 					%div.ContainerFit
@@ -253,7 +253,7 @@
 						%label.Short.Single.Item1.Center Dosis
 						%label.Short.Single.Item1.Center Frekuensi
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointJNUPTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDrugName1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDose1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPFrequency1.Short.Single.Item1.Margin{ :type => "text" }
@@ -263,17 +263,17 @@
 						%input#TextPolicyHolderJointJNUPDose2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPFrequency2.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointJNUPTreatmentDate3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPTreatmentDate3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDrugName3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDose3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPFrequency3.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointJNUPTreatmentDate4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPTreatmentDate4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDrugName4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDose4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPFrequency4.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointJNUPTreatmentDate5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderJointJNUPTreatmentDate5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDrugName5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPDose5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderJointJNUPFrequency5.Short.Single.Item1.Margin{ :type => "text" }
@@ -307,8 +307,8 @@
 						%input#TextPolicyHolderJointJNBOTTOMHospitalAddress.Full.Single.Item{ :type => "text" }
 
 					%span.Number.Single.PositionerLeft 13.
-					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderJointCheckUpFrequency" } Seberapa sering Anda kontrol?
-					%input#NumberPolicyHolderJointCheckUpFrequency.Tiny.Single.PositionerLeft{ :type => "number" }
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNCheckUpFrequency" } Seberapa sering Anda kontrol?
+					%input#TextPolicyHolderJointJNCheckUpFrequency.Tiny.Single.PositionerLeft{ :type => "text" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderJointCheckUpFrequency" } kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 					%br
 
@@ -337,7 +337,7 @@
 					%table#DatePolicyHolderJointOfficeOffFromWorkMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderJointOfficeOffFromWorkYear.BoxSquare.PositionerLeft
-					%label.Single.PositionerLeft{ :for => "DatePolicyHolderJointOfficeOffFromWorkDuration" } Dan berapa lama?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointOfficeOffFromWorkDuration" } Dan berapa lama?
 					%input#TextPolicyHolderJointOfficeOffFromWorkDuration.Tiny.Single.PositionerLeft{ :type => "text" }
 					%span.Single.PositionerLeft Hari
 					%br
