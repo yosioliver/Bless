@@ -5,7 +5,7 @@
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpDigestDetail', 'PopUpDigest')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpDigestDetail', 'PopUpDigest', stringPageInfixTypeCurrent + 'DigestDetail', arrayHealthQuestionnaire)" }
-		%h2 Kuesioner Gangguan Pencernaan							
+		%h2 Kuesioner Gangguan Pencernaan
 
 	/ FIELDSET
 
@@ -14,7 +14,7 @@
 			%span.Multi.Single.6e Gangguan fungsi/sistem Pencernaan & Organ dalam Perut/Lambung, Maag, Hernia,Hepatitis dan lainnya?
 		%br
 		%hr
-		
+
 		%div.ContainerFit
 			%label.medium.Single.Item 1. Jelaskan gangguan pencernaan yang pernah dialami?
 		%br
@@ -37,23 +37,28 @@
 			%input#RadioButtonProblemOthers{ :type => "radio", :name =>"RadioButtonProblem", :value => "other" }
 			%label.RadioButton{ :for => "RadioButtonProblemOthers" } lainnya
 		%br
-		%input#TextProblemOtherDesc.Full.Single.Item1.Margin{ :type => "text" }
+		%input#TextProblemOthers.Full.Single.Item1.Margin{ :type => "text" }
+		%br
+		%label.Single.Item{ :for => "TextProblemDescription" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
+		%input#TextProblemDescription.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
 		%hr
-		
-		%div.ContainerFit					
+
+		%div.ContainerFit
 			%label#LabelProblemStarted.Long.Single.Item3.Margin 2. Sejak kapan mengalami gangguan pencernaan?
 			%input#DateProblemStarted.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%hr
-		
+
 		%label.medium.Single.Item{ :for => "TextFrequencyInMonth" } 3. a. Frekuensi timbulnya dalam satu bulan?
-		%br    
+		%br
 		%input#TextFrequencyInMonth.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit
 			%label#Label.Long.Single.Item3.Margin{ :for => "TextLastComplain"} b. Kapan timbulnya keluhan terakhir?
 			%input#DateLastComplain.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%hr
-		
+
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 4. Keluhan apa yang dirasakan:
 			%input#RadioButtonComplainAssNausea.Single{ :type => "radio", :name => "RadioButtonComplainAss", :value => "nausea" }
@@ -74,21 +79,21 @@
 		%input#TextComplainOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr
 		%br
-		
+
 		%label.Single.PositionerLeft 5. Apakah Anda pernah mengalami muntah darah?
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonVomitingBloodNo{ :type => "radio", :name => "RadioButtonVomitingBlood", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonVomitingBloodNo" } Tidak
 			%div.Separator
 			%input#RadioButtonVomitingBloodYes{ :type => "radio", :name => "RadioButtonVomitingBlood", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonVomitingBloodYes" } Ya			
+			%label.RadioButton{ :for => "RadioButtonVomitingBloodYes" } Ya
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.Item3.Margin Jika "Ya", kapan terakhir Anda mengalaminya?
 			%input#DateVomittingBloodLastArise.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
 
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label#LabelVomittingBloodAriseTime.Long.Single.Item3.Margin Berapa kali Anda mengalami muntah darah?
 			%input#TextVomittingBloodAriseTime.Short.Single.Item1.Margin{ :type => "text" }
 		%br
@@ -99,27 +104,27 @@
 		%br
 
 		%hr
-		
+
 		%label.Single.Item 6. Jelaskan keluhan nyeri yang dirasakan :
 		%br
-		%div.RadioButton.PositionerLeft						
+		%div.RadioButton.PositionerLeft
 			%input#RadioButtonComplainPainCondition.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPain", :value => "condition" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainCondition" } Timbul pada kondisi tertentu, jelaskan
-			%input#TextComplainPainConditionDesc.Medium.Single.PositionerLeft{ :type =>"text" }			
+			%input#TextComplainPainConditionDesc.Medium.Single.PositionerLeft{ :type =>"text" }
 		%br
-		%div.RadioButton.PositionerLeft	
+		%div.RadioButton.PositionerLeft
 			%input#RadioButtonComplainPainDecrease.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPain", :value => "decrease" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainDecrease" } Nyeri berkurang bila sedang makan
 			%div.Separator.PositionerLeft
 			%input#RadioButtonComplainPainIncrease.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPain", :value => "increase" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainIncrease" } Nyeri bertambah bila sedang makan
 		%br
-		%div.RadioButton.PositionerLeft	
+		%div.RadioButton.PositionerLeft
 			%input#RadioButtonComplainPainSpread.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPain", :value => "spread" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpread" } Nyeri menjalar ke seluruh tubuh lain
 			%div.Separator.PositionerLeft
 			%input#RadioButtonComplainPainSpreadHead.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPainSpread", :value => "head" }
-			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpreadHead" } Kepala			
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpreadHead" } Kepala
 			%div.Separator.PositionerLeft
 			%input#RadioButtonComplainPainSpreadChest.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPainSpread", :value => "chest" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpreadChest" } Dada
@@ -131,13 +136,13 @@
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpreadArm" } Lengan
 			%div.Separator.PositionerLeft
 			%input#RadioButtonComplainPainSpreadOthers.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPainSpread", :value => "other" }
-			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpreadOthers" } Lainnya, sebutkan	
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpreadOthers" } Lainnya, sebutkan
 			%input#TextComplainPainSpreadOtherDesc.Medium.Single.PositionerLeft{ :type =>"text" }
 		%br
 		%hr
 
 		%label.medium.Single.Item 7. Jelaskan nama obat dan lama pemakainnya sehubungan dengan gangguan pencernaan :
-		%br    
+		%br
 		%input#TextDrugsName.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -149,13 +154,13 @@
 			%div.Separator
 			%input#RadioButtonDoctorRecipeYes{ :type => "radio", :name => "RadioButtonDoctorRecipe", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonDoctorRecipeYes" } Ya
-		%br	
+		%br
 		%label.Medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
-		%br		
+		%br
 		%div.ContainerFit
-			%label.Short.Single.Item1.Center Nama Obat  
+			%label.Short.Single.Item1.Center Nama Obat
 			%label.Short.Single.Item1.Center Dosis
-			%label.Short.Single.Item1.Center Frekuensi 
+			%label.Short.Single.Item1.Center Frekuensi
 		%div.ContainerFit
 			%input#TextDGUPName1.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextDGUPDose1.Short.Single.Item1.Margin{ :type => "text" }
@@ -181,28 +186,28 @@
 			%input#TextDGUPDose5.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextDGUPFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 		%br
-		
+
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextDGBOTTOMDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextDGBOTTOMDoctorTelephone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextDGBOTTOMHospitalName.Full.Single.Item.Margin{ :type =>"text" }
-		%br				
-		%div.ContainerFit 
+		%br
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextDGBOTTOMHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%label.medium.Single.Item 9. Mohon jelaskan secara rinci pada kolom di bawah ini jenis dan hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan pencernaan ini, termasuk tanggal pemeriksaannya. (Lampirkan fotokopi hasil pemeriksaan)
-		%br    
+		%br
 		%input#TextResult.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -216,22 +221,22 @@
 			%input#RadioButtonHospitalCareYes{ :type => "radio", :name => "RadioButtonHospitalCare", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonHospitalCareYes" } Ya
 		%br
-		
-		%label#LabelPolicyHolderDigestHospitalCareWhen.Wrap.Single.PositionerLeft Jika “Ya”, sejak kapan:		
+
+		%label#LabelPolicyHolderDigestHospitalCareWhen.Wrap.Single.PositionerLeft Jika “Ya”, sejak kapan:
 		%input#DateHospitalCareFrom.Medium.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%span.Separator.PositionerLeft s/d
-		%input#DateHospitalCareTo.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }		
+		%input#DateHospitalCareTo.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
 		%br
 
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Lama Perawatan
 			%input#TextHospitalCareDuration.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Dokter
 			%input#TextHospitalCareDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Dokter
 			%input#TextHospitalCareDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
@@ -244,13 +249,13 @@
 			%div.Separator
 			%input#RadioButtonInTreatmentYes{ :type => "radio", :name => "RadioButtonInTreatment", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonInTreatmentYes" } Ya
-		%br				
+		%br
 		%label.Medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
-		%br		
+		%br
 		%div.ContainerFit
-			%label.Short.Single.Item1.Center Nama Obat  
+			%label.Short.Single.Item1.Center Nama Obat
 			%label.Short.Single.Item1.Center Dosis
-			%label.Short.Single.Item1.Center Frekuensi 
+			%label.Short.Single.Item1.Center Frekuensi
 		%div.ContainerFit
 			%input#TextDGBOTTOMName1.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextDGBOTTOMDose1.Short.Single.Item1.Margin{ :type => "text" }
@@ -276,18 +281,18 @@
 			%input#TextDGBOTTOMDose5.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextDGBOTTOMFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextInTreatmentDoctorName.Full.Single.Item.Margin{ :type =>"text" }
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextInTreatmentDoctorTelephone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextInTreatmentHospitalName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextInTreatmentHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
@@ -298,17 +303,17 @@
 			%label.RadioButton{ :for => "RadioButtonAbsentInTwoYearNo" } Tidak
 			%div.Separator
 			%input#RadioButtonAbsentInTwoYearYes{ :type => "radio", :name => "RadioButtonAbsentInTwoYear", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonAbsentInTwoYearYes" } Ya	
+			%label.RadioButton{ :for => "RadioButtonAbsentInTwoYearYes" } Ya
 		%br
 		%label#LabelPolicyHolderDigestNoOfficeEntryInYearWhen.Wrap.Single.PositionerLeft.Margin Jika "Ya" Kapan
-		%input#DateAbsentSince.Medium.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }	
+		%input#DateAbsentSince.Medium.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%label#LabelPolicyHolderDigestNoOfficeEntryInYearHowLong.Wrap.Single.PositionerLeft.Margin dan berapa lama?
 		%input#NumberAbsentSinceDays.Medium.Single.PositionerLeft.Margin{ :type => "number" }
 		%label.Single.PositionerLeft Hari
 		%br
 		%hr
 
-		%label.Medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini  
+		%label.Medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini
 		%textarea#AreaHealthCondition.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr

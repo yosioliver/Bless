@@ -2,7 +2,7 @@
 
 	/ HEADER
 
-	%header	 											
+	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpHiking', 'PopUpActivity')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpHiking', 'PopUpActivity', stringPageInfixTypeCurrent + 'Hiking', arrayHealthQuestionnaire)" }
 		%h2 Kuesioner Untuk Pendakian Gunung Dan Panjat Tebing
@@ -72,7 +72,7 @@
 				%input#CheckboxToolsAnchor{ :type => "checkbox", :name => "CheckboxTools", :value => "anchor" }
 				%label.Checkbox{ :for => "CheckboxToolsAnchor" } Jangkar
 				%br
-				%input#CheckboxToolsCam{ :type => "checkbox", :name => "CheckboxTools", :value => "cam" }	
+				%input#CheckboxToolsCam{ :type => "checkbox", :name => "CheckboxTools", :value => "cam" }
 				%label.Checkbox{ :for => "CheckboxToolsCam" } Cams, Camatots, Spring Loaded Cam Devices
 				%br
 				%input#CheckboxToolsHandphone{ :type => "checkbox", :name => "CheckboxTools", :value => "handphone" }
@@ -141,7 +141,7 @@
 				%label.Checkbox{ :for => "CheckboxToolsStoppers" } Stoppers
 		%br
 		%hr
-		
+
 		%label.Medium.Single.Item 7. Berapakah tinggi/ derajat pendakian Anda?
 		%br
 		%div.ContainerFit
@@ -149,7 +149,7 @@
 			%label.Short.Single.Item.Center.Margin Pencapain maksimum
 			%label.Short.Single.Item1.Center.Margin Rencana tinggi dan derajat pendakian
 		%div.ContainerFit
-			%label.Short.Single.Short.Item.Center.Margin 
+			%label.Short.Single.Short.Item.Center.Margin
 			%div.RadioButton.Item
 				%label.Short.Single.Item1.Center.Margin Tinggi
 				%div.Separator
@@ -158,32 +158,32 @@
 				%label.Short.Single.Item1.Center.Margin Tanggal
 			%label.Short.Single.Item1.Center.Margin
 		%div.ContainerFit
-			%input#TextHKBOTTOMAverageHeightAndAngle1.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextHKBOTTOMAverageHeightAndAngle1.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMHeight1.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMAngle1.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMWhen1.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMPlanHeightAndAngle1.Short.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextHKBOTTOMAverageHeightAndAngle2.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextHKBOTTOMAverageHeightAndAngle2.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMHeight2.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMAngle2.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMWhen2.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMPlanHeightAndAngle2.Short.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextHKBOTTOMAverageHeightAndAngle3.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextHKBOTTOMAverageHeightAndAngle3.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMHeight3.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMAngle3.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMWhen3.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMPlanHeightAndAngle3.Short.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
-			%input#TextHKBOTTOMAverageHeightAndAngle4.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextHKBOTTOMAverageHeightAndAngle4.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMHeight4.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMAngle4.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMWhen4.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMPlanHeightAndAngle4.Short.Single.Item.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextHKBOTTOMAverageHeightAndAngle5.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextHKBOTTOMAverageHeightAndAngle5.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMHeight5.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMAngle5.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextHKBOTTOMWhen5.Short.Single.Item.Margin{ :type => "text" }
@@ -220,25 +220,25 @@
 
 		%label.Medium.Single.Item 10. Apakah Anda mendaki hanya untuk sekedar olah raga saja atau sebagai bagian dari pekerjaan?
 		%br
-		
+
 		%div.RadioButton.Medium.PositionerLeft
 			%label.PositionerLeft Olah raga
-			%input#RadioButtonHKSelfOrNightYes.PositionerLeft{ :type => "radio", :name => "RadioButtonHKSelfOrNight", :value => "true" }
-			%label.RadioButton.PositionerLeft{ :for => "RadioButtonHKSelfOrNightYes" } Tidak
-			%div.Separator.PositionerLeft			
-			%input#RadioButtonHKSelfOrNightNo.PositionerLeft{ :type => "radio", :name => "RadioButtonHKSelfOrNight", :value => "false" }
-			%label.RadioButton.PositionerLeft{ :for => "RadioButtonHKSelfOrNightNo" } Ya
+			%input#RadioButtonHKSportYes.PositionerLeft{ :type => "radio", :name => "RadioButtonHKSport", :value => "true" }
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonHKSportYes" } Tidak
+			%div.Separator.PositionerLeft
+			%input#RadioButtonHKSportNo.PositionerLeft{ :type => "radio", :name => "RadioButtonHKSport", :value => "false" }
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonHKSportNo" } Ya
 			%br
 			%label.PositionerLeft Pekerjaan
-			%input#RadioButtonHKSelfOrNightYes.PositionerLeft{ :type => "radio", :name => "RadioButtonHKSelfOrNight", :value => "true" }
-			%label.RadioButton.PositionerLeft{ :for => "RadioButtonHKSelfOrNightYes" } Tidak
-			%div.Separator.PositionerLeft			
-			%input#RadioButtonHKSelfOrNightNo.PositionerLeft{ :type => "radio", :name => "RadioButtonHKSelfOrNight", :value => "false" }
+			%input#RadioButtonHKJobYes.PositionerLeft{ :type => "radio", :name => "RadioButtonHKJob", :value => "true" }
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonHKJobYes" } Tidak
+			%div.Separator.PositionerLeft
+			%input#RadioButtonHKJobNo.PositionerLeft{ :type => "radio", :name => "RadioButtonHKJob", :value => "false" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonHKSelfOrNightNo" } Ya
 		%br
 		%label.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
-		%input#TextHKSport.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextHKJob.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -261,7 +261,7 @@
 		%input#TextHKAdditionalInformation.Full.Multi.Item.Margin{ :type =>"text"}
 		%br
 		%hr
-		
+
 		%h2 PERNYATAAN DAN KUASA
 		%ol
 			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.

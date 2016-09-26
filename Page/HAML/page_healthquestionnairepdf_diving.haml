@@ -15,8 +15,8 @@
 			// DOCUMENT READY
 			$(document).ready(function()
 			{
-				// SECTION GENERAL				
-				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+				// SECTION GENERAL
+				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
@@ -26,12 +26,12 @@
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
 
-				// SECTION MANDATORY					
-				
+				// SECTION MANDATORY
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Menyelam");
 			});
@@ -41,7 +41,7 @@
 
 	%body#Main
 
-		/ HEADER		
+		/ HEADER
 
 		%header
 			%section#SectionHeader
@@ -52,24 +52,24 @@
 
 			%section#SectionNote
 				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
-			
+
 		/ MAIN
 
 		%main
 			%form
 				%section#SectionCustomer
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
-					
+
 				/ FIELDSET
-				
+
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				
+
 				%fieldset
-					%span.Number.Single.PositionerLeft 1. 						
+					%span.Number.Single.PositionerLeft 1.
 					%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Andai ikuti saat ini?
 					%br
 
-					%div.RadioButton.NumberIndent												
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderDivingCriteriaSkinDiving.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingCriteria", :value => "skindiving" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaSkinDiving" } Skin Diving
@@ -83,33 +83,33 @@
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaFreeDiving" } FREE Diving
 					%br
 					%hr
-						
-					%span.Number.Single.PositionerLeft 2. 						
+
+					%span.Number.Single.PositionerLeft 2.
 					%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki.
 					%br
-					
+
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Lisensi Sertifikat
-						%label.Short.Single.Item1.Center Tanggal Perolehan						
-					%div.ContainerFit.NumberIndent					
+						%label.Short.Single.Item1.Center Tanggal Perolehan
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingCertificateLicense1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingCertificateDate1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingCertificateLicense2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingCertificateDate2.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingCertificateLicense3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingCertificateDate3.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingCertificateLicense4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingCertificateDate4.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingCertificateLicense5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingCertificateDate5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					%hr
-						
-					%span.Number.Single.PositionerLeft 3. 						
+
+					%span.Number.Single.PositionerLeft 3.
 					%label.Full.Single.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
 					%br
 					-#
@@ -117,48 +117,48 @@
 							%table#TablePolicyHolderDivingHistories{ "border" => "1px" }
 								%thead
 									%tr
-										%th 
+										%th
 										%th 12 bulan terakhir
 										%th 12 bulan y.a.d
 								%tbody
 									%tr
 										%td Lokasi
-										%td 
+										%td
 										%td
 						%br
-					
+
 					%div.ContainerFit.NumberIndent
-						%label.Short.Single.Item1.Center   
+						%label.MediumFix.Single.Item.Center
 						%label.Short.Single.Item1.Center 12 bulan terakhir
-						%label.Short.Single.Item1.Center 12 bulan yang akan datang												
+						%label.Short.Single.Item1.Center 12 bulan yang akan datang
 					%div.ContainerFit.NumberIndent
-						%input.Short.Single.Item1.Margin{ :type => "text", :value => "Lokasi", :disabled => "true" }	
+						%label.MediumFix.Header.Single.Item.Left Lokasi
 						%input#TextPolicyHolderDivingHistoryLocationLast12Months.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDivingHistoryLocationNext12Months.Short.Single.Item1.Margin{ :type => "text" }						
+						%input#TextPolicyHolderDivingHistoryLocationNext12Months.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input.Short.Single.Item1.Margin{ :type => "text", :value => "Kedalaman rata-rata", :disabled => "true" }						
+						%label.MediumFix.Header.Single.Item.Left Kedalaman rata-rata
 						%input#TextPolicyHolderDivingHistoryAvgDepthLast12Months.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingHistoryAvgDepthNext12Months.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input.Short.Single.Item1.Margin{ :type => "text", :value => "Kedalaman maksimum", :disabled => "true" }						
+						%label.MediumFix.Header.Single.Item.Left Kedalaman maksimum
 						%input#TextPolicyHolderDivingHistoryMaxDepthLast12Months.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingHistoryMaxDepthNext12Months.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input.Short.Single.Item1.Margin{ :type => "text", :value => "Jumlah penyelaman", :disabled => "true" }						
+						%label.MediumFix.Header.Single.Item.Left Jumlah penyelaman
 						%input#TextPolicyHolderDivingHistoryNumOfDiveLast12Months.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingHistoryNumOfDiveNext12Months.Short.Single.Item1.Margin{ :type => "text" }
-					%br					
+					%br
 					%hr
-					
+
 					%section#SectionFooter{ :style => "margin-top: 30px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
-					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 4. 					
+
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 4.
 					%label.Full.Single.PositionerLeft{ :style => "margin-top: 30px;"} Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
 					%br
-						
+
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft a. Menyelam seorang diri
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDivingParticipationSelfNo" } Tidak
@@ -240,44 +240,44 @@
 						%input#RadioButtonPolicyHolderDivingParticipationDeepSeaYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDivingParticipationDeepSea", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
+
 					%label.Wrap.Single.NumberIndent.PositionerLeft Jika menjawab ‘ya’ untuk pernyataan di atas, mohon menjelaskan lokasi, kapan, frekuensi, dan tujuan di kemudian hari:
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingParticipationDeepSeaDesc.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 					%hr
-					%span.Number.Single.PositionerLeft 5. 						
+					%span.Number.Single.PositionerLeft 5.
 					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
 					%br
-					%div.RadioButton.NumberIndent												
+					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderDivingAccidentDVNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingAccidentDV", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVNo" } Tidak
-						%br											
+						%br
 						%input#RadioButtonPolicyHolderDivingAccidentDVYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingAccidentDV", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Ya. Mohon memberikan rincian termasuk tanggal
-					%br	
-					%div.ContainerFit.NumberIndent						
+					%br
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingAccidentDVDesc.Full.Single.Item{ :type => "text" }
 					%br
 					%hr
-					
-					%span.Number.Single.PositionerLeft{ :for => "TextPolicyHolderDivingAdditionalInformation" } 6. 						
+
+					%span.Number.Single.PositionerLeft{ :for => "TextPolicyHolderDivingAdditionalInformation" } 6.
 					%label.Full.Single.PositionerLeft Mohon memberikan informasi tambahan yang menurut Anda penting
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
 					%br
 					%hr
-					
+
 					%section#SectionFooter{ :style => "margin-top: 550px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
