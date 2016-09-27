@@ -1189,10 +1189,14 @@ function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 			{				
 				setBoxGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
 			}
-			else
+			else if ($(stringKres + stringID + arrayDateID[i]).is("div") == true)
 			{				
 				setLineGeneral(stringID + arrayDateID[i], arrayDateString[i]);	
-			}			
+			}
+			else
+			{
+				setTextGeneral(stringID, stringContent);
+			}
 		}
 	}
 	else
@@ -1203,9 +1207,13 @@ function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 			{
 				setBoxGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
 			}
+			else if ($(stringKres + stringID + arrayDateID[i]).is("div") == true)
+			{
+				setLineGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
+			}
 			else
 			{
-				setTextGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
+				setTextGeneral(stringID, stringContent);
 			}			
 		}
 	}
