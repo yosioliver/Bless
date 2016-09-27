@@ -13,29 +13,31 @@
 		:javascript
 
 			// DOCUMENT READY
-			
+
 			$(document).ready(function()
 			{
 				// SECTION GENERAL
-				
-				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
-				
+
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				// SETUP
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Angkatan Bersenjata");
 			});
@@ -56,39 +58,43 @@
 
 			%section#SectionNote
 				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
-			
+
 		/ MAIN
 
 		%main
 			%form
 				%section#SectionCustomer
-					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
-				
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
+
 				/ FIELDSET
-				
+
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				
+
 				%fieldset
-					%span.Number.Single.PositionerLeft 1. 						
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryUnit" } Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini?
+					%span.Number.Single.PositionerLeft 1.
+					%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryUnit" } Anda termasuk dalam kesatuan ?
+					%div.RadioButton.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryUnitPolice" } Kepolisian
+						%input#RadioButtonPolicyHolderMilitaryUnitPolice.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryUnit", :value => "police" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryUnitMilitary" } Militer
+						%input#RadioButtonPolicyHolderMilitaryUnitMilitary.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryUnit", :value => "military" }
+						%div.BoxRound.PositionerRight
 					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderMilitaryUnit.Full.Single.Item{ :type => "text" }
-					%br
-					
+
 					%span.Number.Single.PositionerLeft 2.
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tempat bertugas Anda saat ini pada kolom di bawah ini ?
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryDuty.Full.Single.Item{ :type => "text" }
 					%br
-						
+
 					%span.Number.Single.PositionerLeft 3.
 					%label.Wrap.Long.PositionerLeft Apakah Anda melakukan kegiatan yang berisiko tinggi?
-					%br	
-					
+					%br
+
 					%div.RadioButton.NumberIndent
-						%label.Medium.Single.NumberIndent.PositionerLeft a. Penjinak senjata					
+						%label.Medium.Single.NumberIndent.PositionerLeft a. Penjinak senjata
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamer", :value => "false" }
 						%div.BoxRound.PositionerRight
@@ -96,9 +102,9 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamer", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
+
 					%div.RadioButton.NumberIndent
-						%label.Full.Single.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan					
+						%label.Full.Single.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamer", :value => "false" }
 						%div.BoxRound.PositionerRight
@@ -106,9 +112,9 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamer", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
+
 					%div.RadioButton.NumberIndent
-						%label.Medium.Single.NumberIndent.PositionerLeft c. Penyelam					
+						%label.Medium.Single.NumberIndent.PositionerLeft c. Penyelam
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityDiverNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityDiverNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityDiver", :value => "false" }
 						%div.BoxRound.PositionerRight
@@ -116,9 +122,9 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityDiverYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityDiver", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
+
 					%div.RadioButton.NumberIndent
-						%label.Medium.Single.NumberIndent.PositionerLeft d. Penerbangan					
+						%label.Medium.Single.NumberIndent.PositionerLeft d. Penerbangan
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityFlightNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityFlightNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityFlight", :value => "false" }
 						%div.BoxRound.PositionerRight
@@ -126,9 +132,9 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityFlightYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityFlight", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
+
 					%div.RadioButton.NumberIndent
-						%label.Medium.Single.NumberIndent.PositionerLeft e. Terjun payung					
+						%label.Medium.Single.NumberIndent.PositionerLeft e. Terjun payung
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityParachuteNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityParachuteNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityParachute", :value => "false" }
 						%div.BoxRound.PositionerRight
@@ -136,7 +142,7 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityParachuteYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityParachute", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-										
+
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft f. Misi perdamaian ke luar negeri
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityAbroadMissionNo" } Tidak
@@ -146,9 +152,9 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityAbroadMissionYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityAbroadMission", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
-					%div.RadioButton.NumberIndent						
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthers"} g. Lainnya						
+
+					%div.RadioButton.NumberIndent
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthers"} g. Lainnya
 						%input#TextPolicyHolderMilitaryRiskActivityOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthersNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityOthersNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityOthers", :value => "false" }
@@ -157,21 +163,21 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityOthersYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityOthers", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMilitaryRiskActivityOtherDescAdd" } Jika jawaban ya, mohon memberikan perincian jelas
+
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMilitaryRiskActivityOtherDescAdd" } Jika jawaban "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryRiskActivityOtherDescAdd.Full.Single.Item{ :type => "text" }
 					%br
-				
+
 					%span.Number.Single.PositionerLeft 4.
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryDutyDetails" } Mohon memberikan rincian tugas Anda yang sebenarnya?
+					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryDutyDetails" } Mohon dapat dijabarkan dengan jelas rincian tugas anda saat ini pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryDutyDetails.Full.Single.Item{ :type => "text" }
 					%br
-					
-					%span.Number.Single.PositionerLeft 5. 
+
+					%span.Number.Single.PositionerLeft 5.
 					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
 					%br
 					%div.RadioButton.NumberIndent
@@ -181,24 +187,24 @@
 						%input#RadioButtonPolicyHolderMilitaryInDangerLocationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
-					%br	
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMilitaryInDangerLocationDesc"} Jika Ya, Jelaskan dimana dan kapan
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMilitaryInDangerLocationDesc"} Jika jawaban "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryInDangerLocationDesc.Full.Single.Item{ :type => "text" }
-					
+
 					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6.
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo", :style => "margin-top: 30px;" } Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent	
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryOtherInfo.Full.Single.Item{ :type => "text" }
 					%br
-						
+
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 

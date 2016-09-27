@@ -16,11 +16,14 @@
 			$(document).ready(function()
 			{
 				// SECTION GENERAL
-				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);
+
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -58,7 +61,7 @@
 		%main
 			%form
 				%section#SectionCustomer
-					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				/ FIELDSET
 
@@ -237,10 +240,10 @@
 					%span.Number.Single.PositionerLeft 7.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderTravelingTVBusinessTrip" } Jika perjalanan Anda untuk tujuan bisnis, harap memberikan rincian sebagai berikut:
 					%br
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVCompanyName"} a. Nama perusahaan/tempat usaha:
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVCompanyBusinessName"} a. Nama perusahaan/tempat usaha:
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderTravelingTVCompanyName.Line.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderTravelingTVCompanyBusinessName.Line.Full.Single.Item{ :type => "text" }
 					%br
 					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVBusinessType"} b. Jenis usaha:
 					%br

@@ -1,11 +1,11 @@
 %form#PopUpEpilepsy.PopUp
-	
+
 	/ HEADER
-	
+
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpEpilepsy', 'PopUpNerve')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpEpilepsy', 'PopUpNerve', stringPageInfixTypeCurrent + 'Epilepsy', arrayHealthQuestionnaire)" }
-		%h2 Kuesioner Epilepsi Dan Kejang		
+		%h2 Kuesioner Epilepsi Dan Kejang
 
 	/ MAIN
 
@@ -15,25 +15,25 @@
 		%br
 		%hr
 		%div.ContainerFit
-			%label#Wrap.Single.PositionerLeft 1. Sejak umur berapa Anda terserang epilepsi?			
+			%label#Wrap.Single.PositionerLeft 1. Sejak umur berapa Anda terserang epilepsi?
 			%input#TextSince.Short.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label#Wrap.Single.PositionerLeft 2. Berapa kali terjadi serangan dalam satu bulan atau setahun?
 			%input#TextHowMany.Short.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-		%div.ContainerFit		
+		%div.ContainerFit
 			%label#Wrap.Single.PositionerLeft 3. Kapan terakhir kali serangan terjadi?
 			%input#DateLast.Short.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label#Wrap.Single.PositionerLeft 4. Pada saat terjadi serangan, apakah:
 		%br
 
-		%div.ContainerFit 
+		%div.ContainerFit
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonWhatHappenLostConsciousness{ :type => "radio", :name => "RadioButtonWhatHappen", :value => "lostconsciousness" }
 				%label.RadioButton{ :for => "RadioButtonWhatHappenLostConsciousness" } Hanya hilang kesadaran sejenak tanpa kaku-kaku, kemudian lupa dengan apa yang telah terjadi.
@@ -43,11 +43,11 @@
 				%label.RadioButton{ :for => "RadioButtonWhatHappenSuddenlyFall" } Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
 		%br
 		%hr
-		
+
 		%label.Msedium.Single.Item 5. Sebelum terjadi serangan, apakah dirasakan adanya pusing-pusing, mencium bau-bauan, melihat cahaya, atau bunyi-bunyian?
 		%br
-		
-		%div.ContainerFit 
+
+		%div.ContainerFit
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonIsFeelYes{ :type => "radio", :name => "RadioButtonIsFeel", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonIsFeelYes" } ya
@@ -58,10 +58,10 @@
 			%input#TextIsFeelDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-		
+
 		%label.Medium.Single.Item 6. Apakah Anda pernah dirawat karena epilepsi?
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonTreatedYes{ :type => "radio", :name => "RadioButtonTreated", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonTreatedYes" } Ya
@@ -71,7 +71,7 @@
 			%input#TextTreatedDesc.Full.Single.Item.Margin{ :type =>"text"}
 		%br
 		%hr
-		
+
 		%label.Medium.Single.Item 7. Apakah Anda selalu berkonsultasi / berobat ke dokter?
 		%br
 		%div.RadioButton.PositionerLeft
@@ -89,8 +89,8 @@
 		%label.Single.PositionerLeft{ :for => "TextConsultDoctorAddress" } Alamat Lengkap Dokter:
 		%input#TextConsultDoctorAddress.Longfix.Single.PositionerLeft.Margin{ :type =>"text" }
 		%br
-		%hr 
-		%div.ContainerFit 
+		%hr
+		%div.ContainerFit
 			%label.Wrap.Single.PositionerLeft 8. Kapan terakhir kali Anda berkonsultasi dengan dokter?
 			%input#DateLastConsult.Short.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 		%br
@@ -106,26 +106,26 @@
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Name Obat
 			%label.Short.Single.Item1.Center.Margin Dosis
-			%label.Short.Single.Item.Center.Margin Frekuensi			
+			%label.Short.Single.Item.Center.Margin Frekuensi
 		%div.ContainerFit
 			%input#TextEPUPName1.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextEPUPDose1.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextEPUPDose1.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextEPUPFrequency1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextEPUPName2.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextEPUPDose2.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextEPUPDose2.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextEPUPFrequency2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextEPUPName3.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextEPUPDose3.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextEPUPDose3.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextEPUPFrequency3.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextEPUPName4.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextEPUPDose4.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextEPUPDose4.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextEPUPFrequency4.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextEPUPName5.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextEPUPDose5.Short.Single.Item.Margin{ :type => "text" }			
+			%input#TextEPUPDose5.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextEPUPFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 
@@ -142,8 +142,8 @@
 		%br
 		%hr
 
-		%div.ContainerFit			
-			%label.medium.Single.Item 10. Apakah Anda pernah menderita penyakit infeksi selaput otak/gegar otak sebelumnya?
+		%div.ContainerFit
+			%label.Wrap.Item 10. Apakah Anda pernah menderita penyakit infeksi selaput otak/gegar otak sebelumnya?
 			%br
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonInfectedYes{ :type => "radio", :name => "RadioButtonInfected", :value => "true" }
@@ -152,26 +152,27 @@
 				%input#RadioButtonInfectedNo{ :type => "radio", :name => "RadioButtonInfected", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonInfectedNo" } Tidak
 			%br
-			%hr		
-		
-		%div.ContainerFit 
-			%label.medium.Single.Item 11. Apakah ada riwayat keluarga Anda yang menderita epilepsi ?
+			%hr
+
+		%div.ContainerFit
+			%label.Single.Item 11. Apakah ada riwayat keluarga Anda yang menderita epilepsi ?
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonHistoryYes{ :type => "radio", :name => "RadioButtonHistory", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonHistoryYes" } Ya
 				%div.Separator
 				%input#RadioButtonHistoryNo{ :type => "radio", :name => "RadioButtonHistory", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonHistoryNo" } Tidak
-				%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
-				%br
-				%input#TextHistoryDesc.Full.Single.Item.Margin{ :type =>"text" }
+		%br
+		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
+		%input#TextHistoryDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%label.medium.Single.Item 12. Apakah Anda menderita penyakit lain seperti kencing manis, hipertensi, tumor otak dan/atau komplikasinya ?
-		%br    
-		%div.ContainerFit 
-			%div.RadioButton.Medium.Item																 
+		%br
+		%div.ContainerFit
+			%div.RadioButton.Medium.Item
 				%input#RadioButtonOtherDiseasesDiabetes{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "diabetes" }
 				%label.RadioButton{ :for => "RadioButtonOtherDiseasesDiabetes" } Kencing Manis (Diabetes Melitus)
 				%div.Separator
@@ -182,15 +183,15 @@
 				%label.RadioButton{ :for => "RadioButtonOtherDiseasesTumor" } Tumor
 				%div.Separator
 				%input#RadioButtonOtherDiseasesComplication{ :type => "radio", :name => "RadioButtonOtherDiseases", :value => "complication" }
-				%label.RadioButton{ :for => "RadioButtonOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan 
-				%br		
+				%label.RadioButton{ :for => "RadioButtonOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan
+				%br
 		%input#TextOtherDiseasesDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%label.medium.Single.Item 13. Apakah Anda pernah melakukan pemeriksaan berikut?
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%div.RadioButton.Medium.Item
 				%input#RadioButtonCheckupTwoYes{ :type => "radio", :name => "RadioButtonCheckupTwo", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonCheckupTwoYes" } Ya
@@ -205,7 +206,7 @@
 
 
 		%label.medium.Single.Item 14. Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
-		%br    
+		%br
 		%input#TextInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr

@@ -31,21 +31,21 @@
 				boxGenerator("#DatePolicyHolderDiabetesFirstKnownDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesFirstKnownMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesFirstKnownYear", 4, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineYear", 4, boxTypeWithoutLabel, null);	
-		
+				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineYear", 4, boxTypeWithoutLabel, null);
+
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);	
-						
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				// FOOTER
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Diabetes");
 			});
@@ -55,7 +55,7 @@
 
 	%body
 
-		/ HEADER		
+		/ HEADER
 
 		%header
 			%section#SectionHeader
@@ -86,7 +86,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyAmount" } a. Berapa kali frekuensi kontrol ke dokter?				
+					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyAmount" } a. Berapa kali frekuensi kontrol ke dokter?
 					%input#NumberPolicyHolderDiabetesControlFrequencyAmount.Short.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDiabetesControlFrequencyWeek" } kali per
 					%input#NumberPolicyHolderDiabetesControlFrequencyWeek.Short.Single.PositionerLeft{ :type => "number" }
@@ -94,36 +94,36 @@
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderDiabetesControlFrequencyWeek" }b. Mohon melengkapi kolom di bawah ini dengan nama dan alamat lengkap dokter yang biasa dikunjungi untuk kontrol?
 					%br
-					
+
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Nama Dokter
 						%label.Short.Single.Item1.Center Alamat Dokter
 						%label.Short.Single.Item1.Center Tanggal Pemeriksaan Terakhir
-					%div.ContainerFit.NumberIndent										
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBUPDoctorName1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBUPDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate1.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate1.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBUPDoctorName2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBUPDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate2.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate2.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBUPDoctorName3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBUPDoctorAddress3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate3.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate3.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBUPDoctorName4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBUPDoctorAddress4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate4.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate4.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBUPDoctorName5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBUPDoctorAddress5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate5.Short.Single.Item1.Margin{ :type => "text" }					
-					%br	
+						%input#TextPolicyHolderDiabetesDBUPDoctorLastControlDate5.Short.Single.Item1.Margin{ :type => "text" }
+					%br
 
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesTherapyInsulin" } c. Pengobatan apa saja yang Anda diperoleh?
 					%br
@@ -147,12 +147,12 @@
 						%br
 						%input#TextPolicyHolderDiabetesTherapyOralDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 100px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 3.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderPainLocation", :style => "margin-top: 30px;"   } a. Bagaimana frekuensi melakukan pemeriksaan kadar gula dalam urine?
 					%br
@@ -165,12 +165,12 @@
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesCheckUrineWeek" } Setiap minggu
 						%input#RadioButtonPolicyHolderDiabetesCheckUrineMonth.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesCheckUrine", :value => "everymonth" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesCheckUrineMonth" } Setiap bulan	
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesCheckUrineMonth" } Setiap bulan
 						%input#RadioButtonPolicyHolderDiabetesCheckNever.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesCheckUrine", :value => "never" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesCheckNever" } Tidak pernah	
-					%br							
-					
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesCheckNever" } Tidak pernah
+					%br
+
 					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderDiabetesLastCheckUrineDay" } b. Kapan terakhir melakukan pemeriksaan kadar gula dalam urine?
 					%table#DatePolicyHolderDiabetesLastCheckUrineYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
@@ -178,7 +178,7 @@
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderDiabetesLastCheckUrineDay.BoxSquare.PositionerRight
 					%br
-					
+
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesUrineInfoPlus" } Bagaimana hasilnya?
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderDiabetesUrineInfoPlus.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesUrineInfo", :value => "+" }
@@ -192,11 +192,11 @@
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesUrineInfo3Plus" } +++
 						%input#RadioButtonPolicyHolderDiabetesUrineInfo4Plus.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesUrineInfo", :value => "++++" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesUrineInfo4Plus" } ++++	
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesUrineInfo4Plus" } ++++
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } c. Mohon melengkapi kolom di bawah ini dengan hasil 3 (tiga) pemeriksaan terakhir?
 					%br
-					
+
 					-#
 						%table#TextPolicyHolderDiabetesResult.Square.NumberIndent.PositionerLeft
 							%thead
@@ -204,38 +204,38 @@
 									%th Jenis Pemeriksaan
 									%th I
 									%th II
-									%th III								
+									%th III
 							%tbody
 								%tr
 									%th Kadar gula darah
 									%td
-									%td					
-									%td					
+									%td
+									%td
 
 								%tr
 									%th Tanggal pemeriksaan terakhir
 									%td
-									%td					
-									%td					
+									%td
+									%td
 						%br
-						
+
 					%div.ContainerFit.NumberIndent
-						%label.Short.Single.Item1.Center Jenis Pemeriksaan  
+						%label.Short.Single.Item1.Center Jenis Pemeriksaan
 						%label.Short.Single.Item1.Center I
 						%label.Short.Single.Item1.Center II
-						%label.Short.Single.Item1.Center III						
+						%label.Short.Single.Item1.Center III
 					%div.ContainerFit.NumberIndent
-						%input#NumberPolicyHolderResultGlucoseLevel.Short.Single.Item1.Margin{ :type => "text", :value => "Kadar gula darah", :disabled => "true" }	
+						%input#NumberPolicyHolderResultGlucoseLevel.Short.Single.Item1.Margin{ :type => "text", :value => "Kadar gula darah", :disabled => "true" }
 						%input#TextPolicyHolderDiabetesResultGlucoseLevelI.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultGlucoseLevelII.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultGlucoseLevelIII.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderDiabetesResultLastCheck.Short.Single.Item1.Margin{ :type => "text", :value => "Tanggal pemeriksaan terakhir", :disabled => "true" }						
+						%input#DatePolicyHolderDiabetesResultLastCheck.Short.Single.Item1.Margin{ :type => "text", :value => "Tanggal pemeriksaan terakhir", :disabled => "true" }
 						%input#TextPolicyHolderDiabetesResultLastCheckI.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultLastCheckII.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultLastCheckIII.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					
+
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminNo" } d.	Apakah pernah didapatkan adanya protein/albumin dalam test urine?
 					%div.RadioButton.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesContainAlbuminYes" } Tidak
@@ -250,7 +250,7 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesContainAlbuminDesc.Full.Single.PositionerLeft{ :type => "text" }
 					%br
-					
+
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } e. Apakah dilakukan pemeriksaan glycosylated haemoglobin (HbA1c)?
 
 					%div.RadioButton.PositionerRight
@@ -265,8 +265,8 @@
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesContainHaemoglobinDesc.Full.Single.PositionerLeft{ :type => "text" }
-					%br				
-					
+					%br
+
 					%span.Number.Single.PositionerLeft 4.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderPainLocation" } 	Apakah pernah mengalami perawatan di rumah sakit karena diabetes?
 					%div.RadioButton.NumberIndent.PositionerLeft
@@ -277,102 +277,102 @@
 						%input#RadioButtonPolicyHolderDiabetesEverHospitalYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesEverHospital", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesEverHospitalYes" } Jika “Ya”, mohon melengkapi kolom di bawah ini.										
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesEverHospitalYes" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
 					%br
-									
+
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Alasan Perawatan
 						%label.Short.Single.Item1.Center Nama Dokter
 						%label.Short.Single.Item1.Center Alamat Dokter
 						%label.Short.Single.Item1.Center Tanggal Perawatan
 						%label.Short.Single.Item1.Center Jangka Waktu Perawatan
-					%div.ContainerFit.NumberIndent										
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalReason1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorName1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalTherapyDate1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration1.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalReason2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorName2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorAddress2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalTherapyDate2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration2.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration2.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalReason3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorName3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorAddress3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalTherapyDate3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration3.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration3.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalReason4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorName4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorAddress4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalTherapyDate4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration4.Short.Single.Item1.Margin{ :type => "text" }															
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration4.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalReason5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorName5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorAddress5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalTherapyDate5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration5.Short.Single.Item1.Margin{ :type => "text" }					
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDuration5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 5.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderVomitingBlood" } Apakah kondisi Diabetes Mellitus ini disertai komplikasi organ lain sebagai berikut?
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsVision.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "visiondistruption" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsVision" } Gangguan penglihatan
-												
+
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsBloodPressure.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "hypertension" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsBloodPressure" } Tekanan darah tinggi
-						
+
 						%br
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsKidney.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "kidneyproblem" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsKidney" } Gangguan ginjal dan/ saluran kemih
-						
+
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsSensor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "censorikproblem" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsSensor" } Gangguan sensorik, termasuk kebas dan panas di kaki
 						%br
-						
-						%input#RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "bloodproblem" }	
+
+						%input#RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "bloodproblem" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders" } Kelainan darah		
-						
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders" } Kelainan darah
+
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsDiabeticComa.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "diabetikum" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsDiabeticComa" } Koma diabetikum
 						%br
-												
+
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsHeartDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "heartproblem" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsHeartDisorders" } Gangguan jantung dan/pembuluh darah
-																		
+
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsOthers" } Lainnya, sebutkan
-						%input#TextPolicyHolderDiabetesWithComplicationsOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }		
+						%input#TextPolicyHolderDiabetesWithComplicationsOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.                                                         
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderDiabetesAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }
-					%br								
+						%input#TextPolicyHolderDiabetesDBAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }
+					%br
 
 				%section#SectionDeclaration
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
