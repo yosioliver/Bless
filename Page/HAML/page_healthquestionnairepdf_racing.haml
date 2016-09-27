@@ -13,29 +13,31 @@
 		:javascript
 
 			// DOCUMENT READY
-			
+
 			$(document).ready(function()
 			{
 				// SECTION GENERAL
-				
-				boxGenerator("#TextPolicyHolderFullName", 24, boxTypeWithoutLabel, null);				
+
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderSPAJNumber", 24, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
-				
+
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
-				
+
 				// SETUP
-				
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Olahraga Motor / Sepeda Motor");
 			});
@@ -56,37 +58,37 @@
 
 			%section#SectionNote
 				= Haml::Engine.new(File.read("header_healthquestionnairepdf_note.haml")).render
-			
+
 		/ MAIN
 
 		%main
 			%form
 				%section#SectionCustomer
-					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_activitypolicyholder.haml")).render
-				
+					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
+
 				/ FIELDSET
-				
+
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				
+
 				%fieldset
-					%span.Number.Single.PositionerLeft 1. 						
+					%span.Number.Single.PositionerLeft 1.
 					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCActivity" } Apakah jenis kegiatan olah raga motor yang Anda lakukan?
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCActivity.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 2.
 					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCVehicleModel" } Apakah jenis kendaraan bermotor yang Ada kendaran? (Sebutkan model, tahun pembuatan, ukuran mesin, dan kategori secara terperinci)
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCVehicleModel.Full.Single.Item{ :type => "text" }
 					%br
-						
+
 					%span.Number.Single.PositionerLeft 3.
 					%label.Wrap.Full.PositionerLeft Sebutkan tujuan kegiatan olah raga motor/ sepeda motor yang Anda lakukan
-					%br	
-					
+					%br
+
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCActivityPurposeEntertainment.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "entertainment" }
 						%div.BoxRound.PositionerLeft
@@ -108,59 +110,59 @@
 						%div.BoxRound.PositionerLeft
 						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeSponsor" } Sponsor
 					%br
-				
+
 					%span.Number.Single.PositionerLeft 4.
 					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCStillActive" } Berapa lama Anda aktif dalam olah raga ini?
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCStillActive.Full.Single.Item{ :type => "text" }
 					%br
-					
-					%span.Number.Single.PositionerLeft 5. 
+
+					%span.Number.Single.PositionerLeft 5.
 					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCPlace" } Di mana Anda melakukan perlombaan? (Sebutkan nama semua acara yang diselenggarakan)
 					%br
 					%div.RadioButton.NumberIndent
-						%input#TextPolicyHolderRacingRCPlace.Full.Single.Item{ :type => "text" }	
+						%input#TextPolicyHolderRacingRCPlace.Full.Single.Item{ :type => "text" }
 					%br
-															
+
 					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					
+
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft 6.
 					%label.Wrap.PositionerLeft Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
 					%br
-					
+
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Lisensi/Sertifikat
 						%label.Short.Single.Item1.Center Tanggal Perolehan
 						%label.Short.Single.Item1.Center Tanggal Perpanjangan
-					%div.ContainerFit.NumberIndent						
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRacingRCLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text" }					
-					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderRacingRCLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRacingRCLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text" }					
-					%div.ContainerFit.NumberIndent						
+						%input#TextPolicyHolderRacingRCLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text" }
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCLicenseCertificate3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateExtention3.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent						
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCLicenseCertificate4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateExtention4.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent						
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCLicenseCertificate5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderRacingRCLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text" }					
+						%input#TextPolicyHolderRacingRCLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 7.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCParticipating" } Apakah Anda berpartisipasi atau berniat untuk berpartisipasi dalam setiap kompetisi?
-					%br					
+					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCParticipatingNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCParticipating", :value => "false" }
 						%div.BoxRound.PositionerLeft
@@ -170,14 +172,14 @@
 						%input#RadioButtonPolicyHolderRacingRCParticipatingYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCParticipating", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCParticipatingYes" } Ya. Jelaskan secara rinci
-					%br					
+					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCParticipatingLocationDesc.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 8.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCClubMember" } Apakah Anda anggota suatu klub atau asosiasi balap?
-					%br					
+					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCClubMemberNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCClubMember", :value => "false" }
 						%div.BoxRound.PositionerLeft
@@ -187,14 +189,14 @@
 						%input#RadioButtonPolicyHolderRacingRCClubMemberYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCClubMember", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCClubMemberYes" } Ya. Jelaskan secara rinci
-					%br					
+					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCClubMemberDesc.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 9.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCAccident" } Pernahkah Anda mengalami kecelakaan atau pelanggaran pengunaan/pencabutan lisensi?
-					%br					
+					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCAccident", :value => "false" }
 						%div.BoxRound.PositionerLeft
@@ -204,18 +206,18 @@
 						%input#RadioButtonPolicyHolderRacingRCAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCAccident", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCAccidentYes" } Ya. Jelaskan secara rinci
-					%br					
+					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCAccidentDesc.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 10.
 					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCAdditionalInfo" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCAdditionalInfo.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
