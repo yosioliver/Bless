@@ -252,7 +252,7 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderTravelingTVJobDescription.Line.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderTravelingTVTripStarted"} d. Tanggal dimulai:
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderTravelingTVTripStarted"} d. Tanggal mulai perjalan bisnis :
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#DatePolicyHolderTravelingTVTripStarted.Line.Full.Single.Item{ :type => "text", "data-field" => "date" }
@@ -288,12 +288,13 @@
 						%input#TextPolicyHolderTravelingTVContract.Line.Full.Single.Item{ :type => "text" }
 					%br
 
-					%span.Number.Single.PositionerLeft 8.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTravelingTVAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%div.ContainerFit
+						%span.NumberFix.Single.Item 8.
+						%label.Single.Item{ :for => "TextPolicyHolderTravelingTVAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderTravelingTVAdditionalInformation.Full.Single.Item{ :type => "text" }
-						%br
+					%br
 
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render

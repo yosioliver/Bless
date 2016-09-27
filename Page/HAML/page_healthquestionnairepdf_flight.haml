@@ -93,7 +93,10 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightPlaneType" } Sebutkan jenis pesawat apakah yang Anda terbangkan?
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderFlightPlaneType" }
+						Sebutkan jenis pesawat apakah yang Anda terbangkan / tumpangi ?
+						%br
+						Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 
 					%div.ContainerFit.NumberIndent
@@ -101,7 +104,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 4.
-					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightLicenseList" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki:
+					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightLicenseList" } Mohon sebutkan secara rinci Lisensi / Sertifikat penerbangan yang Anda miliki:
 					%br
 					-#
 						%div.ContainerFit
@@ -116,7 +119,7 @@
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Lisensi/Sertifikat
 						%label.Short.Single.Item1.Center Tanggal Perolehan
-						%label.Short.Single.Item1.Center Tanggal Perpanjangan
+						%label.Short.Single.Item1.Center Masa Berlaku
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderFlightLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
@@ -140,8 +143,11 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 5.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightScope" } Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
-					%div.RadioButton.NumberIndent
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightScope" }
+						Apakah Anda berencana untuk merubah cakupan lisensi yang saat ini Anda miliki?
+						%br
+						Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%div.RadioButton.NumberIndent.PositionerRight
 						%input#RadioButtonPolicyHolderFlightScopeYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightScope", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightScopeYes" } Ya
@@ -149,7 +155,6 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightScopeNo" } Tidak
 					%br
-					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightScopeDesc" } Jika ya, mohon jelaskan secara rinci :
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightScopeDesc.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
@@ -160,8 +165,8 @@
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightClub", :style => "margin-top: 30px;" } Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
-					%div.RadioButton.NumberIndent
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightClub", :style => "margin-top: 30px;" } Apakah Anda anggota suatu klub atau asosiasi kegiatan penerbangan?
+					%div.RadioButton.PositionerRight
 						%input#RadioButtonPolicyHolderFlightClubYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightClub", :value => "true", :style => "margin-top: 30px;" }
 						%div.BoxRound.PositionerLeft{ :style => "margin-top: 30px;" }
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightClubYes", :style => "margin-top: 30px;" } Ya
@@ -169,13 +174,13 @@
 						%div.BoxRound.PositionerLeft{:style => "margin-top: 30px;"}
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightClubNo", :style => "margin-top: 30px;" } Tidak
 					%br
-					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightIsClubDesc" } Jika ya, mohon jelaskan secara rinci :
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightIsClubDesc" } Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightIsClubDesc.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 7.
-					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightCondition" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini
+					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightCondition" } Mohon lengkapi kolom pertanyaan di bawah ini sesuai dengan jumlah jam terbang anda.
 					%br
 					-#
 						%div.ContainerFit
@@ -261,7 +266,10 @@
 						%br
 
 					%span.Number.Single.PositionerLeft 8.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightFrom" } Darimana Anda Terbang?
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderFlightFrom" }
+						Nama lokasi / tempat / bandara mulai penerbangan.
+						%br
+						Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightFrom.Full.Single.Item.PositionerLeft{ :type => "text" }
@@ -269,7 +277,7 @@
 
 					%span.Number.Single.PositionerLeft 9.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAirportControl" } Apakah Anda terbang dari bandara control?
-					%div.RadioButton.NumberIndent
+					%div.RadioButton.PositionerRight
 						%input#RadioButtonPolicyHolderFlightAirportControlYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightAirportControl", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAirportControlYes" } Ya
@@ -277,14 +285,14 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAirportControlNo" } Tidak
 					%br
-					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightPilotAirportControlDesc" } Jika ya, mohon jelaskan secara rinci:
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightPilotAirportControlDesc" } Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightAirportControlDesc.Full.Single.Item.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 10.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAccidentFL" } Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
-					%div.RadioButton.NumberIndent
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAccidentFL" } Pernahkah Anda mengalami kecelakaan terbang atau pelanggaran pengunaan / pencabutan lisensi?
+					%div.RadioButton.NumberIndent.PositionerRight
 						%input#RadioButtonPolicyHolderFlightAccidentFLYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightAccidentFL", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAccidentFLYes" } Ya
@@ -292,14 +300,14 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightAccidentFLNo" } Tidak
 					%br
-					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightAccidentDesc" } Jika ya, mohon jelaskan secara rinci :
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightAccidentDesc" } Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightAccidentFLDesc.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 11.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightNoFly" } Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
-					%div.RadioButton.NumberIndent
+					%div.RadioButton.PositionerRight
 						%input#RadioButtonPolicyHolderFlightNoFlyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightNoFly", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightNoFlyYes" } Ya
@@ -307,13 +315,13 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightNoFlyNo" } Tidak
 					%br
-					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightNoFlyDesc" } Jika ya, mohon jelaskan secara rinci :
+					%label.Wrap.Long.NumberIndent{ :for => "TextPolicyHolderFlightNoFlyDesc" } Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightNoFlyDesc.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 12.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightOtherInfo" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightOtherInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderFlightOtherInfo.Full.Single.Item{ :type => "text" }
