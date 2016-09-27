@@ -1670,8 +1670,6 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 	}
 }
 
-
-
 function initiateArrayRelationshipWithProspectiveInsured(objectContent)
 {
 	objectContent.push({ value: stringStateNotSelected, text: "Please Select" });
@@ -2467,7 +2465,7 @@ function getFromDatabase(objectContent, stringPageType)
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
 									$(stringCellJQueryID).append(stringValue);
-									
+
 									// FOR NUMBER
 										
 									numberGenerator(stringBeneficiariesListInfix, indexRow);
@@ -2575,7 +2573,22 @@ function getFromDatabase(objectContent, stringPageType)
 						{
 							if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 							{
-								$(stringCellJQueryID).append(stringValue);
+								if (j == 4)
+								{
+									if (stringValue == "female")
+									{
+										$(stringCellJQueryID).append("Wanita");
+									}
+									else
+									{
+										$(stringCellJQueryID).append("Pria");
+									}
+								}
+								else
+								{
+									$(stringCellJQueryID).append(stringValue);
+								}
+
 								return false;
 							}
 							else
@@ -2629,7 +2642,15 @@ function getFromDatabase(objectContent, stringPageType)
 							{
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
-									$(stringCellJQueryID).append(stringValue);
+									if (j == 5)
+									{
+										$(stringCellJQueryID).append(arrayOptionFind(arrayRelationshipWithProspectiveInsured, stringValue));
+									}
+									else
+									{
+										$(stringCellJQueryID).append(stringValue);
+									}
+									
 									return false;
 								}
 								else
