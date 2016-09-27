@@ -82,7 +82,6 @@
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteriaFreeDiving" } FREE Diving
 					%br
-					%hr
 
 					%span.Number.Single.PositionerLeft 2.
 					%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki.
@@ -107,7 +106,6 @@
 						%input#TextPolicyHolderDivingCertificateLicense5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingCertificateDate5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%hr
 
 					%span.Number.Single.PositionerLeft 3.
 					%label.Full.Single.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
@@ -148,7 +146,6 @@
 						%input#TextPolicyHolderDivingHistoryNumOfDiveLast12Months.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDivingHistoryNumOfDiveNext12Months.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%hr
 
 					%section#SectionFooter{ :style => "margin-top: 30px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
@@ -247,7 +244,6 @@
 						%input#TextPolicyHolderDivingParticipationDeepSeaDesc.Full.Single.Item{ :type => "text" }
 					%br
 
-					%hr
 					%span.Number.Single.PositionerLeft 5.
 					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
 					%br
@@ -263,15 +259,13 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingAccidentDVDesc.Full.Single.Item{ :type => "text" }
 					%br
-					%hr
 
 					%span.Number.Single.PositionerLeft{ :for => "TextPolicyHolderDivingAdditionalInformation" } 6.
-					%label.Full.Single.PositionerLeft Mohon memberikan informasi tambahan yang menurut Anda penting
+					%label.Full.Single.PositionerLeft Mohon anda memberikan informasi tambahan lain yang menurut anda penting mungkin dapat membantu proses pengajuan asuransi ini dan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
 					%br
-					%hr
 
 					%section#SectionFooter{ :style => "margin-top: 550px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
