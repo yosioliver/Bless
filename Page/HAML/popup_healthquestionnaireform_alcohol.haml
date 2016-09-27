@@ -3,19 +3,19 @@
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpAlcohol', 'PopUpJunkie')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpAlcohol', 'PopUpJunkie', stringPageInfixTypeCurrent + 'Alcohol', arrayHealthQuestionnaire)" }
-		%h2 KUESIONER GANGGUAN TULANG BELAKANG
+		%h2 KUESIONER ALKOHOL DAN PENGGUNAAN OBAT-OBATAN
 
 		/ MAIN
 
 	%fieldset
 		%form#HealthQuestionnaireMain
-			%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderWeightChangeYes" } 1. Apakah saat ini Anda mengkonsumsi alkohol/obat-obatan?
+			%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonALConsume" } 1. Apakah saat ini Anda mengkonsumsi alkohol/obat-obatan?
 			%div.RadioButton.PositionerRight
-				%input#RadioButtonPolicyHolderAlcoholConsumeYes{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholConsume", :value => "true" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHolderAlcoholConsumeYes" } Ya
+				%input#RadioButtonALConsumeYes{ :type => "radio", :name => "RadioButtonALConsume", :value => "true" }
+				%label.RadioButton{ :for => "RadioButtonALConsumeYes" } Ya
 				%div.Separator
-				%input#RadioButtonPolicyHolderAlcoholConsumeNo{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholConsume", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonPolicyHolderAlcoholConsumeNo" } Tidak
+				%input#RadioButtonALConsumeNo{ :type => "radio", :name => "RadioButtonALConsume", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonALConsumeNo" } Tidak
 			%br
 
 			%label.Medium.PositionerRight Waktu Pengunaan
