@@ -34,11 +34,13 @@
 
 
 				// SECTION MANDATORY
+
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
 
 				// FOOTER
+
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("KUESIONER ALKOHOL DAN PENGGUNAAN OBAT-OBATAN");
 			});
@@ -280,14 +282,14 @@
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpNo" } Tidak
 						%input#RadioButtonPolicyHolderAlcoholALCheckUpNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "false" }
-						%div.BoxRound.PositionerRight						
+						%div.BoxRound.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpYes" } Ya
 						%input#RadioButtonPolicyHolderAlcoholALCheckUpYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci dan berapa lama terjadinya pada kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderAlcoholALCheckUp.Full.Single.Item{ :type => "text" }
 					%br
 
