@@ -24,9 +24,9 @@
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
-				boxGenerator("#DatePolicyHolderAlcoholOnLeaveDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderAlcoholOnLeaveMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderAlcoholOnLeaveYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderAlcoholALOnLeavePeriodDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderAlcoholALOnLeavePeriodMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderAlcoholALOnLeavePeriodYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -83,72 +83,72 @@
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon mengisi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Short.Single.Item1.Center Jenis
+						%label.MediumFix.Single.Item1.Center Jenis
 						%label.Short.Single.Item1.Center Frekuensi
 						%label.Short.Single.Item1.Center Dosis
 						%label.Short.Single.Item1.Center Mulai (Tgl/Bln/Thn)
 						%label.Short.Single.Item1.Center Berhenti (Tgl/Bln/Thn)
 
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Alkohol
+						%label.MediumFix.Single.Item Alkohol
 						%input#TextPolicyHolderAlcoholALFrequency1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd1.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Narkotika
+						%label.MediumFix.Single.Item Narkotika
 						%input#TextPolicyHolderAlcoholALFrequency2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd2.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Amphetamine
+						%label.MediumFix.Single.Item Amphetamine
 						%input#TextPolicyHolderAlcoholALFrequency3.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd3.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Ganja, marijuana
+						%label.MediumFix.Single.Item Ganja, marijuana
 						%input#TextPolicyHolderAlcoholALFrequency4.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd4.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Cocaine
+						%label.MediumFix.Single.Item Cocaine
 						%input#TextPolicyHolderAlcoholALFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd5.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Halusinogen
+						%label.MediumFix.Single.Item Halusinogen
 						%input#TextPolicyHolderAlcoholALFrequency6.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose6.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart6.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd6.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart6.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd6.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Penenang/obat tidur
+						%label.MediumFix.Single.Item Penenang/obat tidur
 						%input#TextPolicyHolderAlcoholALFrequency7.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose7.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart7.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd7.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart7.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd7.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Zat tertentu (lem, thinner)
+						%label.MediumFix.Single.Item Zat tertentu (lem, thinner)
 						%input#TextPolicyHolderAlcoholALFrequency8.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose8.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart8.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd8.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart8.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd8.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Obat penghilang rasa sakit
+						%label.MediumFix.Single.Item Obat penghilang rasa sakit
 						%input#TextPolicyHolderAlcoholALFrequency9.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose9.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart9.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd9.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart9.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd9.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.PositionerLeft Lainnya, sebutkan
+						%label.MediumFix.Single.Item Lainnya, sebutkan
 						%input#TextPolicyHolderAlcoholALFrequency10.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALDose10.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart10.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
-						%input#DatePolicyHolderAlcoholALEnd10.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+						%input#TextPolicyHolderAlcoholALStart10.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd10.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
@@ -206,9 +206,9 @@
 					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALMedicalTreatment" } Apakah Anda menjalani perawatan di rumah sakit karena penggunaan alkohol/obat-obatan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALMedicalTreatmentNo" } Tidak
-						%input#RadioButtonPolicyHolderAlcoholALMedicalTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALMedicalTreatment", :value => "false" }
+						%input#RadioButtonPolicyHolderAlcoholALMedicalTreatmentNo.PositionerRight{ :type => "radio",
+						:name => "RadioButtonPolicyHolderAlcoholALMedicalTreatment", :value => "false" }
 						%div.BoxRound.PositionerRight
-
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALMedicalTreatmentYes" } Ya
 						%input#RadioButtonPolicyHolderAlcoholALMedicalTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALMedicalTreatment", :value => "true" }
 						%div.BoxRound.PositionerRight
@@ -244,7 +244,7 @@
 						%input#TextPolicyHolderAlcoholALContinueTreatmentDoctorName.Full.Single.Item{ :type => "text" }
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderAlcoholALContinueTreatmentDoctorTelephone"} b. No. Telp/Hp
-						%input#TextPolicyHolderAlcoholALContinueTreatmentPhone.Full.Single.Item{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALContinueTreatmentDoctorTelephone.Full.Single.Item{ :type => "text" }
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderAlcoholALContinueTreatmentDoctorAddress"} c. Alamat Dokter
 						%input#TextPolicyHolderAlcoholALContinueTreatmentDoctorAddress.Full.Single.Item{ :type => "text" }
@@ -262,11 +262,11 @@
 						%div.BoxRound.PositionerRight
 					%br
 					%label.NumberIndent.Single.PositionerLeft{ :for => "DatePolicyHolderAlcoholALOnLeave" } Jika “Ya”, kapan:
-					%table#DatePolicyHolderAlcoholALOnLeaveDay.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderAlcoholALOnLeavePeriodDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderAlcoholALOnLeaveMonth.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderAlcoholALOnLeavePeriodMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DatePolicyHolderAlcoholALOnLeaveYear.BoxSquare.PositionerLeft
+					%table#DatePolicyHolderAlcoholALOnLeavePeriodYear.BoxSquare.PositionerLeft
 
 					%div.ContainerFit.NumberIndent.PositionerRight
 						%label.NumberIndent.Single.PositionerRight{ :for => "TextPolicyHolderAlcoholOnLeavePeriod" } Dan berapa lama
@@ -278,23 +278,22 @@
 					%span.Number.Single.PositionerLeft 8.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALCheckUp" } Apakah pernah melakukan pemeriksaan kesehatan sehubungan penggunaan alkohol/obat-obatan?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckuUpNo" } Tidak
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpNo" } Tidak
 						%input#RadioButtonPolicyHolderAlcoholALCheckUpNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "false" }
-						%div.BoxRound.PositionerRight
-
-						%label.Wrap.Single.PositionerRALCheckUpYes" } Ya
-						%input#RadioButtonPolicyHolderAlcoholALCheckUpYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholCheckuUp", :value => "true" }
+						%div.BoxRound.PositionerRight						
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpYes" } Ya
+						%input#RadioButtonPolicyHolderAlcoholALCheckUpYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci dan berapa lama terjadinya pada kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderAlcoholALCheckup.Full.Single.Item{ :type => "text" }
+					%div.ContainerFit.NumberIndent					
+						%input#TextPolicyHolderAlcoholALCheckUp.Full.Single.Item{ :type => "text" }
 					%br
 
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 9.
-						%label.Full.Wrap.Item{ :for => "RadioButtonPolicyHolderAlcoholALAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%label.Full.Wrap.Item{ :for => "TextPolicyHolderAlcoholALAddtionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderAlcoholALAddtionalInformation.Full.Single.Item{ :type => "text" }
