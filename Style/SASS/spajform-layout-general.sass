@@ -64,27 +64,35 @@ main
         .ContainerRight
             justify-content: flex-end
 
-div.Short, div.Short
+div.Tiny
+    min-width: $label_width_short / 2
+    width: $label_width_short / 2
+div.Short
     min-width: $label_width_short
     width: $label_width_short
-div.Medium, div.Medium
+div.Medium
     min-width: $label_width_medium * 1.5
     width: $label_width_medium * 1.5
-div.Long, div.Long
+div.Long
     min-width: $label_width_long
     width: $label_width_long
-div.Long, div.Long
+div.Full
     width: 100%
-div.ShortFix, div.ShortFix
+div.TinyFix
+    width: $label_width_short / 2
+    max-width: $label_width_short / 2
+div.ShortFix
     width: $label_width_short
     max-width: $label_width_short
-div.MediumFix, div.MediumFix
+div.MediumFix
     width: $label_width_medium * 1.5
     max-width: $label_width_medium * 1.5
-div.LongFix, div.LongFix
+div.LongFix
     width: $label_width_long * 2
     max-width: $label_width_long * 2
-
+div.FullFix
+    width: 100%
+    max-width: 100%
 
 /* POP UP */
 

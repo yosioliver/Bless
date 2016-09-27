@@ -80,6 +80,9 @@ main
 
 /* WIDTH */
 
+.Tiny
+	min-width: $label_width_short / 4
+	width: $label_width_short / 4
 .Short
 	min-width: $label_width_short
 	width: $label_width_short
@@ -89,8 +92,11 @@ main
 .Long
 	min-width: $label_width_long
 	width: $label_width_long
-.Long
+.Full
 	width: 100%
+.TinyFix
+	width: $label_width_short / 4
+	max-width: $label_width_short / 4
 .ShortFix
 	width: $label_width_short
 	max-width: $label_width_short
@@ -100,6 +106,9 @@ main
 .LongFix
 	width: $label_width_long * 2
 	max-width: $label_width_long * 2
+.FullFix
+	width: 100%
+	max-width: 100%
 
 
 /* HEIGHT */

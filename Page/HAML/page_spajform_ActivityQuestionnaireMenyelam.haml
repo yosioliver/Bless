@@ -31,21 +31,27 @@
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Lisensi/ Sertifikat
 			%label.Short.Single.Item1.Center.Margin Tanggal Perolehan
+			%label.Short.Single.Item1.Center.Margin Masa Berlaku
 		%div.ContainerFit
-			%input#TextCertificateLicense1.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextCertificateDate1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateLicense1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateDate1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateExpired1.Short.Single.Item1.Margin{ :type => "text"}
 		%div.ContainerFit
-			%input#TextCertificateLicense2.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextCertificateDate2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateLicense2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateDate2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateExpired2.Short.Single.Item1.Margin{ :type => "text"}
 		%div.ContainerFit
-			%input#TextCertificateLicense3.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextCertificateDate3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateLicense3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateDate3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateExpired3.Short.Single.Item1.Margin{ :type => "text"}
 		%div.ContainerFit
-			%input#TextCertificateLicense4.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextCertificateDate4.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateLicense4.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateDate4.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateExpired4.Short.Single.Item1.Margin{ :type => "text"}
 		%div.ContainerFit
-			%input#TextCertificateLicense5.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextCertificateDate5.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateLicense5.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateDate5.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextDVCertificateExpired5.Short.Single.Item1.Margin{ :type => "text"}
 		%br
 		%hr
 
@@ -157,7 +163,7 @@
 			%input#RadioButtonParticipationDeepSeaNo{ :type => "radio", :name => "RadioButtonParticipationDeepSea", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonParticipationDeepSeaNo" } Tidak
 		%br
-		%label.medium.Single.Item Jika menjawab ‘ya’ untuk pernyataan di atas, mohon menjelaskan lokasi, kapan, frekuensi, dan tujuan di kemudian hari:
+		%label.medium.Single.Item Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (lokasi, kapan, frekuensi, tujuan dan lain-lain):
 		%br    
 		%input#TextParticipationDeepSeaDesc.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
@@ -174,7 +180,7 @@
 		%input#TextAccidentDVDesc.Full.Multi.Item1.Margin{ :type =>"text" , :placeholder => "Mohon memberikan rincian termasuk tanggal:"}
 		%hr
 
-		%label#Wrap.Single.PositionerLeft 6. Mohon memberikan informasi tambahan yang menurut Anda penting
+		%label#Wrap.Single.PositionerLeft 6. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br
 		%input#TextAdditionalInformation.Full.Multi.Item1.Margin{ :type =>"text" , :placeholder => "Mohon memberikan rincian termasuk tanggal:"}
 		%br

@@ -11,11 +11,17 @@
 
 	%fieldset
 		%label.Single.PositionerLeft 1. Anda termasuk dalam kesatuan apa di Kemiliteran/Kepolisian ini? 
-		%input#TextUnit.Full.Single.Margin{ :type =>"text" }
+		%div.RadioButton.PositionerRight
+			%input#RadioButtonUnitMilitary{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "military" }
+			%label.RadioButton{ :for => "RadioButtonUnitMilitary" } Militer
+			%div.Separator
+			%input#RadioButtonUnitPolice{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "police" }
+			%label.RadioButton{ :for => "RadioButtonUnitPolice" } Kepolisian
 		%br
 		%hr
 
-		%label.Single.PositionerLeft 2. Mohon jelaskan divisi/bagian, jabatan, pangkat dan tugas Anda saat ini?  
+		%label.PositionerLeft 2. Mohon jelaskan divisi/bagian, jabatan, pangkat dan tempat bertugas Anda saat ini pada kolom dibawah ini:
+		%br
 		%input#TextDuty.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -79,13 +85,14 @@
 			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersNo" } Tidak
 			%input#TextRiskActivityOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-		%label.Single.PositionerLeft Jika jawaban ya, mohon memberikan perincian jelas:
+		%label.Single.PositionerLeft Jika jawaban "Ya", mohon menjelaskan secara rinci pada kolom dibawah ini
 		%br
 		%input#TextRiskActivityOtherDescAdd.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Single.PositionerLeft 4. Mohon memberikan rincian tugas Anda yang sebenarnya?   
+		%label.Single.PositionerLeft 4. Mohon dapat dijabarkan dengan jelas rincian tugas Anda saat ini pada kolom dibawah ini:
+		%br
 		%input#TextDutyDetails.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -98,13 +105,13 @@
 			%input#RadioButtonInDangerLocationNo{ :type => "radio", :name => "RadioButtonInDangerLocation", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonInDangerLocationNo" } Tidak
 		%br				
-		%label.Single.PositionerLeft Jika Ya, Jelaskan dimana dan kapan
+		%label.Single.PositionerLeft Jika jawaban "Ya", mohon menjelaskan secara rinci pada kolom dibawah ini
 		%input#TextInDangerLocationDesc.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Single.PositionerLeft 6. Mohon Anda sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:    
-		%input#TextOtherInfo.Full.Single.Margin{ :type =>"text" }
+		%label.Single.PositionerLeft 6. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+		%input#TextOtherInfo.Full.Single.Margin{ :type => "text" }
 		%br
 		%hr
 
