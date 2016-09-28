@@ -71,6 +71,7 @@ var stringButtonViewPrefix = "ButtonView";
 var stringButtonDeletePrefix = "ButtonDelete";
 var stringSharePercentage = 0;
 var arrayBeneficiariesListTableHeader = ["FullName", stringIDDay, stringIDMonth, stringIDYear, "Sex", "Relationship", "Nationality"];
+var arrayBeneficiariesListPopUpHeader = ["FullName", "Birthday", "Sex", "Relationship", "Nationality"];
 var intSharePercentage = 0;
 var stringSharePercentageSuffix = "SharePercentage";
 var stringSPAJProposalInfix = "SPAJProposal";
@@ -3257,6 +3258,10 @@ function releaseInfix(stringKey)
 	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringProspectiveInsuredPrefix)
 	{
 		return stringKey.substring(stringProspectiveInsuredPrefix.length, stringKey.length);
+	}
+	else if (stringKey.substring(0, stringBeneficiariesListInfix.length) == stringBeneficiariesListInfix)
+	{
+		return stringKey.substring(stringBeneficiariesListInfix.length, stringKey.length);
 	}
 	else
 	{

@@ -939,9 +939,6 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 			if (stringContentSickness == arraySicknessHeader[k])
 			{
-
-
-				
 				stringContainerSicknessJavaScriptID = stringContentSickness + intQuestionNumber;
 				stringContainerSicknessJQueryID = stringKres + stringContainerSicknessJavaScriptID;
 
@@ -1012,6 +1009,94 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 		intQuestionNumber ++;
 		intFlagQuestionNumber = 0;
+	}
+
+
+	// BENEFICIARIES LIST
+
+	var intBeneficiariesListTotalRow = getLastID(arrayContent, "TextBeneficiariesListFullName");
+	var intBeneficiariesListID;
+	intQuestionNumber = 1;
+	intFlagQuestionNumber = 0;
+	var intFlagBeneficiariesListID = 0;
+	var stringContainerBeneficiariesListJavaScriptID;
+	var stringContainerBeneficiariesListJQueryID;
+
+	for (var k = 0; k < intBeneficiariesListTotalRow; k++)
+	{
+		for (var j = 0; j < arrayBeneficiariesListPopUpHeader.length; j++)
+		{
+			for (var i = 0; i < arrayContent.length; i++)
+			{
+				stringKey = arrayContent[i].elementID;
+				stringValue = arrayContent[i].Value;
+				stringKeyWithoutPrefix = releasePrefix(stringKey);
+				stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
+
+				stringContentSuffix = stringKeyWithoutInfix.substring(0, arrayBeneficiariesListPopUpHeader[j].length);
+				intBeneficiariesListID = stringKeyWithoutInfix.substring(arrayBeneficiariesListPopUpHeader[j].length, stringKeyWithoutInfix.length);
+
+				if (intBeneficiariesListID == k)
+				{
+					stringContainerBeneficiariesListJavaScriptID = stringBeneficiariesListPrefix + k;
+					stringContainerBeneficiariesListJQueryID = stringKres + stringContainerBeneficiariesListJavaScriptID;
+
+					if (intFlagQuestionNumber == intQuestionNumber)
+					{
+						$(stringContainerBeneficiariesListJQueryID).append
+						(
+							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
+						);
+					}
+					else
+					{
+						if (intQuestionNumber == 1)
+						{
+							$(stringLayoutJQueryID).append
+							(
+								"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Disease Form" + "</h3>" + 
+								"<br>" + 
+								"<div class='ContainerFit'>" + 
+									"<span class='ShortFix Single Item Margin'>" + "Pertanyaan" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Nama Penyakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Mulai Sakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Lama Sakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Nama Dokter" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Rumah Sakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Alamat" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Telepon" + "</span>" + 
+								"</div>"
+							);
+						}
+						else
+						{
+
+						}
+
+						$(stringLayoutJQueryID).append
+						(
+							"<div class='ContainerFit' id='" + stringContainerBeneficiariesListJavaScriptID + "'></div>"
+						);
+
+						$(stringContainerBeneficiariesListJQueryID).append
+						(
+							"<span class='ShortFix Single Item Margin'>" + stringContentBeneficiariesList + "</span>"
+						);
+
+						$(stringContainerBeneficiariesListJQueryID).append
+						(
+							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
+						);
+
+						intFlagQuestionNumber = intQuestionNumber;
+					}
+				}
+				else
+				{
+
+				}
+			}
+		}
 	}
 }
 
@@ -1212,9 +1297,13 @@ function setDatePDFForHealthQuestionnaire(stringID, stringContent)
 			{
 				setBoxGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
 			}
-			else if ($(stringKres + stringID + arrayDateID[i]).is("div") == true)
+			else if ($(stringKres + stringID + arrayTimeID[i]).is("div") == true)
 			{
 				setLineGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
+			}
+			else if ($(stringKres + stringID + arrayTimeID[i]).is("input[type='text']") == true)
+			{
+				setTextGeneral(stringID + arrayTimeID[i], arrayTimeString[i]);	
 			}
 			else
 			{
