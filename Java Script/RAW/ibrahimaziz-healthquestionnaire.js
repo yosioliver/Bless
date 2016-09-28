@@ -1013,7 +1013,6 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	// BENEFICIARIES LIST
 
 	var intBeneficiariesListTotalRow = getLastID(arrayContent, "TextBeneficiariesListFullName");
-	alert(intBeneficiariesListTotalRow);
 	var intBeneficiariesListID;
 	intQuestionNumber = 1;
 	intFlagQuestionNumber = 0;
@@ -1107,7 +1106,6 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	// SPAJ PROPOSAL
 
 	var intSPAJProposalTotalRow = getLastID(arrayContent, "TextSPAJProposalCompanyName");
-	alert(intSPAJProposalTotalRow);
 	var intSPAJProposalID;
 	intQuestionNumber = 1;
 	intFlagQuestionNumber = 0;
