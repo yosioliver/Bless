@@ -95,7 +95,7 @@ function onSuccess (ret)
 			else if (stringPageTypeCurrent == stringPageTypeAmandment)
 			{
 				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
-				getFromDatabaseForAmandment(objectContent.result.readFromDB, stringPageInfixType, "FieldsetAmandment");
+				getFromDatabaseForAmandment(objectContent.result.readFromDB, stringPageInfixTypeCurrent, "FieldsetAmandment");
 			}
             else
 			{
