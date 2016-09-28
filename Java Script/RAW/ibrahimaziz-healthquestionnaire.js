@@ -1269,6 +1269,6 @@ function releaseInfix(stringKey)
 	}
 	else
 	{
-		
+		return "";
 	}
 }

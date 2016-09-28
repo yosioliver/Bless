@@ -918,8 +918,8 @@ function textPopUpSetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix,
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		$(stringInputJQueryID).val("");
 		
-        var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
+        var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
+        var stringKey = getPrefix(stringInputJavaScriptID) + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
         var stringValue = arrayFind(arrayContent, stringKey);
         
         if (stringValue == null || stringValue == undefined)
@@ -943,8 +943,8 @@ function textPopUpGetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix,
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		$(stringInputJQueryID).val("");
 		
-		var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
+		var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID;)
+        var stringKey = getPrefix(stringInputJavaScriptID) + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
         var stringValue = arrayFind(arrayContent, stringKey);
 		
 		if (validateTextGeneral(stringInputJQueryID) == true)
@@ -1142,7 +1142,7 @@ function buttonPopUpHealthGenerator()
         {
             stringInputJavaScriptID = $(this).attr("id");
             stringInputJQueryID = stringKres + stringInputJavaScriptID;
-            stringDetailKey = stringPrefixText + stringInfixName + stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
+            stringDetailKey = getPrefix(stringInputJavaScriptID) + stringInfixName + stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
 
             if (validateTextGeneral(stringInputJQueryID) == false)
             {
