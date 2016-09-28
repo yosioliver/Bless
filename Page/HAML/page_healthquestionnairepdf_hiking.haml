@@ -27,23 +27,7 @@
 				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
-				// SECTION MANDATORY
-
-				boxGenerator("#DatePolicyHolderJointAtritisComplainDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderJointAtritisComplainMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderJointAtritisComplainYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainFirstAttackDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainFirstAttackMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainFirstAttackYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainLastAriseDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainLastAriseMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainLastAriseYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainConsulToDoctorLastYear", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderChestPainTakeLeaveIfYesYear", 4, boxTypeWithoutLabel, null);
+				// SECTION MANDATORY								
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -139,25 +123,25 @@
 						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
 						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPLocation2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen2.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
 						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPLocation3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen3.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
 						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPLocation4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen4.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
 						/ %input#DatePolicyHolderHikingHKUPNomor1.Short.Single.Item1.Margin{ :type => "text", :value => "1. " }
-						%input#TextPolicyHolderHikingHKUPLocation1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderHikingHKUPWhen1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPLocation5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKUPWhen5.Short.Single.Item1.Margin{ :type => "text" }
 
 					%span.Number.Single.PositionerLeft 6.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Mohon sebutkan peralatan apa saja yang digunakan sewaktu melakukan olah raga ini.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHaveOperation" } Mohon sebutkan peralatan apa saja yang digunakan sewaktu melakukan olah raga ini.
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointHaveOperation" } Apakah diberi suntikan?
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHaveOperation" } Apakah diberi suntikan?
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsAltimeter.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "altimeter" }
@@ -249,7 +233,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 7.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointComplainDetail" } Dimana/lokasi yang paling sering Anda datangi untuk melakukan olah raga ini?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingComplainDetail" } Dimana/lokasi yang paling sering Anda datangi untuk melakukan olah raga ini?
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Rata-rata tinggi dan derajat
@@ -258,35 +242,35 @@
 						%label.Short.Single.Item1.Center Tanggal
 						%label.Short.Single.Item1.Center Rencana tinggi dan derajat pendakian
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#DatePolicyHolderHikingHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle2.Short.Single.Item1.Margin{ :type => "text" }						
+						%input#TextPolicyHolderHikingHKBOTTOMHeight2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAngle2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#DatePolicyHolderHikingHKBOTTOMWhen2.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMPlanHeightAndAngle2.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMHeight3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAngle3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#DatePolicyHolderHikingHKBOTTOMWhen3.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMPlanHeightAndAngle3.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMHeight4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAngle4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#DatePolicyHolderHikingHKBOTTOMWhen4.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMPlanHeightAndAngle4.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderJointHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMAngle1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderJointHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMHeight5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMAngle5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#DatePolicyHolderHikingHKBOTTOMWhen5.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderHikingHKBOTTOMPlanHeightAndAngle5.Short.Single.Item1.Margin{ :type => "text" }
 
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 8.
@@ -323,7 +307,7 @@
 
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 10.
-						%label.Wrap.Item{ :for => "TextPolicyHolderJointOtherInformation" } Apakah Anda mendaki hanya untuk sekedar?
+						%label.Wrap.Item{ :for => "TextPolicyHolderHikingOtherInformation" } Apakah Anda mendaki hanya untuk sekedar?
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKSport" } Olah raga
 					%div.RadioButton.PositionerLeft

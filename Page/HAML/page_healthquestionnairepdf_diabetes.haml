@@ -220,17 +220,17 @@
 						%br
 
 					%div.ContainerFit.NumberIndent
-						%label.Short.Single.Item1.Center Jenis Pemeriksaan
+						%label.MediumFix.Single.Item1.Center Jenis Pemeriksaan
 						%label.Short.Single.Item1.Center I
 						%label.Short.Single.Item1.Center II
 						%label.Short.Single.Item1.Center III
 					%div.ContainerFit.NumberIndent
-						%input#NumberPolicyHolderResultGlucoseLevel.Short.Single.Item1.Margin{ :type => "text", :value => "Kadar gula darah", :disabled => "true" }
+						%label.MediumFix.Single.Item Kadar gula darah
 						%input#TextPolicyHolderDiabetesResultGlucoseLevelI.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultGlucoseLevelII.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultGlucoseLevelIII.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#DatePolicyHolderDiabetesResultLastCheck.Short.Single.Item1.Margin{ :type => "text", :value => "Tanggal pemeriksaan terakhir", :disabled => "true" }
+						%label.MediumFix.Single.Item Tanggal pemeriksaan terakhir
 						%input#TextPolicyHolderDiabetesResultLastCheckI.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultLastCheckII.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderDiabetesResultLastCheckIII.Short.Single.Item1.Margin{ :type => "text" }
@@ -366,9 +366,10 @@
 
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-
-					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+										
+					%div.ContainerFit
+						%span.NumberFix.Single{ :style => "margin-top: 30px;"} 6
+						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }
