@@ -918,8 +918,8 @@ function textPopUpSetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix,
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		$(stringInputJQueryID).val("");
 		
-        var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
+        var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
+        var stringKey = getPrefix(stringInputJavaScriptID) + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
         var stringValue = arrayFind(arrayContent, stringKey);
         
         if (stringValue == null || stringValue == undefined)
@@ -943,8 +943,8 @@ function textPopUpGetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix,
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		$(stringInputJQueryID).val("");
 		
-		var stringInputNameWithoutPrefix = stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
-        var stringKey = stringPrefixText + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
+		var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
+        var stringKey = getPrefix(stringInputJavaScriptID) + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
         var stringValue = arrayFind(arrayContent, stringKey);
 		
 		if (validateTextGeneral(stringInputJQueryID) == true)
@@ -1142,7 +1142,7 @@ function buttonPopUpHealthGenerator()
         {
             stringInputJavaScriptID = $(this).attr("id");
             stringInputJQueryID = stringKres + stringInputJavaScriptID;
-            stringDetailKey = stringPrefixText + stringInfixName + stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
+            stringDetailKey = getPrefix(stringInputJavaScriptID) + stringInfixName + stringInputJavaScriptID.substring(stringPrefixText.length, stringInputJavaScriptID.length);
 
             if (validateTextGeneral(stringInputJQueryID) == false)
             {
@@ -1669,8 +1669,6 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		}
 	}
 }
-
-
 
 function initiateArrayRelationshipWithProspectiveInsured(objectContent)
 {
@@ -2467,7 +2465,7 @@ function getFromDatabase(objectContent, stringPageType)
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
 									$(stringCellJQueryID).append(stringValue);
-									
+
 									// FOR NUMBER
 										
 									numberGenerator(stringBeneficiariesListInfix, indexRow);
@@ -2575,7 +2573,22 @@ function getFromDatabase(objectContent, stringPageType)
 						{
 							if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 							{
-								$(stringCellJQueryID).append(stringValue);
+								if (j == 4)
+								{
+									if (stringValue == "female")
+									{
+										$(stringCellJQueryID).append("Wanita");
+									}
+									else
+									{
+										$(stringCellJQueryID).append("Pria");
+									}
+								}
+								else
+								{
+									$(stringCellJQueryID).append(stringValue);
+								}
+
 								return false;
 							}
 							else
@@ -2629,7 +2642,15 @@ function getFromDatabase(objectContent, stringPageType)
 							{
 								if ($(stringCellJQueryID).text() == "" || $(stringCellJQueryID).text() == undefined || $(stringCellJQueryID).text() == null)
 								{
-									$(stringCellJQueryID).append(stringValue);
+									if (j == 5)
+									{
+										$(stringCellJQueryID).append(arrayOptionFind(arrayRelationshipWithProspectiveInsured, stringValue));
+									}
+									else
+									{
+										$(stringCellJQueryID).append(stringValue);
+									}
+									
 									return false;
 								}
 								else
@@ -3225,4 +3246,20 @@ function inputListener()
 	{
 		booleanInputChangeState = true;
 	});
+}
+
+function releaseInfix(stringKey)
+{
+	if (stringKey.substring(0, stringPolicyHolderPrefix.length) == stringPolicyHolderPrefix)
+	{
+		return stringKey.substring(stringPolicyHolderPrefix.length, stringKey.length);
+	}
+	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringProspectiveInsuredPrefix)
+	{
+		return stringKey.substring(stringProspectiveInsuredPrefix.length, stringKey.length);
+	}
+	else
+	{
+		return "";
+	}
 }

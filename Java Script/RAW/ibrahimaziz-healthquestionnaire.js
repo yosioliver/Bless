@@ -896,11 +896,14 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 					$(stringLayoutJQueryID).append
 					(
-						"<span class='Number Single PositionerLeft'>" + intQuestionNumber + ". " + "</span>" + 
-						"<label for='" + stringKey + "' class='Single PositionerLeft' >" + stringQuestionPrefix + arrayGeneralFormInIndonesia[i] + "</label>" + 
-						"<br>" + 
-						"<textarea id='" + stringKey + "' class='Full Double PositionerLeft'>" + stringValue + "</textarea>" + 
-						"</br>"
+						"<div class='ContainerFit'>" + 
+						"<span class='NumberFix Single Item'>" + intQuestionNumber + ". " + "</span>" + 
+						"<label for='" + stringKey + "' class='Single Full Item' >" + stringQuestionPrefix + arrayGeneralFormInIndonesia[i] + "</label>" + 
+						"</div>" + 
+						"<div class='ContainerFit NumberIndent'>" + 
+						"<textarea id='" + stringKey + "' class='Full Double Item'>" + stringValue + "</textarea>" + 
+						"</div>"
+						
 					);
 				}
 				else
@@ -952,15 +955,17 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 					{
 						$(stringLayoutJQueryID).append
 						(
+							"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Disease Form" + "</h3>" + 
+							"<br>" + 
 							"<div class='ContainerFit'>" + 
-								// "<span class='ShortFix Single Item Margin'>" + "Nama Penyakit" + "</span>" + 
-								"<span class='Short Single Item Margin'>" + arrayHealthTableHeader[0] + "</span>" + 
-								"<span class='Short Single Item Margin'>" + arrayHealthTableHeader[1] + "</span>" + 
-								"<span class='Short Single Item Margin'>" + arrayHealthTableHeader[2] + "</span>" + 
-								"<span class='Short Single Item Margin'>" + arrayHealthTableHeader[3] + "</span>" + 
-								"<span class='Short Single Item Margin'>" + arrayHealthTableHeader[4] + "</span>" + 
-								"<span class='Short Single Item Margin'>" + arrayHealthTableHeader[5] + "</span>" + 
-								"<span class='Short Single Item Margin'>" + arrayHealthTableHeader[6] + "</span>" + 
+								"<span class='ShortFix Single Item Margin'>" + "Pertanyaan" + "</span>" + 
+								"<span class='Tiny Single Item Margin'>" + "Nama Penyakit" + "</span>" + 
+								"<span class='Tiny Single Item Margin'>" + "Mulai Sakit" + "</span>" + 
+								"<span class='Tiny Single Item Margin'>" + "Lama Sakit" + "</span>" + 
+								"<span class='Tiny Single Item Margin'>" + "Nama Dokter" + "</span>" + 
+								"<span class='Tiny Single Item Margin'>" + "Rumah Sakit" + "</span>" + 
+								"<span class='Tiny Single Item Margin'>" + "Alamat" + "</span>" + 
+								"<span class='Tiny Single Item Margin'>" + "Telepon" + "</span>" + 
 							"</div>"
 						);
 					}
@@ -974,10 +979,10 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 						"<div class='ContainerFit' id='" + stringContainerSicknessJavaScriptID + "'></div>"
 					);
 
-					/* $(stringContainerSicknessJQueryID).append
+					$(stringContainerSicknessJQueryID).append
 					(
 						"<span class='ShortFix Single Item Margin'>" + stringContentSickness + "</span>"
-					); */
+					);
 
 					intFlagQuestionNumber = intQuestionNumber;
 				}
@@ -990,7 +995,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 					{
 						$(stringContainerSicknessJQueryID).append
 						(
-							"<input type='text' class='Short Single Item Margin' value='" + stringValue + "'/>"
+							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
 						);
 					}
 					else
@@ -1256,19 +1261,3 @@ function tablePDFStaticGeneralGenerator(stringTableJavaScriptID, arrayHeader, in
 //	{
 //		
 //	}
-
-function releaseInfix(stringKey)
-{
-	if (stringKey.substring(0, stringPolicyHolderPrefix.length) == stringPolicyHolderPrefix)
-	{
-		return stringKey.substring(stringPolicyHolderPrefix.length, stringKey.length);
-	}
-	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringProspectiveInsuredPrefix)
-	{
-		return stringKey.substring(stringProspectiveInsuredPrefix.length, stringKey.length);
-	}
-	else
-	{
-		
-	}
-}

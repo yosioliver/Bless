@@ -116,8 +116,9 @@
 						%input#TextPolicyHolderDivingDVCertificateExpired5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 
-					%span.Number.Single.PositionerLeft 3.
-					%label.Full.Single.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
+					%div.ContainerFix
+						%span.NumberFix.Single.Item 3.
+						%label.Full.Single.Item{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
 					%br
 					-#
 						%div.RadioButton.NumberIndent
@@ -161,8 +162,9 @@
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 4.
-					%label.Full.Single.PositionerLeft{ :style => "margin-top: 30px;"} Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
+					%div.ContainerFit
+						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;"} 4.
+						%label.Full.Single.Item{ :style => "margin-top: 30px;"} Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut
 					%br
 
 					%div.RadioButton.NumberIndent
@@ -254,7 +256,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 5.
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderDivingAccidentDVNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingAccidentDV", :value => "false" }
@@ -269,8 +271,9 @@
 						%input#TextPolicyHolderDivingAccidentDVDesc.Full.Single.Item{ :type => "text" }
 					%br
 
-					%span.Number.Single.PositionerLeft{ :for => "TextPolicyHolderDivingAdditionalInformation" } 6.
-					%label.Full.Single.PositionerLeft Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%div.ContainerFit
+						%span.Number.Single.Item{ :for => "TextPolicyHolderDivingAdditionalInformation" } 6.
+						%label.Full.Single.Item Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
