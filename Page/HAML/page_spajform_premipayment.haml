@@ -8,27 +8,44 @@
 		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
 		%title BCA Life - BLESS, Health Questionnaire 1 Form
 
-		/ JQUERY 
+		/ JQUERY
 
 		:javascript
-		
+
 			var stringPageTypeCurrent = stringPageTypeForm;
 			var stringPageSectionCurrent = stringPageSectionForm;
 			var stringPageValidationCurrent = 0;
 			var booleanInputChangeState = false;
 			// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
-		
+
 			$(document).ready(function()
 			{
 				// INITIALIZATION
 
 				radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
 				inputListener();
-				
+
 				/* $("#ButtonSubmit").click(function()
 				{
 					savetoDB();
 				}); */
+
+				// IOS
+
+				$("input:radio[name='" + "RadioButtonPremiPaymentThirdPartyAnswer" + "']").change(function()
+				{
+					var stringValue = $(this).val();
+
+					if (stringValue == "true")
+					{
+						alert("a");
+						window.location  = 'ios:showFormThirdParty';
+					}
+					else
+					{
+
+					}
+				});
 			});
 
 	/ BODY
@@ -46,7 +63,7 @@
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentKursIDR" } RP
 					%div.Separator
 					%input#RadioButtonPremiPaymentKursUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "usd", :disabled => "true" }
-					%label.RadioButton{ :for => "RadioButtonPremiPaymentKursUSD" } USD           
+					%label.RadioButton{ :for => "RadioButtonPremiPaymentKursUSD" } USD
 				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentFrequencyAnually" } Frekuensi Pembayaran
@@ -63,7 +80,7 @@
 					%input#RadioButtonPremiPaymentFrequencyMonthly.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "monthly", :disabled => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyMonthly" } Bulanan
 					%div.Separator
-					%input#RadioButtonPremiPaymentFrequencyFull.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "full", :disabled => "true" } 
+					%input#RadioButtonPremiPaymentFrequencyFull.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentFrequency", :value => "full", :disabled => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyFull" } Sekaligus
 				%br
 
@@ -101,7 +118,7 @@
 				%div.ContainerFit
 					%label.LongFix.Double.Item{ :for => "TextPremiPaymentBankAccountDetailsName" } Nama Pemilik Rekening/Kartu Kredit
 					%input#TextPremiPaymentBankAccountDetailsName.Full.Single.Item{ :type => "text", :required => "true", :maxlength => "27" }
-				%br   
+				%br
 
 				%div.ContainerFit
 					%label.LongFix.Single.Item{ :for => "TextPremiPaymentBankAccountDetailsNumber" } Nomor Rekening/Kartu Kredit
@@ -119,12 +136,12 @@
 				%br
 
 				%div.ContainerFit
-					%label.Full.Single.Item{ :for => "RadioButtonPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?                   
+					%label.Full.Single.Item{ :for => "RadioButtonPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?
 
 					%div.RadioButton.LongFix.Single.Item
 						%input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
 						%div.Separator
 						%input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false", :required => "true" }
-						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak           
-				%br   
+						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak
+				%br
