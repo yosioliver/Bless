@@ -59,11 +59,28 @@
       
       	radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
       	inputListener();
-      	
+      
       	/* $("#ButtonSubmit").click(function()
       	{
       		savetoDB();
       	}); */
+      
+      	// IOS
+      
+      	$("input:radio[name='" + "RadioButtonPremiPaymentThirdPartyAnswer" + "']").change(function()
+      	{
+      		var stringValue = $(this).val();
+      
+      		if (stringValue == "true")
+      		{
+      			alert("a");
+      			window.location  = 'ios:showFormThirdParty';
+      		}
+      		else
+      		{
+      
+      		}
+      	});
       });
     </script>
   </head>
