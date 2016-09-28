@@ -730,8 +730,6 @@ function getPrefix(stringKey)
 	}
 }
 
-
-
 function setToHealthQuestionnairePDF(stringLayoutJavaScriptID, arrayContent)
 {
 	var stringKey;
@@ -1022,7 +1020,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	var stringContainerBeneficiariesListJavaScriptID;
 	var stringContainerBeneficiariesListJQueryID;
 
-	for (var k = 0; k < intBeneficiariesListTotalRow; k++)
+	for (var k = 1; k <= intBeneficiariesListTotalRow; k++)
 	{
 		for (var j = 0; j < arrayBeneficiariesListPopUpHeader.length; j++)
 		{
@@ -1038,11 +1036,51 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 				if (intBeneficiariesListID == k)
 				{
-					stringContainerBeneficiariesListJavaScriptID = stringBeneficiariesListPrefix + k;
-					stringContainerBeneficiariesListJQueryID = stringKres + stringContainerBeneficiariesListJavaScriptID;
-
-					if (intFlagQuestionNumber == intQuestionNumber)
+					if (stringContentSuffix == arrayBeneficiariesListPopUpHeader[j])
 					{
+						stringContainerBeneficiariesListJavaScriptID = stringBeneficiariesListInfix + k;
+						stringContainerBeneficiariesListJQueryID = stringKres + stringContainerBeneficiariesListJavaScriptID;
+
+						if (intFlagQuestionNumber == intQuestionNumber)
+						{
+							
+						}
+						else
+						{
+							if (intQuestionNumber == 1)
+							{
+								$(stringLayoutJQueryID).append
+								(
+									"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Beneficiaries List" + "</h3>" + 
+									"<br>" + 
+									"<div class='ContainerFit'>" + 
+										"<span class='ShortFix Single Item Margin'>" + "Nomor" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Nama Lengkap" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Tanggal Lahir" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Sex" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Hubungan" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Kewarganegaraan" + "</span>" + 
+									"</div>"
+								);
+							}
+							else
+							{
+
+							}
+
+							$(stringLayoutJQueryID).append
+							(
+								"<div class='ContainerFit' id='" + stringContainerBeneficiariesListJavaScriptID + "'></div>"
+							);
+
+							$(stringContainerBeneficiariesListJQueryID).append
+							(
+								"<span class='ShortFix Single Item Margin'>" + intQuestionNumber + "</span>"
+							);
+
+							intFlagQuestionNumber = intQuestionNumber;
+						}
+
 						$(stringContainerBeneficiariesListJQueryID).append
 						(
 							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
@@ -1050,45 +1088,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 					}
 					else
 					{
-						if (intQuestionNumber == 1)
-						{
-							$(stringLayoutJQueryID).append
-							(
-								"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Disease Form" + "</h3>" + 
-								"<br>" + 
-								"<div class='ContainerFit'>" + 
-									"<span class='ShortFix Single Item Margin'>" + "Pertanyaan" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Nama Penyakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Mulai Sakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Lama Sakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Nama Dokter" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Rumah Sakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Alamat" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Telepon" + "</span>" + 
-								"</div>"
-							);
-						}
-						else
-						{
 
-						}
-
-						$(stringLayoutJQueryID).append
-						(
-							"<div class='ContainerFit' id='" + stringContainerBeneficiariesListJavaScriptID + "'></div>"
-						);
-
-						$(stringContainerBeneficiariesListJQueryID).append
-						(
-							"<span class='ShortFix Single Item Margin'>" + stringContentBeneficiariesList + "</span>"
-						);
-
-						$(stringContainerBeneficiariesListJQueryID).append
-						(
-							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
-						);
-
-						intFlagQuestionNumber = intQuestionNumber;
 					}
 				}
 				else
@@ -1097,6 +1097,102 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 				}
 			}
 		}
+
+		intQuestionNumber ++;
+		intFlagQuestionNumber = 0;
+	}
+
+
+	// SPAJ PROPOSAL
+
+	var intSPAJProposalTotalRow = getLastID(arrayContent, "TextSPAJProposalCompanyName");
+	var intSPAJProposalID;
+	intQuestionNumber = 1;
+	intFlagQuestionNumber = 0;
+	var intFlagSPAJProposalID = 0;
+	var stringContainerSPAJProposalJavaScriptID;
+	var stringContainerSPAJProposalJQueryID;
+
+	for (var k = 1; k <= intSPAJProposalTotalRow; k++)
+	{
+		for (var j = 0; j < arraySPAJProposalTableHeader.length; j++)
+		{
+			for (var i = 0; i < arrayContent.length; i++)
+			{
+				stringKey = arrayContent[i].elementID;
+				stringValue = arrayContent[i].Value;
+				stringKeyWithoutPrefix = releasePrefix(stringKey);
+				stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
+
+				stringContentSuffix = stringKeyWithoutInfix.substring(0, arraySPAJProposalTableHeader[j].length);
+				intSPAJProposalID = stringKeyWithoutInfix.substring(arraySPAJProposalTableHeader[j].length, stringKeyWithoutInfix.length);
+
+				if (intSPAJProposalID == k)
+				{
+					if (stringContentSuffix == arraySPAJProposalTableHeader[j])
+					{
+						stringContainerSPAJProposalJavaScriptID = stringSPAJProposalInfix + k;
+						stringContainerSPAJProposalJQueryID = stringKres + stringContainerSPAJProposalJavaScriptID;
+
+						if (intFlagQuestionNumber == intQuestionNumber)
+						{
+							
+						}
+						else
+						{
+							if (intQuestionNumber == 1)
+							{
+								$(stringLayoutJQueryID).append
+								(
+									"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "SPAJ Proposal" + "</h3>" + 
+									"<br>" + 
+									"<div class='ContainerFit'>" + 
+										"<span class='ShortFix Single Item Margin'>" + "Nomor" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Nama Perusahaan" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Nomor Polis" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Tanggal Diterbitkan" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Uang Pertanggungan" + "</span>" + 
+										"<span class='Tiny Single Item Margin'>" + "Hasil Keputusan" + "</span>" + 
+									"</div>"
+								);
+							}
+							else
+							{
+
+							}
+
+							$(stringLayoutJQueryID).append
+							(
+								"<div class='ContainerFit' id='" + stringContainerSPAJProposalJavaScriptID + "'></div>"
+							);
+
+							$(stringContainerSPAJProposalJQueryID).append
+							(
+								"<span class='ShortFix Single Item Margin'>" + intQuestionNumber + "</span>"
+							);
+
+							intFlagQuestionNumber = intQuestionNumber;
+						}
+
+						$(stringContainerSPAJProposalJQueryID).append
+						(
+							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
+						);
+					}
+					else
+					{
+						
+					}
+				}
+				else
+				{
+
+				}
+			}
+		}
+
+		intQuestionNumber ++;
+		intFlagQuestionNumber = 0;
 	}
 }
 

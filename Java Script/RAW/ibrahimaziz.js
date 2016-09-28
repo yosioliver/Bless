@@ -3263,6 +3263,10 @@ function releaseInfix(stringKey)
 	{
 		return stringKey.substring(stringBeneficiariesListInfix.length, stringKey.length);
 	}
+	else if (stringKey.substring(0, stringSPAJProposalInfix.length) == stringSPAJProposalInfix)
+	{
+		return stringKey.substring(stringSPAJProposalInfix.length, stringKey.length);
+	}
 	else
 	{
 		return "";
