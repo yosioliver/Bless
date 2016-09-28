@@ -86,7 +86,7 @@
 				boxGenerator("#TextThirdPartyHandphone1", 13, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelThirdPartyHandhone2", 1)
 				boxGenerator("#TextThirdPartyHandphone2", 13, boxTypeWithoutLabel, null);
-				boxGenerator("#TextThirdPartyNPWP", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyNPWPNumber", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DateThirdPartyNPWPActiveDay", 2, boxTypeWithBottomLabel, labelDay);
 				boxGenerator("#DateThirdPartyNPWPActiveMonth", 2, boxTypeWithBottomLabel, labelMonth);
 				boxGenerator("#DateThirdPartyNPWPActiveYear", 4, boxTypeWithBottomLabel, labelYear);
@@ -234,29 +234,29 @@
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyAskingYes{ :type => "radio", :name => "RadioButtonThirdPartyAsking", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingYes" } Ya
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingYes" } Ya
 						%input#RadioButtonThirdPartyAskingNo{ :type => "radio", :name => "RadioButtonThirdPartyAsking", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingNo" } Tidak
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingNo" } Tidak
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAskingSpouse" } Bila "Ya", hubungan dengan anda
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyAskingRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "spouse" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipSpouse" } Suami / Istri
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipSpouse" } Suami / Istri
 						%input#RadioButtonThirdPartyAskingRelationshipChild{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "child" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipChild" } Anak
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipChild" } Anak
 						%input#RadioButtonThirdPartyAskingRelationshipParent{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "parent" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipParent" } Orang Tua
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipParent" } Orang Tua
 						%input#RadioButtonThirdPartyAskingRelationshipSibling{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "sibling" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipSibling" } Saudara
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipSibling" } Saudara
 						%br
 						%input#RadioButtonThirdPartyAskingRelationshipOther{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipOther" } Lainnya, sebutkan
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingRelationshipOther" } Lainnya, sebutkan
 						%input#TextThirdPartyAskingRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
 					%br
 
@@ -265,29 +265,29 @@
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyPremiPayorYes{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayor", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorYes" } Ya
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorYes" } Ya
 						%input#RadioButtonThirdPartyPremiPayorNo{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayor", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorNo" } Tidak
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorNo" } Tidak
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorSpouse" } Bila "Ya", hubungan dengan anda
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyPremiPayorRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "spouse" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipSpouse" } Suami / Istri
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipSpouse" } Suami / Istri
 						%input#RadioButtonThirdPartyPremiPayorRelationshipChild{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "child" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipChild" } Anak
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipChild" } Anak
 						%input#RadioButtonThirdPartyPremiPayorRelationshipParent{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "parent" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipParent" } Orang Tua
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipParent" } Orang Tua
 						%input#RadioButtonThirdPartyPremiPayorRelationshipSibling{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "sibling" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipSibling" } Saudara
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipSibling" } Saudara
 						%br
 						%input#RadioButtonThirdPartyPremiPayorRelationshipOther{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipOther" } Lainnya, sebutkan
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorRelationshipOther" } Lainnya, sebutkan
 						%input#TextThirdPartyPremiPayorRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
 					%br
 
@@ -296,29 +296,29 @@
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyBeneficiaryYes{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiary", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Ya
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Ya
 						%input#RadioButtonThirdPartyBeneficiaryNo{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiary", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryNo" } Tidak
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryNo" } Tidak
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiarySpouse" } Bila "Ya", hubungan dengan anda
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyBeneficiaryRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "spouse" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipSpouse" } Suami / Istri
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipSpouse" } Suami / Istri
 						%input#RadioButtonThirdPartyBeneficiaryRelationshipChild{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "child" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipChild" } Anak
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipChild" } Anak
 						%input#RadioButtonThirdPartyBeneficiaryRelationshipParent{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "parent" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipParent" } Orang Tua
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipParent" } Orang Tua
 						%input#RadioButtonThirdPartyBeneficiaryRelationshipSibling{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "sibling" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipSibling" } Saudara
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipSibling" } Saudara
 						%br
 						%input#RadioButtonThirdPartyBeneficiaryRelationshipOther{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipOther" } Lainnya, sebutkan
+						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipOther" } Lainnya, sebutkan
 						%input#TextThirdPartyBeneficiaryRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
 					%br
 
@@ -376,11 +376,11 @@
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyBirthDay" } (Sesuai dengan identitas diri)
 					%label#LabelThirdPartyBirth.Single.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
-					%table#DateThridPartyBirthDay.BoxSquare.PositionerLeft
+					%table#DateThirdPartyBirthDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateThridPartyBirthMonth.BoxSquare.PositionerLeft
+					%table#DateThirdPartyBirthMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateThridPartyBirthYear.BoxSquare.PositionerLeft
+					%table#DateThirdPartyBirthYear.BoxSquare.PositionerLeft
 					%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyBirthYear" } (Tanggal / Bulan / Tahun)
 					%br
 
@@ -427,33 +427,33 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyMaritalStatusSingle" } Belum Menikah
 						%input#RadioButtonThirdPartyMaritalStatusMarried{ :type => "radio", :name => "RadioButtonThirdPartyMaritalStatus", :value => "married" }
-						%div#RadioButtonThirdPartyMaritalStatusMarried.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyMaritalStatusMarried" } Menikah
 						%input#RadioButtonThirdPartyMaritalStatusWidower{ :type => "radio", :name => "RadioButtonThirdPartyMaritalStatus", :value => "divorced" }
-						%div#RadioButtonThirdPartyMaritalStatusWidower.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyMaritalStatusWidower" } Janda / Duda
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 10.
-					%label.Short.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionIslam" } Agama
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionIslam" } Agama
 					%div.RadioButton
 						%input#RadioButtonThirdPartyReligionIslam{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "islam" }
-						%div#RadioButtonThirdPartyReligionIslam.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionIslam" } Islam
 						%input#RadioButtonThirdPartyReligionCatholic{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "katolik" }
-						%div#RadioButtonThirdPartyReligionCatholic.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionCatholic" } Kristen Katolik
 						%input#RadioButtonThirdPartyReligionProtestan{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "kristen" }
-						%div#RadioButtonThirdPartyReligionProtestan.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionProtestan" } Kristen Protestan
 						%input#RadioButtonThirdPartyReligionHindu{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "hindu" }
-						%div#RadioButtonThirdPartyReligionHindu.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionHindu" } Hindu
 						%input#RadioButtonThirdPartyReligionBudha{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "budha" }
-						%div#RadioButtonThirdPartyReligionBudha.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionBudha" } Budha
 						%input#RadioButtonThirdPartyReligionKongHuChu{ :type => "radio", :name => "RadioButtonThirdPartyReligion", :value => "konghuchu" }
-						%div#RadioButtonThirdPartyReligionKongHuChu.BoxRound.PositionerLeft
+						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyReligionKongHuChu" } Kong Hu Chu
 					%br
 
@@ -581,15 +581,15 @@
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 19.
-					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBirthPlace" } Nomor NPWP (jika ada)
-					%table#TextThirdPartyBirthPlace.BoxSquare.PositionerLeft
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyNPWPNumber" } Nomor NPWP (jika ada)
+					%table#TextThirdPartyNPWPNumber.BoxSquare.PositionerLeft
 					%br
 					%label#LabelThirdPartyBirth.Single.MediumWithNumberIndent.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
-					%table#DateThridPartyBirthDay.BoxSquare.PositionerLeft
+					%table#DateThirdPartyNPWPActiveDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateThridPartyBirthMonth.BoxSquare.PositionerLeft
+					%table#DateThirdPartyNPWPActiveMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
-					%table#DateThridPartyBirthYear.BoxSquare.PositionerLeft
+					%table#DateThirdPartyNPWPActiveYear.BoxSquare.PositionerLeft
 					%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyBirthYear" } (Tanggal / Bulan / Tahun)
 					%br
 
