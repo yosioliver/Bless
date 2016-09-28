@@ -730,8 +730,6 @@ function getPrefix(stringKey)
 	}
 }
 
-
-
 function setToHealthQuestionnairePDF(stringLayoutJavaScriptID, arrayContent)
 {
 	var stringKey;
@@ -1015,6 +1013,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	// BENEFICIARIES LIST
 
 	var intBeneficiariesListTotalRow = getLastID(arrayContent, "TextBeneficiariesListFullName");
+	
 	var intBeneficiariesListID;
 	intQuestionNumber = 1;
 	intFlagQuestionNumber = 0;
@@ -1022,7 +1021,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	var stringContainerBeneficiariesListJavaScriptID;
 	var stringContainerBeneficiariesListJQueryID;
 
-	for (var k = 0; k < intBeneficiariesListTotalRow; k++)
+	for (var k = 1; k <= intBeneficiariesListTotalRow; k++)
 	{
 		for (var j = 0; j < arrayBeneficiariesListPopUpHeader.length; j++)
 		{
@@ -1038,15 +1037,14 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 				if (intBeneficiariesListID == k)
 				{
-					stringContainerBeneficiariesListJavaScriptID = stringBeneficiariesListPrefix + k;
+					if (stringContentSuffix == arrayBeneficiariesListPopUpHeader[j])
+					{
+					stringContainerBeneficiariesListJavaScriptID = stringBeneficiariesListInfix + k;
 					stringContainerBeneficiariesListJQueryID = stringKres + stringContainerBeneficiariesListJavaScriptID;
 
 					if (intFlagQuestionNumber == intQuestionNumber)
 					{
-						$(stringContainerBeneficiariesListJQueryID).append
-						(
-							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
-						);
+						
 					}
 					else
 					{
@@ -1054,17 +1052,15 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 						{
 							$(stringLayoutJQueryID).append
 							(
-								"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Disease Form" + "</h3>" + 
+								"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Beneficiaries List" + "</h3>" + 
 								"<br>" + 
 								"<div class='ContainerFit'>" + 
-									"<span class='ShortFix Single Item Margin'>" + "Pertanyaan" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Nama Penyakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Mulai Sakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Lama Sakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Nama Dokter" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Rumah Sakit" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Alamat" + "</span>" + 
-									"<span class='Tiny Single Item Margin'>" + "Telepon" + "</span>" + 
+									"<span class='ShortFix Single Item Margin'>" + "Nomor" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Nama Lengkap" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Tanggal Lahir" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Sex" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Hubungan" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Kewarganegaraan" + "</span>" + 
 								"</div>"
 							);
 						}
@@ -1080,16 +1076,21 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 						$(stringContainerBeneficiariesListJQueryID).append
 						(
-							"<span class='ShortFix Single Item Margin'>" + stringContentBeneficiariesList + "</span>"
-						);
-
-						$(stringContainerBeneficiariesListJQueryID).append
-						(
-							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
+							"<span class='ShortFix Single Item Margin'>" + intQuestionNumber + "</span>"
 						);
 
 						intFlagQuestionNumber = intQuestionNumber;
 					}
+
+					alert(intBeneficiariesListID + " | " + k + " " + stringKey + " " + stringValue + " " + arrayBeneficiariesListPopUpHeader[j]);
+
+					$(stringContainerBeneficiariesListJQueryID).append
+					(
+						"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
+					);
+					}
+					else
+					{}
 				}
 				else
 				{
