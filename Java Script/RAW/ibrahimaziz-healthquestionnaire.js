@@ -1256,19 +1256,3 @@ function tablePDFStaticGeneralGenerator(stringTableJavaScriptID, arrayHeader, in
 //	{
 //		
 //	}
-
-function releaseInfix(stringKey)
-{
-	if (stringKey.substring(0, stringPolicyHolderPrefix.length) == stringPolicyHolderPrefix)
-	{
-		return stringKey.substring(stringPolicyHolderPrefix.length, stringKey.length);
-	}
-	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringProspectiveInsuredPrefix)
-	{
-		return stringKey.substring(stringProspectiveInsuredPrefix.length, stringKey.length);
-	}
-	else
-	{
-		return "";
-	}
-}

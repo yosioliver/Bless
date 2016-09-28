@@ -943,7 +943,7 @@ function textPopUpGetter(stringPopUpJavaScriptID, stringParentNameWithoutPrefix,
 		var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 		$(stringInputJQueryID).val("");
 		
-		var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID;)
+		var stringInputNameWithoutPrefix = releasePrefix(stringInputJavaScriptID);
         var stringKey = getPrefix(stringInputJavaScriptID) + stringParentNameWithoutPrefix + stringInputNameWithoutPrefix;
         var stringValue = arrayFind(arrayContent, stringKey);
 		
@@ -3246,4 +3246,20 @@ function inputListener()
 	{
 		booleanInputChangeState = true;
 	});
+}
+
+function releaseInfix(stringKey)
+{
+	if (stringKey.substring(0, stringPolicyHolderPrefix.length) == stringPolicyHolderPrefix)
+	{
+		return stringKey.substring(stringPolicyHolderPrefix.length, stringKey.length);
+	}
+	else if (stringKey.substring(0, stringProspectiveInsuredPrefix.length) == stringProspectiveInsuredPrefix)
+	{
+		return stringKey.substring(stringProspectiveInsuredPrefix.length, stringKey.length);
+	}
+	else
+	{
+		return "";
+	}
 }
