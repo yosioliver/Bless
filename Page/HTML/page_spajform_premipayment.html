@@ -73,7 +73,11 @@
       
       		if (stringValue == "true")
       		{
-      			window.location = 'ios:showFormThirdParty';
+      			// window.location = 'ios:showFormThirdParty';
+      
+      			var callInfo = {};
+      			callInfo.data = {};
+      			calliOSFunction('showFormThirdParty:',onSuccess,onError, callInfo);
       		}
       		else
       		{
