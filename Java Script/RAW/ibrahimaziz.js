@@ -1598,7 +1598,7 @@ function buttonPopUpSPAJProposalGenerator()
 		var arrayInputTemporary = [];
 		stringTriggerInfix = stringPageInfixTypeCurrent + stringSPAJProposalInfix;
 
-		intSPAJProposalID = getLastID(arrayHealthQuestionnaire, stringPrefixText + stringTriggerInfix + arraySPAJProposalTableHeader);
+		intSPAJProposalID = getLastID(arrayHealthQuestionnaire, stringPrefixText + stringTriggerInfix + arraySPAJProposalTableHeader[0]);
 		
 		if (intSPAJProposalRecentID == null)
 		{
@@ -1627,6 +1627,7 @@ function buttonPopUpSPAJProposalGenerator()
 			{
 				stringValue = getTextGeneral(stringInputJavaScriptID);
 				arrayAdd(arrayInputTemporary, stringKey, stringValue);
+				alert(stringKey + " " + stringValue);
 			}
 		});
 		
@@ -1636,7 +1637,9 @@ function buttonPopUpSPAJProposalGenerator()
 		}
 		else
 		{
-			arrayAdd(arrayHealthQuestionnaire, stringRadioButtonName, getRadioButtonGeneral(stringRadioButtonName));
+			var stringRadioButtonSPAJProposal = stringPrefixRadioButton + stringPageInfixTypeCurrent + stringSPAJProposalInfix;
+
+			arrayAdd(arrayHealthQuestionnaire, stringRadioButtonSPAJProposal, getRadioButtonGeneral(stringRadioButtonSPAJProposal));
 			arrayTransfer(arrayInputTemporary, arrayHealthQuestionnaire);
 			
 			$(stringPopUpJQueryID).css("display", "none");
