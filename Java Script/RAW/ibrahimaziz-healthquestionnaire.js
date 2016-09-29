@@ -1134,8 +1134,8 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 				stringKeyInfix = getInfix(stringKeyWithoutPrefix);
 				stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
 
-				stringContentSuffix = stringKeyWithoutInfix.substring(stringPageInfix.length, stringPageInfix.length + arraySPAJProposalTableHeader[j].length);
-				intSPAJProposalID = stringKeyWithoutInfix.substring(stringPageInfix.length + arraySPAJProposalTableHeader[j].length, stringKeyWithoutInfix.length);
+				stringContentSuffix = stringKeyWithoutInfix.substring(stringSPAJProposalInfix.length, stringSPAJProposalInfix.length + arraySPAJProposalTableHeader[j].length);
+				intSPAJProposalID = stringKeyWithoutInfix.substring(stringSPAJProposalInfix.length + arraySPAJProposalTableHeader[j].length, stringKeyWithoutInfix.length);
 
 				if (stringKeyInfix == stringPageInfix)
 				{
