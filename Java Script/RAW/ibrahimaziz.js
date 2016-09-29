@@ -3265,17 +3265,17 @@ function inputListener()
 {
 	$("input").change(function()
 	{
-		booleanInputChangeState = true;
+		booleanInputChangeState = "true";
 	});
 	
 	$("textarea").change(function()
 	{
-		booleanInputChangeState = true;
+		booleanInputChangeState = "true";
 	});
 	
 	$("select").change(function()
 	{
-		booleanInputChangeState = true;
+		booleanInputChangeState = "true";
 	});
 }
 

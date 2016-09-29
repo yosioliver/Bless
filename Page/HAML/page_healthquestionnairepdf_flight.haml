@@ -12,7 +12,12 @@
 
 		:javascript
 
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+
 			// DOCUMENT READY
+
 			$(document).ready(function()
 			{
 				// SECTION GENERAL
@@ -34,6 +39,8 @@
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+
+				// SETUP
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Penerbangan");
@@ -184,8 +191,8 @@
 
 					%span.Number.Single.PositionerLeft 7.
 					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightCondition" } Mohon lengkapi kolom pertanyaan di bawah ini sesuai dengan jumlah jam terbang anda.
-					%br					
-					
+					%br
+
 					%div.ContainerFit.NumberIndent
 						%label.ShortFix.Wrap.Item.Center Kategori Penerbangan
 						%label.Tiny.Wrap.Item1.Center Tujuan
@@ -255,7 +262,7 @@
 						%input#TextPolicyHolderFlightParaglidingAllTotalFly.Tiny.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderFlightOthersTotalFlyLast12Months.Tiny.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderFlightOthersTotalFlyNext12Months.Tiny.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderFlightOthersAllTotalHour.Tiny.Single.Item1.Margin{ :type => "text" }	
+						%input#TextPolicyHolderFlightOthersAllTotalHour.Tiny.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderFlightOthersTotalHourLast12Months.Tiny.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderFlightOthersTotalHourNext12Months.Tiny.Single.Item1.Margin{ :type => "text" }
 					%br

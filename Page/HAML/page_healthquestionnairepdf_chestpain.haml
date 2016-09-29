@@ -12,12 +12,15 @@
 
 		:javascript
 
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"},{"elementID":"TextPolicyHolderFullName","Value":"Ariani Jollanda Pondaag"},{"elementID":"TextSPAJNumber","Value":"123456789012"}]}}'
+
 			// DOCUMENT READY
 
 			$(document).ready(function()
 			{
-				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"},{"elementID":"TextPolicyHolderFullName","Value":"Ariani Jollanda Pondaag"},{"elementID":"TextSPAJNumber","Value":"123456789012"}]}}'
-
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
@@ -57,6 +60,8 @@
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
+
+				// TEST
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
@@ -118,11 +123,11 @@
 						%div.BoxRound.PositionerRight
 					%br
 
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainLastAttackDay" } Tanggal serangan terakhir:										
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainLastAttackDay" } Tanggal serangan terakhir:
 					%table#DatePolicyHolderChestPainLastAttackYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderChestPainLastAttackMonth.BoxSquare.PositionerRight
-					%span.Separator.Single.PositionerRight /					
+					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderChestPainLastAttackDay.BoxSquare.PositionerRight
 					%br
 
@@ -141,7 +146,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 4.
-					%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderChestPainLastAriseDay" } Kapan terakhir kali nyeri dada terjadi?										
+					%label.Medium.Single.PositionerLeft{ :for => "DatePolicyHolderChestPainLastAriseDay" } Kapan terakhir kali nyeri dada terjadi?
 					%table#DatePolicyHolderChestPainLastAriseYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderChestPainLastAriseMonth.BoxSquare.PositionerRight
