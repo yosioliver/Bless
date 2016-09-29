@@ -280,7 +280,7 @@ function savetoDB()
 		}
 		else
 		{
-			var stringBeneficiariesListPrefix = stringPrefixText + stringBeneficiariesListInfix + "FullName";
+			var stringBeneficiariesListPrefix = stringPrefixText + stringBeneficiariesListInfix + arrayBeneficiariesListTableHeader[0];
 			var stringBeneficiariesListFilter;
 			var arrayBeneficiariesListTemporary = [];
 			var booleanBeneficiariesList = false;

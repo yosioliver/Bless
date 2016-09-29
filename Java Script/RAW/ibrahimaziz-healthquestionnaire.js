@@ -924,6 +924,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	var stringContainerSicknessJQueryID;
 	intQuestionNumber = 1;
 	var intFlagQuestionNumber = 0;
+	var stringKeyInfix;
 
 	for (var k = 0; k < arraySicknessHeader.length; k++)
 	{
@@ -932,71 +933,79 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 			stringKey = arrayContent[j].elementID;
 			stringValue = arrayContent[j].Value;
 			stringKeyWithoutPrefix = releasePrefix(stringKey);
+			stringKeyInfix = getInfix(stringKeyWithoutPrefix);
 			stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
 			stringContentSickness = stringKeyWithoutInfix.substring(0, arraySicknessHeader[k].length);
 
-			if (stringContentSickness == arraySicknessHeader[k])
+			if (stringKeyInfix == stringPageInfix)
 			{
-				stringContainerSicknessJavaScriptID = stringContentSickness + intQuestionNumber;
-				stringContainerSicknessJQueryID = stringKres + stringContainerSicknessJavaScriptID;
-
-				if (intFlagQuestionNumber == intQuestionNumber)
+				if (stringContentSickness == arraySicknessHeader[k])
 				{
+					stringContainerSicknessJavaScriptID = stringContentSickness + intQuestionNumber;
+					stringContainerSicknessJQueryID = stringKres + stringContainerSicknessJavaScriptID;
 
+					if (intFlagQuestionNumber == intQuestionNumber)
+					{
+
+					}
+					else
+					{
+						if (intQuestionNumber == 1)
+						{
+							$(stringLayoutJQueryID).append
+							(
+								"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Disease Form" + "</h3>" + 
+								"<br>" + 
+								"<div class='ContainerFit'>" + 
+									"<span class='ShortFix Single Item Margin'>" + "Pertanyaan" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Nama Penyakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Mulai Sakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Lama Sakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Nama Dokter" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Rumah Sakit" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Alamat" + "</span>" + 
+									"<span class='Tiny Single Item Margin'>" + "Telepon" + "</span>" + 
+								"</div>"
+							);
+						}
+						else
+						{
+
+						}
+
+						$(stringLayoutJQueryID).append
+						(
+							"<div class='ContainerFit' id='" + stringContainerSicknessJavaScriptID + "'></div>"
+						);
+
+						$(stringContainerSicknessJQueryID).append
+						(
+							"<span class='ShortFix Single Item Margin'>" + stringContentSickness + "</span>"
+						);
+
+						intFlagQuestionNumber = intQuestionNumber;
+					}
+
+					for (var i = 0; i < arrayHealthTableHeader.length; i++)
+					{
+						stringContentSuffix = stringKeyWithoutInfix.substring(arraySicknessHeader[k].length, stringKeyWithoutInfix.length);
+
+						if(stringContentSuffix == arrayHealthTableHeader[i])
+						{
+							$(stringContainerSicknessJQueryID).append
+							(
+								"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
+							);
+						}
+						else
+						{
+
+						}
+					}
 				}
 				else
 				{
-					if (intQuestionNumber == 1)
-					{
-						$(stringLayoutJQueryID).append
-						(
-							"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "Disease Form" + "</h3>" + 
-							"<br>" + 
-							"<div class='ContainerFit'>" + 
-								"<span class='ShortFix Single Item Margin'>" + "Pertanyaan" + "</span>" + 
-								"<span class='Tiny Single Item Margin'>" + "Nama Penyakit" + "</span>" + 
-								"<span class='Tiny Single Item Margin'>" + "Mulai Sakit" + "</span>" + 
-								"<span class='Tiny Single Item Margin'>" + "Lama Sakit" + "</span>" + 
-								"<span class='Tiny Single Item Margin'>" + "Nama Dokter" + "</span>" + 
-								"<span class='Tiny Single Item Margin'>" + "Rumah Sakit" + "</span>" + 
-								"<span class='Tiny Single Item Margin'>" + "Alamat" + "</span>" + 
-								"<span class='Tiny Single Item Margin'>" + "Telepon" + "</span>" + 
-							"</div>"
-						);
-					}
-					else
-					{
 
-					}
-
-					$(stringLayoutJQueryID).append
-					(
-						"<div class='ContainerFit' id='" + stringContainerSicknessJavaScriptID + "'></div>"
-					);
-
-					$(stringContainerSicknessJQueryID).append
-					(
-						"<span class='ShortFix Single Item Margin'>" + stringContentSickness + "</span>"
-					);
-
-					intFlagQuestionNumber = intQuestionNumber;
-				}
-
-				for (var i = 0; i < arrayHealthTableHeader.length; i++)
-				{
-					stringContentSuffix = stringKeyWithoutInfix.substring(arraySicknessHeader[k].length, stringKeyWithoutInfix.length);
-
-					if(stringContentSuffix == arrayHealthTableHeader[i])
-					{
-						$(stringContainerSicknessJQueryID).append
-						(
-							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
-						);
-					}
-					else
-					{
-
-					}
 				}
 			}
 			else
@@ -1012,7 +1021,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 	// BENEFICIARIES LIST
 
-	var intBeneficiariesListTotalRow = getLastID(arrayContent, "TextBeneficiariesListFullName");
+	var intBeneficiariesListTotalRow = getLastID(arrayContent, stringPrefixText + stringBeneficiariesListInfix + arrayBeneficiariesListPopUpHeader[0]);
 	var intBeneficiariesListID;
 	intQuestionNumber = 1;
 	intFlagQuestionNumber = 0;
@@ -1105,7 +1114,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 
 	// SPAJ PROPOSAL
 
-	var intSPAJProposalTotalRow = getLastID(arrayContent, "TextSPAJProposalCompanyName");
+	var intSPAJProposalTotalRow = getLastID(arrayContent, stringPrefixText + stringPageInfix + stringSPAJProposalInfix + arraySPAJProposalTableHeader[0]);
 	var intSPAJProposalID;
 	intQuestionNumber = 1;
 	intFlagQuestionNumber = 0;
@@ -1122,66 +1131,76 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 				stringKey = arrayContent[i].elementID;
 				stringValue = arrayContent[i].Value;
 				stringKeyWithoutPrefix = releasePrefix(stringKey);
+				stringKeyInfix = getInfix(stringKeyWithoutPrefix);
 				stringKeyWithoutInfix = releaseInfix(stringKeyWithoutPrefix);
 
-				stringContentSuffix = stringKeyWithoutInfix.substring(0, arraySPAJProposalTableHeader[j].length);
-				intSPAJProposalID = stringKeyWithoutInfix.substring(arraySPAJProposalTableHeader[j].length, stringKeyWithoutInfix.length);
+				stringContentSuffix = stringKeyWithoutInfix.substring(stringPageInfix.length, stringPageInfix.length + arraySPAJProposalTableHeader[j].length);
+				intSPAJProposalID = stringKeyWithoutInfix.substring(stringPageInfix.length + arraySPAJProposalTableHeader[j].length, stringKeyWithoutInfix.length);
 
-				if (intSPAJProposalID == k)
+				if (stringKeyInfix == stringPageInfix)
 				{
-					if (stringContentSuffix == arraySPAJProposalTableHeader[j])
+					if (intSPAJProposalID == k)
 					{
-						stringContainerSPAJProposalJavaScriptID = stringSPAJProposalInfix + k;
-						stringContainerSPAJProposalJQueryID = stringKres + stringContainerSPAJProposalJavaScriptID;
+						if (stringContentSuffix == arraySPAJProposalTableHeader[j])
+						{
+							stringContainerSPAJProposalJavaScriptID = stringSPAJProposalInfix + k;
+							stringContainerSPAJProposalJQueryID = stringKres + stringContainerSPAJProposalJavaScriptID;
 
-						if (intFlagQuestionNumber == intQuestionNumber)
-						{
-							
-						}
-						else
-						{
-							if (intQuestionNumber == 1)
+							if (intFlagQuestionNumber == intQuestionNumber)
 							{
-								$(stringLayoutJQueryID).append
-								(
-									"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "SPAJ Proposal" + "</h3>" + 
-									"<br>" + 
-									"<div class='ContainerFit'>" + 
-										"<span class='ShortFix Single Item Margin'>" + "Nomor" + "</span>" + 
-										"<span class='Tiny Single Item Margin'>" + "Nama Perusahaan" + "</span>" + 
-										"<span class='Tiny Single Item Margin'>" + "Nomor Polis" + "</span>" + 
-										"<span class='Tiny Single Item Margin'>" + "Tanggal Diterbitkan" + "</span>" + 
-										"<span class='Tiny Single Item Margin'>" + "Uang Pertanggungan" + "</span>" + 
-										"<span class='Tiny Single Item Margin'>" + "Hasil Keputusan" + "</span>" + 
-									"</div>"
-								);
+								
 							}
 							else
 							{
 
+								if (intQuestionNumber == 1)
+								{
+									$(stringLayoutJQueryID).append
+									(
+										"<h3 style='margin-top: 40px; margin-bottom: 10px;'>" + "SPAJ Proposal" + "</h3>" + 
+										"<br>" + 
+										"<div class='ContainerFit'>" + 
+											"<span class='ShortFix Single Item Margin'>" + "Nomor" + "</span>" + 
+											"<span class='Tiny Single Item Margin'>" + "Nama Perusahaan" + "</span>" + 
+											"<span class='Tiny Single Item Margin'>" + "Nomor Polis" + "</span>" + 
+											"<span class='Tiny Single Item Margin'>" + "Tanggal Diterbitkan" + "</span>" + 
+											"<span class='Tiny Single Item Margin'>" + "Uang Pertanggungan" + "</span>" + 
+											"<span class='Tiny Single Item Margin'>" + "Hasil Keputusan" + "</span>" + 
+										"</div>"
+									);
+								}
+								else
+								{
+
+								}
+
+								$(stringLayoutJQueryID).append
+								(
+									"<div class='ContainerFit' id='" + stringContainerSPAJProposalJavaScriptID + "'></div>"
+								);
+
+								$(stringContainerSPAJProposalJQueryID).append
+								(
+									"<span class='ShortFix Single Item Margin'>" + intQuestionNumber + "</span>"
+								);
+
+								intFlagQuestionNumber = intQuestionNumber;
 							}
 
-							$(stringLayoutJQueryID).append
-							(
-								"<div class='ContainerFit' id='" + stringContainerSPAJProposalJavaScriptID + "'></div>"
-							);
 
 							$(stringContainerSPAJProposalJQueryID).append
 							(
-								"<span class='ShortFix Single Item Margin'>" + intQuestionNumber + "</span>"
+								"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
 							);
-
-							intFlagQuestionNumber = intQuestionNumber;
 						}
-
-						$(stringContainerSPAJProposalJQueryID).append
-						(
-							"<input type='text' class='Tiny Single Item Margin' value='" + stringValue + "'/>"
-						);
+						else
+						{
+							
+						}
 					}
 					else
 					{
-						
+
 					}
 				}
 				else
