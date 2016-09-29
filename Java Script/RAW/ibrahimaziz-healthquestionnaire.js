@@ -925,6 +925,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	intQuestionNumber = 1;
 	var intFlagQuestionNumber = 0;
 	var stringKeyInfix;
+	var booleanQuestionState = false;
 
 	for (var k = 0; k < arraySicknessHeader.length; k++)
 	{
@@ -983,6 +984,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 							"<span class='ShortFix Single Item Margin'>" + stringContentSickness + "</span>"
 						);
 
+						booleanQuestionState = true;
 						intFlagQuestionNumber = intQuestionNumber;
 					}
 
@@ -1014,8 +1016,15 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 			}
 		}
 
-		intQuestionNumber ++;
-		intFlagQuestionNumber = 0;
+		if (booleanQuestionState == true)
+		{
+			intQuestionNumber ++;
+			intFlagQuestionNumber = 0;
+		}
+		else
+		{
+
+		}
 	}
 
 
@@ -1028,6 +1037,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	var intFlagBeneficiariesListID = 0;
 	var stringContainerBeneficiariesListJavaScriptID;
 	var stringContainerBeneficiariesListJQueryID;
+	booleanQuestionState = false;
 
 	for (var k = 1; k <= intBeneficiariesListTotalRow; k++)
 	{
@@ -1087,6 +1097,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 								"<span class='ShortFix Single Item Margin'>" + intQuestionNumber + "</span>"
 							);
 
+							booleanQuestionState = true;
 							intFlagQuestionNumber = intQuestionNumber;
 						}
 
@@ -1107,8 +1118,15 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 			}
 		}
 
-		intQuestionNumber ++;
-		intFlagQuestionNumber = 0;
+		if (booleanQuestionState == true)
+		{
+			intQuestionNumber ++;
+			intFlagQuestionNumber = 0;
+		}
+		else
+		{
+
+		}
 	}
 
 
@@ -1121,6 +1139,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 	var intFlagSPAJProposalID = 0;
 	var stringContainerSPAJProposalJavaScriptID;
 	var stringContainerSPAJProposalJQueryID;
+	booleanQuestionState = false;
 
 	for (var k = 1; k <= intSPAJProposalTotalRow; k++)
 	{
@@ -1184,6 +1203,7 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 									"<span class='ShortFix Single Item Margin'>" + intQuestionNumber + "</span>"
 								);
 
+								booleanQuestionState = true;
 								intFlagQuestionNumber = intQuestionNumber;
 							}
 
@@ -1210,8 +1230,15 @@ function getFromDatabaseForAmandment(arrayContent, stringPageInfix, stringLayout
 			}
 		}
 
-		intQuestionNumber ++;
-		intFlagQuestionNumber = 0;
+		if (booleanQuestionState == true)
+		{
+			intQuestionNumber ++;
+			intFlagQuestionNumber = 0;
+		}
+		else
+		{
+
+		}
 	}
 }
 
