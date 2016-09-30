@@ -82,13 +82,9 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-<<<<<<< HEAD
+
 				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1. 
-=======
-				%fieldset
-					%span.Number.Single.PositionerLeft 1.
->>>>>>> 9cdd93ab8e2036425b872437f4a2e96b504de76a
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderEpilepsySince" } Sejak umur berapa Anda terserang epilepsi?
 					%input#TextPolicyHolderEpilepsySince.Short.Single.PositionerLeft{ :type => "text" }
 					%label.Separator.Single.PositionerLeft Tahun
@@ -123,15 +119,9 @@
 						%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyWhatHappenSuddenlyFall", :style => "width: 600px;" }
 							Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
 					%br
-<<<<<<< HEAD
-					
-					%span.Number.Single.PositionerLeft 5. 
-					%label.Wrap.Full.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelYes" } Sebelum  terjadi  serangan,  apakah  Anda  merasakan  adanya  pusing-pusing,  mencium  bau-bauan,  melihat cahaya, atau bunyi-bunyian?
-=======
 
-					%span.Number.Single.PositionerLeft 5.
-					%label.Long.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelYes" } Sebelum  terjadi  serangan,  apakah  Anda  merasakan  adanya  pusing-pusing,  mencium  bau-bauan,  melihat cahaya, atau bunyi-bunyian?
->>>>>>> 9cdd93ab8e2036425b872437f4a2e96b504de76a
+					%span.Number.Single.PositionerLeft 5. 
+					%label.Wrap.Full.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelYes" } Sebelum  terjadi  serangan,  apakah  Anda  merasakan  adanya  pusing-pusing,  mencium  bau-bauan,  melihat cahaya, atau bunyi-bunyian
 					%div.RadioButton
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelNo" } Tidak
 						%input#RadioButtonPolicyHolderEpilepsyIsFeelNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyIsFeel", :value => "false" }
@@ -321,10 +311,8 @@
 						%input#RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyOtherDiseases", :value => "complication" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan
-<<<<<<< HEAD
 						%input#TextPolicyHolderEpilepsyOtherDiseasesComplicationDesc.LineDot.Medium.Single.PositionerLeft{ :type => "text" }
-=======
->>>>>>> 9cdd93ab8e2036425b872437f4a2e96b504de76a
+
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderEpilepsyOtherDiseaseDesc" } Mohon mengisi Kuesioner sesuai dengan penyakit lainnya yang Anda derita sesuai dengan pilihan pada nomor 12
 					%br
