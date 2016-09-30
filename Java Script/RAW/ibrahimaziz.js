@@ -3326,3 +3326,20 @@ function getInfix(stringKey)
 		return "";
 	}
 }
+
+function imageSelector(stringPath)
+{
+	$("img").each(function()
+	{
+		var stringSource = $(this).attr("src");
+
+		if (stringSource == undefined || stringSource == "" || stringSource == null)
+		{
+
+		}
+		else
+		{
+			$(this).attr("src", $(this).attr("src").replace("..\/..\/Resource\/|..\/..\/jqueryLibrary\/Resource\/", stringPath));
+		}
+	});
+}

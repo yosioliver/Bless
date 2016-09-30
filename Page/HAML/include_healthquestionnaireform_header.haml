@@ -6,17 +6,17 @@
 
 - urlCSS = '../../Style/CSS/'
 - urlJavaScript = '../../Java Script/Minimized/'
-- urlResource = '../Resource/Icon/'
+- urlResource = '../../Resource/'
 
 / FOR DEPLOYMENT
 
 -#
 	- urlCSS = '../../jqueryLibrary/Style/CSS/'
 	- urlJavaScript = '../../jqueryLibrary/JavaScript/Minimized/'
-	- urlResource = '../jqueryLibrary/Resource/Icon/'
+	- urlResource = '../../jqueryLibrary/Resource/'
 
 - urlCSSGeneralPrefix = 'bless'
-- urlCSSSectionPrefix = 'healthquestionnaire'
+- urlCSSSectionPrefix = 'healthquestionnaireform'
 
 -# CONTENT
 
@@ -72,3 +72,8 @@
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker-i18n.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker_IOS_fix.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ios-integration.min.js" }
+:javascript
+	$(document).ready(function()
+	{
+		imageSelector("#{urlResource}");
+	});

@@ -6,14 +6,14 @@
 
 - urlCSS = '../../Style/CSS/'
 - urlJavaScript = '../../Java Script/Minimized/'
-- urlResource = '../Resource/Icon/'
+- urlResource = '../../Resource/'
 
 / FOR DEPLOYMENT
 
 -#
 	- urlCSS = '../../jqueryLibrary/Style/CSS/'
 	- urlJavaScript = '../../jqueryLibrary/JavaScript/Minimized/'
-	- urlResource = '../jqueryLibrary/Resource/Icon/'
+	- urlResource = '../../jqueryLibrary/Resource/'
 
 - urlCSSGeneralPrefix = 'bless'
 - urlCSSSectionPrefix = 'healthquestionnairepdf'
@@ -68,3 +68,8 @@
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ibrahimaziz.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ibrahimaziz-healthquestionnaire.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ios-integration-healthquestionnaire.min.js" }
+:javascript
+	$(document).ready(function()
+	{
+		imageSelector("#{urlResource}");
+	});

@@ -1,0 +1,137 @@
+%form#PopUpRacing.PopUp
+
+	/ HEADER
+	
+	%header		 											
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpRacing', 'PopUpActivity')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpRacing', 'PopUpActivity', stringPageInfixTypeCurrent + 'Racing', arrayHealthQuestionnaire)" }
+		%h2 Kuesioner Olahraga Motor / Sepeda Motor							 
+
+	/ FIELDSET
+
+	%fieldset			
+		%div.ContainerFit
+			%span.Multi.Single.4 OLAHRAGA MOTOR / SEPEDA MOTOR 
+		%hr
+		%br
+
+		%div.ContainerFit
+			%label.medium.Single.Item 1. Apakah jenis kegiatan olah raga motor yang Anda lakukan?
+		%input#TextRCActivity.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%div.ContainerFit
+			%label.medium.Single.Item 2. Apakah jenis kendaraan bermotor yang Ada kendaran? (Sebutkan model, tahun pembuatan, ukuran mesin, dan kategori secara terperinci)
+		%br	
+		%input#TextRCVehicleModel.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%div.RadioButton.PositionerLeft
+			%label.medium.Single.Item 3. Sebutkan tujuan kegiatan olah raga motor/ sepeda motor yang Anda lakukan: ?
+			%br
+			%input#RadioButtonRCActivityPurposeEntertainment{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "entertainment" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeEntertainment" } Hiburan 
+			%div.Separator
+			%input#RadioButtonRCActivityPurposeAmateur{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "amateur" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeAmateur" } Amatir 
+			%div.Separator
+			%input#RadioButtonRCActivityPurposeCompetition{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "competition" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeCompetition" } Perlombaan 
+			%div.Separator
+			%input#RadioButtonRCActivityPurposeProfessional{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "professional" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeProfessional" } Profesional 
+			%div.Separator
+			%input#RadioButtonRCActivityPurposeSponsor{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "sponsor" }
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeSponsor" } Sponsor
+		%br
+		%hr
+
+		%div.ContainerFit
+			%label.medium.Single.Item 4. Berapa lama Anda aktif dalam olah raga ini?
+		%input#TextRCStillActive.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%div.ContainerFit
+			%label.medium.Single.Item 5. Di mana Anda melakukan perlombaan? (Sebutkan nama semua acara yang diselenggarakan)
+		%input#TextRCPlace.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+
+		%label.medium.Single.Item 6. Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
+		%br
+		%div.ContainerFit
+			%label.Short.Single.Item.Center.Margin Lisensi/ Sertifikat	
+			%label.Short.Single.Item1.Center.Margin Tanggal Perolehan		
+			%label.Short.Single.Item1.Center.Margin Tanggal Perpanjangan
+		%div.ContainerFit
+			%input#TextRCLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextRCLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextRCLicenseCertificate3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention3.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextRCLicenseCertificate4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention4.Short.Single.Item1.Margin{ :type => "text" }
+		%div.ContainerFit
+			%input#TextRCLicenseCertificate5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text" }
+		%hr	
+
+		%label#Wrap.Single.PositionerLeft 7. Apakah Anda berpartisipasi atau berniat untuk berpartisipasi dalam setiap
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonRCParticipatingYes{ :type => "radio", :name => "RadioButtonRCParticipating", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRCParticipatingYes" } Ya
+			%div.Separator
+			%input#RadioButtonRCParticipatingNo{ :type => "radio", :name => "RadioButtonRCParticipating", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRCParticipatingNo" } Tidak
+		%br
+		%input#TextRCParticipatingLocationDesc.Full.Multi.Item1.Margin{ :type =>"text"}
+		%hr
+
+		%label#Wrap.Single.PositionerLeft 8. Apakah Anda anggota suatu klub atau asosiasi balap?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonRCClubMemberYes{ :type => "radio", :name => "RadioButtonRCClubMember", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRCClubMemberYes" } Ya
+			%div.Separator
+			%input#RadioButtonRCClubMemberNo{ :type => "radio", :name => "RadioButtonRCClubMember", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRCClubMemberNo" } Tidak
+		%br
+		%input#TextRCClubMemberDesc.Full.Multi.Item1.Margin{ :type =>"text"}
+		%hr
+
+		%label#Wrap.Single.PositionerLeft 9. Pernahkah Anda mengalami kecelakaan atau pelanggaran
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonRCAccidentYes{ :type => "radio", :name => "RadioButtonRCAccident", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonRCAccidentYes" } Ya
+			%div.Separator
+			%input#RadioButtonRCAccidentNo{ :type => "radio", :name => "RadioButtonRCAccident", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonRCAccidentNo" } Tidak
+		%br
+		%input#TextRCAccidentDesc.Full.Multi.Item1.Margin{ :type =>"text"}
+		%hr
+
+		%div.ContainerFit
+			%label.medium.Single.Item 10. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+		%br	
+		%input#TextRCAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
+		
+	%div.Note	
+		%h2 PERNYATAAN DAN KUASA
+		%ol
+			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
