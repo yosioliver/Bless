@@ -20,12 +20,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderAlcoholALOnLeavePeriodDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderAlcoholALOnLeavePeriodMonth", 2, boxTypeWithoutLabel, null);
@@ -76,24 +76,29 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALConsume" } Apakah saat ini Anda mengkonsumsi alkohol/obat-obatan?
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALConsume" } Apakah saat ini Anda mengkonsumsi alkohol/obat-obatan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALConsumeNo" } Tidak
 						%input#RadioButtonPolicyHolderAlcoholALConsumeNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALConsume", :value => "false" }
 						%div.BoxRound.PositionerRight
-
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALConsumeYes" } Ya
 						%input#RadioButtonPolicyHolderAlcoholALConsumeYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALConsume", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon mengisi kolom di bawah ini.
+					%label.NumberIndent.Wrap.PositionerLeft Jika “Ya”, mohon mengisi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.MediumFix.Single.Item1.Center Jenis
 						%label.Short.Single.Item1.Center Frekuensi
 						%label.Short.Single.Item1.Center Dosis
+						%label.Short.Single.Item1.Center Waktu Penggunaan
+						%label.Short.Single.Item1.Center 
+					%div.ContainerFit.NumberIndent
+						%label.MediumFix.Single.Item1.Center 
+						%label.Short.Single.Item1.Center 
+						%label.Short.Single.Item1.Center 
 						%label.Short.Single.Item1.Center Mulai (Tgl/Bln/Thn)
 						%label.Short.Single.Item1.Center Berhenti (Tgl/Bln/Thn)
 
@@ -158,19 +163,23 @@
 						%input#TextPolicyHolderAlcoholALStart10.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderAlcoholALEnd10.Short.Single.Item1.Margin{ :type => "text" }
 					%br
+					
+					%section#SectionFooter{ :style => "margin-top: 100px; position: relative; top: 100px; display: block;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 2.
-					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderAlcoholSober" }
-						Jika Anda telah berhenti menggunakan alkohol/obat-obatan tersebut diatas.
-						%br
-						Mohon menjelaskan secara rinci pada kolom di bawah ini atas saran/permintaan siapa dan sejak kapan Anda berhenti.
+					%header
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 40px;"} 2.
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderAlcoholSober", :style => "margin-top: 40px;" } Jika Anda telah berhenti menggunakan alkohol/obat-obatan tersebut diatas.
+					%br
+					%label.NumberIndent.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderAlcoholSober" }	Mohon menjelaskan secara rinci pada kolom di bawah ini atas saran/permintaan siapa dan sejak kapan Anda berhenti.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderAlcoholSober.Full.Multi.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
-					%label.Full.Single.PositionerLeft Apakah Anda pernah melakukan konsultasi atau mendapatkan terapi dari dokter karena penggunaan alkohol/obat-obatan?
+					%label.Full.Wrap.PositionerLeft Apakah Anda pernah melakukan konsultasi atau mendapatkan terapi dari dokter karena penggunaan alkohol/obat-obatan?
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Nama Dokter
@@ -191,10 +200,9 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 4.
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholMedicalCondition" }
-						Pernahkah Anda mengalami kondisi medis atau gangguan yang berhubungan dengan penggunaan alkohol/obat-obatan?
-						%br
-						(Misal hepatitis, HIV, kesehatan mental, dan lain-lain)
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholMedicalCondition" } Pernahkah Anda mengalami kondisi medis atau gangguan yang berhubungan dengan penggunaan alkohol/obat-obatan?
+					%br
+					%label.NumberIndent.Full.Wrap.PositionerLeft (Misal hepatitis, HIV, kesehatan mental, dan lain-lain)
 					%div.RadioButton.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholMedicalConditionNo" } Tidak
 						%input#RadioButtonPolicyHolderAlcoholMedicalConditionNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholMedicalCondition", :value => "false" }
@@ -211,7 +219,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 5.
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALMedicalTreatment" } Apakah Anda menjalani perawatan di rumah sakit karena penggunaan alkohol/obat-obatan?
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALMedicalTreatment" } Apakah Anda menjalani perawatan di rumah sakit karena penggunaan alkohol/obat-obatan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALMedicalTreatmentNo" } Tidak
 						%input#RadioButtonPolicyHolderAlcoholALMedicalTreatmentNo.PositionerRight{ :type => "radio",
@@ -235,7 +243,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 6.
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholContinueTreatment" } Apakah Anda saat ini masih mendapatkan perawatan?
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholContinueTreatment" } Apakah Anda saat ini masih mendapatkan perawatan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholContinueTreatmentNo" } Tidak
 						%input#RadioButtonPolicyHolderAlcoholContinueTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholContinueTreatment", :value => "false" }
@@ -256,19 +264,19 @@
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderAlcoholALContinueTreatmentDoctorAddress"} c. Alamat Dokter
 						%input#TextPolicyHolderAlcoholALContinueTreatmentDoctorAddress.Full.Single.Item{ :type => "text" }
-					%br
+					%b										
 
-					%span.Number.Single.PositionerLeft 7.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALOnLeave" } Apakah Anda pernah tidak masuk kerja karena kondisi ini?
-					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALOnLeaveNo" } Tidak
-						%input#RadioButtonPolicyHolderAlcoholALOnLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALOnLeave", :value => "false" }
-						%div.BoxRound.PositionerRight
-
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALOnLeaveYes" } Ya
-						%input#RadioButtonPolicyHolderAlcoholALOnLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALOnLeave", :value => "true" }
-						%div.BoxRound.PositionerRight
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;" } 7.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALOnLeave", :style => "margin-top: 30px;" } Apakah Anda pernah tidak masuk kerja karena kondisi ini?
+					%div.RadioButton.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALOnLeaveNo", :style => "margin-top: 30px;" } Tidak
+						%input#RadioButtonPolicyHolderAlcoholALOnLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALOnLeave", :value => "false", :style => "margin-top: 30px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 30px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALOnLeaveYes", :style => "margin-top: 30px;" } Ya
+						%input#RadioButtonPolicyHolderAlcoholALOnLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALOnLeave", :value => "true", :style => "margin-top: 30px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 30px;" }
 					%br
+					
 					%label.NumberIndent.Single.PositionerLeft{ :for => "DatePolicyHolderAlcoholALOnLeave" } Jika “Ya”, kapan:
 					%table#DatePolicyHolderAlcoholALOnLeavePeriodDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
@@ -280,8 +288,7 @@
 						%label.NumberIndent.Single.PositionerRight{ :for => "TextPolicyHolderAlcoholOnLeavePeriod" } Dan berapa lama
 						%input#TextPolicyHolderAlcoholOnLeavePeriod.Short.Single.Item{ :type => "text" }
 						%label.NumberIndent.Single.PositionerRight Hari
-					%br
-					%br
+					%br										
 
 					%span.Number.Single.PositionerLeft 8.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALCheckUp" } Apakah pernah melakukan pemeriksaan kesehatan sehubungan penggunaan alkohol/obat-obatan?
@@ -298,10 +305,14 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderAlcoholALCheckUp.Full.Single.Item{ :type => "text" }
 					%br
-
+					
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 9.
-						%label.Full.Wrap.Item{ :for => "TextPolicyHolderAlcoholALAddtionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%span.NumberFix.Single.Item{ :style => "margin-top: 40px;" } 9.
+						%label.Full.Wrap.Item{ :for => "TextPolicyHolderAlcoholALAddtionalInformation", :style => "margin-top: 40px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderAlcoholALAddtionalInformation.Full.Single.Item{ :type => "text" }

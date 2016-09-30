@@ -18,12 +18,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -36,7 +36,7 @@
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Penerbangan");
+				titleSetterForHealthQuestionnairePDF("Kuosioner Penerbangan");
 			});
 
 
@@ -67,29 +67,27 @@
 
 				%h2 II. Wajib Dilengkapi Calon Tertanggung
 
-				%fieldset
-					%span.Number.Single.PositionerLeft 1.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderFlightJob" } Apakah Anda terbang sebagai pilot atau navigator?
-					%div.RadioButton.PositionerRight
-						%input#RadioButtonPolicyHolderFlightJobPilot.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightJob", :value => "pilot" }
+				%fieldset.fieldset.WithoutDoubleDot
+					%span.Number.Single.PositionerLeft 1.					
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightFLJob" } Apakah Anda terbang sebagai?
+					%div.RadioButton.PositionerLeft
+						%input#RadioButtonPolicyHolderFlightFLJobPilot.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightFLJob", :value => "pilot" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightJobPilot" } Pilot
-						%input#RadioButtonPolicyHolderFlightJobNavigator.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightJob", :value => "navigator" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightFLJobPilot" } Pilot
+						%input#RadioButtonPolicyHolderFlightFLJobNavigator.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightFLJob", :value => "navigator" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightJobNavigator" } Navigator
-						%input#RadioButtonPolicyHolderFlightJobStewardess.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightJob", :value => "stewardess" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightFLJobNavigator" } Navigator
+						%input#RadioButtonPolicyHolderFlightFLJobStewardess.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightFLJob", :value => "stewardess" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightJobStewardess" } Pramugari
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightFLJobStewardess" } Pramugari
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneYes" } Apakah Anda memiliki pesawat sendiri?
-					%br
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneYes" } Apakah Anda memiliki pesawat sendiri?					
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderFlightHavePlaneYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightHavePlane", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneYes" } Ya
-
 						%input#RadioButtonPolicyHolderFlightHavePlaneNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderFlightHavePlane", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderFlightHavePlaneNo" } Tidak
@@ -107,7 +105,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 4.
-					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightLicenseList" } Mohon sebutkan secara rinci Lisensi / Sertifikat penerbangan yang Anda miliki:
+					%label.Single.PositionerLeft{ :for => "TablePolicyHolderFlightLicenseList" } Mohon sebutkan secara rinci Lisensi dan/atau Sertifikat penerbangan yang Anda miliki:
 					%br
 					-#
 						%div.ContainerFit
@@ -187,14 +185,23 @@
 					%br					
 					
 					%div.ContainerFit.NumberIndent
-						%label.ShortFix.Wrap.Item.Center Kategori Penerbangan
-						%label.Tiny.Wrap.Item1.Center Tujuan
-						%label.Tiny.Wrap.Item1.Center Total
-						%label.Tiny.Wrap.Item1.Center 12 bulan terakhir
-						%label.Tiny.Wrap.Item1.Center 12 bulan yang akan datang
-						%label.Tiny.Wrap.Item1.Center Total
-						%label.Tiny.Wrap.Item1.Center 12 bulan terakhir
-						%label.Tiny.Wrap.Item1.Center 12 bulan yang akan datang
+						%label.ShortFix.Single.Item.Center Kategori Penerbangan
+						%label.Tiny.Single.Item1.Center Tujuan
+						%label.Tiny.Single.Item1.Center 
+						%label.Tiny.Single.Item1.Center Jumlah Penerbangan
+						%label.Tiny.Single.Item1.Center 
+						%label.Tiny.Single.Item1.Center 
+						%label.Tiny.Single.Item1.Center Jumlah Jam Terbang
+						%label.Tiny.Single.Item1.Center 
+					%div.ContainerFit.NumberIndent
+						%label.ShortFix.Single.Item.Center 
+						%label.Tiny.Single.Item1.Center 
+						%label.Tiny.Single.Item1.Center Total
+						%label.Tiny.Single.Item1.Center 12 bulan terakhir
+						%label.Tiny.Single.Item1.Center 12 bulan yang akan datang
+						%label.Tiny.Single.Item1.Center Total
+						%label.Tiny.Single.Item1.Center 12 bulan terakhir
+						%label.Tiny.Single.Item1.Center 12 bulan yang akan datang
 					%div.ContainerFit.NumberIndent
 						%label.ShortFix.Header.Single.Item.Left Penerbangan berjadwal
 						%input#TextPolicyHolderFlightScheduledDestination.Tiny.Single.Item1.Margin{ :type => "text" }
@@ -262,7 +269,7 @@
 
 					%span.Number.Single.PositionerLeft 8.
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderFlightFrom" }
-						Nama lokasi / tempat / bandara mulai penerbangan.
+						Nama lokasi / tempat / bandara mulai penerbangan?
 						%br
 						Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br

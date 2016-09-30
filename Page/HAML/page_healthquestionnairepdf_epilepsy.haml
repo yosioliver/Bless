@@ -18,12 +18,12 @@
 				// SECTION GENERAL
 				
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY				
 				
@@ -77,7 +77,7 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 				
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1. 
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderEpilepsySince" } Sejak umur berapa Anda terserang epilepsi?
 					%input#TextPolicyHolderEpilepsySince.Short.Single.PositionerLeft{ :type => "text" }
@@ -115,7 +115,7 @@
 					%br
 					
 					%span.Number.Single.PositionerLeft 5. 
-					%label.Long.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelYes" } Sebelum  terjadi  serangan,  apakah  Anda  merasakan  adanya  pusing-pusing,  mencium  bau-bauan,  melihat cahaya, atau bunyi-bunyian?
+					%label.Wrap.Full.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelYes" } Sebelum  terjadi  serangan,  apakah  Anda  merasakan  adanya  pusing-pusing,  mencium  bau-bauan,  melihat cahaya, atau bunyi-bunyian?
 					%div.RadioButton
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelNo" } Tidak							
 						%input#RadioButtonPolicyHolderEpilepsyIsFeelNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyIsFeel", :value => "false" }
@@ -304,7 +304,8 @@
 						
 						%input#RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyOtherDiseases", :value => "complication" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan 
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan
+						%input#TextPolicyHolderEpilepsyOtherDiseasesComplicationDesc.LineDot.Medium.Single.PositionerLeft{ :type => "text" }
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderEpilepsyOtherDiseaseDesc" } Mohon mengisi Kuesioner sesuai dengan penyakit lainnya yang Anda derita sesuai dengan pilihan pada nomor 12
 					%br								

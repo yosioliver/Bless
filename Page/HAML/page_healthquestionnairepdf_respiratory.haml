@@ -19,12 +19,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 				boxGenerator("#DatePolicyHolderRespiratoryDetailFirstTimeAriseDay", 2, boxTypeWithoutLabel, null);
@@ -81,7 +81,7 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDisruption" } Apakah gangguan pernapasan yang Anda derita?
 					%br

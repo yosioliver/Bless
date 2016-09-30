@@ -1,4 +1,4 @@
-!!! 5 
+!!! 5
 
 %html
 
@@ -20,12 +20,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -40,8 +40,8 @@
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("Perjalanan Ke Luar Negeri/Tinggal di Luar Negeri");
 
-				var objectContent = JSON.parse(jsonDummy);
-				getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
 
 
@@ -72,7 +72,7 @@
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTravelingTVReason" } Apakah alasan utama untuk melakukan perjalanan atau bertempat tinggal di luar negeri ?
 					%br
@@ -90,7 +90,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan rencana bepergian dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini ?
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan rencana bepergian dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini :
 					%br
 
 					-#
@@ -147,7 +147,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan perjalanan yang telah dilakukan dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini ?
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainSpread" } Sebutkan dengan rinci tujuan perjalanan yang telah dilakukan dalam 12 (dua belas) bulan terakhir pada kolom di bawah ini :
 					%br
 
 					-#

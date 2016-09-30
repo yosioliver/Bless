@@ -19,12 +19,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -47,7 +47,7 @@
 				// FOOTER
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kuesioner Diabetes");
+				titleSetterForHealthQuestionnairePDF("KUESIONER DIABETES MELITUS");
 			});
 
 
@@ -75,7 +75,7 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
 					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderDiabetesFirstKnown" } Kapan pertama kali diketahui menderita diabetes?
 					%table#DatePolicyHolderDiabetesFirstKnownYear.BoxSquare.PositionerRight
@@ -143,9 +143,11 @@
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesTherapyOral" } Oral/tablet.
 						%br
-						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDiabetesTherapyOralDesc" } Diet khusus, jelaskan Mohon menjelaskan secara rinci pada kolom di bawah ini (nama obat, dosis, frekuensi penggunaan dan lain-lain).
-						%br
-						%input#TextPolicyHolderDiabetesTherapyOralDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+					
+					%label.NumberIndent.Single.PositionerLeft{ :for => "TextPolicyHolderDiabetesTherapyOralDesc" } Mohon menjelaskan secara rinci pada kolom di bawah ini (nama obat, dosis, frekuensi penggunaan dan lain-lain).
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDiabetesTherapyOralDesc.Full.Single.Item{ :type => "text" }
 					%br
 
 					%section#SectionFooter{ :style => "margin-top: 100px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
@@ -366,10 +368,9 @@
 
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-										
-					%div.ContainerFit
-						%span.NumberFix.Single{ :style => "margin-top: 30px;"} 6
-						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+															
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }

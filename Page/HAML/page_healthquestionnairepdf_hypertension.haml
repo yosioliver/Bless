@@ -21,12 +21,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -80,14 +80,14 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
-					%label.Long.Wrap.PositionerLeft{ :for => "DatePolicyHolderHypertensionFirstTime" } a. Kapan pertama kali Anda mengetahui menderita tekanan darah tinggi?
-					%table#DatePolicyHolderHypertensionFirstTimeDay.BoxSquare.PositionerRight
+					%label.Full.Wrap.PositionerLeft{ :for => "DatePolicyHolderHypertensionFirstTime" } a. Kapan pertama kali Anda mengetahui menderita tekanan darah tinggi?
+					%table#DatePolicyHolderHypertensionFirstTimeYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderHypertensionFirstTimeMonth.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
-					%table#DatePolicyHolderHypertensionFirstTimeYear.BoxSquare.PositionerRight
+					%table#DatePolicyHolderHypertensionFirstTimeDay.BoxSquare.PositionerRight
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "NumberPolicyHolderHypertensionSystolic" } b. Berapa tekanan darah Anda saat itu
 					%label.Single.PositionerRight mmHg
@@ -392,7 +392,7 @@
 						%input#RadioButtonPolicyHolderHypertensionComplicationOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderHypertensionComplication", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderHypertensionComplicationOthers" } Lainnya, sebutkan
-						%input#TextPolicyHolderHypertensionComplicationOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextPolicyHolderHypertensionComplicationOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 						%br
 					%br
 

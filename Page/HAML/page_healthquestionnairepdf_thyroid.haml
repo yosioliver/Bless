@@ -17,13 +17,12 @@
 			{
 				// SECTION GENERAL
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
-
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderThyroidTHFirstGotDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderThyroidTHFirstGotMonth", 2, boxTypeWithoutLabel, null);
@@ -41,9 +40,6 @@
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
 
-
-
-
 				// SECTION MANDATORY
 				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
@@ -51,7 +47,7 @@
 
 				// FOOTER
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kuesioner Thyroid");
+				titleSetterForHealthQuestionnairePDF("KUESIONER KELAINAN KELENJAR GONDOK (TIROID)");
 			});
 
 
@@ -79,7 +75,7 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1
 					%label.Wrap.PositionerLeft{ :for => "DatePolicyHolderThyroidTHFirstGotDay" } Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
 					%table#DatePolicyHolderThyroidTHFirstGotYear.BoxSquare.PositionerRight
@@ -122,7 +118,7 @@
 						%input#RadioButtonPolicyHolderThyroidTHTTherapyOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHTherapy", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHTTherapyOthers" } Lainnya, sebutkan.
-						%input#TextPolicyHolderThyroidTHTherapyOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextPolicyHolderThyroidTHTherapyOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
 					%br
@@ -136,33 +132,38 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderThyroidTHLastConsultYear.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHConsultDoctName"} Nama Lengkap Dokter
-					%input#TextPolicyHolderThyroidTHConsultDoctName.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHConsultDoctName"} Nama Lengkap Dokter
+						%input#TextPolicyHolderThyroidTHConsultDoctName.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHConsultPhone"} No. Telepon/Handphone
-					%input#TextPolicyHolderThyroidTHConsultPhone.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHConsultPhone"} No. Telepon/Handphone
+						%input#TextPolicyHolderThyroidTHConsultPhone.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHConsultClinic"} Nama Klinik/Rumah Sakit
-					%input#TextPolicyHolderThyroidTHConsultClinic.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHConsultClinic"} Nama Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidTHConsultClinic.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHConsultAddress"} Alamat Klinik/Rumah Sakit
-					%input#TextPolicyHolderThyroidTHConsultAddress.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHConsultAddress"} Alamat Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidTHConsultAddress.Full.Single.Item{ :type => "text" }
 					%br
+					
+					%section#SectionFooter{ :style => "margin-top: 350px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 4
-					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTaken" } Apakah Anda pernah atau saat ini sedang mengkonsumsi obat sehubungan kelainan kelenjar gondok (tiroid)?
+					%header
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+			
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;"} 4
+					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTaken", :style => "margin-top: 70px;" } Apakah Anda pernah atau saat ini sedang mengkonsumsi obat sehubungan kelainan kelenjar gondok (tiroid)?
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderThyroidTHConsumeDrugYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHConsumeDrug", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHConsumeDrugYes" } Ya
-
 						%input#RadioButtonPolicyHolderThyroidTHConsumeDrugNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHConsumeDrug", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHConsumeDrugNo" } Tidak
-						%br
-
-					%label.Single.NumberIndent.PositionerLeft (Jika “Ya”, mohon mengisi kolom di bawah ini).
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHConsumeDrugNo" } Tidak (Jika “Ya”, mohon mengisi kolom di bawah ini).
 					%br
 					-#
 						%table#TablePolicyHolderThyroidCheckup
@@ -303,17 +304,20 @@
 						%input#TextPolicyHolderThyroidScanMRIUSGDate.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderThyroidScanMRIUSGResult.Short.Single.Item1.Margin{ :type => "text" }
 					%br
+					%section#SectionFooter{ :style => "margin-top: 50px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 6
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOperation" } Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
+					%header
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;"} 6
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOperation", :style => "margin-top: 70px;" } Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
 					%div.RadioButton
-						%input#RadioButtonPolicyHolderThyroidTHOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOperation", :value => "true" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidTHOperationYes" } Ya
-
-						%input#RadioButtonPolicyHolderThyroidTHOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOperation", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidTHOperationNo" } Tidak
+						%input#RadioButtonPolicyHolderThyroidTHOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOperation", :value => "true", :style => "margin-top: 70px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidTHOperationYes", :style => "margin-top: 70px;" } Ya
+						%input#RadioButtonPolicyHolderThyroidTHOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOperation", :value => "false", :style => "margin-top: 70px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidTHOperationNo", :style => "margin-top: 70px;" } Tidak
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderThyroidTHOperationDateDay" } Jika “Ya”, mohon berikan tanggal operasi:
 					%table#DatePolicyHolderThyroidTHOperationDateDay.BoxSquare.PositionerLeft
@@ -324,30 +328,36 @@
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHHospitalTreatmentDuration"} Lama perawatan di Rumah Sakit:
 					%input#TextPolicyHolderThyroidTHHospitalTreatmentDuration.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Medium.Single.NumberIndent.PositionerLeft Hari
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHOperationType"} Jenis Operasi:
-					%input#TextPolicyHolderThyroidTHOperationType.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHOperationType"} Jenis Operasi:
+						%input#TextPolicyHolderThyroidTHOperationType.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHDoctorName"} Nama Lengkap Dokter:
-					%input#TextPolicyHolderThyroidTHDoctorName.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHDoctorName"} Nama Lengkap Dokter:
+						%input#TextPolicyHolderThyroidTHDoctorName.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHHospitalTelephone"} No. Telepon/Handphone:
-					%input#TextPolicyHolderThyroidTHHospitalTelephone.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Single.Item{ :for => "TextPolicyHolderThyroidTHHospitalTelephone"} No. Telepon/Handphone:
+						%input#TextPolicyHolderThyroidTHHospitalTelephone.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHHospitalName"} Nama Klinik/Rumah Sakit
-					%input#TextPolicyHolderThyroidTHHospitalName.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHHospitalName"} Nama Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidTHHospitalName.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidTHHospitalAddress"} Alamat Klinik/Rumah Sakit
-					%input#TextPolicyHolderThyroidTHHospitalAddress.Long.Single.PositionerLeft{ :type => "text" }
+					%div.ContainerFit.NumberIndent
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderThyroidTHHospitalAddress"} Alamat Klinik/Rumah Sakit
+						%input#TextPolicyHolderThyroidTHHospitalAddress.Full.Single.Item{ :type => "text" }
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderThyroidAttachOperationResult" } Mohon melampirkan hasil Patologi Anatomi operasi tersebut
 					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderThyroidAttachOperationResultYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidAttachOperationResult", :value => "true" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidAttachOperationResultYes" } Ada
 						%input#RadioButtonPolicyHolderThyroidAttachOperationResultNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidAttachOperationResult", :value => "false" }
 						%div.BoxRound.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidAttachOperationResultNo" } Tidak
+						%input#RadioButtonPolicyHolderThyroidAttachOperationResultYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidAttachOperationResult", :value => "true" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidAttachOperationResultYes" } Ada
 						%br
 					%label.Single.NumberIndent.PositionerLeft Jika “Tidak”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
@@ -435,10 +445,12 @@
 						%label.Wrap.Item{ :for => "TextPolicyHolderThyroidTHAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%input#TextPolicyHolderThyroidTHAdditionalInfo.Full.Single.NumberIndent.PositionerLeft{ :type => "text" }
-					%br
-
-				%section#SectionDeclaration
-					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
+					%br					
+					%section#SectionFooter{ :style => "margin-top: 350px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+				%section#SectionDeclaration=Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
 		%section#SectionFooter
 			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

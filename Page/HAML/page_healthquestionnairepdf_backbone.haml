@@ -17,13 +17,12 @@
 			{
 				// SECTION GENERAL
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
-
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainMonth", 2, boxTypeWithoutLabel, null);
@@ -92,9 +91,9 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBDissorderYes" } Apakah Anda pernah menderita hernia/spondylosis/kelainan tulang belakang lainnya?
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBDissorderYes" } Apakah Anda pernah menderita hernia/spondylosis/kelainan tulang belakang lainnya?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBDissorderNo" } Tidak
 						%input#RadioButtonPolicyHolderBackboneBBDissorderNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBDissorder", :value => "false" }
@@ -112,7 +111,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Full.Single.PositionerLeft{ :for => "DatePolicyHolderBackboneBBFirstComplain" } Kapan pertama kali keluhan tersebut dirasakan?
+					%label.Full.Wrap.PositionerLeft{ :for => "DatePolicyHolderBackboneBBFirstComplain" } Kapan pertama kali keluhan tersebut dirasakan?
 					%table#DatePolicyHolderBackboneBBFirstComplainDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBFirstComplainMonth.BoxSquare.PositionerLeft
@@ -121,19 +120,19 @@
 
 					%br
 					%span.Number.Single.PositionerLeft 3
-					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneComplainAmountDay" } Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneComplainAmountDay" } Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
 					%input#TextPolicyHolderBackboneComplainAmount.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 4
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBPainLocation" } Mohon menjelaskan secara rinci pada kolom di bawah ini dan pada bagian tubuh mana?
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBPainLocation" } Mohon menjelaskan secara rinci pada kolom di bawah ini dan pada bagian tubuh mana?
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderBackboneBBPainLocation.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 5
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBLimitedActivityYes" } Apakah aktivitas Anda mengalami hambatan?
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBLimitedActivityYes" } Apakah aktivitas Anda mengalami hambatan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBLimitedActivityNo" } Tidak
 						%input#RadioButtonPolicyHolderBackboneBBLimitedActivityNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBLimitedActivity", :value => "false" }
@@ -150,7 +149,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 6.
-					%label.Full.Single.PositionerLeft{ :for => "DatePolicyHolderBackboneBBFirstLimitedActivityDay" } Kapan mengalami hambatan ?.
+					%label.Full.Wrap.PositionerLeft{ :for => "DatePolicyHolderBackboneBBFirstLimitedActivityDay" } Kapan mengalami hambatan ?.
 					%table#DatePolicyHolderBackboneBBFirstLimitedActivityDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBFirstLimitedActivityMonth.BoxSquare.PositionerLeft
@@ -217,7 +216,7 @@
 						%input#RadioButtonPolicyHolderBackboneSuggestSurgeryYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneSuggestSurgery", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon berikan tanggal operasi:
+					%label.NumberIndent.Medium.Single.PositionerLeft Jika “Ya”, mohon berikan tanggal operasi:
 					%table#DatePolicyHolderBackboneSuggestSurgeryDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneSuggestSurgeryMonth.BoxSquare.PositionerLeft
@@ -244,6 +243,7 @@
 
 					%span.Number.Single.PositionerLeft 11.
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneWhenLast" } Mohon jelaskan dengan rinci jenis pengobatan Anda saat ini dan dahulu pada kolom di bawah ini.
+					%br
 					%label.NumberIndent.Single.PositionerLeft Apakah diberi suntikan?
 					%div.RadioButton
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBInjectionNo" } Tidak
@@ -332,21 +332,20 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 13
-					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBControlAmount" } Seberapa sering Anda kontrol?
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBControlAmount" } Seberapa sering Anda kontrol?
 					%input#TextPolicyHolderBackboneBBControlAmount.Short.Single.PositionerLeft{ :type => "text" }
 					%label.Long.Separator.Single.PositionerLeft kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 					%br
 
 					%span.Number.Single.PositionerLeft 14.
-					%label.Full.Single.PositionerLeft{ :for => "DatePolicyHolderBackboneBBLastConsultDay" } Kapan terakhir kali Anda kontrol?
+					%label.Full.Wrap.PositionerLeft{ :for => "DatePolicyHolderBackboneBBLastConsultDay" } Kapan terakhir kali Anda kontrol?
 					%table#DatePolicyHolderBackboneBBLastConsultDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBLastConsultMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBLastConsultYear.BoxSquare.PositionerLeft
 					%br
-
-					%br
+					
 					%span.Number.Single.PositionerLeft 15
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBAbsent" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 					%div.RadioButton
@@ -369,7 +368,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 16
-					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderBackboneBBAdditionalInformation.Full.Single.Item{ :type => "text" }

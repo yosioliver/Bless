@@ -19,12 +19,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -70,7 +70,7 @@
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
 					%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryUnit" } Anda termasuk dalam kesatuan ?
 					%div.RadioButton.PositionerRight
@@ -83,14 +83,14 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tempat bertugas Anda saat ini pada kolom di bawah ini ?
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryDuty" } Mohon jelaskan divisi/bagian, jabatan, pangkat dan tempat bertugas Anda saat ini pada kolom di bawah ini :
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryDuty.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
-					%label.Wrap.Long.PositionerLeft Apakah Anda melakukan kegiatan yang berisiko tinggi?
+					%label.Wrap.Full.PositionerLeft Apakah Anda melakukan kegiatan yang berisiko tinggi, sesuai dengan tabel pertanyaan dibawah ini ?
 					%br
 
 					%div.RadioButton.NumberIndent
@@ -102,9 +102,9 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityWeaponTamer", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-
+					
 					%div.RadioButton.NumberIndent
-						%label.Full.Single.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan
+						%label.Long.Wrap.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan pembuatan peraturan
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamer", :value => "false" }
 						%div.BoxRound.PositionerRight
@@ -112,7 +112,7 @@
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamer", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-
+					
 					%div.RadioButton.NumberIndent
 						%label.Medium.Single.NumberIndent.PositionerLeft c. Penyelam
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityDiverNo" } Tidak
@@ -154,7 +154,7 @@
 					%br
 
 					%div.RadioButton.NumberIndent
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthers"} g. Lainnya
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthers"} g. Lainnya, sebutkan
 						%input#TextPolicyHolderMilitaryRiskActivityOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityOthersNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityOthersNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityOthers", :value => "false" }
@@ -171,14 +171,14 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 4.
-					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderMilitaryDutyDetails" } Mohon dapat dijabarkan dengan jelas rincian tugas anda saat ini pada kolom di bawah ini.
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryDutyDetails" } Mohon dapat dijabarkan dengan jelas rincian tugas anda saat ini pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryDutyDetails.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 5.
-					%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true" }
@@ -188,7 +188,7 @@
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMilitaryInDangerLocationDesc"} Jika jawaban "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMilitaryInDangerLocationDesc"} Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryInDangerLocationDesc.Full.Single.Item{ :type => "text" }

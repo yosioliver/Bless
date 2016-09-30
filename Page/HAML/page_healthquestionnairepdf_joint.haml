@@ -21,11 +21,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -56,7 +57,7 @@
 				// SETUP
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kuesioner Sendi");
+				titleSetterForHealthQuestionnairePDF("Kuesioner Gangguan Sendi");
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
@@ -87,7 +88,7 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointAtritisNo" } Apakah Anda pernah menderita artritis/rematik/kelainan sendi lainnya?
 					%div.RadioButton.PositionerRight
@@ -105,7 +106,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Medium.Wrap.PositionerLeft{ :for => "DatePolicyHolderJointAtritisComplainDay" } Kapan pertama kali keluhan tersebut dirasakan?
+					%label.Full.Wrap.PositionerLeft{ :for => "DatePolicyHolderJointAtritisComplainDay" } Kapan pertama kali keluhan tersebut dirasakan?
 					%table#DatePolicyHolderJointAtritisComplainDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderJointAtritisComplainMonth.BoxSquare.PositionerLeft
@@ -114,9 +115,9 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
-					%label.Medium.Wrap.PositionerLeft{ :for => "TextPolicyHolderJointAtritisComplainAmount" } Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderJointAtritisComplainAmount" } Seberapa seringkah keluhan tersebut timbul dalam 12 bulan terakhir?
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderJointAtritisComplainAmount.Full.Single{ :type => "text" }
+						%input#TextPolicyHolderJointAtritisComplainAmount.Medium.Single{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 4.					
@@ -165,18 +166,22 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderJointJNComplainDetail.Full.Single{ :type => "text" }
 					%br
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 8.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNXRay" } Apakah Anda pernah menjalani X-ray atau pemeriksaan lainnya?
+					%header
+						%section#SectionHeader{ :style => "margin-top: 80px; position: relative; top: 80px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 8.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNXRay", :style => "margin-top: 70px;" } Apakah Anda pernah menjalani X-ray atau pemeriksaan lainnya?
 					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNXRayNo" } Tidak
-						%input#RadioButtonPolicyHolderJointJNXRayNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNXRay", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNXRayYes" } Ya
-						%input#RadioButtonPolicyHolderJointJNXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNXRay", :value => "true" }
-						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNXRayNo", :style => "margin-top: 70px;" } Tidak
+						%input#RadioButtonPolicyHolderJointJNXRayNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNXRay", :value => "false", :style => "margin-top: 70px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderJointJNXRayYes", :style => "margin-top: 70px;" } Ya
+						%input#RadioButtonPolicyHolderJointJNXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNXRay", :value => "true", :style => "margin-top: 70px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointJNXRayDay" } Kapan pertama kali keluhan tersebut dirasakan?
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointJNXRayDay" } Jika "Ya", mohon berikan tanggal pemeriksaan 
 					%table#DatePolicyHolderJointJNXRayDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderJointJNXRayMonth.BoxSquare.PositionerLeft
@@ -305,11 +310,16 @@
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNBOTTOMHospitalAddress" } Alamat Klinik/Rumah Sakit:
 						%input#TextPolicyHolderJointJNBOTTOMHospitalAddress.Full.Single.Item{ :type => "text" }
+					
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 13.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNCheckUpFrequency" } Seberapa sering Anda kontrol?
-					%input#TextPolicyHolderJointJNCheckUpFrequency.Tiny.Single.PositionerLeft{ :type => "text" }
-					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderJointCheckUpFrequency" } kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
+					%header
+						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;" } 13.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNCheckUpFrequency", :style => "margin-top: 30px;" } Seberapa sering Anda kontrol?
+					%input#TextPolicyHolderJointJNCheckUpFrequency.Tiny.Single.PositionerLeft{ :type => "text", :style => "margin-top: 30px;" }
+					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderJointCheckUpFrequency", :style => "margin-top: 30px;" } kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 					%br
 
 					%span.Number.Single.PositionerLeft 14.

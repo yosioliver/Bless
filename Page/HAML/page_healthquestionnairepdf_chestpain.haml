@@ -21,11 +21,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -87,9 +88,9 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
-					%label.Medium.Wrap.PositionerLeft{ :for => "DatePolicyHolderChestPainFirstAttackDay" } Kapan pertama kali Anda merasakan nyeri dada?
+					%label.Long.Wrap.PositionerLeft{ :for => "DatePolicyHolderChestPainFirstAttackDay" } Kapan pertama kali Anda merasakan nyeri dada?
 					%table#DatePolicyHolderChestPainFirstAttackYear.BoxSquare.PositionerRight
 					%span.Separator.Single.PositionerRight /
 					%table#DatePolicyHolderChestPainFirstAttackMonth.BoxSquare.PositionerRight
@@ -254,7 +255,7 @@
 						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedAfterSport" } Hanya pada istirahat sehabis olah raga
 						%input#RadioButtonPolicyHolderChestPainHowHappenedDeepBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "deepbreath" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedDeepBreath" } Diperburuk dengan nafas dalam
+						%label.Short.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainHowHappenedDeepBreath" } Diperburuk dengan tarik nafas dalam
 						%br
 						%input#RadioButtonPolicyHolderChestPainHowHappenedOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainHowHappened", :value => "other" }
 						%div.BoxRound.PositionerLeft
@@ -414,27 +415,26 @@
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"}  14.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderChestPainTakeLeave", :style => "margin-top: 30px;" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveNo" } Tidak
-						%input#RadioButtonPolicyHolderChestPainTakeLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveYes" } Ya
-						%input#RadioButtonPolicyHolderChestPainTakeLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "true" }
-						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveNo", :style => "margin-top: 30px;" } Tidak
+						%input#RadioButtonPolicyHolderChestPainTakeLeaveNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "false", :style => "margin-top: 30px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 30px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderChestPainTakeLeaveYes", :style => "margin-top: 30px;" } Ya
+						%input#RadioButtonPolicyHolderChestPainTakeLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "true", :style => "margin-top: 30px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 30px;" }
 					%br
-					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainTakeLeaveIfYesDay" } Jika “Ya”, kapan
+					%label.Short.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainTakeLeaveIfYesDay" } Jika “Ya”, kapan
 					%table#DatePolicyHolderChestPainTakeLeaveIfYesDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderChestPainTakeLeaveIfYesMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderChestPainTakeLeaveIfYesYear.BoxSquare.PositionerLeft
-					%label.Medium.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTakeLeaveDesc" } Berapa lama
+					%label.Short.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTakeLeaveDesc" } Berapa lama
 					%input#NumberPolicyHolderChestPainTakeLeaveHowLong.Short.Single.PositionerLeft{ :type => "number" }
-					%label.Single.PositionerLeft Hari
+					%label.Single.PositionerLeft.NumberIndent Hari
 					%br
-
-					%div.ContainerFit
-						%span.NumberFix.Single.Item 15
-						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderChestPainAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini?
+					
+					%span.NumberFix.Single.PositionerLeft 15
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderChestPainAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini?
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderChestPainAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }

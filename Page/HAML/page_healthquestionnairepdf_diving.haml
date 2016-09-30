@@ -18,12 +18,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -36,7 +36,7 @@
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Menyelam");
+				titleSetterForHealthQuestionnairePDF("Kusioner Menyelam");
 			});
 
 
@@ -67,9 +67,9 @@
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
-					%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Andai ikuti saat ini?
+					%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingCriteria" } Apakah jenis menyelam yang Anda ikuti saat ini?
 					%br
 
 					%div.RadioButton.NumberIndent
@@ -87,7 +87,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki.
+					%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi / Sertifikat yang Anda miliki?
 					%br
 
 					%div.ContainerFit.NumberIndent
@@ -116,9 +116,8 @@
 						%input#TextPolicyHolderDivingDVCertificateExpired5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 
-					%div.ContainerFix
-						%span.NumberFix.Single.Item 3.
-						%label.Full.Single.Item{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
+					%span.Number.Single.PositionerLeft 3.
+					%label.Full.Single.Item{ :for => "TablePolicyHolderDivingHistories" } Mohon sebutkan riwayat menyelam dan rencana menyelam yang akan dilakukan
 					%br
 					-#
 						%div.RadioButton.NumberIndent
@@ -258,14 +257,13 @@
 					%span.Number.Single.PositionerLeft 5.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Pernahkah Anda mengalami kecelakaan sewaktu menyelam yang membutuhkan bantuan medis?
 					%br
-					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderDivingAccidentDVNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingAccidentDV", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVNo" } Tidak
-						%br
+					%div.RadioButton.NumberIndent												
 						%input#RadioButtonPolicyHolderDivingAccidentDVYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingAccidentDV", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Ya. Mohon memberikan rincian termasuk tanggal
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVYes" } Ya. 
+						%input#RadioButtonPolicyHolderDivingAccidentDVNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDivingAccidentDV", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDVNo" } Tidak (Jika "Ya" Mohon menjelaskan secara rinci pada kolom dibawah ini).
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingAccidentDVDesc.Full.Single.Item{ :type => "text" }

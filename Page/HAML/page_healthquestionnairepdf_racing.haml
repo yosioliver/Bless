@@ -19,12 +19,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -70,23 +70,27 @@
 
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 
-				%fieldset
+				%fieldset.fieldset.WithoutDoubleDot
 					%span.Number.Single.PositionerLeft 1.
 					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCActivity" } Apakah jenis kegiatan olah raga motor yang Anda lakukan?
+					%br
+					%label.Long.Single.NumberIndent.PositionerLeft Mohon menjelaskan secara rinci pada kolom dibawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCActivity.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCVehicleModel" } Apakah jenis kendaraan bermotor yang Ada kendaran? (Sebutkan model, tahun pembuatan, ukuran mesin, dan kategori secara terperinci)
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderRacingRCVehicleModel" } Apakah jenis kendaraan bermotor yang Ada kendarai? 					
+					%br
+					%label.Full.Wrap.NumberIndent.PositionerLeft Mohon menjelaskan secara rinci pada kolom dibawah ini.(Model, tahun pembuatan, ukuran mesin dan kategori secara terperinci)
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCVehicleModel.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
-					%label.Wrap.Full.PositionerLeft Sebutkan tujuan kegiatan olah raga motor/ sepeda motor yang Anda lakukan
+					%label.Wrap.Full.PositionerLeft Sebutkan tujuan kegiatan olah raga motor/ sepeda motor yang Anda lakukan :
 					%br
 
 					%div.RadioButton.NumberIndent
@@ -110,16 +114,26 @@
 						%div.BoxRound.PositionerLeft
 						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeSponsor" } Sponsor
 					%br
-
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderRacingRCActivityPurposeOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "other" }
+						%div.BoxRound.PositionerLeft
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeOthers" } Lainnya, sebutkan
+						%input#TextPolicyHolderRacingRCActivityPurposeOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+					%br
+					
 					%span.Number.Single.PositionerLeft 4.
 					%label.Long.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCStillActive" } Berapa lama Anda aktif dalam olah raga ini?
+					%br
+					%label.Long.Single.NumberIndent.PositionerLeft Mohon menjelaskan secara rinci pada kolom dibawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCStillActive.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 5.
-					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCPlace" } Di mana Anda melakukan perlombaan? (Sebutkan nama semua acara yang diselenggarakan)
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderRacingRCPlace" } Di mana Anda melakukan perlombaan? (Sebutkan nama semua acara yang diselenggarakan)
+					%br
+					%label.Long.Single.NumberIndent.PositionerLeft Mohon menjelaskan secara rinci pada kolom dibawah ini.
 					%br
 					%div.RadioButton.NumberIndent
 						%input#TextPolicyHolderRacingRCPlace.Full.Single.Item{ :type => "text" }
@@ -137,7 +151,7 @@
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Lisensi/Sertifikat
 						%label.Short.Single.Item1.Center Tanggal Perolehan
-						%label.Short.Single.Item1.Center Tanggal Perpanjangan
+						%label.Short.Single.Item1.Center Masa Berlaku
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderRacingRCLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
@@ -164,14 +178,15 @@
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCParticipating" } Apakah Anda berpartisipasi atau berniat untuk berpartisipasi dalam setiap kompetisi?
 					%br
 					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderRacingRCParticipatingNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCParticipating", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCParticipatingNo" } Tidak
-					%br
-					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCParticipatingYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCParticipating", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCParticipatingYes" } Ya. Jelaskan secara rinci
+						%label.Tiny.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCParticipatingYes" } Ya					
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderRacingRCParticipatingNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCParticipating", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Tiny.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCParticipatingNo" } Tidak
+					%br
+					%label.Long.Single.NumberIndent.PositionerLeft Jika "Ya" mohon menjelaskan secara rinci pada kolom dibawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCParticipatingLocationDesc.Full.Single.Item{ :type => "text" }
@@ -179,16 +194,17 @@
 
 					%span.Number.Single.PositionerLeft 8.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCClubMember" } Apakah Anda anggota suatu klub atau asosiasi balap?
-					%br
-					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderRacingRCClubMemberNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCClubMember", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCClubMemberNo" } Tidak
-					%br
+					%br					
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCClubMemberYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCClubMember", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCClubMemberYes" } Ya. Jelaskan secara rinci
+						%label.Tiny.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCClubMemberYes" } Ya
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderRacingRCClubMemberNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCClubMember", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Tiny.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCClubMemberNo" } Tidak										
+					%br
+					%label.Long.Single.NumberIndent.PositionerLeft Jika "Ya" mohon menjelaskan secara rinci pada kolom dibawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCClubMemberDesc.Full.Single.Item{ :type => "text" }
@@ -197,22 +213,24 @@
 					%span.Number.Single.PositionerLeft 9.
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCAccident" } Pernahkah Anda mengalami kecelakaan atau pelanggaran pengunaan/pencabutan lisensi?
 					%br
-					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderRacingRCAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCAccident", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCAccidentNo" } Tidak
-					%br
+					
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCAccident", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCAccidentYes" } Ya. Jelaskan secara rinci
+						%label.Tiny.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCAccidentYes" } Ya
+					%div.RadioButton.NumberIndent
+						%input#RadioButtonPolicyHolderRacingRCAccidentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCAccident", :value => "false" }
+						%div.BoxRound.PositionerLeft
+						%label.Tiny.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCAccidentNo" } Tidak
+					%br
+					%label.Long.Single.NumberIndent.PositionerLeft Jika "Ya" mohon menjelaskan secara rinci pada kolom dibawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCAccidentDesc.Full.Single.Item{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 10.
-					%label.Full.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCAdditionalInfo" } Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderRacingRCAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCAdditionalInfo.Full.Single.Item{ :type => "text" }

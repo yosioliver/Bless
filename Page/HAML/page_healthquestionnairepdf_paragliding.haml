@@ -21,11 +21,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderFullName2nd", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -56,7 +57,7 @@
 				// SETUP
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kuesioner Terbang Layang");
+				titleSetterForHealthQuestionnairePDF("KUESIONER TERBANG LAYANG");
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
@@ -97,7 +98,7 @@
 						= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 					%h2 II. Wajib Dilengkapi (Calon) Tertanggung
-					%fieldset
+					%fieldset.fieldset.WithoutDoubleDot
 						%div.ContainerFit
 							%span.NumberFix.Single.Item 1.
 							%label.Single.Item Sebutkan jenis terbang layang yang Anda gunakan.
@@ -139,16 +140,16 @@
 						%hr
 
 						%span.Number.Single.PositionerLeft 3.
-						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDivingAccidentDV" } Apakah anda bergabung dengan klub atau asosiasi terbang layang ?
-						%br
+						%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMember" } Apakah anda bergabung dengan klub atau asosiasi terbang layang ?						
 						%div.RadioButton.NumberIndent
+							%input#RadioButtonPolicyHolderParaglidingPGClubMemberYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGClubMember", :value => "true" }
+							%div.BoxRound.PositionerLeft
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMemberYes" } Ya							
 							%input#RadioButtonPolicyHolderParaglidingPGClubMemberNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGClubMember", :value => "false" }
 							%div.BoxRound.PositionerLeft
 							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMemberNo" } Tidak
-							%br
-							%input#RadioButtonPolicyHolderParaglidingPGClubMemberYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGClubMember", :value => "true" }
-							%div.BoxRound.PositionerLeft
-							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMemberYes" } Ya. Jelaskan secara rinci
+						%br
+						%label.Full.Wrap.Item.NumberIndent Jika "Ya" Mohon menjelaskan secara rinci pada kolom dibawah ini
 						%br
 						%div.ContainerFit.NumberIndent
 							%input#TextPolicyHolderParaglidingPGClubMemberDesc.Full.Single.Item{ :type => "text" }
@@ -156,7 +157,7 @@
 						%hr
 
 						%span.Number.Single.PositionerLeft 4.
-						%label.Full.Single.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Seberapa sering Anda melakukan terbang layang dan berapa jam terbang Anda?
+						%label.Full.Wrap.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Seberapa sering Anda melakukan terbang layang dan berapa jam terbang Anda?
 						%br
 						-#
 							%div.RadioButton.NumberIndent
@@ -177,7 +178,7 @@
 							%label.ShortFix.Single.Item1.Center
 							%label.Short.Single.Item1.Center Total
 							%label.Short.Single.Item1.Center 1 Tahun Terakhir
-							%label.Short.Single.Item1.Center 1 Tahun Mendatang (Perkiraan)
+							%label.Short.Single.Item1.Center 1 Tahun Yang Akan Datang (Perkiraan)
 						%div.ContainerFit.NumberIndent
 							%label.ShortFix.Single.Item1.Center Jumlah Penerbangan
 							%input#TextPolicyHolderParaglidingPGTotalAmount.Short.Single.Item1.Margin{ :type => "text" }
@@ -201,7 +202,7 @@
 
 						%hr
 						%span.Number.Single.PositionerLeft 6.
-						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGOtherPurpose" } Selain untuk kesenangan, adakah tujuan lain dari Anda melakukan terbang layang, misalnya kegiatan pertanian atau komersil, dll?
+						%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGOtherPurpose" } Adakah tujuan lain dari Anda melakukan terbang layang? (misalnya kegiatan pertandingan atau komersil dan lain-lain).
 						%br
 						%div.RadioButton.NumberIndent
 							%input#RadioButtonPolicyHolderParaglidingPGOtherPurposeYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGOtherPurpose", :value => "true" }
@@ -217,7 +218,7 @@
 						%hr
 
 						%span.Number.Single.PositionerLeft 7.
-						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGParticipating" } Apakah Anda berpartisipasi atau akan berpartisipasi dalam aerobatic, perlombaan, pameran atau tes terbang?
+						%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGParticipating" } Apakah Anda berpartisipasi atau akan berpartisipasi dalam aerobatic, perlombaan, pameran atau tes terbang?
 						%br
 						%div.RadioButton.NumberIndent
 							%input#RadioButtonPolicyHolderParaglidingPGParticipatingYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGParticipating", :value => "true" }
@@ -233,7 +234,7 @@
 						%hr
 
 						%span.Number.Single.PositionerLeft 8.
-						%label.Full.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGAccident" } Apakah Anda pernah mengalami kecelakaan terbang layang atau ijin terbang Anda dicabut karena alasan tertentu?
+						%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGAccident" } Apakah Anda pernah mengalami kecelakaan terbang layang atau ijin terbang Anda dicabut karena alasan tertentu?
 						%br
 						%div.RadioButton.NumberIndent
 							%input#RadioButtonPolicyHolderParaglidingPGAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGAccident", :value => "true" }
@@ -250,7 +251,7 @@
 
 						%div.ContainerFit
 							%span.NumberFix.Single.Item 9.
-							%label.Wrap.Item{ :for => "TextPolicyHolderParaglidingPGOtherImportantInfo" } Mohon jelaskan informasi lainnya yang menurut Anda penting.
+							%label.Wrap.Item{ :for => "TextPolicyHolderParaglidingPGOtherImportantInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 						%br
 						%div.ContainerFit.NumberIndent
 							%input#TextPolicyHolderParaglidingPGOtherImportantInfo.Full.Single{ :type => "text" }
