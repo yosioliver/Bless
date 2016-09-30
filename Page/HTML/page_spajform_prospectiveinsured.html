@@ -40,9 +40,6 @@
     <script src='../../Java Script/Minimized/DateTimePicker-i18n.js' type='text/javascript'></script>
     <script src='../../Java Script/Minimized/DateTimePicker_IOS_fix.js' type='text/javascript'></script>
     <script src='../../Java Script/RAW/jquery.number.js' type='text/javascript'></script>
-    <script>
-      var stringPageTypeCurrent = stringPageTypeForm;
-    </script>
     <script src='../../Java Script/Minimized/ios-integration.min.js' type='text/javascript'></script>
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
     <!-- JQUERY -->
@@ -52,11 +49,11 @@
       var stringPageTypeCurrent = stringPageTypeForm;
       var stringPageSectionCurrent = stringPageSectionForm;
       var stringPageValidationCurrent = stringPageValidationIncome;
-      var booleanInputChangeState = false;
+      var booleanInputChangeState = "false";
       // var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
-      	
+      
       $(document).ready(function()
-      {				
+      {
       	$("#BoxDate").DateTimePicker(
       	{
       		dateSeparator: "/",
@@ -64,28 +61,28 @@
       	});
       
       	autoPopulateState();
-      	
+      
       	$("#TextProspectiveInsuredCIN").keypress(function (e) {
       	 //if the letter is not digit then display error and don't type anything
-      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
       			return false;
       		}
           });
-      	
+      
       	$("#TextProspectiveInsuredHomePostalCode").keypress(function (e) {
       	 //if the letter is not digit then display error and don't type anything
-      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
       			return false;
       		}
           });
-      	
+      
       	$("#TextProspectiveInsuredOfficePostalCode").keypress(function (e) {
       	 //if the letter is not digit then display error and don't type anything
-      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
       			return false;
       		}
           });
-      	
+      
       	//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       	$('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );
       	$('#TextProspectiveInsuredRevenue').number( true, 0, ',', '.' );
@@ -94,25 +91,25 @@
       	radioButtonOtherGenerator("RadioButtonProspectiveInsuredIDType", "#TextProspectiveInsuredIDTypeOther", "OTHER");
       	radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "other");
       	checkboxOtherGenerator("CheckboxProspectiveInsuredInsurancePurposeOther", "#TextProspectiveInsuredInsurancePurposeOther", "other");
-      	
+      
       	telephoneStripGenerator("TextProspectiveInsuredHomeTelephone");
       	telephoneStripGenerator("TextProspectiveInsuredOfficeTelephone");
-      	
+      
       	inputListener();
-      	
+      
       	// FOR TESTING
-      	
+      
       	/* $("#ButtonSubmit").click(function()
       	{
       		savetoDB();
       	}); */
-      	
+      
       	$('input[type=radio][name=RadioButtonProspectiveInsuredCorrespondanceAddress]').change(function() {
       		if (this.value == 'home') {
       			$("#TextProspectiveInsuredHomeAddress1").prop('required',true);
       			$("#TextProspectiveInsuredHomeCity").prop('required',true);
       			$("#TextProspectiveInsuredHomePostalCode").prop('required',true);
-      			
+      
       			$('#TextProspectiveInsuredOfficeAddress1').removeAttr('required');
       			$('#TextProspectiveInsuredOfficeCity').removeAttr('required');
       			$('#TextProspectiveInsuredOfficePostalCode').removeAttr('required');
@@ -121,14 +118,14 @@
       			$("#TextProspectiveInsuredOfficeAddress1").prop('required',true);
       			$("#TextProspectiveInsuredOfficeCity").prop('required',true);
       			$("#TextProspectiveInsuredOfficePostalCode").prop('required',true);
-      			
+      
       			$('#TextProspectiveInsuredHomeAddress1').removeAttr('required');
       			$('#TextProspectiveInsuredHomeCity').removeAttr('required');
       			$('#TextProspectiveInsuredHomePostalCode').removeAttr('required');
       		}
       		else
       		{
-      			
+      
       		}
       	});
       });

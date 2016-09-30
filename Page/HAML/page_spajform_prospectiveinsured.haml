@@ -11,17 +11,17 @@
 		/ JQUERY
 
 		:javascript
-		
+
 			// INITIALIZATION
 
 			var stringPageTypeCurrent = stringPageTypeForm;
 			var stringPageSectionCurrent = stringPageSectionForm;
 			var stringPageValidationCurrent = stringPageValidationIncome;
-			var booleanInputChangeState = false;
+			var booleanInputChangeState = "false";
 			// var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
-				
+
 			$(document).ready(function()
-			{				
+			{
 				$("#BoxDate").DateTimePicker(
 				{
 					dateSeparator: "/",
@@ -29,28 +29,28 @@
 				});
 
 				autoPopulateState();
-				
+
 				$("#TextProspectiveInsuredCIN").keypress(function (e) {
 				 //if the letter is not digit then display error and don't type anything
-					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
 						return false;
 					}
 			    });
-				
+
 				$("#TextProspectiveInsuredHomePostalCode").keypress(function (e) {
 				 //if the letter is not digit then display error and don't type anything
-					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
 						return false;
 					}
 			    });
-				
+
 				$("#TextProspectiveInsuredOfficePostalCode").keypress(function (e) {
 				 //if the letter is not digit then display error and don't type anything
-					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {					
+					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
 						return false;
 					}
 			    });
-				
+
 				//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
 				$('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );
 				$('#TextProspectiveInsuredRevenue').number( true, 0, ',', '.' );
@@ -59,25 +59,25 @@
 				radioButtonOtherGenerator("RadioButtonProspectiveInsuredIDType", "#TextProspectiveInsuredIDTypeOther", "OTHER");
 				radioButtonOtherGenerator("RadioButtonProspectiveInsuredRelationAssured", "#TextProspectiveInsuredRelationAssuredOther", "other");
 				checkboxOtherGenerator("CheckboxProspectiveInsuredInsurancePurposeOther", "#TextProspectiveInsuredInsurancePurposeOther", "other");
-				
+
 				telephoneStripGenerator("TextProspectiveInsuredHomeTelephone");
 				telephoneStripGenerator("TextProspectiveInsuredOfficeTelephone");
-				
+
 				inputListener();
-				
+
 				// FOR TESTING
-				
+
 				/* $("#ButtonSubmit").click(function()
 				{
 					savetoDB();
 				}); */
-				
+
 				$('input[type=radio][name=RadioButtonProspectiveInsuredCorrespondanceAddress]').change(function() {
 					if (this.value == 'home') {
 						$("#TextProspectiveInsuredHomeAddress1").prop('required',true);
 						$("#TextProspectiveInsuredHomeCity").prop('required',true);
 						$("#TextProspectiveInsuredHomePostalCode").prop('required',true);
-						
+
 						$('#TextProspectiveInsuredOfficeAddress1').removeAttr('required');
 						$('#TextProspectiveInsuredOfficeCity').removeAttr('required');
 						$('#TextProspectiveInsuredOfficePostalCode').removeAttr('required');
@@ -86,14 +86,14 @@
 						$("#TextProspectiveInsuredOfficeAddress1").prop('required',true);
 						$("#TextProspectiveInsuredOfficeCity").prop('required',true);
 						$("#TextProspectiveInsuredOfficePostalCode").prop('required',true);
-						
+
 						$('#TextProspectiveInsuredHomeAddress1').removeAttr('required');
 						$('#TextProspectiveInsuredHomeCity').removeAttr('required');
 						$('#TextProspectiveInsuredHomePostalCode').removeAttr('required');
 					}
 					else
 					{
-						
+
 					}
 				});
 			});
@@ -108,7 +108,7 @@
 			%form
 				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredCIN" } Nomor CIN
-				%input#TextProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true", :maxlength => "7" }                          
+				%input#TextProspectiveInsuredCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true", :maxlength => "7" }
 				%br
 
 				%div.ContainerFit
@@ -130,7 +130,7 @@
 					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredIDTypeKIMSKITAS" } KIMS/KITAS
 					%div.Separator
 					%input#RadioButtonProspectiveInsuredIDTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredIDType", :value => "OTHER", :required => "true" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredIDTypeOther" } Lainnya					
+					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredIDTypeOther" } Lainnya
 				%input#TextProspectiveInsuredIDTypeOther.Long.Single.PositionerLeft{ :type => "text" }
 				%img.PositionerRight{ :src => "../../jqueryLibrary/Resource/Input/input_text_required.svg", :style => "width: 20px;" }
 				%br
@@ -250,7 +250,7 @@
 				%br
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredEmail" } Email
-					%input#TextProspectiveInsuredEmail.Full.Single.Item{ :type => "text", :maxlength => "30" }                
+					%input#TextProspectiveInsuredEmail.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredOfficeAddress1" } Alamat kantor
 					%input#TextProspectiveInsuredOfficeAddress1.Full.Single.Item{ :type => "text", :maxlength => "30" }
@@ -288,10 +288,10 @@
 					%div.Separator
 					%input#RadioButtonProspectiveInsuredRelationAssuredSpouse.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredRelationAssured", :value => "spouse", :disabled => "true" }
 					%label.Short.RadioButton{ :for => "RadioButtonProspectiveInsuredRelationAssuredSpouse" } Suami / Istri
-					%div.Separator                    
+					%div.Separator
 					%input#RadioButtonProspectiveInsuredRelationAssuredFamily.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredRelationAssured", :value => "family", :disabled => "true" }
 					%label.Short.RadioButton{ :for => "RadioButtonProspectiveInsuredRelationAssuredFamily" } Orang Tua / Anak
-					%div.Separator             
+					%div.Separator
 					%input#RadioButtonProspectiveInsuredRelationAssuredColleague.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredRelationAssured", :value => "colleague", :disabled => "true" }
 					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRelationAssuredColleague", :style => "width: 100px;" } Perusahaan / Karyawan
 					%div.Separator
@@ -300,24 +300,24 @@
 				%input#TextProspectiveInsuredRelationAssuredOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredInsurancePurposeSavings" } Tujuan Pembelian Asuransi 
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredInsurancePurposeSavings" } Tujuan Pembelian Asuransi
 				%div.Checkbox.PositionerLeft
 					%input#CheckboxProspectiveInsuredInsurancePurposeSavings.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "savings" }
 					%label.Checkbox{ :for => "CheckboxProspectiveInsuredInsurancePurposeSavings" } Tabungan
 					%div.Separator
 					%input#CheckboxProspectiveInsuredInsurancePurposeProtection.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "protection" }
 					%label.Checkbox{ :for => "CheckboxProspectiveInsuredInsurancePurposeProtection" } Proteksi
-					%div.Separator                    
+					%div.Separator
 					%input#CheckboxProspectiveInsuredInsurancePurposeInvestation.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "investment" }
 					%label.Checkbox{ :for => "CheckboxProspectiveInsuredInsurancePurposeInvestation" } Investasi
-					%div.Separator             
+					%div.Separator
 					%input#CheckboxProspectiveInsuredInsurancePurposeEducation.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "education" }
 					%label.Checkbox{ :for => "CheckboxProspectiveInsuredInsurancePurposeEducation" } Edukasi
 					%div.Separator
 					%input#CheckboxProspectiveInsuredInsurancePurposeOther.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "other" }
 					%label.Checkbox{ :for => "CheckboxProspectiveInsuredInsurancePurposeOther" } Lainnya
 				%input#TextProspectiveInsuredInsurancePurposeOther.Long.Single.PositionerLeft{ :type => "text" }
-				%br                               
+				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredNPWP" } Nomor NPWP
 				%input#TextProspectiveInsuredNPWP.Medium.Single.PositionerLeft{ :type => "text", :maxlength => "16" }
@@ -334,7 +334,7 @@
 					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSalaryIDR" } RP
 					%div.Separator
 					%input#RadioButtonProspectiveInsuredSalaryUSD.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredSalary", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSalaryUSD" } USD                
+					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSalaryUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredSalary" } Penghasilan / Tahun
 				%input#TextProspectiveInsuredSalary.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income" }
 				%br
@@ -345,7 +345,7 @@
 					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRevenueIDR" } RP
 					%div.Separator
 					%input#RadioButtonProspectiveInsuredRevenueUSD.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredRevenue", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRevenueUSD" } USD                
+					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRevenueUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredRevenue" } Penghasilan / Tahun
 				%input#TextProspectiveInsuredRevenue.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income" }
 				%br
@@ -356,7 +356,7 @@
 					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherIncomeIDR" } RP
 					%div.Separator
 					%input#RadioButtonProspectiveInsuredOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherIncome", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherIncomeUSD" } USD                
+					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherIncomeUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredOtherIncome" } Penghasilan / Tahun
 				%input#TextProspectiveInsuredOtherIncome.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income" }
 				%br
@@ -365,7 +365,7 @@
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredSource" } Jelaskan Sumbernya
 					%input#TextProspectiveInsuredSource.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%br
-                
+
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredFundingSource" } Sumber Dana Pembelian Asuransi
 					%input#TextProspectiveInsuredFundingSource.Full.Single.Item{ :type => "text", :required => "true", :maxlength => "30" }

@@ -12,11 +12,15 @@
 
 		:javascript
 
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderAlcoholALStart1","Value":"01/02/1990"}]}}'
+
 			// DOCUMENT READY
+
 			$(document).ready(function()
 			{
-				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderAlcoholALStart1","Value":"01/02/1990"}]}}'
-
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
@@ -46,6 +50,8 @@
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("KUESIONER ALKOHOL DAN PENGGUNAAN OBAT-OBATAN");
+
+				// TEST
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);

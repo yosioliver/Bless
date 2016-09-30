@@ -19,7 +19,7 @@
 			var stringPageSectionCurrent = stringPageSectionHealthQuestionnaire;
 			var stringPageValidation = 0;
 			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
-			var booleanInputChangeState = false;
+			var booleanInputChangeState = "false";
 
 			$(document).ready(function()
 			{
@@ -458,21 +458,21 @@
 			%section#PopUpActivity.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_activity.haml")).render
 			%section#PopUpMilitary.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireAngkatanBersenjata.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_military.haml")).render
 			%section#PopUpDiving.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireMenyelam.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_diving.haml")).render
 			%section#PopUpHiking.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireMendaki.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_hiking.haml")).render
 			%section#PopUpRacing.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireOlahragaBalap.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_racing.haml")).render
 			%section#PopUpParagliding.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireTerbangLayang.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_paragliding.haml")).render
 			%section#PopUpMining.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireTambangMinyakGas.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_mining.haml")).render
 			%section#PopUpTraveling.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnairePerjalananKeLuarNegeri.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_traveling.haml")).render
 			%section#PopUpFlight.PopUp
-				= Haml::Engine.new(File.read("page_spajform_ActivityQuestionnaireAngkatanPenerbangan.haml")).render
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_flight.haml")).render
 			%section#PopUpHealth.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_disease.haml")).render
 			%section#PopUpSPAJProposal.PopUp

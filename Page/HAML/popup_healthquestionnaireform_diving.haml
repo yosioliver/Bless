@@ -10,9 +10,8 @@
 	/ FIELDSET
 
 	%fieldset
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 1. Apakah jenis menyelam yang Anda ikuti saat ini?
-			%br
+		%label.medium.Single.Item 1. Apakah jenis menyelam yang Anda ikuti saat ini?
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonCriteriaSkinDiving{ :type => "radio", :name => "RadioButtonCriteria", :value => "skindiving"}
 			%label.RadioButton{ :for => "RadioButtonCriteriaSkinDiving" } Skin Diving
 			%div.Separator
@@ -21,7 +20,6 @@
 			%div.Separator
 			%input#RadioButtonCriteriaFreeDiving{ :type => "radio", :name => "RadioButtonCriteria", :value => "freediving"}
 			%label.RadioButton{ :for => "RadioButtonCriteriaFreeDiving" } FREE Diving
-			%div.Separator
 		%br
 		%hr
 
@@ -82,9 +80,8 @@
 
 		%label.medium.Single.Item 4. Apakah Anda pernah berpartisipasi dalam, atau apakah Anda memiliki rencana untuk berpartisipasi dalam salah satu kegiatan menyelam berikut:
 		%br
-
 		%label#Wrap.Single.PositionerLeft Menyelam seorang diri
-		%div.RadioButton.Medium.PositionerRight
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonParticipationSelfYes{ :type => "radio", :name => "RadioButtonParticipationSelf", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonParticipationSelfYes" } Ya
 			%div.Separator
@@ -100,7 +97,7 @@
 			%input#RadioButtonParticipationCaveNo{ :type => "radio", :name => "RadioButtonParticipationCave", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonParticipationCaveNo" } Tidak
 		%br
-		
+
 		%label#Wrap.Single.PositionerLeft Eksplorasi Internal kecelakaan
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonParticipationInternalAccidentYes{ :type => "radio", :name => "RadioButtonParticipationInternalAccident", :value => "true" }
@@ -146,7 +143,7 @@
 			%label.RadioButton{ :for => "RadioButtonParticipationAbaloneNo" } Tidak
 
 		%br
-		%label#Wrap.Single.PositionerLeft Meyelam dengan peralatan selain peralatan SCUBA biasa 
+		%label#Wrap.Single.PositionerLeft Meyelam dengan peralatan selain peralatan SCUBA biasa
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonParticipationNonStandardSCUBAYes{ :type => "radio", :name => "RadioButtonParticipationNonStandardSCUBA", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonParticipationNonStandardSCUBAYes" } Ya
@@ -164,7 +161,7 @@
 			%label.RadioButton{ :for => "RadioButtonParticipationDeepSeaNo" } Tidak
 		%br
 		%label.medium.Single.Item Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (lokasi, kapan, frekuensi, tujuan dan lain-lain):
-		%br    
+		%br
 		%input#TextParticipationDeepSeaDesc.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr

@@ -12,12 +12,15 @@
 
 		:javascript
 
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"},{"elementID":"TextPolicyHolderFullName","Value":"Ariani Jollanda Pondaag"},{"elementID":"TextSPAJNumber","Value":"123456789012"}]}}'
+
 			// DOCUMENT READY
 
 			$(document).ready(function()
 			{
-				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"DatePolicyHolderChestPainAttackDuration","Value":"01:02:03"},{"elementID":"TextPolicyHolderChestPainCharacterOtherDesc","Value":"nyeri"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"},{"elementID":"NumberPolicyHolderChestPainCurrentAttackTimes","Value":"2"},{"elementID":"TextPolicyHolderFullName","Value":"Ariani Jollanda Pondaag"},{"elementID":"TextSPAJNumber","Value":"123456789012"}]}}'
-
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
@@ -28,7 +31,7 @@
 				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
 
-				// SECTION MANDATORY								
+				// SECTION MANDATORY
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -42,6 +45,8 @@
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
 				titleSetterForHealthQuestionnairePDF("KUESIONER UNTUK PENDAKIAN GUNUNG DAN PANJAT TEBING");
+
+				// TEST
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
@@ -261,7 +266,7 @@
 						%input#DatePolicyHolderHikingHKBOTTOMWhen1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderHikingHKBOTTOMPlanHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 					%div.ContainerFit.NumberIndent
-						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle2.Short.Single.Item1.Margin{ :type => "text" }						
+						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderHikingHKBOTTOMHeight2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderHikingHKBOTTOMAngle2.Short.Single.Item1.Margin{ :type => "text" }
 						%input#DatePolicyHolderHikingHKBOTTOMWhen2.Short.Single.Item1.Margin{ :type => "text" }

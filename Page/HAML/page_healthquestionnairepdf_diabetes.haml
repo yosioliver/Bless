@@ -12,6 +12,10 @@
 
 		:javascript
 
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+
 			// DOCUMENT READY
 
 			$(document).ready(function()
@@ -31,7 +35,6 @@
 				boxGenerator("#DatePolicyHolderDiabetesFirstKnownDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesFirstKnownMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesFirstKnownYear", 4, boxTypeWithoutLabel, null);
-
 				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineMonth", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderDiabetesLastCheckUrineYear", 4, boxTypeWithoutLabel, null);
@@ -368,9 +371,16 @@
 
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+<<<<<<< HEAD
 															
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6
 					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+=======
+
+					%div.ContainerFit
+						%span.NumberFix.Single{ :style => "margin-top: 30px;"} 6
+						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderDiabetesAdditionalInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+>>>>>>> 9cdd93ab8e2036425b872437f4a2e96b504de76a
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDiabetesDBAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }

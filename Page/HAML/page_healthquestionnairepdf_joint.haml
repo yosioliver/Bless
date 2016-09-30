@@ -12,6 +12,11 @@
 
 		:javascript
 
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+
+
 			// DOCUMENT READY
 
 			$(document).ready(function()
@@ -120,7 +125,7 @@
 						%input#TextPolicyHolderJointAtritisComplainAmount.Medium.Single{ :type => "text" }
 					%br
 
-					%span.Number.Single.PositionerLeft 4.					
+					%span.Number.Single.PositionerLeft 4.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointAtritisComplainLocation" }Mohon menjelaskan secara rinci pada kolom di bawah ini dan pada bagian tubuh mana?
 					%br
 					%div.ContainerFit.NumberIndent
@@ -139,7 +144,7 @@
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNLimitedActivityDescription" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderJointJNLimitedActivityDescription.Full.Single{ :type => "text" }
 					%br
 
@@ -155,7 +160,7 @@
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointCertainLocation" } Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent					
+					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderJointCertainLocationDescription.Full.Single{ :type => "text" }
 					%br
 

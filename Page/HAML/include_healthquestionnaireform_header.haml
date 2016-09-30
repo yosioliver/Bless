@@ -2,11 +2,21 @@
 
 -# URL
 
+/ FOR DEVELOPMENT
+
 - urlCSS = '../../Style/CSS/'
 - urlJavaScript = '../../Java Script/Minimized/'
-- urlResource = '../Resource/Icon/'
+- urlResource = '../../Resource/'
+
+/ FOR DEPLOYMENT
+
+-#
+	- urlCSS = '../../jqueryLibrary/Style/CSS/'
+	- urlJavaScript = '../../jqueryLibrary/JavaScript/Minimized/'
+	- urlResource = '../../jqueryLibrary/Resource/'
+
 - urlCSSGeneralPrefix = 'bless'
-- urlCSSSectionPrefix = 'healthquestionnaire'
+- urlCSSSectionPrefix = 'healthquestionnaireform'
 
 -# CONTENT
 
@@ -33,7 +43,7 @@
 %meta{ :content => "width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport" }
 
 / FAVICON
-	
+
 / %link{ :rel => "shortcut icon", :href => "#{urlResource}logo_favicon.ico" }
 / %link{ :rel => "shortcut icon", :href => "#{urlResource}logo_favicon.ico", :type => "image/x-icon" }
 / %link{ :rel => "icon", :href => "#{urlResource}logo_favicon.ico", :type => "image/x-icon" }
@@ -61,6 +71,9 @@
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker-i18n.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker_IOS_fix.js" }
-:javascript
-    var stringPageTypeCurrent = stringPageTypeForm;
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ios-integration.min.js" }
+:javascript
+	$(document).ready(function()
+	{
+		imageSelector("#{urlResource}");
+	});

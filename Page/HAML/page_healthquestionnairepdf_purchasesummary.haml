@@ -11,23 +11,30 @@
 		/ JQUERY
 
 		:javascript
-		
+
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+
+
 			// DOCUMENT READY
-			
+
 			$(document).ready(function()
 			{
 				var jsonDummy = '{"result":{"readFromDB":[{"elementID":"TextSignedPlace","Value":"Jakarta"},{"elementID":"DateSigned","Value":"12/12/2016"},{"elementID":"TextIllustrationNumber","Value":"1234567890"},{"elementID":"RadioButtonPolicyHolderChestPainNextAttack","Value":"true"}]}}'
-				
+
 				// GENERATOR
-				
+
 				boxGenerator("#TextPolicyHolderFullName", 26, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName2nd", 26, boxTypeWithoutLabel, null);
 				boxGenerator("#TextIllustrationNumber", 26, boxTypeWithoutLabel, null);
-				
+
 				boxGenerator("#DateSignedDay", 2);
 				boxGenerator("#DateSignedMonth", 2);
-				boxGenerator("#DateSignedYear", 4); 								
-				
+				boxGenerator("#DateSignedYear", 4);
+
+				// TEST
+
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
 			});
@@ -35,21 +42,21 @@
 	/ BODY
 
 	%body
-	
+
 		/ HEADER
-	
+
 		%header
 			%section#SectionHeader
 				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-			%h1 
+			%h1
 				RINGKASAN PEMBELIAN
 				%br
 				Produk Asuransi Jiwa BCA Life Heritage Protection
 			%br
-			
+
 		/ MAIN
-			
+
 		%main
 			%form
 				%fieldset
@@ -68,9 +75,9 @@
 				%fieldset
 					%ul.Checklist
 						%li Agar manfaat asuransi jiwa Saya tetap aktif, maka Saya wajib membayar Premi sebelum tanggal jatuh tempo tanga perlu menunggu pemberitahuan jatuh tempo dari PT Asuransi Jiwa BCA (BCA Life), dengan Masa Tenggang 45 Hari Kalender, apabila Premi tidak dibayarkan sampai Masa Tenggang berakhir maka Polis Saya menjadi batal.
-						%li 
-							Saya wajib membaca dan memahami Buku Polis selama Masa Pemahaman Polis 
-							%i (Free Look Period) 
+						%li
+							Saya wajib membaca dan memahami Buku Polis selama Masa Pemahaman Polis
+							%i (Free Look Period)
 							yaitu 14 Hari kalender sejak Buku Polis diterima oleh Saya atau Penerima yang namanya tercantum pada laporan kurir
 
 				%h2 Beberapa Hal PENTING untuk saya ketahui
@@ -78,24 +85,24 @@
 
 				%fieldset
 					%ul.Checklist
-						%li 
-							Produk 
-							%b BCA Life Heritage Protection 
+						%li
+							Produk
+							%b BCA Life Heritage Protection
 							mempunyai fasilitas Pinjaman Polis yang nilai pinjamannya tidak melebihi 80% (delapan puluh persen) dari Nilai Tunai Yang Dijamin dan apabila Saya mengajukan Pinjaman Polis maka Saya wajib membayar bunga majemuk yang ditetapkan oleh BCA Life.
-						%li Jika Saya membatalkan Polis setelah lewat Masa Pemahaman Polis 
-						%i (Free Look Period), 
+						%li Jika Saya membatalkan Polis setelah lewat Masa Pemahaman Polis
+						%i (Free Look Period),
 						maka yang akan Saya dapatkan adalah sebesar Nilai Tunai sesuai tabel dalam Polis.
-						%li 
-							Jika Polis batal dikarenakan tidak membayar Premi sampai dengan Masa Tenggang berakhir, maka Saya dapat melakukan Pemulihan Polis tidak lebih dari 24 (dua puluh empat) bulan dari tanggal Polis batal dengan melakukan pelunasan Premi tertunggak, bunga, serta semua biaya medis dan biaya lainnya (jika ada) yang timbul sehubungan dengan pemulihan Polis melalui 
+						%li
+							Jika Polis batal dikarenakan tidak membayar Premi sampai dengan Masa Tenggang berakhir, maka Saya dapat melakukan Pemulihan Polis tidak lebih dari 24 (dua puluh empat) bulan dari tanggal Polis batal dengan melakukan pelunasan Premi tertunggak, bunga, serta semua biaya medis dan biaya lainnya (jika ada) yang timbul sehubungan dengan pemulihan Polis melalui
 							%i Virtual Account
-							dan memenuhi syarat-syarat 
-							%i Underwriting 
-							dan syarat-syarat lainnya yang ditetapkan oleh BCA Life. 
+							dan memenuhi syarat-syarat
+							%i Underwriting
+							dan syarat-syarat lainnya yang ditetapkan oleh BCA Life.
 						%li  Jika Saya tidak melakukan Pemulihan Polis melebihi 24(dua puluh empat) bulan dari tanggal polis batal maka Saya berhak atas Nilai Tunai Polis sesuai tabel Nilai Tunai Polis dengan melengkapi Formulir Penebusan Polis Asuransi dan megembalikan buku Polis.
 
 					%br
 					%span.single.PositionerLeft Mengenai hal hal diatas, saya SETUJU dan telah PAHAM atas penjelasan yang diberikan oleh Tenaga Penjual BCA Life. Apabila terdapat perbedaan antara Ringkasan Pembelian dengan Ketentuan Polis, maka yang akan berlaku adalah ketentuan Polis.
-				
+
 					%label.Wrap.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani
 					%input#TextSignedPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 					%span.Separator.Single.PositionerLeft
