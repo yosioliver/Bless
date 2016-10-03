@@ -23,12 +23,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainMonth", 2, boxTypeWithoutLabel, null);
@@ -158,11 +158,10 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBFirstLimitedActivityYear.BoxSquare.PositionerLeft
 					%br
-
+										
 					%span.Number.Single.PositionerLeft 7
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBCause" } Mohon menjelaskan secara rinci pada kolom di bawah ini menurut Dokter apa penyebab diagnosis  gangguan tulang belakang tersebut?
-					%br
-					%label.NumberIndent.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBCause" } (Kecelakaan, Proses penuaan, kecelakaan sewaktu berolahraga, dan sebagainya).
+					%div.ContainerFit
+						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBCause" } Mohon menjelaskan secara rinci pada kolom di bawah ini menurut Dokter apa penyebab diagnosis  gangguan tulang belakang tersebut? (Kecelakaan, Proses penuaan, kecelakaan sewaktu berolahraga, dan sebagainya).
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderBackboneBBCause.Full.Single.Item{ :type => "text" }
@@ -334,9 +333,9 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 13
-					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBControlAmount" } Seberapa sering Anda kontrol?
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBControlAmount" } Seberapa sering Anda kontrol?
 					%input#TextPolicyHolderBackboneBBControlAmount.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Long.Separator.Single.PositionerLeft kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
+					%label.Long.Separator.Single.PositionerLeft.NumberIndent kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
 					%br
 
 					%span.Number.Single.PositionerLeft 14.
@@ -365,12 +364,13 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBAbsentYear.BoxSquare.PositionerLeft
 					%label.NumberIndent.Single.PositionerLeft Dan berapa lama ?
-					%input#TextPolicyHolderBackboneBBAbsentAmount.Short.Single.PositionerLeft{ :type => "text" }
-					%label.NumberIndent.Single.PositionerLeft Hari
+					%input#TextPolicyHolderBackboneBBAbsentAmount.Tiny.Single.PositionerLeft{ :type => "text" }
+					%label.Single.PositionerLeft Hari
 					%br
 
 					%span.Number.Single.PositionerLeft 16
-					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%div.ContainerFit
+						%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderBackboneBBAdditionalInformation.Full.Single.Item{ :type => "text" }
