@@ -39,9 +39,9 @@ input.Wrap, textarea.Wrap
 
 /* TEXT */
 
-input[type="text"], input[type="password"], input[type="number"], input[type="email"], textarea
-	padding-left: 5px
-	padding-right: 5px
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="date"], textarea
+	padding-left: $general_space_tiny
+	padding-right: $general_space_tiny
 	text-align: left
 	font-size: $fontsize_input_general
 	vertical-align: top
@@ -51,8 +51,34 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
 	border-bottom-style: solid
 	border-bottom-width: thin
 
-input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot, textarea.LineDot
+input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot, input[type="date"].LineDot, textarea.LineDot
 	border-bottom-style: dotted
+
+div.TableItem
+	input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="date"], textarea
+		margin-top: $general_space_tiny
+		margin-bottom: $general_space_tiny
+		padding-left: $general_space_tiny
+		padding-right: $general_space_tiny
+		text-align: left
+		font-size: $fontsize_input_general
+		vertical-align: top
+		border-top-style: solid
+		border-top-width: $general_borderwidth_thin
+		border-left-style: none
+		border-left-width: none
+		border-right-style: solid
+		border-right-width: $general_borderwidth_thin
+		border-bottom-style: solid
+		border-bottom-width: $general_borderwidth_thin
+	input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="date"], textarea
+		padding-left: $general_space_tiny
+		padding-right: $general_space_tiny
+		text-align: left
+		font-size: $fontsize_input_general
+		vertical-align: top
+		border-right-style: solid
+		border-right-width: $general_borderwidth_thin
 
 
 /* RADIO BUTTON */
