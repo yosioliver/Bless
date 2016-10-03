@@ -199,15 +199,23 @@ main
 	span.Description
 		color: $theme_senary_color
 
+div.TableHeader
+	border-color: $theme_secondary_color
+	label
+		border-color: $theme_secondary_color
+
+div.TableItem
+	label
+		border-color: $theme_secondary_color
 
 /* INPUT */
 
-input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], textarea
 	color: $theme_senary_color
 	background-color: $theme_quaternary_color
 	border-color: $theme_secondary_color
 
-input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot, xtarea.LineDot
+input[type="text"].LineDot, input[type="password"].LineDot, input[type="number"].LineDot, input[type="email"].LineDot, input[type="date"].LineDot, textarea.LineDot
 	background-color: transparent
 	border-color: $theme_senary_color
 
@@ -230,6 +238,12 @@ input[type="checkbox"].Plain:checked + label
 textarea:disabled
 	color: $theme_quinary_color
 	background-color: $theme_tertiary_color
+
+div.TableItem
+	input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], textarea
+		color: $theme_senary_color
+		background-color: $theme_quaternary_color
+		border-color: $theme_secondary_color
 
 
 /* TABLE */

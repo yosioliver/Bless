@@ -95,86 +95,104 @@
 					%br
 					%label.NumberIndent.Wrap.PositionerLeft Jika “Ya”, mohon mengisi kolom di bawah ini.
 					%br
-					%div.ContainerFit.NumberIndent
-						%label.MediumFix.Single.Item1.Center Jenis
-						%label.Short.Single.Item1.Center Frekuensi
-						%label.Short.Single.Item1.Center Dosis
-						%label.Short.Single.Item1.Center Waktu Penggunaan
-						%label.Short.Single.Item1.Center 
-					%div.ContainerFit.NumberIndent
-						%label.MediumFix.Single.Item1.Center 
-						%label.Short.Single.Item1.Center 
-						%label.Short.Single.Item1.Center 
-						%label.Short.Single.Item1.Center Mulai (Tgl/Bln/Thn)
-						%label.Short.Single.Item1.Center Berhenti (Tgl/Bln/Thn)
 
-					%div.ContainerFit.NumberIndent
+					-#
+						%div.NumberIndent{ :style => "border-color: blue; border-width: thin; border-style: solid;" }
+							%table{ :style => "width: 100%;" }
+								%thead
+									%tr
+										%td.MediumFix{ :rowspan => "2" } Jenis
+										%td.Short{ :rowspan => "2" } Frekuensi
+										%td.Short{ :rowspan => "2" } Dosis
+										%td.Short{ :colspan => "2" } Waktu Penggunaan
+									%tr
+										%td.Short Mulai (Tgl/Bln/Thn)
+										%td.Short Berhenti (Tgl/Bln/Thn)
+					%div.TableHeader.NumberIndent
+						%div.ContainerFit
+							%label.MediumFix.Item1.Center Jenis
+							%label.Short.Item1.Center Frekuensi
+							%label.Short.Item1.Center Dosis
+							%label.Item2.Center{ :style => "min-width: 260px; padding-left: 20px; padding-right: 20px;" } Waktu Penggunaan
+						%div.ContainerFit
+							%label.MediumFix.Item1.Center
+							%label.Short.Item1.Center
+							%label.Short.Item1.Center
+							%label.Short.Item1.Center Mulai (Tgl/Bln/Thn)
+							%label.Short.Item1.Center Berhenti (Tgl/Bln/Thn)
+
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Alkohol
-						%input#TextPolicyHolderAlcoholALFrequency1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALStart1.Short.Single.Item1.Margin{ :type => "text" }
-						%input#DatePolicyHolderAlcoholALEnd1.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency1.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose1.Short.Single.Item1{ :type => "text" }
+						%input#DatePolicyHolderAlcoholALStart1.Short.Single.Item1{ :type => "text" }
+						%input#DatePolicyHolderAlcoholALEnd1.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Narkotika
-						%input#TextPolicyHolderAlcoholALFrequency2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart2.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd2.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency2.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose2.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart2.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd2.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Amphetamine
-						%input#TextPolicyHolderAlcoholALFrequency3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart3.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd3.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency3.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose3.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart3.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd3.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Ganja, marijuana
-						%input#TextPolicyHolderAlcoholALFrequency4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart4.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd4.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency4.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose4.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart4.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd4.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Cocaine
-						%input#TextPolicyHolderAlcoholALFrequency5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart5.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd5.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency5.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose5.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart5.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd5.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Halusinogen
-						%input#TextPolicyHolderAlcoholALFrequency6.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose6.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart6.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd6.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency6.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose6.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart6.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd6.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Penenang/obat tidur
-						%input#TextPolicyHolderAlcoholALFrequency7.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose7.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart7.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd7.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency7.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose7.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart7.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd7.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Zat tertentu (lem, thinner)
-						%input#TextPolicyHolderAlcoholALFrequency8.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose8.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart8.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd8.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency8.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose8.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart8.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd8.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Obat penghilang rasa sakit
-						%input#TextPolicyHolderAlcoholALFrequency9.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose9.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart9.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd9.Short.Single.Item1.Margin{ :type => "text" }
-					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderAlcoholALFrequency9.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose9.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart9.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd9.Short.Single.Item1{ :type => "text" }
+					%div.ContainerFit.NumberIndent.TableItem
 						%label.MediumFix.Single.Item Lainnya, sebutkan
-						%input#TextPolicyHolderAlcoholALFrequency10.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALDose10.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALStart10.Short.Single.Item1.Margin{ :type => "text" }
-						%input#TextPolicyHolderAlcoholALEnd10.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALFrequency10.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALDose10.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALStart10.Short.Single.Item1{ :type => "text" }
+						%input#TextPolicyHolderAlcoholALEnd10.Short.Single.Item1{ :type => "text" }
 					%br
+<<<<<<< HEAD
 					
 					%section#SectionFooter{ :style => "margin-top:80px; position: relative; top: 80px; display: block;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+=======
+
+					%section#SectionFooter{ :style => "margin-top: 100px; position: relative; top: 100px; display: block;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+>>>>>>> 7d1ed21e9f2b80b85f18950f87fbada6b5846904
 
 					%header
 						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 40px;"} 2.
 					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderAlcoholSober", :style => "margin-top: 40px;" } Jika Anda telah berhenti menggunakan alkohol/obat-obatan tersebut diatas.
 					%br
@@ -270,7 +288,7 @@
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderAlcoholALContinueTreatmentDoctorAddress"} c. Alamat Dokter
 						%input#TextPolicyHolderAlcoholALContinueTreatmentDoctorAddress.Full.Single.Item{ :type => "text" }
-					%b										
+					%b
 
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;" } 7.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALOnLeave", :style => "margin-top: 30px;" } Apakah Anda pernah tidak masuk kerja karena kondisi ini?
@@ -282,7 +300,7 @@
 						%input#RadioButtonPolicyHolderAlcoholALOnLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALOnLeave", :value => "true", :style => "margin-top: 30px;" }
 						%div.BoxRound.PositionerRight{ :style => "margin-top: 30px;" }
 					%br
-					
+
 					%label.NumberIndent.Single.PositionerLeft{ :for => "DatePolicyHolderAlcoholALOnLeave" } Jika “Ya”, kapan:
 					%table#DatePolicyHolderAlcoholALOnLeavePeriodDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
@@ -294,7 +312,7 @@
 						%label.NumberIndent.Single.PositionerRight{ :for => "TextPolicyHolderAlcoholOnLeavePeriod" } Dan berapa lama
 						%input#TextPolicyHolderAlcoholOnLeavePeriod.Short.Single.Item{ :type => "text" }
 						%label.NumberIndent.Single.PositionerRight Hari
-					%br										
+					%br
 
 					%span.Number.Single.PositionerLeft 8.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALCheckUp" } Apakah pernah melakukan pemeriksaan kesehatan sehubungan penggunaan alkohol/obat-obatan?
@@ -311,11 +329,11 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderAlcoholALCheckUp.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%div.ContainerFit
 						%span.NumberFix.Single.Item{ :style => "margin-top: 40px;" } 9.
 						%label.Full.Wrap.Item{ :for => "TextPolicyHolderAlcoholALAddtionalInformation", :style => "margin-top: 40px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
