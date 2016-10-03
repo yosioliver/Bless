@@ -24,12 +24,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderAlcoholALOnLeavePeriodDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderAlcoholALOnLeavePeriodMonth", 2, boxTypeWithoutLabel, null);
@@ -170,7 +170,7 @@
 						%input#TextPolicyHolderAlcoholALEnd10.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 					
-					%section#SectionFooter{ :style => "margin-top: 100px; position: relative; top: 100px; display: block;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%section#SectionFooter{ :style => "margin-top:80px; position: relative; top: 80px; display: block;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 					%header
 						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render

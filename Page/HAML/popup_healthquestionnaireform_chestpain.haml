@@ -54,7 +54,7 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 5. Bagaimana sifat nyeri dada Anda (mohon beri tanda di kolom yang sesuai) ?
+		%label.Medium.Single.Item 5. Bagaimana sifat nyeri dada yang Anda rasakan ?
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonCharacterOutOfBreath{ :type => "radio", :name => "RadioButtonCharacter", :value => "outofbreath" }
@@ -79,15 +79,14 @@
 			%label.RadioButton{ :for => "RadioButtonCharacterVaguelyUncomfortable" }Samar-samar , tidak nyaman
 			%div.Separator
 			%input#RadioButtonCharacterOthers{ :type => "radio", :name => "RadioButtonCharacter", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonCharacterOthers" }Lainnya
+			%label.RadioButton{ :for => "RadioButtonCharacterOthers" }Lainnya, sebutkan
 		%br
-		%div.ContainerFit
-			%label#LabelCharacterOthersDesc.Medium.Single.Item3.Margin Sebutkan
+		%div.ContainerFit			
 			%input#TextCharacterOtherDesc.Medium.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
 
-		%label.Medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ? (mohon beri tanda di kolom yang sesuai)  ?
+		%label.Medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ?
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonLocationMiddle{ :type => "radio", :name => "RadioButtonLocation", :value => "middle" }
@@ -105,7 +104,7 @@
 		%input#TextLocationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr
 
-		%label.Medium.Single.Item 7. Apakah nyeri dada tersebut menjalar ? (mohon beri tanda di kolom yang sesuai)
+		%label.Medium.Single.Item 7. Apakah nyeri dada tersebut menjalar ?
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonSpreadToShoulder{ :type => "radio", :name => "RadioButtonSpread", :value => "shoulder" }
@@ -124,7 +123,7 @@
 			%label.RadioButton{ :for => "RadioButtonSpreadToBack" } Ke Punggung
 			%div.Separator
 			%input#RadioButtonSpreadToOthers{ :type => "radio", :name => "RadioButtonSpread", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonSpreadToOthers" } Lainnya
+			%label.RadioButton{ :for => "RadioButtonSpreadToOthers" } Di bagian lain, sebutkan:
 			%br
 		%input#TextSpreadToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -146,15 +145,14 @@
 			%label.RadioButton{ :for => "RadioButtonHowHappenedCertainPostur" } Hanya pada postur tertentu
 			%div.Separator
 			%input#RadioButtonHowHappenedAfterSport{ :type => "radio", :name => "RadioButtonHowHappened", :value => "aftersport" }
-			%label.RadioButton{ :for => "RadioButtonHowHappenedAfterSport" } Hanya pada istirahat sehabis exercise
+			%label.RadioButton{ :for => "RadioButtonHowHappenedAfterSport" } Hanya pada istirahat sehabis olahraga
 			%div.Separator
 			%input#RadioButtonHowHappenedDeepBreath{ :type => "radio", :name => "RadioButtonHowHappened", :value => "deepbreath" }
 			%label.RadioButton{ :for => "RadioButtonHowHappenedDeepBreath" } Diperburuk dengan tarik nafas dalam
 			%div.Separator
 			%input#RadioButtonHowHappenedOthers{ :type => "radio", :name => "RadioButtonHowHappened", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonHowHappenedOthers" } Lainnya
-			%br
-		%input#TextHowHappenedOtherDesc.Single.Item1.Margin{ :type =>"text" }
+			%label.RadioButton{ :for => "RadioButtonHowHappenedOthers" } Lainnya, sebutkan			
+			%input#TextHowHappenedOtherDesc.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
@@ -206,7 +204,7 @@
 			%input#RadioButtonConsulToDoctorNo{ :type => "radio", :name => "RadioButtonConsulToDoctor", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonConsulToDoctorNo" } Tidak
 		%br
-			%label.Full.Single.PositionerLeft Jika “Ya”, mohonberikanalasannya:
+			%label.Full.Single.PositionerLeft Jika “Ya”, mohon berikan alasannya:
 			%br
 			%input#TextConsulToDoctorReason.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -226,11 +224,11 @@
 			%input#TextConsulToDoctorPhone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit
-			%label.Long.Single.PositionerLeft Nama Klinik/RumahSakit:
+			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextConsulToDoctorHospitalName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit
-			%label.Long.Single.PositionerLeft AlamatKlinik/RumahSakit:
+			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextConsulToDoctorHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -280,7 +278,9 @@
 		%br
 		%div.ContainerFit
 			%input#TextCheckUpEverOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }
-		%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+		%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini
+		%br
+		%label.Full.Single.PositionerLeft (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
 		%br
 		%input#TextEverCheckDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -309,6 +309,7 @@
 		%br
 		%hr
 
+	%div.Note
 		%h2 PERNYATAAN DAN KUASA
 		%ol
 			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.

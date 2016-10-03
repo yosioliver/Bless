@@ -16,21 +16,26 @@
 		%br
 
 		%div.ContainerFit
-			%label.medium.Single.Item 1. Apakah jenis kegiatan olah raga motor yang Anda lakukan?
+			%label.Medium.Single.Item 1. Apakah jenis kegiatan olah raga motor yang Anda lakukan?
+		%br
+			%label.Medium.Single.Item Mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
 		%input#TextRCActivity.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
-			%label.medium.Single.Item 2. Apakah jenis kendaraan bermotor yang Ada kendaran? (Sebutkan model, tahun pembuatan, ukuran mesin, dan kategori secara terperinci)
+			%label.Medium.Single.Item 2. Apakah jenis kendaraan bermotor yang Ada kendarai? 
+		%br
+			%label.Medium.Single.Item Mohon menjelaskan secara rinci pada kolom di bawah ini (Model, tahun pembuatan, ukuran mesin, dan kategori secara terperinci).			
 		%br	
 		%input#TextRCVehicleModel.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
-
-		%div.RadioButton.PositionerLeft
+		
+		%div.ContainerFit
 			%label.medium.Single.Item 3. Sebutkan tujuan kegiatan olah raga motor/ sepeda motor yang Anda lakukan: ?
-			%br
+		%div.RadioButton.PositionerLeft						
 			%input#RadioButtonRCActivityPurposeEntertainment{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "entertainment" }
 			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeEntertainment" } Hiburan 
 			%div.Separator
@@ -45,17 +50,27 @@
 			%div.Separator
 			%input#RadioButtonRCActivityPurposeSponsor{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "sponsor" }
 			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeSponsor" } Sponsor
+			%div.Separator
+			%input#RadioButtonRCActivityPurposeOthers{ :type => "radio", :name => "RadioButtonRCActivityPurpose", :value => "other"}
+			%label.RadioButton{ :for => "RadioButtonRCActivityPurposeOthers" } Lainnya, sebutkan		
+			%input#TextRCActivityPurposeOtherDesc.Medium.Single{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 4. Berapa lama Anda aktif dalam olah raga ini?
+			%br
+		%label.medium.Single.Item Mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
 		%input#TextRCStillActive.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 5. Di mana Anda melakukan perlombaan? (Sebutkan nama semua acara yang diselenggarakan)
+			%br
+		%label.medium.Single.Item Mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
 		%input#TextRCPlace.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -68,27 +83,29 @@
 			%label.Short.Single.Item1.Center.Margin Tanggal Perpanjangan
 		%div.ContainerFit
 			%input#TextRCLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextRCLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%div.ContainerFit
 			%input#TextRCLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextRCLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%div.ContainerFit
 			%input#TextRCLicenseCertificate3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateExtention3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextRCLicenseCertificateExtention3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%div.ContainerFit
 			%input#TextRCLicenseCertificate4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateExtention4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextRCLicenseCertificateExtention4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%div.ContainerFit
 			%input#TextRCLicenseCertificate5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextRCLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextRCLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextRCLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%hr	
 
 		%label#Wrap.Single.PositionerLeft 7. Apakah Anda berpartisipasi atau berniat untuk berpartisipasi dalam setiap
+		%br
+		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.		
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonRCParticipatingYes{ :type => "radio", :name => "RadioButtonRCParticipating", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRCParticipatingYes" } Ya
@@ -100,6 +117,8 @@
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 8. Apakah Anda anggota suatu klub atau asosiasi balap?
+		%br
+		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonRCClubMemberYes{ :type => "radio", :name => "RadioButtonRCClubMember", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRCClubMemberYes" } Ya
@@ -111,6 +130,8 @@
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 9. Pernahkah Anda mengalami kecelakaan atau pelanggaran
+		%br
+		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonRCAccidentYes{ :type => "radio", :name => "RadioButtonRCAccident", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRCAccidentYes" } Ya
@@ -122,7 +143,7 @@
 		%hr
 
 		%div.ContainerFit
-			%label.medium.Single.Item 10. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+			%label.medium.Single.Item 10. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br	
 		%input#TextRCAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br

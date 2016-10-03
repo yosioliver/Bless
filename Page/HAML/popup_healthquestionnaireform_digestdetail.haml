@@ -141,7 +141,7 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 7. Jelaskan nama obat dan lama pemakainnya sehubungan dengan gangguan pencernaan :
+		%label.Full.Single.Item 7. Mohon jelaskan secara rinci pada kolom di bawah ini mengenai nama obat yang Anda konsumsi dan lama pemakaiannya sehubungan dengan gangguan pencernaan?
 		%br
 		%input#TextDrugsName.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -297,8 +297,9 @@
 			%input#TextInTreatmentHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 12. Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini ?
+		
+		%label.medium.Single.Item 12. Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini ?
+		%div.RadioButton.PositionerLeft			
 			%input#RadioButtonAbsentInTwoYearNo{ :type => "radio", :name => "RadioButtonAbsentInTwoYear", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonAbsentInTwoYearNo" } Tidak
 			%div.Separator
@@ -313,11 +314,12 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 13. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini
+		%label.Full.Single.Item 13. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%textarea#AreaHealthCondition.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
+	%div.Note
 		%h2 PERNYATAAN DAN KUASA
 		%ol
 			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.

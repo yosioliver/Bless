@@ -15,9 +15,8 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 1. Kapan pertama kali diketahui adanya tumor?
-		%br    
-		%input#DateFirstDiagnose.Full.Single.Item1.Margin{ :type =>"text", "data-field" => "date" }
+		%label.medium.Single.Item 1. Kapan pertama kali diketahui adanya tumor?		  
+		%input#DateFirstDiagnose.Medium.Single.Item1.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
 
@@ -27,7 +26,7 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 3. Bila diketahui sebutkan diagnosis pasti dari tumor tersebut.
+		%label.medium.Single.Item 3. Mohon sebutkan diagnosis pasti dari tumor tersebut.
 		%br    
 		%input#TextDiagnose.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -44,7 +43,7 @@
 
 		%div.ContainerFit		
 			%label#LabelOperation.Long.Single.Item a. Tanggal operasi
-			%input#DateOperation.Full.Single.Item{ :type =>"text", "data-field" => "date" }
+			%input#DateOperation.Short.Single.Item{ :type =>"text", "data-field" => "date" }
 		%br
 
 		%label.medium.Single.Item b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
@@ -92,8 +91,7 @@
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonTherapyAssOthers" } Lainnya, Sebutkan.		
 			%input#TextTherapyAssOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
 		%br
-			%label.Wrap.Single.PositionerLeft{ :for => "TextTherapyAssOtherDescAdd"}
-			Mohon menjelaskan secara rinci pada kolom di bawah ini.
+			%label.Wrap.Single.PositionerLeft{ :for => "TextTherapyAssOtherDescAdd"} Mohon menjelaskan secara rinci pada kolom di bawah ini.
 			%br
 			%input#TextTherapyAssOtherDescAdd.Line.Full.Single.PositionerLeft{ :type => "text" }
 		%br
@@ -106,8 +104,7 @@
 			%input#RadioButtonPrognosaNo{ :type => "radio", :name => "RadioButtonPrognosa", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonPrognosaNo" } Tidak
 		%br    
-			%label.Wrap.Single.PositionerLeft{ :for => "TextPrognosa"}
-			Mohon menjelaskan secara rinci pada kolom di bawah ini.
+			%label.Wrap.Single.PositionerLeft{ :for => "TextPrognosa"} Mohon menjelaskan secara rinci pada kolom di bawah ini.
 			%br
 			%input#TextPrognosa.Line.Full.Single.PositionerLeft{ :type => "text" }
 		%br
@@ -121,24 +118,24 @@
 			%a.NavigationPopUp{ :href => "#" } 
 		%div.ContainerFit
 			%input#TextCheckupType1.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextCheckupDate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextCheckupDate1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextCheckupResult1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextCheckupType2.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextCheckupDate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextCheckupDate2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextCheckupResult2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextCheckupType3.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextCheckupDate3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextCheckupDate3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextCheckupResult3.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextCheckupType4.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextCheckupDate4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextCheckupDate4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextCheckupResult4.Short.Single.Item1.Margin{ :type => "text" }			
 		%br
 		%div.ContainerFit
 			%input#TextCheckupType5.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextCheckupDate5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextCheckupDate5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextCheckupResult5.Short.Single.Item1.Margin{ :type => "text" }			
 		%br
 		%label.medium.Single.Item g. Pengobatan atau tindakan operasi apa saja yang pernah dianjurkan?
@@ -205,35 +202,36 @@
 			%label.Short.Single.Item1.Center.Margin Hasil Pemeriksaan
 		%div.ContainerFit
 			%input#TextKindOfChecking1.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextDateOfChecking1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDateOfChecking1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextResultOfChecking1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextKindOfChecking2.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextDateOfChecking2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDateOfChecking2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextResultOfChecking2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextKindOfChecking3.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextDateOfChecking3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDateOfChecking3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextResultOfChecking3.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%input#TextKindOfChecking4.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextDateOfChecking4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDateOfChecking4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextResultOfChecking4.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%input#TextKindOfChecking5.Short.Single.Item.Margin{ :type => "text" }
-			%input#TextDateOfChecking5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextDateOfChecking5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextResultOfChecking5.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
 
-		%label.medium.Single.Item 8. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan anda yang mungkin dapat membantu proses pengajuan Asuransi ini.
+		%label.medium.Single.Item 8. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br    
 		%input#TextAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
-
+		
+	%div.Note
 		%h2 PERNYATAAN DAN KUASA
 		%ol
 			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.

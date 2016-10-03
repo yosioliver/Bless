@@ -22,12 +22,12 @@
 			{
 				// SECTION GENERAL
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DatePolicyHolderThyroidTHFirstGotDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DatePolicyHolderThyroidTHFirstGotMonth", 2, boxTypeWithoutLabel, null);
@@ -309,10 +309,11 @@
 						%input#TextPolicyHolderThyroidScanMRIUSGDate.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderThyroidScanMRIUSGResult.Short.Single.Item1.Margin{ :type => "text" }
 					%br
-					%section#SectionFooter{ :style => "margin-top: 50px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					
+					%section#SectionFooter{ :style => "margin-top: 80px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 					%header
-						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						%section#SectionHeader{ :style => "margin-top: 70px; position: relative; top: 70px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;"} 6
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOperation", :style => "margin-top: 70px;" } Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?

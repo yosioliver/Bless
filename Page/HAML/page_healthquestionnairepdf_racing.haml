@@ -24,12 +24,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -44,7 +44,7 @@
 				// SETUP
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Olahraga Motor / Sepeda Motor");
+				titleSetterForHealthQuestionnairePDF("KUESIONER OLAHRAGA MOTOR/SEPEDA MOTOR");
 			});
 
 
@@ -101,28 +101,28 @@
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCActivityPurposeEntertainment.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "entertainment" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeEntertainment" } Hiburan
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeEntertainment" } Hiburan
 						%input#RadioButtonPolicyHolderRacingRCActivityPurposeAmateur.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "amateur" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeAmateur" } Amatir
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeAmateur" } Amatir
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCActivityPurposeCompetition.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "competition" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeCompetition" } Perlombaan
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeCompetition" } Perlombaan
 						%input#RadioButtonPolicyHolderRacingRCActivityPurposeProfessional.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "professional" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeProfessional" } Profesional
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeProfessional" } Profesional
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCActivityPurposeSponsor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "sponsor" }
 						%div.BoxRound.PositionerLeft
-						%label.Long.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeSponsor" } Sponsor
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeSponsor" } Sponsor
 					%br
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderRacingRCActivityPurposeOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRacingRCActivityPurpose", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeOthers" } Lainnya, sebutkan
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRacingRCActivityPurposeOthers" } Lainnya, sebutkan
 						%input#TextPolicyHolderRacingRCActivityPurposeOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 					
@@ -144,13 +144,13 @@
 						%input#TextPolicyHolderRacingRCPlace.Full.Single.Item{ :type => "text" }
 					%br
 
-					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%section#SectionFooter{ :style => "margin-top: 100px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 6.
-					%label.Wrap.PositionerLeft Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 6.
+					%label.Wrap.PositionerLeft{ :style => "margin-top: 70px;" } Mohon sebutkan Lisensi/ Sertifikat yang Anda miliki?
 					%br
 
 					%div.ContainerFit.NumberIndent
@@ -235,11 +235,18 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 10.
-					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderRacingRCAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderRacingRCAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses 
+					%br
+					%label.Single.NumberIndent.PositionerLeft pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRacingRCAdditionalInfo.Full.Single.Item{ :type => "text" }
 					%br
+					
+					%section#SectionFooter{ :style => "margin-top: 320px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+
+					%header
+						%section#SectionHeader{ :style => "margin-top: 460px; position: relative; top: 40px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render

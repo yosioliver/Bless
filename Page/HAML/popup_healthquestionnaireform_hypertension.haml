@@ -15,25 +15,24 @@
 		%br
 		%hr
 		%div.ContainerFit
-			%label#LabelFirstTime.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan 
+			%label#LabelFirstTime.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan darah tinggi
 			%input#DateFirstTime.Medium.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
-		
-		%label.Long.Single.PositionerLeft  b. Berapa tekanan darah saat itu?
-		%label.Wrap.Single.PositionerRight.Margin mmHg
-		%input#NumberDiastolic.Short.Single.Margin.PositionerRight{ :type => "number" }
-		%span.Separator.Margin.PositionerRight /
-		%input#NumberSystolic.Short.Single.Margin.PositionerRight{ :type => "number" }						
+		%div.ContainerFit
+			%label.Long.Single.Margin.PositionerRight  b. Berapa tekanan darah saat itu?
+			%label.Wrap.Single.PositionerRight.Margin mmHg
+			%input#NumberDiastolic.Short.Single.Margin.PositionerRight{ :type => "number" }
+			%span.Separator.Margin.PositionerRight /
+			%input#NumberSystolic.Short.Single.Margin.PositionerRight{ :type => "number" }						
 		%br	
 
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
-			%br
+		%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
+		%div.RadioButton.PositionerLeft			
 			%input#RadioButtonCheckReasonRoutine{ :type => "radio", :name => "RadioButtonCheckReason", :value => "routine" }
 			%label.RadioButton{ :for => "RadioButtonCheckReasonRoutine" } Pemeriksaan rutin
 			%div.Separator
 			%input#RadioButtonCheckReasonOthers{ :type => "radio", :name => "RadioButtonCheckReason", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonCheckReasonOthers" }Keluhan lainnya. Mohon jelaskan
+			%label.RadioButton{ :for => "RadioButtonCheckReasonOthers" }Keluhan lainnya. Mohon jelaskan secara rinci pada kolom di bawah ini
 		%br
 		%input#TextCheckReasonOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		
@@ -44,6 +43,8 @@
 			%div.Separator
 			%input#RadioButtonDoctorConsultNo{ :type => "radio", :name => "RadioButtonDoctorConsult", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonDoctorConsultNo" } Tidak
+			%br
+			%label.Full.Single.PositionerLeft Jika "Ya" mohon mengisi kolom di bawah ini.
 		%br
 		%div.ContainerFit 
 			%label.Long.Single.PositionerLeft{ :for => "TextDoctorName" } Nama Dokter
@@ -176,10 +177,12 @@
 			%div.Separator
 			%input#RadioButtonCheckUpTypeOthers{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "other" }
 			%label.RadioButton{ :for => "RadioButtonCheckUpTypeOthers" } Lainnya, sebutkan
-			%input#TextCheckUpTypeOtherDesc.Line.PositionerRight{ :type =>"text" }
+			%input#TextCheckUpTypeOtherDesc.Line.PositionerCenter{ :type =>"text" }
 		%br
 		
-		%label.Single.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini. (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
+		%label.Single.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini. 
+		%br
+		%label.Single.PositionerLeft (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
 		%br
 		%input#TextCheckUpTypeOtherDescAdd.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -205,34 +208,34 @@
 			%input#TextTreatmentReason1.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentDoctor1.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentAddress1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTreatmentDate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDate1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTreatmentDuration1.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%input#TextTreatmentReason2.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentDoctor2.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentAddress2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTreatmentDate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDate2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTreatmentDuration2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextTreatmentReason3.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentDoctor3.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentAddress3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTreatmentDate3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDate3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTreatmentDuration3.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%input#TextTreatmentReason4.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentDoctor4.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentAddress4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTreatmentDate4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDate4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTreatmentDuration4.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%input#TextTreatmentReason5.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentDoctor5.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentAddress5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTreatmentDate5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTreatmentDate5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTreatmentDuration5.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
@@ -272,6 +275,7 @@
 		%br
 		%hr
 
+	%div.Note
 		%h2 PERNYATAAN DAN KUASA
 		%ol
 			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
