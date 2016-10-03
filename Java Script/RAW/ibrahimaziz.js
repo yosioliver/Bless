@@ -3151,7 +3151,7 @@ function calculateAge(stringBirthdayID, stringAgeID)
 			var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
 			var dateBirthday = new Date(arrayBirthday[2], parseInt(arrayBirthday[1] - 1, 10), arrayBirthday[0]);
 			var dateToday = new Date();
-			
+
 			if( (dateBirthday.getTime() > dateToday.getTime()))
 			{
 				alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
@@ -3159,9 +3159,46 @@ function calculateAge(stringBirthdayID, stringAgeID)
 			}
 			else
 			{
-				
-				var dateDifference = Math.ceil(dateToday.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 366);
-				var intAge = parseInt(dateDifference);
+				// var dateDifference = Math.ceil(dateToday.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 366);
+				// var intAge = parseInt(dateDifference);
+
+				var dateTodayDay = dateToday.getDate();
+				var dateTodayMonth = dateToday.getMonth() + 1;
+				var dateTodayYear = dateToday.getFullYear();
+				var dateBirthdayDay = dateBirthday.getDate();
+				var dateBirthdayMonth = dateBirthday.getMonth() + 1;
+				var dateBirthdayYear = dateBirthday.getFullYear();
+
+				if (dateBirthdayYear < dateTodayYear)
+				{
+					if (dateTodayMonth > dateBirthdayMonth)
+					{
+						intAge = dateTodayYear - dateBirthdayYear;
+					}
+					else if (dateTodayMonth < dateBirthdayMonth)
+					{
+						intAge = dateTodayYear - dateBirthdayYear - 1;
+					}
+					else
+					{
+						if (dateTodayDay > dateBirthdayDay)
+						{
+							intAge = dateTodayYear - dateBirthdayYear;
+						}
+						else if (dateTodayDay < dateBirthdayDay)
+						{
+							intAge = dateTodayYear - dateBirthdayYear - 1;
+						}
+						else
+						{
+							intAge = dateTodayYear - dateBirthdayYear;
+						}
+					}
+				}
+				else
+				{
+					intAge = 0;
+				}
 
 				if (intAge == null || intAge == undefined)
 				{
