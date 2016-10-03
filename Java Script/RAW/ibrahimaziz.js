@@ -3197,7 +3197,7 @@ function calculateAge(stringBirthdayID, stringAgeID)
 				}
 				else
 				{
-
+					intAge = 0;
 				}
 
 				if (intAge == null || intAge == undefined)
