@@ -165,17 +165,20 @@
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderBackboneBBCause.Full.Single.Item{ :type => "text" }
-					%br
+					%br					
+					%section#SectionFooter{ :style => "margin-top: 160px;" }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 70px; position: relative; top: 70px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 8.
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBXRayYes" } Apakah Anda pernah menjalani X-ray, MRI, atau pemeriksaan lainnya?
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 60px;" } 8.
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBXRayYes", :style => "margin-top: 60px;" } Apakah Anda pernah menjalani X-ray, MRI, atau pemeriksaan lainnya?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBXRayNo" } Tidak
-						%input#RadioButtonPolicyHolderBackboneBBXRayNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBXRay", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBXRayYes" } Ya
-						%input#RadioButtonPolicyHolderBackboneBBXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBXRay", :value => "true" }
-						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBXRayNo", :style => "margin-top: 60px;" } Tidak
+						%input#RadioButtonPolicyHolderBackboneBBXRayNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBXRay", :value => "false", :style => "margin-top: 60px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 60px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderBackboneBBXRayYes", :style => "margin-top: 60px;" } Ya
+						%input#RadioButtonPolicyHolderBackboneBBXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBXRay", :value => "true", :style => "margin-top: 60px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 60px;" }
 					%br
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon berikan tanggal pemeriksaan
 					%table#DatePolicyHolderBackboneBBXRayDay.BoxSquare.PositionerLeft
@@ -255,7 +258,7 @@
 						%input#RadioButtonPolicyHolderBackboneBBInjectionYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBInjection", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-
+					
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Tanggal Berobat
 						%label.Short.Single.Item1.Center Nama Obat
@@ -309,9 +312,13 @@
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBOTTOMClinicAddress"} Alamat Klinik/Rumah Sakit
 						%input#TextPolicyHolderBackboneBBBOTTOMClinicAddress.Full.Single.Item{ :type => "text" }
 					%br
-
-					%span.Number.Single.PositionerLeft 12
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottomDoctorName" } Saat ini dengan Dokter siapa Anda melakukan kontrol?
+					
+					%section#SectionFooter{ :style => "margin-top: 160px;" }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 70px; position: relative; top: 70px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 12
+					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottomDoctorName", :style => "margin-top: 70px;" } Saat ini dengan Dokter siapa Anda melakukan kontrol?
 					%br
 
 					%div.ContainerFit.NumberIndent

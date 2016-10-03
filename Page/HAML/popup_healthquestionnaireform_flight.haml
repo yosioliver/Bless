@@ -49,24 +49,24 @@
 			%label.Short.Single.Item1.Center Masa Berlaku
 		%div.ContainerFit
 			%input#TextLicenseCertificate1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextLicenseCertificateObtain1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextLicenseCertificateExtention1.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%input#TextLicenseCertificate2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextLicenseCertificateObtain2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextLicenseCertificateExtention2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextLicenseCertificate3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextLicenseCertificateObtain3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextLicenseCertificateExtention3.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextLicenseCertificate4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextLicenseCertificateObtain4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextLicenseCertificateExtention4.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextLicenseCertificate5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextLicenseCertificateObtain5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextLicenseCertificateExtention5.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
@@ -79,20 +79,20 @@
 			%input#RadioButtonScopeNo{ :type => "radio", :name => "RadioButtonScope", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonScopeNo" } Tidak
 		%br
-		%label.Single.PoitionerLeft Jika ya, mohon jelaskan secara rinci :		
+		%label.Single.PoitionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.		
 		%input#TextScopeDesc.Full.Single.Margin{ :type =>"text"}
 		%br
 		%hr
 		
 		%label.Single.PoitionerLeft 6. Apakah Anda anggota suatu klub atau asosiasi kegiatan menerbang?
-		%div.RadioButton.Medium.PositionerRight
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonClubYes.PositionerRight{ :type => "radio", :name => "RadioButtonClub", :value => "true" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonClubYes" } Ya
 			%div.Separator.PositionerRight
 			%input#RadioButtonClubNo.PositionerRight{ :type => "radio", :name => "RadioButtonClub", :value => "false" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonClubNo" } Tidak
 		%br		
-		%label.Single.Item Jika ya, mohon jelaskan secara rinci :	
+		%label.Single.Item Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%input#TextIsClubDesc.Full.Single.Item1.Margin{ :type =>"text"}
 		%br
 		%hr													
@@ -202,11 +202,13 @@
 		%hr
 	
 		%label.Single.PoitionerLeft 8. Nama lokasi/tempat/bandara mulai penerbangan?
+		%br
+		%label.Single.Item Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%input#TextFrom.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 	
-		%label.Single.PoitionerLeft 9. Apakah Anda terbang dari bandara control?
+		%label.Single.PoitionerLeft 9. Apakah Anda terbang dari bandara control?		
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonAirportControlYes{ :type => "radio", :name => "RadioButtonAirportControl", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAirportControlYes" } Ya
@@ -214,34 +216,41 @@
 			%input#RadioButtonAirportControlNo{ :type => "radio", :name => "RadioButtonAirportControl", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonAirportControlNo" } Tidak
 		%br
+		%label.Single.PoitionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
 		%input#TextAirportControlDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Single.PoitionerLeft 10. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?
+		%label.Single.PoitionerLeft 10. Pernahkan Anda mengalami kecelakaan terbang atau pelanggaran pengunaan/ pencabutan lisensi?		
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonAccidentFLYes{ :type => "radio", :name => "RadioButtonAccidentFL", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAccidentFLYes" } Ya
 			%div.Separator
 			%input#RadioButtonAccidentFLNo{ :type => "radio", :name => "RadioButtonAccidentFL", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonAccidentFLNo" } Tidak
-
+		%br
+		%label.Single.PoitionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
 		%input#TextAccidentFLDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Single.PoitionerLeft 11. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?
+		%label.Single.PoitionerLeft 11. Apakah Anda memiliki larangan dalam penerbangan yang dianjurkan dalam surat keterangan medis?		
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonNoFlyYes{ :type => "radio", :name => "RadioButtonNoFly", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonNoFlyYes" } Ya
 			%div.Separator
 			%input#RadioButtonNoFlyNo{ :type => "radio", :name => "RadioButtonNoFly", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonNoFlyNo" } Tidak
+		%br
+		%label.Single.PoitionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+		%br
 		%input#TextNoFlyDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.medium.Single.PoitionerLeft 12. Mohon sebutkan bila ada informasi lain sehubungan dengan kondisi kesehatan Anda yang mungkin dapat membantu proses pengajuan Asuransi ini:
+		%label.medium.Single.PoitionerLeft 12. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%input#TextOtherInfo.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr

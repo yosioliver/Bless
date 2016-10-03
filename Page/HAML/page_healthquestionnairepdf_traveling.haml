@@ -25,12 +25,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
 				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
@@ -207,9 +207,13 @@
 						%input#TextPolicyHolderTravelingTVNextDepartureDate5.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderTravelingTVNextVisaType5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
+					
+					%section#SectionFooter{ :style => "margin-top: 20px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 4.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTravelingMyNationality" } Sebutkan kewarganegaraan Anda.
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;" } 4.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTravelingMyNationality", :style => "margin-top: 30px;" } Sebutkan kewarganegaraan Anda.
 					%br
 					%label.Full.Single.PositionerLeft.NumberIndent{ :for => "TextPolicyHolderTravelingMyNationality" } (Jika lebih dari 1 kewarganegaraan mohon sebutkan seluruhnya pada kolom di bawah ini).
 					%br
@@ -280,7 +284,12 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderTravelingTVInjuryProcedure.Line.Full.Single.Item{ :type => "text" }
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVTransportation"} g. Sarana transportasi yang tersedia di negara tersebut:
+					
+					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVTransportation", :style => "margin-top: 30px;" } g. Sarana transportasi yang tersedia di negara tersebut:
 					%br
 					%label.Full.Single.PositionerLeft.NumberIndent (Misal: angkutan umum atau pribadi, pesawat pribadi, dan lain-lain).
 					%br
@@ -303,7 +312,9 @@
 
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 8.
-						%label.Single.Item{ :for => "TextPolicyHolderTravelingTVAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%label.Single.Item{ :for => "TextPolicyHolderTravelingTVAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu
+					%br
+						%label.Single.Item.NumberIndent proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderTravelingTVAdditionalInformation.Full.Single.Item{ :type => "text" }
