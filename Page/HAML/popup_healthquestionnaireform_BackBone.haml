@@ -138,7 +138,6 @@
 				%div.Separator
 				%input#RadioButtonBBInjectionNo{ :type => "radio", :name => "RadioButtonBBInjection", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonBBInjectionNo" } Tidak
-
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Tanggal Berobat
@@ -186,7 +185,7 @@
 
 		%br
 		%hr
-		%label#Wrap.Single.PositionerLeft 12. Saat ini dengan Dokter siapa Anda melakukan kontrol?
+		%label.Single.PositionerLeft 12. Saat ini dengan Dokter siapa Anda melakukan kontrol?
 		%br
 		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
@@ -204,7 +203,7 @@
 		%hr
 
 		%div.ContainerFit
-			%label.Single.PositionerLeft 13. Seberapa sering Anda kontrol?
+			%label.Long.Single.PositionerLeft 13. Seberapa sering Anda kontrol?
 			%input#TextBBControlAmount.Short.Single.Item.Margin{ :type =>"text" }
 			%select#SelectBBControlAmountPeriod.Single.PositionerLeft
 		%br
@@ -216,7 +215,7 @@
 		%br
 		%hr
 
-			%label#Wrap.Single.PositionerLeft 15. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
+			%label.Single.PositionerLeft 15. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 			%div.RadioButton.Medium.PositionerRight
 				%input#RadioButtonBBAbsentYes{ :type => "radio", :name => "RadioButtonBBAbsent", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonBBAbsentYes" } Ya
@@ -225,15 +224,15 @@
 				%label.RadioButton{ :for => "RadioButtonBBAbsentNo" } Tidak
 		%br
 		%div.ContainerFit
-			%label#Wrap.Single.PositionerLeft Jika "Ya", kapan:
+			%label.Single.PositionerLeft Jika "Ya", kapan:
 			%input#DateBBAbsent.Long.Single.Item.Margin{ :type => "text", "data-field" => "date" }
-			%label#Wrap.Single.PositionerLeft  Dan berapa lama?
+			%label.Single.PositionerLeft  Dan berapa lama?
 			%input#TextBBAbsentAmount.Short.Single.Item.Margin{ :type =>"text" }
 
 		%br
 		%hr
 		%div.ContainerFit
-			%label#Wrap.Single.PositionerLeft 16. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+			%label.Wrap.PositionerLeft 16. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%br
 			%input#TextBBAdditionalInformation.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br

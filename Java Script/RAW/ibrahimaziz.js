@@ -346,9 +346,6 @@ function buttonCancelGenerator(stringPopUpID, booleanState)
 }
 
 
-
-
-
 // POP UP SHOW
 
 function popUpGeneralShow(stringTriggerName, booleanInputState)
@@ -1628,7 +1625,6 @@ function buttonPopUpSPAJProposalGenerator()
 			{
 				stringValue = getTextGeneral(stringInputJavaScriptID);
 				arrayAdd(arrayInputTemporary, stringKey, stringValue);
-				alert(stringKey + " " + stringValue);
 			}
 		});
 		
@@ -1685,8 +1681,6 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		stringContentBirthday = arrayFind(arrayContent, stringKeyBirthday);
 		stringContentRelationship = arrayFind(arrayContent, stringKeyRelationship);
 		stringContentRelationship = arrayOptionFind(arrayRelationshipWithProspectiveInsured, stringContentRelationship);
-		alert(stringKeyBirthday + " " + stringContentBirthday);
-		alert(stringKeyRelationship + " " + stringContentRelationship);
 
 		if (stringFlag == 0 || stringFlag != stringKeyID)
 		{
