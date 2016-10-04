@@ -171,11 +171,11 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderJointJNComplainDetail.Full.Single{ :type => "text" }
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 90px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 8.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNXRay", :style => "margin-top: 70px;" } Apakah Anda pernah menjalani X-ray atau pemeriksaan lainnya?
 					%div.RadioButton.PositionerRight
@@ -186,15 +186,15 @@
 						%input#RadioButtonPolicyHolderJointJNXRayYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderJointJNXRay", :value => "true", :style => "margin-top: 70px;" }
 						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointJNXRayDay" } Jika "Ya", mohon berikan tanggal pemeriksaan 
+					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderJointJNXRayDay" } Jika "Ya", mohon berikan tanggal pemeriksaan
 					%table#DatePolicyHolderJointJNXRayDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderJointJNXRayMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderJointJNXRayYear.BoxSquare.PositionerLeft
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointJNXRayDescription" } 
-						Mohon jelaskan secara rinci pada kolom di bawah ini hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan sendi ini.	
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderJointJNXRayDescription" }
+						Mohon jelaskan secara rinci pada kolom di bawah ini hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan sendi ini.
 						%i	(Lampirkan fotokopi hasil pemeriksaan)
 					%br
 					%div.ContainerFit.NumberIndent
@@ -301,12 +301,12 @@
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNMIDDLEHospitalAddress" } Alamat Klinik/Rumah Sakit:
 						%input#TextPolicyHolderJointJNMIDDLEHospitalAddress.Full.Single.Item{ :type => "text" }
-					%br		
-					
+					%br
+
 					%section#SectionFooter{ :style => "margin-top: 80px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 12.
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderJointJNBOTTOMDoctorName", :style => "margin-top: 70px;" } Saat ini dengan Dokter siapa Anda melakukan kontrol?
 					%br
@@ -321,11 +321,12 @@
 						%input#TextPolicyHolderJointJNBOTTOMHospitalName.Full.Single.Item{ :type => "text" }
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNBOTTOMHospitalAddress" } Alamat Klinik/Rumah Sakit:
-						%input#TextPolicyHolderJointJNBOTTOMHospitalAddress.Full.Single.Item{ :type => "text" }															
+						%input#TextPolicyHolderJointJNBOTTOMHospitalAddress.Full.Single.Item{ :type => "text" }
 					%span.Number.Single.PositionerLeft 13.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderJointJNCheckUpFrequency", :style => "margin-top: 30px;" } Seberapa sering Anda kontrol?
 					%input#TextPolicyHolderJointJNCheckUpFrequency.Tiny.Single.PositionerLeft{ :type => "text", :style => "margin-top: 30px;" }
-					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderJointCheckUpFrequency", :style => "margin-top: 30px;" } kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
+					%label.Single.Margin.PositionerLeft{ :for => "TextPolicyHolderJointJNCheckUpFrequencyAmount" } kali per
+					%input#SelectPolicyHolderJointJNCheckUpFrequencyPeriod.Short.Single.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 14.
