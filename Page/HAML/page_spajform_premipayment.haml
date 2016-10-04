@@ -18,6 +18,16 @@
 			var booleanInputChangeState = "false";
 			// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
 
+			function showFormThirdParty()
+			{
+				// window.location = 'ios:showFormThirdParty';
+
+				var callInfo = {};
+				callInfo.data = {};
+				calliOSFunction('showFormThirdParty:',onSuccess,onError, callInfo);
+			}
+
+
 			$(document).ready(function()
 			{
 				// INITIALIZATION
@@ -32,24 +42,25 @@
 
 				// IOS
 
+
+
 				$("input:radio[name='" + "RadioButtonPremiPaymentThirdPartyAnswer" + "']").change(function()
 				{
 					var stringValue = $(this).val();
 
 					if (stringValue == "true")
 					{
-						// window.location = 'ios:showFormThirdParty';
+						showFormThirdParty();
 
-						var callInfo = {};
-						callInfo.data = {};
-						calliOSFunction('showFormThirdParty:',onSuccess,onError, callInfo);
+						$("#ButtonPreviewPremiPaymentThirdParty").css("display", "block");
 					}
 					else
 					{
-
+						$("#ButtonPreviewPremiPaymentThirdParty").css("display", "none");
 					}
 				});
 			});
+
 
 	/ BODY
 
@@ -139,8 +150,7 @@
 				%br
 
 				%div.ContainerFit
-					%label.Full.Single.Item{ :for => "RadioButtonPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?
-
+					%label.Full.Wrap.Item{ :for => "RadioButtonPremiPaymentThirdPartyAnswer" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung terdapat Pihak ketiga yang meminta mengajukan asuransi ini, menjadi pembayar Premi meminta hak atas manfaat Polis?
 					%div.RadioButton.LongFix.Single.Item
 						%input#RadioButtonPremiPaymentThirdPartyAnswerYes.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "true", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerYes" } Ya
@@ -148,3 +158,4 @@
 						%input#RadioButtonPremiPaymentThirdPartyAnswerNo.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentThirdPartyAnswer", :value => "false", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPremiPaymentThirdPartyAnswerNo" } Tidak
 				%br
+				%input#ButtonPreviewPremiPaymentThirdParty.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showFormThirdParty()" }

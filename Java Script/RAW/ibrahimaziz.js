@@ -3006,7 +3006,20 @@ function getFromDatabase(objectContent, stringPageType)
 		}
 		else
 		{
-			
+			var stringThirdParty = arrayFind(objectContent, "RadioButtonPremiPaymentThirdPartyAnswer")
+
+			if (stringThirdParty == "true")
+			{
+				$(stringKres + "ButtonPreviewPremiPaymentThirdParty").css("display", "block");
+			}
+			else if (stringThirdParty == "false")
+			{
+				$(stringKres + "ButtonPreviewPremiPaymentThirdParty").css("display", "none");
+			}
+			else
+			{
+				
+			}
 		}
 	}
 }
