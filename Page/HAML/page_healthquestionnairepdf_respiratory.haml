@@ -200,7 +200,7 @@
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainCaugh" } Batuk
 						%input#RadioButtonPolicyHolderRespiratoryDetailComplainShortnessBreath.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailComplain", :value => "shortnessbreath" }
 						%div.BoxRound.PositionerLeft
-						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainShortnessBreath" } Nafas Pendek
+						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainShortnessBreath" } Napas Pendek
 						%input#RadioButtonPolicyHolderRespiratoryDetailComplainNgikSound.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailComplain", :value => "ngiksound" }
 						%div.BoxRound.PositionerLeft
 						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailComplainNgikSound" } Berbunyi “ngik”
@@ -258,15 +258,14 @@
 						%input#TextPolicyHolderRespiratoryDetailRRUPDrugFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumption" } b. Kapan obat-obatan tersebut dikonsumsi?
-					%br
-					%div.RadioButton.NumberIndent.PositionerLeft
-						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "everyday" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay" } Setiap hari
-						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "whenattacked" }
-						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked" } Hanya saat serangan
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumption" } b. Kapan obat-obatan tersebut dikonsumsi
+					%div.RadioButton.NumberIndent.PositionerRight
+						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "everyday" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay" } Setiap hari
+						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "whenattacked" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked" } Hanya saat serangan
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailStillConsumed" } c. Apakah obat-obatan tersebut masih dikonsumsi sampai sekarang?
 					%div.RadioButton.NumberIndent.PositionerRight
@@ -292,7 +291,7 @@
 						%input#TextPolicyHolderRespiratoryDetailMedicalCheckResult.Full.Single.PositionerLeft{ :type => "text" }
 					%br
 					
-					%section#SectionFooter{ :style => "margin-top: 260px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%section#SectionFooter{ :style => "margin-top: 330px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 80px; position: relative; top: 80px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
