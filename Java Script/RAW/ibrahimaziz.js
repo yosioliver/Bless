@@ -96,6 +96,7 @@ var stringStateNotChecked = "Not Checked";
 var stringStateNotSelected = "Not Selected";
 var stringNationality;
 var arrayRelationshipWithProspectiveInsured = [];
+var arrayDatePeriod = [];
 var arrayNationality = [];
 var stringIllnessSuffix = "Illness";
 
@@ -1739,6 +1740,14 @@ function initiateArrayRelationshipWithProspectiveInsured(objectContent)
 	objectContent.push({ value: "creditordebitor", text: "Kreditor / Debitor" });
 	objectContent.push({ value: "charity", text: "Amal" });
 	objectContent.push({ value: "heirlaw", text: "Ahli Waris Hukum" });
+}
+
+function initiateArrayDatePeriod(objectContent)
+{
+	objectContent.push({ value: "hari", text: "Hari" })
+	objectContent.push({ value: "minggu", text: "Minggu" })
+	objectContent.push({ value: "bulan", text: "Bulan" })
+	objectContent.push({ value: "tahun", text: "Tahun" })
 }
 
 function generateSelectOption(stringSelectJavaScriptID, arrayOption)
