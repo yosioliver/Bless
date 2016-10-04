@@ -72,8 +72,8 @@
 				boxGenerator("#TextThirdPartyHomePostalCode", 6, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelThirdPartyHomeTelephonePrefix", 2)
 				boxGenerator("#TextThirdPartyHomeTelephonePrefix", 4, boxTypeWithoutLabel, null);
-				labelGenerator("#LabelThirdPartyHomeTelephoneInfix", 1)
-				boxGenerator("#TextThirdPartyHomeTelephoneInfix", 9, boxTypeWithoutLabel, null);
+				labelGenerator("#LabelThirdPartyHomeTelephoneSuffix", 1)
+				boxGenerator("#TextThirdPartyHomeTelephoneSuffix", 9, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyOfficeAddress1", 30, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyOfficeAddress2", 30, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelThirdPartyOfficeCity", 2)
@@ -87,9 +87,9 @@
 				lineGenerator("#LineThirdPartyOtherRelationship", 5);
 				lineGenerator("#TextThirdPartyInsurancePurposeOther", 5);
 				boxGenerator("#TextThirdPartyEmail", 30, boxTypeWithoutLabel, null);
-				labelGenerator("#LabelThirdPartyHandhone1", 1)
+				labelGenerator("#LabelThirdPartyHandphone1", 1)
 				boxGenerator("#TextThirdPartyHandphone1", 13, boxTypeWithoutLabel, null);
-				labelGenerator("#LabelThirdPartyHandhone2", 1)
+				labelGenerator("#LabelThirdPartyHandphone2", 1)
 				boxGenerator("#TextThirdPartyHandphone2", 13, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyNPWPNumber", 16, boxTypeWithoutLabel, null);
 				boxGenerator("#DateThirdPartyNPWPActiveDay", 2, boxTypeWithBottomLabel, labelDay);
@@ -145,7 +145,7 @@
 				// SETUP
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kuesioner Pihak Ketiga");
+				titleSetterForHealthQuestionnairePDF("Form Pihak Ketiga");
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
@@ -167,22 +167,23 @@
 
 			%div.Note
 				%ul
-					%li Pihak ketiga adalah pihak selain pemegang polis dan / atau tertanggung dapat sebagai pembayar premi "beneficial ower" yang memiliki hubungan "insurable interest".
+					%li Pihak ketiga adalah pihak selain pemegang polis dan / atau tertanggung; dapat sebagai pembayar premi "beneficial owner" yang memiliki hubungan "insurable interest".
 					%li Beneficial owner berdasarkan peraturan menteri keuangan nomor 30 / PMK . 010 / 2010 tentang penerapan prinsip mengenal nasabah bagi lembaga keuangan non bank adalah setiap orang memiliki dana, yang mengendalikan transaksi nasabah, yang memberikan kuasa atas terjadinya suatu transaksi dan / atau yang melakukan pengendalian melalui badan hukum atau perjanjian.
 
 			%div.Note
-				%p Informasi penting pengisian formulir pihak ketiga
+				%p
+					%b Informasi penting pengisian formulir pihak ketiga
 				%ol
 					%li Wajib mengisi dengan benar dan lengkap pertanyaan di bawah ini sesuai dengan keadaan yang sebenernya.
 					%li Diisi dengan menggunakan tinta hitam dan menggunakan huruf besar / kapital.
-					%li Gunakan tanda silang (x) pada pilihan kolom kotak dan wajib menandatangani setiap koreksi pennulisan.
+					%li Gunakan tanda silang (x) pada pilihan kolom kotak dan wajib menandatangani setiap koreksi penulisan.
 					%li Formulir pernyataan ini hanya berlaku untuk 1 (satu) nomor surat pengajuan asuransi jiwa (SPAJ) / nomor polis.
 
 		/ MAIN
 
 		%main
 			%form
-				%h2.Plain II. Wajib Dilengkapi (Calon) Tertanggung
+				%h2.Plain A. Data Calon Pemegang Polis
 
 				%fieldset
 					%span.Number.Plain.Single.PositionerLeft 1.
@@ -201,25 +202,25 @@
 					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHomeAddress" } Nama Lengkap
 					%table#TextPolicyHolderHomeAddress.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri, diise dengan lengkap mengkonfirmasikan nomor rumah, RT, RW, kelurahan & kecamatan)
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (sesuai dengan indetitas diri)
 					%table#TextPolicyHolderHomeAddress2nd.BoxSquare.PositionerLeft
 					%br
-					%label#LabelPolicyHolderHomeCity.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeCity" } Kota
+					%label#LabelPolicyHolderHomeCity.Separator.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeCity" } Kota
 					%table#TextPolicyHolderHomeCity.BoxSquare.PositionerLeft
-					%label#LabelPolicyHolderHomePostalCode.Single.PositionerLeft{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
+					%label#LabelPolicyHolderHomePostalCode.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderHomePostalCode" } Kode Pos
 					%table#TextPolicyHolderHomePostalCode.BoxSquare.PositionerLeft
 					%br
-					%label#LabelPolicyHolderHomeTelephonePrefix.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeTelephonePrefix" } Telp
+					%label#LabelPolicyHolderHomeTelephonePrefix.Separator.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeTelephonePrefix" } Telp
 					%table#TextPolicyHolderHomeTelephonePrefix.BoxSquare.PositionerLeft
-					%label#LabelPolicyHolderHomeTelephoneSuffix.Single.PositionerLeft{ :for => "TextPolicyHolderHomeTelephoneSuffix" } -
+					%label#LabelPolicyHolderHomeTelephoneSuffix.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderHomeTelephoneSuffix" } -
 					%table#TextPolicyHolderHomeTelephoneSuffix.BoxSquare.PositionerLeft
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 4.
 					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } Nomor Ponsel
-					%label#LabelPolicyHolderHandphone1.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } 1.
+					%label#LabelPolicyHolderHandphone1.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone1" } 1.
 					%table#TextPolicyHolderHandphone1.BoxSquare.PositionerLeft
-					%label#LabelPolicyHolderHandphone2.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } 2.
+					%label#LabelPolicyHolderHandphone2.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderHandphone2" } 2.
 					%table#TextPolicyHolderHandphone2.BoxSquare.PositionerLeft
 					%br
 
@@ -228,7 +229,7 @@
 					%table#TextPolicyHolderEmail.BoxSquare.PositionerLeft
 					%br
 
-				%h2.Plain II. Pertanyaan yang Berhubungan dengan Pihak Ketiga
+				%h2.Plain B. Pertanyaan yang Berhubungan dengan Pihak Ketiga
 
 				%fieldset
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAsking" } Apakah dalam pengajuan asuransi anda, selain anda dan calon tertanggung ada pihak ketiga yang
@@ -327,7 +328,7 @@
 						%input#TextThirdPartyBeneficiaryRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
 					%br
 
-				%h2.Plain II. Data Calon Pihak Ketiga Perorangan
+				%h2.Plain C. Data Calon Pihak Ketiga Perorangan
 
 				%fieldset
 					%span.Number.Plain.Single.PositionerLeft 1.
@@ -366,7 +367,7 @@
 					%table#TextThirdPartyIDNumber.BoxSquare.PositionerLeft
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyActiveDay" } (Sesuai dengan identitas diri)
-					%label#LabelThirdPartyActive.Single.PositionerLeft{ :for => "DateThirdPartyActiveDay" } Masa Berlaku
+					%label#LabelThirdPartyActive.Short.Single.PositionerLeft{ :for => "DateThirdPartyActiveDay" } Masa Berlaku
 					%table#DateThirdPartyActiveDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DateThirdPartyActiveMonth.BoxSquare.PositionerLeft
@@ -380,7 +381,7 @@
 					%table#TextThirdPartyBirthPlace.BoxSquare.PositionerLeft
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyBirthDay" } (Sesuai dengan identitas diri)
-					%label#LabelThirdPartyBirth.Single.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
+					%label#LabelThirdPartyBirth.Short.Single.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
 					%table#DateThirdPartyBirthDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DateThirdPartyBirthMonth.BoxSquare.PositionerLeft
@@ -491,25 +492,25 @@
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHomeAddress" } Nama Lengkap
 					%table#TextThirdPartyHomeAddress.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri, diise dengan lengkap mengkonfirmasikan nomor rumah, RT, RW, kelurahan & kecamatan)
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Sesuai dengan identitas diri)
 					%table#TextThirdPartyHomeAddress2nd.BoxSquare.PositionerLeft
 					%br
-					%label#LabelThirdPartyHomeCity.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeCity" } Kota
+					%label#LabelThirdPartyHomeCity.Separator.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeCity" } Kota
 					%table#TextThirdPartyHomeCity.BoxSquare.PositionerLeft
-					%label#LabelThirdPartyHomePostalCode.Single.PositionerLeft{ :for => "TextThirdPartyHomePostalCode" } Kode Pos
+					%label#LabelThirdPartyHomePostalCode.Separator.Single.PositionerLeft{ :for => "TextThirdPartyHomePostalCode" } Kode Pos
 					%table#TextThirdPartyHomePostalCode.BoxSquare.PositionerLeft
 					%br
-					%label#LabelThirdPartyHomeTelephonePrefix.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeTelephonePrefix" } Telp
+					%label#LabelThirdPartyHomeTelephonePrefix.Separator.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeTelephonePrefix" } Telp
 					%table#TextThirdPartyHomeTelephonePrefix.BoxSquare.PositionerLeft
-					%label#LabelThirdPartyHomeTelephoneSuffix.Single.PositionerLeft{ :for => "TextThirdPartyHomeTelephoneSuffix" } -
+					%label#LabelThirdPartyHomeTelephoneSuffix.Separator.Single.PositionerLeft{ :for => "TextThirdPartyHomeTelephoneSuffix" } -
 					%table#TextThirdPartyHomeTelephoneSuffix.BoxSquare.PositionerLeft
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 13.
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHandphone1" } Nomor Ponsel
-					%label#LabelThirdPartyHandphone1.Single.PositionerLeft{ :for => "TextThirdPartyHandphone1" } 1.
+					%label#LabelThirdPartyHandphone1.Separator.Single.PositionerLeft{ :for => "TextThirdPartyHandphone1" } 1.
 					%table#TextThirdPartyHandphone1.BoxSquare.PositionerLeft
-					%label#LabelThirdPartyHandphone2.Single.PositionerLeft{ :for => "TextThirdPartyHandphone2" } 2.
+					%label#LabelThirdPartyHandphone2.Separator.Single.PositionerLeft{ :for => "TextThirdPartyHandphone2" } 2.
 					%table#TextThirdPartyHandphone2.BoxSquare.PositionerLeft
 					%br
 
@@ -520,10 +521,10 @@
 
 					%span.Number.Plain.Single.PositionerLeft 15.
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHomeAddress" } Nama Lengkap
-					%table#TextThirdPartyHomeAddress.BoxSquare.PositionerLeft
+					%table#TextThirdPartyFullName.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri, diise dengan lengkap mengkonfirmasikan nomor rumah, RT, RW, kelurahan & kecamatan)
-					%table#TextThirdPartyHomeAddress2nd.BoxSquare.PositionerLeft
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Sesuai dengan identitas diri)
+					%table#TextThirdPartyFullName2nd.BoxSquare.PositionerLeft
 					%br
 					%label#LabelThirdPartyHomeCity.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeCity" } Kota
 					%table#TextThirdPartyHomeCity.BoxSquare.PositionerLeft
@@ -589,7 +590,7 @@
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyNPWPNumber" } Nomor NPWP (jika ada)
 					%table#TextThirdPartyNPWPNumber.BoxSquare.PositionerLeft
 					%br
-					%label#LabelThirdPartyBirth.Single.MediumWithNumberIndent.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
+					%label#LabelThirdPartyBirth.Short.Single.MediumWithNumberIndent.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
 					%table#DateThirdPartyNPWPActiveDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DateThirdPartyNPWPActiveMonth.BoxSquare.PositionerLeft
@@ -643,7 +644,7 @@
 					%br
 				%br
 
-				%h2.Plain Data Calon Pihak Ketiga Non Perorangan
+				%h2.Plain D. Data Calon Pihak Ketiga Non Perorangan
 
 				%fieldset
 					%span.Number.Plain.Single.PositionerLeft 1.

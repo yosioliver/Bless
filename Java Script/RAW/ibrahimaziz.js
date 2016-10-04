@@ -110,8 +110,9 @@ function labelGenerator(labelID, labelAmount)
 
 function labelGeneratorForHealthQuestionnaire(labelID, labelAmount)
 {
-    $(labelID).css("width", ((sizeBox + 3) * labelAmount) + "px");
+    $(labelID).css("width", (((sizeBox + 3) * labelAmount) - 10) + "px");
 }
+
 function spanGenerator(spanID, spanAmount)
 {
     $(spanID).css("width", (((sizeBox + 4) * spanAmount) - 10) - spanAmount + "px");
