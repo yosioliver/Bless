@@ -1664,8 +1664,8 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 	var stringContentBirthday;
 	var stringContentRelation;
 	var stringNameIDSuffix = arrayBeneficiariesListPopUpHeader[0];
-	var stringBirthdayIDSuffix = arrayBeneficiariesListPopUpHeader[2];
-	var stringRelationshipIDSuffix = arrayBeneficiariesListPopUpHeader[4];
+	var stringBirthdayIDSuffix = arrayBeneficiariesListPopUpHeader[1];
+	var stringRelationshipIDSuffix = arrayBeneficiariesListPopUpHeader[3];
 	var stringKeyName = stringPrefixText + stringBeneficiariesListInfix + stringNameIDSuffix;
 	var stringKeyBirthday = stringPrefixDate + stringBeneficiariesListInfix + stringBirthdayIDSuffix;
 	var stringKeyRelationship = stringPrefixSelect + stringBeneficiariesListInfix + stringRelationshipIDSuffix;
@@ -1684,6 +1684,8 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 		stringContentBirthday = arrayFind(arrayContent, stringKeyBirthday);
 		stringContentRelationship = arrayFind(arrayContent, stringKeyRelationship);
 		stringContentRelationship = arrayOptionFind(arrayRelationshipWithProspectiveInsured, stringContentRelationship);
+		alert(stringKeyBirthday + " " + stringContentBirthday);
+		alert(stringKeyRelationship + " " + stringContentRelationship);
 
 		if (stringFlag == 0 || stringFlag != stringKeyID)
 		{
@@ -2019,7 +2021,24 @@ function setSelectForm(stringID, stringValue)
 
 function setSelectPDF(stringID, stringValue)
 {
-    setBoxGeneral(stringID, stringValue);
+	var stringJQueryID = stringKres + stringID;
+        
+    if ($(stringJQueryID).is("div") == true)
+    {
+        setLineGeneral(stringID, stringValue);
+    }
+    else if ($(stringJQueryID).is("td") == true)
+    {
+        setTextGeneral(stringID, stringValue);
+    }
+	else if ($(stringJQueryID).is("input[type='text']") == true)
+	{
+		setTextGeneral(stringID, stringValue);
+	}
+    else
+    {
+        setBoxGeneral(stringID, stringValue);
+    }
 }
 
 function setCheckboxGeneral(stringCheckboxJavaScriptID, stringValue)

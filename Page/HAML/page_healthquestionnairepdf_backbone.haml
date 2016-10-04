@@ -158,14 +158,14 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBFirstLimitedActivityYear.BoxSquare.PositionerLeft
 					%br
-										
+
 					%span.Number.Single.PositionerLeft 7
 					%div.ContainerFit
 						%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBCause" } Mohon menjelaskan secara rinci pada kolom di bawah ini menurut Dokter apa penyebab diagnosis  gangguan tulang belakang tersebut? (Kecelakaan, Proses penuaan, kecelakaan sewaktu berolahraga, dan sebagainya).
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderBackboneBBCause.Full.Single.Item{ :type => "text" }
-					%br					
+					%br
 					%section#SectionFooter{ :style => "margin-top: 160px;" }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 70px; position: relative; top: 70px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
@@ -258,7 +258,7 @@
 						%input#RadioButtonPolicyHolderBackboneBBInjectionYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderBackboneBBInjection", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-					
+
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Tanggal Berobat
 						%label.Short.Single.Item1.Center Nama Obat
@@ -312,11 +312,11 @@
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBOTTOMClinicAddress"} Alamat Klinik/Rumah Sakit
 						%input#TextPolicyHolderBackboneBBBOTTOMClinicAddress.Full.Single.Item{ :type => "text" }
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 160px;" }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 70px; position: relative; top: 70px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 12
 					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderBackboneBBBottomDoctorName", :style => "margin-top: 70px;" } Saat ini dengan Dokter siapa Anda melakukan kontrol?
 					%br
@@ -339,10 +339,10 @@
 						%input#TextPolicyHolderBackboneBBBottom2ClinicAddress.Full.Single.Item{ :type => "text" }
 					%br
 
-					%span.Number.Single.PositionerLeft 13
+					%span.Number.Single.PositionerLeft 13.
 					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderBackboneBBControlAmount" } Seberapa sering Anda kontrol?
 					%input#TextPolicyHolderBackboneBBControlAmount.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Long.Separator.Single.PositionerLeft.NumberIndent kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
+					%input#SelectPolicyHolderBackboneBBControlAmountFrequency.Short.Single.PositionerLeft{ :type => "text", :style => "margin-left: 10px;" }
 					%br
 
 					%span.Number.Single.PositionerLeft 14.
@@ -353,7 +353,7 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderBackboneBBLastConsultYear.BoxSquare.PositionerLeft
 					%br
-					
+
 					%span.Number.Single.PositionerLeft 15
 					%label.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderBackboneBBAbsent" } Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
 					%div.RadioButton
