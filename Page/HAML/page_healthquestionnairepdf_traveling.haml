@@ -43,7 +43,7 @@
 				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Perjalanan Ke Luar Negeri/Tinggal di Luar Negeri");
+				titleSetterForHealthQuestionnairePDF("KUESIONER UNTUK PERJALANAN KE LUAR NEGERI/ TINGGAL DI LUAR NEGERI");
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
@@ -222,7 +222,9 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 5.
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderTravelingAbroadAsset" } Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal, pada kolom di bawah ini:
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTravelingAbroadAsset" } Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi 
+					%br
+					%label.Wrap.NumberIndent.PositionerLeft atau negara tempat Anda tinggal, pada kolom di bawah ini:
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderTravelingAbroadAsset.Full.Single.Item{ :type => "text" }
@@ -289,8 +291,9 @@
 					%header
 						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVTransportation", :style => "margin-top: 30px;" } g. Sarana transportasi yang tersedia di negara tersebut:
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVTransportation", :style => "margin-top: 60px;" } g. Sarana transportasi yang tersedia di negara tersebut:
 					%br
+				
 					%label.Full.Single.PositionerLeft.NumberIndent (Misal: angkutan umum atau pribadi, pesawat pribadi, dan lain-lain).
 					%br
 					%div.ContainerFit.NumberIndent

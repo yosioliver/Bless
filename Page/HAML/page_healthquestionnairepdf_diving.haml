@@ -43,7 +43,7 @@
 				// SETTER
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kusioner Menyelam");
+				titleSetterForHealthQuestionnairePDF("KUESIONER MENYELAM");
 			});
 
 
@@ -94,11 +94,11 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 2.
-					%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi / Sertifikat yang Anda miliki?
+					%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan Lisensi/Sertifikat yang Anda miliki?
 					%br
 
 					%div.ContainerFit.NumberIndent
-						%label.Short.Single.Item1.Center Lisensi Sertifikat
+						%label.Short.Single.Item1.Center Lisensi/Sertifikat
 						%label.Short.Single.Item1.Center Tanggal Perolehan
 						%label.Short.Single.Item1.Center Masa Berlaku
 					%div.ContainerFit.NumberIndent
@@ -278,18 +278,18 @@
 
 					%div.ContainerFit
 						%span.Number.Single.Item{ :for => "TextPolicyHolderDivingAdditionalInformation" } 6.
-						%label.Full.Single.Item Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%label.Full.Wrap.Item Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderDivingAdditionalInformation.Full.Single.Item{ :type => "text" }
 					%br
 
-					%section#SectionFooter{ :style => "margin-top: 550px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%section#SectionFooter{ :style => "margin-top: 620px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-				%section#SectionDeclaration{ :style => "margin-top: 30px;"}
+				%section#SectionDeclaration{ :style => "margin-top: 50px;"}
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
 		%section#SectionFooter

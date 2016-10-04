@@ -60,7 +60,7 @@
 				// SETUP
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kuesioner Nyeri Dada");
+				titleSetterForHealthQuestionnairePDF("KUESIONER NYERI DADA");
 
 				// TEST
 
@@ -427,13 +427,14 @@
 						%input#RadioButtonPolicyHolderChestPainTakeLeaveYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderChestPainTakeLeave", :value => "true", :style => "margin-top: 30px;" }
 						%div.BoxRound.PositionerRight{ :style => "margin-top: 30px;" }
 					%br
-					%label.Short.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainTakeLeaveIfYesDay" } Jika “Ya”, kapan
+					%label.Short.Wrap.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderChestPainTakeLeaveIfYesDay" } Jika “Ya”, kapan :
 					%table#DatePolicyHolderChestPainTakeLeaveIfYesDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderChestPainTakeLeaveIfYesMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderChestPainTakeLeaveIfYesYear.BoxSquare.PositionerLeft
-					%label.Short.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTakeLeaveDesc" } Berapa lama
+					%br
+					%label.Short.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderChestPainTakeLeaveDesc" } Dan berapa lama?
 					%input#NumberPolicyHolderChestPainTakeLeaveHowLong.Short.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft.NumberIndent Hari
 					%br

@@ -318,12 +318,12 @@
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;"} 6
 					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOperation", :style => "margin-top: 70px;" } Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
 					%div.RadioButton
-						%input#RadioButtonPolicyHolderThyroidTHOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOperation", :value => "true", :style => "margin-top: 70px;" }
-						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidTHOperationYes", :style => "margin-top: 70px;" } Ya
 						%input#RadioButtonPolicyHolderThyroidTHOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOperation", :value => "false", :style => "margin-top: 70px;" }
 						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidTHOperationNo", :style => "margin-top: 70px;" } Tidak
+						%input#RadioButtonPolicyHolderThyroidTHOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOperation", :value => "true", :style => "margin-top: 70px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidTHOperationYes", :style => "margin-top: 70px;" } Ya
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderThyroidTHOperationDateDay" } Jika “Ya”, mohon berikan tanggal operasi:
 					%table#DatePolicyHolderThyroidTHOperationDateDay.BoxSquare.PositionerLeft
@@ -363,7 +363,7 @@
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidAttachOperationResultNo" } Tidak
 						%input#RadioButtonPolicyHolderThyroidAttachOperationResultYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidAttachOperationResult", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidAttachOperationResultYes" } Ada
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidAttachOperationResultYes" } Ya
 						%br
 					%label.Single.NumberIndent.PositionerLeft Jika “Tidak”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
@@ -392,57 +392,56 @@
 					%div.RadioButton
 						%input#RadioButtonPolicyHolderThyroidMedicineAfterOperationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidMedicineAfterOperation", :value => "true" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidMedicineAfterOperationYes" } Ya
-
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidMedicineAfterOperationYes" } Ya
 						%input#RadioButtonPolicyHolderThyroidMedicineAfterOperationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidMedicineAfterOperation", :value => "false" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidMedicineAfterOperationNo" } Tidak
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderThyroidMedicineAfterOperationNo" } Tidak
 						%br
 
-					%label.Wrap.NumberIndent.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
+					%label.Single.NumberIndent.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 					%br
-
-					%label.Short.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHMedicineName"} Obat:
-					%div.RadioButton.PositionerLeft
+					
+					%div.RadioButton.PositionerLeft.NumberIndent
+						%label.Single.Short.PositionerLeft Obat:
 						%input#RadioButtonPolicyHolderThyroidTHMedicineNameYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHMedicineName", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHMedicineNameYes" } Ya
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHMedicineNameYes" } Ya
 						%input#RadioButtonPolicyHolderThyroidTHMedicineNameNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHMedicineName", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHMedicineNameNo" } Tidak
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHMedicineNameNo" } Tidak
 						%input#TextPolicyHolderThyroidTHMedicineName.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-
-					%label.Short.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHRadioTherapy"} Radioterapi:
-					%div.RadioButton.PositionerLeft
+					
+					%div.RadioButton.PositionerLeft.NumberIndent
+						%label.Single.Short.PositionerLeft Radioterapi:
 						%input#RadioButtonPolicyHolderThyroidTHRadioTherapyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHRadioTherapy", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHRadioTherapyYes" } Ya
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHRadioTherapyYes" } Ya
 						%input#RadioButtonPolicyHolderThyroidTHRadioTherapyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHRadioTherapy", :value => "false" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHRadioTherapyNo" } Tidak
 						%input#TextPolicyHolderThyroidTHRadioTherapy.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-
-					%label.Short.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHChemoTherapy"} Kemoterapi:
-					%div.RadioButton.PositionerLeft
+					 
+					%div.RadioButton.PositionerLeft.NumberIndent
+						%label.Single.Short.PositionerLeft Kemoterapi:
 						%input#RadioButtonPolicyHolderThyroidTHChemoTherapyYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHChemoTherapy", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHChemoTherapyYes" } Ya
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHChemoTherapyYes" } Ya
 						%input#RadioButtonPolicyHolderThyroidTHChemoTherapyNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHChemoTherapy", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHChemoTherapyNo" } Tidak
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHChemoTherapyNo" } Tidak
 						%input#TextPolicyHolderThyroidTHChemoTherapy.Long.Single.PositionerLeft{ :type => "text" }
 					%br
-
-					%label.Short.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOtherTreatment"} Lainnya:
-					%div.RadioButton.PositionerLeft
+					
+					%div.RadioButton.PositionerLeft.NumberIndent
+						%label.Single.Short.PositionerLeft Lainnya:
 						%input#RadioButtonPolicyHolderThyroidTHOtherTreatmentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOtherTreatment", :value => "true" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOtherTreatmentYes" } Ya
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOtherTreatmentYes" } Ya
 						%input#RadioButtonPolicyHolderThyroidTHOtherTreatmentNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderThyroidTHOtherTreatment", :value => "false" }
 						%div.BoxRound.PositionerLeft
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOtherTreatmentNo" } Tidak
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderThyroidTHOtherTreatmentNo" } Tidak
 						%input#TextPolicyHolderThyroidTHOtherTreatment.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 
