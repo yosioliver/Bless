@@ -1,7 +1,7 @@
 %form#PopUpJoint.PopUp
-	
+
 	/ HEADER
-	
+
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpJoint', 'PopUpMotion')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpJoint', 'PopUpMotion', stringPageInfixTypeCurrent + 'Joint', arrayHealthQuestionnaire)" }
@@ -45,7 +45,7 @@
 		%br
 		%hr
 
-		%label#Wrap.Single.PositionerLeft{ :for => "RadioButtonJNLimitedActivity" } 5. Apakah aktivitas Anda mengalami hambatan? 
+		%label#Wrap.Single.PositionerLeft{ :for => "RadioButtonJNLimitedActivity" } 5. Apakah aktivitas Anda mengalami hambatan?
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonJNLimitedActivityYes{ :type => "radio", :name => "RadioButtonJNLimitedActivity", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonJNLimitedActivityYes" } Ya
@@ -71,7 +71,7 @@
 		%br
 		%hr
 
-		%label.Wrap.Full.PositionerLeft{ :for => "TextJNComplainDetail" } 7. Mohon menjelaskan secara rinci pada kolom di bawah ini,Kapan kapan dan apa penyebab diagnosis dokter  atas gangguan sendi   yang Anda derita serta apa diagnosis tersebut?(Kecelakaan, Proses penentuan, Kecelakaan sewaktu berolahraga, dan sebagainya).		
+		%label.Wrap.Full.PositionerLeft{ :for => "TextJNComplainDetail" } 7. Mohon menjelaskan secara rinci pada kolom di bawah ini,Kapan kapan dan apa penyebab diagnosis dokter  atas gangguan sendi   yang Anda derita serta apa diagnosis tersebut?(Kecelakaan, Proses penentuan, Kecelakaan sewaktu berolahraga, dan sebagainya).
 		%br
 		%input#TextJNComplainDetail.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
@@ -84,10 +84,10 @@
 			%div.Separator
 			%input#RadioButtonJNXRayNo{ :type => "radio", :name => "RadioButtonJNXRay", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonJNXRayNo" } Tidak
-		%br		
+		%br
 		%label.Full.Single.PositionerLeft Jika "Ya", mohon berikan tanggal pemeriksaan
 		%input#DateJNXRay.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
-		%br		
+		%br
 		%label.Full.Single.PositionerLeft Mohon jelaskan secara rinci pada kolom di bawah ini hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan sendi ini. (Lampirkan fotokopi hasil pemeriksaan)
 		%br
 		%input#TextJNXRayDescription.Full.Multi.PositionerLeft.Margin{ :type => "text" }
@@ -211,7 +211,8 @@
 		%div.ContainerFit
 			%label#Wrap.Single.PositionerLeft 13. Seberapa sering Anda kontrol?
 			%input#TextJNCheckUpFrequency.Short.Single.Item.Margin{ :type =>"text" }
-			%label#Wrap.Single kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
+			%label.Single.Margin.PositionerLeft kali per
+			%select#SelectJNCheckUpFrequencyPeriod.Single.PositionerLeft
 		%br
 		%hr
 

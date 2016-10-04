@@ -84,7 +84,7 @@
 				%h2 II. WAJIB DILENGKAPI (CALON) TERTANGGUNG
 
 				%fieldset.fieldset.WithoutDoubleDot
-					%span.Number.Single.PositionerLeft 1. 
+					%span.Number.Single.PositionerLeft 1.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderEpilepsySince" } Sejak umur berapa Anda terserang epilepsi?
 					%input#TextPolicyHolderEpilepsySince.Short.Single.PositionerLeft{ :type => "text" }
 					%label.Separator.Single.PositionerLeft Tahun
@@ -93,7 +93,8 @@
 					%span.Number.Single.PositionerLeft 2.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderEpilepsyHowMany" } Berapa kali Anda terserang epilepsi?
 					%input#TextPolicyHolderEpilepsyHowMany.Short.Single.PositionerLeft{ :type => "text" }
-					%label.Separator.Single.PositionerLeft kali per (Bulan/Tahun*) *coret yang tidak perlu
+					%label.Single.Margin.PositionerLeft{ :for => "TextPolicyHolderEpilepsyHowMany" } kali per
+					%input#SelectPolicyHolderEpilepsyHowManyPeriod.Short.Single.PositionerLeft{ :type => "text" }
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
@@ -120,7 +121,7 @@
 							Tiba-tiba jatuh atau kaku-kaku pada seluruh tubuh dengan irama kaku-lemas-kaku secara bergantian, juga terjadi pada otot-otot wajah dengan mulut berbusa. Dan pada saat terjadi kedua kaki dan lengan lurus, kesadaran hilang dan bila berakhir, kemudian tertidur.
 					%br
 
-					%span.Number.Single.PositionerLeft 5. 
+					%span.Number.Single.PositionerLeft 5.
 					%label.Wrap.Full.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelYes" } Sebelum  terjadi  serangan,  apakah  Anda  merasakan  adanya  pusing-pusing,  mencium  bau-bauan,  melihat cahaya, atau bunyi-bunyian
 					%div.RadioButton
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEpilepsyIsFeelNo" } Tidak
