@@ -57,10 +57,10 @@ a.Underline:active
 	font-size: $fontsize_link_button
 	text-transform: uppercase
 	text-decoration: none
-	
+
 /* BUTTON BY TEXT */
 
-.ButtonPrimary, .ButtonSecondary
+.ButtonPrimary, .ButtonSecondary, .ButtonPreview
 	padding-top: $button_padding_edge
 	padding-right: $button_padding_side
 	padding-left: $button_padding_side
@@ -71,15 +71,18 @@ a.Underline:active
 	border: none
     display: inline-block
 	+BorderRadius($general_borderradius_thick)
-	
+
 .ButtonPrimary:disabled
 	z-index: 2
-	
+
 .ButtonPrimary:hover
 	z-index: 2
 
 .ButtonSecondary:disabled
 	z-index: 2
-	
+
 .ButtonSecondary:hover
 	z-index: 2
+
+.ButtonPreview
+	display: none
