@@ -71,7 +71,7 @@
 		%input#TextBBCause.Full.Multi.PositionerLeft.Margin{ :type => "text" }
 		%br
 		%hr
-		
+
 		%label#Wrap.Single.PositionerLeft 8. Apakah Anda pernah menjalani X-ray, MRI, atau pemeriksaan lainnya?
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonBBXRayYes{ :type => "radio", :name => "RadioButtonBBXRay", :value => "true" }
@@ -79,10 +79,10 @@
 			%div.Separator
 			%input#RadioButtonBBXRayNo{ :type => "radio", :name => "RadioButtonBBXRay", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonBBXRayNo" } Tidak
-		%br		
+		%br
 		%label.Single.PositionerLeft Jika "Ya", mohon berikan tanggal pemeriksaan:
 		%input#DateBBXRay.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
-		%br		
+		%br
 		%label.medium.Single.Item Mohon jelaskan secara rinci pada kolom di bawah ini hasil pemeriksaan kesehatan yang dilakukan sehubungan dengan gangguan tulang belakang ini. (Lampirkan fotokopi hasil pemeriksaan)
 		%br
 		%input#TextBBXRayDescription.Full.Multi.PositionerLeft.Margin{ :type => "text" }
@@ -175,7 +175,7 @@
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextBBBOTTOMDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
-			%label.Long.Single.PositionerLeft No. Telepon/Handphone:			
+			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextBBBOTTOMDoctorTelephone.Full.Single.Item.Margin{ :type =>"text" }
 		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
@@ -204,9 +204,9 @@
 		%hr
 
 		%div.ContainerFit
-			%label#Wrap.Single.PositionerLeft 13. Seberapa sering Anda kontrol?
+			%label.Single.PositionerLeft 13. Seberapa sering Anda kontrol?
 			%input#TextBBControlAmount.Short.Single.Item.Margin{ :type =>"text" }
-			%label#Wrap.Single kali per (hari/minggu/bulan/tahun*) *coret yang tidak perlu
+			%select#SelectBBControlAmountPeriod.Single.PositionerLeft
 		%br
 		%hr
 

@@ -122,7 +122,7 @@ function savetoDB()
 	var stringRadioButtonFlag = 0;
 	var booleanValidateState = true;
 
-	
+
 	// QUICK FIX VALIDATION FOR FORM
 	
 	if (booleanValidateState == false)
@@ -370,6 +370,8 @@ function savetoDB()
 
 		arrayHealthQuestionnaire = [];
 		arrayBeneficiariesList = [];
+
+		booleanInputChangeState = "false";
 	}
 }
 
