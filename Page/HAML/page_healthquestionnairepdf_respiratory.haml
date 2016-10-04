@@ -24,12 +24,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 				boxGenerator("#DatePolicyHolderRespiratoryDetailFirstTimeAriseDay", 2, boxTypeWithoutLabel, null);
@@ -59,7 +59,7 @@
 				// FOOTER
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Kuesioner Gangguan Pernapasan");
+				titleSetterForHealthQuestionnairePDF("KUESIONER GANGGUAN PERNAPASAN");
 			});
 
 	/ BODY
@@ -119,6 +119,7 @@
 					%span.Number.Single.PositionerLeft 3.
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderRespiratoryDetailLastTwoYearsAttack" } a. Berapa kali serangan dalam 2 (dua) tahun terakhir?
 					%input#TextPolicyHolderRespiratoryDetailLastTwoYearsAttack.Short.Single.PositionerLeft{ :type => "text" }
+					%label.Single.PositionerLeft.NumberIndent Kali
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailLastAttackDay" } b. Kapan serangan terakhir?
 					%table#DatePolicyHolderRespiratoryDetailLastAttackYear.BoxSquare.PositionerRight
@@ -159,8 +160,7 @@
 					%table#DatePolicyHolderRespiratoryDetailAttackCauseHospitalYear.BoxSquare.PositionerLeft
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalDuration"} Lama perawatan:
-					%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalDuration.Long.Single.PositionerLeft{ :type => "text" }
-					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderRespiratoryNumberOfAttackCauseHospitalDuration"} (hari/minggu/bulan*) *coret yang tidak perlu
+					%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalDuration.Long.Single.PositionerLeft{ :type => "text" }	%input#SelectPolicyHolderRespiratoryDetailAttackCauseHospitalAmountPeriod.Short.Single.PositionerLeft{ :type => "text", :style => "margin-left: 10px;" }
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseDoctorName"} Nama Lengkap Dokter
@@ -177,12 +177,11 @@
 						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalName.Full.Single.Item{ :type => "text" }
 					%br
 
-					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-
+					%section#SectionFooter{ :style => "margin-top: 50px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%div.ContainerFit.NumberIndent{ :style => "margin-top: 30px;"}
+					%div.ContainerFit.NumberIndent{ :style => "margin-top: 80px;"}
 						%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress"} Alamat Klinik/Rumah Sakit:
 						%input#TextPolicyHolderRespiratoryDetailAttackCauseHospitalAddress.Full.Single.PositionerLeft{ :type => "text" }
 					%br
@@ -328,8 +327,8 @@
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item 9.
-						%label.Wrap.Item Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;" } 9.
+						%label.Wrap.Item{ :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRespiratoryDetailAdditionalInfo.Full.Single.PositionerLeft{ :type => "text" }
