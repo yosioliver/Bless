@@ -150,7 +150,7 @@
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderRespiratoryDetailAttackCauseHospital.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailAttackCause", :value => "hospital" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailAttackCauseHospital" } Dirawat di Rumah Sakit
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailAttackCauseHospital" } Dirawat di Rumah Sakit:
 					%br
 					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "DatePolicyHolderRespiratoryDetailAttackCauseHospitalDay" } Tanggal perawatan:
 					%table#DatePolicyHolderRespiratoryDetailAttackCauseHospitalDay.BoxSquare.PositionerLeft
@@ -164,7 +164,7 @@
 					%input#SelectPolicyHolderRespiratoryDetailAttackCauseHospitalAmountPeriod.Short.Single.PositionerLeft{ :type => "text", :style => "margin-left: 10px;" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseDoctorName"} Nama Lengkap Dokter
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseDoctorName"} Nama Lengkap Dokter yang merawat:
 						%input#TextPolicyHolderRespiratoryDetailAttackCauseDoctorName.Full.Single.Item{ :type => "text" }
 					%br
 
@@ -207,7 +207,7 @@
 					%br
 
 					%span.Single.Number.PositionerLeft 6.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapy" } a.	Pengobatan apakah yang digunakan untuk mengatasi gangguan pernapasan?
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailTherapy" } a.	 Pengobatan apakah yang digunakan untuk mengatasi gangguan pernapasan?
 					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderRespiratoryDetailTherapyInhaler.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailTherapy", :value => "inhaler" }
@@ -282,11 +282,13 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRespiratoryDetailStillConsumedDesc.Full.Single.PositionerLeft{ :type => "text" }
 					%br
-
+					
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 7.
-						%label.Wrap.Item Sehubungan dengan gangguan pernapasan, kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? (Mohon dilampirkan fotokopi hasil pemeriksaan).
+						%label.Single.Item Sehubungan dengan gangguan pernapasan, kapan dan bagaimana hasil pemeriksaan darah, rontgen dada, spirometri lainnya? 
 					%br
+						%label.Single.Item.NumberIndent (Mohon dilampirkan fotokopi hasil pemeriksaan).
+						%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderRespiratoryDetailMedicalCheckResult.Full.Single.PositionerLeft{ :type => "text" }
 					%br

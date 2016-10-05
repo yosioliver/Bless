@@ -24,12 +24,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -44,7 +44,7 @@
 				// SETUP
 
 				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
-				titleSetterForHealthQuestionnairePDF("Tambang dan Gas");
+				titleSetterForHealthQuestionnairePDF("KUESIONER INDUSTRI PERTAMBANGAN, PERMINYAKAN DAN GAS");
 			});
 
 
@@ -107,15 +107,19 @@
 					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningAreaPercent.Multi.Full.Item
 					
-					%span.Number.Single.PositionerLeft 5.
-					%label.Wrap.PositionerLeft{ :for => "AreaPolicyHolderMiningOutdoor" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining?
+					%section#SectionFooter{ :style => "margin-top: 170px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 60px;" } 5.
+					%label.Wrap.PositionerLeft{ :for => "AreaPolicyHolderMiningOutdoor", :style => "margin-top: 60px;" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining?
 					%div.RadioButton.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMiningOpenCastNo" } Tidak
-						%input#RadioButtonPolicyHolderMiningOpenCastNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOpenCast", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMiningOpenCastYes" } Ya
-						%input#RadioButtonPolicyHolderMiningOpenCastYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOpenCast", :value => "true" }
-						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMiningOpenCastNo", :style => "margin-top: 60px;" } Tidak
+						%input#RadioButtonPolicyHolderMiningOpenCastNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOpenCast", :value => "false", :style => "margin-top: 60px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 60px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMiningOpenCastYes", :style => "margin-top: 60px;" } Ya
+						%input#RadioButtonPolicyHolderMiningOpenCastYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOpenCast", :value => "true", :style => "margin-top: 60px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 60px;" }
 					%br
 					%label.Full.Wrap.Item.NumberIndent Jika "Ya" mohon menjelaskan secara rinci pada kolom dibawah ini
 					%br
@@ -129,16 +133,11 @@
 					%br
 					%div.ContainerFit.NumberIndent
 						%textarea#AreaPolicyHolderMiningWorkLocation.Multi.Full.Item
-					%br
-
-					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-
-					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					%br					
 
 					%div.ContainerFit
-						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;"} 7.
-						%label.Full.Wrap.Item{ :for => "AreaMilitaryYourUnity", :style => "margin-top: 30px;" } Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut:
+						%span.NumberFix.Single.Item 7.
+						%label.Full.Wrap.Item{ :for => "AreaMilitaryYourUnity" } Apabila Anda bekerja di lapangan, mohon menjawab pertanyaan-pertanyaan berikut:
 					%br
 
 					%label.Long.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMiningOffShore" } a. Dimanakah lokasi Anda bekerja berada?
@@ -245,8 +244,7 @@
 						%input#TextPolicyHolderMiningOLAdditionalInfo.Full.Single.Item{ :type => "text" }
 					%br
 
-					%section#SectionFooter{ :style => "margin-top: 220px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-
+					%section#SectionFooter{ :style => "margin-top: 170px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 

@@ -333,10 +333,8 @@
 						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
 					%div.ContainerFit
-						%span.NumberFix.Single.Item{ :style => "margin-top: 50px;" } 12.
-						%label.Single.Item{ :for => "TextPolicyHolderTravelingTVAdditionalInformation", :style => "margin-top: 50px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu
-					%br
-						%label.Single.Item.NumberIndent proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%span.Number.Single.PositionerLeft{ :style => "margin-top: 50px;" } 12.
+						%label.Single.PositionerLeft{ :for => "TextPolicyHolderTravelingTVAdditionalInformation", :style => "margin-top: 50px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.					
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderTravelingTVAdditionalInformation.Full.Single.Item{ :type => "text" }
