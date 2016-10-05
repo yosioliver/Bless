@@ -24,12 +24,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -109,7 +109,7 @@
 					%br
 					
 					%div.RadioButton.NumberIndent
-						%label.Long.Wrap.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan pembuatan peraturan
+						%label.Full.Wrap.NumberIndent.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan pembuatan peraturan
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo" } Tidak
 						%input#RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamerNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryRiskActivityExplosiveTamer", :value => "false" }
 						%div.BoxRound.PositionerRight

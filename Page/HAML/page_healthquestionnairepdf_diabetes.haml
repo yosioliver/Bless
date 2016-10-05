@@ -23,12 +23,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -345,7 +345,7 @@
 
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsSensor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "censorikproblem" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsSensor" } Gangguan sensorik, termasuk kebas dan panas di kaki
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsSensor" } Gangguan sensorik, termasuk kebas dan panas di kaki
 						%br
 
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsBloodDisorders.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "bloodproblem" }
@@ -363,7 +363,7 @@
 
 						%input#RadioButtonPolicyHolderDiabetesWithComplicationsOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesWithComplications", :value => "other" }
 						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsOthers" } Lainnya, sebutkan
+						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDiabetesWithComplicationsOthers" } Lainnya, sebutkan
 						%input#TextPolicyHolderDiabetesWithComplicationsOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
 					%br
 

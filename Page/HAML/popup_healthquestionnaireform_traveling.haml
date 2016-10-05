@@ -14,9 +14,9 @@
 			%span.Multi.Single.4 KUESIONER UNTUK PERJALANAN KE LUAR NEGERI/TINGGAL DI LUAR NEGERI
 		%br
 		%hr
-
-		%div.ContainerFit
-			%label.Medium.Single.Item 1. Apakah alasan utama untuk melakukan perjalanan atau bertempat tinggal di luar negeri?
+		
+		%label.Medium.Single.Item 1. Apakah alasan utama untuk melakukan perjalanan atau bertempat tinggal di luar negeri?
+		%div.ContainerFit						
 			%div.RadioButton
 				%input#RadioButtonTVReasonVacation{ :type => "radio", :name => "RadioButtonTVReason", :value => "vacation" }
 				%label.RadioButton{ :for => "RadioButtonTVReasonVacation" } Liburan
@@ -30,7 +30,7 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 2. Sebutkan dengan rinci rencana bepergian dalam 12 bulan yang akan datang:
+		%label.Medium.Single.Item 2. Sebutkan dengan rinci tujuan rencana bepergian dalam 12 (dua belas) bulan yang akan datang pada kolom di bawah ini:
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Negara
@@ -71,7 +71,7 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 3. Sebutkan dengan rinci perjalanan yang telah dilakukan dalam 12 bulan terakhir:
+		%label.Medium.Single.Item 3. Sebutkan dengan rinci tujuan perjalanan yang telah dilakukandalam 12 (dua belas) bulan terakhir   pada kolom di bawah ini:
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Negara
@@ -82,43 +82,43 @@
 		%div.ContainerFit
 			%input#TextTVNextDestinationCountry1.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextTVNextDestinationCity1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextArrivalDate1.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextDepartureDate1.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTVNextArrivalDate1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTVNextDepartureDate1.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTVNextVisaType1.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextTVNextDestinationCountry2.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextTVNextDestinationCity2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextArrivalDate2.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextDepartureDate2.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTVNextArrivalDate2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date"}
+			%input#TextTVNextDepartureDate2.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTVNextVisaType2.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextTVNextDestinationCountry3.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextTVNextDestinationCity3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextArrivalDate3.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextDepartureDate3.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTVNextArrivalDate3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTVNextDepartureDate3.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTVNextVisaType3.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextTVNextDestinationCountry4.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextTVNextDestinationCity4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextArrivalDate4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextDepartureDate4.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTVNextArrivalDate4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTVNextDepartureDate4.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTVNextVisaType4.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%input#TextTVNextDestinationCountry5.Short.Single.Item.Margin{ :type => "text" }
 			%input#TextTVNextDestinationCity5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextArrivalDate5.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextTVNextDepartureDate5.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTVNextArrivalDate5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%input#TextTVNextDepartureDate5.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTVNextVisaType5.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
 
-		%div.ContainerFit
-			%label#Wrap.Single.PositionerLeft 4. Sebutkan kewarganegaraan Anda?
-			%input#TextMyNationality.Short.Single.Item.Margin{ :type =>"text" }
+		%label.Medium.Single.Item 4. Sebutkan kewarganegaraan Anda. (Jika lebih dari 1 kewarganegaraan mohon sebutkan seluruhnya pada kolom di bawah ini).
+		%br
+		%input#TextMyNationality.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Medium.Single.Item 5. Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal, pada kolom di bawah ini
+		%label.Medium.Single.Item 5. Sebutkan dengan rinci aset atau perumahan yang dimiliki/dikontrol oleh Anda di negara yang Anda kunjungi atau negara tempat Anda tinggal, pada kolom di bawah ini:
 		%br
 		%input#TextAbroadAsset.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -126,15 +126,21 @@
 
 		%label.Medium.Single.Item 6. Jika Anda berencana untuk berada di negara manapun selama lebih dari 21 hari, harap memberikan rincian sebagai berikut
 		%br
-		%label.Medium.Single.Item a. Jenis tempat tinggal (misal: apartemen, rumah, hotel, tempat penampungan sementara, dll)
+		%label.Medium.Single.Item a. Jenis tempat tinggal Anda:
+		%br		
+		%label.Medium.Single.Item (misal: apartemen, rumah, hotel, tempat penampungan sementara, dll)
 		%br
 		%input#TextTVStay.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item b. Alamat lengkap tempat tinggal Anda: (Termasuk nama jalan dan nomor, kota, kode pos, negara).
+		%br
+		%label.Medium.Single.Item b. Alamat lengkap tempat tinggal Anda:
+		%br		
+		%label.Medium.Single.Item (Termasuk nama jalan dan nomor, kota, kode pos, negara).
 		%br
 		%input#TextTVAddress.Full.Single.Item1.Margin{ :type =>"text" }
-
-		%label.Medium.Single.Item c. Seberapa jauh jarak fasilitas medis dari tempat tinggal Anda: (Jarak menuju praktek dokter dan/atau rumah sakit).
+		%br
+		%label.Medium.Single.Item c. Seberapa jauh jarak fasilitas medis dari tempat tinggal Anda:
+		%br		
+		%label.Medium.Single.Item (Jarak menuju praktek dokter dan/atau rumah sakit).
 		%br
 		%input#TextTVHospitalDistance.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -158,7 +164,7 @@
 		%input#TextTVJobDescription.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 
-		%label.Medium.Single.Item d. Tanggal dimulai:
+		%label.Medium.Single.Item d. Tanggal mulai perjalanan bisnis:
 		%br
 		%input#DateTVTripStarted.Full.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
@@ -173,7 +179,9 @@
 		%input#TextTVInjuryProcedure.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 
-		%label.Medium.Single.Item g. Sarana transportasi yang tersedia di negara tersebut: (Misal: angkutan umum atau pribadi, pesawat pribadi, dan lain-lain).
+		%label.Medium.Single.Item g. Sarana transportasi yang tersedia di negara tersebut: 
+		%br		
+		%label.Medium.Single.Item (Misal: angkutan umum atau pribadi, pesawat pribadi, dan lain-lain).
 		%br
 		%input#TextTVTransportation.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -183,7 +191,9 @@
 		%input#TextTVSafetyEquipment.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 
-		%label.Medium.Single.Item i. Apakah Anda terikat dengan suatu kontrak atau perjanjian? Mohon menjelaskan secara rinci pada kolom di bawah ini. (Tanggal mulai, durasi dan lain-lain serta memberikan fotokopi kontrak atau perjanjian jika tersedia).
+		%label.Medium.Single.Item i. Apakah Anda terikat dengan suatu kontrak atau perjanjian? Mohon menjelaskan secara rinci pada kolom di bawah ini. 
+		%br
+		%label.Medium.Single.Item (Tanggal mulai, durasi dan lain-lain serta memberikan fotokopi kontrak atau perjanjian jika tersedia).
 		%br
 		%input#TextTVContract.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -194,7 +204,8 @@
 		%input#TextTVAdditionalInformation.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
-
+		
+	%div.Note
 		%h2 PERNYATAAN DAN KUASA
 		%ol
 			%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.

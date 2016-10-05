@@ -50,9 +50,9 @@
 			%input#DateProblemStarted.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%hr
 
-		%label.medium.Single.Item{ :for => "TextFrequencyInMonth" } 3. a. Frekuensi timbulnya dalam satu bulan?
-		%br
-		%input#TextFrequencyInMonth.Full.Single.Item1.Margin{ :type =>"text" }
+		%label.medium.Single.PositionerLeft{ :for => "TextFrequencyInMonth" } 3. a. Berapa kali Anda terserang gangguan pencernaan?		
+		%input#TextFrequencyInMonth.Short.Single.PositionerLeft{ :type =>"text" }
+		%select#SelectFrequencyInMonthPeriod.Single.PositionerLeft
 		%br
 		%div.ContainerFit
 			%label#Label.Long.Single.Item3.Margin{ :for => "TextLastComplain"} b. Kapan timbulnya keluhan terakhir?
@@ -96,8 +96,9 @@
 		%div.ContainerFit
 			%label#LabelVomittingBloodAriseTime.Long.Single.Item3.Margin Berapa kali Anda mengalami muntah darah?
 			%input#TextVomittingBloodAriseTime.Short.Single.Item1.Margin{ :type => "text" }
-		%br
-
+			%select#SelectVomittingBloodAriseTimePeriod.Single.PositionerLeft
+		%br		
+		
 		%label.medium.Single.Item Mohon menjelaskan secara rinci dan cara mengatasinya pada kolom di bawah ini.
 		%br
 		%input#TextVomittingBloodSolving.Full.Single.Item1.Margin{ :type =>"text" }
@@ -230,7 +231,8 @@
 
 		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Lama Perawatan
-			%input#TextHospitalCareDuration.Full.Single.Item.Margin{ :type =>"text" }
+			%input#TextHospitalCareDuration.Medium.Single.PositionerLeft{ :type =>"text" }
+			%select#SelectHospitalCareDurationPeriod.Single.PositionerLeft
 		%br
 		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Dokter

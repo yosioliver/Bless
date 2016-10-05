@@ -183,13 +183,13 @@
 						%input#TextPolicyHolderAlcoholALEnd10.Short.Single.Item1{ :type => "text" }
 					%br
 
-					%section#SectionFooter{ :style => "margin-top: 140px; position: relative; top: 140px; display: block;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%section#SectionFooter{ :style => "margin-top: 70px; position: relative; top: 70px; display: block;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 					%header
-						%section#SectionHeader{ :style => "margin-top: 110px; position: relative; top: 110px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft{ :style => "margin-top: 110px;"} 2.
-					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderAlcoholSober", :style => "margin-top: 110px;" } Jika Anda telah berhenti menggunakan alkohol/obat-obatan tersebut diatas.
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 100px;"} 2.
+					%label.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderAlcoholSober", :style => "margin-top: 100px;" } Jika Anda telah berhenti menggunakan alkohol/obat-obatan tersebut diatas.
 					%br
 					%label.NumberIndent.Full.Wrap.PositionerLeft{ :for => "TextPolicyHolderAlcoholSober" }	Mohon menjelaskan secara rinci pada kolom di bawah ini atas saran/permintaan siapa dan sejak kapan Anda berhenti.
 					%br
@@ -307,27 +307,27 @@
 						%label.NumberIndent.Single.PositionerRight{ :for => "TextPolicyHolderAlcoholOnLeavePeriod" } Dan berapa lama
 						%input#TextPolicyHolderAlcoholOnLeavePeriod.Short.Single.Item{ :type => "text" }
 						%label.NumberIndent.Single.PositionerRight Hari
-					%br
+					%br					
+					
+					%section#SectionFooter{ :style => "margin-top: 90px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft 8.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALCheckUp" } Apakah pernah melakukan pemeriksaan kesehatan sehubungan penggunaan alkohol/obat-obatan?
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 50px;" } 8.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderAlcoholALCheckUp", :style => "margin-top: 50px;"  } Apakah pernah melakukan pemeriksaan kesehatan sehubungan penggunaan alkohol/obat-obatan?
 					%div.RadioButton
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpNo" } Tidak
-						%input#RadioButtonPolicyHolderAlcoholALCheckUpNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpYes" } Ya
-						%input#RadioButtonPolicyHolderAlcoholALCheckUpYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "true" }
-						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpNo", :style => "margin-top: 50px;"  } Tidak
+						%input#RadioButtonPolicyHolderAlcoholALCheckUpNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "false", :style => "margin-top: 50px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 50px;" }
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderAlcoholALCheckUpYes", :style => "margin-top: 50px;" } Ya
+						%input#RadioButtonPolicyHolderAlcoholALCheckUpYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderAlcoholALCheckUp", :value => "true", :style => "margin-top: 50px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 50px;" }
 					%br
 					%label.NumberIndent.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci dan berapa lama terjadinya pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderAlcoholALCheckUp.Full.Single.Item{ :type => "text" }
-					%br
-
-					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					%br					
 
 					%div.ContainerFit
 						%span.NumberFix.Single.Item{ :style => "margin-top: 40px;" } 9.

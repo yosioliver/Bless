@@ -23,12 +23,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -143,7 +143,7 @@
 					%br
 
 					%span.Number.Single.PositionerLeft 3.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDetailFrequencyInMonth" } a. Berapa kali anda mengalami gangguan pencernaan?
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDetailFrequencyInMonth" } a. Berapa kali Anda terserang gangguan pencernaan?
 					%input#TextPolicyHolderDigestDetailFrequencyInMonth.Short.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 					%label.Single.Margin.PositionerLeft{ :for => "TextPolicyHolderDigestDetailFrequencyInMonth" } kali per
 					%input#SelectPolicyHolderDigestDetailFrequencyInMonthPeriod.Short.Single.PositionerLeft{ :type => "text" }
@@ -212,8 +212,7 @@
 						%input#TextPolicyHolderDigestDetailVomittingBloodSolving.Full.Single.PositionerLeft{ :type => "text" }
 					%br
 
-					%section#SectionFooter{ :style => "margin-top: 150px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-
+					%section#SectionFooter{ :style => "margin-top: 80px;" }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
@@ -365,7 +364,6 @@
 					%div.RadioButton.PositionerRight
 						%input#RadioButtonPolicyHolderDigestDetailHospitalCareNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailHospitalCare", :value => "false" }
 						%div.BoxRound.PositionerRight
-
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestHospitalCareNo" } Tidak
 						%input#RadioButtonPolicyHolderDigestDetailHospitalCareYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailHospitalCare", :value => "true" }
 						%div.BoxRound.PositionerRight
@@ -402,20 +400,19 @@
 						%input#TextPolicyHolderDigestDetailHospitalCareDoctorAddress.Full.Single.Item{ :type => "text" }
 					%br
 
-					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-
+					%section#SectionFooter{ :style => "margin-top: 80px;"  }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
-					%span.Number.Single.PositionerLeft{:style => "margin-top: 30px;"} 11.
-					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailInTreatment", :style => "margin-top: 30px;" } Apakah Anda sampai saat ini masih dalam pengobatan?
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 50px;" } 11.
+					%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderDigestDetailInTreatment", :style => "margin-top: 50px;" } Apakah Anda sampai saat ini masih dalam pengobatan?
 					%div.RadioButton.PositionerRight
-						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailInTreatmentNo" } Tidak
-						%input#RadioButtonPolicyHolderDigestDetailInTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailInTreatment", :value => "false" }
-						%div.BoxRound.PositionerRight
-						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailInTreatmentYes" } Ya
-						%input#RadioButtonPolicyHolderDigestDetailInTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailInTreatment", :value => "true" }
-						%div.BoxRound.PositionerRight
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailInTreatmentNo", :style => "margin-top: 50px;" } Tidak
+						%input#RadioButtonPolicyHolderDigestDetailInTreatmentNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailInTreatment", :value => "false", :style => "margin-top: 50px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 50px;" }
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDigestDetailInTreatmentYes", :style => "margin-top: 50px;" } Ya
+						%input#RadioButtonPolicyHolderDigestDetailInTreatmentYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDigestDetailInTreatment", :value => "true", :style => "margin-top: 50px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 50px;" }
 					%br
 					%label.Wrap.NumberIndent.PositionerLeft{:for => "TextPolicyHolderVomitingBlood"} Jika “Ya”, mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 					%br
@@ -500,7 +497,7 @@
 					%span.Separator.Single.PositionerLeft /
 					%table#DatePolicyHolderDigestDetailAbsentSinceYear.BoxSquare.PositionerLeft
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderDigestDetailAbsentSince"}
-					%span.Separator.Single.PositionerLeft Berapa lama?
+					%span.Separator.Single.PositionerLeft dan berapa lama?
 					%input#NumberPolicyHolderDigestDetailAbsentSinceDays.Short.Single.PositionerLeft{ :type => "number" }
 					%label.Single.PositionerLeft{ :for => "NumberPolicyHolderDigestDetailAbsentSinceDays" }
 					%span.Separator.Single.PositionerLeft hari.

@@ -26,12 +26,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -114,7 +114,7 @@
 						%br
 
 						%span.Number.Single.PositionerLeft 2.
-						%label.Long.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan secara rinci lisensi dan sertifikat penerbangan Anda.
+						%label.Single.PositionerLeft{ :for => "TablePolicyHolderDivingCertificates" } Mohon sebutkan secara rinci lisensi dan/atau sertifikat penerbangan yang Anda miliki.
 						%br
 
 						%div.ContainerFit.NumberIndent
@@ -160,9 +160,14 @@
 							%input#TextPolicyHolderParaglidingPGClubMemberDesc.Full.Single.Item{ :type => "text" }
 						%br
 						%hr
+						
+						%section#SectionFooter{ :style => "margin-top: 180px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
-						%span.Number.Single.PositionerLeft 4.
-						%label.Full.Wrap.PositionerLeft{ :for => "TablePolicyHolderDivingHistories" } Seberapa sering Anda melakukan terbang layang dan berapa jam terbang Anda?
+						%header
+							%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						
+						%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 4.
+						%label.Full.Wrap.PositionerLeft{ :for => "TablePolicyHolderDivingHistories", :style => "margin-top: 70px;" } Seberapa sering Anda melakukan terbang layang dan berapa jam terbang Anda?
 						%br
 						-#
 							%div.RadioButton.NumberIndent
@@ -261,6 +266,12 @@
 						%div.ContainerFit.NumberIndent
 							%input#TextPolicyHolderParaglidingPGOtherImportantInfo.Full.Single{ :type => "text" }
 						%br
+						
+						%section#SectionFooter{ :style => "margin-top: 470px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+
+						%header
+							%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						
 					%section#SectionDeclaration
 						= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 
