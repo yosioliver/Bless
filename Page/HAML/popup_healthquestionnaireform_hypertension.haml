@@ -1,17 +1,17 @@
 %form#PopUpHypertension.PopUp
-	
+
 	/ HEADER
 
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonSubPopUpCancel('PopUpHypertension', 'PopUpCardiac')" }
 		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonSubPopUpDone('PopUpHypertension', 'PopUpCardiac', stringPageInfixTypeCurrent + 'Hypertension', arrayHealthQuestionnaire)" }
-		%h2 KUESIONER TEKANAN DARAH TINGGI 
+		%h2 KUESIONER TEKANAN DARAH TINGGI
 
 	/ FIELDSET
 
 	%fieldset
 		%div.ContainerFit
-			%span.Multi.Single.6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya? 
+			%span.Multi.Single.6d Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
 		%br
 		%hr
 		%div.ContainerFit
@@ -23,11 +23,11 @@
 			%label.Wrap.Single.PositionerRight.Margin mmHg
 			%input#NumberDiastolic.Short.Single.Margin.PositionerRight{ :type => "number" }
 			%span.Separator.Margin.PositionerRight /
-			%input#NumberSystolic.Short.Single.Margin.PositionerRight{ :type => "number" }						
-		%br	
+			%input#NumberSystolic.Short.Single.Margin.PositionerRight{ :type => "number" }
+		%br
 
 		%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
-		%div.RadioButton.PositionerLeft			
+		%div.RadioButton.PositionerLeft
 			%input#RadioButtonCheckReasonRoutine{ :type => "radio", :name => "RadioButtonCheckReason", :value => "routine" }
 			%label.RadioButton{ :for => "RadioButtonCheckReasonRoutine" } Pemeriksaan rutin
 			%div.Separator
@@ -35,7 +35,7 @@
 			%label.RadioButton{ :for => "RadioButtonCheckReasonOthers" }Keluhan lainnya. Mohon jelaskan secara rinci pada kolom di bawah ini
 		%br
 		%input#TextCheckReasonOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
-		
+
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item d. Apakah dikonsultasikan ke dokter ?
 			%input#RadioButtonDoctorConsultYes{ :type => "radio", :name => "RadioButtonDoctorConsult", :value => "true" }
@@ -46,23 +46,28 @@
 			%br
 			%label.Full.Single.PositionerLeft Jika "Ya" mohon mengisi kolom di bawah ini.
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft{ :for => "TextDoctorName" } Nama Dokter
 			%input#TextHTUPDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft{ :for => "TextDoctorAddress" } Alamat Dokter
 			%input#TextHTUPDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
+<<<<<<< HEAD
 		%label.Single.PositionerLeft.Margin{ :for => "TextHowOftenCheckupToDoctor" } e. Berapa sering Anda kontrol ke Dokter?		
 		%input#TextHowOftenCheckupToDoctor.Medium.Single.PositionerLeft.Margin{ :type => "text" }
+=======
+		%label.Single.PositionerLeft.Margin{ :for => "TextHowOftenCheckupToDoctor" } e. Berapa sering Anda kontrol ke Dokter?
+		%label.Single.Margin.PositionerLeft kali per
+>>>>>>> f18018a97b394274bd5ecdaff484679c250313d4
 		%select#SelectHowOftenCheckupToDoctorPeriod.Single.PositionerLeft
 		%br
 		%hr
 
 		%div.RadioButton.PositionerLeft
 			%label.Single.Item 2. Apakah kenaikan tekanan darah Anda tersebut berhubungan dengan penyakit sebagai berikut:
-			%br			
+			%br
 			%input#RadioButtonRelatedToHeart{ :type => "radio", :name => "RadioButtonRelatedTo", :value => "heart" }
 			%label.RadioButton{ :for => "RadioButtonRelatedToHeart" }  Jantung
 			%div.Separator
@@ -73,7 +78,7 @@
 			%label.RadioButton{ :for => "RadioButtonRelatedToKidney" } Ginjal
 			%div.Separator
 			%input#RadioButtonRelatedToOthers{ :type => "radio", :name => "RadioButtonRelatedTo", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonRelatedToOthers" }Lainnya, sebutkan 
+			%label.RadioButton{ :for => "RadioButtonRelatedToOthers" }Lainnya, sebutkan
 		%br
 		%input#TextRelatedToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr
@@ -92,7 +97,7 @@
 		%label.medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
 		%input#TextStopDrugIfYesDesc.Full.Single.Item1.Margin{ :type =>"text" }
-		%br		
+		%br
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item  c. Apakah saat ini masih dalam pengobatan?
 			%input#RadioButtonInTherapyYes{ :type => "radio", :name => "RadioButtonInTherapy", :value => "true" }
@@ -102,11 +107,11 @@
 			%label.RadioButton{ :for => "RadioButtonInTherapyNo" } Tidak
 		%br
 		%label.Medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
-		%br		
+		%br
 		%div.ContainerFit
-			%label.Short.Single.Item1.Center Nama Obat  
+			%label.Short.Single.Item1.Center Nama Obat
 			%label.Short.Single.Item1.Center Dosis
-			%label.Short.Single.Item1.Center Frekuensi 
+			%label.Short.Single.Item1.Center Frekuensi
 		%div.ContainerFit
 			%input#TextMedicationName1.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextMedicationDose1.Short.Single.Item1.Margin{ :type => "text" }
@@ -124,41 +129,41 @@
 		%br
 		%div.ContainerFit
 			%input#TextMedicationName4.Short.Single.Item1.Margin{ :type => "text" }
-			%input#TextMedicationDose4.Short.Single.Item1.Margin{ :type => "text" }			
+			%input#TextMedicationDose4.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextMedicationFrequency4.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
 			%input#TextMedicationName5.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextMedicationDose5.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextMedicationFrequency5.Short.Single.Item1.Margin{ :type => "text" }
-		%br		
-		%div.ContainerFit 
+		%br
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
 			%input#TextInTherapyDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft No. Telepon/Handphone:
 			%input#TextInTherapyDoctorPhone.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Klinik/Rumah Sakit:
 			%input#TextInTherapyHospitalName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
-		%div.ContainerFit 
+		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Alamat Klinik/Rumah Sakit:
 			%input#TextInTherapyHospitalAddress.Full.Single.Item.Margin{ :type =>"text" }
-		%br				
+		%br
 		%hr
-		
-		%label.Single.PositionerLeft 4. Apakah pernah melakukan pemeriksaan sebagai berikut?	
+
+		%label.Single.PositionerLeft 4. Apakah pernah melakukan pemeriksaan sebagai berikut?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonCheckUpYes{ :type => "radio", :name => "RadioButtonCheckUp", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonCheckUpYes" } Ya
 			%div.Separator
 			%input#RadioButtonCheckUpNo{ :type => "radio", :name => "RadioButtonCheckUp", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonCheckUpNo" } Tidak			
+			%label.RadioButton{ :for => "RadioButtonCheckUpNo" } Tidak
 		%br
-		
+
 		%div.RadioButton.PositionerCenter
 			%input#RadioButtonCheckUpTypeEKGECG{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "ekgecg" }
 			%label.RadioButton{ :for => "RadioButtonCheckUpTypeEKGECG" } EKG/ ECG
@@ -168,7 +173,7 @@
 			%div.Separator
 			%input#RadioButtonCheckUpTypeEchocardiogram{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "echocardiogram" }
 			%label.RadioButton{ :for => "RadioButtonCheckUpTypeEchocardiogram" } Echocardiogram
-			%div.Separator			
+			%div.Separator
 			%input#RadioButtonCheckUpTypeTreadmill{ :type => "radio", :name => "RadioButtonCheckUpType", :value => "treadmill" }
 			%label.RadioButton{ :for => "RadioButtonCheckUpTypeTreadmill" } Treadmill
 			%div.Separator
@@ -179,31 +184,31 @@
 			%label.RadioButton{ :for => "RadioButtonCheckUpTypeOthers" } Lainnya, sebutkan
 			%input#TextCheckUpTypeOtherDesc.Line.PositionerCenter{ :type =>"text" }
 		%br
-		
-		%label.Single.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini. 
+
+		%label.Single.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
 		%label.Single.PositionerLeft (Kapan dan bagaimana hasilnya serta melampirkan fotokopi hasil pemeriksaan).
 		%br
 		%input#TextCheckUpTypeOtherDescAdd.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
-		
+
 		%label.Single.PositionerLeft  5. Apakah mendapat perawatan rumah sakit sehubungan dengan tekanan darah tinggi?
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonTreatment2No.PositionerRight{ :type => "radio", :name => "RadioButtonTreatment2", :value => "false" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonTreatment2No" } Tidak
 			%div.Separator.PositionerRight
 			%input#RadioButtonTreatment2Yes{ :type => "radio", :name => "RadioButtonTreatment2", :value => "true" }
-			%label.RadioButton.PositionerRight{ :for => "RadioButtonTreatment2Yes" } Ya						
+			%label.RadioButton.PositionerRight{ :for => "RadioButtonTreatment2Yes" } Ya
 		%br
 		%label.medium.Single.Item Jika “Ya”, mohon melengkapi kolom di bawah ini.
 		%br
 		%div.ContainerFit
-			%label.Short.Single.Item1.Center Alasan Perawatan  
+			%label.Short.Single.Item1.Center Alasan Perawatan
 			%label.Short.Single.Item1.Center Nama Dokter
-			%label.Short.Single.Item1.Center Alamat Dokter 
+			%label.Short.Single.Item1.Center Alamat Dokter
 			%label.Short.Single.Item1.Center Tanggal perawatan
-			%label.Short.Single.Item1.Center Jangka waktu perawatan  
+			%label.Short.Single.Item1.Center Jangka waktu perawatan
 		%div.ContainerFit
 			%input#TextTreatmentReason1.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentDoctor1.Short.Single.Item1.Margin{ :type => "text" }
@@ -240,7 +245,7 @@
 		%br
 		%hr
 		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item 6. Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?  
+			%label.medium.Single.Item 6. Apakah tekanan darah tinggi yang Anda derita disertai komplikasi organ lain sebagai berikut?
 			%br
 			%input#RadioButtonComplicationNothing{ :type => "radio", :name => "RadioButtonComplication", :value => "nothing" }
 			%label.RadioButton{ :for => "RadioButtonComplicationNothing" } Tidak ada

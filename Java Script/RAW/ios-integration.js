@@ -366,12 +366,12 @@ function savetoDB()
 		}
 
 		var jsonToDatabase = JSONGenerator(objectContent);
+		booleanInputChangeState = "false";
+
 		calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
 
 		arrayHealthQuestionnaire = [];
 		arrayBeneficiariesList = [];
-
-		booleanInputChangeState = "false";
 	}
 }
 

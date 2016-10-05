@@ -110,8 +110,9 @@ function labelGenerator(labelID, labelAmount)
 
 function labelGeneratorForHealthQuestionnaire(labelID, labelAmount)
 {
-    $(labelID).css("width", ((sizeBox + 3) * labelAmount) + "px");
+    $(labelID).css("width", (((sizeBox + 3) * labelAmount) - 10) + "px");
 }
+
 function spanGenerator(spanID, spanAmount)
 {
     $(spanID).css("width", (((sizeBox + 4) * spanAmount) - 10) - spanAmount + "px");
@@ -2939,17 +2940,27 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			arrayHealthQuestionnaire = objectContent;
 			
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, ['Area' + stringPageInfixTypeCurrent + 'Activity' + 'AmandmentDetail']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, ['Number' + stringPageInfixTypeCurrent + 'SmokeActivity' + 'Amount']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'Alcohol' + 'ALConsume']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'DigestDetail' + 'Problem']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Thyroid' + 'THFirstGot']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire, ['Date' + stringPageInfixTypeCurrent + 'Diabetes' + 'FirstKnown']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'Backbone' + 'BBDissorder', 'RadioButton' + stringPageInfixTypeCurrent + 'Joint' + 'Atritis']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire, ['Text' + stringPageInfixTypeCurrent + 'Epilepsy' + 'Since']);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire, ['RadioButton' + stringPageInfixTypeCurrent + 'RespiratoryDetail' + 'Disruption']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, [stringPrefixArea + stringPageInfixTypeCurrent + 'Activity' + 'AmandmentDetail']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, 
+				[
+					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Diving' + 'Criteria', 
+					stringPrefixText + stringPageInfixTypeCurrent + 'Hiking' + 'HKType', 
+					stringPrefixText + stringPageInfixTypeCurrent + 'Racing' + 'RCActivity', 
+					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Paragliding' + 'GlidingChange', 
+					stringPrefixArea + stringPageInfixTypeCurrent + 'Mining' + 'Position', 
+					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Traveling' + 'TVReason', 
+					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Flight' + 'FLJob', 
+					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Military' + 'Unit', 
+				]);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Alcohol' + 'ALConsume']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Digest', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'DigestDetail' + 'Problem']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Gland', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'Thyroid' + 'THFirstGot']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Liver', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'Diabetes' + 'FirstKnown']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Motion', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Backbone' + 'BBDissorder', 'RadioButton' + stringPageInfixTypeCurrent + 'Joint' + 'Atritis']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Nerve', arrayHealthQuestionnaire, [stringPrefixText + stringPageInfixTypeCurrent + 'Epilepsy' + 'Since']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Respiratory', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'RespiratoryDetail' + 'Disruption']);
 			
 			if (arrayHealthQuestionnaire.length > 0)
 			{
