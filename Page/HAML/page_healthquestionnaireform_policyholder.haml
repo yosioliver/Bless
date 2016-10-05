@@ -139,10 +139,10 @@
 							%label#LabelPolicyHolderJunkie.Item{ :for => "RadioButtonPolicyHolderJunkieYes" }
 								Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
 							%div.RadioButton.Item
-								%input#RadioButtonPolicyHolderJunkieYes{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpJunkie', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Junkie', 'Activity'])", :required => "true" }
+								%input#RadioButtonPolicyHolderJunkieYes{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpJunkie', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Junkie', 'Alcohol'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderJunkieYes" } Ya
 								%div.Separator |
-								%input#RadioButtonPolicyHolderJunkieNo{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpJunkie', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Junkie', 'Activity'])", :required => "true" }
+								%input#RadioButtonPolicyHolderJunkieNo{ :type => "radio", :name => "RadioButtonPolicyHolderJunkie", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpJunkie', stringPageInfixTypeCurrent, arrayHealthQuestionnaire, ['Junkie', 'Alcohol'])", :required => "true" }
 								%label.RadioButton{ :for => "RadioButtonPolicyHolderJunkieNo" } Tidak
 						%input#ButtonPreviewPolicyHolderJunkie.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpJunkie', stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire)" }
 					%hr
