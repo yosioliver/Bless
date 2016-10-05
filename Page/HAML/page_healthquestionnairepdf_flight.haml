@@ -328,13 +328,13 @@
 						%input#TextPolicyHolderFlightNoFlyDesc.Full.Single.Item{ :type => "text" }
 					%br
 					
-					%section#SectionFooter{ :style => "margin-top: 130px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%section#SectionFooter{ :style => "margin-top: 220px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+						%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
 					%div.ContainerFit
-						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;" } 12.
-						%label.Single.Item{ :for => "TextPolicyHolderTravelingTVAdditionalInformation" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu
+						%span.NumberFix.Single.Item{ :style => "margin-top: 50px;" } 12.
+						%label.Single.Item{ :for => "TextPolicyHolderTravelingTVAdditionalInformation", :style => "margin-top: 50px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu
 					%br
 						%label.Single.Item.NumberIndent proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br
