@@ -127,7 +127,8 @@
 				boxGenerator("#DateThirdPartyCompanyNoNPWPMonth", 2, boxTypeWithBottomLabel, labelMonth);
 				boxGenerator("#DateThirdPartyCompanyNoNPWPYear", 4, boxTypeWithBottomLabel, labelYear);
 				boxGenerator("#TextThirdPartyCompanySector", 30, boxTypeWithoutLabel, null);
-				boxGenerator("#TextThirdPartyCompanyAddress", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyCompanyAddress1", 30, boxTypeWithoutLabel, null);
+				boxGenerator("#TextThirdPartyCompanyAddress2", 30, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanyCity", 19, boxTypeWithoutLabel, null);
 				labelGenerator("#LabelThirdPartyCompanyPostalCode", 3);
 				boxGenerator("#TextThirdPartyCompanyPostalCode", 6, boxTypeWithoutLabel, null);
@@ -677,7 +678,7 @@
 					%table#TextThirdPartyCompanyNoAnggaranDasar.BoxSquare.PositionerLeft
 					%br
 					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
-						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoAnggaranDasarExpiredDay" } Tanggal Berlaku
+						%label.Short.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoAnggaranDasarExpiredDay" } Tanggal Berlaku
 						%table#DateThirdPartyCompanyNoAnggaranDasarExpiredDay.BoxSquare.PositionerLeft
 						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoAnggaranDasarExpiredMonth" } /
 						%table#DateThirdPartyCompanyNoAnggaranDasarExpiredMonth.BoxSquare.PositionerLeft
@@ -690,7 +691,7 @@
 					%table#TextThirdPartyCompanyNoSIUP.BoxSquare.PositionerLeft
 					%br
 					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
-						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanySIUPExpiredDay" } Tanggal Berlaku
+						%label.Short.Single.PositionerLeft{ :for => "DateThirdPartyCompanySIUPExpiredDay" } Tanggal Berlaku
 						%table#DateThirdPartyCompanySIUPExpiredDay.BoxSquare.PositionerLeft
 						%span.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanySIUPExpiredMonth" } /
 						%table#DateThirdPartyCompanySIUPExpiredMonth.BoxSquare.PositionerLeft
@@ -703,7 +704,7 @@
 					%table#TextThirdPartyCompanyNoTDP.BoxSquare.PositionerLeft
 					%br
 					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
-						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoTDPExpiredDay" } Tanggal Berlaku
+						%label.Short.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoTDPExpiredDay" } Tanggal Berlaku
 						%table#DateThirdPartyCompanyNoTDPExpiredDay.BoxSquare.PositionerLeft
 						%span.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoTDPExpiredMonth" } /
 						%table#DateThirdPartyCompanyNoTDPExpiredMonth.BoxSquare.PositionerLeft
@@ -715,9 +716,8 @@
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyNoSKDP" } Nomor SKDP (Domisili)
 					%table#TextThirdPartyCompanyNoSKDP.BoxSquare.PositionerLeft
 					%br
-
 					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
-						%label.Medium.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoSKDPExpiredDay" } Tanggal Berlaku
+						%label.Short.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoSKDPExpiredDay" } Tanggal Berlaku
 						%table#DateThirdPartyCompanyNoSKDPExpiredDay.BoxSquare.PositionerLeft
 						%span.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoSKDPExpiredMonth" } /
 						%table#DateThirdPartyCompanyNoSKDPExpiredMonth.BoxSquare.PositionerLeft
@@ -726,17 +726,18 @@
 						%br
 
 					%span.Number.Plain.Single.PositionerLeft 7.
-					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBirthPlace" } Nomor NPWP (jika ada)
-					%table#TextThirdPartyBirthPlace.BoxSquare.PositionerLeft
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyNoNPWP" } Nomor NPWP (jika ada)
+					%table#TextThirdPartyCompanyNoNPWP.BoxSquare.PositionerLeft
 					%br
-					%label#LabelThirdPartyBirth.Single.MediumWithNumberIndent.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
-					%table#DateThridPartyBirthDay.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DateThridPartyBirthMonth.BoxSquare.PositionerLeft
-					%span.Separator.Single.PositionerLeft /
-					%table#DateThridPartyBirthYear.BoxSquare.PositionerLeft
-					%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyBirthYear" } (Tanggal / Bulan / Tahun)
-					%br
+					%div.MediumWithNumberIndent{ :style => "margin-top: 10px;" }
+						%label#LabelThirdPartyCompanyNoNPWPDate.Short.Single.PositionerLeft{ :for => "DateThridPartyBirthDay" } Tanggal Kelahiran
+						%table#DateThirdPartyCompanyNoNPWPDay.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DateThirdPartyCompanyNoNPWPMonth.BoxSquare.PositionerLeft
+						%span.Separator.Single.PositionerLeft /
+						%table#DateThirdPartyCompanyNoNPWPYear.BoxSquare.PositionerLeft
+						%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyNPWPExpiredYear" } (Tanggal / Bulan / Tahun)
+						%br
 
 					// QUICK FIX END
 
@@ -746,9 +747,13 @@
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 9.
-					%label.Medium.Multi.PositionerLeft{ :for => "TextThirdPartyCompanyAddress" } Alamat Perusahaan (sesuai SKDP)
-					%table#TextThirdPartyCompanyAddress.BoxSquare.PositionerLeft
-					%label#LabelThirdPartyCompanyCity.Box.Single.PositionerLeft{ :for => "TextThirdPartyCompanyCity" } Kota
+					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyAddress" } Alamat Perusahaan (sesuai SKDP)
+					%table#TextThirdPartyCompanyAddress1.BoxSquare.PositionerLeft
+					%br
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Sesuai dengan identitas diri)
+					%table#TextThirdPartyCompanyAddress2.BoxSquare.PositionerLeft
+					%br
+					%label#LabelThirdPartyCompanyCity.Box.MediumWithNumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyCompanyCity" } Kota
 					%table#TextThirdPartyCompanyCity.BoxSquare.PositionerLeft
 					%label#LabelThirdPartyCompanyPostalCode.Box.Single.PositionerLeft{ :for => "TextThirdPartyCompanyPostalCode" } Kode Pos
 					%table#TextThirdPartyCompanyPostalCode.BoxSquare.PositionerLeft
