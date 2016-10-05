@@ -4,7 +4,7 @@
 
 	%header
 		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpActivity')" }
-		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpActivity', stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, null)" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpActivity', stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Diving' + 'Criteria', stringPrefixText + stringPageInfixTypeCurrent + 'Hiking' + 'HKType', stringPrefixText + stringPageInfixTypeCurrent + 'Racing' + 'RCActivity', stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Paragliding' + 'GlidingChange', stringPrefixArea + stringPageInfixTypeCurrent + 'Mining' + 'Position', stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Traveling' + 'TVReason', stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Flight' + 'FLJob', stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Military' + 'Unit'])" }
 		%h2 Pertanyaan Kesehatan
 
 	/ FIELDSET
@@ -15,7 +15,7 @@
 		%br
 		%div.RadioButton
 			%input#ButtonDiving.ButtonPrimary{ :type => "button", :value => "Menyelam", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpDiving', stringPageInfixTypeCurrent + 'Diving', arrayHealthQuestionnaire)" }
-			%div.Separator			
+			%div.Separator
 			%input#ButtonHiking.ButtonPrimary{ :type => "button", :value => "Mendaki gunung dan panjat tebing Tinggi", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpHiking', stringPageInfixTypeCurrent + 'Hiking', arrayHealthQuestionnaire)" }
 			%div.Separator
 			%input#ButtonRacing.ButtonPrimary{ :type => "button", :value => "Olahraga balap", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpRacing', stringPageInfixTypeCurrent + 'Racing', arrayHealthQuestionnaire)" }
@@ -23,7 +23,7 @@
 			%input#ButtonParagliding.ButtonPrimary{ :type => "button", :value => "Paralayang", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpParagliding', stringPageInfixTypeCurrent + 'Paragliding', arrayHealthQuestionnaire)" }
 			%div.Separator
 			%input#ButtonMining.ButtonPrimary{ :type => "button", :value => "Pertambangan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpMining', stringPageInfixTypeCurrent + 'Mining', arrayHealthQuestionnaire)" }
-			%div.Separator			
+			%div.Separator
 			%input#ButtonTraveling.ButtonPrimary{ :type => "button", :value => "Perjalan ke luar negeri", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpTraveling', stringPageInfixTypeCurrent + 'Traveling', arrayHealthQuestionnaire)" }
 			%div.Separator
 			%input#ButtonFlight.ButtonPrimary{ :type => "button", :value => "Penerbangan", :onclick => "buttonPopUpNavigation(this.id, 'PopUpActivity', 'PopUpFlight', stringPageInfixTypeCurrent + 'Flight', arrayHealthQuestionnaire)" }
