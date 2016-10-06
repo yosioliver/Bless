@@ -2940,18 +2940,19 @@ function getFromDatabase(objectContent, stringPageType)
 		{
 			arrayHealthQuestionnaire = objectContent;
 			
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, [stringPrefixArea + stringPageInfixTypeCurrent + 'Activity' + 'AmandmentDetail']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, 
+			[
+				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Diving' + 'Criteria', 
+				stringPrefixText + stringPageInfixTypeCurrent + 'Hiking' + 'HKType', 
+				stringPrefixText + stringPageInfixTypeCurrent + 'Racing' + 'RCActivity', 
+				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Paragliding' + 'GlidingChange', 
+				stringPrefixArea + stringPageInfixTypeCurrent + 'Mining' + 'Position', 
+				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Traveling' + 'TVReason', 
+				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Flight' + 'FLJob', 
+				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Military' + 'Unit'
+			]);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, 
-				[
-					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Diving' + 'Criteria', 
-					stringPrefixText + stringPageInfixTypeCurrent + 'Hiking' + 'HKType', 
-					stringPrefixText + stringPageInfixTypeCurrent + 'Racing' + 'RCActivity', 
-					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Paragliding' + 'GlidingChange', 
-					stringPrefixArea + stringPageInfixTypeCurrent + 'Mining' + 'Position', 
-					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Traveling' + 'TVReason', 
-					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Flight' + 'FLJob', 
-					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Military' + 'Unit'
-				]);
+			[stringPrefixNumber + stringPageInfixTypeCurrent + 'SmokeActivity' + 'Amount']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Alcohol' + 'ALConsume']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime']);
