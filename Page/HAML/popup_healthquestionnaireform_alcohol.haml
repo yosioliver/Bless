@@ -139,16 +139,19 @@
 			%br
 			%hr
 
-			%label.medium.Single.Item 4.  Pernahkah Anda mengalami kondisi medis atau gangguan yang berhubungan dengan penggunaan alkohol/obat-obatan? (Misal hepatitis, HIV, kesehatan mental, dan lain-lain)
+			%label.Full.Single.Item 4.  Pernahkah Anda mengalami kondisi medis atau gangguan yang berhubungan dengan penggunaan alkohol/obat-obatan?
 			%br
-			%div.ContainerFit
-				%div.RadioButton.Medium.Item
-					%input#RadioButtonMedicalConditionYes{ :type => "radio", :name => "RadioButtonMedicalCondition", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonMedicalConditionYes" } Ya
-					%div.Separator
-					%input#RadioButtonMedicalConditionNo{ :type => "radio", :name => "RadioButtonMedicalCondition", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonMedicalConditionNo" } Tidak
-				%input#TextMedicalConditionDescription.Full.Multi.Item.Margin{ :type =>"text" }
+			%label.Medium.Single.Item (Misal hepatitis, HIV, kesehatan mental, dan lain-lain)						
+			%div.RadioButton.PositionerRight
+				%input#RadioButtonMedicalConditionNo.PositionerRight{ :type => "radio", :name => "RadioButtonMedicalCondition", :value => "false" }
+				%label.RadioButton.PositionerRight{ :for => "RadioButtonMedicalConditionNo" } Tidak
+				%div.Separator.PositionerRight
+				%input#RadioButtonMedicalConditionYes.PositionerRight{ :type => "radio", :name => "RadioButtonMedicalCondition", :value => "true" }
+				%label.RadioButton.PositionerRight{ :for => "RadioButtonMedicalConditionYes" } Ya
+			%br
+			%label.Medium.Single.Item Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
+			%br
+			%input#TextMedicalConditionDescription.Full.Multi.Item.Margin{ :type =>"text" }
 			%br
 			%hr
 
@@ -230,12 +233,13 @@
 			%br
 			%hr
 
-			%label.Wrap.Single.PositionerLeft 9. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+			%label.Single.Item 9. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 			%br
 			%input#TextALAddtionalInformation.Full.Multi.PositionerLeft.Margin{ :type =>"text" }
 			%br
 			%hr
 
+		%div.Note
 			%h2 PERNYATAAN DAN KUASA
 
 			%ol
