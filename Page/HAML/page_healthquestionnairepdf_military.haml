@@ -202,10 +202,11 @@
 
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-
-					%span.Number.Single.PositionerLeft{ :style => "margin-top: 30px;"} 6.
-					%label.Wrap.PositionerLeft{ :for => "TextPolicyHolderMilitaryOtherInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
-					%br
+					
+					%div.ContainerFit
+						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;"} 6.
+						%label.Full.Wrap.Item{ :for => "TextPolicyHolderMilitaryOtherInfo", :style => "margin-top: 30px;" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+					%br					
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryOtherInfo.Full.Single.Item{ :type => "text" }
 					%br

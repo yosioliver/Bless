@@ -77,7 +77,10 @@
 				%fieldset.fieldset.WithoutDoubleDot
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 1.
-						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningPosition" } Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
+						%label.Full.Wrap.Item{ :for => "AreaPolicyHolderMiningPosition" } 
+							Jabatan Anda saat ini.
+							%i
+								(Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
 					%br
 					%label.Full.Wrap.Item.NumberIndent Mohon menjelaskan secara rinci pada kolom dibawah ini
 					%div.ContainerFit.NumberIndent
@@ -112,7 +115,7 @@
 						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 60px;" } 5.
-					%label.Wrap.PositionerLeft{ :for => "AreaPolicyHolderMiningOutdoor", :style => "margin-top: 60px;" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining?
+					%label.Wrap.PositionerLeft{ :for => "AreaPolicyHolderMiningOutdoor", :style => "margin-top: 60px;" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/Open Cast Mining?
 					%div.RadioButton.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMiningOpenCastNo", :style => "margin-top: 60px;" } Tidak
 						%input#RadioButtonPolicyHolderMiningOpenCastNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOpenCast", :value => "false", :style => "margin-top: 60px;" }
@@ -206,8 +209,8 @@
 						%input#RadioButtonPolicyHolderMiningHeightYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningHeight", :value => "true" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningHeightYes" } Ya, Berapa meter diatas permukaan laut:												
-						%input#TextPolicyHolderMiningHeightDesc.LineDot.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Short.Single.PositionerLeft meter						
+						%input#TextPolicyHolderMiningHeightDesc.LineDot.Single.PositionerLeft{ :type => "text" }
+						%label.Single.PositionerLeft meter						
 						%br
 						%input#RadioButtonPolicyHolderMiningHeightNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningHeight", :value => "false" }
 						%div.BoxRound.PositionerLeft
@@ -238,7 +241,7 @@
 					
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 10.
-						%label.Full.Wrap.Item{ :for => "RadioPolicyHolderMiningAccidentOL" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+						%label.Full.Wrap.Item{ :for => "TextPolicyHolderMiningOLAdditionalInfo" } Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 					%br					
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMiningOLAdditionalInfo.Full.Single.Item{ :type => "text" }

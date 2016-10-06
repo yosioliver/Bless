@@ -10,7 +10,10 @@
 	/ FIELDSET
 
 	%fieldset
-		%label.Medium.Single.Item 1. Jabatan Anda saat ini. (Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
+		%label.Medium.Single.Item 
+			1. Jabatan Anda saat ini. 
+			%i
+				(Borer; Cathead man; Construction superintendent; Conveyor operator; Crane operator; Derickman; Drilled; Field superintendent; Flame cutter; Floorman; Floormanbelow ground; Manhole maker; Pipe fitter; Power loader operator; pumpman; Rig electrician; Rig mechanic; Roughneck; Roustabout; Scaffolder; Topman; Watchman; Welder-cutter; Well pusher; Wireline operator)
 		%br
 		%label.Medium.Single.Item Mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
@@ -18,7 +21,9 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 2. Jika tidak termasuk dalam daftar di atas, mohon dijelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut.
+		%label.Medium.Single.Item 2. Jika tidak termasuk dalam daftar di atas
+		%br
+		%label.Medium.Single.Item Mohon menjelaskan jabatan dan rincian pekerjaan sehari-hari jabatan Anda tersebut pada kolom di bawah ini.
 		%br
 		%textarea#AreaPositionDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
@@ -38,7 +43,16 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 5. Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ Open Cast Mining? Mohon jelaskan.
+		%label.Medium.Single.Item 
+			5. Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/ 
+			%i
+				Open Cast Mining?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonOpenCastYes{ :type => "radio", :name => "RadioButtonOpenCast", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonOpenCast" } Ya
+			%div.Separator
+			%input#RadioButtonOpenCastNo{ :type => "radio", :name => "RadioButtonOpenCast", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonOpenCast" } Tidak
 		%br
 		%label.Medium.Single.Item Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
@@ -124,7 +138,12 @@
 			%label.RadioButton{ :for => "RadioButtonMNAccidentNo" } Tidak
 		%br
 		%input#TextMNAccidentDesc.Full.Single.Item1.Margin{ :type =>"text" , :placeholder => "Jelaskan jenis, kapan, dan penyebab cidera/gangguan kesehatan apa yang dialami?"}
-
+		%br
+		%hr
+		
+		%label.Single.Item 10. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+		%br
+		%input#TextOLAdditionalInfo.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
