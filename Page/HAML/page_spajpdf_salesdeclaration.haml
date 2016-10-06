@@ -46,7 +46,7 @@
 				// FOOTER AND HEADER
 
 				headerGenerator(".HeaderGeneral table");
-				footerGenerator("OP/NB/0104/031602", "8");
+				// footerGenerator("OP/NB/0104/031602", "8");
 
 
 				// SETTER
@@ -101,7 +101,7 @@
 
 				%div.ContainerFit.InnerFieldset
 					%div.Item.Column{ :style => "width: 50%;" }
-						%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFamily" } 1. Apakah hubungan Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
+						%label.Wrap.Justify.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFamily" } 1. Apakah hubungan Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
 						%br
 						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredFamily{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "family" }
 						%div.BoxRound.PositionerLeft
@@ -111,7 +111,7 @@
 						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredReference" } Referensi
 						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredStranger{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "stranger" }
 						%div.BoxRound.PositionerLeft
-						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredStranger" } Tidak Kenal
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredStranger" } Tidak Sengaja
 						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAdvertisement{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "advertisement" }
 						%div.BoxRound.PositionerLeft
 						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAdvertisement" } Iklan
@@ -121,14 +121,14 @@
 						%br
 						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAgency{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "agency" }
 						%div.BoxRound.PositionerLeft
-						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAgency" } Keagenan - Sub Keagenan
+						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredAgency" } Sub Keagenan
 						%input#RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther{ :type => "radio", :name => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsured", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.RadioButton.PositionerLeft{ :for => "RadioButtonSalesDeclarationRelationshipWithProspectiveInsuredOther" } Lainnya, sebutkan
 						%div#TextSalesDeclarationRelationshipWithProspectiveInsuredOther.LineDot.PositionerLeft
 						%br
 
-						%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationKnowProspectiveInsuredStranger" } 2. Sudah berapa lama Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
+						%label.Wrap.Justify.PositionerLeft{ :for => "RadioButtonSalesDeclarationKnowProspectiveInsuredStranger" } 2. Sudah berapa lama Anda mengenal Calon Tertanggung/Calon Pemegang Polis?
 						%br
 						%input#RadioButtonSalesDeclarationKnowProspectiveInsuredStranger{ :type => "radio", :name => "RadioButtonSalesDeclarationKnowProspectiveInsured", :value => "stranger" }
 						%div.BoxRound.PositionerLeft
@@ -145,7 +145,7 @@
 						%br
 
 						%div.ContainerFit
-							%label.Item{ :for => "RadioButtonSalesDeclarationHealthYes" } 3. Apakah Calon Tertanggung saat ini dalam keadaan sehat?
+							%label.Justify.Item{ :for => "RadioButtonSalesDeclarationHealthYes" } 3. Apakah Calon Tertanggung saat ini dalam keadaan sehat?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationHealthYes" } Tidak
 								%input#RadioButtonSalesDeclarationHealthYes{ :type => "radio", :name => "RadioButtonSalesDeclarationHealth", :value => "false" }
@@ -155,7 +155,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Item{ :for => "RadioButtonSalesDeclarationWithoutSecrecyYes" } 4. Apakah sudah dijelaskan kepada Calon Tertanggung/Calon Pemegang Polis untuk menjawab seluruh pertanyaan dalam SPAJ dengan benar dan tanpa ada hal yang dirahasiakan?
+							%label.Justify.Item{ :for => "RadioButtonSalesDeclarationWithoutSecrecyYes" } 4. Apakah sudah dijelaskan kepada Calon Tertanggung/Calon Pemegang Polis untuk menjawab seluruh pertanyaan dalam SPAJ dengan benar dan tanpa ada hal yang dirahasiakan?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationWithoutSecrecyYes" } Tidak
 								%input#RadioButtonSalesDeclarationWithoutSecrecyYes{ :type => "radio", :name => "RadioButtonSalesDeclarationWithoutSecrecy", :value => "false" }
@@ -165,7 +165,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclarationDenyClaimYes" } 5. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban yang tidak benar akan berakibat batalnya perjanjian asuransi jiwa ini dan Penanggung berhak menolak Klaim yang diajukan?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationDenyClaimYes" } 5. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban yang tidak benar akan berakibat batalnya perjanjian asuransi jiwa ini dan Penanggung berhak menolak Klaim yang diajukan?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationDenyClaimYes" } Tidak
 								%input#RadioButtonSalesDeclarationDenyClaimYes{ :type => "radio", :name => "RadioButtonSalesDeclarationDenyClaim", :value => "false" }
@@ -175,7 +175,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" } 6. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban keputusan Underwriting atas pengajuan permohonan asuransi jiwa ini dapat ditolak, ditunda, dikenakan tambahan Premi atau diturunkan Uang Pertanggungannya?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" } 6. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban keputusan Underwriting atas pengajuan permohonan asuransi jiwa ini dapat ditolak, ditunda, dikenakan tambahan Premi atau diturunkan Uang Pertanggungannya?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" } Tidak
 								%input#RadioButtonSalesDeclarationStillConsiderationYes{ :type => "radio", :name => "RadioButtonSalesDeclarationStillConsideration", :value => "false" }
@@ -185,7 +185,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclarationFaceToFaceYes" } 7. Apakah Anda bertemu atau melihat langsung Calon Tertanggung/Calon Pemegang Polis pada saat pengisian atau penandatanganan SPAJ? (Penandatanganan SPAJ harus dihadapan Tenaga Penjual).
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationFaceToFaceYes" } 7. Apakah Anda bertemu atau melihat langsung Calon Tertanggung/Calon Pemegang Polis pada saat pengisian atau penandatanganan SPAJ? (Penandatanganan SPAJ harus dihadapan Tenaga Penjual).
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationFaceToFaceYes" } Tidak
 								%input#RadioButtonSalesDeclarationFaceToFaceYes{ :type => "radio", :name => "RadioButtonSalesDeclarationFaceToFace", :value => "false" }
@@ -196,7 +196,7 @@
 
 					%div.Item.Column{ :style => "width: 50%;" }
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclaration60DaysLimitYes" } 8. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa pengajuan asuransi akan dianggap batal, apabila persyaratan pengajuan asuransi jiwa tidak dilengkapi dalam waktu 60 (enam puluh) Hari Kalender sejak SPAJ terdaftar di Kantor Pusat BCA Life?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclaration60DaysLimitYes" } 8. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa pengajuan asuransi akan dianggap batal, apabila persyaratan pengajuan asuransi jiwa tidak dilengkapi dalam waktu 60 (enam puluh) Hari Kalender sejak SPAJ terdaftar di Kantor Pusat BCA Life?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclaration60DaysLimitYes" } Tidak
 								%input#RadioButtonSalesDeclaration60DaysLimitYes{ :type => "radio", :name => "RadioButtonSalesDeclaration60DaysLimit", :value => "false" }
@@ -206,7 +206,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclarationSelfVerifiedYes" } 9. Apakah Anda telah melakukan verifikasi terhadap identitas diri dan kelengkapan dokumen lainnya yang telah diberikan kepada Anda?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationSelfVerifiedYes" } 9. Apakah Anda telah melakukan verifikasi terhadap identitas diri dan kelengkapan dokumen lainnya yang telah diberikan kepada Anda?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationSelfVerifiedYes" } Tidak
 								%input#RadioButtonSalesDeclarationSelfVerifiedYes{ :type => "radio", :name => "RadioButtonSalesDeclarationSelfVerified", :value => "false" }
@@ -216,7 +216,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclarationThirdPartyYes" } 10. Apakah ada pihak lain selain Calon Pemegang Polis/ Calon Tertanggung yang meminta atau berkepentingan atau menginstruksikan untuk mengajukan permohonan asuransi ini? Jika “Ya” apakah Anda telah meminta Calon Pemegang Polis untuk melakukan formulir Pihak Ketiga?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationThirdPartyYes" } 10. Apakah ada pihak lain selain Calon Pemegang Polis/ Calon Tertanggung yang meminta atau berkepentingan atau menginstruksikan untuk mengajukan permohonan asuransi ini? Jika “Ya” apakah Anda telah meminta Calon Pemegang Polis untuk melakukan formulir Pihak Ketiga?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationThirdPartyYes" } Tidak
 								%input#RadioButtonSalesDeclarationThirdPartyYes{ :type => "radio", :name => "RadioButtonSalesDeclarationThirdParty", :value => "false" }
@@ -226,7 +226,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclarationConsitutionYes" } 11. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa Penerima Manfaat yang ditunjuk, sudah sesuai dengan peraturan perundang-undangan yang berlaku di Indonesia?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationConsitutionYes" } 11. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa Penerima Manfaat yang ditunjuk, sudah sesuai dengan peraturan perundang-undangan yang berlaku di Indonesia?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationConsitutionYes" } Tidak
 								%input#RadioButtonSalesDeclarationConsitutionYes{ :type => "radio", :name => "RadioButtonSalesDeclarationConsitution", :value => "false" }
@@ -240,7 +240,7 @@
 						%br
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclaration90DaysLimitYes" } a. Apakah sudah dijelaskan bahwa terdapat masa tunggu Klaim selama 90 (sembilan puluh) Hari Kalender sejak Tanggal Mulai Asuransi atau sejak tanggal pemulihan Polis terakhir?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclaration90DaysLimitYes" } a. Apakah sudah dijelaskan bahwa terdapat masa tunggu Klaim selama 90 (sembilan puluh) Hari Kalender sejak Tanggal Mulai Asuransi atau sejak tanggal pemulihan Polis terakhir?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclaration90DaysLimitYes" } Tidak
 								%input#RadioButtonSalesDeclaration90DaysLimitYes{ :type => "radio", :name => "RadioButtonSalesDeclaration90DaysLimit", :value => "false" }
@@ -250,7 +250,7 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Item{ :for => "RadioButtonSalesDeclarationBasicSumAssuredYes" } b. Apakah sudah dijelaskan bahwa manfaat Terminal Illness sebesar 20% Uang Pertanggungan atau maksimal Rp 3,000,000,000,- (tiga miliar rupiah) per Tertanggung?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationBasicSumAssuredYes" } b. Apakah sudah dijelaskan bahwa manfaat Terminal Illness sebesar 20% Uang Pertanggungan atau maksimal Rp 3,000,000,000,- (tiga miliar rupiah) per Tertanggung?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationBasicSumAssuredYes" } Tidak
 								%input#RadioButtonSalesDeclarationBasicSumAssuredYes{ :type => "radio", :name => "RadioButtonSalesDeclarationBasicSumAssured", :value => "false" }
@@ -259,7 +259,7 @@
 								%input#RadioButtonSalesDeclarationBasicSumAssuredNo{ :type => "radio", :name => "RadioButtonSalesDeclarationBasicSumAssured", :value => "true" }
 								%div.BoxRound.PositionerRight
 
-				%label.Single.PositionerLeft{ :for => "TextSalesDeclarationIncomeSource" } 13. Sebutkan sumber dan total penghasilan Calon Pemegang Polis perbulan
+				%label.Single.Justify.PositionerLeft{ :for => "TextSalesDeclarationIncomeSource" } 13. Sebutkan sumber dan total penghasilan Calon Pemegang Polis perbulan
 				%br
 				%label.Medium.Wrap.PositionerLeft{ :for => "TextSalesDeclarationIncomeSource" } Sumber penghasilan
 				%table#TextSalesDeclarationIncomeSource.BoxSquare.PositionerLeft
@@ -268,7 +268,7 @@
 				%table#TextSalesDeclarationIncomeBruto.BoxSquare.PositionerLeft
 				%br
 
-				%label.Wrap.PositionerLeft{ :for => "CheckboxSalesDeclarationPurposeSaving" } 14. Alasan pengajuan asuransi jiwa
+				%label.Wrap.Justify.PositionerLeft{ :for => "CheckboxSalesDeclarationPurposeSaving" } 14. Alasan pengajuan asuransi jiwa
 				%input#CheckboxSalesDeclarationPurposeSaving{ :type => "checkbox", :name => "RadioButtonSalesDeclarationPurpose", :value => "saving" }
 				%div.BoxRound.PositionerLeft
 				%label.Checkbox.PositionerLeft{ :for => "CheckboxSalesDeclarationPurposeSaving" } Tabungan
@@ -280,19 +280,19 @@
 				%label.Checkbox.PositionerLeft{ :for => "CheckboxSalesDeclarationPurposeInvestment" } Investasi
 				%input#CheckboxSalesDeclarationPurposeEducation{ :type => "checkbox", :name => "CheckboxSalesDeclarationPurpose", :value => "education" }
 				%div.BoxRound.PositionerLeft
-				%label.Checkbox.PositionerLeft{ :for => "CheckboxSalesDeclarationPurposeEducation" } Iklan - Pendidikan
+				%label.Checkbox.PositionerLeft{ :for => "CheckboxSalesDeclarationPurposeEducation" } Pendidikan
 				%input#CheckboxSalesDeclarationPurposeOther{ :type => "checkbox", :name => "CheckboxSalesDeclarationPurposeOther", :value => "other" }
 				%div.BoxRound.PositionerLeft
 				%label.Checkbox.PositionerLeft{ :for => "CheckboxSalesDeclarationPurposeOther" } Lainnya, sebutkan
 				%div#TextSalesDeclarationPurposeOther.LineDot.PositionerLeft
 				%br
 
-				%label.Wrap.PositionerLeft{ :for => "AreaSalesDeclarationPurposeSaving" } 15. Jika ada, berikan informasi lain yang menurut Anda dapat membantu BCA Life dalam mengevaluasi pengajuan ini
+				%label.Wrap.Justify.PositionerLeft{ :for => "AreaSalesDeclarationPurposeSaving" } 15. Jika ada, berikan informasi lain yang menurut Anda dapat membantu BCA Life dalam mengevaluasi pengajuan ini
 				%br
 				%label.Note.Wrap.PositionerLeft{ :for => "AreaSalesDeclarationPurposeSaving" }Apabila diperlukan dapat mempergunakan lembar tambahan.
 				%br
 
-				%textarea#AreaSalesDeclarationAdditionalInformation.Round.Full.Multi.PositionerCenter{ :disabled => "true", :style => "margin-top: 10px; margin-bottom: 10px;" }
+				%textarea#AreaSalesDeclarationAdditionalInformation.Round.Full.Multi.PositionerCenter{ :style => "margin-top: 10px; margin-bottom: 10px;" }
 				%br
 
 				%label.Wrap.Plain.PositionerLeft{ :for => "RadioButtonSalesDeclarationPurposeSaving" } Saya menyatakan bahwa semua keterangan dalam Laporan Tenaga Penjual ini adalah keterangan yang benar. Saya tidak menyembunyikan keterangan-keterangan yang dapat mempengaruhi penerimaan pengajuan ini dari Calon Tertanggungan/Calon Pemegang Polis. Saya tidak pernah memberikan informasi kepada Calon Tertanggung/Calon Pemegang Polis yang bertentangan dengan ketentuan-ketentuan yang terdapat di dalam Polis. Apabila di kemudian hari terdapat pernyataan dalam Laporan Tenaga Penjual ini yang tidak benar, Saya bersedia bertanggung jawab atas kerugian yang timbul akibat kesalahan tersebut. Saya menyatakan bahwa proses penjualan yang Saya lakukan sudah sesuai dengan proses penjualan yang Saya terima selama proses pelatihan.
