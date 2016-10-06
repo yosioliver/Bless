@@ -24,12 +24,12 @@
 				// SECTION GENERAL
 
 				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredFullName2nd", 19, boxTypeWithoutLabel, null);
-				boxGenerator("#TextProspectiveInsuredBirthPlace", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthDay", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthMonth", 2, boxTypeWithoutLabel, null);
-				boxGenerator("#DateProspectiveInsuredBirthYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
 
 				// SECTION MANDATORY
 
@@ -77,10 +77,17 @@
 					= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_policyholder.haml")).render
 
 				%h2 II. Wajib Dilengkapi (Calon) Tertanggung
-				%fieldset.fieldset.WithoutDoubleDot
+				%fieldset.WithoutDoubleDot
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 1.
-						%label.Wrap.Item{ :for => "TextPolicyHolderHikingHKType" } Mohon sebutkan jenis kegiatan pendakian gunung/panjat tebing yang Anda lakukan misalnya bouldering, hiking, pendakian es, pendakian dalam ruangan, mountainnering, tracking, dan lain-lain?
+						%label.Wrap.Item{ :for => "TextPolicyHolderHikingHKType" }
+							Mohon sebutkan jenis kegiatan pendakian gunung/panjat tebing yang Anda lakukan misalnya 
+							%i	
+								bouldering, hiking, 
+							pendakian es, pendakian dalam ruangan, 
+							%i 
+								mountainnering, tracking, 
+							dan lain-lain?
 					%br
 					%label.Single.NumberIndent{ :for => "TextPolicyHolderHikingHKType" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%div.ContainerFit.NumberIndent
@@ -161,7 +168,7 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsGPS" } Global Positioning System (GPS)
 						%input#CheckboxPolicyHolderHikingToolsHikingBoots.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "hikingboots" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHikingBoots" } Sepatu Gunung
+						%label.Short.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHikingBoots" } Sepatu Gunung
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsAnchor.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "anchor" }
@@ -172,7 +179,7 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsOxygenThank" } Senter
 						%input#CheckboxPolicyHolderHikingToolsOxygenTank.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "oxygentank" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
+						%label.Short.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsOxygenTank" } Oxygen Tank
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsCam.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "cam" }
@@ -183,7 +190,7 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHeavyWinterClothing" } Heavy Winter Clothing
 						%input#CheckboxPolicyHolderHikingToolsPerlonRopesAndCarabiners.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "perlonropesandcarabiners" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsPerlonRopesAndCarabiners" } Perlon Ropes & Carabiners
+						%label.Short.Wrap.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsPerlonRopesAndCarabiners" } Perlon Ropes & Carabiners
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsHandphone.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "handphone" }
@@ -194,7 +201,7 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsHelmet" } Helm
 						%input#CheckboxPolicyHolderHikingToolsBeaks.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "beaks" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsBeaks" } Pitons or Toucans (beaks)
+						%label.Short.Wrap.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsBeaks" } Pitons or Toucans (beaks)
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsChocksAndNutsHexes.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "chockandnutshexes" }
@@ -205,7 +212,7 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsAxe" } Kapak
 						%input#CheckboxPolicyHolderHikingToolsPortaledge.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "portaledge" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsPortaledge" } Portaledge
+						%label.Short.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsPortaledge" } Portaledge
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsClimbingHarness.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "climbingharness" }
@@ -216,7 +223,7 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsIceScrews" } Ice Screws
 						%input#CheckboxPolicyHolderHikingToolsTwoWayRadio.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "twowayradio" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsTwoWayRadio" } Two Way Radio
+						%label.Short.Wrap.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsTwoWayRadio" } Two Way Radio
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsIceBoots.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "iceboots" }
@@ -227,7 +234,7 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsNavigation" } Peta & Kompas
 						%input#CheckboxPolicyHolderHikingToolsSnowPicket.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "snowpicket" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsSnowPicket" } Snow Picket
+						%label.Short.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsSnowPicket" } Snow Picket
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsLadders.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "etriersorwebladders" }
@@ -238,14 +245,15 @@
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsJumars" } Mechanical Ascenders (jumars)
 						%input#CheckboxPolicyHolderHikingToolsStoppers.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "stoppers" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsStoppers" } Stoppers
+						%label.Short.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsStoppers" } Stoppers
 					%br
-					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-					%header
-						%section#SectionHeader{ :style => "margin-top: 70px; position: relative; top: 70px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
-					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 7.
-					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingComplainDetail", :style => "margin-top: 70px;" }Berapakah tinggi/derajat pendakian Anda?
+					%section#SectionFooter{ :style => "margin-top: 420px;" }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 90px;" } 7.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingComplainDetail", :style => "margin-top: 90px;" } Berapakah tinggi/derajat pendakian Anda?
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Rata-rata tinggi dan derajat
@@ -258,7 +266,7 @@
 						%label.Short.Single.Item1.Center Tinggi
 						%label.Short.Single.Item1.Center Derajat
 						%label.Short.Single.Item1.Center Tanggal
-						%label.Short.Single.Item1.Center Rencana tinggi dan derajat pendakian
+						%label.Short.Wrap.Item1.Center Rencana tinggi dan derajat pendakian
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHikingHKBOTTOMAverageHeightAndAngle1.Short.Single.Item1.Margin{ :type => "text" }
 						%input#TextPolicyHolderHikingHKBOTTOMHeight1.Short.Single.Item1.Margin{ :type => "text" }
@@ -301,7 +309,7 @@
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderHikingHKAssociationNo" } Tidak
 					%br
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKAssociationDesc" } Jika “Ya”, mohon menjelaskan secara rinci dengan melengkapi kolom di bawah ini (Nama asosiasi/perkumpulan, tanggal bergabung, lokasi perkumpulan dan aktivitas rutin).
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderHikingHKAssociationDesc" } Jika “Ya”, mohon menjelaskan secara rinci dengan melengkapi kolom di bawah ini (Nama asosiasi/perkumpulan, tanggal bergabung, lokasi perkumpulan dan aktivitas rutin).
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHikingHKAssociationDesc.Full.Single{ :type => "text" }
@@ -374,7 +382,7 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHikingHKAdditionalInformation.Full.Single{ :type => "text" }
 					%br
-					%section#SectionFooter{ :style => "margin-top: 180px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%section#SectionFooter{ :style => "margin-top: 140px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 40px; position: relative; top: 40px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 

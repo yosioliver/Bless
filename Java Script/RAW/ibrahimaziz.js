@@ -2950,7 +2950,7 @@ function getFromDatabase(objectContent, stringPageType)
 					stringPrefixArea + stringPageInfixTypeCurrent + 'Mining' + 'Position', 
 					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Traveling' + 'TVReason', 
 					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Flight' + 'FLJob', 
-					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Military' + 'Unit', 
+					stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Military' + 'Unit'
 				]);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Alcohol' + 'ALConsume']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
