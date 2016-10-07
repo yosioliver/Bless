@@ -115,7 +115,10 @@
 						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 60px;" } 5.
-					%label.Wrap.PositionerLeft{ :for => "AreaPolicyHolderMiningOutdoor", :style => "margin-top: 60px;" } Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/Open Cast Mining?
+					%label.Wrap.PositionerLeft{ :for => "AreaPolicyHolderMiningOutdoor", :style => "margin-top: 60px;" } 
+						Apakah Anda ikut serta dalam aktifitas Tambang Terbuka/
+						%i
+							Open Cast Mining?
 					%div.RadioButton.PositionerRight
 						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMiningOpenCastNo", :style => "margin-top: 60px;" } Tidak
 						%input#RadioButtonPolicyHolderMiningOpenCastNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOpenCast", :value => "false", :style => "margin-top: 60px;" }
@@ -162,8 +165,8 @@
 						%input#RadioButtonPolicyHolderMiningOLLocationOnShoreYesUnderground.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOLLocationOnShoreYes", :value => "ofshore" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningOLLocationOnShoreYesUnderground" } Bawah tanah, sebutkan kedalamannya :
-						%input#TextPolicyHolderMiningOLLocationOnShoreUnderground.LineDot.Short.Single.PositionerLeft{ :type => "text" }
-						%label.Short.Single.PositionerLeft meter
+						%input#TextPolicyHolderMiningOLLocationOnShoreUndergroundDepth.LineDot.Single.PositionerLeft{ :type => "text" }
+						%label.Single.PositionerLeft meter
 					%br					
 
 					%label.Long.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderMiningDuty" } c. Apakah Anda juga bertugas di lepas pantai dan/atau bawah tanah?					
@@ -227,7 +230,6 @@
 						%span.NumberFix.Single.Item 9.
 						%label.Full.Wrap.Item{ :for => "RadioPolicyHolderMiningAccidentOL" } Apakah Anda pernah mengalami kecelakaan kerja/ gangguan kesehatan sehubungan dengan pekerjaan Anda?
 					%br
-
 					%div.RadioButton.NumberIndent
 						%input#RadioButtonPolicyHolderMiningOLAccidentYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMiningOLAccident", :value => "true" }
 						%div.BoxRound.PositionerLeft

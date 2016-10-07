@@ -28,7 +28,7 @@
 
 		%label.Single.PositionerLeft 3. Apakah Anda melakukan kegiatan yang berisiko tinggi?
 		%br
-		%label.Single.PositionerLeft a. Penjinak senjata 
+		%label.Single.PositionerLeft.FirstIndent a. Penjinak senjata 
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityWeaponTamerYes{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityWeaponTamerYes" } Ya
@@ -36,7 +36,7 @@
 			%input#RadioButtonRiskActivityWeaponTamerNo{ :type => "radio", :name => "RadioButtonRiskActivityWeaponTamer", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityWeaponTamerNo" } Tidak
 		%br
-		%label.Single.PositionerLeft b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan 
+		%label.Single.PositionerLeft.FirstIndent b. Penjinak bahan peledak termasuk penghancuran dan  pembuat peraturan 
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityExplosiveTamerYes{ :type => "radio", :name => "RadioButtonRiskActivityExplosiveTamer", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityExplosiveTamerYes" } Ya
@@ -44,7 +44,7 @@
 			%input#RadioButtonRiskActivityExplosiveTamerNo{ :type => "radio", :name => "RadioButtonRiskActivityExplosiveTamer", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityExplosiveTamerNo" } Tidak
 		%br
-		%label.Single.PositionerLeft c. Penyelam
+		%label.Single.PositionerLeft.FirstIndent c. Penyelam
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityDiverYes{ :type => "radio", :name => "RadioButtonRiskActivityDiver", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityDiverYes" } Ya
@@ -52,7 +52,7 @@
 			%input#RadioButtonRiskActivityDiverNo{ :type => "radio", :name => "RadioButtonRiskActivityDiver", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityDiverNo" } Tidak
 		%br
-		%label.Single.PositionerLeft d. Penerbangan
+		%label.Single.PositionerLeft.FirstIndent d. Penerbangan
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityFlightYes{ :type => "radio", :name => "RadioButtonRiskActivityFlight", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityFlightYes" } Ya
@@ -60,7 +60,7 @@
 			%input#RadioButtonRiskActivityFlightNo{ :type => "radio", :name => "RadioButtonRiskActivityFlight", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityFlightNo" } Tidak
 		%br
-		%label.Single.PositionerLeft e. Terjun payung
+		%label.Single.PositionerLeft.FirstIndent e. Terjun payung
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityParachuteYes{ :type => "radio", :name => "RadioButtonRiskActivityParachute", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityParachuteYes" } Ya
@@ -68,7 +68,7 @@
 			%input#RadioButtonRiskActivityParachuteNo{ :type => "radio", :name => "RadioButtonRiskActivityParachute", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityParachuteNo" } Tidak
 		%br
-		%label.Single.PositionerLeft f. Misi perdamaian ke luar negeri
+		%label.Single.PositionerLeft.FirstIndent f. Misi perdamaian ke luar negeri
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityAbroadMissionYes{ :type => "radio", :name => "RadioButtonRiskActivityAbroadMission", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityAbroadMissionYes" } Ya
@@ -76,18 +76,18 @@
 			%input#RadioButtonRiskActivityAbroadMissionNo{ :type => "radio", :name => "RadioButtonRiskActivityAbroadMission", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityAbroadMissionNo" } Tidak
 		%br
-		%label.Single.PositionerLeft g. Lainnya
+		%label.Single.PositionerLeft.FirstIndent g. Lainnya, sebutkan
+		%input#TextRiskActivityOtherDesc.Long.Item.PositionerLeft{ :type =>"text" }
 		%div.RadioButton.PositionerRight
 			%input#RadioButtonRiskActivityOthersYes{ :type => "radio", :name => "RadioButtonRiskActivityOthers", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersYes" } Ya
 			%div.Separator
 			%input#RadioButtonRiskActivityOthersNo{ :type => "radio", :name => "RadioButtonRiskActivityOthers", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersNo" } Tidak
-			%input#TextRiskActivityOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+			%label.RadioButton{ :for => "RadioButtonRiskActivityOthersNo" } Tidak			
 		%br
 		%label.Single.PositionerLeft Jika jawaban "Ya", mohon menjelaskan secara rinci pada kolom dibawah ini
 		%br
-		%input#TextRiskActivityOtherDescAdd.Full.Single.Margin{ :type =>"text" }
+		%input#TextRiskActivityOtherDescAdd.Full.Single.PositionerLeft.FirstIndent{ :type =>"text" }
 		%br
 		%hr
 
@@ -105,12 +105,12 @@
 			%input#RadioButtonInDangerLocationNo{ :type => "radio", :name => "RadioButtonInDangerLocation", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonInDangerLocationNo" } Tidak
 		%br				
-		%label.Single.PositionerLeft Jika jawaban "Ya", mohon menjelaskan secara rinci pada kolom dibawah ini
+		%label.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%input#TextInDangerLocationDesc.Full.Single.Margin{ :type =>"text" }
 		%br
 		%hr
 
-		%label.Single.PositionerLeft 6. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
+		%label.Wrap.PositionerLeft 6. Mohon Anda memberikan informasi tambahan lain yang menurut Anda penting mungkin dapat membantu proses pengajuan asuransi ini dengan melengkapi kolom di bawah ini.
 		%input#TextOtherInfo.Full.Single.Margin{ :type => "text" }
 		%br
 		%hr

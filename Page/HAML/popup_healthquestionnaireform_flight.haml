@@ -86,11 +86,11 @@
 
 		%label.Single.PoitionerLeft 6. Apakah Anda anggota suatu klub atau asosiasi kegiatan penerbangan?
 		%div.RadioButton.PositionerRight
-			%input#RadioButtonClubYes.PositionerRight{ :type => "radio", :name => "RadioButtonClub", :value => "true" }
-			%label.RadioButton.PositionerRight{ :for => "RadioButtonClubYes" } Ya
-			%div.Separator.PositionerRight
 			%input#RadioButtonClubNo.PositionerRight{ :type => "radio", :name => "RadioButtonClub", :value => "false" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonClubNo" } Tidak
+			%div.Separator.PositionerRight
+			%input#RadioButtonClubYes.PositionerRight{ :type => "radio", :name => "RadioButtonClub", :value => "true" }
+			%label.RadioButton.PositionerRight{ :for => "RadioButtonClubYes" } Ya
 		%br
 		%label.Single.Item Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%input#TextIsClubDesc.Full.Single.Item1.Margin{ :type =>"text"}

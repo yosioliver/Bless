@@ -725,7 +725,7 @@ function additionalQuestionGenerator()
 
                     $("#ButtonAddSPAJProposal").css("display", "none");
 					tableSPAJProposalGenerator("SPAJProposalList", arrayHealthQuestionnaire);
-					previewArrayObject(arrayHealthQuestionnaire);
+					// previewArrayObject(arrayHealthQuestionnaire);
                 }
 
 				arrayAdd(arrayHealthQuestionnaire, $(this).attr("name"), getRadioButtonGeneral($(this).attr("name")));
@@ -1305,7 +1305,7 @@ function buttonDeleteSPAJProposal(stringButtonViewJavaScriptID, stringButtonView
 		arrayDelete(arrayHealthQuestionnaire, arrayTemporary[i].elementID);
 	}
 	
-	previewArrayObject(arrayHealthQuestionnaire);
+	// previewArrayObject(arrayHealthQuestionnaire);
 
 	tableSPAJProposalGenerator("SPAJProposalList", arrayHealthQuestionnaire);
 }
@@ -1650,7 +1650,7 @@ function buttonPopUpSPAJProposalGenerator()
 			});
 
 			tableSPAJProposalGenerator("SPAJProposalList", arrayHealthQuestionnaire);
-			previewArrayObject(arrayHealthQuestionnaire);
+			// previewArrayObject(arrayHealthQuestionnaire);
 		}
     });
 }
