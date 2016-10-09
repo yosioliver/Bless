@@ -99,6 +99,10 @@
 
 					}
 				});
+
+				checkboxAsRadioButton("CheckboxPolicyHolderSalary");
+				checkboxAsRadioButton("CheckboxPolicyHolderRevenue");
+				checkboxAsRadioButton("CheckboxPolicyHolderOtherIncome");
 			});
 
 
@@ -330,38 +334,38 @@
 				%input#DatePolicyHolderNPWPActive.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
 				%br
 
-				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryIDR" } Penghasilan Kotor Per Tahun
+				%label.Wrap.Single.PositionerLeft{ :for => "CheckboxPolicyHolderSalaryIDR" } Penghasilan Kotor Per Tahun
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderSalaryIDR" } Gaji
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderSalaryIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "idr" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderSalaryIDR" } RP
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderSalaryIDR" } Gaji
+				%div.Checkbox.PositionerLeft
+					%input#CheckboxPolicyHolderSalaryIDR.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderSalary", :value => "idr" }
+					%label.Checkbox{ :for => "CheckboxPolicyHolderSalaryIDR" } RP
 					%div.Separator
-					%input#RadioButtonPolicyHolderSalaryUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderSalary", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderSalaryUSD" } USD
+					%input#CheckboxPolicyHolderSalaryUSD.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderSalary", :value => "usd" }
+					%label.Checkbox{ :for => "CheckboxPolicyHolderSalaryUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSalary" } Penghasilan / Tahun
 				%input#TextPolicyHolderSalary.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income"  }
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderRevenueIDR" } Hasil USaha
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderRevenueIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "idr" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderRevenueIDR" } RP
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderRevenueIDR" } Hasil Usaha
+				%div.Checkbox.PositionerLeft
+					%input#CheckboxPolicyHolderRevenueIDR.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderRevenue", :value => "idr" }
+					%label.Checkbox{ :for => "CheckboxPolicyHolderRevenueIDR" } RP
 					%div.Separator
-					%input#RadioButtonPolicyHolderRevenueUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderRevenue", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderRevenueUSD" } USD
+					%input#CheckboxPolicyHolderRevenueUSD.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderRevenue", :value => "usd" }
+					%label.Checkbox{ :for => "CheckboxPolicyHolderRevenueUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderRevenue" } Penghasilan / Tahun
 				%input#TextPolicyHolderRevenue.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income"  }
 				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } Penghasilan Lainnya
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPolicyHolderOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "idr" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIncomeIDR" } RP
+				%div.Checkbox.PositionerLeft
+					%input#CheckboxPolicyHolderOtherIncomeIDR.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderOtherIncome", :value => "idr" }
+					%label.Checkbox{ :for => "CheckboxPolicyHolderOtherIncomeIDR" } RP
 					%div.Separator
-					%input#RadioButtonPolicyHolderOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderOtherIncome", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderOtherIncomeUSD" } USD
+					%input#CheckboxPolicyHolderOtherIncomeUSD.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderOtherIncome", :value => "usd" }
+					%label.Checkbox{ :for => "CheckboxPolicyHolderOtherIncomeUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Penghasilan / Tahun
 				%input#TextPolicyHolderOtherIncome.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income"  }
 				%br
