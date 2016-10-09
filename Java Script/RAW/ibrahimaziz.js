@@ -3427,3 +3427,26 @@ function imageSelector(stringPath)
 		}
 	});
 }
+
+function checkboxAsRadioButton(stringCheckboxName)
+{
+	$("input:checkbox[name='" + stringCheckboxName + "']").each(function()
+	{
+		$(this).click(function()
+		{
+			var stringCurrentJavaScriptID = $(this).attr("id");
+
+			$("input:checkbox[name='" + stringCheckboxName + "']").each(function()
+			{
+				if ($(this).attr("id") == stringCurrentJavaScriptID)
+				{
+
+				}
+				else
+				{
+					$(this).prop("checked", false);
+				}
+			});
+		});
+	});
+}
