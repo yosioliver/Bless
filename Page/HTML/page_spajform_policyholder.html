@@ -139,6 +139,10 @@
       
       		}
       	});
+      
+      	checkboxAsRadioButton("CheckboxPolicyHolderSalary");
+      	checkboxAsRadioButton("CheckboxPolicyHolderRevenue");
+      	checkboxAsRadioButton("CheckboxPolicyHolderOtherIncome");
       });
     </script>
   </head>
@@ -386,37 +390,37 @@
         <label class='Medium Single PositionerLeft' for='DatePolicyHolderNPWPActive'>Tanggal Berlaku</label>
         <input class='Medium Single PositionerLeft' data-field='date' id='DatePolicyHolderNPWPActive' type='text'>
         <br>
-        <label class='Wrap Single PositionerLeft' for='RadioButtonPolicyHolderSalaryIDR'>Penghasilan Kotor Per Tahun</label>
+        <label class='Wrap Single PositionerLeft' for='CheckboxPolicyHolderSalaryIDR'>Penghasilan Kotor Per Tahun</label>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderSalaryIDR'>Gaji</label>
-        <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderSalaryIDR' name='RadioButtonPolicyHolderSalary' type='radio' value='idr'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderSalaryIDR'>RP</label>
+        <label class='Medium Single PositionerLeft' for='CheckboxPolicyHolderSalaryIDR'>Gaji</label>
+        <div class='Checkbox PositionerLeft'>
+          <input class='Medium Single' id='CheckboxPolicyHolderSalaryIDR' name='CheckboxPolicyHolderSalary' type='checkbox' value='idr'>
+          <label class='Checkbox' for='CheckboxPolicyHolderSalaryIDR'>RP</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderSalaryUSD' name='RadioButtonPolicyHolderSalary' type='radio' value='usd'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderSalaryUSD'>USD</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderSalaryUSD' name='CheckboxPolicyHolderSalary' type='checkbox' value='usd'>
+          <label class='Checkbox' for='CheckboxPolicyHolderSalaryUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderSalary'>Penghasilan / Tahun</label>
         <input class='Long Single PositionerLeft' data-customvalidation='income' id='TextPolicyHolderSalary' type='text' value='0'>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderRevenueIDR'>Hasil USaha</label>
-        <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderRevenueIDR' name='RadioButtonPolicyHolderRevenue' type='radio' value='idr'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderRevenueIDR'>RP</label>
+        <label class='Medium Single PositionerLeft' for='CheckboxPolicyHolderRevenueIDR'>Hasil Usaha</label>
+        <div class='Checkbox PositionerLeft'>
+          <input class='Medium Single' id='CheckboxPolicyHolderRevenueIDR' name='CheckboxPolicyHolderRevenue' type='checkbox' value='idr'>
+          <label class='Checkbox' for='CheckboxPolicyHolderRevenueIDR'>RP</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderRevenueUSD' name='RadioButtonPolicyHolderRevenue' type='radio' value='usd'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderRevenueUSD'>USD</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderRevenueUSD' name='CheckboxPolicyHolderRevenue' type='checkbox' value='usd'>
+          <label class='Checkbox' for='CheckboxPolicyHolderRevenueUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderRevenue'>Penghasilan / Tahun</label>
         <input class='Long Single PositionerLeft' data-customvalidation='income' id='TextPolicyHolderRevenue' type='text' value='0'>
         <br>
         <label class='Medium Single PositionerLeft' for='RadioButtonPolicyHolderOtherIncomeIDR'>Penghasilan Lainnya</label>
-        <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPolicyHolderOtherIncomeIDR' name='RadioButtonPolicyHolderOtherIncome' type='radio' value='idr'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderOtherIncomeIDR'>RP</label>
+        <div class='Checkbox PositionerLeft'>
+          <input class='Medium Single' id='CheckboxPolicyHolderOtherIncomeIDR' name='CheckboxPolicyHolderOtherIncome' type='checkbox' value='idr'>
+          <label class='Checkbox' for='CheckboxPolicyHolderOtherIncomeIDR'>RP</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPolicyHolderOtherIncomeUSD' name='RadioButtonPolicyHolderOtherIncome' type='radio' value='usd'>
-          <label class='RadioButton' for='RadioButtonPolicyHolderOtherIncomeUSD'>USD</label>
+          <input class='Medium Single' id='CheckboxPolicyHolderOtherIncomeUSD' name='CheckboxPolicyHolderOtherIncome' type='checkbox' value='usd'>
+          <label class='Checkbox' for='CheckboxPolicyHolderOtherIncomeUSD'>USD</label>
         </div>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderOtherIncome'>Penghasilan / Tahun</label>
         <input class='Long Single PositionerLeft' data-customvalidation='income' id='TextPolicyHolderOtherIncome' type='text' value='0'>
