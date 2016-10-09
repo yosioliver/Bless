@@ -50,8 +50,11 @@
 			%input#DateProblemStarted.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%hr
 
-		%label.medium.Single.PositionerLeft{ :for => "TextFrequencyInMonth" } 3. a. Berapa kali Anda terserang gangguan pencernaan?
-		%input#TextFrequencyInMonth.Short.Single.PositionerLeft{ :type =>"text" }
+		%label.Single.PositionerLeft{ :for => "TextFrequencyInMonth" } 3. a. Berapa kali Anda terserang gangguan pencernaan?
+		%label.Single.PositionerLeft.FirstIndent
+		%input#TextFrequencyInMonth.Short.Single.PositionerLeft{ :type =>"text" }		
+		%label.Single.PositionerLeft.FirstIndent kali per
+		%label.Single.PositionerLeft.FirstIndent
 		%select#SelectFrequencyInMonthPeriod.Single.PositionerLeft
 		%br
 		%div.ContainerFit
@@ -96,6 +99,7 @@
 		%div.ContainerFit
 			%label#LabelVomittingBloodAriseTime.Long.Single.Item3.Margin Berapa kali Anda mengalami muntah darah?
 			%input#TextVomittingBloodAriseTime.Short.Single.Item1.Margin{ :type => "text" }
+			%label.Single.Item1.Margin kali per
 			%select#SelectVomittingBloodAriseTimePeriod.Single.PositionerLeft
 		%br
 
@@ -122,8 +126,8 @@
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonComplainPainSpread.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPain", :value => "spread" }
-			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpread" } Nyeri menjalar ke seluruh tubuh lain
-			%div.Separator.PositionerLeft
+			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpread" } Nyeri menjalar ke seluruh tubuh lain :
+			%br			
 			%input#RadioButtonComplainPainSpreadHead.Single.PositionerLeft{ :type => "radio", :name => "RadioButtonComplainPainSpread", :value => "head" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonComplainPainSpreadHead" } Kepala
 			%div.Separator.PositionerLeft
@@ -150,11 +154,11 @@
 
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 8. Apakah obat tersebut diperoleh berdasarkan resep dokter?
-			%input#RadioButtonDoctorRecipeNo{ :type => "radio", :name => "RadioButtonDoctorRecipe", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonDoctorRecipeNo" } Tidak
-			%div.Separator
 			%input#RadioButtonDoctorRecipeYes{ :type => "radio", :name => "RadioButtonDoctorRecipe", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonDoctorRecipeYes" } Ya
+			%div.Separator
+			%input#RadioButtonDoctorRecipeNo{ :type => "radio", :name => "RadioButtonDoctorRecipe", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonDoctorRecipeNo" } Tidak
 		%br
 		%label.Medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 		%br
@@ -213,14 +217,14 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 10. Apakah pernah mendapatkan perawatan rumah sakit sehubungan dengan gangguan pencernaan tersebut?
+		%label.Single.Item 10. Apakah pernah mendapatkan perawatan rumah sakit sehubungan dengan gangguan pencernaan tersebut?
 		%br
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonHospitalCareNo{ :type => "radio", :name => "RadioButtonHospitalCare", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonHospitalCareNo" } Tidak
-			%div.Separator
 			%input#RadioButtonHospitalCareYes{ :type => "radio", :name => "RadioButtonHospitalCare", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonHospitalCareYes" } Ya
+			%div.Separator
+			%input#RadioButtonHospitalCareNo{ :type => "radio", :name => "RadioButtonHospitalCare", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonHospitalCareNo" } Tidak
 		%br
 
 		%label#LabelPolicyHolderDigestHospitalCareWhen.Wrap.Single.PositionerLeft Jika “Ya”, sejak kapan:
@@ -246,11 +250,11 @@
 
 		%div.RadioButton.PositionerLeft
 			%label.medium.Single.Item 11. Apakah sampai saat ini masih dalam pengobatan?
-			%input#RadioButtonInTreatmentNo{ :type => "radio", :name => "RadioButtonInTreatment", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonInTreatmentNo" } Tidak
-			%div.Separator
 			%input#RadioButtonInTreatmentYes{ :type => "radio", :name => "RadioButtonInTreatment", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonInTreatmentYes" } Ya
+			%div.Separator
+			%input#RadioButtonInTreatmentNo{ :type => "radio", :name => "RadioButtonInTreatment", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonInTreatmentNo" } Tidak
 		%br
 		%label.Medium.Single.Item Jika "Ya", mohon menjelaskan secara rinci (nama obat, dosis dan frekuensi penggunaannya) pada kolom di bawah ini.
 		%br
@@ -300,18 +304,22 @@
 		%br
 		%hr
 
-		%label.medium.Single.Item 12. Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini ?
+		%label.Single.Item 12. Dalam 2 tahun terakhir ini, apakah Anda pernah tidak masuk kerja karena gangguan ini ?
+		%br
 		%div.RadioButton.PositionerLeft
-			%input#RadioButtonAbsentInTwoYearNo{ :type => "radio", :name => "RadioButtonAbsentInTwoYear", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonAbsentInTwoYearNo" } Tidak
-			%div.Separator
 			%input#RadioButtonAbsentInTwoYearYes{ :type => "radio", :name => "RadioButtonAbsentInTwoYear", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonAbsentInTwoYearYes" } Ya
+			%div.Separator
+			%input#RadioButtonAbsentInTwoYearNo{ :type => "radio", :name => "RadioButtonAbsentInTwoYear", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonAbsentInTwoYearNo" } Tidak
 		%br
 		%label#LabelPolicyHolderDigestNoOfficeEntryInYearWhen.Wrap.Single.PositionerLeft.Margin Jika "Ya" Kapan
 		%input#DateAbsentSince.Medium.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
+		%label.Single.PositionerLeft.FirstIndent
 		%label#LabelPolicyHolderDigestNoOfficeEntryInYearHowLong.Wrap.Single.PositionerLeft.Margin dan berapa lama?
+		%label.Single.PositionerLeft.FirstIndent
 		%input#NumberAbsentSinceDays.Medium.Single.PositionerLeft.Margin{ :type => "number" }
+		%label.Single.PositionerLeft.FirstIndent
 		%label.Single.PositionerLeft Hari
 		%br
 		%hr

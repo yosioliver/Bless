@@ -11,17 +11,17 @@
 
 	%fieldset
 		%div.ContainerFit
-			%span.Multi.Single 6j Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
+			%span.Multi.Single Gangguan fungsi/sistem Kelenjar dan Darah, Kelenjar Gondok, Kelenjar Getah Bening, Gangguan Hormon, Hemofilia, Anemia, Thalassemia, Leukemia?
 		%br
 
 		%div.ContainerFit
 			%label#Wrap.Single.Full.PositionerLeft{ :for => "DateTHFirstGot" } 1. Kapan pertama kali Anda mendapatkan gangguan pada kelenjar gondok (tiroid)?
-			%input#DateTHFirstGot.Full.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
+			%input#DateTHFirstGot.Medium.Single.Item.Margin{ :type =>"text", "data-field" => "date" }
 		%br
 		%hr
 
 		%div.ContainerFit
-		%label.medium.Single.Item 2. Apa diagnosa dokter untuk gangguan kelenjar gondok Anda?
+		%label.medium.Single.Item 2. Apa diagnosa Dokter untuk gangguan kelenjar gondok (tiroid) Anda?
 		%br
 
 		%div.RadioButton.PositionerLeft
@@ -88,7 +88,7 @@
 				%div.Separator
 				%input#RadioButtonTHConsumeDrugNo{ :type => "radio", :name => "RadioButtonTHConsumeDrug", :value => "false" }
 				%label.RadioButton{ :for => "RadioButtonTHConsumeDrugNo" } Tidak
-				%label.medium.Single ("Jika Ya, mohon tuliskan nama obat dan dosisnya")
+				%label.medium.Single (Jika “Ya”, mohon mengisi kolom di bawah ini).
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin.Center Tanggal Berobat
@@ -163,27 +163,27 @@
 			%label.Short.Single.Item1.Center Hasil
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft T3
-			%input#TextT3Date.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextT3Date.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextT3Result.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft T4
-			%input#TextT4Date.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextT4Date.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextT4Result.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft TSH
-			%input#TextTSHDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTSHDate.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextTSHResult.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft ECG
-			%input#TextECGDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextECGDate.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextECGResult.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Biopsi
-			%input#TextBiopsyDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextBiopsyDate.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextBiopsyResult.Short.Single.Item1.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Scan/MRI/USG
-			%input#TextScanMRIUSGDate.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextScanMRIUSGDate.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 			%input#TextScanMRIUSGResult.Short.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
@@ -202,7 +202,8 @@
 		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Lama perawatan di Rumah Sakit:
-			%input#TextTHHospitalTreatmentDuration.Short.Single.Item1.Margin{ :type => "text" }
+			%input#TextTHHospitalTreatmentDuration.Tiny.Single.Item1.Margin{ :type => "text" }
+			%label.Medium.Single.PositionerLeft Hari
 		%br
 		%div.ContainerFit
 			%label.Medium.Single.PositionerLeft Jenis Operasi:

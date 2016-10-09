@@ -21,13 +21,12 @@
 		%hr
 
 		%label#LabelFrequencyControl.Single.PositionerLeft 2. a. Berapa kali frekuensi kontrol ke dokter?
-		%label.Separator.Single.PositionerRight Minggu
-		%input#NumberControlFrequencyWeek.Short.Single.PositionerRight{ :type => "number" }
+		%select#SelectControlFrequencyPeriod.Single.PositionerRight		
 		%label.Separator.Single.PositionerRight kali per
 		%input#NumberControlFrequencyAmount.Short.Single.PositionerRight{ :type => "number" }
 		%br
 
-		%label#LabelProspectiveInsuredDiabetesInfo.Full.Single b. Mohon melengkapi kolom di bawah ini dengan nama dan alamat lengkap dokter yang biasa dikunjungi untuk kontrol
+		%label#LabelProspectiveInsuredDiabetesInfo.Single.PositionerLeft b. Mohon melengkapi kolom di bawah ini dengan nama dan alamat lengkap dokter yang biasa dikunjungi untuk kontrol
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item1.Center.Margin Nama Dokter
@@ -61,6 +60,7 @@
 			%input#RadioButtonTherapyInsulin{ :type => "radio", :name => "RadioButtonTherapy", :value => "insulin" }
 			%label.RadioButton{ :for => "RadioButtonTherapyInsulin" } Insulin
 		%input#NumberTherapyInsulinDesc.Short.Single.PositionerLeft{ :type => "number" }
+		%label.Single.PositionerLeft.FirstIndent
 		%label.Single.PositionerLeft Unit / hari
 		%br
 		%div.RadioButton.PositionerLeft
@@ -116,7 +116,7 @@
 			%input#RadioButtonUrineInfo4Plus{ :type => "radio", :name => "RadioButtonUrineInfo", :value => "++++" }
 			%label.RadioButton{ :for => "RadioButtonUrineInfo4Plus" } ++++
 		%br
-		%label.Full.Single.Item.Margin c. Bagaimana hasil 3 (tiga) pemeriksaan terakhir?
+		%label.Full.Single.Item.Margin c. Mohon melengkapi kolom di bawah ini dengan hasil 3 (tiga) pemeriksaan terakhir?
 		%br
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Jenis Pemeriksaan

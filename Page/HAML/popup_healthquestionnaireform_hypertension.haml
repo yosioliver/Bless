@@ -56,7 +56,11 @@
 		%br
 
 		%label.Single.PositionerLeft.Margin{ :for => "TextHowOftenCheckupToDoctor" } e. Berapa sering Anda kontrol ke Dokter?
-		%label.Single.Margin.PositionerLeft kali per
+		%label.Single.PositionerLeft.FirstIndent
+		%input#TextHowOftenCheckupToDoctor.Short.Single.Item.PositionerLeft
+		%label.Single.PositionerLeft.FirstIndent
+		%label.Single.PositionerLeft kali per
+		%label.Single.PositionerLeft.FirstIndent
 		%select#SelectHowOftenCheckupToDoctorPeriod.Single.PositionerLeft
 		%br
 		%hr
@@ -204,7 +208,7 @@
 			%label.Short.Single.Item1.Center Nama Dokter
 			%label.Short.Single.Item1.Center Alamat Dokter
 			%label.Short.Single.Item1.Center Tanggal perawatan
-			%label.Short.Single.Item1.Center Jangka waktu perawatan
+			%label.Short.Wrap.Item1.Center Jangka waktu perawatan
 		%div.ContainerFit
 			%input#TextTreatmentReason1.Short.Single.Item1.Margin{ :type => "text" }
 			%input#TextTreatmentDoctor1.Short.Single.Item1.Margin{ :type => "text" }

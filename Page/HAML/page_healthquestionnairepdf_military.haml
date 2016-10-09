@@ -181,27 +181,25 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryDutyDetails.Full.Single.Item{ :type => "text" }
 					%br
-
-					%span.Number.Single.PositionerLeft 5.
-					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?
-					%br
-					%div.RadioButton.NumberIndent
-						%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true" }
-						%div.BoxRound.PositionerLeft
-						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationYes" } Ya
-						%input#RadioButtonPolicyHolderMilitaryInDangerLocationNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "false" }
-						%div.BoxRound.PositionerLeft
-						%label.Short.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo" } Tidak
+					
+					%section#SectionFooter{ :style => "margin-top: 140px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%header
+						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+					
+					%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 5.
+					%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderMilitaryDutyInDangerLocation", :style => "margin-top: 70px;" } Apakah Anda saat ini sedang bertugas atau akan ditugaskan ke lokasi yang berbahaya?					
+					%div.RadioButton.PositionerRight
+						%input#RadioButtonPolicyHolderMilitaryInDangerLocationNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "false", :style => "margin-top: 70px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationNo", :style => "margin-top: 70px;" } Tidak
+						%input#RadioButtonPolicyHolderMilitaryInDangerLocationYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderMilitaryInDangerLocation", :value => "true", :style => "margin-top: 70px;" }
+						%div.BoxRound.PositionerRight{ :style => "margin-top: 70px;" }
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderMilitaryInDangerLocationYes", :style => "margin-top: 70px;" } Ya
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderMilitaryInDangerLocationDesc"} Jika "Ya", mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderMilitaryInDangerLocationDesc.Full.Single.Item{ :type => "text" }
-
-					%section#SectionFooter{ :style => "margin-top: 50px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
-
-					%header
-						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					
 					%div.ContainerFit
 						%span.NumberFix.Single.Item{ :style => "margin-top: 30px;"} 6.
