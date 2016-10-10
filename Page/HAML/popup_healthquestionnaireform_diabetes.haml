@@ -139,34 +139,34 @@
 		%br
 		%div.ContainerFit
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonContainAlbuminNo{ :type => "radio", :name => "RadioButtonContainAlbumin", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonContainAlbuminNo" } Tidak
-				%div.Separator
 				%input#RadioButtonContainAlbuminYes{ :type => "radio", :name => "RadioButtonContainAlbumin", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonContainAlbuminYes" } Ya
-			%input#TextContainAlbuminDesc.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
+				%div.Separator
+				%input#RadioButtonContainAlbuminNo{ :type => "radio", :name => "RadioButtonContainAlbumin", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonContainAlbuminNo" } Tidak
+			%input#TextContainAlbuminDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 
 		%label.Single.PositionerLeft e. Apakah dilakukan pemeriksaan glycosylated haemoglobin (HbA1c)?
 		%br
 		%div.ContainerFit
 			%div.RadioButton.Medium.Item
-				%input#RadioButtonContainHaemoglobinNo{ :type => "radio", :name => "RadioButtonContainHaemoglobin", :value => "false" }
-				%label.RadioButton{ :for => "RadioButtonContainHaemoglobinNo" } Tidak
-				%div.Separator
 				%input#RadioButtonContainHaemoglobinYes{ :type => "radio", :name => "RadioButtonContainHaemoglobin", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonContainHaemoglobinYes" } Ya
-			%input#TextContainHaemoglobinDesc.Full.Single.Item.Margin{ :type =>"text" , :placeholder => "Jika Ya, jelaskan kapan dan bagaimana hasilnya"}
+				%div.Separator
+				%input#RadioButtonContainHaemoglobinNo{ :type => "radio", :name => "RadioButtonContainHaemoglobin", :value => "false" }
+				%label.RadioButton{ :for => "RadioButtonContainHaemoglobinNo" } Tidak
+			%input#TextContainHaemoglobinDesc.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 
 		%hr
 		%label.Single.PositionerLeft 4. Apakah pernah mengalami perawatan rumah sakit karena diabetes?
 		%div.RadioButton.PositionerRight
-			%input#RadioButtonEverHospitalNo{ :type => "radio", :name => "RadioButtonEverHospital", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonEverHospitalNo" } Tidak
-			%div.Separator
 			%input#RadioButtonEverHospitalYes{ :type => "radio", :name => "RadioButtonEverHospital", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonEverHospitalYes" } Ya
+			%div.Separator
+			%input#RadioButtonEverHospitalNo{ :type => "radio", :name => "RadioButtonEverHospital", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonEverHospitalNo" } Tidak
 		%br
 
 		%label.Single.PositionerLeft Jika "Ya", mohon melengkapi kolom di bawah ini.

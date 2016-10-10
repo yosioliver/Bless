@@ -138,7 +138,13 @@
 					%table#DatePolicyHolderTumorOperationYear.BoxSquare.PositionerLeft
 					%br
 
-					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
+					%label.Wrap.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTumorOperationMethod"} 
+						b. Metode operasi (anestesi local, bedah beku/
+						%i
+							cryosurgery
+						, operasi dengan anestesi umum, dan sebagainya).
+					%br
+					%label.Single.NumberIndent.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini.		
 					%br
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderTumorOperationMethod.Line.Full.Single.Item{ :type => "text" }
@@ -178,7 +184,6 @@
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 
 					%label.Wrap.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapy", :style => "margin-top: 30px;" } d. Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
-					%br
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderTumorTherapyAssDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapyAss", :value => "drug" }
 						%div.BoxRound.PositionerLeft
@@ -191,8 +196,7 @@
 						%input#RadioButtonPolicyHolderTumorTherapyAssChemo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapyAss", :value => "chemotherapy" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyAssChemo" } Kemoterapi
-
-
+						
 						%input#RadioButtonPolicyHolderTumorTherapyAssOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapyAss", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyAssOthers" } Lainnya, Sebutkan.
@@ -356,11 +360,14 @@
 					%header
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					%br
-
+					
 					%div.ContainerFit{ :style => "margin-top: 50px;"}
 						%span.NumberFix.Single.Item 7.
-						%label.Wrap.Item Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon lengkapi pertanyaan pada kolom di bawah ini dan mohon dilampirkan fotokopi hasil pemeriksaan.
-					%br
+						%label.Wrap.Item
+							Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? 
+							%br
+							Mohon lengkapi pertanyaan pada kolom di bawah ini dan mohon dilampirkan fotokopi hasil pemeriksaan.
+						%br
 
 					-#
 						%div.ContainerFit.NumberIndent

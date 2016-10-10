@@ -46,13 +46,16 @@
 			%input#DateOperation.Short.Single.Item{ :type =>"text", "data-field" => "date" }
 		%br
 
-		%label.medium.Single.Item b. Metode operasi (anestesi local, bedah beku/cryosurgery, operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
-
+		%label.medium.Single.Item 
+			b. Metode operasi (anestesi local, bedah beku/
+			%i
+				cryosurgery, 
+			operasi dengan anestesi umum, dan sebagainya). Mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br    
 		%input#TextOperationMethod.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 
-		%label.medium.Single.Item c. Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan pernapasan.
+		%label.medium.Single.Item c. Mohon lengkapi data Dokter dan Rumah Sakit yang biasa dikunjungi untuk gangguan tumor.
 		%br    
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Tanggal terakhir konsultasi
@@ -72,7 +75,7 @@
 		%br
 
 
-		%label.medium.Single.Item d. Pengobatan/ tindakan apa yang diberikan setelah dilakukan operasi tumor (seperti minum obat tablet, radioterapi, kemotherapi, dan sebagainya) ?
+		%label.Medium.Single.Item d. Pengobatan/tindakan apa yang diberikan setelah dilakukan operasi tumor?
 		%br    
 		%div.RadioButton.PositionerLeft		
 			%input#RadioButtonTherapyAssDrug.PositionerLeft{ :type => "radio", :name => "RadioButtonTherapyAss", :value => "drug" }
@@ -89,7 +92,7 @@
 			
 			%input#RadioButtonTherapyAssOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonTherapyAss", :value => "other" }
 			%label.RadioButton.PositionerLeft{ :for => "RadioButtonTherapyAssOthers" } Lainnya, Sebutkan.		
-			%input#TextTherapyAssOtherDesc.Line.Long.Single.PositionerLeft{ :type => "text" }
+			%input#TextTherapyAssOtherDesc.Line.Medium.Single.PositionerLeft{ :type => "text" }
 		%br
 			%label.Wrap.Single.PositionerLeft{ :for => "TextTherapyAssOtherDescAdd"} Mohon menjelaskan secara rinci pada kolom di bawah ini.
 			%br
@@ -162,7 +165,7 @@
 			%label.Short.Single.Item.Margin Pengobatan
 			%input#TextTreatment.Long.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
-			%label.Short.Single.Item.Margin Berapa kali dalam 1 tahun
+			%label.Short.Single.Item.Margin Berapa kali dalam 1 (satu) tahun
 			%input#TextHowOften.Long.Single.Item.Margin{ :type => "text" }
 		%div.ContainerFit
 			%label.Short.Single.Item.Margin Nama Lengkap Dokter
@@ -179,7 +182,7 @@
 		%br		
 		%hr
 
-		%label#Wrap.Single.PositionerLeft 6. Apakah anda pernah tidak masuk kerja karena gangguan ini?  
+		%label#Wrap.Single.PositionerLeft 6. Apakah Anda pernah tidak masuk kerja karena kondisi ini? 
 		%div.RadioButton.Medium.PositionerRight
 			%input#RadioButtonLeaveYes{ :type => "radio", :name => "RadioButtonLeave", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonLeaveYes" } Ya
@@ -187,15 +190,21 @@
 			%input#RadioButtonLeaveNo{ :type => "radio", :name => "RadioButtonLeave", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonLeaveNo" } Tidak
 		%br
-		%label#Wrap.Single.PositionerLeft Jika “Ya”, kapan:				
+		%label#Wrap.Single.PositionerLeft Jika “Ya”, kapan:
+		%label.Single.PositionerLeft.FirstIndent
 		%input#DateLeave.Short.Single.PositionerLeft{ :type =>"text", "data-field" => "date" }		    
-		%label#Wrap.Single.PositionerLeft dan berapa lama?:
-		%input#TextLeaveDuration.Short.Single.PositionerLeft{ :type =>"text" }		
+		%label.Single.PositionerLeft.FirstIndent
+		%label#Wrap.Single.PositionerLeft dan berapa lama?
+		%label.Single.PositionerLeft.FirstIndent
+		%input#TextLeaveDuration.Short.Single.PositionerLeft{ :type =>"text" }
+		%label.Single.PositionerLeft.FirstIndent
 		%label#Wrap.Single.PositionerLeft hari
 		%br
 		%hr
 
-		%label.medium.Single.Item 7. Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? Mohon tuliskan tanggal konsultasi, pemeriksaan yang dilakukan dan hasilnya.
+		%label.Medium.Single.Item 7. Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? 
+		%br
+		%label.Medium.Single.Item Mohon tuliskan tanggal konsultasi, pemeriksaan yang dilakukan dan hasilnya.
 		%div.ContainerFit
 			%label.Short.Single.Item.Center.Margin Jenis Pemeriksaan
 			%label.Short.Single.Item1.Center.Margin Tanggal Pemeriksaan
