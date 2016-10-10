@@ -200,18 +200,15 @@
 					%br
 
 					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyGetDrug" } Apakah Anda mendapat obat dokter?
-
 					%div.RadioButton.PositionerRight
-						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEpilepsyGetDrugNo" } Tidak
+						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEpilepsyGetDrugNo" } Tidak (Jika “Ya”, mohon mengisi kolom di bawah ini).
 						%input#RadioButtonPolicyHolderEpilepsyGetDrugNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyGetDrug", :value => "false" }
 						%div.BoxRound.PositionerRight
 						%label.Single.PositionerRight{ :for => "RadioButtonPolicyHolderEpilepsyGetDrugYes" } Ya
 						%input#RadioButtonPolicyHolderEpilepsyGetDrugYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyGetDrug", :value => "true" }
 						%div.BoxRound.PositionerRight
 					%br
-
-					%label.Single.NumberIndent.PositionerLeft{ :for => "TablePolicyHolderEpilepsyDrugList" } Jika “Ya”, mohon melengkapi kolom di bawah ini.
-					%br
+					
 					-#
 						%div.ContainerFit.NumberIndent
 							%table#TablePolicyHolderEpilepsyDrugList
@@ -298,21 +295,20 @@
 					%div.RadioButton.NumberIndent.PositionerLeft
 						%input#RadioButtonPolicyHolderEpilepsyOtherDiseasesDiabetes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyOtherDiseases", :value => "diabetes" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesDiabetes" } Kencing Manis (Diabetes Melitus)
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesDiabetes" } Kencing Manis (Diabetes Melitus)
 
 						%input#RadioButtonPolicyHolderEpilepsyOtherDiseasesHypertension.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyOtherDiseases", :value => "hypertension" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesHypertension" } Darah Tinggi (Hipertensi)
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesHypertension" } Darah Tinggi (Hipertensi)
 						%br
 
 						%input#RadioButtonPolicyHolderEpilepsyOtherDiseasesTumor.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyOtherDiseases", :value => "tumor" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesTumor" } Tumor
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesTumor" } Tumor
 
 						%input#RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderEpilepsyOtherDiseases", :value => "complication" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan
-						%input#TextPolicyHolderEpilepsyOtherDiseasesComplicationDesc.LineDot.Medium.Single.PositionerLeft{ :type => "text" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderEpilepsyOtherDiseasesComplication" } Penyakit komplikasi lainnya, sebutkan						%input#TextPolicyHolderEpilepsyOtherDiseasesComplicationDesc.LineDot.Medium.Single.PositionerLeft{ :type => "text" }
 
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderEpilepsyOtherDiseaseDesc" } Mohon mengisi Kuesioner sesuai dengan penyakit lainnya yang Anda derita sesuai dengan pilihan pada nomor 12

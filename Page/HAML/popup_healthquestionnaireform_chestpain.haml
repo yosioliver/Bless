@@ -45,7 +45,7 @@
 		%input#DateLastAttackDuration.Full.Single.Item1.Margin{ :type =>"text", "data-field" => "time" }
 		%div.ContainerFit
 			%label#LabelCurrentAttackTimes.Medium.Single.Item3.Margin Hingga saat ini serangan sudah terjadi sebanyak
-			%input#TextCurrentAttackTimes.Short.Single.Item1.Margin{ :type => "text" }
+			%input#NumberCurrentAttackTimes.Short.Single.Item1.Margin{ :type => "number" }
 			%label.Single.Short.Single.Item1.Margin kali
 		%hr
 
@@ -91,18 +91,18 @@
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonLocationMiddle{ :type => "radio", :name => "RadioButtonLocation", :value => "middle" }
-			%label.RadioButton{ :for => "RadioButtonLocationMiddle" } Tengah dada
+			%label.RadioButton{ :for => "RadioButtonLocationMiddle" } Di Tengah dada
 			%div.Separator
 			%input#RadioButtonLocationLeft{ :type => "radio", :name => "RadioButtonLocation", :value => "left" }
-			%label.RadioButton{ :for => "RadioButtonLocationLeft" } Di sisi kiri
+			%label.RadioButton{ :for => "RadioButtonLocationLeft" } Di sisi kiri dada
 			%div.Separator
 			%input#RadioButtonLocationRight{ :type => "radio", :name => "RadioButtonLocation", :value => "right" }
-			%label.RadioButton{ :for => "RadioButtonLocationRight" } Di sisi kanan
+			%label.RadioButton{ :for => "RadioButtonLocationRight" } Di sisi kanan dada
 			%div.Separator
 			%input#RadioButtonLocationOthers{ :type => "radio", :name => "RadioButtonLocation", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonLocationOthers" } Di bagian lain dari dada
-		%br
-		%input#TextLocationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+			%label.RadioButton{ :for => "RadioButtonLocationOthers" } Di bagian lain dari dada, sebutkan
+			%input#TextLocationOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
+		%br		
 		%hr
 
 		%label.Medium.Single.Item 7. Apakah nyeri dada tersebut menjalar ?
@@ -130,7 +130,7 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 8. Bagaimana terjadinya nyeri dada tersebut ?
+		%label.Medium.Single.Item 8. Bagaimana terjadinya nyeri dada tersebut?
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonHowHappenedSudden{ :type => "radio", :name => "RadioButtonHowHappened", :value => "sudden" }
@@ -152,7 +152,7 @@
 			%label.RadioButton{ :for => "RadioButtonHowHappenedDeepBreath" } Diperburuk dengan tarik nafas dalam
 			%div.Separator
 			%input#RadioButtonHowHappenedOthers{ :type => "radio", :name => "RadioButtonHowHappened", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonHowHappenedOthers" } Lainnya, sebutkan
+			%label.RadioButton{ :for => "RadioButtonHowHappenedOthers" } Lain-lain, sebutkan:
 			%input#TextHowHappenedOtherDesc.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -170,7 +170,7 @@
 			%label.RadioButton{ :for => "RadioButtonGettingWorseWhenCoughing" } Batuk menghirup nafas dalam
 			%div.Separator
 			%input#RadioButtonGettingWorseOthers{ :type => "radio", :name => "RadioButtonGettingWorse", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonGettingWorseOthers" } Lainnya
+			%label.RadioButton{ :for => "RadioButtonGettingWorseOthers" } Lainnya, sebutkan:
 		%input#TextGettingWorseOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
@@ -188,7 +188,7 @@
 			%label.RadioButton{ :for => "RadioButtonReducedWhenDrinkDrug" }Minum Obat maag
 			%div.Separator
 			%input#RadioButtonReducedOthers{ :type => "radio", :name => "RadioButtonReduced", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonReducedOthers" } Lainnya
+			%label.RadioButton{ :for => "RadioButtonReducedOthers" } Lainnya, sebutkan:
 		%input#TextReducedOtherDesc.Long.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%div.RadioButton.Full.Item
@@ -241,7 +241,9 @@
 			%div.Separator
 			%input#RadioButtonTreatmentNo{ :type => "radio", :name => "RadioButtonTreatment", :value => "false" }
 			%label.RadioButton{ :for => "RadioButtonTreatmentNo" } Tidak
-		%input#TextTreatmentReason.Full.Single.Item1.Margin{ :type => "text", :placeholder => "berikan nama dan jenis pengobatan" }
+		%br
+		%label.Full.Single.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini
+		%input#TextTreatmentReason.Full.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
 
@@ -259,7 +261,7 @@
 			%div.Separator
 
 			%input#RadioButtonChekUpEverRontgen{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "rontgen" }
-			%label.RadioButton{ :for => "RadioButtonChekUpEverRontgen" } Rontgen
+			%label.RadioButton{ :for => "RadioButtonChekUpEverRontgen" } Rontgen dada
 			%div.Separator
 
 			%input#RadioButtonChekUpEverEchocardiogram{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "echocardiogram" }
@@ -275,7 +277,7 @@
 			%div.Separator
 
 			%input#RadioButtonChekUpEverOthers{ :type => "radio", :name => "RadioButtonChekUpEver", :value => "other" }
-			%label.RadioButton{ :for => "RadioButtonChekUpEverOthers" } Lainnya
+			%label.RadioButton{ :for => "RadioButtonChekUpEverOthers" } Lainnya, sebutkan
 		%br
 		%div.ContainerFit
 			%input#TextCheckUpEverOthersDesc.Full.Single.Item1.Margin{ :type =>"text" }
