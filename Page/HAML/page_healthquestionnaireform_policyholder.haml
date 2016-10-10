@@ -62,9 +62,12 @@
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+
 				validateDateNotExceedToday("DatePublished");
-			validatePressNumeric("TextBasicSumAssured");
-			$("#TextBasicSumAssured").number(true, 0, ",", ".");
+				validatePressNumeric("TextBasicSumAssured");
+				$("#TextBasicSumAssured").number(true, 0, ",", ".");
+
+
 			});
 
 			function CheckRelationshipStatus(RealtionshipStatus)
@@ -404,7 +407,7 @@
 					%input#TextPolicyHolderBabyWeight.Short.PositionerLeft{ :type => "text", :style => "margin-left: 10px; margin-right: 10px;" }
 					%label.PositionerLeft{ :for => "TextPolicyHolderBabyWeight" } Kg
 				%hr
-				%li
+				%li.ContainerFemaleQuestion
 					%label.Item{ :for => "HealthDissorderYes" }
 						Pertanyaan khusus untuk wanita:
 					%ol
@@ -415,20 +418,20 @@
 								%input#TextPolicyHolderPregnantWeek.Short.PositionerLeft{ :type => "text", :style => "margin-left: -60px;" }
 								%label.Short.Single.PositionerLeft{ :for => "TextPolicyHolderPregnantWeek", :style => "margin-left: -60px;" } Minggu
 								%div.RadioButton.Item
-									%input#RadioButtonPolicyHolderPregnantStateYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "true", :required => "true" }
+									%input#RadioButtonPolicyHolderPregnantStateYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "true" }
 									%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnantStateYes" } Ya
 									%div.Separator |
-									%input#RadioButtonPolicyHolderPregnantStateNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "false", :required => "true" }
+									%input#RadioButtonPolicyHolderPregnantStateNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnant", :value => "false" }
 									%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnantStateNo" } Tidak
 						%li
 							%div.Container
 								%label#LabelPolicyHolderPregnancyIllness.Item{ :for => "RadioButtonPolicyHolderPregnancyIllnessYes" }
 									Adakah komplikasi pada kehamilan termasuk persalinan secara sectio caesaria yang dilakukan karena menderita suatu penyakit (Darah Tinggi, Hepatitis, Diabetes dan lain-lain)?
 								%div.RadioButton.Item
-									%input#RadioButtonPolicyHolderPregnancyIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "true", "data-popup-type" => "general", :required => "true" }
+									%input#RadioButtonPolicyHolderPregnancyIllnessYes{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "true", "data-popup-type" => "general" }
 									%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyIllnessYes" } Ya
 									%div.Separator |
-									%input#RadioButtonPolicyHolderPregnancyIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "false", "data-popup-type" => "general", :required => "true" }
+									%input#RadioButtonPolicyHolderPregnancyIllnessNo{ :type => "radio", :name => "RadioButtonPolicyHolderPregnancyIllness", :value => "false", "data-popup-type" => "general" }
 									%label.RadioButton{ :for => "RadioButtonPolicyHolderPregnancyIllnessNo" } Tidak
 							%input#ButtonPreviewPolicyHolderPregnancyIllness.ButtonPreview{ :type => "button", :value => "View recent input", :name => "RadioButtonPolicyHolderPregnancyIllness", "data-popup-type" => "general" }
 						%li

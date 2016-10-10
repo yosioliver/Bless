@@ -99,6 +99,8 @@ var arrayRelationshipWithProspectiveInsured = [];
 var arrayDatePeriod = [];
 var arrayNationality = [];
 var stringIllnessSuffix = "Illness";
+var stringSexFemale = "female";
+var stringSexMale = "male";
 
 
 // GENERATOR
@@ -3004,11 +3006,33 @@ function getFromDatabase(objectContent, stringPageType)
 						$(stringButtonPreviewJQueryID).css("display", "block");
 					}
 				});
+
+				stringValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringPageInfixTypeCurrent + "Sex");
+
+				if (stringValue == stringSexFemale)
+				{
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "State").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear").prop("required", true);
+				}
+				else
+				{
+					$(".ContainerFemaleQuestion").css("opacity", 0.4);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "State").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear").prop("disabled", true);
+				}
 			}
 			else
 			{
 
 			}
+
+
 		}
 		else
 		{
@@ -3027,6 +3051,8 @@ function getFromDatabase(objectContent, stringPageType)
 				
 			}
 		}
+
+
 	}
 }
 
