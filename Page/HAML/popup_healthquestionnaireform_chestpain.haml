@@ -16,7 +16,7 @@
 		%hr
 
 		%div.ContainerFit
-			%label#LabelFirstAttack.Medium.Single.Item3.Margin 1. Kapan nyeri dada pertama kali dirasakan
+			%label#LabelFirstAttack.Medium.Single.Item3.Margin 1. Kapan pertama kali Anda merasakan nyeri dada?
 			%input#DateFirstAttack.Medium.Single.Item1.Margin{ :type => "date", "data-field" => "date" }
 		%br
 		%hr
@@ -45,7 +45,8 @@
 		%input#DateLastAttackDuration.Full.Single.Item1.Margin{ :type =>"text", "data-field" => "time" }
 		%div.ContainerFit
 			%label#LabelCurrentAttackTimes.Medium.Single.Item3.Margin Hingga saat ini serangan sudah terjadi sebanyak
-			%input#TextCurrentAttackTimes.Medium.Single.Item1.Margin{ :type => "text" }
+			%input#TextCurrentAttackTimes.Short.Single.Item1.Margin{ :type => "text" }
+			%label.Single.Short.Single.Item1.Margin kali
 		%hr
 
 		%div.ContainerFit
@@ -86,7 +87,7 @@
 		%br
 		%hr
 
-		%label.Medium.Single.Item 6. Dimana lokasi dari nyeri tersebut ?
+		%label.Medium.Single.Item 6. Dimanakah letak nyeri dada tersebut?
 		%br
 		%div.RadioButton.PositionerLeft
 			%input#RadioButtonLocationMiddle{ :type => "radio", :name => "RadioButtonLocation", :value => "middle" }

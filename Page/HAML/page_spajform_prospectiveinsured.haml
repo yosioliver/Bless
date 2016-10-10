@@ -96,6 +96,10 @@
 
 					}
 				});
+				
+				checkboxAsRadioButton("CheckboxProspectiveInsuredSalary");
+				checkboxAsRadioButton("CheckboxProspectiveInsuredRevenue");
+				checkboxAsRadioButton("CheckboxProspectiveInsuredOtherIncome");
 			});
 
 	/ BODY
@@ -325,38 +329,38 @@
 				%input#DateProspectiveInsuredNPWPActive.Medium.Single.PositionerLeft{ :type => "text", "data-field" => "date" }
 				%br
 
-				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSalaryIDR" } Penghasilan Kotor Per Tahun
+				%label.Wrap.Single.PositionerLeft{ :for => "CheckboxProspectiveInsuredSalaryIDR" } Penghasilan Kotor Per Tahun
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredSalaryIDR" } Gaji
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonProspectiveInsuredSalaryIDR.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredSalary", :value => "idr" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSalaryIDR" } RP
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxProspectiveInsuredSalaryIDR" } Gaji
+				%div.Checkbox.PositionerLeft
+					%input#CheckboxProspectiveInsuredSalaryIDR.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredSalary", :value => "idr" }
+					%label.Checkbox{ :for => "CheckboxProspectiveInsuredSalaryIDR" } RP
 					%div.Separator
-					%input#RadioButtonProspectiveInsuredSalaryUSD.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredSalary", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredSalaryUSD" } USD
+					%input#CheckboxProspectiveInsuredSalaryUSD.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredSalary", :value => "usd" }
+					%label.Checkbox{ :for => "CheckboxProspectiveInsuredSalaryUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredSalary" } Penghasilan / Tahun
 				%input#TextProspectiveInsuredSalary.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income" }
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredRevenueIDR" } Hasil Usaha
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonProspectiveInsuredRevenueIDR.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredRevenue", :value => "idr" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRevenueIDR" } RP
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxProspectiveInsuredRevenueIDR" } Hasil Usaha
+				%div.Checkbox.PositionerLeft
+					%input#CheckboxProspectiveInsuredRevenueIDR.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredRevenue", :value => "idr" }
+					%label.Checkbox{ :for => "CheckboxProspectiveInsuredRevenueIDR" } RP
 					%div.Separator
-					%input#RadioButtonProspectiveInsuredRevenueUSD.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredRevenue", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredRevenueUSD" } USD
+					%input#CheckboxProspectiveInsuredRevenueUSD.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredRevenue", :value => "usd" }
+					%label.Checkbox{ :for => "CheckboxProspectiveInsuredRevenueUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredRevenue" } Penghasilan / Tahun
 				%input#TextProspectiveInsuredRevenue.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income" }
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredOtherIncomeIDR" } Penghasilan Lainnya
-				%div.RadioButton.PositionerLeft
-					%input#RadioButtonProspectiveInsuredOtherIncomeIDR.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherIncome", :value => "idr" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherIncomeIDR" } RP
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxProspectiveInsuredOtherIncomeIDR" } Penghasilan Lainnya
+				%div.Checkbox.PositionerLeft
+					%input#CheckboxProspectiveInsuredOtherIncomeIDR.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredOtherIncome", :value => "idr" }
+					%label.Checkbox{ :for => "CheckboxProspectiveInsuredOtherIncomeIDR" } RP
 					%div.Separator
-					%input#RadioButtonProspectiveInsuredOtherIncomeUSD.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredOtherIncome", :value => "usd" }
-					%label.RadioButton{ :for => "RadioButtonProspectiveInsuredOtherIncomeUSD" } USD
+					%input#CheckboxProspectiveInsuredOtherIncomeUSD.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredOtherIncome", :value => "usd" }
+					%label.Checkbox{ :for => "CheckboxProspectiveInsuredOtherIncomeUSD" } USD
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredOtherIncome" } Penghasilan / Tahun
 				%input#TextProspectiveInsuredOtherIncome.Long.Single.PositionerLeft{ :type => "text", :value => "0", "data-customvalidation" => "income" }
 				%br
