@@ -3011,20 +3011,20 @@ function getFromDatabase(objectContent, stringPageType)
 
 				if (stringValue == stringSexFemale)
 				{
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "State").prop("required", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant").prop("required", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness").prop("required", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality").prop("required", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear").prop("required", true);
+					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State");
+					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant");
+					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness");
+					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality");
+					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear");
 				}
 				else
 				{
 					$(".ContainerFemaleQuestion").css("opacity", 0.4);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "State").prop("disabled", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant").prop("disabled", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness").prop("disabled", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality").prop("disabled", true);
-					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear").prop("disabled", true);
+					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State");
+					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant");
+					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness");
+					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality");
+					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear");
 				}
 			}
 			else
@@ -3540,4 +3540,20 @@ function validatePressNumeric(stringInputJavaScriptID)
 
 		}
     });
+}
+
+function radioButtonSetRequired(stringName)
+{
+	$("input:radio[name='" + stringName + "']").each(function()
+	{
+		$(this).prop("required", true);
+	});
+}
+
+function radioButtonSetDisabled(stringName)
+{
+	$("input:radio[name='" + stringName + "']").each(function()
+	{
+		$(this).prop("disabled", true);
+	});
 }
