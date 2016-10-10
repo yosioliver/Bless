@@ -3008,7 +3008,7 @@ function getFromDatabase(objectContent, stringPageType)
 				});
 
 				stringValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringPageInfixTypeCurrent + "Sex");
-
+				alert(stringValue);
 				if (stringValue == stringSexFemale)
 				{
 					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State");
