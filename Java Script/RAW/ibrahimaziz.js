@@ -3450,3 +3450,22 @@ function checkboxAsRadioButton(stringCheckboxName)
 		});
 	});
 }
+
+function validateEmail(stringInputJavaScriptID)
+{
+	var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+
+	$(stringInputJQueryID).change(function()
+	{
+		var stringEmail = $(this).val();
+
+		if (stringEmail.indexOf("@") >= 0)
+		{
+			
+		}
+		else
+		{
+			alert("Format validasi email salah !.");
+		}
+	});
+}
