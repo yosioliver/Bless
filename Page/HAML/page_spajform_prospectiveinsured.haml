@@ -30,26 +30,9 @@
 
 				autoPopulateState();
 
-				$("#TextProspectiveInsuredCIN").keypress(function (e) {
-				 //if the letter is not digit then display error and don't type anything
-					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-						return false;
-					}
-			    });
-
-				$("#TextProspectiveInsuredHomePostalCode").keypress(function (e) {
-				 //if the letter is not digit then display error and don't type anything
-					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-						return false;
-					}
-			    });
-
-				$("#TextProspectiveInsuredOfficePostalCode").keypress(function (e) {
-				 //if the letter is not digit then display error and don't type anything
-					if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-						return false;
-					}
-			    });
+				validatePressNumeric("TextProspectiveInsuredCIN");
+				validatePressNumeric("TextProspectiveInsuredHomePostalCode");
+				validatePressNumeric("TextProspectiveInsuredOfficePostalCode");
 
 				//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
 				$('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );

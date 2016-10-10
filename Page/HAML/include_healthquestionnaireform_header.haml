@@ -4,16 +4,16 @@
 
 / FOR DEVELOPMENT
 
--#
-	- urlCSS = '../../Style/CSS/'
-	- urlJavaScript = '../../Java Script/Minimized/'
-	- urlResource = '../../Resource/'
+- urlCSS = '../../Style/CSS/'
+- urlJavaScript = '../../Java Script/Minimized/'
+- urlResource = '../../Resource/'
 
 / FOR DEPLOYMENT
 
-- urlCSS = '../../jqueryLibrary/Style/CSS/'
-- urlJavaScript = '../../jqueryLibrary/JavaScript/Minimized/'
-- urlResource = '../../jqueryLibrary/Resource/'
+-#
+	- urlCSS = '../../jqueryLibrary/Style/CSS/'
+	- urlJavaScript = '../../jqueryLibrary/JavaScript/Minimized/'
+	- urlResource = '../../jqueryLibrary/Resource/'
 
 - urlCSSGeneralPrefix = 'bless'
 - urlCSSSectionPrefix = 'healthquestionnaireform'
@@ -71,6 +71,7 @@
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker.min.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker-i18n.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}DateTimePicker_IOS_fix.js" }
+%script{ :type => "text/javascript", :src => "#{urlJavaScript}jquery.number.js" }
 %script{ :type => "text/javascript", :src => "#{urlJavaScript}ios-integration.min.js" }
 :javascript
 	$(document).ready(function()

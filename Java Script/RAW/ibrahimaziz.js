@@ -3469,3 +3469,49 @@ function validateEmail(stringInputJavaScriptID)
 		}
 	});
 }
+
+function validateDateNotExceedToday(stringInputJavaScriptID)
+{
+	var stringBirthdayJQueryID = stringKres + stringInputJavaScriptID;
+    
+    $(stringBirthdayJQueryID).change(function()
+    {
+        if ($(stringBirthdayJQueryID).val().length > 0)
+        {
+			var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
+			var dateBirthday = new Date(arrayBirthday[2], parseInt(arrayBirthday[1] - 1, 10), arrayBirthday[0]);
+			var dateToday = new Date();
+
+			if((dateBirthday.getTime() > dateToday.getTime()))
+			{
+				alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+			}
+			else
+			{
+				
+			}
+        }
+        else
+        {
+
+        }
+    });
+}
+
+function validatePressNumeric(stringInputJavaScriptID)
+{
+	var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+
+	$(stringInputJQueryID).keypress(function(e) 
+	{
+		//if the letter is not digit then display error and don't type anything
+		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) 
+		{
+			return false;
+		}
+		else
+		{
+
+		}
+    });
+}
