@@ -15,7 +15,7 @@
 		%br
 		%hr
 		%label#Wrap.Single.PositionerLeft{ :for => "RadioButtonBBDissorderYes" } 1. Apakah Anda pernah menderita hernia/spondylosis/kelainan tulang belakang lainnya?
-		%div.RadioButton.Medium.PositionerRight
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonBBDissorderYes{ :type => "radio", :name => "RadioButtonBBDissorder", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonBBDissorderYes" } Ya
 			%div.Separator
@@ -72,7 +72,7 @@
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 8. Apakah Anda pernah menjalani X-ray, MRI, atau pemeriksaan lainnya?
-		%div.RadioButton.Medium.PositionerRight
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonBBXRayYes{ :type => "radio", :name => "RadioButtonBBXRay", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonBBXRayYes" } Ya
 			%div.Separator
@@ -89,7 +89,7 @@
 		%br
 		%hr
 			%label#Wrap.Single.PositionerLeft 9. Apakah Anda menggunakan tongkat untuk berjalan atau alat bantu lainnya?
-			%div.RadioButton.Medium.PositionerRight
+			%div.RadioButton.PositionerRight
 				%input#RadioButtonWalkingStickYes{ :type => "radio", :name => "RadioButtonWalkingStick", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonWalkingStickYes" } Ya
 				%div.Separator
@@ -102,7 +102,7 @@
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 10. Apakah Anda pernah dioperasi atau dianjurkan operasi untuk kelainan ini?
-		%div.RadioButton.Medium.PositionerRight
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonSuggestSurgeryYes{ :type => "radio", :name => "RadioButtonSuggestSurgery", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonSuggestSurgeryYes" } Ya
 			%div.Separator
@@ -110,8 +110,8 @@
 			%label.RadioButton{ :for => "RadioButtonSuggestSurgeryNo" } Tidak
 		%br
 		%div.ContainerFit
-			%label.Long.Single.PositionerLeft Jika "Ya", mohon berikan tanggal operasi:
-			%input#DateSuggestSurgery.Full.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
+			%label.Full.Single.PositionerLeft Jika "Ya", mohon berikan tanggal operasi:
+			%input#DateSuggestSurgery.Long.Single.PositionerLeft.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%div.ContainerFit
 			%label.Long.Single.PositionerLeft Nama Lengkap Dokter:
@@ -216,7 +216,7 @@
 		%hr
 
 			%label.Single.PositionerLeft 15. Apakah Anda pernah tidak masuk kerja dalam jangka waktu lama karena kondisi ini ?
-			%div.RadioButton.Medium.PositionerRight
+			%div.RadioButton.PositionerRight
 				%input#RadioButtonBBAbsentYes{ :type => "radio", :name => "RadioButtonBBAbsent", :value => "true" }
 				%label.RadioButton{ :for => "RadioButtonBBAbsentYes" } Ya
 				%div.Separator
@@ -225,10 +225,10 @@
 		%br
 		%div.ContainerFit
 			%label.Single.PositionerLeft Jika "Ya", kapan:
-			%input#DateBBAbsent.Long.Single.Item.Margin{ :type => "text", "data-field" => "date" }
+			%input#DateBBAbsent.Medium.Single.Item.Margin{ :type => "text", "data-field" => "date" }
 			%label.Single.PositionerLeft  Dan berapa lama?
 			%input#TextBBAbsentAmount.Short.Single.Item.Margin{ :type =>"text" }
-
+			%label.Single.PositionerLeft  hari
 		%br
 		%hr
 		%div.ContainerFit
