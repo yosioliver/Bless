@@ -120,7 +120,7 @@
 %br
 
 %label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredCompany" }11. a. Nama Perusahaan/Instansi/Sekolah
-%table#TextProspectiveInsuredCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 4px" }
+%table#TextProspectiveInsuredCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 7px;" }
 %br
 
 %label.Medium.SecondIndent.Single.PositionerLeft{ :for => "TextProspectiveInsuredMainJob" } Pekerjaan Utama
@@ -149,18 +149,18 @@
 %table#TextProspectiveInsuredHomeAddress2.BoxSquare.PositionerLeft
 %label#LabelProspectiveInsuredHomeCity.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHomeCity" } Kota
 %table#TextProspectiveInsuredHomeCity.BoxSquare.PositionerLeft
-%label#LabelProspectiveInsuredHomePostalCode.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHomePostalCode" } Kode Pos
+%label#LabelProspectiveInsuredHomePostalCode.Box.Single.SlimDoubleDot.PositionerLeft{ :for => "TextProspectiveInsuredHomePostalCode" } Kode Pos
 %table#TextProspectiveInsuredHomePostalCode.BoxSquare.PositionerLeft
 %label#LabelProspectiveInsuredHomeTelephonePrefix.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHomeTelephonePrefix" } Telp
 %table#TextProspectiveInsuredHomeTelephonePrefix.BoxSquare.PositionerLeft
-%label#LabelProspectiveInsuredHomeTeleponeInfix.Box.Plain.Center.Single.PositionerLeft{ :for => "TextProspectiveInsuredHomeTelephoneInfix" } -
+%label#LabelProspectiveInsuredHomeTelephoneInfix.Box.Separator.Center.Single.PositionerLeft{ :for => "TextProspectiveInsuredHomeTelephoneInfix" } -
 %table#TextProspectiveInsuredHomeTelephoneInfix.BoxSquare.PositionerLeft
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredTelephone1" } 13. Nomor Ponsel
-%label#LabelProspectiveInsuredTelephone1.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHandphone1" } 1. 
+%label#LabelProspectiveInsuredHandphone1.Box.Single.Separator.PositionerLeft{ :for => "TextProspectiveInsuredHandphone1" } 1.
 %table#TextProspectiveInsuredHandphone1.BoxSquare.PositionerLeft
-%label#LabelProspectiveInsuredTelephone2.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHandphone2" } 2. 
+%label#LabelProspectiveInsuredHandphone2.Box.Single.Separator.PositionerLeft{ :for => "TextProspectiveInsuredHandphone2" } 2.
 %table#TextProspectiveInsuredHandphone2.BoxSquare.PositionerLeft
 %br
 
@@ -170,7 +170,7 @@
 
 %section.SectionFooter{ :style => "margin-top: 96px;" }
 	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
-	
+
 %section#SectionHeader3
 	= Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
 
@@ -179,11 +179,11 @@
 %table#TextProspectiveInsuredOfficeAddress2.BoxSquare.PositionerLeft
 %label#LabelProspectiveInsuredOfficeCity.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredOfficeCity" } Kota
 %table#TextProspectiveInsuredOfficeCity.BoxSquare.PositionerLeft
-%label#LabelProspectiveInsuredOfficePostalCode.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredOfficePostalCode" } Kode Pos
+%label#LabelProspectiveInsuredOfficePostalCode.Box.Single.SlimDoubleDot.PositionerLeft{ :for => "TextProspectiveInsuredOfficePostalCode" } Kode Pos
 %table#TextProspectiveInsuredOfficePostalCode.BoxSquare.PositionerLeft
 %label#LabelProspectiveInsuredOfficeTelephonePrefix.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredOfficeTelephonePrefix" } Telp
 %table#TextProspectiveInsuredOfficeTelephonePrefix.BoxSquare.PositionerLeft
-%label#LabelProspectiveInsuredOfficeTeleponeInfix.Box.Plain.Center.Single.PositionerLeft{ :for => "TextProspectiveInsuredOfficeTelephoneInfix" } -
+%label#LabelProspectiveInsuredOfficeTelephoneInfix.Box.Separator.Center.Single.PositionerLeft{ :for => "TextProspectiveInsuredOfficeTelephoneInfix" } -
 %table#TextProspectiveInsuredOfficeTelephoneInfix.BoxSquare.PositionerLeft
 %br
 
@@ -285,5 +285,5 @@
 %br
 
 %label.Long.Single.FirstIndent.PositionerLeft{ :for => "TextProspectiveInsuredFundingSource" } Sumber Dana Pembelian Asuransi
-%table#TextProspectiveInsuredFundingSource.BoxSquare.PositionerLeft
+%table#TextProspectiveInsuredFundingSource.BoxSquare.PositionerLeft{ :style => "margin-left: -2px;" }
 %br

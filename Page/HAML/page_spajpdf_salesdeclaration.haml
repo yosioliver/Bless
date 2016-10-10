@@ -46,7 +46,7 @@
 				// FOOTER AND HEADER
 
 				headerGenerator(".HeaderGeneral table");
-				// footerGenerator("OP/NB/0104/031602", "8");
+				footerGenerator("OP/NB/0104/031602", "1");
 
 
 				// SETTER
@@ -80,7 +80,6 @@
 
 		%main
 			%section#SectionSalesProfile
-
 				Informasi Penting
 				%ol{ :style => "margin-top: 5px; margin-bottom: 5px;" }
 					%li Wajib mengisi dengan benar dan lengkap pertanyaan di bawah ini sesuai dengan keadaan sebenarnya.
@@ -175,7 +174,10 @@
 								%div.BoxRound.PositionerRight
 
 						%div.ContainerFit
-							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" } 6. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban keputusan Underwriting atas pengajuan permohonan asuransi jiwa ini dapat ditolak, ditunda, dikenakan tambahan Premi atau diturunkan Uang Pertanggungannya?
+							%label.Full.Justify.Item{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" }
+								6. Apakah sudah dijelaskan kepada Calon Pemegang Polis bahwa jawaban keputusan
+								%i Underwriting
+								atas pengajuan permohonan asuransi jiwa ini dapat ditolak, ditunda, dikenakan tambahan Premi atau diturunkan Uang Pertanggungannya?
 							%div.MediumFix.Item
 								%label.RadioButton.PositionerRight{ :for => "RadioButtonSalesDeclarationStillConsiderationYes" } Tidak
 								%input#RadioButtonSalesDeclarationStillConsiderationYes{ :type => "radio", :name => "RadioButtonSalesDeclarationStillConsideration", :value => "false" }
@@ -236,7 +238,9 @@
 								%div.BoxRound.PositionerRight
 
 						%label.Wrap.PositionerLeft{ :for => "RadioButtonSalesDeclarationConsitutionYes" }
-							%b 12. Khusus untuk produk dengan manfaat Terminal Illness (TI):
+							%b
+								12. Khusus untuk produk dengan manfaat
+								%i Terminal Illness (TI):
 						%br
 
 						%div.ContainerFit
@@ -354,4 +358,4 @@
 				%br
 
 				%section.SectionFooter{ :style => "margin-top: -90px;" }
-					= Haml::Engine.new(File.read("footer_spajpdf_last.haml")).render
+					= Haml::Engine.new(File.read("footer_spajpdf_salesdeclaration.haml")).render
