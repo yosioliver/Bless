@@ -99,6 +99,8 @@ var arrayRelationshipWithProspectiveInsured = [];
 var arrayDatePeriod = [];
 var arrayNationality = [];
 var stringIllnessSuffix = "Illness";
+var stringSexFemale = "female";
+var stringSexMale = "male";
 
 
 // GENERATOR
@@ -3004,11 +3006,33 @@ function getFromDatabase(objectContent, stringPageType)
 						$(stringButtonPreviewJQueryID).css("display", "block");
 					}
 				});
+
+				stringValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringPageInfixTypeCurrent + "Sex");
+
+				if (stringValue == stringSexFemale)
+				{
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "State").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality").prop("required", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear").prop("required", true);
+				}
+				else
+				{
+					$(".ContainerFemaleQuestion").css("opacity", 0.4);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "State").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality").prop("disabled", true);
+					$(stringKres + stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear").prop("disabled", true);
+				}
 			}
 			else
 			{
 
 			}
+
+
 		}
 		else
 		{
@@ -3027,6 +3051,8 @@ function getFromDatabase(objectContent, stringPageType)
 				
 			}
 		}
+
+
 	}
 }
 
@@ -3449,4 +3475,69 @@ function checkboxAsRadioButton(stringCheckboxName)
 			});
 		});
 	});
+}
+
+function validateEmail(stringInputJavaScriptID)
+{
+	var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+
+	$(stringInputJQueryID).change(function()
+	{
+		var stringEmail = $(this).val();
+
+		if (stringEmail.indexOf("@") >= 0)
+		{
+			
+		}
+		else
+		{
+			alert("Format validasi email salah !.");
+		}
+	});
+}
+
+function validateDateNotExceedToday(stringInputJavaScriptID)
+{
+	var stringBirthdayJQueryID = stringKres + stringInputJavaScriptID;
+    
+    $(stringBirthdayJQueryID).change(function()
+    {
+        if ($(stringBirthdayJQueryID).val().length > 0)
+        {
+			var arrayBirthday = $(stringBirthdayJQueryID).val().split('/');
+			var dateBirthday = new Date(arrayBirthday[2], parseInt(arrayBirthday[1] - 1, 10), arrayBirthday[0]);
+			var dateToday = new Date();
+
+			if((dateBirthday.getTime() > dateToday.getTime()))
+			{
+				alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+			}
+			else
+			{
+				
+			}
+        }
+        else
+        {
+
+        }
+    });
+}
+
+function validatePressNumeric(stringInputJavaScriptID)
+{
+	var stringInputJQueryID = stringKres + stringInputJavaScriptID;
+
+	$(stringInputJQueryID).keypress(function(e) 
+	{
+		//if the letter is not digit then display error and don't type anything
+		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) 
+		{
+			return false;
+		}
+		else
+		{
+
+		}
+    });
 }

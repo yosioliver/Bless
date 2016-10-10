@@ -71,26 +71,9 @@
       
       	autoPopulateState();
       
-      	$("#TextPolicyHolderCIN").keypress(function (e) {
-      	 //if the letter is not digit then display error and don't type anything
-      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-      			return false;
-      		}
-          });
-      
-      	$("#TextPolicyHolderHomePostalCode").keypress(function (e) {
-      	 //if the letter is not digit then display error and don't type anything
-      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-      			return false;
-      		}
-          });
-      
-      	$("#TextPolicyHolderOfficePostalCode").keypress(function (e) {
-      	 //if the letter is not digit then display error and don't type anything
-      		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-      			return false;
-      		}
-          });
+      	validatePressNumeric("TextPolicyHolderCIN");
+      	validatePressNumeric("TextPolicyHolderHomePostalCode");
+      	validatePressNumeric("TextPolicyHolderOfficePostalCode");
       
       	//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
       	$('#TextPolicyHolderSalary').number( true, 0, ',', '.' );
@@ -143,6 +126,8 @@
       	checkboxAsRadioButton("CheckboxPolicyHolderSalary");
       	checkboxAsRadioButton("CheckboxPolicyHolderRevenue");
       	checkboxAsRadioButton("CheckboxPolicyHolderOtherIncome");
+      
+      	validateEmail("TextPolicyHolderEmail");
       });
     </script>
   </head>

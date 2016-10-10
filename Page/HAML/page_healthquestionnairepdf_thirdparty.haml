@@ -110,25 +110,25 @@
 				lineGenerator("#LineThirdPartyCompanyTypeOther", 11);
 				lineGenerator("#LineThirdPartyComanyIDTypeOther", 11);
 				boxGenerator("#TextThirdPartyCompanyNoAnggaranDasar", 21, boxTypeWithoutLabel, null);
-				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoAnggaranDasarExpiredYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanyNoSIUP", 21, boxTypeWithoutLabel, null);
-				boxGenerator("#DateThirdPartyCompanySIUPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-				boxGenerator("#DateThirdPartyCompanySIUPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-				boxGenerator("#DateThirdPartyCompanySIUPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#DateThirdPartyCompanySIUPExpiredDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanySIUPExpiredMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanySIUPExpiredYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanyNoTDP", 21, boxTypeWithoutLabel, null);
-				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoTDPExpiredYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanyNoSKDP", 21, boxTypeWithoutLabel, null);
-				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredDay", 2, boxTypeWithBottomLabel, labelDay);
-				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredMonth", 2, boxTypeWithBottomLabel, labelMonth);
-				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoSKDPExpiredYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanyNoNPWP", 16, boxTypeWithoutLabel, null);
-				boxGenerator("#DateThirdPartyCompanyNoNPWPDay", 2, boxTypeWithBottomLabel, labelDay);
-				boxGenerator("#DateThirdPartyCompanyNoNPWPMonth", 2, boxTypeWithBottomLabel, labelMonth);
-				boxGenerator("#DateThirdPartyCompanyNoNPWPYear", 4, boxTypeWithBottomLabel, labelYear);
+				boxGenerator("#DateThirdPartyCompanyNoNPWPDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoNPWPMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateThirdPartyCompanyNoNPWPYear", 4, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanySector", 30, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanyAddress", 30, boxTypeWithoutLabel, null);
 				boxGenerator("#TextThirdPartyCompanyAddress2nd", 30, boxTypeWithoutLabel, null);
@@ -341,6 +341,7 @@
 						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipOther" } Lainnya, sebutkan
 						%input#TextThirdPartyBeneficiaryRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
 					%br
+					%p.NumberIndent Bila Jawaban Anda "Ya" pada salah satu atau lebih pertanyaan diatas, mohon isi dan lengkapi data di bawah ini
 
 				%h2.Plain C. Data Calon Pihak Ketiga Perorangan
 
@@ -712,6 +713,7 @@
 						%table#DateThirdPartyCompanyNoAnggaranDasarExpiredMonth.BoxSquare.PositionerLeft
 						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoAnggaranDasarExpiredYear" } /
 						%table#DateThirdPartyCompanyNoAnggaranDasarExpiredYear.BoxSquare.PositionerLeft
+						%label.Single.Plain.NumberIndent.PositionerLeft{ :for => "DateThridPartyNPWPExpiredYear" } (Tanggal / Bulan / Tahun)
 						%br
 
 					%span.Number.Plain.Single.PositionerLeft 5.
@@ -725,6 +727,7 @@
 						%table#DateThirdPartyCompanySIUPExpiredMonth.BoxSquare.PositionerLeft
 						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanySIUPExpiredYear" } /
 						%table#DateThirdPartyCompanySIUPExpiredYear.BoxSquare.PositionerLeft
+						%label.Single.Plain.NumberIndent.PositionerLeft{ :for => "DateThridPartyNPWPExpiredYear" } (Tanggal / Bulan / Tahun)
 						%br
 
 					%span.Number.Plain.Single.PositionerLeft 6.
@@ -738,6 +741,7 @@
 						%table#DateThirdPartyCompanyNoTDPExpiredMonth.BoxSquare.PositionerLeft
 						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoTDPExpiredYear" } /
 						%table#DateThirdPartyCompanyNoTDPExpiredYear.BoxSquare.PositionerLeft
+						%label.Single.Plain.NumberIndent.PositionerLeft{ :for => "DateThridPartyNPWPExpiredYear" } (Tanggal / Bulan / Tahun)
 						%br
 
 					%span.Number.Plain.Single.PositionerLeft 7.
@@ -751,6 +755,7 @@
 						%table#DateThirdPartyCompanyNoSKDPExpiredMonth.BoxSquare.PositionerLeft
 						%label.Separator.Single.PositionerLeft{ :for => "DateThirdPartyCompanyNoSKDPExpiredYear" } /
 						%table#DateThirdPartyCompanyNoSKDPExpiredYear.BoxSquare.PositionerLeft
+						%label.Single.Plain.NumberIndent.PositionerLeft{ :for => "DateThridPartyNPWPExpiredYear" } (Tanggal / Bulan / Tahun)
 						%br
 
 					%span.Number.Plain.Single.PositionerLeft 8.
@@ -764,7 +769,7 @@
 						%table#DateThirdPartyCompanyNoNPWPMonth.BoxSquare.PositionerLeft
 						%span.Separator.Single.PositionerLeft /
 						%table#DateThirdPartyCompanyNoNPWPYear.BoxSquare.PositionerLeft
-						%label.Single.NumberIndent.PositionerLeft{ :for => "DateThridPartyNPWPExpiredYear" } (Tanggal / Bulan / Tahun)
+						%label.Single.Plain.NumberIndent.PositionerLeft{ :for => "DateThridPartyNPWPExpiredYear" } (Tanggal / Bulan / Tahun)
 						%br
 
 					// QUICK FIX END
