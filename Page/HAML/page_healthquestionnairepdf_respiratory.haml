@@ -164,7 +164,7 @@
 					%input#SelectPolicyHolderRespiratoryDetailAttackCauseHospitalAmountPeriod.Short.Single.PositionerLeft{ :type => "text", :style => "margin-left: 10px;" }
 					%br
 					%div.ContainerFit.NumberIndent
-						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseDoctorName"} Nama Lengkap Dokter yang merawat:
+						%label.Medium.Single.Item{ :for => "TextPolicyHolderRespiratoryDetailAttackCauseDoctorName"} Nama Lengkap Dokter:
 						%input#TextPolicyHolderRespiratoryDetailAttackCauseDoctorName.Full.Single.Item{ :type => "text" }
 					%br
 
@@ -258,14 +258,14 @@
 						%input#TextPolicyHolderRespiratoryDetailRRUPDrugFrequency5.Short.Single.Item1.Margin{ :type => "text" }
 					%br
 
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumption" } b. Kapan obat-obatan tersebut dikonsumsi
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumption" } b. Kapan obat-obatan tersebut dikonsumsi?
 					%div.RadioButton.NumberIndent.PositionerRight
-						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "everyday" }
-						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay" } Setiap hari
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked" } Hanya saat serangan
 						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "whenattacked" }
 						%div.BoxRound.PositionerRight
-						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionWhenAttacked" } Hanya saat serangan
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay" } Setiap hari
+						%input#RadioButtonPolicyHolderRespiratoryDetailConsumptionEveryDay.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderRespiratoryDetailConsumption", :value => "everyday" }
+						%div.BoxRound.PositionerRight						
 					%br
 					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderRespiratoryDetailStillConsumed" } c. Apakah obat-obatan tersebut masih dikonsumsi sampai sekarang?
 					%div.RadioButton.NumberIndent.PositionerRight
