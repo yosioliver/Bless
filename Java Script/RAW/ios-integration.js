@@ -88,6 +88,7 @@ function onSuccess (ret)
 
         if (stringType == "readFromDB")
         {
+        	alert("readfromdb");
         	previewArrayObject(objectContent.result.readFromDB);
             getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
         }
@@ -355,6 +356,7 @@ function savetoDB()
 			setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
 
 			objectContent = arrayHealthQuestionnaire;
+			alert("savetodb");
 			previewArrayObject(arrayHealthQuestionnaire);
 		}
 		else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)

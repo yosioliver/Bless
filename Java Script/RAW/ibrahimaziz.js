@@ -2941,7 +2941,7 @@ function getFromDatabase(objectContent, stringPageType)
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
 			arrayHealthQuestionnaire = objectContent;
-			previewArrayObject(arrayHealthQuestionnaire);
+			// previewArrayObject(arrayHealthQuestionnaire);
 
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, 
 			[
@@ -3178,7 +3178,7 @@ function setToDatabase(stringPageType)
         validatePush(objectContent, stringKey, stringValue);
     });
     
-	previewArrayObject(objectContent);
+	// previewArrayObject(objectContent);
 
     return objectContent;
 }
