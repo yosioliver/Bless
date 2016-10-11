@@ -390,6 +390,7 @@ function AutoPopulate(jsonObject)
     
     if (stringType == "autopopulateFromDB")
     {
+    	alert("autopopulate");
     	previewArrayObject(objectContent.result.readFromDB);
         getFromDatabase(objectContent.result.autopopulateFromDB, stringPageTypeCurrent);                
     }
