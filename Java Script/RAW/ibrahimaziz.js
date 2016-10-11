@@ -2967,13 +2967,12 @@ function getFromDatabase(objectContent, stringPageType)
 			
 			if (arrayHealthQuestionnaire.length > 0)
 			{
-				alert("1");
 				var stringNameInfix;
 				var stringRadioButtonValue;
 				
 				stringNameInfix = stringPageInfixTypeCurrent + stringSPAJProposalInfix;
 				stringRadioButtonValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringNameInfix)
-				alert("2");
+				
 				if (stringRadioButtonValue == true || stringRadioButtonValue == "true")
 				{
 					tableSPAJProposalGenerator("SPAJProposalList", arrayHealthQuestionnaire);
@@ -2983,7 +2982,7 @@ function getFromDatabase(objectContent, stringPageType)
 				{
 
 				}
-				alert("3");
+
 				var stringButtonPreviewJavaScriptID;
 				var stringButtonPreviewJQueryID;
 				var stringButtonPreviewName;
@@ -3007,8 +3006,7 @@ function getFromDatabase(objectContent, stringPageType)
 						$(stringButtonPreviewJQueryID).css("display", "block");
 					}
 				});
-				alert("4");
-				previewArrayObject(arrayHealthQuestionnaire);
+
 				stringValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringPageInfixTypeCurrent + "Sex");
 
 				if (stringValue == stringSexFemale)
@@ -3028,7 +3026,6 @@ function getFromDatabase(objectContent, stringPageType)
 					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality");
 					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear");
 				}
-				alert("5cxc");
 			}
 			else
 			{
