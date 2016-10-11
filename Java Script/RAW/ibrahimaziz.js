@@ -2941,7 +2941,8 @@ function getFromDatabase(objectContent, stringPageType)
 		else if (stringPageSectionCurrent == stringPageSectionHealthQuestionnaire)
 		{
 			arrayHealthQuestionnaire = objectContent;
-			
+			previewArrayObject(arrayHealthQuestionnaire);
+
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Activity', arrayHealthQuestionnaire, 
 			[
 				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Diving' + 'Criteria', 
@@ -2953,8 +2954,7 @@ function getFromDatabase(objectContent, stringPageType)
 				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Flight' + 'FLJob', 
 				stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Military' + 'Unit'
 			]);
-			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, 
-			[stringPrefixNumber + stringPageInfixTypeCurrent + 'SmokeActivity' + 'Amount']);
+			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'SmokeActivity', arrayHealthQuestionnaire, [stringPrefixNumber + stringPageInfixTypeCurrent + 'SmokeActivity' + 'Amount']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Junkie', arrayHealthQuestionnaire, [stringPrefixRadioButton + stringPageInfixTypeCurrent + 'Alcohol' + 'ALConsume']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cell', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'Tumor' + 'FirstDiagnose']);
 			buttonPreviewForMultiPopUp(stringPageInfixTypeCurrent + 'Cardiac', arrayHealthQuestionnaire, [stringPrefixDate + stringPageInfixTypeCurrent + 'ChestPain' + 'FirstAttack', 'Date' + stringPageInfixTypeCurrent + 'Hypertension' + 'FirstTime']);
@@ -3060,8 +3060,6 @@ function getFromDatabase(objectContent, stringPageType)
 				
 			}
 		}
-
-
 	}
 }
 
@@ -3180,6 +3178,8 @@ function setToDatabase(stringPageType)
         validatePush(objectContent, stringKey, stringValue);
     });
     
+	previewArrayObject(objectContent);
+
     return objectContent;
 }
 
