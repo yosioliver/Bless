@@ -88,8 +88,6 @@ function onSuccess (ret)
 
         if (stringType == "readFromDB")
         {
-        	alert("readfromdb");
-        	previewArrayObject(objectContent.result.readFromDB);
             getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
         }
         else
@@ -356,8 +354,6 @@ function savetoDB()
 			setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
 
 			objectContent = arrayHealthQuestionnaire;
-			alert("savetodb");
-			previewArrayObject(arrayHealthQuestionnaire);
 		}
 		else if (stringPageSectionCurrent == stringPageSectionBeneficiariesList)
 		{
@@ -390,8 +386,6 @@ function AutoPopulate(jsonObject)
     
     if (stringType == "autopopulateFromDB")
     {
-    	alert("autopopulate");
-    	previewArrayObject(objectContent.result.readFromDB);
         getFromDatabase(objectContent.result.autopopulateFromDB, stringPageTypeCurrent);                
     }
     else
