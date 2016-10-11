@@ -200,7 +200,7 @@
 						%input#RadioButtonPolicyHolderTumorTherapyAssOthers.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderTumorTherapyAss", :value => "other" }
 						%div.BoxRound.PositionerLeft
 						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderTumorTherapyAssOthers" } Lainnya, Sebutkan.
-						%input#TextPolicyHolderTumorTherapyAssOtherDesc.LineDot.Long.Single.PositionerLeft{ :type => "text" }
+						%input#TextPolicyHolderTumorTherapyAssOtherDesc.LineDot.Short.Single.PositionerLeft{ :type => "text" }
 					%br
 					%label.Wrap.NumberIndent.PositionerLeft Mohon menjelaskan secara rinci pada kolom di bawah ini.
 					%br
@@ -361,7 +361,7 @@
 						%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
 					%br
 					
-					%div.ContainerFit{ :style => "margin-top: 50px;"}
+					%div.ContainerFit{ :style => "margin-top: 50px;" }
 						%span.NumberFix.Single.Item 7.
 						%label.Wrap.Item
 							Sebutkan kapan terakhir kali Anda melakukan konsultasi dengan dokter? 
