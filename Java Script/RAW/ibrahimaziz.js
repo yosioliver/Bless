@@ -3010,7 +3010,7 @@ function getFromDatabase(objectContent, stringPageType)
 				alert("4");
 				previewArrayObject(arrayHealthQuestionnaire);
 				stringValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringPageInfixTypeCurrent + "Sex");
-				alert(stringValue);
+
 				if (stringValue == stringSexFemale)
 				{
 					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State");
