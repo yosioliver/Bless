@@ -487,6 +487,8 @@
 
 					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyMainJob" } Pekerjaan Utama
 					%table#TextThirdPartyMainJob.BoxSquare.PositionerLeft
+					%br					
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%br
 
 					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyWorkScope" } Bidang Usaha
@@ -868,7 +870,10 @@
 						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyCompanyInsurancePurposeOther" } Lainnya, sebutkan
 						%div#TextThirdPartyNonPersonInsurancePurposeOther.LineDot.PositionerLeft
 					%br
-
+				
+				%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+				%br
+				
 				%h2.Plain E. Dokumen yang Wajib Dilampirkan
 
 				%div.Note
