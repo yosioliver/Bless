@@ -3458,7 +3458,7 @@ function imageSelector(stringPath)
 		}
 		else
 		{
-			$(this).attr("src", $(this).attr("src").replace("..\/..\/Resource\/|..\/..\/jqueryLibrary\/Resource\/", stringPath));
+			$(this).attr("src", $(this).attr("src").replace("..\/..\/Resource\/", stringPath));			
 		}
 	});
 }
