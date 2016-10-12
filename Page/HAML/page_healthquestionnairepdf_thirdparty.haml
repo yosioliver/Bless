@@ -154,8 +154,12 @@
 				footerSetterForHealthQuestionnairePDF("OP/UW/0203121501", 3);
 				titleSetterForHealthQuestionnairePDF("Formulir Pihak Ketiga");
 
+
+				// TEST
+
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				getSignatureAttribute();
 			});
 
 
@@ -946,7 +950,7 @@
 									%th Calon Pihak Ketiga
 							%tbody
 								%tr
-									%td
+									%td.SignatureImage
 							%tfoot
 								%tr
 									%td Nama Lengkap & Tanda tangan
@@ -956,7 +960,7 @@
 									%th Calon Pemegang Polis
 							%tbody
 								%tr
-									%td
+									%td.SignatureImage
 							%tfoot
 								%tr
 									%td Nama Lengkap & Tanda tangan
@@ -966,7 +970,7 @@
 									%th Tenaga Penjual
 							%tbody
 								%tr
-									%td
+									%td.SignatureImage
 							%tfoot
 								%tr
 									%td Nama Lengkap & Tanda tangan
