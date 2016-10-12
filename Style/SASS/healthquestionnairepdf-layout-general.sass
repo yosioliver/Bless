@@ -27,7 +27,7 @@ header
 
 main
 	form, fieldset
-		.ContainerFit, .ContainerLeft, .ContainerRight
+		.ContainerFit, .ContainerLeft, .ContainerRight, .ContainerCenter
 			margin-top: $general_space_tiny
 			margin-bottom: $general_space_tiny
 			display: flex
@@ -48,6 +48,12 @@ main
 			justify-content: flex-start
 		.ContainerRight
 			justify-content: flex-end
+		.ContainerCenter
+			justify-content: space-between
+			flex-wrap: nowrap
+			align-content: center
+			align-items: center
+			text-align: center
 		.Margin
 			margin: $general_space_tiny
 		.Short
