@@ -151,7 +151,7 @@
 
 				// SETUP
 
-				footerSetterForHealthQuestionnairePDF("OP/UW/0114061601", 5);
+				footerSetterForHealthQuestionnairePDF("OP/UW/0203121501", 3);
 				titleSetterForHealthQuestionnairePDF("Formulir Pihak Ketiga");
 
 				// var objectContent = JSON.parse(jsonDummy);
@@ -246,11 +246,11 @@
 				%h2.Plain B. Pertanyaan yang Berhubungan dengan Pihak Ketiga
 
 				%fieldset
-					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAsking" } Apakah dalam pengajuan asuransi anda, selain anda dan calon tertanggung ada pihak ketiga yang
+					%label.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAsking" } Apakah dalam pengajuan asuransi Anda, selain Anda dan Calon Tertanggung ada Pihak ketiga yang
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 1.
-					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyAskingYes" } Meminta anda untuk mengajukan asuransi ini
+					%label.Medium.Single.Plain.PositionerLeft{ :for => "RadioButtonThirdPartyAskingYes" } Meminta Anda untuk mengajukan asuransi ini?
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyAskingYes{ :type => "radio", :name => "RadioButtonThirdPartyAsking", :value => "true" }
 						%div.BoxRound.PositionerLeft
@@ -259,7 +259,7 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyAskingNo" } Tidak
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAskingSpouse" } Bila "Ya", hubungan dengan anda
+					%label.Medium.Single.Plain.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyAskingSpouse" } Bila "Ya", hubungan dengan Anda?
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyAskingRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyAskingRelationship", :value => "spouse" }
 						%div.BoxRound.PositionerLeft
@@ -281,7 +281,7 @@
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 2.
-					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorYes" } Menjadi pembayar premi polis asuransi ini
+					%label.Medium.Single.Plain.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorYes" } Menjadi Pembayar Premi Polis asuransi ini?
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyPremiPayorYes{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayor", :value => "true" }
 						%div.BoxRound.PositionerLeft
@@ -290,7 +290,7 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorNo" } Tidak
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorSpouse" } Bila "Ya", hubungan dengan anda
+					%label.Medium.Single.Plain.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyPremiPayorSpouse" } Bila "Ya", hubungan dengan Anda?
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyPremiPayorRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyPremiPayorRelationship", :value => "spouse" }
 						%div.BoxRound.PositionerLeft
@@ -312,7 +312,7 @@
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 3.
-					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Meminta hak atas manfaat polis
+					%label.Medium.Single.Plain.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryYes" } Meminta hak atas manfaat Polis?
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyBeneficiaryYes{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiary", :value => "true" }
 						%div.BoxRound.PositionerLeft
@@ -321,7 +321,7 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryNo" } Tidak
 					%br
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiarySpouse" } Bila "Ya", hubungan dengan anda
+					%label.Medium.Single.Plain.NumberIndent.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiarySpouse" } Bila "Ya", hubungan dengan Anda?
 					%div.RadioButton.PositionerLeft
 						%input#RadioButtonThirdPartyBeneficiaryRelationshipSpouse{ :type => "radio", :name => "RadioButtonThirdPartyBeneficiaryRelationship", :value => "spouse" }
 						%div.BoxRound.PositionerLeft
@@ -397,7 +397,8 @@
 					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyBirthPlace" } Tempat Kelahiran
 					%table#TextThirdPartyBirthPlace.BoxSquare.PositionerLeft
 					%br
-					%table#DateThirdPartyBirthDay.BoxSquare.MediumWithNumberIndent.PositionerLeft
+					%label#LabelThirdPartyBirth.Short.Single.Separator.MediumWithNumberIndent.PositionerLeft{ :for => "DateThirdPartyBirth" } Tanggal Lahir
+					%table#DateThirdPartyBirthDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
 					%table#DateThirdPartyBirthMonth.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
@@ -487,8 +488,8 @@
 
 					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyMainJob" } Pekerjaan Utama
 					%table#TextThirdPartyMainJob.BoxSquare.PositionerLeft
-					%br					
-					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+					%br
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
 					%br
 
 					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyWorkScope" } Bidang Usaha
@@ -810,7 +811,7 @@
 						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset4" } >10 Miliar - 100 Miliar
 						%input#RadioButtonThirdPartyCompanyAsset5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100miliarlebih" }
 						%div#RadioButtonThirdPartyCompanyAsset5.BoxRound.PositionerLeft
-						%label.RadioButton.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset5" } >100 Miliar
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset5" } >100 Miliar
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 12.
@@ -822,19 +823,19 @@
 
 						%input#RadioButtonThirdPartyCompanyRevenue2{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "100juta500juta" }
 						%div#RadioButtonThirdPartyCompanyRevenue2.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue2" } 100 Juta - 500 Juta
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue2" } 100 Juta - 1 Miliar
 
 						%input#RadioButtonThirdPartyCompanyRevenue3{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "500juta1miliar" }
 						%div#RadioButtonThirdPartyCompanyRevenue3.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue3" } >500 Juta - 1 Miliar
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue3" } >1 Miliar - 10 Miliar
 
 						%input#RadioButtonThirdPartyCompanyRevenue4{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "1miliar10miliar" }
 						%div#RadioButtonThirdPartyCompanyRevenue4.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue4" } >1 Miliar - 10 Miliar
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue4" } >10 Miliar - 100 Miliar
 
 						%input#RadioButtonThirdPartyCompanyRevenue5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "10miliar" }
 						%div#RadioButtonThirdPartyCompanyRevenue5.BoxRound.PositionerLeft
-						%label.RadioButton.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue5" } >10 Miliar
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue5" } >100 Miliar
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 13.
@@ -870,10 +871,10 @@
 						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyCompanyInsurancePurposeOther" } Lainnya, sebutkan
 						%div#TextThirdPartyNonPersonInsurancePurposeOther.LineDot.PositionerLeft
 					%br
-				
-				%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+
+				%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
 				%br
-				
+
 				%h2.Plain E. Dokumen yang Wajib Dilampirkan
 
 				%div.Note
@@ -881,17 +882,21 @@
 						%li
 							Pihak Ketiga Perorangan
 							%ul
-								%li Untuk WNI melampirkan fotokopi identitas diri (KTP / Paspor) sedangkan untuk WNA melampirkan Paspor & KITAS yang masih berlaku dan jelas atas nama pemegang polis atau pihak ketiga.
-								%li Melampirkan akta lahir / akta pernikahan / kartu keluarga atau surat lain yang dapat membuktikan secara hukum hubungan antara pemegang polis dan pihak ketiga.
+								%li Untuk WNI melampirkan fotokopi Identitas Diri (KTP / Paspor) sedangkan untuk WNA melampirkan Paspor & KITAS yang masih berlaku dan jelas atas nama Pemegang Polis atau Pihak Ketiga.
+								%li Melampirkan akta lahir / akta pernikahan / kartu keluarga atau surat lain yang dapat membuktikan secara hukum hubungan antara Pemegang Polis dan Pihak Ketiga.
 						%li
 							Pihak Ketiga Non Perorangan
 							%ul
-								%li Fotokopi kartu identitas diri penerima kuasa / petugas yang ditunjuk oleh pihak ketiga untuk menandatangani formulir ini.
-								%li Fotokopi kartu identitas diri pemilik / pemegang saham pengendali akhir (controlling shareholder).
+								%li Fotokopi kartu Identitas Diri Penerima Kuasa / petugas yang ditunjuk oleh Pihak Ketiga untuk menandatangani formulir ini.
+								%li
+									Fotokopi kartu Identitas Diri pemilik / pemegang saham pengendali akhir (
+									%i controlling shareholder
+									).
+								%li Surat Kuasa / Penunjukan Pihak Ketiga kepada penerima kuasa / petugas yang ditunjuk.
 								%li Anggaran dasar terakhir yang menjelaskan data jumlah modal, susunan pemegang saham, direksi dan komisaris terakhir.
-								%li Surat keterangan domisili.
-								%li Laporan keuangan terkini.
-								%li Fotokopi surat ijin usaha, NPWP perusahaan.
+								%li Surat keterangan Domisili.
+								%li Laporan Keuangan Terkini.
+								%li Fotokopi Surat Ijin Usaha, NPWP Perusahaan.
 
 				%h2.Plain Data Rekening Bank Pihak Ketiga
 
@@ -909,22 +914,22 @@
 					%table#TextThirdPartyBankBranch.BoxSquare.PositionerLeft
 					%br
 
-				%h2.Plain F. Pernyataan Dan Kuasa
+				%h2.Plain F. Pernyataan Kuasa
 
 				%fieldset
 					%div.Note
-						%p Dengan ini Saya / Kami sebagai pihak ketiga dengan ini menyatakan dan menyetujui bahwa :
+						%p Dengan ini Saya / Kami sebagai Pihak Ketiga dengan ini menyatakan dan menyetujui bahwa :
 						%ol
-							%li Memberikan kuasa pada calon pemegang polis untuk melakukan transaksi polis berdasarkan nomor SPAJ / Polis tersebut di atas. Tidak terbatas untuk melakukan penarikan dana, penambahan dana, pengalihan dana, pengajuan klaim, pembatalan / penutupan polis, penunjukan penerima manfaat dan perubahan perubahan lainnya. Kuasa ini tetap berlaku meskipun saya / kami telah meninggal dunia.
-							%li Memberikan kuasa kepada PT Asuransi Jiwa BCA (penanggung) dalam melakukan pendebitan pada rekenin tabungan / kartu kredit saya / kami, untuk membayar sejumlah premi dari polis atas nama pemegang polis sebagai mana tercantum pada formulir ini.
-							%li Seluruh program pendukung yang menerangkan mengenai identitas maupun sumber dana dari pihak ketiga adalah benar apa adanya dan sah secara hukum. Dana tersebut tidak berasal dari kegiatan - kegiatan yang melanggar hukum dan tujuan pemeblian asuransi yang bermaksud dalam formulir ini tidak ditujukan untuk tindakan pencucian uang / pembiayaan kegiatan teroris.
-							%li Bertanggung jawab penuh atas seluruh informasi yang tercantum di dalam formulir ini. Segala akibat yang timbul sehubungan dengan pembayaran premi untuk nomor SPAJ / Polis tersebut pada formulir ini menjadi tanggung jawab saya / kami sepenuhnya. Saya / kami membebaskan penanggung dari segala macam tuntutan atau gugatan dalam bentuk apapun dari pihak manapun termasuk dari saya / kami.
+							%li Memberikan kuasa pada Calon Pemegang Polis untuk melakukan transaksi Polis berdasarkan nomor SPAJ / Polis tersebut di atas. Tidak terbatas untuk melakukan penarikan dana, penambahan dana, pengalihan dana, pengajuan klaim, pembatalan / penutupan Polis, penunjukan Penerima Manfaat dan perubahan perubahan lainnya. Kuasa ini tetap berlaku meskipun Saya / Kami telah meninggal dunia.
+							%li Memberikan kuasa kepada PT Asuransi Jiwa BCA (Penanggung) dalam melakukan pendebitan pada rekening tabungan / kartu kredit Saya / Kami, untuk membayar sejumlah Premi dari Polis atas nama Pemegang Polis sebagai mana tercantum pada formulir ini.
+							%li Seluruh program pendukung yang menerangkan mengenai identitas maupun sumber dana dari Pihak Ketiga adalah benar apa adanya dan sah secara hukum. Dana tersebut tidak berasal dari kegiatan - kegiatan yang melanggar hukum dan tujuan pemeblian asuransi yang bermaksud dalam formulir ini tidak ditujukan untuk tindakan pencucian uang / pembiayaan kegiatan teroris.
+							%li Bertanggung jawab penuh atas seluruh informasi yang tercantum di dalam formulir ini. Segala akibat yang timbul sehubungan dengan pembayaran Premi untuk nomor SPAJ / Polis tersebut pada formulir ini menjadi tanggung jawab Saya / Kami sepenuhnya. Saya / Kami membebaskan Penanggung dari segala macam tuntutan atau gugatan dalam bentuk apapun dari pihak manapun termasuk dari Saya / Kami.
 					%br
 
-					%label.Wrap.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani
+					%label.Single.PositionerLeft{ :for => "TextSignedPlace" } Ditandatangani di
 					%input#TextSignedPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 					%span.Separator.Single.PositionerLeft
-					%label.Wrap.PositionerLeft{ :for => "DateSignedDay" } Tanggal
+					%label.Single.PositionerLeft{ :for => "DateSignedDay" } Pada tanggal
 					%span.Separator.Single.PositionerLeft
 					%table#DateSignedDay.BoxSquare.PositionerLeft
 					%span.Separator.Single.PositionerLeft /
@@ -934,31 +939,38 @@
 					%label.Single.NumberIndent.Separator.PositionerLeft{ :for => "DateThirdPartyActiveYear" } (Tanggal / Bulan / Tahun)
 					%br
 
-					%div.ContainerFit
-						%div.Signature.Item1
-							%img
-							%span.Name#TextPolicyHolderSignature
-							%span.Description
-								Nama Lengkap & Tanda tangan
-								%br
-								(Calon) Pihak Ketiga
-
-						%div.Signature.Item1
-							%img
-							%span.Name#TextProspectiveInsuredSignature
-							%span.Description
-								Nama Lengkap & Tanda tangan
-								%br
-								(Calon) Pemegang Polis
-
-						%div.Signature.Item1
-							%img
-							%span.Name#TextSalesSignature
-							%span.Description
-								Nama Lengkap & Tanda tangan
-								%br
-								Tenaga Penjual
+					%div.ContainerCenter.PositionerCenter{ :style => "width: 80%;" }
+						%table.SignatureMedium.Horizontal30of100
+							%thead
+								%tr
+									%th Calon Pihak Ketiga
+							%tbody
+								%tr
+									%td
+							%tfoot
+								%tr
+									%td Nama Lengkap & Tanda tangan
+						%table.SignatureMedium.Horizontal30of100
+							%thead
+								%tr
+									%th Calon Pemegang Polis
+							%tbody
+								%tr
+									%td
+							%tfoot
+								%tr
+									%td Nama Lengkap & Tanda tangan
+						%table.SignatureMedium.Horizontal30of100
+							%thead
+								%tr
+									%th Tenaga Penjual
+							%tbody
+								%tr
+									%td
+							%tfoot
+								%tr
+									%td Nama Lengkap & Tanda tangan
 					%br
 
 		%section#SectionFooter
-			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
