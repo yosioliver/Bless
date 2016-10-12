@@ -1,19 +1,22 @@
 %h2 I. Data (Calon) Tertanggung
 %fieldset
 	%span.Number.Single.PositionerLeft 1.
-	%label.Medium.Wrap.PositionerLeft{ :for => "TextSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa: (SPAJ)/Polis Asuransi
+	%label.Medium.Wrap.Plain.PositionerLeft{ :for => "TextSPAJNumber" } Nomor Surat Pengajuan Asuransi Jiwa:	
 	%table#TextSPAJNumber.BoxSquare.PositionerLeft
+	%br
+	%label.Medium.Single.Plain.NumberIndent.PositionerLeft{ :for => "TextSPAJNumber", :style => "margin-top: -25px;" } (SPAJ)/Polis Asuransi
 	%br
 
 	%span.Number.Single.PositionerLeft 2.
-	%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (Calon) Tertanggung: (sesuai dengan KTP/Paspor)
+	%label.Medium.Single.Plain.PositionerLeft{ :for => "TextPolicyHolderFullName" } Nama Lengkap (Calon) Tertanggung: 
 	%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
 	%br
-	%table#TextPolicyHolderFullName2nd.BoxSquare.MediumWithNumberIndent.PositionerLeft
+	%label.Medium.Single.Plain.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderFullName", :style => "margin-top: -25px;" } (sesuai dengan KTP/Paspor)
+	%table#TextPolicyHolderFullName2nd.BoxSquare.PositionerLeft
 	%br
 
 	%span.Number.Single.PositionerLeft 3
-	%label.Wrap.Medium.PositionerLeft{ :for => "TextPolicyHolderBirthPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
+	%label.Wrap.Medium.Plain.PositionerLeft{ :for => "TextPolicyHolderBirthPlace" } Tempat, Tanggal lahir (Calon) Tertanggung:
 	%input#TextPolicyHolderBirthPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
 	%span.Separator.Single.PositionerLeft ,
 	%table#DatePolicyHolderBirthDay.BoxSquare.PositionerLeft
