@@ -181,6 +181,70 @@ function footerGenerator(stringDetail, intTotalPage)
 	})
 }
 
+function getOffset(stringLayoutJavaScriptID, stringLayoutJavaScriptClass)
+{
+	var stringLayoutJQuerySelector;
+
+	if (stringLayoutJavaScriptID == null)
+	{
+		stringLayoutJQuerySelector = "." + stringLayoutJavaScriptClass;
+	}
+	else
+	{
+		stringLayoutJQuerySelector = stringKres + stringLayoutJavaScriptID;
+	}
+	
+	var stringOffsetX = $(stringLayoutSelectorID).offset().left;
+	var stringOffsetY = $(stringLayoutSelectorID).offset().top;
+
+	return [stringOffsetX, stringOffsetY];
+}
+
+function getMeasurement(stringLayoutJavaScriptID, stringLayoutJavaScriptClass)
+{
+	var stringLayoutSelectorID;
+
+	if (stringLayoutJavaScriptID == null)
+	{
+		stringLayoutJQuerySelector = "." + stringLayoutJavaScriptClass;
+	}
+	else
+	{
+		stringLayoutJQuerySelector = stringKres + stringLayoutJavaScriptID;
+	}
+
+	var stringMeasurementWidth = $(stringLayoutSelectorID).width();
+	var stringMeasurementHeight = $(stringLayoutSelectorID).height();
+
+	return [stringMeasurementWidth, stringMeasurementHeight];
+}
+	
+function getSignatureAttribute()
+{
+	var arrayObjectSignatureAttribute = [];
+
+	$(".SignatureImage").each(function()
+	{
+		arrayObjectSignatureAttribute.push
+		({ 
+			floatOffsetX: $(this).offset().left, 
+			floatOffsetY: $(this).offset().top, 
+			floatMeasurementWidth : $(this).width(), 
+			floatMeasurementHeight : $(this).height() 
+		});
+		
+		alert
+		(
+			"floatOffsetX = " + $(this).offset().left + 
+			", floatOffsetY = " + $(this).offset().top + 
+			", floatMeasurementWidth = " + $(this).width() + 
+			", floatMeasurementHeight = " + $(this).height() 
+		);
+	});
+	
+	return arrayObjectSignatureAttribute;
+}
+
 function tableHealthGenerator(stringTableID, intRow)
 {
 	var stringInfixName = stringTableID.substring(stringTablePrefix.length, stringTableID.length);
@@ -3007,36 +3071,8 @@ function getFromDatabase(objectContent, stringPageType)
 					}
 				});
 
-				stringValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringPageInfixTypeCurrent + "Sex");
-
-				if (stringValue == stringSexFemale)
-				{
-					$(".ContainerFemaleQuestion").css("opacity", 1.0);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", true);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", true);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", true);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", true);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", true);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", false);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", false);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", false);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", false);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", false);
-				}
-				else
-				{
-					$(".ContainerFemaleQuestion").css("opacity", 0.4);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", false);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", false);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", false);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", false);
-					radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", false);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", true);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", true);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", true);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", true);
-					radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", true);
-				}
+				// stringValue = arrayFind(arrayHealthQuestionnaire, stringPrefixRadioButton + stringPageInfixTypeCurrent + "Sex");
+				// setFemaleQuestionForHealthQuestionnaire(stringValue);
 			}
 			else
 			{
@@ -3060,6 +3096,38 @@ function getFromDatabase(objectContent, stringPageType)
 				
 			}
 		}
+	}
+}
+
+function setFemaleQuestionForHealthQuestionnaire(stringValue)
+{
+	if (stringValue == stringSexMale)
+	{
+		$(".ContainerFemaleQuestion").css("opacity", 0.4);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", false);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", false);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", false);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", false);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", false);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", true);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", true);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", true);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", true);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", true);
+	}
+	else
+	{
+		$(".ContainerFemaleQuestion").css("opacity", 1.0);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", true);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", true);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", true);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", true);
+		radioButtonSetRequired(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", true);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "State", false);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "Pregnant", false);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PregnancyIllness", false);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "FemaleAbnormality", false);
+		radioButtonSetDisabled(stringPrefixRadioButton + stringPageInfixTypeCurrent + "PapSmear", false);
 	}
 }
 
