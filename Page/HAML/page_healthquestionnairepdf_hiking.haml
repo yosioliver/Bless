@@ -50,6 +50,7 @@
 
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabaseForHealthQuestionnaire(objectContent.result.readFromDB, stringPageTypePDF);
+				// getSignatureAttribute();
 			});
 
 
@@ -81,12 +82,12 @@
 					%div.ContainerFit
 						%span.NumberFix.Single.Item 1.
 						%label.Wrap.Item{ :for => "TextPolicyHolderHikingHKType" }
-							Mohon sebutkan jenis kegiatan pendakian gunung/panjat tebing yang Anda lakukan misalnya 
-							%i	
-								bouldering, hiking, 
-							pendakian es, pendakian dalam ruangan, 
-							%i 
-								mountainnering, tracking, 
+							Mohon sebutkan jenis kegiatan pendakian gunung/panjat tebing yang Anda lakukan misalnya
+							%i
+								bouldering, hiking,
+							pendakian es, pendakian dalam ruangan,
+							%i
+								mountainnering, tracking,
 							dan lain-lain?
 					%br
 					%label.Single.NumberIndent{ :for => "TextPolicyHolderHikingHKType" } Mohon menjelaskan secara rinci pada kolom di bawah ini.
@@ -120,12 +121,12 @@
 					%div.ContainerFit.NumberIndent
 						%input#TextPolicyHolderHikingHKLocation.Full.Single{ :type => "text" }
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 280px;"}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 					%header
 						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 80px;" } 5.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingHKUPLocation1", :style => "margin-top: 80px;" } Selain disebutkan diatas apakah Anda pernah/memiliki rencana untuk mendaki di negara lain?
 					%br
@@ -157,12 +158,12 @@
 						%input#TextPolicyHolderHikingHKUPWhen5.Short.Single.Item1.Margin{ :type => "text" }
 
 					%span.Number.Single.PositionerLeft 6.
-					%label.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingTools" } Mohon sebutkan peralatan apa saja yang digunakan sewaktu melakukan olah raga ini.					
+					%label.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingTools" } Mohon sebutkan peralatan apa saja yang digunakan sewaktu melakukan olah raga ini.
 					%br
 					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsAltimeter.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "altimeter" }
 						%div.BoxRound.PositionerLeft
-						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsAltimeter" } 	
+						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsAltimeter" }
 							%i
 								Altimeter
 						%input#CheckboxPolicyHolderHikingToolsGPS.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "GPS" }
@@ -227,7 +228,7 @@
 							%i
 								Pitons or Toucans (beaks)
 					%br
-					%div.Checkbox.NumberIndent.PositionerLeft						
+					%div.Checkbox.NumberIndent.PositionerLeft
 						%input#CheckboxPolicyHolderHikingToolsChocksAndNutsHexes.PositionerLeft{ :type => "checkbox", :name => "CheckboxPolicyHolderHikingTools", :value => "chocksandnutshexes" }
 						%div.BoxRound.PositionerLeft
 						%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderHikingToolsChocksAndNutsHexes" }
@@ -295,22 +296,22 @@
 							%i
 								Stoppers
 					%br
-					
+
 					%section#SectionFooter{ :style => "margin-top: 420px;" }=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 					%header
 						%section#SectionHeader{ :style => "margin-top: 60px; position: relative; top: 60px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-					
+
 					%span.Number.Single.PositionerLeft{ :style => "margin-top: 90px;" } 7.
 					%label.Single.PositionerLeft{ :for => "TextPolicyHolderHikingComplainDetail", :style => "margin-top: 90px;" } Berapakah tinggi/derajat pendakian Anda?
 					%br
 					%div.ContainerFit.NumberIndent
 						%label.Short.Single.Item1.Center Rata-rata tinggi dan derajat
-						%label.Short.Single.Item1.Center 
+						%label.Short.Single.Item1.Center
 						%label.Short.Single.Item1.Center Pencapaian maksimum
-						%label.Short.Single.Item1.Center 
-						%label.Short.Single.Item1.Center 
+						%label.Short.Single.Item1.Center
+						%label.Short.Single.Item1.Center
 					%div.ContainerFit.NumberIndent
-						%label.Short.Single.Item1.Center 
+						%label.Short.Single.Item1.Center
 						%label.Short.Single.Item1.Center Tinggi
 						%label.Short.Single.Item1.Center Derajat
 						%label.Short.Single.Item1.Center Tanggal

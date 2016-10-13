@@ -233,13 +233,13 @@ function getSignatureAttribute()
 			floatMeasurementHeight : $(this).height() 
 		});
 		
-		alert
+		/* alert
 		(
 			"floatOffsetX = " + $(this).offset().left + 
 			", floatOffsetY = " + $(this).offset().top + 
 			", floatMeasurementWidth = " + $(this).width() + 
 			", floatMeasurementHeight = " + $(this).height() 
-		);
+		); */
 	});
 	
 	return arrayObjectSignatureAttribute;
@@ -3265,6 +3265,20 @@ function JSONGenerator(objectContent)
     console.log(JSON.stringify(callInfo));
     
     return callInfo;
+}
+
+function JSONGeneratorForSignatureAttribute(objectContent) 
+{
+    var jsonSignatureAttribute = {};
+    jsonSignatureAttribute.data = {};
+    jsonSignatureAttribute.data.attribute = [];
+
+    for (var i = 0; i < objectContent.length; i++)
+    {
+        jsonSignatureAttribute.data.attribute.push({ elementID : objectContent[i].elementID, Value : objectContent[i].Value, SPAJID : "1", CustomerID : "1" });
+    }
+    
+    return JSON.stringify(jsonSignatureAttribute);
 }
 
 
