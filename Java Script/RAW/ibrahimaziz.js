@@ -242,7 +242,9 @@ function getSignatureAttribute()
 		); */
 	});
 	
-	return arrayObjectSignatureAttribute;
+	// calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
+
+	return JSONGeneratorForSignatureAttribute(arrayObjectSignatureAttribute);
 }
 
 function tableHealthGenerator(stringTableID, intRow)
@@ -3267,7 +3269,7 @@ function JSONGenerator(objectContent)
     return callInfo;
 }
 
-function JSONGeneratorForSignatureAttribute(objectContent) 
+function JSONGeneratorForSignatureAttribute(objectContent)
 {
     var jsonSignatureAttribute = {};
     jsonSignatureAttribute.data = {};
@@ -3275,7 +3277,7 @@ function JSONGeneratorForSignatureAttribute(objectContent)
 
     for (var i = 0; i < objectContent.length; i++)
     {
-        jsonSignatureAttribute.data.attribute.push({ elementID : objectContent[i].elementID, Value : objectContent[i].Value, SPAJID : "1", CustomerID : "1" });
+        jsonSignatureAttribute.data.attribute.push({ floatOffsetX : objectContent[i].floatOffsetX, floatOffsetY : objectContent[i].floatOffsetY, floatMeasurementWidth : objectContent[i].floatMeasurementWidth, floatMeasurementHeight : objectContent[i].floatMeasurementHeight });
     }
     
     return JSON.stringify(jsonSignatureAttribute);
