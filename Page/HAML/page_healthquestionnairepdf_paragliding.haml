@@ -81,15 +81,14 @@
 
 				%h1
 
-				-#
-					%div.RadioButton
+				%div.HeaderFieldset
+					%div.RadioButton.PositionerCenter.Center
 						%input#RadioButtonPolicyHolderParaglidingPGTypeGliding.PositionerCenter{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGType", :value => "false" }
 						%div.BoxRound.PositionerCenter
-						%label.Wrap.Single.PositionerCenter{ :for => "RadioButtonPolicyHolderParaglidingPGTypeGliding" } Gliding
+						%label.Single.PositionerCenter{ :for => "RadioButtonPolicyHolderParaglidingPGTypeGliding" } Gliding
 						%div.BoxRound.PositionerCenter
 						%input#RadioButtonPolicyHolderParaglidingPGTypeHanggliding.PositionerCenter{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGType", :value => "true" }
-						%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGTypeHanggliding" } Hang Gliding
-						%div.BoxRound.PositionerCenter
+						%label.Single.PositionerCenter{ :for => "RadioButtonPolicyHolderParaglidingPGTypeHanggliding" } Hang Gliding
 				%br
 
 				%section#SectionNote
@@ -145,11 +144,11 @@
 						%hr
 
 						%span.Number.Single.PositionerLeft 3.
-						%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMember" } Apakah anda bergabung dengan klub atau asosiasi terbang layang ?						
+						%label.Full.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMember" } Apakah anda bergabung dengan klub atau asosiasi terbang layang ?
 						%div.RadioButton.NumberIndent
 							%input#RadioButtonPolicyHolderParaglidingPGClubMemberYes.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGClubMember", :value => "true" }
 							%div.BoxRound.PositionerLeft
-							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMemberYes" } Ya							
+							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMemberYes" } Ya
 							%input#RadioButtonPolicyHolderParaglidingPGClubMemberNo.PositionerLeft{ :type => "radio", :name => "RadioButtonPolicyHolderParaglidingPGClubMember", :value => "false" }
 							%div.BoxRound.PositionerLeft
 							%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderParaglidingPGClubMemberNo" } Tidak
@@ -160,12 +159,12 @@
 							%input#TextPolicyHolderParaglidingPGClubMemberDesc.Full.Single.Item{ :type => "text" }
 						%br
 						%hr
-						
+
 						%section#SectionFooter{ :style => "margin-top: 180px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 						%header
 							%section#SectionHeader{ :style => "margin-top: 50px; position: relative; top: 50px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-						
+
 						%span.Number.Single.PositionerLeft{ :style => "margin-top: 70px;" } 4.
 						%label.Full.Wrap.PositionerLeft{ :for => "TablePolicyHolderDivingHistories", :style => "margin-top: 70px;" } Seberapa sering Anda melakukan terbang layang dan berapa jam terbang Anda?
 						%br
@@ -266,12 +265,12 @@
 						%div.ContainerFit.NumberIndent
 							%input#TextPolicyHolderParaglidingPGOtherImportantInfo.Full.Single{ :type => "text" }
 						%br
-						
+
 						%section#SectionFooter{ :style => "margin-top: 470px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render
 
 						%header
 							%section#SectionHeader{ :style => "margin-top: 30px; position: relative; top: 30px; display: block;"}=Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
-						
+
 					%section#SectionDeclaration
 						= Haml::Engine.new(File.read("fieldset_healthquestionnairepdf_declaration.haml")).render
 

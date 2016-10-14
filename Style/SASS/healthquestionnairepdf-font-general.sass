@@ -202,25 +202,39 @@ main
 				border-left-style: none
 				border-bottom-style: solid
 				border-bottom-width: $box_borderwidth_thin
-			.BoxRound
-				width: $box_size_width
-				height: $box_size_height
-				font-size: $fontsize_form_labelgeneral
-				text-align: center
-				vertical-align: middle
-				border-style: solid
-				border-width: $box_borderwidth_thin
-				background-image: none
-				background-size: contain
-				background-repeat: no-repeat
-				background-position: center
-				display: inline-block
-				+BorderRadius($general_borderradius_thick)
 			p
 				font-size: $fontsize_form_labelgeneral
 		fieldset.WithoutDoubleDot
 			label:after
 				content: ''
+
+.HeaderFieldset
+	label, span
+		font-size: $fontsize_form_labelgeneral
+		vertical-align: middle
+	.RadioButton, .Checkbox
+		label
+			margin-left: $general_space_small
+			margin-right: $general_space_small
+		label:after
+			float: none
+			display: inline-block
+			margin: 0px
+			content: ''
+	.BoxRound
+		width: $box_size_width
+		height: $box_size_height
+		font-size: $fontsize_form_labelgeneral
+		text-align: center
+		vertical-align: middle
+		border-style: solid
+		border-width: $box_borderwidth_thin
+		background-image: none
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		display: inline-block
+		+BorderRadius($general_borderradius_thick)
 
 .QuestionnaireTitle
 	font-size: 1em	!important
