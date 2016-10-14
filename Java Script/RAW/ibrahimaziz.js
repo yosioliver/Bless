@@ -251,6 +251,8 @@ function setSignatureImage(arrayImageSource)
 {
 	$(".SignatureImage").each(function(index)
 	{
+		// alert("arrayImageSource[" + index + "]" + " = " + arrayImageSource[index]);
+		
 		if (arrayImageSource[index] == undefined || arrayImageSource[index] == "" || arrayImageSource == null)
 		{
 
