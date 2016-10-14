@@ -2548,6 +2548,9 @@ function numberGenerator(stringNameInfix, indexRow)
 
 function getFromDatabase(objectContent, stringPageType)
 {
+	alert("read from database");
+	previewArrayObject(objectContent);
+
     for (var i = 0; i < objectContent.length; i++)
     {        
         var stringKey = objectContent[i].elementID;
@@ -3323,7 +3326,8 @@ function setToDatabase(stringPageType)
         arrayValidatePush(objectContent, stringKey, stringValue);
     });
     
-	// previewArrayObject(objectContent);
+    alert("set to database");
+	previewArrayObject(objectContent);
 
     return objectContent;
 }
