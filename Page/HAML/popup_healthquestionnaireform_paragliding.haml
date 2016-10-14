@@ -32,7 +32,7 @@
 		%label.Medium.Single.Item 2. Mohon sebutkan secara rinci lisensi dan/atau sertifikat penerbangan yang Anda miliki.
 		%br
 		%div.ContainerFit
-			%label.Short.Single.Item.Center.Margin Ijin/Sertifikat
+			%label.Short.Single.Item.Center.Margin Lisensi/Sertifikat
 			%label.Short.Single.Item1.Center.Margin Tanggal Diperoleh
 			%label.Short.Single.Item1.Center.Margin Masa Berlaku
 		%div.ContainerFit
@@ -59,12 +59,14 @@
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 3. Apakah Anda bergabung dengan klub atau asosiasi terbang layang?
-		%div.RadioButton.Medium.PositionerRight
+		%div.RadioButton.PositionerRight
 			%input#RadioButtonPGClubMemberNo.PositionerRight{ :type => "radio", :name => "RadioButtonPGClubMember", :value => "false" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonPGClubMemberNo" } Tidak
 			%div.Separator.PositionerRight
 			%input#RadioButtonPGClubMemberYes.PositionerRight{ :type => "radio", :name => "RadioButtonPGClubMember", :value => "true" }
 			%label.RadioButton.PositionerRight{ :for => "RadioButtonPGClubMemberYes" } Ya
+		%br
+		%label.PositionerLeft Jika “Ya”, mohon menjelaskan secara rinci pada kolom di bawah ini.
 		%br
 		%input#TextPGClubMemberDesc.Full.Multi.Item.Margin{ :type =>"text"}
 		%br
@@ -149,3 +151,4 @@
 			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
 			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
 			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal. Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+			%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.

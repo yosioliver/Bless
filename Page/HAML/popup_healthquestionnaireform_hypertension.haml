@@ -15,15 +15,15 @@
 		%br
 		%hr
 		%div.ContainerFit
-			%label#LabelFirstTime.Medium.Single.Item3.Margin 1. a. Kapan pertama kali diketahui menderita tekanan darah tinggi
-			%input#DateFirstTime.Medium.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%label#LabelFirstTime.Long.Single.Item3.Margin 1. a Kapan pertama kali anda mengetahui menderita tekanan darah tinggi?
+			%input#DateFirstTime.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
 		%div.ContainerFit
-			%label.Long.Single.Margin.PositionerRight  b. Berapa tekanan darah saat itu?
-			%label.Wrap.Single.PositionerRight.Margin mmHg
+			%label.Long.Single.Margin.PositionerRight  b. Berapa tekanan darah saat itu?			
 			%input#NumberDiastolic.Short.Single.Margin.PositionerRight{ :type => "number" }
 			%span.Separator.Margin.PositionerRight /
 			%input#NumberSystolic.Short.Single.Margin.PositionerRight{ :type => "number" }
+			%label.Wrap.Single.PositionerRight.Margin mmHg
 		%br
 
 		%label.medium.Single.Item c. Mengapa saat itu dilakukan pemeriksaan tekanan darah?
@@ -47,11 +47,11 @@
 			%label.Full.Single.PositionerLeft Jika "Ya" mohon mengisi kolom di bawah ini.
 		%br
 		%div.ContainerFit
-			%label.Long.Single.PositionerLeft{ :for => "TextDoctorName" } Nama Dokter
+			%label.Long.Single.PositionerLeft{ :for => "TextDoctorName" } Nama lengkap dokter
 			%input#TextHTUPDoctorName.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 		%div.ContainerFit
-			%label.Long.Single.PositionerLeft{ :for => "TextDoctorAddress" } Alamat Dokter
+			%label.Long.Single.PositionerLeft{ :for => "TextDoctorAddress" } Alamat lengkap dokter
 			%input#TextHTUPDoctorAddress.Full.Single.Item.Margin{ :type =>"text" }
 		%br
 
@@ -83,11 +83,12 @@
 		%input#TextRelatedToOtherDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%hr
 		%div.ContainerFit
-			%label#LabelWhenStart.Medium.Single.Item3.Margin 3. a. Kapan Anda memulai pengobatan kenaikan tekanan darah tersebut?
-			%input#DateWhenStart.Medium.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
+			%label#LabelWhenStart.Long.Single.Item3.Margin 3. a. Kapan Anda memulai pengobatan kenaikan tekanan darah tersebut?
+			%input#DateWhenStart.Short.Single.Item1.Margin{ :type => "text", "data-field" => "date" }
 		%br
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item  b. Apakah pernah berhenti minum obat?
+		
+		%label.Medium.Single.Item  b. Apakah Anda pernah berhenti minum obat?
+		%div.RadioButton.PositionerRight			
 			%input#RadioButtonStopDrugYes{ :type => "radio", :name => "RadioButtonStopDrug", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonStopDrugYes" } Ya
 			%div.Separator
@@ -98,8 +99,9 @@
 		%br
 		%input#TextStopDrugIfYesDesc.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
-		%div.RadioButton.PositionerLeft
-			%label.medium.Single.Item  c. Apakah saat ini masih dalam pengobatan?
+		
+		%label.Medium.Single.Item  c. Apakah saat ini masih dalam pengobatan?
+		%div.RadioButton.PositionerRight		
 			%input#RadioButtonInTherapyYes{ :type => "radio", :name => "RadioButtonInTherapy", :value => "true" }
 			%label.RadioButton{ :for => "RadioButtonInTherapyYes" } Ya
 			%div.Separator
@@ -287,3 +289,4 @@
 			%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
 			%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
 			%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+			%li Apabila informasi tersebut yang Saya/Kami berikan tidak benar, maka Penanggung berhak membatalkan Polis Saya/Kami sejak awal.
