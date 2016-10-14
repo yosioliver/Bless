@@ -233,16 +233,35 @@ function getSignatureAttribute()
 			floatMeasurementHeight : $(this).height() 
 		});
 		
-		alert
+		/* alert
 		(
 			"floatOffsetX = " + $(this).offset().left + 
 			", floatOffsetY = " + $(this).offset().top + 
 			", floatMeasurementWidth = " + $(this).width() + 
 			", floatMeasurementHeight = " + $(this).height() 
-		);
+		); */
 	});
 	
-	return arrayObjectSignatureAttribute;
+	// calliOSFunction('savetoDB:',onSuccess,onError, jsonToDatabase);
+
+	return JSONGeneratorForSignatureAttribute(arrayObjectSignatureAttribute);
+}
+
+function setSignatureImage(arrayImageSource)
+{
+	$(".SignatureImage").each(function(index)
+	{
+		// alert("arrayImageSource[" + index + "]" + " = " + arrayImageSource[index]);
+		
+		if (arrayImageSource[index] == undefined || arrayImageSource[index] == "" || arrayImageSource == null)
+		{
+
+		}
+		else
+		{
+			$(this).attr("src", arrayImageSource[index]);			
+		}
+	});
 }
 
 function tableHealthGenerator(stringTableID, intRow)
@@ -1915,9 +1934,13 @@ function validationMessage(stringMessageNegative, stringMessagePositive)
 
 function validatePush(objectContent, stringKey, stringValue)
 {
-    if (stringValue == undefined | stringValue == "")
+    if (stringValue == undefined | stringValue == null)
     {
         
+    }
+    else if (stringValue == "")
+    {
+    	arrayDelete(objectContent, stringKey);
     }
     else
     {
@@ -3265,6 +3288,20 @@ function JSONGenerator(objectContent)
     console.log(JSON.stringify(callInfo));
     
     return callInfo;
+}
+
+function JSONGeneratorForSignatureAttribute(objectContent)
+{
+    var jsonSignatureAttribute = {};
+    jsonSignatureAttribute.data = {};
+    jsonSignatureAttribute.data.attribute = [];
+
+    for (var i = 0; i < objectContent.length; i++)
+    {
+        jsonSignatureAttribute.data.attribute.push({ floatOffsetX : objectContent[i].floatOffsetX, floatOffsetY : objectContent[i].floatOffsetY, floatMeasurementWidth : objectContent[i].floatMeasurementWidth, floatMeasurementHeight : objectContent[i].floatMeasurementHeight });
+    }
+    
+    return JSON.stringify(jsonSignatureAttribute);
 }
 
 

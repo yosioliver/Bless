@@ -287,8 +287,7 @@ div.TableItem
 	border-style: solid
 	border-width: $general_borderwidth_thin
 	img
-		min-height: 160px
-		display: block
+		min-height: $signature_height_medium
 	span.Name, span.Description
 		position: relative
 		display: block
@@ -348,6 +347,13 @@ table.SignatureMedium
 			td
 				font-size: $fontsize_signaturemedium_detail
 				text-align: center
+
+.SignatureImage
+	width: 100%
+	height: $signature_height_medium
+	background-position: center
+	background-size: contain
+	background-repeat: no-repeat
 
 
 /* TABLE */
