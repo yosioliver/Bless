@@ -247,6 +247,21 @@ function getSignatureAttribute()
 	return JSONGeneratorForSignatureAttribute(arrayObjectSignatureAttribute);
 }
 
+function setSignatureImage(arrayImageSource)
+{
+	$(".SignatureImage").each(function(index)
+	{
+		if (arrayImageSource[index] == undefined || arrayImageSource[index] == "" || arrayImageSource == null)
+		{
+
+		}
+		else
+		{
+			$(this).attr("src", arrayImageSource[index]);			
+		}
+	});
+}
+
 function tableHealthGenerator(stringTableID, intRow)
 {
 	var stringInfixName = stringTableID.substring(stringTablePrefix.length, stringTableID.length);
@@ -1917,9 +1932,13 @@ function validationMessage(stringMessageNegative, stringMessagePositive)
 
 function validatePush(objectContent, stringKey, stringValue)
 {
-    if (stringValue == undefined | stringValue == "")
+    if (stringValue == undefined | stringValue == null)
     {
         
+    }
+    else if (stringValue == "")
+    {
+    	arrayDelete(objectContent, stringKey);
     }
     else
     {
