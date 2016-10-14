@@ -344,14 +344,14 @@ function savetoDB()
 			var stringWeightChangeJQueryID = stringKres + stringWeightChangeJavaScriptID;
 			var stringWeightChangeValue = getRadioButtonGeneral(stringWeightChangeJavaScriptID);
 
-			setHardCode(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
-			setHardCode(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
-			setHardCode(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
-			setHardCode(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
-			setHardCode(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
-			setHardCode(arrayHealthQuestionnaire, stringPregnantJavaScriptID, stringPregnantValue);
-			setHardCode(arrayHealthQuestionnaire, stringPregnancyJavaScriptID, stringPregnancyValue);
-			setHardCode(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringHeightJavaScriptID, stringHeightValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringWeightJavaScriptID, stringWeightValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringBabyHeightJavaScriptID, stringBabyHeightValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringBabyWeightJavaScriptID, stringBabyWeightValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringPregnantWeekJavaScriptID, stringPregnantWeekValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringPregnantJavaScriptID, stringPregnantValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringPregnancyJavaScriptID, stringPregnancyValue);
+			arrayValidatePush(arrayHealthQuestionnaire, stringWeightChangeJavaScriptID, stringWeightChangeValue);
 
 			objectContent = arrayHealthQuestionnaire;
 		}
