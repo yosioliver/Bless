@@ -252,7 +252,7 @@ function setSignatureImage(arrayImageSource)
 	$(".SignatureImage").each(function(index)
 	{
 		// alert("arrayImageSource[" + index + "]" + " = " + arrayImageSource[index]);
-		
+
 		if (arrayImageSource[index] == undefined || arrayImageSource[index] == "" || arrayImageSource == null)
 		{
 
@@ -884,24 +884,13 @@ function additionalQuestionGenerator()
     });
 }
 
-function setHardCode(arrayContent, stringKey, stringValue)
-{
-	if (stringValue == null || stringValue == undefined || stringValue == "")
-	{
-		
-	}
-	else
-	{
-		arrayAdd(arrayContent, stringKey, stringValue);
-	}
-}
-
 
 // ARRAY ACTION
 
 function arrayAdd(arrayObject, stringKey, stringValue)
 {
     var booleanPushState = true;
+    var booleanDeleteState = false;
     
     if (arrayObject.length > 0)
     {
@@ -909,7 +898,15 @@ function arrayAdd(arrayObject, stringKey, stringValue)
         {
             if (arrayObject[i].elementID == stringKey)
             {
-                arrayObject[i].Value = stringValue;
+            	if (stringValue == "")
+            	{
+            		booleanDeleteState = true;
+            	}
+            	else
+            	{
+        			arrayObject[i].Value = stringValue;
+                }
+
                 booleanPushState = false;
             }
             else
@@ -921,6 +918,15 @@ function arrayAdd(arrayObject, stringKey, stringValue)
         if (booleanPushState == true)
         {
             arrayObject.push({ elementID: stringKey, Value: stringValue });
+        }
+        else
+        {
+
+        }
+
+        if (booleanDeleteState == true)
+        {
+            arrayDelete(objectContent, stringKey);
         }
         else
         {
@@ -991,10 +997,59 @@ function arrayOptionFind(arrayObject, stringKey)
 
 function arrayTransfer(arrayTemporary, arrayContent)
 {
+	alert("array temporary");
+	previewArrayObject(arrayTemporary);
+
+	var stringTemporaryKey;
+	var stringTemporaryValue;
+	var stringContentKey;
+	var stringContentValue;
+	var booleanAddState = true;
+	var booleanDeleteState = false;
+
 	for (var i = 0; i < arrayTemporary.length; i++)
 	{
-		arrayAdd(arrayContent, arrayTemporary[i].elementID, arrayTemporary[i].Value);
+		stringTemporaryKey = arrayTemporary[i].elementID;
+		stringTemporaryValue = arrayTemporary[i].Value;
+
+		for (var j = 0; j < arrayContent.length; j++)
+		{
+			stringContentKey = arrayContent[j].elementID;
+			stringContentValue = arrayContent[j].Value;
+
+			if (stringTemporaryKey == stringContentKey)
+			{
+				if (stringTemporaryValue == "")
+				{
+					arrayDelete(arrayContent, stringContentKey);
+					booleanAddState = false;
+					j = arrayContent.length;
+				}
+				else
+				{
+					
+				}
+
+				
+			}
+			else
+			{
+				
+			}
+		}
+		
+		if (booleanAddState == true)
+		{
+			arrayValidatePush(arrayContent, stringTemporaryKey, stringTemporaryValue);
+		}
+		else
+		{
+
+		}
 	}
+
+	alert("array content");
+	previewArrayObject(arrayContent);
 }
 
 // POP UP SETTER
@@ -1932,33 +1987,32 @@ function validationMessage(stringMessageNegative, stringMessagePositive)
     }
 }
 
-function validatePush(objectContent, stringKey, stringValue)
+function arrayEmptyPush(objectContent, stringKey, stringValue)
 {
-    if (stringValue == undefined | stringValue == null)
+    if (stringValue == undefined || stringValue == null)
     {
         
     }
-    else if (stringValue == "")
-    {
-    	arrayDelete(objectContent, stringKey);
-    }
     else
     {
-        objectContent.push({ elementID: stringKey, Value: stringValue });
+        // objectContent.push({ elementID: stringKey, Value: stringValue });
+        arrayAdd(objectContent, stringKey, stringValue);
     }
 }
 
 function arrayValidatePush(objectContent, stringKey, stringValue)
 {
-    if (stringValue == undefined || stringValue == "" || stringValue === null)
+    if (stringValue == undefined || stringValue == null || stringValue == "")
     {
         
     }
     else
     {
+        // objectContent.push({ elementID: stringKey, Value: stringValue });
         arrayAdd(objectContent, stringKey, stringValue);
     }
 }
+
 
 function validateTextGeneral(stringInputJQueryID)
 {
@@ -3175,7 +3229,7 @@ function setToDatabase(stringPageType)
             stringValue = getTextForm(stringKey);
         }
 
-        validatePush(objectContent, stringKey, stringValue);
+        arrayValidatePush(objectContent, stringKey, stringValue);
     });
     
     $("input[type=checkbox]").each(function()
@@ -3201,7 +3255,7 @@ function setToDatabase(stringPageType)
             stringValue = getDateForm(stringKey);
         }
 
-        validatePush(objectContent, stringKey, stringValue);
+        arrayValidatePush(objectContent, stringKey, stringValue);
     });
     
     $("input[type=radio]").each(function()
@@ -3231,7 +3285,7 @@ function setToDatabase(stringPageType)
         {
             stringValue = getRadioButtonGeneral(stringKey);
 
-            validatePush(objectContent, stringKey, stringValue);
+            arrayValidatePush(objectContent, stringKey, stringValue);
         }
     });
     
@@ -3249,7 +3303,7 @@ function setToDatabase(stringPageType)
             stringValue = getSelectForm(stringKey);
         }
         
-        validatePush(objectContent, stringKey, stringValue);
+        arrayValidatePush(objectContent, stringKey, stringValue);
     });
     
     $("textarea").each(function()
@@ -3266,7 +3320,7 @@ function setToDatabase(stringPageType)
             stringValue = getAreaForm(stringKey);
         }
         
-        validatePush(objectContent, stringKey, stringValue);
+        arrayValidatePush(objectContent, stringKey, stringValue);
     });
     
 	// previewArrayObject(objectContent);
