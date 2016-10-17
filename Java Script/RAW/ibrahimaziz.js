@@ -997,9 +997,6 @@ function arrayOptionFind(arrayObject, stringKey)
 
 function arrayTransfer(arrayTemporary, arrayContent)
 {
-	alert("array temporary");
-	previewArrayObject(arrayTemporary);
-
 	var stringTemporaryKey;
 	var stringTemporaryValue;
 	var stringContentKey;
@@ -1047,9 +1044,6 @@ function arrayTransfer(arrayTemporary, arrayContent)
 
 		}
 	}
-
-	alert("array content");
-	previewArrayObject(arrayContent);
 }
 
 // POP UP SETTER
@@ -2548,8 +2542,8 @@ function numberGenerator(stringNameInfix, indexRow)
 
 function getFromDatabase(objectContent, stringPageType)
 {
-	alert("read from database");
-	previewArrayObject(objectContent);
+	// alert("get from database");
+	// previewArrayObject(objectContent);
 
     for (var i = 0; i < objectContent.length; i++)
     {        
@@ -3326,8 +3320,8 @@ function setToDatabase(stringPageType)
         arrayValidatePush(objectContent, stringKey, stringValue);
     });
     
-    alert("set to database");
-	previewArrayObject(objectContent);
+    // alert("set to database");
+	// previewArrayObject(objectContent);
 
     return objectContent;
 }
@@ -3399,7 +3393,8 @@ function calculateAge(stringBirthdayID, stringAgeID)
 
 			if( (dateBirthday.getTime() > dateToday.getTime()))
 			{
-				alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+				// alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+				ReplaceHTMLNameOnValidate("","Tanggal lahir tidak bisa lebih dari hari ini !.");
 				$(stringBirthdayJQueryID).val("");
 			}
 			else
@@ -3663,7 +3658,8 @@ function validateEmail(stringInputJavaScriptID)
 		}
 		else
 		{
-			alert("Format validasi email salah !.");
+			// alert("Format validasi email salah !.");
+			ReplaceHTMLNameOnValidate("","Format validasi email salah !.");
 		}
 	});
 }
@@ -3682,7 +3678,8 @@ function validateDateNotExceedToday(stringInputJavaScriptID)
 
 			if((dateBirthday.getTime() > dateToday.getTime()))
 			{
-				alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+				// alert("Tanggal lahir tidak bisa lebih dari hari ini !.");
+				ReplaceHTMLNameOnValidate("","Format validasi email salah !.");
 			}
 			else
 			{

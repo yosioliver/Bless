@@ -89,8 +89,8 @@ function onSuccess (ret)
         if (stringType == "readFromDB")
         {
             getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
-            alert("readfromdb");
-            previewArrayObject(objectContent.result.readFromDB);
+            // alert("readfromdb");
+            // previewArrayObject(objectContent.result.readFromDB);
         }
         else
         {
@@ -364,8 +364,8 @@ function savetoDB()
 		else
 		{
 			objectContent = setToDatabase(stringPageTypeCurrent);
-			alert("savetodb");
-			previewArrayObject(objectContent);
+			// alert("savetodb");
+			// previewArrayObject(objectContent);
 		}
 
 		var jsonToDatabase = JSONGenerator(objectContent);
@@ -391,8 +391,8 @@ function AutoPopulate(jsonObject)
     if (stringType == "autopopulateFromDB")
     {
         getFromDatabase(objectContent.result.autopopulateFromDB, stringPageTypeCurrent);
-        alert("autopopulate");
-        previewArrayObject(objectContent.result.autopopulateFromDB);              
+        // alert("autopopulate");
+        // previewArrayObject(objectContent.result.autopopulateFromDB);              
     }
     else
     {
