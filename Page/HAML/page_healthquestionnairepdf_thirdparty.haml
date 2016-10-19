@@ -345,6 +345,10 @@
 						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipOther" } Lainnya, sebutkan
 						%input#TextThirdPartyBeneficiaryRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
 					%br
+					
+					%section#SectionFooter{ :style => "margin-top: 110px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
+					%br
+					
 					%p.NumberIndent Bila Jawaban Anda "Ya" pada salah satu atau lebih pertanyaan diatas, mohon isi dan lengkapi data di bawah ini
 
 				%h2.Plain C. Data Calon Pihak Ketiga Perorangan
@@ -492,9 +496,7 @@
 
 					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyMainJob" } Pekerjaan Utama
 					%table#TextThirdPartyMainJob.BoxSquare.PositionerLeft
-					%br
-					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
-					%br
+					%br										
 
 					%label.Medium.NumberIndent.Single.PositionerLeft{ :for => "TextThirdPartyWorkScope" } Bidang Usaha
 					%table#TextThirdPartyWorkScope.BoxSquare.PositionerLeft
@@ -566,7 +568,10 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceOfficeAddress" } Alamat Kantor
 					%br
-
+					
+					%section#SectionFooter{ :style => "margin-top: 60px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
+					%br
+					
 					%span.Number.Plain.Single.PositionerLeft 17.
 					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredSelf" } Hubungan dengan Calon Tertangung
 					%div.RadioButton.PositionerLeft
@@ -840,6 +845,8 @@
 						%input#RadioButtonThirdPartyCompanyRevenue5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "10miliar" }
 						%div#RadioButtonThirdPartyCompanyRevenue5.BoxRound.PositionerLeft
 						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue5" } >100 Miliar
+					%br					
+					%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 13.
@@ -874,10 +881,7 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "CheckboxThirdPartyCompanyInsurancePurposeOther" } Lainnya, sebutkan
 						%div#TextThirdPartyNonPersonInsurancePurposeOther.LineDot.PositionerLeft
-					%br
-
-				%section#SectionFooter=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
-				%br
+					%br				
 
 				%h2.Plain E. Dokumen yang Wajib Dilampirkan
 
