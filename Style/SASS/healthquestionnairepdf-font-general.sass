@@ -105,6 +105,20 @@ main
 					display: inline-block
 					margin: 0px
 					content: ''
+			.BoxRound
+				width: $box_size_width
+				height: $box_size_height
+				font-size: $fontsize_form_labelgeneral
+				text-align: center
+				vertical-align: middle
+				border-style: solid
+				border-width: $box_borderwidth_thin
+				background-image: none
+				background-size: contain
+				background-repeat: no-repeat
+				background-position: center
+				display: inline-block
+				+BorderRadius($general_borderradius_thick)
 			label.Wrap, span.Wrap
 				width: auto;
 				min-height: $label_height_single
