@@ -58,6 +58,7 @@
       var stringPageSectionCurrent = stringPageSectionForm;
       var stringPageValidationCurrent = 0;
       var booleanInputChangeState = "false";
+      var stringThirdpartyAnswerValue;
       // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
       
       function showFormThirdParty()
@@ -67,6 +68,15 @@
       	var callInfo = {};
       	callInfo.data = {};
       	calliOSFunction('showFormThirdParty:',onSuccess,onError, callInfo);
+      }
+      
+      function deleteFormThirdParty()
+      {
+      	// window.location = 'ios:deleteFormThirdParty';
+      
+      	var callInfo = {};
+      	callInfo.data = {};
+      	calliOSFunction('deleteFormThirdParty:',onSuccess,onError, callInfo);
       }
       
       
@@ -93,11 +103,11 @@
       		if (stringValue == "true")
       		{
       			showFormThirdParty();
-      
       			$("#ButtonPreviewPremiPaymentThirdParty").css("display", "block");
       		}
       		else
       		{
+      			deleteFormThirdParty();
       			$("#ButtonPreviewPremiPaymentThirdParty").css("display", "none");
       		}
       	});
