@@ -3743,29 +3743,26 @@ function goToChangePageAlert(stringLinkJavaScriptID, URLPage, stringRelationship
 {
 	var stringLinkJQueryID = stringKres + stringLinkJavaScriptID;
 
-	$(stringLinkJQueryID).click(function()
+	if (booleanInputChangeState == "true")
 	{
-		if (booleanInputChangeState == "true")
+		alertSaveRecentInput();
+	}
+	else
+	{
+		if (stringLinkJavaScriptID == "LinkProspectiveInsured")
 		{
-			alertSaveRecentInput();
-		}
-		else
-		{
-			if (stringLinkJavaScriptID == "LinkProspectiveInsured")
+			if (stringRelationshipStatus == "self")
 			{
-				if (stringRelationshipStatus == "self")
-				{
 
-				}
-				else
-				{
-					window.location.replace(URLPage);
-				}
 			}
 			else
 			{
 				window.location.replace(URLPage);
 			}
 		}
-	});
+		else
+		{
+			window.location.replace(URLPage);
+		}
+	}
 }
