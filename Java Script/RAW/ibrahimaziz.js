@@ -3739,14 +3739,33 @@ function alertSaveRecentInput()
 	calliOSFunction('alertSaveRecentInput:',onSuccess,onError, callInfo);
 }
 
-function goToChangePageAlert(URLPage)
+function goToChangePageAlert(stringLinkJavaScriptID, URLPage, stringRelationshipStatus)
 {
-	if (booleanInputChangeState == "true")
+	var stringLinkJQueryID = stringKres + stringLinkJavaScriptID;
+
+	$(stringLinkJQueryID).click(function()
 	{
-		alertSaveRecentInput();
-	}
-	else
-	{
-		window.location.replace(URLPage);
-	}
+		if (booleanInputChangeState == "true")
+		{
+			alertSaveRecentInput();
+		}
+		else
+		{
+			if (stringLinkJavaScriptID == "LinkProspectiveInsured")
+			{
+				if (stringRelationshipStatus == "self")
+				{
+
+				}
+				else
+				{
+					window.location.replace(URLPage);
+				}
+			}
+			else
+			{
+				window.location.replace(URLPage);
+			}
+		}
+	});
 }
