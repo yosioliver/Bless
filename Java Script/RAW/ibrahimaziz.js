@@ -3747,7 +3747,16 @@ function goToChangePageAlert(stringLinkJavaScriptID, URLPage, stringRelationship
 	if (booleanInputChangeState == "true")
 	{
 		alert("alert - input change state true");
-		alertSaveRecentInput();
+
+		if (stringRelationshipStatus == "self")
+		{
+			alert("relationship status : " + "self");
+		}
+		else
+		{
+			alert("relationship status : " + "not self");
+			alertSaveRecentInput();
+		}
 	}
 	else
 	{
