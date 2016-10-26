@@ -344,13 +344,14 @@
 						%div.BoxRound.PositionerLeft
 						%label.Single.Short.PositionerLeft{ :for => "RadioButtonThirdPartyBeneficiaryRelationshipOther" } Lainnya, sebutkan
 						%input#TextThirdPartyBeneficiaryRelationshipOther.Medium.Single.PositionerLeft{ :type => "text" }
-					%br
-					
-					%section#SectionFooter{ :style => "margin-top: 100px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
-					%br
+					%br										
 					
 					%p.NumberIndent Bila Jawaban Anda "Ya" pada salah satu atau lebih pertanyaan diatas, mohon isi dan lengkapi data di bawah ini
-
+				
+				%section#SectionFooter{ :style => "margin-top: 70px; height: 100px;"}
+					=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
+				%br
+				
 				%h2.Plain C. Data Calon Pihak Ketiga Perorangan
 
 				%fieldset
@@ -518,10 +519,7 @@
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHomeAddress" } Alamat Tempat Tinggal
 					%table#TextThirdPartyHomeAddress.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Kelurahan & Kecamatan)
-					
-					%section#SectionFooter{ :style => "margin-top: 210px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
-					%br
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Kelurahan & Kecamatan)										
 					
 					%table#TextThirdPartyHomeAddress2nd.BoxSquare.PositionerLeft{ :style => "margin-top: 60px;" }
 					%br
@@ -560,8 +558,12 @@
 					%table#TextThirdPartyOfficeCity.BoxSquare.PositionerLeft
 					%label#LabelThirdPartyOfficePostalCode.Separator.Single.PositionerLeft{ :for => "TextThirdPartyHomePostalCode" } Kode Pos
 					%table#TextThirdPartyOfficePostalCode.BoxSquare.PositionerLeft
+					%br									
+					
+					%section#SectionFooter{ :style => "margin-top: -60px; height: 100px;"}
+					=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
 					%br
-
+					
 					%span.Number.Plain.Single.PositionerLeft 16.
 					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceHomeAddress" } Alamat Korespondensi
 					%div.RadioButton.PositionerLeft
@@ -571,7 +573,7 @@
 						%input#RadioButtonThirdPartyCorrespondanceOfficeAddress{ :type => "radio", :name => "RadioButtonThirdPartyCorrespondanceAddress", :value => "office" }
 						%div.BoxRound.PositionerLeft
 						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceOfficeAddress" } Alamat Kantor
-					%br										
+					%br																				
 					
 					%span.Number.Plain.Single.PositionerLeft 17.
 					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyRelationAssuredSelf" } Hubungan dengan Calon Tertangung
@@ -689,12 +691,9 @@
 					%span.Number.Plain.Single.PositionerLeft 2.
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyDirectorName" } Nama Direktur/ Penerima Kuasa
 					%table#TextThirdPartyCompanyDirectorName.BoxSquare.PositionerLeft
-					%br
+					%br										
 					
-					%section#SectionFooter{ :style => "margin-top: 70px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
-					%br
-					
-					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextThirdPartyCompanyDirectorName2nd", :style => "margin-top: 60px;" } / Yang Ditunjuk
+					%label.Medium.Single.NumberIndent.PositionerLeft{ :for => "TextThirdPartyCompanyDirectorName2nd" } / Yang Ditunjuk
 					%table#TextThirdPartyCompanyDirectorName2nd.BoxSquare.PositionerLeft
 					%br					
 					
@@ -793,8 +792,8 @@
 					%span.Number.Plain.Single.PositionerLeft 9.
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanySector" } Bidang Usaha
 					%table#TextThirdPartyCompanySector.BoxSquare.PositionerLeft
-					%br
-
+					%br										
+					
 					%span.Number.Plain.Single.PositionerLeft 10.
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyCompanyAddress" } Alamat Perusahaan (sesuai SKDP)
 					%table#TextThirdPartyCompanyAddress.BoxSquare.PositionerLeft
@@ -805,8 +804,12 @@
 					%table#TextThirdPartyCompanyCity.BoxSquare.PositionerLeft
 					%label#LabelThirdPartyCompanyPostalCode.Box.Single.PositionerLeft{ :for => "TextThirdPartyCompanyPostalCode" } Kode Pos
 					%table#TextThirdPartyCompanyPostalCode.BoxSquare.PositionerLeft
+					%br										
+					
+					%section#SectionFooter{ :style => "margin-top: -70px; height: 100px;"}
+					=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
 					%br
-
+					
 					%span.Number.Plain.Single.PositionerLeft 11.
 					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset1" } Aset Perusahaan (Rp)
 					%div.RadioButton
@@ -825,8 +828,8 @@
 						%input#RadioButtonThirdPartyCompanyAsset5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100miliarlebih" }
 						%div#RadioButtonThirdPartyCompanyAsset5.BoxRound.PositionerLeft
 						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset5" } >100 Miliar
-					%br
-
+					%br										
+					
 					%span.Number.Plain.Single.PositionerLeft 12.
 					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue1" } Jumlah Penghasilan (Rp)
 					%div.RadioButton
@@ -849,8 +852,8 @@
 						%input#RadioButtonThirdPartyCompanyRevenue5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyRevenue", :value => "10miliar" }
 						%div#RadioButtonThirdPartyCompanyRevenue5.BoxRound.PositionerLeft
 						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRevenue5" } >100 Miliar
-					%br					
-
+					%br																				
+					
 					%span.Number.Plain.Single.PositionerLeft 13.
 					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyRelationAssuredSelf" } Hubungan dengan Calon Tertangung
 					%div.RadioButton.PositionerLeft
@@ -906,10 +909,7 @@
 								%li Anggaran dasar terakhir yang menjelaskan data jumlah modal, susunan pemegang saham, direksi dan komisaris terakhir.
 								%li Surat keterangan Domisili.
 								%li Laporan Keuangan Terkini.
-								%li Fotokopi Surat Ijin Usaha, NPWP Perusahaan.
-				
-				%section#SectionFooter{ :style => "margin-top: 70px; "}=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
-				%br
+								%li Fotokopi Surat Ijin Usaha, NPWP Perusahaan.								
 				
 				%h2.Plain Data Rekening Bank Pihak Ketiga
 
