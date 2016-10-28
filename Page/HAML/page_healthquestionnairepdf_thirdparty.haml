@@ -151,7 +151,7 @@
 
 				// SETUP
 
-				footerSetterForHealthQuestionnairePDF("OP/UW/0203121501", 5);
+				footerSetterForHealthQuestionnairePDF("OP/UW/0203121501", 4);
 				titleSetterForHealthQuestionnairePDF("Formulir Pihak Ketiga");
 
 
@@ -519,9 +519,8 @@
 					%label.Medium.Single.PositionerLeft{ :for => "TextThirdPartyHomeAddress" } Alamat Tempat Tinggal
 					%table#TextThirdPartyHomeAddress.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Kelurahan & Kecamatan)										
-					
-					%table#TextThirdPartyHomeAddress2nd.BoxSquare.PositionerLeft{ :style => "margin-top: 60px;" }
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu identitas diri diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Kelurahan & Kecamatan)				
+					%table#TextThirdPartyHomeAddress2nd.BoxSquare.PositionerLeft
 					%br
 					%label#LabelThirdPartyHomeCity.Separator.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextThirdPartyHomeCity" } Kota
 					%table#TextThirdPartyHomeCity.BoxSquare.PositionerLeft
@@ -560,19 +559,19 @@
 					%table#TextThirdPartyOfficePostalCode.BoxSquare.PositionerLeft
 					%br									
 					
-					%section#SectionFooter{ :style => "margin-top: -60px; height: 100px;"}
+					%section#SectionFooter{ :style => "margin-top: -20px; height: 100px;"}
 					=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
 					%br
 					
-					%span.Number.Plain.Single.PositionerLeft 16.
-					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceHomeAddress" } Alamat Korespondensi
+					%span.Number.Plain.Single.PositionerLeft{ :style => "margin-top: 60px;" } 16.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceHomeAddress", :style => "margin-top: 60px;" } Alamat Korespondensi
 					%div.RadioButton.PositionerLeft
-						%input#RadioButtonThirdPartyCorrespondanceHomeAddress{ :type => "radio", :name => "RadioButtonThirdPartyCorrespondanceAddress", :value => "home" }
-						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceHomeAddress" } Alamat Tempat Tinggal
-						%input#RadioButtonThirdPartyCorrespondanceOfficeAddress{ :type => "radio", :name => "RadioButtonThirdPartyCorrespondanceAddress", :value => "office" }
-						%div.BoxRound.PositionerLeft
-						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceOfficeAddress" } Alamat Kantor
+						%input#RadioButtonThirdPartyCorrespondanceHomeAddress{ :type => "radio", :name => "RadioButtonThirdPartyCorrespondanceAddress", :value => "home", :style => "margin-top: 60px;" }
+						%div.BoxRound.PositionerLeft{ :style => "margin-top: 60px;" }
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceHomeAddress", :style => "margin-top: 60px;" } Alamat Tempat Tinggal
+						%input#RadioButtonThirdPartyCorrespondanceOfficeAddress{ :type => "radio", :name => "RadioButtonThirdPartyCorrespondanceAddress", :value => "office", :style => "margin-top: 60px;" }
+						%div.BoxRound.PositionerLeft{:style => "margin-top: 60px;"  }
+						%label.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCorrespondanceOfficeAddress", :style => "margin-top: 60px;" } Alamat Kantor
 					%br																				
 					
 					%span.Number.Plain.Single.PositionerLeft 17.
@@ -806,28 +805,28 @@
 					%table#TextThirdPartyCompanyPostalCode.BoxSquare.PositionerLeft
 					%br										
 					
-					%section#SectionFooter{ :style => "margin-top: -70px; height: 100px;"}
+					%section#SectionFooter{ :style => "margin-top: -100px; height: 100px;"}
 					=Haml::Engine.new(File.read("footer_healthquestionnairepdf_thirdparty.haml")).render
 					%br
 					
-					%span.Number.Plain.Single.PositionerLeft 11.
-					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset1" } Aset Perusahaan (Rp)
+					%span.Number.Plain.Single.PositionerLeft{ :style => "margin-top: 60px;" } 11.
+					%label.Medium.Single.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset1", :style => "margin-top: 60px;" } Aset Perusahaan (Rp)
 					%div.RadioButton
-						%input#RadioButtonThirdPartyCompanyAsset1{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100juta" }
-						%div#RadioButtonThirdPartyCompanyAsset1.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset1" } <100 Juta
-						%input#RadioButtonThirdPartyCompanyAsset2{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100juta1miliar" }
-						%div#RadioButtonThirdPartyCompanyAsset2.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset2" } 100 Juta - 1 Miliar
-						%input#RadioButtonThirdPartyCompanyAsset3{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "1miliar10miliar" }
-						%div#RadioButtonThirdPartyCompanyAsset3.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset3" } >1 Miliar - 10 Miliar
-						%input#RadioButtonThirdPartyCompanyAsset4{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "10miliar100miliar" }
-						%div#RadioButtonThirdPartyCompanyAsset4.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset4" } >10 Miliar - 100 Miliar
-						%input#RadioButtonThirdPartyCompanyAsset5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100miliarlebih" }
-						%div#RadioButtonThirdPartyCompanyAsset5.BoxRound.PositionerLeft
-						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset5" } >100 Miliar
+						%input#RadioButtonThirdPartyCompanyAsset1{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100juta", :style => "margin-top: 60px;" }
+						%div#RadioButtonThirdPartyCompanyAsset1.BoxRound.PositionerLeft{ :style => "margin-top: 60px;" }
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset1", :style => "margin-top: 60px;" } <100 Juta
+						%input#RadioButtonThirdPartyCompanyAsset2{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100juta1miliar", :style => "margin-top: 60px;" }
+						%div#RadioButtonThirdPartyCompanyAsset2.BoxRound.PositionerLeft{ :style => "margin-top: 60px;" }
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset2", :style => "margin-top: 60px;" } 100 Juta - 1 Miliar
+						%input#RadioButtonThirdPartyCompanyAsset3{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "1miliar10miliar", :style => "margin-top: 60px;" }
+						%div#RadioButtonThirdPartyCompanyAsset3.BoxRound.PositionerLeft{ :style => "margin-top: 60px;" }
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset3", :style => "margin-top: 60px;" } >1 Miliar - 10 Miliar
+						%input#RadioButtonThirdPartyCompanyAsset4{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "10miliar100miliar", :style => "margin-top: 60px;" }
+						%div#RadioButtonThirdPartyCompanyAsset4.BoxRound.PositionerLeft{ :style => "margin-top: 60px;" }
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset4", :style => "margin-top: 60px;" } >10 Miliar - 100 Miliar
+						%input#RadioButtonThirdPartyCompanyAsset5{ :type => "radio", :name => "RadioButtonThirdPartyCompanyAsset", :value => "100miliarlebih", :style => "margin-top: 60px;" }
+						%div#RadioButtonThirdPartyCompanyAsset5.BoxRound.PositionerLeft{ :style => "margin-top: 60px;" }
+						%label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonThirdPartyCompanyAsset5", :style => "margin-top: 60px;" } >100 Miliar
 					%br										
 					
 					%span.Number.Plain.Single.PositionerLeft 12.
