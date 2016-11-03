@@ -2656,7 +2656,6 @@ function getFromDatabase(objectContent, stringPageType)
 							{
 								if (j == 1)
 								{
-									alert(stringCellSuffix.substring(stringCellSuffix.length - arrayHealthTableHeader[j].length, stringCellSuffix.length) + "==" + arrayHealthTableHeader[j])
 									var stringDate = stringValue.split(stringSeparatorDate);
 									var stringDay = stringDate[0];
 									var stringMonth = stringDate[1];
@@ -2856,11 +2855,11 @@ function getFromDatabase(objectContent, stringPageType)
 								{
 									if (stringValue == "female")
 									{
-										$(stringCellJQueryID).append("Wanita");
+										$(stringCellJQueryID).append("Perempuan");
 									}
 									else
 									{
-										$(stringCellJQueryID).append("Pria");
+										$(stringCellJQueryID).append("Laki - laki");
 									}
 								}
 								else
@@ -3048,7 +3047,6 @@ function getFromDatabase(objectContent, stringPageType)
 							{
 								if (j == 1)
 								{
-									alert(stringCellSuffix.substring(stringCellSuffix.length - arrayHealthTableHeader[j].length, stringCellSuffix.length) + "==" + arrayHealthTableHeader[j])
 									var stringDate = stringValue.split(stringSeparatorDate);
 									var stringDay = stringDate[0];
 									var stringMonth = stringDate[1];
@@ -3109,7 +3107,7 @@ function getFromDatabase(objectContent, stringPageType)
 
 					}
 				}
-				
+
 				// FOR TABLE SPAJ PROPOSAL
 				
 				var stringInfix;
@@ -3959,41 +3957,33 @@ function alertSaveRecentInput()
 function goToChangePageAlert(stringLinkJavaScriptID, URLPage, stringRelationshipStatus)
 {
 	var stringLinkJQueryID = stringKres + stringLinkJavaScriptID;
-	alert("initiate : " + stringLinkJQueryID + ", " + stringLinkJavaScriptID + ", " + URLPage + ", " + stringRelationshipStatus);
 	
 	if (booleanInputChangeState == "true")
 	{
-		alert("alert - input change state true");
-
 		if (stringRelationshipStatus == "self")
 		{
-			alert("relationship status : " + "self");
+			
 		}
 		else
 		{
-			alert("relationship status : " + "not self");
 			alertSaveRecentInput();
 		}
 	}
 	else
 	{
-		alert("alert - input change state false");
 		if (stringLinkJavaScriptID == "LinkProspectiveInsured")
 		{
-			alert("link : linkProspectiveInsured - " + stringLinkJavaScriptID);
 			if (stringRelationshipStatus == "self")
 			{
-				alert("relationship status : " + "self");
+				
 			}
 			else
 			{
-				alert("relationship status : " + "not self");
 				window.location.replace(URLPage);
 			}
 		}
 		else
 		{
-			alert("link : linkPolicyHolder - " + stringLinkJavaScriptID);
 			window.location.replace(URLPage);
 		}
 	}
