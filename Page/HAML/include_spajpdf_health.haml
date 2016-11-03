@@ -36,7 +36,7 @@
                 %br
                 %table#TextPolicyHolderWeight.BoxSquare.PositionerCenter
                 %span.PositionerCenter Kg
-                %br 
+                %br
                 %input#RadioButtonPolicyHolderWeightChangeYes{ :type => "radio", :name => "RadioButtonPolicyHolderWeightChange", :value => "true" }
                 %div#RadioButtonPolicyHolderWeightChangeYes.BoxRound.PositionerCenter
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderWeightChangeYes" } Ya
@@ -382,8 +382,8 @@
                 %table#TableProspectiveInsuredIllness.Space
                     %thead
                         %tr
-                            %th No. 
-                            %th Nama Penyakit 
+                            %th No.
+                            %th Nama Penyakit
                             %th Kapan Mulai Sakit
                             %th Lama Sakit
                             %th Nama Dokter
@@ -393,8 +393,8 @@
                 %table#TablePolicyHolderIllness.Space
                     %thead
                         %tr
-                            %th No. 
-                            %th Nama Penyakit 
+                            %th No.
+                            %th Nama Penyakit
                             %th Kapan Mulai Sakit
                             %th Lama Sakit
                             %th Nama Dokter
@@ -404,7 +404,7 @@
             %td.Child
                 7. Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa?
                 Apabila jawaban “Ya” maka mohon agar melengkapi kolom dibawah ini.
-            %td            
+            %td
                 %input#RadioButtonProspectiveInsuredSPAJProposalYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", :value => "true" }
                 %div#RadioButtonProspectiveInsuredSPAJProposalYes.BoxRound.PositionerCenter
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonProspectiveInsuredSPAJProposalYes" } Ya
@@ -424,9 +424,10 @@
                 %table#TableProspectiveInsuredSPAJProposal.Space
                     %thead
                         %tr
-                            %th No. 
+                            %th No.
                             %th Nama Perusahaan
                             %th Nomor Polis
+                            %th Jenis Manfaat
                             %th Tanggal Diterbitkan
                             %th Uang Pertanggungan
                             %th Hasil Keputusan
@@ -434,9 +435,10 @@
                 %table#TablePolicyHolderSPAJProposal.Space
                     %thead
                         %tr
-                            %th No. 
+                            %th No.
                             %th Nama Perusahaan
                             %th Nomor Polis
+                            %th Jenis Manfaat
                             %th Tanggal Diterbitkan
                             %th Uang Pertanggungan
                             %th Hasil Keputusan
@@ -493,10 +495,10 @@
                 %span.PositionerLeft Kg
             %td
             %td
-		
+
 %section.SectionFooter{ :style => "margin-top: 70px;" }
     = Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
-		
+
 %section#SectionHeader6
     = Haml::Engine.new(File.read("header_spajpdf_general.haml")).render
 

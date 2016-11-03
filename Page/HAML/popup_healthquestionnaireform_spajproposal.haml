@@ -8,15 +8,18 @@
     %fieldset
         %label#LabelCompanyName.Wrap{ :for => "TextCompanyName" } Nama Perusahaan
         %input#TextCompanyName.Full.Single{ :type => "text" }
-        
-        %label#LabelPolicyNumber.Wrap{ :for => "TextPolicyNumber" } Nomor Polis
-        %input#TextPolicyNumber.Full.Single{ :type => "text" }
-        
+
+        %label#LabelPolicyNumber.Wrap{ :for => "NumberPolicyNumber" } Nomor Polis
+        %input#NumberPolicyNumber.Full.Single{ :type => "number" }
+
+        %label#LabelBeneficiariesType.Wrap{ :for => "TextBeneficiariesType" } Jenis Manfaat
+        %input#TextBeneficiariesType.Full.Single{ :type => "text" }
+
         %label#LabelDatePubliched.Wrap{ :for => "DatePublished" } Tanggal Diterbitkan
         %input#DatePublished.Full.Single{ :type => "text", "data-field" => "date" }
-        
-        %label#LabelBasicSumAssured.Wrap{ :for => "TextBasicSumAssured" } Uang Pertanggungan
-        %input#TextBasicSumAssured.Full.Single{ :type => "text" }
-        
+
+        %label#LabelBasicSumAssured.Wrap{ :for => "NumberBasicSumAssured" } Uang Pertanggungan
+        %input#NumberBasicSumAssured.Full.Single{ :type => "number" }
+
         %label#LabelDecision.Wrap{ :for => "TextDecision" } Hasil Keputusan
         %input#TextDecision.Full.Multi{ :type => "text" }
