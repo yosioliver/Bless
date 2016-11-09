@@ -1,0 +1,146 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_cffform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// INTIALIZATION
+			var arrayScoreResult = ["#ScoreConservative", "#ScoreModerate", "#ScoreAggressive"];
+			
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
+			
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = 0;
+			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var booleanInputChangeState = "false";
+			var stringRelationshipStatus;
+
+			$(document).ready(function()
+			{							
+				// GENERATOR
+
+				additionalQuestionGenerator();
+
+				// BUTTON
+				
+				inputListener();								
+				
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+				
+				$('#TextIDRET0').number( true, 0, ',', '.' );
+				$('#TextIDRET1').number( true, 0, ',', '.' );
+				$('#TextIDRET2').number( true, 0, ',', '.' );
+				$('#TextIDRET3').number( true, 0, ',', '.' );
+				$('#TextIDRET4').number( true, 0, ',', '.' );
+				$('#TextIDRETTotal').number( true, 0, ',', '.' );
+				
+				calculateSelisih();
+
+				$('#TextIDRET0').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextIDRET1').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextIDRET3').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextIDRET4').keyup(function(){
+					calculateSelisih();
+				});								
+			});
+			
+			function calculateSelisih()
+			{
+				var selisihPribadi1 = 0;
+				var selisihPribadi2 = 0;
+				var selisihPribadi3 = 0;
+				var selisihPribadi4 = 0;
+
+				var selisihPasangan1 = 0;
+				var selisihPasangan2 = 0;
+				var selisihPasangan3 = 0;
+				var selisihPasangan4 = 0;
+
+				var selisihAnak1 = 0;
+				var selisihAnak2 = 0;
+				var selisihAnak3 = 0;
+				var selisihAnak4 = 0;
+
+
+				selisihPribadi1 =  parseInt($('#TextIDRET0').val()) - parseInt($('#TextIDRET1').val());  
+				selisihPribadi2 =  parseInt($('#TextIDRET3').val()) - parseInt($('#TextIDRET4').val()); 				
+
+				$('#TextIDRET2').val(selisihPribadi1);				
+			}
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		-#
+			%header#MainForm			
+				%div.Highlighted
+					%label.Single.PositionerLeft.Center RISK PROFILING QUESTIONAIRES				
+					%br
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%label.Full.PositionerLeft Pilih bila nasabah tidak mempunyai rencana asuransi
+					%input#ButtonClear.ButtonPrimary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
+				%br
+				%hr									
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Left						
+					%label.Short.Single.Item1.Center Nominal saat ini
+					%label.Short.Single.Item1.Center Nominal yang dibutuhkan
+					%label.Short.Single.Item1.Center Selisih
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Margin Pensiun			
+					%input#TextIDRET0.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDRET1.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDRET2.Short.Single.Item1.Margin{ :type => "text", :readonly => "true", :style => "background-color: #eae7e7;" }									
+				%hr
+				%br
+				
+				%div.ContainerFit
+					%label.Full.PositionerLeft Berapa jumlah pendapatan yang ingin dialokasikan untuk asuransi pensiun per bulan?
+				%br								
+					
+				%div.ContainerFit
+					%label.Long.Single.Item1.Margin Total pendapatan nasabah + pasangan (Rp.)
+					%input#TextIDRETTotal.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%label.Short.Single.Item1.Margin
+					%label.Short.Single.Item1.Margin
+				%hr
+				%br
+				
+				%div.ContainerFit
+					%label.Full.PositionerLeft Apakah ada sumber penghasilan pada saat pensiun?
+				%br
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Margin Nasabah (Rp.)			
+					%input#TextIDRET3.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%label.Short.Single.Item1.Margin Pasangan (Rp.)
+					%input#TextIDRET4.Short.Single.Item1.Margin{ :type => "text", :value => "0" }

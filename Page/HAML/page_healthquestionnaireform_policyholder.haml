@@ -35,15 +35,15 @@
 				buttonPopUpSPAJProposalGenerator();
 				SPAJProposalGenerator("ButtonAddSPAJProposal");
 				initiateArrayDatePeriod(arrayDatePeriod);
-				generateSelectOption("SelectBBControlAmountPeriod", arrayDatePeriod);
-				generateSelectOption("SelectAttackCauseHospitalAmountPeriod", arrayDatePeriod);
+				generateSelectOption("SelectBBControlAmountPeriod", [{ value: "hari", text: "Hari" },{ value: "minggu", text: "Minggu" },{ value: "bulan", text: "Bulan" },{ value: "tahun", text: "Tahun" }]);
+				generateSelectOption("SelectAttackCauseHospitalAmountPeriod", [{ value: "hari", text: "Hari" },{ value: "minggu", text: "Minggu" },{ value: "bulan", text: "Bulan" }]);
 				generateSelectOption("SelectFrequencyInMonthPeriod", arrayDatePeriod);
 				generateSelectOption("SelectVomittingBloodAriseTimePeriod", arrayDatePeriod);
 				generateSelectOption("SelectHospitalCareDurationPeriod", arrayDatePeriod);
-				generateSelectOption("SelectHowManyPeriod", arrayDatePeriod);
-				generateSelectOption("SelectJNCheckUpFrequencyPeriod", arrayDatePeriod);
+				generateSelectOption("SelectHowManyPeriod", [{ value: "bulan", text: "Bulan" },{ value: "tahun", text: "Tahun" }]);
+				generateSelectOption("SelectJNCheckUpFrequencyPeriod", [{ value: "hari", text: "Hari" },{ value: "minggu", text: "Minggu" },{ value: "bulan", text: "Bulan" },{ value: "tahun", text: "Tahun" }]);
 				generateSelectOption("SelectHowOftenCheckupToDoctorPeriod", arrayDatePeriod);
-				generateSelectOption("SelectControlFrequencyPeriod", arrayDatePeriod)
+				generateSelectOption("SelectControlFrequencyPeriod", [{ value: "minggu", text: "Minggu" }])
 
 				$("#BoxDate").DateTimePicker(
 				{

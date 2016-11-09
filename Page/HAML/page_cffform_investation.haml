@@ -1,0 +1,109 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_cffform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// INTIALIZATION
+			var arrayScoreResult = ["#ScoreConservative", "#ScoreModerate", "#ScoreAggressive"];
+			
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
+			
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = 0;
+			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var booleanInputChangeState = "false";
+			var stringRelationshipStatus;
+
+			$(document).ready(function()
+			{							
+				// GENERATOR
+
+				additionalQuestionGenerator();
+
+				// BUTTON
+				
+				inputListener();								
+				
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+				
+				$('#TextIDINV0').number( true, 0, ',', '.' );
+				$('#TextIDINV1').number( true, 0, ',', '.' );
+				$('#TextIDINV2').number( true, 0, ',', '.' );				
+				$('#TextIDINVTotal').number( true, 0, ',', '.' );
+				
+				calculateSelisih();
+
+				$('#TextIDINV0').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextIDINV1').keyup(function(){
+					calculateSelisih();
+				});				
+			});
+			
+			function calculateSelisih()
+			{
+				var selisihPribadi1 = 0;				
+
+				selisihPribadi1 =  parseInt($('#TextIDINV0').val()) - parseInt($('#TextIDINV1').val());  				
+
+				$('#TextIDINV2').val(selisihPribadi1);				
+			}
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		-#
+			%header#MainForm			
+				%div.Highlighted
+					%label.Single.PositionerLeft.Center RISK PROFILING QUESTIONAIRES				
+					%br
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%label.Full.PositionerLeft Pilih bila nasabah tidak mempunyai rencana asuransi
+					%input#ButtonClear.ButtonPrimary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
+				%br
+				%hr									
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Left						
+					%label.Short.Single.Item1.Center Nominal saat ini
+					%label.Short.Single.Item1.Center Nominal yang dibutuhkan
+					%label.Short.Single.Item1.Center Selisih
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Margin Savings and Investment Plan		
+					%input#TextIDINV0.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDINV1.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDINV2.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }									
+				%hr
+				%br
+				
+				%div.ContainerFit
+					%label.Full.PositionerLeft Berapa jumlah pendapatan yang ingin dialokasikan untuk asuransi investasi per bulan?
+				%br								
+					
+				%div.ContainerFit
+					%label.Long.Single.Item1.Margin Total pendapatan nasabah + pasangan (Rp.)
+					%input#TextIDINVTotal.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%label.Short.Single.Item1.Margin
+					%label.Short.Single.Item1.Margin				

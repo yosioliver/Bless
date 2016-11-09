@@ -1,0 +1,169 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_cffform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// INTIALIZATION
+			var arrayScoreResult = ["#ScoreConservative", "#ScoreModerate", "#ScoreAggressive"];
+			
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
+			
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = 0;
+			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var booleanInputChangeState = "false";
+			var stringRelationshipStatus;
+
+			$(document).ready(function()
+			{							
+				// GENERATOR
+
+				additionalQuestionGenerator();
+
+				// BUTTON
+				
+				inputListener();								
+				
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+				
+				$('#TextIDEDU0').number( true, 0, ',', '.' );
+				$('#TextIDEDU1').number( true, 0, ',', '.' );
+				$('#TextIDEDU2').number( true, 0, ',', '.' );
+				$('#TextIDEDU3').number( true, 0, ',', '.' );
+				$('#TextIDEDU4').number( true, 0, ',', '.' );
+				$('#TextIDEDU5').number( true, 0, ',', '.' );
+				$('#TextIDEDU6').number( true, 0, ',', '.' );
+				$('#TextIDEDU7').number( true, 0, ',', '.' );
+				$('#TextIDEDU8').number( true, 0, ',', '.' );
+				$('#TextIDEDU9').number( true, 0, ',', '.' );
+				$('#TextIDEDU10').number( true, 0, ',', '.' );
+				$('#TextIDEDU11').number( true, 0, ',', '.' );
+				$('#TextIDEDUTotal').number( true, 0, ',', '.' );
+				
+				calculateSelisih();
+
+				$('#TextIDEDU0').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextIDEDU1').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextIDEDU3').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextIDEDU4').keyup(function(){
+					calculateSelisih();
+				});
+				
+				$('#TextIDEDU6').keyup(function(){
+					calculateSelisih();
+				});
+				
+				$('#TextIDEDU7').keyup(function(){
+					calculateSelisih();
+				});
+				
+				$('#TextIDEDU9').keyup(function(){
+					calculateSelisih();
+				});
+				
+				$('#TextIDEDU10').keyup(function(){
+					calculateSelisih();
+				});
+			});
+			
+			function calculateSelisih()
+			{
+				var selisihPribadi1 = 0;
+				var selisihPribadi2 = 0;
+				var selisihPribadi3 = 0;
+				var selisihPribadi4 = 0;				
+
+				selisihPribadi1 =  parseInt($('#TextIDEDU0').val()) - parseInt($('#TextIDEDU1').val());  
+				selisihPribadi2 =  parseInt($('#TextIDEDU3').val()) - parseInt($('#TextIDEDU4').val());
+				selisihPribadi3 =  parseInt($('#TextIDEDU6').val()) - parseInt($('#TextIDEDU7').val());
+				selisihPribadi4 =  parseInt($('#TextIDEDU9').val()) - parseInt($('#TextIDEDU10').val());
+
+				$('#TextIDEDU2').val(selisihPribadi1);
+				$('#TextIDEDU5').val(selisihPribadi2);
+				$('#TextIDEDU8').val(selisihPribadi3);
+				$('#TextIDEDU11').val(selisihPribadi4);
+			}
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		-#
+			%header#MainForm			
+				%div.Highlighted
+					%label.Single.PositionerLeft.Center RISK PROFILING QUESTIONAIRES				
+					%br
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%label.Full.PositionerLeft Pilih bila nasabah tidak mempunyai rencana asuransi
+					%input#ButtonClear.ButtonPrimary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
+				%br
+				%hr									
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Left						
+					%label.Short.Single.Item1.Center Nominal saat ini
+					%label.Short.Single.Item1.Center Nominal yang dibutuhkan
+					%label.Short.Single.Item1.Center Selisih
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Margin Anak 1			
+					%input#TextIDEDU0.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU1.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU2.Short.Single.Item1.Margin{ :type => "text", :readonly => "true", :style => "background-color: #eae7e7;" }
+					
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Margin Anak 2			
+					%input#TextIDEDU3.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU4.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU5.Short.Single.Item1.Margin{ :type => "text", :readonly => "true", :style => "background-color: #eae7e7;" }
+					
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Margin Anak 3		
+					%input#TextIDEDU6.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU7.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU8.Short.Single.Item1.Margin{ :type => "text", :readonly => "true", :style => "background-color: #eae7e7;" }
+					
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Margin Anak 4			
+					%input#TextIDEDU9.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU10.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextIDEDU11.Short.Single.Item1.Margin{ :type => "text", :readonly => "true", :style => "background-color: #eae7e7;" }
+				%hr
+				%br
+				
+				%div.ContainerFit
+					%label.Full.PositionerLeft Berapa jumlah pendapatan yang ingin dialokasikan untuk pendidikan anak per bulan?
+				%br								
+					
+				%div.ContainerFit
+					%label.Long.Single.Item1.Margin Total pendapatan nasabah + pasangan (Rp.)
+					%input#TextIDEDUTotal.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%label.Short.Single.Item1.Margin
+					%label.Short.Single.Item1.Margin				

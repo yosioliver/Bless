@@ -1,0 +1,394 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_cffform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// INTIALIZATION
+			var arrayScoreResult = ["#ScoreConservative", "#ScoreModerate", "#ScoreAggressive"];
+			
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
+			
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = 0;
+			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var booleanInputChangeState = "false";
+			var stringRelationshipStatus;
+
+			$(document).ready(function()
+			{							
+				// GENERATOR
+
+				additionalQuestionGenerator();
+
+				// BUTTON
+				
+				inputListener();								
+				
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+				
+				$('#TextID0').number( true, 0, ',', '.' );
+				$('#TextID1').number( true, 0, ',', '.' );
+				$('#TextID2').number( true, 0, ',', '.' );
+				$('#TextID3').number( true, 0, ',', '.' );
+				$('#TextID4').number( true, 0, ',', '.' );
+				$('#TextID5').number( true, 0, ',', '.' );
+				$('#TextID6').number( true, 0, ',', '.' );
+				$('#TextID7').number( true, 0, ',', '.' );
+				$('#TextID8').number( true, 0, ',', '.' );
+				$('#TextID9').number( true, 0, ',', '.' );
+				$('#TextID10').number( true, 0, ',', '.' );
+				$('#TextID11').number( true, 0, ',', '.' );
+				$('#TextID12').number( true, 0, ',', '.' );
+				$('#TextID13').number( true, 0, ',', '.' );
+				$('#TextID14').number( true, 0, ',', '.' );
+				$('#TextID15').number( true, 0, ',', '.' );
+				$('#TextID16').number( true, 0, ',', '.' );
+				$('#TextID17').number( true, 0, ',', '.' );
+				$('#TextID18').number( true, 0, ',', '.' );
+				$('#TextID19').number( true, 0, ',', '.' );
+				$('#TextID20').number( true, 0, ',', '.' );
+				$('#TextID21').number( true, 0, ',', '.' );
+				$('#TextID22').number( true, 0, ',', '.' );
+				$('#TextID23').number( true, 0, ',', '.' );
+				$('#TextID24').number( true, 0, ',', '.' );
+				$('#TextID25').number( true, 0, ',', '.' );
+				$('#TextID26').number( true, 0, ',', '.' );
+				$('#TextID27').number( true, 0, ',', '.' );
+				$('#TextID28').number( true, 0, ',', '.' );
+				$('#TextID29').number( true, 0, ',', '.' );
+				$('#TextID30').number( true, 0, ',', '.' );
+				$('#TextID31').number( true, 0, ',', '.' );
+				$('#TextID32').number( true, 0, ',', '.' );
+				$('#TextID33').number( true, 0, ',', '.' );
+				$('#TextID34').number( true, 0, ',', '.' );
+				$('#TextID35').number( true, 0, ',', '.' );
+				$('#TextID36').number( true, 0, ',', '.' );
+				
+				calculateSelisih();
+
+				$('#TextID0').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID1').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID3').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID4').keyup(function(){
+					calculateSelisih();
+				});
+				
+				$('#TextID6').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID7').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID9').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID10').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID12').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID13').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID15').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID16').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID18').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID19').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID21').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID22').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID24').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID25').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID27').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID28').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID30').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID31').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID33').keyup(function(){
+					calculateSelisih();
+				});
+
+				$('#TextID34').keyup(function(){
+					calculateSelisih();
+				});
+			});
+			
+			function calculateSelisih()
+			{
+				var selisihPribadi1 = 0;
+				var selisihPribadi2 = 0;
+				var selisihPribadi3 = 0;
+				var selisihPribadi4 = 0;
+
+				var selisihPasangan1 = 0;
+				var selisihPasangan2 = 0;
+				var selisihPasangan3 = 0;
+				var selisihPasangan4 = 0;
+
+				var selisihAnak1 = 0;
+				var selisihAnak2 = 0;
+				var selisihAnak3 = 0;
+				var selisihAnak4 = 0;
+
+
+				selisihPribadi1 =  parseInt($('#TextID0').val()) - parseInt($('#TextID1').val());  
+				selisihPribadi2 =  parseInt($('#TextID3').val()) - parseInt($('#TextID4').val()); 
+				selisihPribadi3 =  parseInt($('#TextID6').val()) - parseInt($('#TextID7').val()); 
+				selisihPribadi4 =  parseInt($('#TextID9').val()) - parseInt($('#TextID10').val()); 
+
+				selisihPasangan1 =  parseInt($('#TextID12').val()) - parseInt($('#TextID13').val());
+				selisihPasangan2 =  parseInt($('#TextID15').val()) - parseInt($('#TextID16').val());
+				selisihPasangan3 =  parseInt($('#TextID18').val()) - parseInt($('#TextID19').val());
+				selisihPasangan4 =  parseInt($('#TextID21').val()) - parseInt($('#TextID22').val());
+
+				selisihAnak1 =  parseInt($('#TextID24').val()) - parseInt($('#TextID25').val());
+				selisihAnak2 =  parseInt($('#TextID27').val()) - parseInt($('#TextID28').val());
+				selisihAnak3 =  parseInt($('#TextID30').val()) - parseInt($('#TextID31').val());
+				selisihAnak4 =  parseInt($('#TextID33').val()) - parseInt($('#TextID34').val());   
+
+				$('#TextID2').val(selisihPribadi1);
+				$('#TextID5').val(selisihPribadi2);
+				$('#TextID8').val(selisihPribadi3);
+				$('#TextID11').val(selisihPribadi4);
+
+				$('#TextID14').val(selisihPasangan1);
+				$('#TextID17').val(selisihPasangan2);
+				$('#TextID20').val(selisihPasangan3);
+				$('#TextID23').val(selisihPasangan4);
+
+				$('#TextID26').val(selisihAnak1);
+				$('#TextID29').val(selisihAnak2);
+				$('#TextID32').val(selisihAnak3);
+				$('#TextID35').val(selisihAnak4);
+			}
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		-#
+			%header#MainForm			
+				%div.Highlighted
+					%label.Single.PositionerLeft.Center RISK PROFILING QUESTIONAIRES				
+					%br
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%div.ContainerFit
+					%label.Full.PositionerLeft Pilih bila nasabah tidak mempunyai rencana asuransi
+					%input#ButtonClear.ButtonPrimary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
+				%br
+				%hr									
+						
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Left 
+						%b
+							PRIBADI
+					%label.Short.Single.Item1.Center Nominal saat ini
+					%label.Short.Single.Item1.Center Nominal yang dibutuhkan
+					%label.Short.Single.Item1.Center Selisih									
+
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan 
+						%br
+						(Death and disability)
+					%input#TextID0.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID1.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID2.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Critical illness)
+					%input#TextID3.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID4.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID5.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Rumah sakit per hari)
+					%input#TextID6.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID7.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID8.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Personal Accident)
+					%input#TextID9.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID10.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID11.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				%hr
+				%br
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Left 
+						%b
+							PASANGAN
+					%label.Short.Single.Item1.Center Nominal saat ini
+					%label.Short.Single.Item1.Center Nominal yang dibutuhkan
+					%label.Short.Single.Item1.Center Selisih									
+
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan 
+						%br
+						(Death and disability)
+					%input#TextID12.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID13.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID14.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Critical illness)
+					%input#TextID15.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID16.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID17.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Rumah sakit per hari)
+					%input#TextID18.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextI119.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID20.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Personal Accident)
+					%input#TextID21.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID22.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID23.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				%hr
+				%br
+				
+				%div.ContainerFit
+					%label.MediumFix.Single.Item1.Left 
+						%b
+							ANAK
+					%label.Short.Single.Item1.Center Nominal saat ini
+					%label.Short.Single.Item1.Center Nominal yang dibutuhkan
+					%label.Short.Single.Item1.Center Selisih									
+
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan 
+						%br
+						(Death and disability)
+					%input#TextID24.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID25.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID26.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Critical illness)
+					%input#TextID27.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID28.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID29.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Rumah sakit per hari)
+					%input#TextID30.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID31.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID32.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				
+				%div.ContainerFit
+					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
+						Total uang pertanggungan
+						%br
+						(Personal Accident)
+					%input#TextID33.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID34.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%input#TextID35.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+				%hr
+				%br
+				
+				%div.ContainerFit
+					%label.Full.PositionerLeft Berapa jumlah pendapatan yang ingin dialokasikan untuk asuransi proteksi per bulan?
+				%br													
+				
+				%div.ContainerFit
+					%label.Long.Single.Item1.Margin Total pendapatan nasabah + pasangan (Rp.)
+					%input#TextIDTotal.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
+					%label.Short.Single.Item1.Margin
+					%label.Short.Single.Item1.Margin

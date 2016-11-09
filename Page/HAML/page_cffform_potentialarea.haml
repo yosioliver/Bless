@@ -1,0 +1,272 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_cffform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// INTIALIZATION
+
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
+			
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = 0;
+			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var booleanInputChangeState = "false";
+			var stringRelationshipStatus;
+
+			$(document).ready(function()
+			{							
+				// GENERATOR
+
+				additionalQuestionGenerator();
+
+				// BUTTON
+				
+				inputListener();							
+				
+				/* $("#MainForm #ButtonDone").click(function()
+				{
+					savetoDB();
+					// setToDatabase(stringPageTypeCurrent);
+				}); */
+				
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);								
+				
+				// alert(dob('1990-08-05'));
+				// calculatePriority('1990-08-05');
+				
+				function dob(dobstr)
+				{				
+					if(dobstr != '')
+					{
+						var str=dobstr.split('-');    
+						var firstdate=new Date(str[0],str[1],str[2]);
+						var today = new Date();        
+						var dayDiff = Math.ceil(today.getTime() - firstdate.getTime()) / (1000 * 60 * 60 * 24 * 365);
+						var age = parseInt(dayDiff);   
+
+						return age; 
+					}   
+				}
+			
+				function calculatePriority(birthOfDate)
+				{
+				var dobVal = dob(birthOfDate);								
+				
+				if(dobVal <= 25)
+				{
+					$('.proteksiPribadiPrio').html(1);
+					$('.proteksiPasanganPrio').html(4);
+					$('.proteksiAnakPrio').html(7);
+					$('.proteksiPensiunPrio').html(3);
+					$('.proteksiPendidikanAnakPrio').html(5);
+					$('.proteksiWarisanPrio').html(6);
+					$('.proteksiInvestasiPrio').html(2);
+				}
+				else if(dobVal >= 26 && dobVal <= 35)
+				{
+					$('.proteksiPribadiPrio').html(1);
+					$('.proteksiPasanganPrio').html(2);
+					$('.proteksiAnakPrio').html(7);
+					$('.proteksiPensiunPrio').html(4);
+					$('.proteksiPendidikanAnakPrio').html(5);
+					$('.proteksiWarisanPrio').html(6);
+					$('.proteksiInvestasiPrio').html(3);
+				}
+				else if(dobVal >= 36 && dobVal <= 45)
+				{
+					$('.proteksiPribadiPrio').html(1);
+					$('.proteksiPasanganPrio').html(2);
+					$('.proteksiAnakPrio').html(3);
+					$('.proteksiPensiunPrio').html(6);
+					$('.proteksiPendidikanAnakPrio').html(4);
+					$('.proteksiWarisanPrio').html(7);
+					$('.proteksiInvestasiPrio').html(5);
+				}
+				else if(dobVal >= 46 && dobVal <= 55)
+				{
+					$('.proteksiPribadiPrio').html(1);
+					$('.proteksiPasanganPrio').html(5);
+					$('.proteksiAnakPrio').html(6);
+					$('.proteksiPensiunPrio').html(2);
+					$('.proteksiPendidikanAnakPrio').html(7);
+					$('.proteksiWarisanPrio').html(3);
+					$('.proteksiInvestasiPrio').html(4);
+				}
+				else if(dobVal >= 60)
+				{
+					$('.proteksiPribadiPrio').html(1);
+					$('.proteksiPasanganPrio').html(5);
+					$('.proteksiAnakPrio').html(6);
+					$('.proteksiPensiunPrio').html(2);
+					$('.proteksiPendidikanAnakPrio').html(7);
+					$('.proteksiWarisanPrio').html(3);
+					$('.proteksiInvestasiPrio').html(4);
+				}
+				else
+				{
+					//DO NOTHING
+				}
+				}
+			});			
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header#MainForm			
+			%div.Highlighted
+				%label.Single.PositionerLeft.Center KEBUTUHAN
+				%label.Slim.Single.PositionerRight.Center PRIORITAS
+				%label.Slim.Single.PositionerRight.Center BERENCANA PUNYA
+				%label.Slim.Single.PositionerRight.Center SUDAH PUNYA
+				%br
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain
+				%ol.InlineCounter
+					%li{ :style => "display: block;" }
+						%label.PositionerLeft
+							Proteksi Pribadi
+							%br
+							(Proteksi Jiwa,Cacat Tetap Total,dan Penyakit Kritis)							
+						%span.Slim.PositionerRight.Center.proteksiPribadiPrio
+							
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFPRIPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFPRIPlanToHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFPRIPlanToHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFPRIPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFPRIPlanToHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFPRIPlanToHaveNo" } Tidak
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFPRIAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFPRIAlreadyHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFPRIAlreadyHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFPRIAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFPRIAlreadyHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFPRIAlreadyHaveNo" } Tidak
+					%br					
+						%label.PositionerLeft.SecondIndent
+							Proteksi Pasangan
+							%br
+							(Proteksi Jiwa,Cacat Tetap Total,dan Penyakit Kritis)							
+						%span.Slim.PositionerRight.Center.proteksiPasanganPrio
+							
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFSPOPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFSPOPlanToHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFSPOPlanToHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFSPOPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFSPOPlanToHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFSPOPlanToHaveNo" } Tidak
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFSPOAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFSPOAlreadyHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFSPOAlreadyHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFSPOAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFSPOAlreadyHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFSPOAlreadyHaveNo" } Tidak
+					%br					
+						%label.PositionerLeft.SecondIndent
+							Proteksi Anak
+							%br
+							(Proteksi Jiwa,Cacat Tetap Total,dan Penyakit Kritis)							
+						%span.Slim.PositionerRight.Center.proteksiAnakPrio
+							
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFCHIPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFCHIPlanToHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFCHIPlanToHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFCHIPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFCHIPlanToHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFCHIPlanToHaveNo" } Tidak
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFCHIAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFCHIAlreadyHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFCHIAlreadyHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFCHIAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFCHIAlreadyHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFCHIAlreadyHaveNo" } Tidak
+					%br
+					%hr
+					%li{ :style => "display: block;" }
+						%label.PositionerLeft
+							Pensiun
+						%span.Slim.PositionerRight.Center.proteksiPensiunPrio						
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFRETPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFRETPlanToHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFRETPlanToHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFRETPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFRETPlanToHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFRETPlanToHaveNo" } Tidak
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFRETAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFRETAlreadyHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFRETAlreadyHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFRETAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFRETAlreadyHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFRETAlreadyHaveNo" } Tidak
+					%br
+					%hr
+					%li{ :style => "display: block;" }
+						%label.PositionerLeft
+							Pendidikan Anak							
+						%span.Slim.PositionerRight.Center.proteksiPendidikanAnakPrio
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFEDUPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFEDUPlanToHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFEDUPlanToHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFEDUPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFEDUPlanToHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFEDUPlanToHaveNo" } Tidak
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFEDUAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFEDUAlreadyHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFEDUAlreadyHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFEDUAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFEDUAlreadyHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFEDUAlreadyHaveNo" } Tidak
+					%br
+					%hr
+					%li{ :style => "display: block;" }
+						%label.PositionerLeft
+							Warisan					
+						%span.Slim.PositionerRight.Center.proteksiWarisanPrio
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFINHPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFINHPlanToHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFINHPlanToHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFINHPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFINHPlanToHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFINHPlanToHaveNo" } Tidak
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFINHAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFINHAlreadyHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFINHAlreadyHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFINHAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFINHAlreadyHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFINHAlreadyHaveNo" } Tidak
+					%br
+					%hr
+					%li{ :style => "display: block;" }
+						%label.PositionerLeft
+							Investasi						
+						%span.Slim.PositionerRight.Center.proteksiInvestasiPrio
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFINVPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFINVPlanToHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFINVPlanToHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFINVPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFINVPlanToHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFINVPlanToHaveNo" } Tidak
+						%div.RadioButton.Slim.PositionerRight.Center
+							%input#RadioButtonCFFINVAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFINVAlreadyHave", :value => "true" }
+							%label.RadioButton{ :for => "RadioButtonCFFINVAlreadyHaveYes" } Ya
+							%div.Separator
+							%input#RadioButtonCFFINVAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFINVAlreadyHave", :value => "false" }
+							%label.RadioButton{ :for => "RadioButtonCFFINVAlreadyHaveNo" } Tidak
+					%br
+					%hr

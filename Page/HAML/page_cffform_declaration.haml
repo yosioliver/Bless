@@ -1,0 +1,70 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_cffform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// INTIALIZATION
+			var arrayScoreResult = ["#ScoreConservative", "#ScoreModerate", "#ScoreAggressive"];
+			
+			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
+			
+			var stringPageTypeCurrent = stringPageTypeForm;
+			var stringPageSectionCurrent = stringPageSectionForm;
+			var stringPageValidationCurrent = 0;
+			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var booleanInputChangeState = "false";
+			var stringRelationshipStatus;
+
+			$(document).ready(function()
+			{							
+				// GENERATOR
+
+				additionalQuestionGenerator();
+
+				// BUTTON
+				
+				inputListener();														
+				
+				// var objectContent = JSON.parse(jsonDummy);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
+			});						
+
+	/ BODY
+
+	%body#Main
+
+		/ HEADER
+
+		%header#MainForm			
+			%div.Highlighted
+				%label.Single.PositionerLeft.Center	PERNYATAAN NASABAH
+				%br
+
+		/ MAIN
+
+		%main
+			%form#HealthQuestionnaireMain				
+				%div.ContainerFit
+					%label.Full.PositionerLeft.FirstIndent 
+						Saya/kami telah mengisi formulir ini dengan sebenar benarnya dan telah memahami dengan baik hasil 
+						%br
+						interpretasi atas pengisian formulir			
+				%hr
+				%br
+					%label.Full.PositionerLeft.FirstIndent 
+						Saya/kami menyatakan bahwa produk asuransi yang saya/kami pilih sepenuhnya merupakan keputusan
+						%br
+						saya/kami sendiri secara independen termasuk apabila saya/kami memilih jenis produk yang tidak sesuai
+						%br
+						dengan hasil profil resiko. Saya/kami bertanggung jawab sepenuhnya atas segala akibat yang timbul
+						%br
+						sehubungan dengan pemilihan produk/asuransi yang saya/kami lakukan.

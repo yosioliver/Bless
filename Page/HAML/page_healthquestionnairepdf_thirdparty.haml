@@ -25,17 +25,17 @@
 
 				// SECTION POLICYHOLDER
 
-				boxGenerator("#TextPolicyHolderSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName", 29, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderFullName2nd", 29, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderHomeAddress", 29, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderHomeAddress2nd", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomeAddress1", 29, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomeAddress2", 29, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderHomeCity", 17, boxTypeWithoutLabel, null);
 				boxGenerator("#TextPolicyHolderHomePostalCode", 6, boxTypeWithoutLabel, null);
 				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomeCity", 2);
 				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomePostalCode", 4);
 				boxGenerator("#TextPolicyHolderHomeTelephonePrefix", 4, boxTypeWithoutLabel, null);
-				boxGenerator("#TextPolicyHolderHomeTelephoneSuffix", 12, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderHomeTelephoneInfix", 12, boxTypeWithoutLabel, null);
 				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomeTelephonePrefix", 2);
 				labelGeneratorForHealthQuestionnaire("#LabelPolicyHolderHomeTelephoneSuffix", 1);
 				boxGenerator("#TextPolicyHolderHandphone1", 13, boxTypeWithoutLabel, null);
@@ -204,8 +204,8 @@
 
 				%fieldset
 					%span.Number.Plain.Single.PositionerLeft 1.
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderSPAJNumber" } Nomor SPAJ / Polis
-					%table#TextPolicyHolderSPAJNumber.BoxSquare.PositionerLeft
+					%label.Medium.Single.PositionerLeft{ :for => "TextSPAJNumber" } Nomor SPAJ / Polis
+					%table#TextSPAJNumber.BoxSquare.PositionerLeft
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 2.
@@ -217,11 +217,11 @@
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 3.
-					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHomeAddress" } Alamat Tempat Tinggal
-					%table#TextPolicyHolderHomeAddress.BoxSquare.PositionerLeft
+					%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHomeAddress1" } Alamat Tempat Tinggal
+					%table#TextPolicyHolderHomeAddress1.BoxSquare.PositionerLeft
 					%br
-					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeAddress2nd", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu Identitas Diri, disi dengan lengkap menginfoemasikan nomor rumah, RT, RW, Kelurahan dan Kecamatan)
-					%table#TextPolicyHolderHomeAddress2nd.BoxSquare.PositionerLeft
+					%label.Medium.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeAddress2", :style => "font-size: 0.65em; margin-top: -5px;" } (Bila tidak sesuai kartu Identitas Diri, disi dengan lengkap menginfoemasikan nomor rumah, RT, RW, Kelurahan dan Kecamatan)
+					%table#TextPolicyHolderHomeAddress2.BoxSquare.PositionerLeft
 					%br
 					%label#LabelPolicyHolderHomeCity.Separator.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeCity" } Kota
 					%table#TextPolicyHolderHomeCity.BoxSquare.PositionerLeft
@@ -230,8 +230,8 @@
 					%br
 					%label#LabelPolicyHolderHomeTelephonePrefix.Separator.Single.MediumWithNumberIndent.PositionerLeft{ :for => "TextPolicyHolderHomeTelephonePrefix" } Telp
 					%table#TextPolicyHolderHomeTelephonePrefix.BoxSquare.PositionerLeft
-					%label#LabelPolicyHolderHomeTelephoneSuffix.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderHomeTelephoneSuffix" } -
-					%table#TextPolicyHolderHomeTelephoneSuffix.BoxSquare.PositionerLeft
+					%label#LabelPolicyHolderHomeTelephoneInfix.Separator.Single.PositionerLeft{ :for => "TextPolicyHolderHomeTelephoneInfix" } -
+					%table#TextPolicyHolderHomeTelephoneInfix.BoxSquare.PositionerLeft
 					%br
 
 					%span.Number.Plain.Single.PositionerLeft 4.
@@ -958,7 +958,8 @@
 									%th Calon Pihak Ketiga
 							%tbody
 								%tr
-									%td.SignatureImage
+									%td
+										%img.SignatureImage.PositionerCenter
 							%tfoot
 								%tr
 									%td Nama Lengkap & Tanda tangan
@@ -968,7 +969,8 @@
 									%th Calon Pemegang Polis
 							%tbody
 								%tr
-									%td.SignatureImage
+									%td
+										%img.SignatureImage.PositionerCenter
 							%tfoot
 								%tr
 									%td Nama Lengkap & Tanda tangan
@@ -978,7 +980,8 @@
 									%th Tenaga Penjual
 							%tbody
 								%tr
-									%td.SignatureImage
+									%td
+										%img.SignatureImage.PositionerCenter
 							%tfoot
 								%tr
 									%td Nama Lengkap & Tanda tangan
