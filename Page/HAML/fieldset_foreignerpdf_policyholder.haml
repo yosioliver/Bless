@@ -1,0 +1,25 @@
+%h2 I. DATA OF (PROPOSED) INSURED
+%fieldset
+	%span.Number.Single.PositionerLeft 1.
+	%label.Medium.Wrap.Plain.PositionerLeft{ :for => "TextSPAJNumber" } Application (SPAJ)/Policy Number:
+	%table#TextSPAJNumber.BoxSquare.PositionerLeft	
+	%br
+
+	%span.Number.Single.PositionerLeft 2.
+	%label.Medium.Single.Plain.PositionerLeft{ :for => "TextPolicyHolderFullName" } Full Name (Proposed) insured:
+	%table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
+	%br
+	%label.Medium.Single.Plain.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderFullName", :style => "margin-top: -25px;" } (In accordance with ID/Passport)
+	%table#TextPolicyHolderFullName2nd.BoxSquare.PositionerLeft
+	%br
+
+	%span.Number.Single.PositionerLeft 3
+	%label.Wrap.Medium.Plain.PositionerLeft{ :for => "TextPolicyHolderBirthPlace" } Place, date of birth (Proposed) Insured:
+	%input#TextPolicyHolderBirthPlace.Medium.Single.PositionerLeft{ :type => "text", :readonly => "true" }
+	%span.Separator.Single.PositionerLeft ,
+	%table#DatePolicyHolderBirthDay.BoxSquare.PositionerLeft
+	%span.Separator.Single.PositionerLeft /
+	%table#DatePolicyHolderBirthMonth.BoxSquare.PositionerLeft
+	%span.Separator.Single.PositionerLeft /
+	%table#DatePolicyHolderBirthYear.BoxSquare.PositionerLeft
+	%br

@@ -1,0 +1,204 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_healthquestionnairepdf_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// INITIALIZATION
+
+			var stringPageTypeCurrent = stringPageTypePDF;
+
+			// DOCUMENT READY
+
+			$(document).ready(function()
+			{
+				// SECTION GENERAL
+
+				boxGenerator("#TextSPAJNumber", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderFullName2nd", 19, boxTypeWithoutLabel, null);
+				boxGenerator("#TextPolicyHolderBirthPlace", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBirthYear", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstComplainYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstLimitedActivityDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstLimitedActivityMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBFirstLimitedActivityYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBXRayDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBXRayMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBXRayYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneLastCheckupDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneLastCheckupMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneLastCheckupYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneSuggestSurgeryDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneSuggestSurgeryMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneSuggestSurgeryYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBLastConsultDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBLastConsultMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBLastConsultYear", 4, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBAbsentDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBAbsentMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DatePolicyHolderBackboneBBAbsentYear", 4, boxTypeWithoutLabel, null);
+
+				boxGenerator("#DateSignedDay", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedMonth", 2, boxTypeWithoutLabel, null);
+				boxGenerator("#DateSignedYear", 4, boxTypeWithoutLabel, null);
+
+				// SECTION MANDATORY
+
+				boxGenerator("#TextAgentName", 16, boxTypeWithoutLabel, null);
+				boxGenerator("#TextAgentCode", 11, boxTypeWithoutLabel, null);
+				boxGenerator("#TextProductCode", 11, boxTypeWithoutLabel, null);
+
+				// FOOTER
+
+				footerSetterForHealthQuestionnairePDF("OP/UW/0110/061601", 3);
+				titleSetterForHealthQuestionnairePDF("KUESIONER GANGGUAN TULANG BELAKANG");
+				// getSignatureAttribute();
+				// setSignatureImage(["../../Resource/Logo/logo_bcalife_primary.png", null, "../../Resource/Logo/logo_bcalife.png"]);
+			});
+
+
+	/ BODY
+
+	%body
+
+		/ HEADER
+
+		%header
+			%section#SectionHeader
+				= Haml::Engine.new(File.read("header_healthquestionnairepdf_general.haml")).render
+
+			%h1
+			%br
+
+			%section#SectionNote
+				= Haml::Engine.new(File.read("header_foreignerpdf_note.haml")).render
+
+		/ MAIN
+
+		%main
+			%form
+				%section#SectionCustomer
+					= Haml::Engine.new(File.read("fieldset_foreignerpdf_policyholder.haml")).render
+
+				%h2 II. REQUIRED BY (PROPOSED) INSURED
+				%fieldset.WithoutDoubleDot
+					%span.Number.Single.PositionerLeft 1.
+					%label.Single.PositionerLeft{ :for => "SelectPolicyHolderForeignerFRNationality" } What is your Nationality?									
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#SelectPolicyHolderForeignerFRNationality.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 2.					
+					%label.Medium.Single.PositionerLeft How long have you been staying in Indonesia?
+					%input#TextPolicyHolderForeignerFRStayInIndonesiaYear.Tiny.Single.PositionerLeft{ :type => "text" }
+					%label.Single.Margin.PositionerLeft{ :for => "TextPolicyHolderForeignerFRStayInIndonesiaYear" } Year(s)
+					%input#TextPolicyHolderForeignerFRStayInIndonesiaMonth.Tiny.Single.PositionerLeft{ :type => "text" }
+					%label.Single.Margin.PositionerLeft{ :for => "TextPolicyHolderForeignerFRStayInIndonesiaMonth" } Month(s)
+					%br
+					
+					%span.Number.Single.PositionerLeft 3.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderTravelingTVCompanyBusinessName"} a. Please state name and address of your employer in Indonesia.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVCompanyBusinessName.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVBusinessType"} b. Type of industry your employer in involved in.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVBusinessType.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVBusinessType"} c. Current location.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVBusinessType.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVBusinessType"} d. Please elaborate your responsibility(es).
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVBusinessType.Line.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 4.
+					%label.Single.PositionerLeft{ :for => "TextPolicyHolderPainLocation" }	Do you have multiple jobs?***
+					%div.RadioButton.NumberIndent.PositionerLeft
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesEverHospitalNo" } No    (If “Yes”, please explain in detail in the column below).
+						%input#RadioButtonPolicyHolderDiabetesEverHospitalNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesEverHospital", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesEverHospitalYes" } Yes
+						%input#RadioButtonPolicyHolderDiabetesEverHospitalYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesEverHospital", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVCompanyBusinessName"} a. Please state name and address of your employer in Indonesia.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVCompanyBusinessName.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVBusinessType"} b. Type of industry your employer in involved in.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVBusinessType.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVBusinessType"} c. Current location.
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVBusinessType.Line.Full.Single.Item{ :type => "text" }
+					%br
+					%label.Single.NumberIndent.PositionerLeft{ :for => "TextPolicyHolderTravelingTVBusinessType"} d. Please elaborate your responsibility(es).
+					%br
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderTravelingTVBusinessType.Line.Full.Single.Item{ :type => "text" }
+					%br
+					
+					%span.Number.Single.PositionerLeft 5.					
+					%label.Long.Single.PositionerLeft How long are you planning to stay in Indonesia? 
+					%input#TextPolicyHolderForeignerFRStayInIndonesiaYear.Tiny.Single.PositionerLeft{ :type => "text" }
+					%label.Single.Margin.PositionerLeft{ :for => "TextPolicyHolderForeignerFRStayInIndonesiaYear" } Year(s)
+					%input#TextPolicyHolderForeignerFRStayInIndonesiaMonth.Tiny.Single.PositionerLeft{ :type => "text" }
+					%label.Single.Margin.PositionerLeft{ :for => "TextPolicyHolderForeignerFRStayInIndonesiaMonth" } Month(s)
+					%br
+					
+					%span.Number.Single.PositionerLeft 6.					
+					%label.Wrap.PositionerLeft 
+						Have you ever stayed or have plans to stay in any country other than Indonesia for a duration of 1 month or greater
+						%br
+						in the 	past 12 months or next 12 months?
+					%div.RadioButton.NumberIndent.PositionerLeft
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesEverHospitalNo" } No    (If “Yes”, please explain in detail in the column below).
+						%input#RadioButtonPolicyHolderDiabetesEverHospitalNo.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesEverHospital", :value => "false" }
+						%div.BoxRound.PositionerRight
+						%label.Wrap.Single.PositionerRight{ :for => "RadioButtonPolicyHolderDiabetesEverHospitalYes" } Yes
+						%input#RadioButtonPolicyHolderDiabetesEverHospitalYes.PositionerRight{ :type => "radio", :name => "RadioButtonPolicyHolderDiabetesEverHospital", :value => "true" }
+						%div.BoxRound.PositionerRight
+					%br
+					%div.ContainerFit.NumberIndent
+						%label.Short.Single.Item1.Center Countries
+						%label.Short.Single.Item1.Center Years
+						%label.Short.Single.Item1.Center Duration
+						%label.Short.Single.Item1.Center Purpose
+					%div.ContainerFit.NumberIndent
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalReason1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorName1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalDoctorAddress1.Short.Single.Item1.Margin{ :type => "text" }
+						%input#TextPolicyHolderDiabetesDBBOTTOMHospitalTherapyDate1.Short.Single.Item1.Margin{ :type => "text" }						
+					%br
+					
+				%section#SectionDeclaration
+					= Haml::Engine.new(File.read("fieldset_foreignerpdf_declaration.haml")).render
+
+		%section#SectionFooter
+			= Haml::Engine.new(File.read("footer_healthquestionnairepdf_general.haml")).render

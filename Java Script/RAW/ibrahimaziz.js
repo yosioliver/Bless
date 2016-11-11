@@ -1002,7 +1002,7 @@ function arrayFind(arrayObject, stringKey)
     for (var i = 0; i < arrayObject.length; i++)
     {
         if (arrayObject[i].elementID === stringKey) 
-        {
+        {			
             stringValue = arrayObject[i].Value;
             break;
         }

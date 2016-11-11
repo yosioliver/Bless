@@ -1,167 +1,296 @@
-!!! 5
+%form#PopUpForeigner.PopUp
+	
+	/ HEADER
 
-%html
+	%header
+		%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel", :onclick => "buttonPopUpCancel('PopUpForeigner')" }
+		%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done", :onclick => "buttonPopUpDone('PopUpForeigner', stringPageInfixTypeCurrent + 'Foreigner', arrayForeigner, null)" }
+		%h2 QUESTIONNAIRE FOR FOREIGNER
 
-	/ HEAD
+	/ MAIN
 
-	%head
-		= Haml::Engine.new(File.read("include_spajform_header.haml")).render
-		%title BCA Life - BLESS, Health Questionnaire 6c Form
+	%fieldset		
+		%label.Single.PositionerLeft{ :for => "SelectFRNationality" } 1. What is your Nationality ?
+		%select#SelectFRNationality.Single.Long.PositionerLeft			
+			%option{ :value=> "Afghanistan" } AFGHANISTAN
+			%option{ :value=> "Albania" } ALBANIA
+			%option{ :value=> "Andorra" } ANDORRA
+			%option{ :value=> "Argentina" } ARGENTINA
+			%option{ :value=> "Austria" } AUSTRIA
+			%option{ :value=> "Australia" } AUSTRALIA
+			%option{ :value=> "Bangladesh" } BANGLADESH
+			%option{ :value=> "Barbados" } BARBADOS
+			%option{ :value=> "Bulgaria" } BULGARIA
+			%option{ :value=> "Belize" } BELIZE
+			%option{ :value=> "Belgium" } BELGIUM
+			%option{ :value=> "Benin" } BENIN
+			%option{ :value=> "Bolivia" } BOLIVIA
+			%option{ :value=> "Brazil" } BRAZIL
+			%option{ :value=> "Brunei Darussalam" } BRUNEI DARUSSALAM
+			%option{ :value=> "Bahrain" } BAHRAIN
+			%option{ :value=> "Bahamas" } BAHAMAS
+			%option{ :value=> "Botswana" } BOTSWANA
+			%option{ :value=> "Belorussia" } BELORUSSIA
+			%option{ :value=> "Cambodia" } CAMBODIA
+			%option{ :value=> "Canada" } CANADA
+			%option{ :value=> "Central Africa Republic" } CENTRAL AFRICA REPUBLIC
+			%option{ :value=> "Cuba" } CUBA
+			%option{ :value=> "China" } CHINA
+			%option{ :value=> "CIS Countries" } CIS COUNTRIES
+			%option{ :value=> "Chile" } CHILE
+			%option{ :value=> "Colombia" } COLOMBIA
+			%option{ :value=> "Costa Rica" } COSTA RICA
+			%option{ :value=> "Croatia" } CROATIA
+			%option{ :value=> "Cyprus" } CYPRUS
+			%option{ :value=> "Czech Republic"} CZECH REPUBLIC
+			%option{ :value=> "Denmark"} DENMARK
+			%option{ :value=> "Dominica"} DOMINICA
+			%option{ :value=> "Dominican Republic"} DOMINICAN REPUBLIC
+			%option{ :value=> "Eastern Europe"} EASTERN EUROPE
+			%option{ :value=> "England"} ENGLAND
+			%option{ :value=> "El Salvador"} EL SALVADOR
+			%option{ :value=> "Egypt"} EYGPT
+			%option{ :value=> "Ethiopia"} ETHIOPIA
+			%option{ :value=> "Estonia"} ESTONIA
+			%option{ :value=> "Finlan"} FINLAND
+			%option{ :value=> "Fiji Islands"} FIJI ISLANDS
+			%option{ :value=> "Egpyt"} EYGPT
+			%option{ :value=> "Frace"} FRANCE
+			%option{ :value=> "Faroe Island"} FAROE ISLAND
+			%option{ :value=> "Great Britain"} GREAT BRITAIN
+			%option{ :value=> "Alderney"} ALDERNEY
+			%option{ :value=> "Guernsey (Channel Island)"} GUERNSEY (CHANNEL ISLAND)
+			%option{ :value=> "Gibraltar"} GIBRALTAR
+			%option{ :value=> "Guatemala"} GUATEMALA
+			%option{ :value=> "Ghana"} GHANA
+			%option{ :value=> "Germany"} GERMANY
+			%option{ :value=> "Greece"} GREECE
+			%option{ :value=> "Guyana"} GUYANA
+			%option{ :value=> "Hungary"} HUNGARY
+			%option{ :value=> "Hongkong"} HONG KONG
+			%option{ :value=> "Haiti"} HAITI
+			%option{ :value=> "Iceland"} ICELAND
+			%option{ :value=> "India"} INDIA
+			%option{ :value=> "Iran"} IRAN
+			%option{ :value=> "Ireland"} IRELAND
+			%option{ :value=> "Iraq"} IRAQ
+			%option{ :value=> "Isle Of Man"} ISLE OF MAN
+			%option{ :value=> "Iraq"} IRAQ
+			%option{ :value=> "Israel"} ISRAEL
+			%option{ :value=> "Italy"} ITALY
+			%option{ :value=> "Ivory Coast"} IVORY COAST
+			%option{ :value=> "Jamaica"} JAMAICA
+			%option{ :value=> "Japan"} JAPAN
+			%option{ :value=> "Jordan"} JORDAN
+			%option{ :value=> "Korea (North & South)"} KOREA (NORTH & SOUTH)
+			%option{ :value=> "Kuwait"} KUWAIT
+			%option{ :value=> "Kenya"} KENYA
+			%option{ :value=> "Laos"} LAOS
+			%option{ :value=> "Lebanon"} LEBANON
+			%option{ :value=> "Libya"} LIBYA
+			%option{ :value=> "Lithuania"} LITHUANIA
+			%option{ :value=> "Lesotho"} LESOTHO
+			%option{ :value=> "Luxembourg"} LUXEMBOURG
+			%option{ :value=> "Lative"} LATVIA
+			%option{ :value=> "Macau"} MACAU
+			%option{ :value=> "Maldives"} MALDIVES
+			%option{ :value=> "Madagascar"} MADAGASCAR
+			%option{ :value=> "Malaysia"} MALAYSIA
+			%option{ :value=> "Macedonia"} MACEDONIA
+			%option{ :value=> "Middle East"} MIDDLE EAST
+			%option{ :value=> "Mexico"} MEXICO
+			%option{ :value=> "Mongolia"} MONGOLIA
+			%option{ :value=> "Mali"} MALI
+			%option{ :value=> "Malta"} MALTA
+			%option{ :value=> "Monaco"} MONACO
+			%option{ :value=> "Morocco"} MOROCCO
+			%option{ :value=> "Mauritius"} MAURITIUS
+			%option{ :value=> "Mauritania"} MAURITANIA
+			%option{ :value=> "Melawai"} MELAWI
+			%option{ :value=> "Myanmar"} MYANMAR
+			%option{ :value=> "Nepal"} NEPAL
+			%option{ :value=> "Nigeria"} NIGERIA
+			%option{ :value=> "Nicaragua"} NICARAGUA
+			%option{ :value=> "Niger"} NIGER
+			%option{ :value=> "North Korea"} NORTH KOREA
+			%option{ :value=> "Netherlands"} NETHERLANDS
+			%option{ :value=> "Norway"} NORWAY
+			%option{ :value=> "New Zealand"} NEW ZEALAND
+			%option{ :value=> "Others"} OTHERS
+			%option{ :value=> "Other Pacific Islands"} OTHER PACIFIC ISLANDS
+			%option{ :value=> "Panama"} PANAMA
+			%option{ :value=> "Pakistan"} PAKISTAN
+			%option{ :value=> "Poland"} POLAND
+			%option{ :value=> "Philippines"} PHILIPPINES
+			%option{ :value=> "Papua New Guinea"} PAPUA NEW GUINEA
+			%option{ :value=> "Portugal"} PORTUGAL
+			%option{ :value=> "Peru"} PERU
+			%option{ :value=> "Paraguay"} PARAGUAY
+			%option{ :value=> "Qatar"} QATAR
+			%option{ :value=> "Russia"} RUSSIA
+			%option{ :value=> "Rwanda"} RWANDA
+			%option{ :value=> "South Africa"} SOUTH AFRICA
+			%option{ :value=> "Singapore"} SINGAPORE
+			%option{ :value=> "South Korea"} SOUTH KOREA
+			%option{ :value=> "Slovakia"} SLOVAKIA
+			%option{ :value=> "Samoa"} SAMOA
+			%option{ :value=> "Somalia"} SOMALIA
+			%option{ :value=> "San Marino"} SAN MARINO
+			%option{ :value=> "Senegal"} SENEGAL
+			%option{ :value=> "Spain"} SPAIN
+			%option{ :value=> "Sri Lanka"} SRI LANKA
+			%option{ :value=> "Surinam"} SURINAM
+			%option{ :value=> "Sweden"} SWEDEN
+			%option{ :value=> "Switzerland"} SWITZERLAND
+			%option{ :value=> "Seychelles"} SEYCHELLES
+			%option{ :value=> "Syria"} SYRIA
+			%option{ :value=> "The Americas"} THE AMERICAS
+			%option{ :value=> "Thailand"} THAILAND
+			%option{ :value=> "Tunisia"} TUNISIA
+			%option{ :value=> "Turkey"} TURKEY
+			%option{ :value=> "Taiwan"} TAIWAN
+			%option{ :value=> "Tanzania"} TANZAINIA
+			%option{ :value=> "United Arab Emirates"} UNITED ARAB EMIRATES
+			%option{ :value=> "Uganda"} UGANDA
+			%option{ :value=> "United Kingdom"} UNITED KINGDOM
+			%option{ :value=> "Ukraine"} UKRAINE
+			%option{ :value=> "Uruguay"} URUGUAY
+			%option{ :value=> "United States Of America"} UNITED STATES OF AMERICA
+			%option{ :value=> "Vietnam"} VIETNAM
+			%option{ :value=> "Venezuela"} VENEZUELA
+			%option{ :value=> "Western Europe"} WESTERN EUROPE
+			%option{ :value=> "Grenada"} GRENADA
+			%option{ :value=> "Yugoslavia"} YUGOSLAVIA
+			%option{ :value=> "Yemen"} YEMEN
+			%option{ :value=> "Zimbabwe"} ZIMBABWE
+			%option{ :value=> "Zaire"} ZAIRE
+		%br
+		%hr
 
-		/ JQUERY
+		%label.medium.Single.Item 2. How long have you been staying in Indonesia?
+		%div.ContainerFit
+			%input#TextPolicyHolderLisensi1.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
+			%input#TextPolicyHolderTanggalPerolehan1.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
+		%br
+		%hr
 
-		:javascript
-			$(document).ready(function()
-			{
+		%div.ContainerFit
+			%label.medium.Single.Item 3 a. Please state name and address of your employer in Indonesia
+		%input#TextPolicyHolderNameAndAddress.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-			});
+		%div.ContainerFit
+			%label.medium.Single.Item b. Type of industry your employer in involved in
+		%input#TextPolicyHolderIndustryYourEmployer.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
+		%div.ContainerFit
+			%label.medium.Single.Item c. Current Position
+		%input#TextPolicyHolderCurrentPosition.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-	/ BODY
+		%div.ContainerFit
+			%label.medium.Single.Item d. Please elaborate your responsibility(es)
+		%input#TextPolicyHolderElaborateYourResponsibility.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-	%body#Main
+		%label#Wrap.Single.PositionerLeft 4. Do you have multiple jobs?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes" } Ya
+			%div.Separator
+			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo" } Tidak
+		%br
 
-		%header
+		%div.ContainerFit
+			%label.medium.Single.Item if yes, please state :
+		%br
+			%label.medium.Single.Item a. Name and address of your other employer(s)
+		%input#TextPolicyHolderAddress.Full.Multi.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
+		%div.ContainerFit
+			%label.medium.Single.Item b. Type of industry your employer(s) is involved in
+		%input#TextPolicyHolderIndustryYourEmployers.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-			%input#ButtonCancel.ButtonPrimary.PositionerLeft{ :type => "button", :value => "Cancel" }
-			%input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
-			%h2 QUESTIONNAIRE FOR FOREIGNER
+		%div.ContainerFit
+			%label.medium.Single.Item c. Current location
+		%input#TextPolicyHolderCurrentLocation.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-		/ MAIN
+		%div.ContainerFit
+			%label.medium.Single.Item d. Please elaborate your responsibility(es)
+		%input#TextPolicyHolderEleborateResponsibility.Full.Single.Item1.Margin{ :type =>"text" }
+		%br
+		%hr
 
-		%main
-			%form#HealthQuestionnaireMain
-				%div.ContainerFit
-					%label.medium.Single.Item 1. What is your Nationality ?
-				%input#TextPolicyHolderNationality.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
+		%label.medium.Single.Item 5. How long are you planning to stay in Indonesia?
+		%div.ContainerFit
 
-				%label.medium.Single.Item 2. How long have you been staying in Indonesia?
-				%div.ContainerFit
+			%input#TextPolicyHolderStayIndonesiaYears.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
+			%input#TextPolicyHolderStayIndonesiaMonths.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
+		%br
+		%hr
 
-					%input#TextPolicyHolderLisensi1.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
-					%input#TextPolicyHolderTanggalPerolehan1.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
-				%br
-				%hr
+		%label#Wrap.Single.PositionerLeft 6. Have you ever stayed or have plans to stay in any country other than Indonesia for a duration of 1 month or greater in the past 12 months or next 12 months?
+		%div.RadioButton.Medium.PositionerRight
+			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes" } Ya
+			%div.Separator
+			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo" } Tidak
+		%br
 
-				%div.ContainerFit
-					%label.medium.Single.Item 3 a. Please state name and address of your employer in Indonesia
-				%input#TextPolicyHolderNameAndAddress.Full.Multi.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
+		%div.ContainerFit
+			%label.medium.Single.Item if yes, please state :
+		%br
 
-				%div.ContainerFit
-					%label.medium.Single.Item b. Type of industry your employer in involved in
-				%input#TextPolicyHolderIndustryYourEmployer.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-
-				%div.ContainerFit
-					%label.medium.Single.Item c. Current Position
-				%input#TextPolicyHolderCurrentPosition.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-
-				%div.ContainerFit
-					%label.medium.Single.Item d. Please elaborate your responsibility(es)
-				%input#TextPolicyHolderElaborateYourResponsibility.Full.Multi.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-
-				%label#Wrap.Single.PositionerLeft 4. Do you have multiple jobs?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes" } Ya
-					%div.Separator
-					%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo" } Tidak
-				%br
-
-				%div.ContainerFit
-					%label.medium.Single.Item if yes, please state :
-				%br
-					%label.medium.Single.Item a. Name and address of your other employer(s)
-				%input#TextPolicyHolderAddress.Full.Multi.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-
-				%div.ContainerFit
-					%label.medium.Single.Item b. Type of industry your employer(s) is involved in
-				%input#TextPolicyHolderIndustryYourEmployers.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-
-				%div.ContainerFit
-					%label.medium.Single.Item c. Current location
-				%input#TextPolicyHolderCurrentLocation.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-
-				%div.ContainerFit
-					%label.medium.Single.Item d. Please elaborate your responsibility(es)
-				%input#TextPolicyHolderEleborateResponsibility.Full.Single.Item1.Margin{ :type =>"text" }
-				%br
-				%hr
-
-				%label.medium.Single.Item 5. How long are you planning to stay in Indonesia?
-				%div.ContainerFit
-
-					%input#TextPolicyHolderStayIndonesiaYears.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
-					%input#TextPolicyHolderStayIndonesiaMonths.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
-				%br
-				%hr
-
-				%label#Wrap.Single.PositionerLeft 6. Have you ever stayed or have plans to stay in any country other than Indonesia for a duration of 1 month or greater in the past 12 months or next 12 months?
-				%div.RadioButton.Medium.PositionerRight
-					%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes" } Ya
-					%div.Separator
-					%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "false" }
-					%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo" } Tidak
-				%br
-
-				%div.ContainerFit
-					%label.medium.Single.Item if yes, please state :
-				%br
-
-				%br
-				%div.ContainerFit
-					%label.Short.Single.Item1.Center Countries
-					%label.Short.Single.Item1.Center Years
-					%label.Short.Single.Item1.Center Duration
-					%label.LongFix.Single.Item1.Center Purpose
-				%br
-				%div.ContainerFit
-					%input#TextPolicyHolderCountries.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderYears.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderDuration.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderPurpose.Long.Single.Item1.Margin{ :type => "text" }
-				%br
-				%div.ContainerFit
-					%input#TextPolicyHolderCountries1.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderYears1.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderDuration1.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderPurpose1.Long.Single.Item1.Margin{ :type => "text" }
-				%br
-				%div.ContainerFit
-					%input#TextPolicyHolderCountries2.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderYears2.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderDuration2.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderPurpose2.Long.Single.Item1.Margin{ :type => "text" }
-				%br
-				%div.ContainerFit
-					%input#TextPolicyHolderCountries3.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderYears3.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderDuration3.Short.Single.Item1.Margin{ :type => "text"}
-					%input#TextPolicyHolderPurpose3.Long.Single.Item1.Margin{ :type => "text" }
-				%br
-				%hr
-
-				%h2 PERNYATAAN DAN KUASA
-				%ol
-					%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
-					%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
-					%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
-					%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.
+		%br
+		%div.ContainerFit
+			%label.Short.Single.Item1.Center Countries
+			%label.Short.Single.Item1.Center Years
+			%label.Short.Single.Item1.Center Duration
+			%label.LongFix.Single.Item1.Center Purpose
+		%br
+		%div.ContainerFit
+			%input#TextPolicyHolderCountries.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderYears.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderDuration.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderPurpose.Long.Single.Item1.Margin{ :type => "text" }
+		%br
+		%div.ContainerFit
+			%input#TextPolicyHolderCountries1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderYears1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderDuration1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderPurpose1.Long.Single.Item1.Margin{ :type => "text" }
+		%br
+		%div.ContainerFit
+			%input#TextPolicyHolderCountries2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderYears2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderDuration2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderPurpose2.Long.Single.Item1.Margin{ :type => "text" }
+		%br
+		%div.ContainerFit
+			%input#TextPolicyHolderCountries3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderYears3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderDuration3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextPolicyHolderPurpose3.Long.Single.Item1.Margin{ :type => "text" }
+		%br
+		%hr
+		
+		%div.Note
+			%h2 PERNYATAAN DAN KUASA
+			%ol
+				%li Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.
+				%li Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.
+				%li Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.
+				%li Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.

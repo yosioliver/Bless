@@ -2122,7 +2122,7 @@ function setLineGeneral(stringID, stringValue)
 }
 
 function setRadioButtonGeneral(stringName, stringValue)
-{
+{	
     if (stringValue != null)
 	{
 		var radioButton = $("input:radio[name=" + stringName + "]");
@@ -2546,14 +2546,14 @@ function getFromDatabase(objectContent, stringPageType)
 	// previewArrayObject(objectContent);
 
     for (var i = 0; i < objectContent.length; i++)
-    {        
+    {  		
         var stringKey = objectContent[i].elementID;
         var stringValue = objectContent[i].Value;               
         
 		// GENERAL INPUT TYPE
 		
         if (stringKey.substring(0, stringPrefixText.length) == stringPrefixText)
-        {
+        {			
 			if (stringPageType == stringPageTypePDF)
 			{
 				// FOR TABLE HEALTH
@@ -2755,7 +2755,7 @@ function getFromDatabase(objectContent, stringPageType)
 				setTextPDF(stringKey, stringValue);        
 			}
 			else
-			{
+			{				
 				setTextForm(stringKey, stringValue);
 			}
         }
@@ -2818,8 +2818,7 @@ function getFromDatabase(objectContent, stringPageType)
 			else
 			{
 
-			}
-			
+			}			
             setRadioButtonGeneral(stringKey, stringValue);
         }
         else if (stringKey.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)

@@ -13,11 +13,13 @@
 		:javascript
 
 			// INITIALIZATION
-
+			
 			var stringPageTypeCurrent = stringPageTypeForm;
 			var stringPageSectionCurrent = stringPageSectionForm;
 			var stringPageValidationCurrent = stringPageValidationIncome;
 			var booleanInputChangeState = "false";
+			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
+			var arrayForeigner = [];
 
 			// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
 
@@ -52,10 +54,10 @@
 				// FOR TESTING
 
 				/* $("#ButtonSubmit").click(function()
-				{
+				{	
 					alert("before " + booleanInputChangeState);
 					savetoDB();
-					alert("after " + booleanInputChangeState);
+					alert("after " + booleanInputChangeState);					
 				}); */
 
 				$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
@@ -142,13 +144,14 @@
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderAge" } Umur
 					%input#TextPolicyHolderAge.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
 				%div.ContainerLeft
-					%label.Medium.Single.Item{ :for => "RadioButtonPolicyHolderNationalityWNI" } Kewarganegaraan
+					%label.Short.Single.Item{ :for => "RadioButtonPolicyHolderNationalityWNI" } Kewarganegaraan
 					%div.RadioButton.Item
-						%input#RadioButtonPolicyHolderNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wni", :required => "true" }
-						%label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNI" } WNI
+						%input#RadioButtonPolicyHolderForeignerWNI.Single{ :type => "radio", :name => "RadioButtonPolicyHolderForeigner", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpForeigner', stringPageInfixTypeCurrent, arrayForeigner, ['Foreigner'])", :required => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderForeignerWNI" } WNI
 						%div.Separator
-						%input#RadioButtonPolicyHolderNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderNationality", :value => "wna", :required => "true" }
-						%label.RadioButton{ :for => "RadioButtonPolicyHolderNationalityWNA" } WNA
+						%input#RadioButtonPolicyHolderForeignerWNA.Single{ :type => "radio", :name => "RadioButtonPolicyHolderForeigner", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpForeigner', stringPageInfixTypeCurrent, arrayForeigner, ['Foreigner'])", :required => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderForeignerWNA" } WNA
+						%input#ButtonPreviewPolicyHolderForeigner.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpForeigner', stringPageInfixTypeCurrent + 'Foreigner', arrayForeigner)" }
 				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizen" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
 				%div.RadioButton.PositionerLeft
 					%input#RadioButtonPolicyHolderUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderUSACitizen", :value => "true", :required => "true" }
@@ -359,5 +362,7 @@
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderSource" } Jelaskan Sumbernya
 					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%br
-
-				%div#BoxDate
+				
+			%section#PopUpForeigner.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_foreigner.haml")).render
+			%div#BoxDate
