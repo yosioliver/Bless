@@ -169,85 +169,84 @@
 
 		%label.medium.Single.Item 2. How long have you been staying in Indonesia?
 		%div.ContainerFit
-			%input#TextPolicyHolderLisensi1.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
-			%input#TextPolicyHolderTanggalPerolehan1.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
+			%input#TextFRStayInIndonesiaYear.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
+			%input#TextFRStayInIndonesiaMonth.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item 3 a. Please state name and address of your employer in Indonesia
-		%input#TextPolicyHolderNameAndAddress.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextFRBusinessAddress.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item b. Type of industry your employer in involved in
-		%input#TextPolicyHolderIndustryYourEmployer.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextFRBusinessTypeOfIndustry.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item c. Current Position
-		%input#TextPolicyHolderCurrentPosition.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextFRBusinessCurrentLocation.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item d. Please elaborate your responsibility(es)
-		%input#TextPolicyHolderElaborateYourResponsibility.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextFRBusinessResponsibility.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 4. Do you have multiple jobs?
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes" } Ya
+			%input#RadioButtonFRMultipleJobsYes{ :type => "radio", :name => "RadioButtonFRMultipleJobs", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonFRMultipleJobsYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo" } Tidak
+			%input#RadioButtonFRMultipleJobsNo{ :type => "radio", :name => "RadioButtonFRMultipleJobs", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonFRMultipleJobsNo" } Tidak
 		%br
 
 		%div.ContainerFit
 			%label.medium.Single.Item if yes, please state :
 		%br
 			%label.medium.Single.Item a. Name and address of your other employer(s)
-		%input#TextPolicyHolderAddress.Full.Multi.Item1.Margin{ :type =>"text" }
+		%input#TextFRWorkAddress.Full.Multi.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item b. Type of industry your employer(s) is involved in
-		%input#TextPolicyHolderIndustryYourEmployers.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextFRWorkTypeOfIndustry.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item c. Current location
-		%input#TextPolicyHolderCurrentLocation.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextFRWorkCurrentLocation.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%div.ContainerFit
 			%label.medium.Single.Item d. Please elaborate your responsibility(es)
-		%input#TextPolicyHolderEleborateResponsibility.Full.Single.Item1.Margin{ :type =>"text" }
+		%input#TextFRWorkResponsibility.Full.Single.Item1.Margin{ :type =>"text" }
 		%br
 		%hr
 
 		%label.medium.Single.Item 5. How long are you planning to stay in Indonesia?
 		%div.ContainerFit
-
-			%input#TextPolicyHolderStayIndonesiaYears.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
-			%input#TextPolicyHolderStayIndonesiaMonths.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
+			%input#TextFRPlanningStayInIndonesiaYear.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Years" }
+			%input#TextFRPlanningStayInIndonesiaMonth.Short.Single.Item1.Margin{ :type => "text", :placeholder => "Months" }
 		%br
 		%hr
 
 		%label#Wrap.Single.PositionerLeft 6. Have you ever stayed or have plans to stay in any country other than Indonesia for a duration of 1 month or greater in the past 12 months or next 12 months?
 		%div.RadioButton.Medium.PositionerRight
-			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "true" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeYes" } Ya
+			%input#RadioButtonFRStayDurationYes{ :type => "radio", :name => "RadioButtonFRStayDuration", :value => "true" }
+			%label.RadioButton{ :for => "RadioButtonFRStayDurationYes" } Ya
 			%div.Separator
-			%input#RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo{ :type => "radio", :name => "RadioButtonPolicyberpartisipasiChange", :value => "false" }
-			%label.RadioButton{ :for => "RadioButtonPolicyRadioButtonPolicyberpartisipasiChangeNo" } Tidak
+			%input#RadioButtonFRStayDurationNo{ :type => "radio", :name => "RadioButtonFRStayDuration", :value => "false" }
+			%label.RadioButton{ :for => "RadioButtonFRStayDurationNo" } Tidak
 		%br
 
 		%div.ContainerFit
@@ -262,28 +261,34 @@
 			%label.LongFix.Single.Item1.Center Purpose
 		%br
 		%div.ContainerFit
-			%input#TextPolicyHolderCountries.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderYears.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderDuration.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderPurpose.Long.Single.Item1.Margin{ :type => "text" }
+			%input#TextFRListCountries1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListYears1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListDuration1.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListPurpose1.Long.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextPolicyHolderCountries1.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderYears1.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderDuration1.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderPurpose1.Long.Single.Item1.Margin{ :type => "text" }
+			%input#TextFRListCountries2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListYears2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListDuration2.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListPurpose2.Long.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextPolicyHolderCountries2.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderYears2.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderDuration2.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderPurpose2.Long.Single.Item1.Margin{ :type => "text" }
+			%input#TextFRListCountries3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListYears3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListDuration3.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListPurpose3.Long.Single.Item1.Margin{ :type => "text" }
 		%br
 		%div.ContainerFit
-			%input#TextPolicyHolderCountries3.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderYears3.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderDuration3.Short.Single.Item1.Margin{ :type => "text"}
-			%input#TextPolicyHolderPurpose3.Long.Single.Item1.Margin{ :type => "text" }
+			%input#TextFRListCountries4.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListYears4.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListDuration4.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListPurpose4.Long.Single.Item1.Margin{ :type => "text" }
+		%br
+		%div.ContainerFit
+			%input#TextFRListCountries5.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListYears5.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListDuration5.Short.Single.Item1.Margin{ :type => "text"}
+			%input#TextFRListPurpose5.Long.Single.Item1.Margin{ :type => "text" }
 		%br
 		%hr
 		

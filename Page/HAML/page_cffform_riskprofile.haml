@@ -23,6 +23,9 @@
 			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
 			var booleanInputChangeState = "false";
 			var stringRelationshipStatus;
+			var intScore = 0;
+			var stringPageScoring = true;
+			var stringSpanScore = "SpanScore";
 
 			$(document).ready(function()
 			{							
@@ -32,150 +35,38 @@
 
 				// BUTTON
 				
-				inputListener();
+				inputListener();								
 				
-				defaultTotalSkor();
-				
-				$('input:radio[name=radiochoice1]').change(function() {        
-					calculateTotalSkor();                    
-				});
-
-				$('input:radio[name=radiochoice2]').change(function() {        
-					calculateTotalSkor();            
-				});
-
-				$('input:radio[name=radiochoice3]').change(function() {        
-					calculateTotalSkor();            
-				});
-
-				$('input:radio[name=radiochoice4]').change(function() {        
-					calculateTotalSkor();            
-				});
-
-				$('input:radio[name=radiochoice5]').change(function() {        
-					calculateTotalSkor();           
-				});								
+				// TEST
 				
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
 				
-				// RadionButtonSelectedValueSet('radiochoice5', '2');
-			});			
-			
-			/* function RadionButtonSelectedValueSet(name, SelectdValue) {
-				$('input[name="' + name+ '"][value="' + SelectdValue + '"]').prop('checked', true);
-			} */
-			
-			function defaultTotalSkor()
-			{
-				var totalSkor = 0;                    
-
-				$('.replacement').html(totalSkor);
-
-				scoreResultListener(arrayScoreResult, totalSkor);      
-			}
+				// SCORING
 				
-			function calculateTotalSkor()
-			{
-				var totalSkor = 0;        
-
-				var radiochoice1 = 'radiochoice1';
-				var radiochoice2 = 'radiochoice2';
-				var radiochoice3 = 'radiochoice3';
-				var radiochoice4 = 'radiochoice4';
-				var radiochoice5 = 'radiochoice5';
-
-				if ($('input[name=' + radiochoice1 + ']').is(':checked'))
+				$("input:radio").each(function()
 				{
-					var radioSkor1 = $('input[name=' + radiochoice1 + ']:checked').val();    
-				}
-				else
-				{
-					radioSkor1 = 0;
-				}   
-
-				if ($('input[name=' + radiochoice2 + ']').is(':checked'))
-				{
-					var radioSkor2 =  $('input[name=' + radiochoice2 + ']:checked').val();      
-				}
-				else
-				{
-					radioSkor2 = 0;
-				}  
-
-				if ($('input[name=' + radiochoice3 + ']').is(':checked'))
-				{
-					var radioSkor3 =  $('input[name=' + radiochoice3 + ']:checked').val();     
-				}
-				else
-				{
-					radioSkor3 = 0;    
-				}  
-
-				if ($('input[name=' + radiochoice4 + ']').is(':checked'))
-				{
-					var radioSkor4 =  $('input[name=' + radiochoice4 + ']:checked').val();        
-				}
-				else
-				{
-					radioSkor4 = 0;    
-				}
-
-				if ($('input[name=' + radiochoice5 + ']').is(':checked'))
-				{
-					var radioSkor5 =  $('input[name=' + radiochoice5 + ']:checked').val();       
-				}
-				else
-				{
-					radioSkor5 = 0;    
-				}        
-
-				totalSkor = parseInt(radioSkor1) + parseInt(radioSkor2) + parseInt(radioSkor3) + parseInt(radioSkor4) + parseInt(radioSkor5);  
-
-				$('.replacement').html(totalSkor);
-
-				scoreResultListener(arrayScoreResult, totalSkor);  
-			}								
-				
-			function scoreResultListener(arrayScoreResult, intScore)
-			{ 
-				var stringScoreResultSelected;
-
-				if (intScore == 0)
-				{
-					// TANPA STYLE DI TD NYA
-				}  
-				else if (intScore < 28)
-				{
-					stringScoreResultSelected = arrayScoreResult[0];
-				}   
-				else if(intScore >= 28 && intScore <= 40)
-				{
-					stringScoreResultSelected = arrayScoreResult[1];
-				}
-				else if(intScore > 40)
-				{
-					stringScoreResultSelected = arrayScoreResult[2];
-				}
-				else
-				{
-					//DO NOTHING
-				}
-
-				for (var i = 0; i < arrayScoreResult.length; i++)
-				{
-					if (arrayScoreResult[i] == stringScoreResultSelected)
+					$(this).change(function() 
 					{
-						$(arrayScoreResult[i]).removeClass("ScoreResultNotSelected");
-						$(arrayScoreResult[i]).addClass("ScoreResultSelected");
-					}
-					else
-					{
-						$(arrayScoreResult[i]).removeClass("ScoreResultSelected");
-						$(arrayScoreResult[i]).addClass("ScoreResultNotSelected");
-					}
-				}
-			}
+						intScore = 0;
+
+						$("input:radio").each(function()
+						{
+							if ($(this).is(':checked'))
+							{
+								intScore += parseInt($(this).val(), 10);   
+							}
+							else
+							{
+
+							}
+						});
+
+						scoreResultListener(arrayScoreResult, intScore, stringSpanScore);
+					});
+				});
+			});
+
 
 	/ BODY
 
@@ -194,100 +85,105 @@
 			%form#HealthQuestionnaireMain
 				%ol.InlineCounter
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft Manakah dari keterangan dibawah ini yang sesuai dengan tahapan kehidupan Anda saat ini?						
+						%label.PositionerLeft{ :for => "RadioButtonChoice1" } Manakah dari keterangan dibawah ini yang sesuai dengan tahapan kehidupan Anda saat ini?						
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent
-							%input#radio1{ :type => "radio", :name => "RadioButtonChoice1", :value => "2" }
+							%input#radio1{ :type => "radio", :name => "RadioButtonChoice1", :value => "2", :required => "true" }
 							%label.RadioButton{ :for => "radio1", :style => "text-align: left;" } A. Saya ingin  berinvestasi pada instrumen investasi yang  hampir tidak ada risiko penurunan Nilai investasi awal saya. Saya tidak siap menerima penurunan Nilai investasi dalam jangka pendek.
 							%br
-							%input#radio2{ :type => "radio", :name => "RadioButtonChoice1", :value => "4" }
+							%input#radio2{ :type => "radio", :name => "RadioButtonChoice1", :value => "4", :required => "true" }
 							%label.RadioButton{ :for => "radio2", :style => "text-align: left;" } B. Saya ingin mempertahankan Nilai investasi awal saya, namun saya bersedia menerima sedikit penurunan Nilai investasi dalam jangka pendek.
 							%br
-							%input#radio3{ :type => "radio", :name => "RadioButtonChoice1", :value => "8" }
+							%input#radio3{ :type => "radio", :name => "RadioButtonChoice1", :value => "8", :required => "true" }
 							%label.RadioButton{ :for => "radio3", :style => "text-align: left;" } C. Saya mengharapkan Nilai investasi saya tumbuh dan memperoleh tingkat pengembalian yang tinggi. Saya dapat menerima kemungkinan penurunan Nilai investasi awal.
 							%br
-							%input#radio4{ :type => "radio", :name => "RadioButtonChoice1", :value => "10" }
+							%input#radio4{ :type => "radio", :name => "RadioButtonChoice1", :value => "10", :required => "true" }
 							%label.RadioButton{ :for => "radio4", :style => "text-align: left;" } D. Saya mengharapkan Nilai investasi saya tumbuh sangat pesat dan memperoleh tingkat pengembalian yang sangat tinggi. Saya dapat menerima kemungkinan penurunan Nilai investasi atau kehilangan seluruh modal investasi awal.
 					%br
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft 
+						%label.PositionerLeft{ :for => "RadioButtonChoice2" } 
 							Nilai investasi Anda dapat berkurang karena fluktuasi pasar. Seberapa jauh penurunan investasi 
 							%br
 							yang dapat Anda toleransi?					
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio5{ :type => "radio", :name => "RadioButtonChoice2", :value => "2" }
+							%input#radio5{ :type => "radio", :name => "RadioButtonChoice2", :value => "2", :required => "true" }
 							%label.RadioButton{ :for => "radio5", :style => "text-align: left;" } A. Saya tidak bisa menerima penurunan sekecil apapun.
 							%br
-							%input#radio6{ :type => "radio", :name => "RadioButtonChoice2", :value => "4" }
+							%input#radio6{ :type => "radio", :name => "RadioButtonChoice2", :value => "4", :required => "true" }
 							%label.RadioButton{ :for => "radio6", :style => "text-align: left;" } B. < 10%.
 							%br
-							%input#radio7{ :type => "radio", :name => "RadioButtonChoice2", :value => "6" }
+							%input#radio7{ :type => "radio", :name => "RadioButtonChoice2", :value => "6", :required => "true" }
 							%label.RadioButton{ :for => "radio7", :style => "text-align: left;" } C. 10-30%
 							%br
-							%input#radio8{ :type => "radio", :name => "RadioButtonChoice2", :value => "8" }
+							%input#radio8{ :type => "radio", :name => "RadioButtonChoice2", :value => "8", :required => "true" }
 							%label.RadioButton{ :for => "radio8", :style => "text-align: left;" } D. > 30-50%
 							%br
-							%input#radio9{ :type => "radio", :name => "RadioButtonChoice2", :value => "10" }
+							%input#radio9{ :type => "radio", :name => "RadioButtonChoice2", :value => "10", :required => "true" }
 							%label.RadioButton{ :for => "radio9", :style => "text-align: left;" } E. > 50%
 					%br
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft 
+						%label.PositionerLeft{ :for => "RadioButtonChoice3" } 
 							Jika Nilai Investasi Anda saat ini mengalami penurunan sebesar 10% dibandingkan Nilai Investasi Anda 6 bulan yang lalu, 
 							%br
 							apakah yang Anda lakukan?
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio10{ :type => "radio", :name => "RadioButtonChoice3", :value => "2" }
+							%input#radio10{ :type => "radio", :name => "RadioButtonChoice3", :value => "2", :required => "true" }
 							%label.RadioButton{ :for => "radio10", :style => "text-align: left;" } A. Segera mencairkan investasi karena saya tidak bisa menerima penurunan Nilai investasi awal.
 							%br
-							%input#radio11{ :type => "radio", :name => "RadioButtonChoice3", :value => "4" }
+							%input#radio11{ :type => "radio", :name => "RadioButtonChoice3", :value => "4", :required => "true" }
 							%label.RadioButton{ :for => "radio11", :style => "text-align: left;" } B. Tidak akan melakukan pencairan, namun untuk selanjutnya akan lebih sering memantau pergerakan Nilai investasi saya.
 							%br
-							%input#radio12{ :type => "radio", :name => "RadioButtonChoice3", :value => "8" }
+							%input#radio12{ :type => "radio", :name => "RadioButtonChoice3", :value => "8", :required => "true" }
 							%label.RadioButton{ :for => "radio12", :style => "text-align: left;" } C. Tidak akan melakukan pencairan. Saya bisa menerima penurunan investasi dalam jangka pendek karena saya mempunyai tujuan investasi jangka panjang.
 							%br
-							%input#radio13{ :type => "radio", :name => "RadioButtonChoice3", :value => "10" }
+							%input#radio13{ :type => "radio", :name => "RadioButtonChoice3", :value => "10", :required => "true" }
 							%label.RadioButton{ :for => "radio13", :style => "text-align: left;" } D. Akan menambah jumlah investasi saya. Penurunan Nilai investasi dalam jangka pendek tersebut adalah peluang saya untuk menambahkan Nilai investasi sehingga memperoleh hasil maksimal.
 					%br
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft	Berapa lama jangka waktu Investasi yang Anda inginkan?							
+						%label.PositionerLeft{ :for => "RadioButtonChoice4" } Berapa lama jangka waktu Investasi yang Anda inginkan?	
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio14{ :type => "radio", :name => "RadioButtonChoice4", :value => "6" }
+							%input#radio14{ :type => "radio", :name => "RadioButtonChoice4", :value => "6", :required => "true" }
 							%label.RadioButton{ :for => "radio14", :style => "text-align: left;" } A. 7 s/d 10 tahun.
 							%br
-							%input#radio15{ :type => "radio", :name => "RadioButtonChoice4", :value => "8" }
+							%input#radio15{ :type => "radio", :name => "RadioButtonChoice4", :value => "8", :required => "true" }
 							%label.RadioButton{ :for => "radio15", :style => "text-align: left;" } B. 11 s/d 15 tahun.
 							%br
-							%input#radio16{ :type => "radio", :name => "RadioButtonChoice4", :value => "10" }
+							%input#radio16{ :type => "radio", :name => "RadioButtonChoice4", :value => "10", :required => "true" }
 							%label.RadioButton{ :for => "radio16", :style => "text-align: left;" } C. 16 s/d 20 tahun tujuan investasi jangka panjang.
 					%br
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft	Seberapa jauh Anda mengetahui tentang Asuransi Jiwa Unit Link?							
+						%label.PositionerLeft{ :for => "RadioButtonChoice5" } Seberapa jauh Anda mengetahui tentang Asuransi Jiwa Unit Link?			
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio17{ :type => "radio", :name => "RadioButtonChoice5", :value => "2" }
+							%input#radio17{ :type => "radio", :name => "RadioButtonChoice5", :value => "2", :required => "true" }
 							%label.RadioButton{ :for => "radio17", :style => "text-align: left;" } A. Saya tidak memahami pengetahuan apapun mengenai produk Asuransi Jiwa Unit Link dan tidak nyaman dengan penurunan Nilai investasi.
 							%br
-							%input#radio18{ :type => "radio", :name => "RadioButtonChoice5", :value => "4" }
+							%input#radio18{ :type => "radio", :name => "RadioButtonChoice5", :value => "4", :required => "true" }
 							%label.RadioButton{ :for => "radio18", :style => "text-align: left;" } B. Saya tidak terlalu memahami produk Asuransi Jiwa Unit Link.
 							%br
-							%input#radio19{ :type => "radio", :name => "RadioButtonChoice5", :value => "6" }
+							%input#radio19{ :type => "radio", :name => "RadioButtonChoice5", :value => "6", :required => "true" }
 							%label.RadioButton{ :for => "radio19", :style => "text-align: left;" } C. Saya memahami dan memiliki pengetahuan umum mengenai produk Asuransi Jiwa Unit Link.
 							%br
-							%input#radio20{ :type => "radio", :name => "RadioButtonChoice5", :value => "8" }
+							%input#radio20{ :type => "radio", :name => "RadioButtonChoice5", :value => "8", :required => "true" }
 							%label.RadioButton{ :for => "radio20", :style => "text-align: left;" } D. Saya memahami produk Asuransi Jiwa Unit Link termasuk beberapa faktor yang mempengaruhi naik-turunnya Nilai investasi.
 							%br
-							%input#radio21{ :type => "radio", :name => "RadioButtonChoice5", :value => "10" }
+							%input#radio21{ :type => "radio", :name => "RadioButtonChoice5", :value => "10", :required => "true" }
 							%label.RadioButton{ :for => "radio21", :style => "text-align: left;" } E. Saya memiliki pengetahuan yang mendalam mengenai produk Asuransi Jiwa Unit Link.
 				%br
-				%label#LabelPolicyHolderActivity.Item.PositionerLeft{ :style => "margin-top: 50px;"} INTERPRETASI NILAI
-				%span.Item.PositionerRight.replacement{ :style => "margin-top: 50px;"}
-				%label.Item.PositionerRight{ :style => "margin-top: 50px;"} SKOR ANDA:	
+				%label#LabelPolicyHolderActivity.Item.PositionerLeft{ :style => "margin-top: 50px;"} 
+					%b
+						INTERPRETASI NILAI
+				%span.Item.PositionerRight#SpanScore{ :style => "margin-top: 50px;"}
+				%label.Item.PositionerRight{ :style => "margin-top: 50px;"} 
+					%b
+						SKOR ANDA:	
 				%br
 				%div#ScoreConservative.SecondIndent.ScoreResult
-					Konservatif (Nilai <28)
+					%b
+						Konservatif (Nilai <28)
 					%br
 					Anda mengharapkan pertumbuhan nilai Investasi yang stabil dan penerimaan hasil investasi secara periodik. 
 					%br
@@ -296,7 +192,8 @@
 					pencarian dana Investasi Anda jika terjadi penurunan Nilai Investasi/kerugian
 				%br
 				%%div#ScoreModerate.SecondIndent.ScoreResult
-					Moderat (Nilai 28-40)
+					%b
+						Moderat (Nilai 28-40)
 					%br
 					Anda berinvestasi dengan tujuan mendapatkan pendapatan secara periodik dan pertumbuhan modal dalam 
 					%br
@@ -304,7 +201,8 @@
 					%br
 					untuk memperoleh potensi pertumbuhan modal yang lebih tinggi dalam jangka menengah sampai panjang.
 				%%div#ScoreAggressive.SecondIndent.ScoreResult
-					Agresif (Nilai >40)
+					%b
+						Agresif (Nilai >40)
 					%br
 					Anda bertujuan mengembangkan pokok investasi dalam jangka panjang dengan tingkat imbal hasil yang besar.
 					%br

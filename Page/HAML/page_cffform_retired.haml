@@ -105,7 +105,7 @@
 			%form#HealthQuestionnaireMain
 				%div.ContainerFit
 					%label.Full.PositionerLeft Pilih bila nasabah tidak mempunyai rencana asuransi
-					%input#ButtonClear.ButtonPrimary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
+					%input#ButtonClear.ButtonSecondary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
 				%br
 				%hr									
 				
@@ -119,16 +119,19 @@
 					%label.MediumFix.Single.Item1.Margin Pensiun			
 					%input#TextIDRET0.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextIDRET1.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextIDRET2.Short.Single.Item1.Margin{ :type => "text", :readonly => "true", :style => "background-color: #eae7e7;" }									
+					%input#TextIDRET2.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }									
 				%hr
 				%br
 				
 				%div.ContainerFit
 					%label.Full.PositionerLeft Berapa jumlah pendapatan yang ingin dialokasikan untuk asuransi pensiun per bulan?
-				%br								
+				%br							
 					
 				%div.ContainerFit
-					%label.Long.Single.Item1.Margin Total pendapatan nasabah + pasangan (Rp.)
+					%label.Medium.Single.Item1.Margin 
+						Total pendapatan
+						%br
+						nasabah + pasangan (Rp.)
 					%input#TextIDRETTotal.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%label.Short.Single.Item1.Margin
 					%label.Short.Single.Item1.Margin

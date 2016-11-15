@@ -11,8 +11,9 @@
 		/ JQUERY
 
 		:javascript
-
+		
 			// INTIALIZATION
+			
 			var arrayScoreResult = ["#ScoreConservative", "#ScoreModerate", "#ScoreAggressive"];
 			
 			var jsonDummy = '{"result":{"readFromDB":[{"elementID":"DatePolicyHolderChestPainFirstAttack","Value":"01/02/1990"},{"elementID":"AreaPolicyHolderActivityAmandmentDetail","Value":"01/02/1990"}]}}'
@@ -241,7 +242,7 @@
 			%form#HealthQuestionnaireMain
 				%div.ContainerFit
 					%label.Full.PositionerLeft Pilih bila nasabah tidak mempunyai rencana asuransi
-					%input#ButtonClear.ButtonPrimary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
+					%input#ButtonClear.ButtonSecondary.PositionerRight{ :type => "button", :value => "CLEAR ALL" }
 				%br
 				%hr									
 						
@@ -260,7 +261,7 @@
 						(Death and disability)
 					%input#TextID0.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID1.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID2.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID2.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 					
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -269,7 +270,7 @@
 						(Critical illness)
 					%input#TextID3.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID4.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID5.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID5.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -278,7 +279,7 @@
 						(Rumah sakit per hari)
 					%input#TextID6.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID7.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID8.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID8.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -287,7 +288,7 @@
 						(Personal Accident)
 					%input#TextID9.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID10.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID11.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID11.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				%hr
 				%br
 				
@@ -306,7 +307,7 @@
 						(Death and disability)
 					%input#TextID12.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID13.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID14.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID14.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 					
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -315,7 +316,7 @@
 						(Critical illness)
 					%input#TextID15.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID16.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID17.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID17.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -324,7 +325,7 @@
 						(Rumah sakit per hari)
 					%input#TextID18.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextI119.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID20.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID20.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -333,7 +334,7 @@
 						(Personal Accident)
 					%input#TextID21.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID22.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID23.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID23.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				%hr
 				%br
 				
@@ -352,7 +353,7 @@
 						(Death and disability)
 					%input#TextID24.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID25.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID26.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID26.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 					
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -361,7 +362,7 @@
 						(Critical illness)
 					%input#TextID27.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID28.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID29.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID29.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -370,7 +371,7 @@
 						(Rumah sakit per hari)
 					%input#TextID30.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID31.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID32.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID32.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				
 				%div.ContainerFit
 					%label#LabelPolicyHolderAlcohol.MediumFix.Single.Item1.Margin 
@@ -379,7 +380,7 @@
 						(Personal Accident)
 					%input#TextID33.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%input#TextID34.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
-					%input#TextID35.Short.Single.Item1.Margin{ :type => "text", :disabled => "true" }
+					%input#TextID35.Short.Single.Item1.Margin{ :type => "text", :readonly => "true" }
 				%hr
 				%br
 				
@@ -388,7 +389,10 @@
 				%br													
 				
 				%div.ContainerFit
-					%label.Long.Single.Item1.Margin Total pendapatan nasabah + pasangan (Rp.)
+					%label.MediumFix.Single.Item1.Margin 
+						Total pendapatan
+						%br
+						nasabah + pasangan (Rp.)
 					%input#TextIDTotal.Short.Single.Item1.Margin{ :type => "text", :value => "0" }
 					%label.Short.Single.Item1.Margin
 					%label.Short.Single.Item1.Margin

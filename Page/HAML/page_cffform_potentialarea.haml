@@ -22,47 +22,46 @@
 			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
 			var booleanInputChangeState = "false";
 			var stringRelationshipStatus;
+			var stringPageAgeCalculation = true;
 
 			$(document).ready(function()
 			{							
 				// GENERATOR
 
 				additionalQuestionGenerator();
-
+				
 				// BUTTON
 				
 				inputListener();							
 				
 				/* $("#MainForm #ButtonDone").click(function()
-				{
+				{					
 					savetoDB();
 					// setToDatabase(stringPageTypeCurrent);
 				}); */
 				
 				// var objectContent = JSON.parse(jsonDummy);
 				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);								
-				
-				// alert(dob('1990-08-05'));
-				// calculatePriority('1990-08-05');
-				
-				function dob(dobstr)
-				{				
-					if(dobstr != '')
-					{
-						var str=dobstr.split('-');    
-						var firstdate=new Date(str[0],str[1],str[2]);
-						var today = new Date();        
-						var dayDiff = Math.ceil(today.getTime() - firstdate.getTime()) / (1000 * 60 * 60 * 24 * 365);
-						var age = parseInt(dayDiff);   
-
-						return age; 
-					}   
-				}
+			});
 			
-				function calculatePriority(birthOfDate)
+			function dob(dobstr)
+			{				
+				if(dobstr != '')
 				{
+					var str=dobstr.split('-');    
+					var firstdate=new Date(str[0],str[1],str[2]);
+					var today = new Date();        
+					var dayDiff = Math.ceil(today.getTime() - firstdate.getTime()) / (1000 * 60 * 60 * 24 * 365);
+					var age = parseInt(dayDiff);   
+
+					return age; 
+				}   
+			}
+
+			function calculatePriority(birthOfDate)
+			{
 				var dobVal = dob(birthOfDate);								
-				
+
 				if(dobVal <= 25)
 				{
 					$('.proteksiPribadiPrio').html(1);
@@ -117,8 +116,7 @@
 				{
 					//DO NOTHING
 				}
-				}
-			});			
+			}
 
 	/ BODY
 
@@ -126,7 +124,8 @@
 
 		/ HEADER
 
-		%header#MainForm			
+		%header#MainForm
+			/ %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
 			%div.Highlighted
 				%label.Single.PositionerLeft.Center KEBUTUHAN
 				%label.Slim.Single.PositionerRight.Center PRIORITAS
@@ -137,136 +136,136 @@
 		/ MAIN
 
 		%main
-			%form#HealthQuestionnaireMain
+			%form#HealthQuestionnaireMain				
 				%ol.InlineCounter
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft
+						%label.PositionerLeft{ :for => "RadioButtonCFFPRIPlanToHave" }
 							Proteksi Pribadi
 							%br
 							(Proteksi Jiwa,Cacat Tetap Total,dan Penyakit Kritis)							
 						%span.Slim.PositionerRight.Center.proteksiPribadiPrio
 							
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFPRIPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFPRIPlanToHave", :value => "true" }
+							%input#RadioButtonCFFPRIPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFPRIPlanToHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFPRIPlanToHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFPRIPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFPRIPlanToHave", :value => "false" }
+							%input#RadioButtonCFFPRIPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFPRIPlanToHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFPRIPlanToHaveNo" } Tidak
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFPRIAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFPRIAlreadyHave", :value => "true" }
+							%input#RadioButtonCFFPRIAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFPRIAlreadyHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFPRIAlreadyHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFPRIAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFPRIAlreadyHave", :value => "false" }
+							%input#RadioButtonCFFPRIAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFPRIAlreadyHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFPRIAlreadyHaveNo" } Tidak
 					%br					
-						%label.PositionerLeft.SecondIndent
+						%label.PositionerLeft.SecondIndent{ :for => "RadioButtonCFFSPOPlanToHave" }
 							Proteksi Pasangan
 							%br
 							(Proteksi Jiwa,Cacat Tetap Total,dan Penyakit Kritis)							
 						%span.Slim.PositionerRight.Center.proteksiPasanganPrio
 							
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFSPOPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFSPOPlanToHave", :value => "true" }
+							%input#RadioButtonCFFSPOPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFSPOPlanToHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFSPOPlanToHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFSPOPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFSPOPlanToHave", :value => "false" }
+							%input#RadioButtonCFFSPOPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFSPOPlanToHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFSPOPlanToHaveNo" } Tidak
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFSPOAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFSPOAlreadyHave", :value => "true" }
+							%input#RadioButtonCFFSPOAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFSPOAlreadyHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFSPOAlreadyHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFSPOAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFSPOAlreadyHave", :value => "false" }
+							%input#RadioButtonCFFSPOAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFSPOAlreadyHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFSPOAlreadyHaveNo" } Tidak
 					%br					
-						%label.PositionerLeft.SecondIndent
+						%label.PositionerLeft.SecondIndent{ :for => "RadioButtonCFFCHIPlanToHave" }
 							Proteksi Anak
 							%br
 							(Proteksi Jiwa,Cacat Tetap Total,dan Penyakit Kritis)							
 						%span.Slim.PositionerRight.Center.proteksiAnakPrio
 							
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFCHIPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFCHIPlanToHave", :value => "true" }
+							%input#RadioButtonCFFCHIPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFCHIPlanToHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFCHIPlanToHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFCHIPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFCHIPlanToHave", :value => "false" }
+							%input#RadioButtonCFFCHIPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFCHIPlanToHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFCHIPlanToHaveNo" } Tidak
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFCHIAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFCHIAlreadyHave", :value => "true" }
+							%input#RadioButtonCFFCHIAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFCHIAlreadyHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFCHIAlreadyHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFCHIAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFCHIAlreadyHave", :value => "false" }
+							%input#RadioButtonCFFCHIAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFCHIAlreadyHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFCHIAlreadyHaveNo" } Tidak
 					%br
 					%hr
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft
+						%label.PositionerLeft{ :for => "RadioButtonCFFRETPlanToHave" }
 							Pensiun
 						%span.Slim.PositionerRight.Center.proteksiPensiunPrio						
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFRETPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFRETPlanToHave", :value => "true" }
+							%input#RadioButtonCFFRETPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFRETPlanToHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFRETPlanToHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFRETPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFRETPlanToHave", :value => "false" }
+							%input#RadioButtonCFFRETPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFRETPlanToHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFRETPlanToHaveNo" } Tidak
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFRETAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFRETAlreadyHave", :value => "true" }
+							%input#RadioButtonCFFRETAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFRETAlreadyHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFRETAlreadyHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFRETAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFRETAlreadyHave", :value => "false" }
+							%input#RadioButtonCFFRETAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFRETAlreadyHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFRETAlreadyHaveNo" } Tidak
 					%br
 					%hr
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft
+						%label.PositionerLeft{ :for => "RadioButtonCFFEDUPlanToHave" }
 							Pendidikan Anak							
 						%span.Slim.PositionerRight.Center.proteksiPendidikanAnakPrio
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFEDUPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFEDUPlanToHave", :value => "true" }
+							%input#RadioButtonCFFEDUPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFEDUPlanToHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFEDUPlanToHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFEDUPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFEDUPlanToHave", :value => "false" }
+							%input#RadioButtonCFFEDUPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFEDUPlanToHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFEDUPlanToHaveNo" } Tidak
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFEDUAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFEDUAlreadyHave", :value => "true" }
+							%input#RadioButtonCFFEDUAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFEDUAlreadyHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFEDUAlreadyHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFEDUAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFEDUAlreadyHave", :value => "false" }
+							%input#RadioButtonCFFEDUAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFEDUAlreadyHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFEDUAlreadyHaveNo" } Tidak
 					%br
 					%hr
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft
+						%label.PositionerLeft{ :for => "RadioButtonCFFINHPlanToHave" }
 							Warisan					
 						%span.Slim.PositionerRight.Center.proteksiWarisanPrio
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFINHPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFINHPlanToHave", :value => "true" }
+							%input#RadioButtonCFFINHPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFINHPlanToHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINHPlanToHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFINHPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFINHPlanToHave", :value => "false" }
+							%input#RadioButtonCFFINHPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFINHPlanToHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINHPlanToHaveNo" } Tidak
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFINHAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFINHAlreadyHave", :value => "true" }
+							%input#RadioButtonCFFINHAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFINHAlreadyHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINHAlreadyHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFINHAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFINHAlreadyHave", :value => "false" }
+							%input#RadioButtonCFFINHAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFINHAlreadyHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINHAlreadyHaveNo" } Tidak
 					%br
 					%hr
 					%li{ :style => "display: block;" }
-						%label.PositionerLeft
+						%label.PositionerLeft{ :for => "RadioButtonCFFINVPlanToHave" }
 							Investasi						
 						%span.Slim.PositionerRight.Center.proteksiInvestasiPrio
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFINVPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFINVPlanToHave", :value => "true" }
+							%input#RadioButtonCFFINVPlanToHaveYes{ :type => "radio", :name => "RadioButtonCFFINVPlanToHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINVPlanToHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFINVPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFINVPlanToHave", :value => "false" }
+							%input#RadioButtonCFFINVPlanToHaveNo{ :type => "radio", :name => "RadioButtonCFFINVPlanToHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINVPlanToHaveNo" } Tidak
 						%div.RadioButton.Slim.PositionerRight.Center
-							%input#RadioButtonCFFINVAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFINVAlreadyHave", :value => "true" }
+							%input#RadioButtonCFFINVAlreadyHaveYes{ :type => "radio", :name => "RadioButtonCFFINVAlreadyHave", :value => "true", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINVAlreadyHaveYes" } Ya
 							%div.Separator
-							%input#RadioButtonCFFINVAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFINVAlreadyHave", :value => "false" }
+							%input#RadioButtonCFFINVAlreadyHaveNo{ :type => "radio", :name => "RadioButtonCFFINVAlreadyHave", :value => "false", :required => "true" }
 							%label.RadioButton{ :for => "RadioButtonCFFINVAlreadyHaveNo" } Tidak
 					%br
 					%hr

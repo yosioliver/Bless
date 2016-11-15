@@ -49,10 +49,10 @@
 				radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
 				inputListener();
 
-				/* $("#ButtonSubmit").click(function()
+				$("#ButtonSubmit").click(function()
 				{
 					savetoDB();
-				}); */
+				});
 
 				// IOS
 
@@ -82,7 +82,7 @@
 
 		%main
 			%form
-				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
+				%input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentKursIDR" } Mata Uang
 				%div.RadioButton.PositionerLeft
 					%input#RadioButtonPremiPaymentKursIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "idr", :disabled => "true" }
@@ -125,15 +125,15 @@
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentPayorThirdParty" } Pihak Ketiga
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentWayDebit" } Cara Pembayaran
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentWay" } Cara Pembayaran
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPremiPaymentWayDebit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "debit" }
+					%input#RadioButtonPremiPaymentWayDebit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "debit", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayDebit" } Debit Rekening
 					%div.Separator
-					%input#RadioButtonPremiPaymentWayCredit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "credit" }
+					%input#RadioButtonPremiPaymentWayCredit.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "credit", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayCredit" } Debit Kartu Kredit
 					%div.Separator
-					%input#RadioButtonPremiPaymentWayOther{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "other" }
+					%input#RadioButtonPremiPaymentWayOther{ :type => "radio", :name => "RadioButtonPremiPaymentWay", :value => "other", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentWayOther" } Lainnya
 				%input#TextPremiPaymentWayOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br
