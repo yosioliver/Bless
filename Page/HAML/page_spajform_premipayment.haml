@@ -49,10 +49,10 @@
 				radioButtonOtherGenerator("RadioButtonPremiPaymentWay", "#TextPremiPaymentWayOther", "other");
 				inputListener();
 
-				$("#ButtonSubmit").click(function()
+				/* $("#ButtonSubmit").click(function()
 				{
 					savetoDB();
-				});
+				}); */
 
 				// IOS
 
@@ -82,7 +82,7 @@
 
 		%main
 			%form
-				%input#ButtonSubmit{ :type => "button", :value => "Submit" }
+				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentKursIDR" } Mata Uang
 				%div.RadioButton.PositionerLeft
 					%input#RadioButtonPremiPaymentKursIDR.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentKurs", :value => "idr", :disabled => "true" }

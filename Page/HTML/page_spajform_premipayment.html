@@ -38,6 +38,7 @@
     <script src='../../jqueryLibrary/JavaScript/Minimized/jquery-1.11.1.min.js' type='text/javascript'></script>
     <script src='../../jqueryLibrary/JavaScript/Minimized/jquery-migrate-1.2.1.min.js' type='text/javascript'></script>
     <script src='../../jqueryLibrary/JavaScript/Minimized/ibrahimaziz.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/ibrahimaziz-healthquestionnaire.min.js' type='text/javascript'></script>
     <script src='../../jqueryLibrary/JavaScript/Minimized/DateTimePicker.min.js' type='text/javascript'></script>
     <script src='../../jqueryLibrary/JavaScript/Minimized/DateTimePicker-i18n.js' type='text/javascript'></script>
     <script src='../../jqueryLibrary/JavaScript/Minimized/DateTimePicker_IOS_fix.js' type='text/javascript'></script>
@@ -162,15 +163,15 @@
           <label class='RadioButton' for='RadioButtonPremiPaymentPayorThirdParty'>Pihak Ketiga</label>
         </div>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentWayDebit'>Cara Pembayaran</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentWay'>Cara Pembayaran</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPremiPaymentWayDebit' name='RadioButtonPremiPaymentWay' type='radio' value='debit'>
+          <input class='Medium Single' id='RadioButtonPremiPaymentWayDebit' name='RadioButtonPremiPaymentWay' required='true' type='radio' value='debit'>
           <label class='RadioButton' for='RadioButtonPremiPaymentWayDebit'>Debit Rekening</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPremiPaymentWayCredit' name='RadioButtonPremiPaymentWay' type='radio' value='credit'>
+          <input class='Medium Single' id='RadioButtonPremiPaymentWayCredit' name='RadioButtonPremiPaymentWay' required='true' type='radio' value='credit'>
           <label class='RadioButton' for='RadioButtonPremiPaymentWayCredit'>Debit Kartu Kredit</label>
           <div class='Separator'></div>
-          <input id='RadioButtonPremiPaymentWayOther' name='RadioButtonPremiPaymentWay' type='radio' value='other'>
+          <input id='RadioButtonPremiPaymentWayOther' name='RadioButtonPremiPaymentWay' required='true' type='radio' value='other'>
           <label class='RadioButton' for='RadioButtonPremiPaymentWayOther'>Lainnya</label>
         </div>
         <input class='Long Single PositionerLeft' id='TextPremiPaymentWayOther' type='text'>
