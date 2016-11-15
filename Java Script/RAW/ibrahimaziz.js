@@ -1,3 +1,16 @@
+ibrahimaziz.js
+Details
+Activity
+TODAY
+
+You uploaded an item
+5:32 PM
+Javascript
+ibrahimaziz.js
+No recorded activity before November 15, 2016
+New Team Drive
+
+
 // IBRAHIM AZIZ 
 // BHIMBIM
 // http://www.ibrahimaziz.biz
@@ -101,6 +114,7 @@ var arrayNationality = [];
 var stringIllnessSuffix = "Illness";
 var stringSexFemale = "female";
 var stringSexMale = "male";
+var arrayForeigner = [];
 
 
 // GENERATOR
@@ -1851,7 +1865,7 @@ function buttonPopUpSPAJProposalGenerator()
 			
 		}
 
-		previewArrayObject(arrayHealthQuestionnaire);
+		// previewArrayObject(arrayHealthQuestionnaire);
     });
 }
 
@@ -1969,7 +1983,7 @@ function tableSPAJProposalGenerator(stringContainerJavaScriptID, arrayContent)
 	var stringKeyInfix;
 	
 	$(stringContainerJQueryID).empty();
-	previewArrayObject(arrayHealthQuestionnaire);
+	// previewArrayObject(arrayHealthQuestionnaire);
 	for (var i = 0; i < arrayContent.length; i++)
 	{
 		stringKey = arrayContent[i].elementID;
@@ -3861,22 +3875,22 @@ function checkboxAsRadioButton(stringCheckboxName)
 
 function validateEmail(stringInputJavaScriptID)
 {
+	// alert("2");
 	var stringInputJQueryID = stringKres + stringInputJavaScriptID;
 
-	$(stringInputJQueryID).change(function()
-	{
-		var stringEmail = $(this).val();
+	var stringEmail = $(stringInputJQueryID).val();
 
-		if (stringEmail.indexOf("@") >= 0)
-		{
-			
-		}
-		else
-		{
-			// alert("Format validasi email salah !.");
-			ReplaceHTMLNameOnValidate("","Format validasi email salah !.");
-		}
-	});
+	if (stringEmail.indexOf("@") >= 0)
+	{
+		return true;
+	}
+	else
+	{
+		// alert("Format validasi email salah !.");
+		ReplaceHTMLNameOnValidate("","Format validasi email salah !.");
+		return false;
+	}
+	
 }
 
 function validateDateNotExceedToday(stringInputJavaScriptID)

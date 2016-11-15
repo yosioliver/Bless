@@ -55,9 +55,9 @@
 
 				/* $("#ButtonSubmit").click(function()
 				{	
-					alert("before " + booleanInputChangeState);
+					// alert("before " + booleanInputChangeState);
 					savetoDB();
-					alert("after " + booleanInputChangeState);					
+					// alert("after " + booleanInputChangeState);					
 				}); */
 
 				$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
@@ -88,8 +88,9 @@
 				checkboxAsRadioButton("CheckboxPolicyHolderSalary");
 				checkboxAsRadioButton("CheckboxPolicyHolderRevenue");
 				checkboxAsRadioButton("CheckboxPolicyHolderOtherIncome");
-
-				validateEmail("TextPolicyHolderEmail");
+				
+				// var objectContent = JSON.parse(jsonPolicyHolder);
+				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
 			});
 
 
@@ -101,7 +102,7 @@
 
 		%main
 			%form
-				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
+				// %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
 				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true", :maxlength => "7" }
 				%br
@@ -247,7 +248,7 @@
 				%br
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderEmail" } Email
-					%input#TextPolicyHolderEmail.Full.Single.Item{ :type => "text", :maxlength => "30" }
+					%input#TextPolicyHolderEmail.Full.Single.Item{ :type => "text", :maxlength => "30", "data-validation" => "Email" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderOfficeAddress1" } Alamat kantor
 					%input#TextPolicyHolderOfficeAddress1.Full.Single.Item{ :type => "text", :maxlength => "30" }

@@ -82,9 +82,7 @@
 
 				checkboxAsRadioButton("CheckboxProspectiveInsuredSalary");
 				checkboxAsRadioButton("CheckboxProspectiveInsuredRevenue");
-				checkboxAsRadioButton("CheckboxProspectiveInsuredOtherIncome");
-
-				validateEmail("TextProspectiveInsuredEmail");
+				checkboxAsRadioButton("CheckboxProspectiveInsuredOtherIncome");				
 			});
 
 	/ BODY
@@ -239,7 +237,7 @@
 				%br
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredEmail" } Email
-					%input#TextProspectiveInsuredEmail.Full.Single.Item{ :type => "text", :maxlength => "30" }
+					%input#TextProspectiveInsuredEmail.Full.Single.Item{ :type => "text", :maxlength => "30", "data-validation" => "Email" }
 				%div.ContainerFit
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredOfficeAddress1" } Alamat kantor
 					%input#TextProspectiveInsuredOfficeAddress1.Full.Single.Item{ :type => "text", :maxlength => "30" }
