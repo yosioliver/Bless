@@ -1,16 +1,3 @@
-ios-integration.js
-Details
-Activity
-TODAY
-
-You uploaded an item
-5:32 PM
-Javascript
-ios-integration.js
-No recorded activity before November 15, 2016
-New Team Drive
-
-
 __functionIndexMap = {};
 
 function calliOSFunction(functionName, successCallback, errorCallback, callInfo)

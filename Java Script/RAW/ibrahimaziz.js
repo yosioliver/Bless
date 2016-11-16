@@ -1,16 +1,3 @@
-ibrahimaziz.js
-Details
-Activity
-TODAY
-
-You uploaded an item
-5:32 PM
-Javascript
-ibrahimaziz.js
-No recorded activity before November 15, 2016
-New Team Drive
-
-
 // IBRAHIM AZIZ 
 // BHIMBIM
 // http://www.ibrahimaziz.biz
