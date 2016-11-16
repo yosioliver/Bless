@@ -39,7 +39,13 @@
 				
 				// TEST
 				
-				// var objectContent = JSON.parse(jsonDummy);
+				/* $("#MainForm #ButtonDone").click(function()
+				{					
+					savetoDB();
+					// setToDatabase(stringPageTypeCurrent);
+				}); */
+				
+				// objectContent = JSON.parse(jsonDummy);
 				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
 				
 				// SCORING
@@ -67,14 +73,15 @@
 				});
 			});
 
-
+		
 	/ BODY
 
 	%body#Main
 
 		/ HEADER
 
-		%header#MainForm			
+		%header#MainForm
+			/ %input#ButtonDone.ButtonPrimary.PositionerRight{ :type => "button", :value => "Done" }
 			%div.Highlighted
 				%label.Single.PositionerLeft.Center RISK PROFILING QUESTIONAIRES				
 				%br
@@ -88,16 +95,16 @@
 						%label.PositionerLeft{ :for => "RadioButtonChoice1" } Manakah dari keterangan dibawah ini yang sesuai dengan tahapan kehidupan Anda saat ini?						
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent
-							%input#radio1{ :type => "radio", :name => "RadioButtonChoice1", :value => "2", :required => "true" }
+							%input#radio1{ :type => "radio", :name => "RadioButtonChoice1", :value => "2", :required => "true", "data-validation" => "Pertanyaan nomor 1" }
 							%label.RadioButton{ :for => "radio1", :style => "text-align: left;" } A. Saya ingin  berinvestasi pada instrumen investasi yang  hampir tidak ada risiko penurunan Nilai investasi awal saya. Saya tidak siap menerima penurunan Nilai investasi dalam jangka pendek.
 							%br
-							%input#radio2{ :type => "radio", :name => "RadioButtonChoice1", :value => "4", :required => "true" }
+							%input#radio2{ :type => "radio", :name => "RadioButtonChoice1", :value => "4", :required => "true", "data-validation" => "Pertanyaan nomor 1" }
 							%label.RadioButton{ :for => "radio2", :style => "text-align: left;" } B. Saya ingin mempertahankan Nilai investasi awal saya, namun saya bersedia menerima sedikit penurunan Nilai investasi dalam jangka pendek.
 							%br
-							%input#radio3{ :type => "radio", :name => "RadioButtonChoice1", :value => "8", :required => "true" }
+							%input#radio3{ :type => "radio", :name => "RadioButtonChoice1", :value => "8", :required => "true", "data-validation" => "Pertanyaan nomor 1" }
 							%label.RadioButton{ :for => "radio3", :style => "text-align: left;" } C. Saya mengharapkan Nilai investasi saya tumbuh dan memperoleh tingkat pengembalian yang tinggi. Saya dapat menerima kemungkinan penurunan Nilai investasi awal.
 							%br
-							%input#radio4{ :type => "radio", :name => "RadioButtonChoice1", :value => "10", :required => "true" }
+							%input#radio4{ :type => "radio", :name => "RadioButtonChoice1", :value => "10", :required => "true", "data-validation" => "Pertanyaan nomor 1" }
 							%label.RadioButton{ :for => "radio4", :style => "text-align: left;" } D. Saya mengharapkan Nilai investasi saya tumbuh sangat pesat dan memperoleh tingkat pengembalian yang sangat tinggi. Saya dapat menerima kemungkinan penurunan Nilai investasi atau kehilangan seluruh modal investasi awal.
 					%br
 					%li{ :style => "display: block;" }
@@ -107,19 +114,19 @@
 							yang dapat Anda toleransi?					
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio5{ :type => "radio", :name => "RadioButtonChoice2", :value => "2", :required => "true" }
+							%input#radio5{ :type => "radio", :name => "RadioButtonChoice2", :value => "2", :required => "true", "data-validation" => "Pertanyaan nomor 2" }
 							%label.RadioButton{ :for => "radio5", :style => "text-align: left;" } A. Saya tidak bisa menerima penurunan sekecil apapun.
 							%br
-							%input#radio6{ :type => "radio", :name => "RadioButtonChoice2", :value => "4", :required => "true" }
+							%input#radio6{ :type => "radio", :name => "RadioButtonChoice2", :value => "4", :required => "true", "data-validation" => "Pertanyaan nomor 2" }
 							%label.RadioButton{ :for => "radio6", :style => "text-align: left;" } B. < 10%.
 							%br
-							%input#radio7{ :type => "radio", :name => "RadioButtonChoice2", :value => "6", :required => "true" }
+							%input#radio7{ :type => "radio", :name => "RadioButtonChoice2", :value => "6", :required => "true", "data-validation" => "Pertanyaan nomor 2" }
 							%label.RadioButton{ :for => "radio7", :style => "text-align: left;" } C. 10-30%
 							%br
-							%input#radio8{ :type => "radio", :name => "RadioButtonChoice2", :value => "8", :required => "true" }
+							%input#radio8{ :type => "radio", :name => "RadioButtonChoice2", :value => "8", :required => "true", "data-validation" => "Pertanyaan nomor 2" }
 							%label.RadioButton{ :for => "radio8", :style => "text-align: left;" } D. > 30-50%
 							%br
-							%input#radio9{ :type => "radio", :name => "RadioButtonChoice2", :value => "10", :required => "true" }
+							%input#radio9{ :type => "radio", :name => "RadioButtonChoice2", :value => "10", :required => "true", "data-validation" => "Pertanyaan nomor 2" }
 							%label.RadioButton{ :for => "radio9", :style => "text-align: left;" } E. > 50%
 					%br
 					%li{ :style => "display: block;" }
@@ -129,48 +136,48 @@
 							apakah yang Anda lakukan?
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio10{ :type => "radio", :name => "RadioButtonChoice3", :value => "2", :required => "true" }
+							%input#radio10{ :type => "radio", :name => "RadioButtonChoice3", :value => "2", :required => "true", "data-validation" => "Pertanyaan nomor 3" }
 							%label.RadioButton{ :for => "radio10", :style => "text-align: left;" } A. Segera mencairkan investasi karena saya tidak bisa menerima penurunan Nilai investasi awal.
 							%br
-							%input#radio11{ :type => "radio", :name => "RadioButtonChoice3", :value => "4", :required => "true" }
+							%input#radio11{ :type => "radio", :name => "RadioButtonChoice3", :value => "4", :required => "true", "data-validation" => "Pertanyaan nomor 3" }
 							%label.RadioButton{ :for => "radio11", :style => "text-align: left;" } B. Tidak akan melakukan pencairan, namun untuk selanjutnya akan lebih sering memantau pergerakan Nilai investasi saya.
 							%br
-							%input#radio12{ :type => "radio", :name => "RadioButtonChoice3", :value => "8", :required => "true" }
+							%input#radio12{ :type => "radio", :name => "RadioButtonChoice3", :value => "8", :required => "true", "data-validation" => "Pertanyaan nomor 3" }
 							%label.RadioButton{ :for => "radio12", :style => "text-align: left;" } C. Tidak akan melakukan pencairan. Saya bisa menerima penurunan investasi dalam jangka pendek karena saya mempunyai tujuan investasi jangka panjang.
 							%br
-							%input#radio13{ :type => "radio", :name => "RadioButtonChoice3", :value => "10", :required => "true" }
+							%input#radio13{ :type => "radio", :name => "RadioButtonChoice3", :value => "10", :required => "true", "data-validation" => "Pertanyaan nomor 3" }
 							%label.RadioButton{ :for => "radio13", :style => "text-align: left;" } D. Akan menambah jumlah investasi saya. Penurunan Nilai investasi dalam jangka pendek tersebut adalah peluang saya untuk menambahkan Nilai investasi sehingga memperoleh hasil maksimal.
 					%br
 					%li{ :style => "display: block;" }
 						%label.PositionerLeft{ :for => "RadioButtonChoice4" } Berapa lama jangka waktu Investasi yang Anda inginkan?	
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio14{ :type => "radio", :name => "RadioButtonChoice4", :value => "6", :required => "true" }
+							%input#radio14{ :type => "radio", :name => "RadioButtonChoice4", :value => "6", :required => "true", "data-validation" => "Pertanyaan nomor 4" }
 							%label.RadioButton{ :for => "radio14", :style => "text-align: left;" } A. 7 s/d 10 tahun.
 							%br
-							%input#radio15{ :type => "radio", :name => "RadioButtonChoice4", :value => "8", :required => "true" }
+							%input#radio15{ :type => "radio", :name => "RadioButtonChoice4", :value => "8", :required => "true", "data-validation" => "Pertanyaan nomor 4" }
 							%label.RadioButton{ :for => "radio15", :style => "text-align: left;" } B. 11 s/d 15 tahun.
 							%br
-							%input#radio16{ :type => "radio", :name => "RadioButtonChoice4", :value => "10", :required => "true" }
+							%input#radio16{ :type => "radio", :name => "RadioButtonChoice4", :value => "10", :required => "true", "data-validation" => "Pertanyaan nomor 4" }
 							%label.RadioButton{ :for => "radio16", :style => "text-align: left;" } C. 16 s/d 20 tahun tujuan investasi jangka panjang.
 					%br
 					%li{ :style => "display: block;" }
 						%label.PositionerLeft{ :for => "RadioButtonChoice5" } Seberapa jauh Anda mengetahui tentang Asuransi Jiwa Unit Link?			
 						%br	
 						%div.RadioButton.PositionerLeft.SecondIndent.Left
-							%input#radio17{ :type => "radio", :name => "RadioButtonChoice5", :value => "2", :required => "true" }
+							%input#radio17{ :type => "radio", :name => "RadioButtonChoice5", :value => "2", :required => "true", "data-validation" => "Pertanyaan nomor 5" }
 							%label.RadioButton{ :for => "radio17", :style => "text-align: left;" } A. Saya tidak memahami pengetahuan apapun mengenai produk Asuransi Jiwa Unit Link dan tidak nyaman dengan penurunan Nilai investasi.
 							%br
-							%input#radio18{ :type => "radio", :name => "RadioButtonChoice5", :value => "4", :required => "true" }
+							%input#radio18{ :type => "radio", :name => "RadioButtonChoice5", :value => "4", :required => "true", "data-validation" => "Pertanyaan nomor 5" }
 							%label.RadioButton{ :for => "radio18", :style => "text-align: left;" } B. Saya tidak terlalu memahami produk Asuransi Jiwa Unit Link.
 							%br
-							%input#radio19{ :type => "radio", :name => "RadioButtonChoice5", :value => "6", :required => "true" }
+							%input#radio19{ :type => "radio", :name => "RadioButtonChoice5", :value => "6", :required => "true", "data-validation" => "Pertanyaan nomor 5" }
 							%label.RadioButton{ :for => "radio19", :style => "text-align: left;" } C. Saya memahami dan memiliki pengetahuan umum mengenai produk Asuransi Jiwa Unit Link.
 							%br
-							%input#radio20{ :type => "radio", :name => "RadioButtonChoice5", :value => "8", :required => "true" }
+							%input#radio20{ :type => "radio", :name => "RadioButtonChoice5", :value => "8", :required => "true", "data-validation" => "Pertanyaan nomor 5" }
 							%label.RadioButton{ :for => "radio20", :style => "text-align: left;" } D. Saya memahami produk Asuransi Jiwa Unit Link termasuk beberapa faktor yang mempengaruhi naik-turunnya Nilai investasi.
 							%br
-							%input#radio21{ :type => "radio", :name => "RadioButtonChoice5", :value => "10", :required => "true" }
+							%input#radio21{ :type => "radio", :name => "RadioButtonChoice5", :value => "10", :required => "true", "data-validation" => "Pertanyaan nomor 5" }
 							%label.RadioButton{ :for => "radio21", :style => "text-align: left;" } E. Saya memiliki pengetahuan yang mendalam mengenai produk Asuransi Jiwa Unit Link.
 				%br
 				%label#LabelPolicyHolderActivity.Item.PositionerLeft{ :style => "margin-top: 50px;"} 
