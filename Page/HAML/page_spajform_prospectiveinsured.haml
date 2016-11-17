@@ -18,6 +18,10 @@
 			var stringPageSectionCurrent = stringPageSectionForm;
 			var stringPageValidationCurrent = stringPageValidationIncome;
 			var booleanInputChangeState = "false";
+			var stringPageInfixTypeCurrent = stringProspectiveInsuredPrefix;
+			var arrayForeigner = [];
+			var stringPageForeigner = true;
+			
 			// var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
 
 			$(document).ready(function()
@@ -135,7 +139,7 @@
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredAge" } Umur
 					%input#TextProspectiveInsuredAge.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
 				%div.ContainerLeft
-					%label.Medium.Single.Item{ :for => "RadioButtonProspectiveInsuredNatioanlity" } Kewarganegaraan
+					%label.Medium.Single.Item{ :for => "RadioButtonProspectiveInsuredNationality" } Kewarganegaraan
 					%div.RadioButton.Item
 						%input#RadioButtonProspectiveInsuredNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wni", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNI" } WNI
@@ -357,5 +361,7 @@
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredFundingSource" } Sumber Dana Pembelian Asuransi
 					%input#TextProspectiveInsuredFundingSource.Full.Single.Item{ :type => "text", :required => "true", :maxlength => "30" }
 				%br
-
-				%div#BoxDate
+			
+			%section#PopUpForeigner.PopUp
+				= Haml::Engine.new(File.read("popup_healthquestionnaireform_foreigner.haml")).render
+			%div#BoxDate				

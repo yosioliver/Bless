@@ -103,7 +103,7 @@
 
 		%main
 			%form
-				// %input#ButtonSubmit{ :type => "button", :value => "Submit" }
+				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
 				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true", :maxlength => "7" }
 				%br
@@ -146,7 +146,7 @@
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderAge" } Umur
 					%input#TextPolicyHolderAge.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
 				%div.ContainerLeft
-					%label.Short.Single.Item{ :for => "RadioButtonPolicyHolderNationalityWNI" } Kewarganegaraan
+					%label.Short.Single.Item{ :for => "RadioButtonPolicyHolderForeigner" } Kewarganegaraan
 					%div.RadioButton.Item
 						%input#RadioButtonPolicyHolderForeignerWNI.Single{ :type => "radio", :name => "RadioButtonPolicyHolderForeigner", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpForeigner', stringPageInfixTypeCurrent, arrayForeigner, ['Foreigner'])", :required => "true" }
 						%label.RadioButton{ :for => "RadioButtonPolicyHolderForeignerWNI" } WNI
@@ -299,21 +299,21 @@
 				%input#TextPolicyHolderRelationAssuredOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderInsurancePurposeSavings" } Tujuan Pembelian Asuransi
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxPolicyHolderInsurancePurpose" } Tujuan Pembelian Asuransi
 				%div.Checkbox.PositionerLeft
-					%input#CheckboxPolicyHolderInsurancePurposeSavings.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "savings" }
+					%input#CheckboxPolicyHolderInsurancePurposeSavings.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "savings", :required => "true" }
 					%label.Checkbox{ :for => "CheckboxPolicyHolderInsurancePurposeSavings" } Tabungan
 					%div.Separator
-					%input#CheckboxPolicyHolderInsurancePurposeProtection.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "protection" }
+					%input#CheckboxPolicyHolderInsurancePurposeProtection.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "protection", :required => "true" }
 					%label.Checkbox{ :for => "CheckboxPolicyHolderInsurancePurposeProtection" } Proteksi
 					%div.Separator
-					%input#CheckboxPolicyHolderInsurancePurposeInvestation.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "investment" }
+					%input#CheckboxPolicyHolderInsurancePurposeInvestation.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "investment", :required => "true" }
 					%label.Checkbox{ :for => "CheckboxPolicyHolderInsurancePurposeInvestation" } Investasi
 					%div.Separator
-					%input#CheckboxPolicyHolderInsurancePurposeEducation.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "education" }
+					%input#CheckboxPolicyHolderInsurancePurposeEducation.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "education", :required => "true" }
 					%label.Checkbox{ :for => "CheckboxPolicyHolderInsurancePurposeEducation" } Pendidikan
 					%div.Separator
-					%input#CheckboxPolicyHolderInsurancePurposeOther.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "other" }
+					%input#CheckboxPolicyHolderInsurancePurposeOther.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "other", :required => "true" }
 					%label.Checkbox{ :for => "CheckboxPolicyHolderInsurancePurposeOther" } Lainnya
 				%input#TextPolicyHolderInsurancePurposeOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br

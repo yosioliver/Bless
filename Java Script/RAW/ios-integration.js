@@ -140,7 +140,7 @@ function savetoDB()
 				var $label = $("label[for='"+this.id+"']")
 
 				if (stringValue == undefined || stringValue == null || stringValue == "")
-				{	
+				{						
 					ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
 					// alert($label.text() + " " + "harap diisi.");
 					booleanValidateState = false;
@@ -207,7 +207,7 @@ function savetoDB()
 		if (stringPageSectionCurrent != stringPageSectionBeneficiariesList)
 		{
 			$("input:radio[required]").each(function()
-			{												
+			{					
 				stringValue = getRadioButtonGeneral($(this).attr("name"));						
 				var $label = $("label[for='"+this.name+"']")				
 				if (stringRadioButtonFlag != $(this).attr("name"))

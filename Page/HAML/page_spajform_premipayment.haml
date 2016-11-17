@@ -112,18 +112,18 @@
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentFrequencyFull" } Sekaligus
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayorHolder" } Pembayar Premi
+				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPremiPaymentPayor" } Pembayar Premi
 				%div.RadioButton.PositionerLeft
-					%input#RadioButtonPremiPaymentPayorHolder.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "dirisendiri" }
+					%input#RadioButtonPremiPaymentPayorHolder.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "dirisendiri", :required => "true" }
 					%label.RadioButton.Medium{ :for => "RadioButtonPremiPaymentPayorHolder" } Pemegang Polis Perorangan
 					%div.Separator
-					%input#RadioButtonPremiPaymentPayorCompany.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "perusahaan" }
+					%input#RadioButtonPremiPaymentPayorCompany.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "perusahaan", :required => "true" }
 					%label.RadioButton.Medium{ :for => "RadioButtonPremiPaymentPayorCompany" } Pemegang Polis Perusahaan / Badan Hukum
 					%div.Separator
-					%input#RadioButtonPremiPaymentPayorInsured.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "tertanggung" }
+					%input#RadioButtonPremiPaymentPayorInsured.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "tertanggung", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentPayorInsured" } Tertanggung
 					%div.Separator
-					%input#RadioButtonPremiPaymentPayorThirdParty.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "pihakketiga" }
+					%input#RadioButtonPremiPaymentPayorThirdParty.Medium.Single{ :type => "radio", :name => "RadioButtonPremiPaymentPayor", :value => "pihakketiga", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPremiPaymentPayorThirdParty" } Pihak Ketiga
 				%br
 
