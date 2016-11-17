@@ -102,6 +102,8 @@ var stringIllnessSuffix = "Illness";
 var stringSexFemale = "female";
 var stringSexMale = "male";
 var arrayForeigner = [];
+var stringPageForeigner = false;
+var stringPageThirdParty = false; 
 
 
 // GENERATOR
@@ -3371,19 +3373,40 @@ function getFromDatabase(objectContent, stringPageType)
 		}
 		else
 		{
-			var stringThirdParty = arrayFind(objectContent, "RadioButtonPremiPaymentThirdPartyAnswer")
+			if (stringPageThirdParty == true)
+			{
+				var stringThirdParty = arrayFind(objectContent, "RadioButtonPremiPaymentThirdPartyAnswer")
 
-			if (stringThirdParty == "true")
+				if (stringThirdParty == "true")
+				{
+					$(stringKres + "ButtonPreviewPremiPaymentThirdParty").css("display", "block");
+				}
+				else if (stringThirdParty == "false")
+				{
+					$(stringKres + "ButtonPreviewPremiPaymentThirdParty").css("display", "none");
+				}
+				else
+				{
+
+				}
+			}						
+			
+			if (stringPageForeigner == true)
 			{
-				$(stringKres + "ButtonPreviewPremiPaymentThirdParty").css("display", "block");
-			}
-			else if (stringThirdParty == "false")
-			{
-				$(stringKres + "ButtonPreviewPremiPaymentThirdParty").css("display", "none");
-			}
-			else
-			{
-				
+				var stringForeigner = arrayFind(objectContent, "RadioButtonPolicyHolderForeigner")
+
+				if (stringForeigner == "true")
+				{
+					$(stringKres + "ButtonPreviewPolicyHolderForeigner").css("display", "block");
+				}
+				else if (stringForeigner == "false")
+				{
+					$(stringKres + "ButtonPreviewPolicyHolderForeigner").css("display", "none");
+				}
+				else
+				{
+
+				}
 			}
 		}
 	}

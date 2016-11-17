@@ -436,9 +436,10 @@ function AutoPopulate(jsonObject)
     
     if (stringType == "autopopulateFromDB")
     {
+		// alert("begin" + "autopopulate");
+		// previewArrayObject(objectContent.result.autopopulateFromDB);
         getFromDatabase(objectContent.result.autopopulateFromDB, stringPageTypeCurrent);
-        // alert("autopopulate");
-        // previewArrayObject(objectContent.result.autopopulateFromDB);              
+        // alert("finish" + "autopopulate");
     }
     else
     {
