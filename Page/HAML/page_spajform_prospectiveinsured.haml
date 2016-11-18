@@ -21,7 +21,7 @@
 			var stringPageInfixTypeCurrent = stringProspectiveInsuredPrefix;
 			var arrayForeigner = [];
 			var stringPageForeigner = true;
-			
+
 			// var jsonProspectiveInsured = '{"result":{"readFromDB":[{"elementID":"TextProspectiveInsuredFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonProspectiveInsuredAmerican","Value":"true"},{"elementID":"DateProspectiveInsuredActive","Value":"01/02/2016"},{"elementID":"RadioButtonProspectiveInsuredReligion","Value":"budha"}]}}'
 
 			$(document).ready(function()
@@ -38,7 +38,7 @@
 				validatePressNumeric("TextProspectiveInsuredHomePostalCode");
 				validatePressNumeric("TextProspectiveInsuredOfficePostalCode");
 
-				//calculateAge("DatePolicyHolderBirthday", "TextPolicyHolderAge");
+				//calculateAge("DateProspectiveInsuredBirthday", "TextProspectiveInsuredAge");
 				$('#TextProspectiveInsuredSalary').number( true, 0, ',', '.' );
 				$('#TextProspectiveInsuredRevenue').number( true, 0, ',', '.' );
 				$('#TextProspectiveInsuredOtherIncome').number( true, 0, ',', '.' );
@@ -139,13 +139,14 @@
 					%label.Medium.Single.Item{ :for => "TextProspectiveInsuredAge" } Umur
 					%input#TextProspectiveInsuredAge.Medium.Single.Item{ :type => "text", "data-input-type" => "autopopulate" }
 				%div.ContainerLeft
-					%label.Medium.Single.Item{ :for => "RadioButtonProspectiveInsuredNationality" } Kewarganegaraan
+					%label.Short.Single.Item{ :for => "RadioButtonProspectiveInsuredForeigner" } Kewarganegaraan
 					%div.RadioButton.Item
-						%input#RadioButtonProspectiveInsuredNationalityWNI.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wni", :required => "true" }
-						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNI" } WNI
+						%input#RadioButtonProspectiveInsuredForeignerWNI.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredForeigner", :value => "false", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpForeigner', stringPageInfixTypeCurrent, arrayForeigner, ['Foreigner'])", :required => "true" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredForeignerWNI" } WNI
 						%div.Separator
-						%input#RadioButtonProspectiveInsuredNationalityWNA.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredNationality", :value => "wna", :required => "true" }
-						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredNationalityWNA" } WNA
+						%input#RadioButtonProspectiveInsuredForeignerWNA.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredForeigner", :value => "true", :onchange => "showPopUpFromRadioButton(this.name, 'true', 'PopUpForeigner', stringPageInfixTypeCurrent, arrayForeigner, ['Foreigner'])", :required => "true" }
+						%label.RadioButton{ :for => "RadioButtonProspectiveInsuredForeignerWNA" } WNA
+						%input#ButtonPreviewProspectiveInsuredForeigner.ButtonPreview{ :type => "button", :value => "View recent input", :onclick => "showPopUpFromButton('PopUpForeigner', stringPageInfixTypeCurrent + 'Foreigner', arrayForeigner)" }
 				%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredUSACitizen" } Apakah anda merupakan warga negara atau wajib pajak amerika ?
 				%div.RadioButton.PositionerLeft
 					%input#RadioButtonProspectiveInsuredUSACitizenYes.Medium.Single{ :type => "radio", :name => "RadioButtonProspectiveInsuredUSACitizen", :value => "true", :required => "true" }

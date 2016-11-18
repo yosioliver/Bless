@@ -20,7 +20,7 @@
 			var booleanInputChangeState = "false";
 			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
 			var arrayForeigner = [];
-			var stringPageForeigner = true; 
+			var stringPageForeigner = true;
 
 			// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
 
@@ -364,7 +364,7 @@
 					%label.Medium.Single.Item{ :for => "TextPolicyHolderSource" } Jelaskan Sumbernya
 					%input#TextPolicyHolderSource.Full.Single.Item{ :type => "text", :maxlength => "30" }
 				%br
-				
+
 			%section#PopUpForeigner.PopUp
 				= Haml::Engine.new(File.read("popup_healthquestionnaireform_foreigner.haml")).render
 			%div#BoxDate

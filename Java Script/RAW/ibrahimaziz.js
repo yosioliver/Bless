@@ -3390,18 +3390,18 @@ function getFromDatabase(objectContent, stringPageType)
 
 				}
 			}						
-			
+
 			if (stringPageForeigner == true)
 			{
-				var stringForeigner = arrayFind(objectContent, "RadioButtonPolicyHolderForeigner")
+				var stringForeigner = arrayFind(objectContent, "RadioButton" + stringPageInfixTypeCurrent + "Foreigner")
 
 				if (stringForeigner == "true")
 				{
-					$(stringKres + "ButtonPreviewPolicyHolderForeigner").css("display", "block");
+					$(stringKres + "ButtonPreview" + stringPageInfixTypeCurrent + "Foreigner").css("display", "block");
 				}
 				else if (stringForeigner == "false")
 				{
-					$(stringKres + "ButtonPreviewPolicyHolderForeigner").css("display", "none");
+					$(stringKres + "ButtonPreview" + stringPageInfixTypeCurrent + "Foreigner").css("display", "none");
 				}
 				else
 				{
@@ -3524,7 +3524,7 @@ function setToDatabase(stringPageType)
             arrayValidatePush(objectContent, stringKey, stringValue);
         }
     });
-    
+
     $("select").each(function()
     {
         var stringKey = $(this).attr("id");
