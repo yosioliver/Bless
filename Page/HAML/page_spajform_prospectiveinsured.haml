@@ -291,7 +291,7 @@
 				%input#TextProspectiveInsuredRelationAssuredOther.Long.Single.PositionerLeft{ :type => "text" }
 				%br
 
-				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredInsurancePurposeSavings" } Tujuan Pembelian Asuransi
+				%label.Medium.Single.PositionerLeft{ :for => "CheckboxProspectiveInsuredInsurancePurpose" } Tujuan Pembelian Asuransi
 				%div.Checkbox.PositionerLeft
 					%input#CheckboxProspectiveInsuredInsurancePurposeSavings.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "savings" }
 					%label.Checkbox{ :for => "CheckboxProspectiveInsuredInsurancePurposeSavings" } Tabungan
@@ -307,7 +307,7 @@
 					%div.Separator
 					%input#CheckboxProspectiveInsuredInsurancePurposeOther.Medium.Single{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "other" }
 					%label.Checkbox{ :for => "CheckboxProspectiveInsuredInsurancePurposeOther" } Lainnya
-				%input#TextProspectiveInsuredInsurancePurposeOther.Long.Single.PositionerLeft{ :type => "text" }
+				%input#TextProspectiveInsuredInsurancePurposeOther.Long.Single.PositionerLeft{ :type => "text", "data-validation" => "Tujuan pembelian asuransi lainnya" }
 				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredNPWP" } Nomor NPWP

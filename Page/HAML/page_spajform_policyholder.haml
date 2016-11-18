@@ -54,12 +54,12 @@
 
 				// FOR TESTING
 
-				$("#ButtonSubmit").click(function()
-				{	
+				/* $("#ButtonSubmit").click(function()
+				{
 					// alert("before " + booleanInputChangeState);
 					savetoDB();
-					// alert("after " + booleanInputChangeState);					
-				});
+					// alert("after " + booleanInputChangeState);
+				}); */
 
 				$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
 					if (this.value == 'home') {
@@ -89,7 +89,7 @@
 				checkboxAsRadioButton("CheckboxPolicyHolderSalary");
 				checkboxAsRadioButton("CheckboxPolicyHolderRevenue");
 				checkboxAsRadioButton("CheckboxPolicyHolderOtherIncome");
-				
+
 				// var objectContent = JSON.parse(jsonPolicyHolder);
 				// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
 			});
@@ -103,7 +103,7 @@
 
 		%main
 			%form
-				%input#ButtonSubmit{ :type => "button", :value => "Submit" }
+				/ %input#ButtonSubmit{ :type => "button", :value => "Submit" }
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } Nomor CIN
 				%input#TextPolicyHolderCIN.Medium.Single.PositionerLeft{ :type => "text", :required => "true", :maxlength => "7" }
 				%br
@@ -315,7 +315,7 @@
 					%div.Separator
 					%input#CheckboxPolicyHolderInsurancePurposeOther.Medium.Single{ :type => "checkbox", :name => "CheckboxPolicyHolderInsurancePurpose", :value => "other", :required => "true" }
 					%label.Checkbox{ :for => "CheckboxPolicyHolderInsurancePurposeOther" } Lainnya
-				%input#TextPolicyHolderInsurancePurposeOther.Long.Single.PositionerLeft{ :type => "text" }
+				%input#TextPolicyHolderInsurancePurposeOther.Long.Single.PositionerLeft{ :type => "text", "data-validation" => "Tujuan pembelian asuransi lainnya" }
 				%br
 
 				%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderNPWP" } Nomor NPWP
