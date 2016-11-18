@@ -3719,10 +3719,12 @@ stringValue)
        if (getRadioButtonGeneral(stringRadioButtonName) == stringValue)
        {
            $(stringTextID).prop("readonly", false);
+           $(stringTextID).prop("required", true);
        }
        else
        {
            $(stringTextID).prop("readonly", true);
+           $(stringTextID).prop("required", false);
            $(stringTextID).val("");
        }
    });
@@ -3741,16 +3743,19 @@ stringValue)
 			if (getCheckboxGeneral(stringCheckboxJavaScriptID) == stringValue)
 			{
 			   $(stringTextID).prop("readonly", false);
+			   $(stringTextID).prop("required", true);
 			}
 			else
 			{
 			   $(stringTextID).prop("readonly", true);
+			   $(stringTextID).prop("required", false);
 			   $(stringTextID).val("");
 			}
 		}
 		else
 		{
 			$(stringTextID).prop("readonly", true);
+			$(stringTextID).prop("required", false);
 			$(stringTextID).val("");	
 		}
 	});

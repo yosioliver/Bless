@@ -151,6 +151,39 @@ function savetoDB()
 
 				}
 			});
+
+			var stringCheckboxName;
+
+			$("input[type=checkbox][required]").each(function()
+			{
+				stringCheckboxName = $(this).attr("name");
+				var $label = $("label[for='"+this.id+"']")
+			    var booleanValidateCheckbox = false;
+			    
+				$("input[type=checkbox][name='" + stringCheckboxName + "']").each(function()
+				{
+					if($(this).prop("checked") == true)
+					{
+						booleanValidateCheckbox = true;
+						return false;
+					}
+					else
+					{
+
+					}
+				});
+			    
+			    if(booleanValidateCheckbox == false)
+			    {
+			    	ReplaceHTMLNameOnValidate("", $label.text() + " " + "harap diisi.");
+			    	booleanValidateState = false;
+					return false;
+			    }
+			    else
+			    {
+
+			    }
+			});
 		}
 		else
 		{

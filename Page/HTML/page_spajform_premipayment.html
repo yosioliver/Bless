@@ -60,6 +60,8 @@
       var stringPageValidationCurrent = 0;
       var booleanInputChangeState = "false";
       var stringThirdpartyAnswerValue;
+      var stringPageThirdParty = true;
+      
       // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
       
       function showFormThirdParty()
@@ -148,18 +150,18 @@
           <label class='RadioButton' for='RadioButtonPremiPaymentFrequencyFull'>Sekaligus</label>
         </div>
         <br>
-        <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentPayorHolder'>Pembayar Premi</label>
+        <label class='Medium Single PositionerLeft' for='RadioButtonPremiPaymentPayor'>Pembayar Premi</label>
         <div class='RadioButton PositionerLeft'>
-          <input class='Medium Single' id='RadioButtonPremiPaymentPayorHolder' name='RadioButtonPremiPaymentPayor' type='radio' value='dirisendiri'>
+          <input class='Medium Single' id='RadioButtonPremiPaymentPayorHolder' name='RadioButtonPremiPaymentPayor' required='true' type='radio' value='dirisendiri'>
           <label class='RadioButton Medium' for='RadioButtonPremiPaymentPayorHolder'>Pemegang Polis Perorangan</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPremiPaymentPayorCompany' name='RadioButtonPremiPaymentPayor' type='radio' value='perusahaan'>
+          <input class='Medium Single' id='RadioButtonPremiPaymentPayorCompany' name='RadioButtonPremiPaymentPayor' required='true' type='radio' value='perusahaan'>
           <label class='RadioButton Medium' for='RadioButtonPremiPaymentPayorCompany'>Pemegang Polis Perusahaan / Badan Hukum</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPremiPaymentPayorInsured' name='RadioButtonPremiPaymentPayor' type='radio' value='tertanggung'>
+          <input class='Medium Single' id='RadioButtonPremiPaymentPayorInsured' name='RadioButtonPremiPaymentPayor' required='true' type='radio' value='tertanggung'>
           <label class='RadioButton' for='RadioButtonPremiPaymentPayorInsured'>Tertanggung</label>
           <div class='Separator'></div>
-          <input class='Medium Single' id='RadioButtonPremiPaymentPayorThirdParty' name='RadioButtonPremiPaymentPayor' type='radio' value='pihakketiga'>
+          <input class='Medium Single' id='RadioButtonPremiPaymentPayorThirdParty' name='RadioButtonPremiPaymentPayor' required='true' type='radio' value='pihakketiga'>
           <label class='RadioButton' for='RadioButtonPremiPaymentPayorThirdParty'>Pihak Ketiga</label>
         </div>
         <br>
