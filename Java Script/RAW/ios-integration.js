@@ -492,7 +492,7 @@ function ReplaceHTMLNameOnValidate(title, body)
 	callInfo.data.title = title;
 	callInfo.data.body = body;
 	
-	// alert(title + '' + body);
+	alert(title + '' + body);
 	//call the wrapper with the parameterized info
 	calliOSFunction('showAlert:',onSuccess,onError, callInfo);
 }
