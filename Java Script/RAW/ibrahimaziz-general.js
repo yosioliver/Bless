@@ -34,6 +34,8 @@ var stringStateRequired = "required";
 /* STRING */
 
 var stringCheckboxSeparator = ", ";
+var stringDateHTMLSeparator = "-";
+var stringDateJQuerySeparator = "/";
 
 /* PREFIX */
 
@@ -93,6 +95,13 @@ var stringMessageGeneralIncomplete = "Harap lengkapi form terlebih dahulu !.";
 var stringDataErrorTitle = "data-error-title";
 var stringDataErrorMessage = "data-error-message";
 var stringDataValidationType = "data-validation-type";
+
+/* REGULAR EXPRESSION */
+
+var regularExpressionAlphabet = /^[a-zA-Z\s]*$/;
+var regularExpressionAlphaNumeric = /^[a-zA-Z0-9\s]*$/;
+var regularExpressionNumeric = /^[0-9\s]*$/;
+var regularExpressionEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
 
 // JSON
@@ -260,8 +269,22 @@ function JSONTransfer(JSONTemporary, JSONInput)
 	return JSONInput;
 }
 
+// JSON
+
+function JSONSort(JSONData, stringJSONDataKey) 
+{
+    return JSONData.sort(function (stringJSONDataFirst, stringJSONDataSecond) 
+    {
+        var stringJSONDataValueFirst = stringJSONDataFirst[stringJSONDataKey];
+        var stringJSONDataValueSecond = stringJSONDataSecond[stringJSONDataKey];
+        return ((stringJSONDataValueFirst < stringJSONDataValueSecond) ? -1 : ((stringJSONDataValueFirst > stringJSONDataValueSecond) ? 1 : 0));
+    });
+}
+
 
 // VALIDATE
+
+/* INPUT TYPE */
 
 function validateTextGeneral(stringInputValue)
 {
@@ -309,6 +332,66 @@ function validateCheckboxGeneral(stringInputValue)
 	{
 		return true;
 	}
+}
+
+/* INPUT FIELD */
+
+function validateAlphabet(stringInputValue)
+{
+	return stringInputValue.test(regularExpressionAlphabet);
+}
+
+function validateAlphaNumeric(stringInputValue)
+{
+	return stringInputValue.test(regularExpressionAlphaNumeric);
+}
+
+function validateNumeric(stringInputValue)
+{
+	return stringInputValue.test(regularExpressionNumeric);
+}
+
+function validateTelephone(stringInputValue)
+{
+	
+}
+
+function validateHandphone(stringInputValue)
+{
+	
+}
+
+function validateEmail(stringInputValue)
+{
+	return stringInputValue.test(regularExpressionEmail);
+}
+
+function validateBirthDate(stringInputValue)
+{
+	stringInputValue = stringInputValue.replace(/-/g, stringDateJQuerySeparator);
+
+    var stringCurrentRAWDate = new Date();
+    var stringCurrentFormattedDate = 
+    	stringCurrentRAWDate.getFullYear() + stringDateJQuerySeparator + 
+    	(stringCurrentRAWDate.getMonth() + 1) + stringDateJQuerySeparator + 
+    	stringCurrentRAWDate.getDate();
+    
+    if (stringInputValue.length > 0)
+    {
+		if(stringInputDate > stringCurrentFormattedDate)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+    }
+    else
+    {
+    	return false;
+    }
+  });
 }
 
 

@@ -5,19 +5,6 @@
 // http://www.infoconnect.com.my
 
 
-// JSON
-
-function JSONSort(JSONData, stringJSONDataKey) 
-{
-    return JSONData.sort(function (stringJSONDataFirst, stringJSONDataSecond) 
-    {
-        var stringJSONDataValueFirst = stringJSONDataFirst[stringJSONDataKey];
-        var stringJSONDataValueSecond = stringJSONDataSecond[stringJSONDataKey];
-        return ((stringJSONDataValueFirst < stringJSONDataValueSecond) ? -1 : ((stringJSONDataValueFirst > stringJSONDataValueSecond) ? 1 : 0));
-    });
-}
-
-
 // GENERATE FIELDSET
 
 function fieldsetGenerator(JSONFieldset, stringLayoutJavaScriptID)

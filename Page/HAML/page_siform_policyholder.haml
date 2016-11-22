@@ -23,6 +23,17 @@
 				fieldsetGenerator(JSONUnitlinkParse.si.unitlink.policyholder.fieldset, "FormPolicyholder");
 				questionGenerator(JSONUnitlinkParse.si.unitlink.policyholder.question);
 				inputGenerator(JSONUnitlinkParse.si.unitlink.policyholder.input);
+
+
+				// SETTER & GETTER
+
+				$(stringKres + "buttonSubmit").click(function()
+				{
+					var JSONInput = [];
+
+					getGeneralPageForm(JSONInput);
+					previewJSONInput(JSONInput);
+				});
 			});
 
 
@@ -33,4 +44,7 @@
 		/ MAIN
 
 		%main
+
+			%input#buttonSubmit{ :type => "button", :value => "done" }
+
 			%form#FormPolicyholder
