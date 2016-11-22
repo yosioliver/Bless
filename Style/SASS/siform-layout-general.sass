@@ -1,0 +1,120 @@
+/* @charset "utf-8"; */
+/* CSS Document */
+
+
+// IMPORT
+
+@import siform-initialization-general
+@import siform-setup
+
+
+// FORM
+
+form
+	fieldset
+		margin-top: $general_space_tiny
+		margin-left: $general_space_huge
+		margin-right: $general_space_huge
+		margin-bottom: $general_space_tiny
+
+
+// CONDITIONER
+
+/* FLEX */
+
+.ContainerFit, .ContainerLeft, .ContainerRight
+	display: flex
+	flex-wrap: nowrap
+	align-content: stretch
+	align-items: stretch
+	.Grow1
+		flex-grow: 1
+	.Grow2
+		flex-grow: 2
+	.Grow3
+		flex-grow: 3
+.ContainerFit
+	justify-content: space-between
+.ContainerLeft
+	justify-content: flex-start
+.ContainerRight
+	justify-content: flex-end
+
+/* SIZE */
+
+.Wrap
+	min-width: auto !important
+	width: auto !important
+	max-width: auto !important
+.Tiny
+	min-width: $size_width_tiny
+	width: $size_width_tiny
+.Short
+	min-width: $size_width_short
+	width: $size_width_short
+.Medium
+	min-width: $size_width_medium
+	width: $size_width_medium
+.Long
+	min-width: $size_width_long
+	width: $size_width_long
+.Full
+	width: $size_width_full
+
+.TinyFix
+	width: $size_width_short
+	max-width: $size_width_short
+.ShortFix
+	width: $size_width_short
+	max-width: $size_width_short
+.MediumFix
+	width: $size_width_medium
+	max-width: $size_width_medium
+.LongFix
+	width: $size_width_long
+	max-width: $size_width_long
+.FullFix
+	width: $size_width_full
+	max-width: $size_width_full
+
+/* ALIGNEMNT */
+
+.Center
+	text-align: center
+.Left
+	text-align: left
+.Right
+	text-align: right
+.Justify
+	text-align: justify
+.Top
+	vertical-align: top
+.Middle
+	vertical-align: middle
+.Bottom
+	vertical-align: bottom
+
+/* SPACE */
+
+.Padding
+	margin: $general_space_tiny
+
+.IndentFirst
+	margin-left: $general_space_small
+
+.Margin
+	margin: $general_space_tiny
+
+/* POSITIONER */
+
+.PositionerRight
+	float: right
+	vertical-align: top
+
+.PositionerLeft
+	float: left
+	vertical-align: top
+
+.PositionerCenter
+	position: relative
+	margin: auto

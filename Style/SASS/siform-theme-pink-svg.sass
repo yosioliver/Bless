@@ -1,0 +1,167 @@
+/* @charset "utf-8"; */
+/* CSS Document */
+
+
+// WHITNEY
+
+/* THEME */
+
+$theme_primary_color: #D83457
+$theme_primary_red: 216
+$theme_primary_green: 52
+$theme_primary_blue: 87
+$theme_secondary_color: #b7e8eb
+$theme_secondary_red: 182
+$theme_secondary_green: 232
+$theme_secondary_blue: 235
+$theme_tertiary_color: #959799
+$theme_tertiary_red: 149
+$theme_tertiary_green: 151
+$theme_tertiary_blue: 153
+$theme_quaternary_color: #EEEEEE
+$theme_quaternary_red: 238
+$theme_quaternary_green: 238
+$theme_quaternary_blue: 238
+$theme_quinary_color: #ffffff
+$theme_quinary_red: 255
+$theme_quinary_green: 255
+$theme_quinary_blue: 255
+$theme_senary_color: #000000
+$theme_senary_red: 0
+$theme_senary_green: 0
+$theme_senary_blue: 0
+
+$theme_success_color: #3cb94b
+$theme_flat_color: #f0822d
+$theme_fail_color: #c3232d
+
+
+// INPUT
+
+/* INPUT BACKGROUND */
+
+$input_background_enable: transparent
+$input_background_required: transparent
+$input_background_valid: transparent
+$input_background_invalid: transparent
+$input_background_readonly: $theme_tertiary_color
+$input_background_disable: $theme_quaternary_color
+
+/* INPUT BORDER */
+
+$input_border_enable: $theme_primary_color
+$input_border_disable: none
+$input_border_required: $theme_primary_color
+$input_border_valid: $theme_success_color
+$input_border_invalid: $theme_fail_color
+$input_border_readonly: none
+
+/* INPUT FONT */
+
+$input_font_enable: $theme_quinary_color
+$input_font_disable: $theme_quinary_color
+$input_font_required: $theme_quinary_color
+$input_font_valid: $theme_quinary_color
+$input_font_invalid: $theme_quinary_color
+$input_font_readonly: $theme_quinary_color
+
+
+// LINK
+
+/* BUTTON FONT */
+
+$button_font_enable: $theme_quinary_color
+$button_font_hover: $theme_primary_color
+$button_font_disable: $theme_quinary_color
+
+/* BUTTON BACKGROUND */
+
+$button_background_enable: $theme_primary_color
+$button_background_hover: $theme_quinary_color
+$button_background_disable: $theme_quaternary_color
+
+/* BUTTON BORDER */
+
+$button_border_enable: none
+$button_border_hover: none
+$button_border_disable: none
+
+
+// IMPORT
+
+@import siform-initialization-general
+
+
+// SETUP
+
+/* SEMANTIC ELEMENTS */
+
+body
+	background-color: $theme_quinary_color
+
+main
+	background-color: $theme_quinary_color
+
+/* NEUTRALIZATION */
+
+h1, h2, h3, h4, h5, h6, p, mark, ol, ul, li
+	background-color: transparent
+
+
+// LAYOUT
+
+
+// FONT
+
+/* FORM */
+
+form
+	fieldset
+		border-bottom-color: $theme_primary_color
+		label, span, p
+			color: $theme_tertiary_color
+
+
+/* INPUT */
+
+input, textarea
+	border-color: $theme_primary_color
+	color: $theme_tertiary_color
+
+select
+	border-color: $theme_primary_color
+	background-color: $theme_primary_color
+	color: $theme_quinary_color
+
+.RadioButton
+	border-color: $theme_primary_color
+	label
+		background-color: transparent
+		color: $theme_primary_color
+		border-right-color: $theme_primary_color
+
+.RadioButton input[type="radio"]:checked + label
+	background-color: $theme_primary_color
+	color: $theme_quinary_color
+
+// .Checkbox
+// 	.Separator
+// 		background-color: $theme_primary_color
+// 	label.Checkbox
+// 		background-color: transparent
+// 		color: $theme_primary_color
+
+// .Checkbox input[type="checkbox"]:checked + label.Checkbox
+// 	background-color: $theme_primary_color
+// 	color: $theme_quaternary_color
+
+
+/* NAVIGATION */
+
+nav
+	a
+		color: $theme_primary_color
+		background-color: transparent
+	a.Selected
+		color: $theme_quinary_color
+		background-color: $theme_primary_color

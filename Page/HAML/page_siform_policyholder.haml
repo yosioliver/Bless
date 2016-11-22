@@ -1,0 +1,36 @@
+!!! 5
+
+%html
+
+	/ HEAD
+
+	%head
+		= Haml::Engine.new(File.read("include_siform_header.haml")).render
+		%title BCA Life - BLESS, Health Questionnaire 1 Form
+
+		/ JQUERY
+
+		:javascript
+
+			// READY
+
+			$(document).ready(function()
+			{
+				var JSONUnitlinkParse = JSON.parse(JSONUnitlink);
+
+				// GENERATOR
+
+				fieldsetGenerator(JSONUnitlinkParse.si.unitlink.policyholder.fieldset, "FormPolicyholder");
+				questionGenerator(JSONUnitlinkParse.si.unitlink.policyholder.question);
+				inputGenerator(JSONUnitlinkParse.si.unitlink.policyholder.input);
+			});
+
+
+	/ BODY
+
+	%body#Main
+
+		/ MAIN
+
+		%main
+			%form#FormPolicyholder

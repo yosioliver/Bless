@@ -1,0 +1,51 @@
+/* @charset "utf-8"; */
+/* CSS Document */
+
+
+// IMPORT
+
+@import siform-initialization-general
+
+
+/* FORM */
+
+form
+	fieldset
+		padding-top: $general_space_tiny
+		padding-left: 0px
+		padding-right: 0px
+		padding-bottom: $general_space_tiny * 1.5
+		border-top: none
+		border-left: none
+		border-right: none
+		border-bottom-style: solid
+		border-bottom-width: $size_border_thin
+		ol, ul
+			margin: 0px
+			padding: 0px
+			list-style-type: none
+			li
+				margin-top: $general_space_tiny * 1.5
+				margin-left: 0px
+				margin-right: 0px
+				margin-bottom: $general_space_tiny * 1.5
+				padding: 0px
+		label
+			margin-left: $general_space_tiny
+			margin-right: $general_space_tiny
+			min-height: $size_height_single
+			min-width: $size_width_medium
+			line-height: $size_height_single
+			font-size: $fontsize_label_field
+			vertical-align: middle
+			display: inline-block
+	fieldset:last-of-type
+		border-bottom: none
+
+
+/* INDENT */
+
+.IndentFirst
+	margin-left: $general_space_medium
+.IndentSecond
+	margin-left: $general_space_huge
