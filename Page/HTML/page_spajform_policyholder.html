@@ -24,30 +24,30 @@
     <!-- %link{ :rel => "icon", :href => "#{urlResource}logo_favicon.ico", :type => "image/x-icon" } -->
     <!-- CSS -->
     <!-- %link{ :id => "cssresponsive", :href => "#{urlCSS}jquery.mobile-1.4.5.min.css", :rel => "stylesheet", :type => "text/css" } -->
-    <link href='../../Style/CSS/spajform-layout-general.css' id='csslayout' rel='stylesheet' type='text/css'>
-    <link href='../../Style/CSS/spajform-font-general.css' id='cssfont' rel='stylesheet' type='text/css'>
-    <link href='../../Style/CSS/spajform-input-general.css' id='cssinput' rel='stylesheet' type='text/css'>
-    <link href='../../Style/CSS/spajform-link-general.css' id='csslink' rel='stylesheet' type='text/css'>
-    <link href='../../Style/CSS/bless-fontsize-medium.css' id='cssfontsize' rel='stylesheet' type='text/css'>
-    <link href='../../Style/CSS/spajform-fontfamily-bpreplay.css' id='cssfontfamily' rel='stylesheet' type='text/css'>
-    <link href='../../Style/CSS/spajform-theme-turqoise-svg.css' id='csstheme' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/Style/CSS/spajform-layout-general.css' id='csslayout' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/Style/CSS/spajform-font-general.css' id='cssfont' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/Style/CSS/spajform-input-general.css' id='cssinput' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/Style/CSS/spajform-link-general.css' id='csslink' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/Style/CSS/bless-fontsize-medium.css' id='cssfontsize' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/Style/CSS/spajform-fontfamily-bpreplay.css' id='cssfontfamily' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/Style/CSS/spajform-theme-turqoise-svg.css' id='csstheme' rel='stylesheet' type='text/css'>
     <!-- %link{ :id => "cssresponsive", :href => "#{urlCSS}#{urlCSSSectionPrefix}-responsive-general.css", :rel => "stylesheet", :type => "text/css" } -->
-    <link href='../../Java Script/Minimized/DateTimePicker.min.css' id='cssresponsive' rel='stylesheet' type='text/css'>
+    <link href='../../jqueryLibrary/JavaScript/Minimized/DateTimePicker.min.css' id='cssresponsive' rel='stylesheet' type='text/css'>
     <!-- JAVA SCRIPT -->
-    <script src='../../Java Script/Minimized/jquery.mobile-1.4.5.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/jquery-1.11.1.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/jquery-migrate-1.2.1.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/ibrahimaziz.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/ibrahimaziz-healthquestionnaire.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/DateTimePicker.min.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/DateTimePicker-i18n.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/DateTimePicker_IOS_fix.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/jquery.number.js' type='text/javascript'></script>
-    <script src='../../Java Script/Minimized/ios-integration.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/jquery.mobile-1.4.5.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/jquery-1.11.1.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/jquery-migrate-1.2.1.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/ibrahimaziz.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/ibrahimaziz-healthquestionnaire.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/DateTimePicker.min.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/DateTimePicker-i18n.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/DateTimePicker_IOS_fix.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/jquery.number.js' type='text/javascript'></script>
+    <script src='../../jqueryLibrary/JavaScript/Minimized/ios-integration.min.js' type='text/javascript'></script>
     <script>
       $(document).ready(function()
       {
-      	imageSelector("../../Resource/");
+      	imageSelector("../../jqueryLibrary/Resource/");
       });
     </script>
     <title>BCA Life - BLESS, Health Questionnaire 1 Form</title>
@@ -61,7 +61,7 @@
       var booleanInputChangeState = "false";
       var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
       var arrayForeigner = [];
-      var stringPageForeigner = true; 
+      var stringPageForeigner = true;
       
       // var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
       
@@ -95,12 +95,12 @@
       
       	// FOR TESTING
       
-      	$("#ButtonSubmit").click(function()
-      	{	
+      	/* $("#ButtonSubmit").click(function()
+      	{
       		// alert("before " + booleanInputChangeState);
       		savetoDB();
-      		// alert("after " + booleanInputChangeState);					
-      	});
+      		// alert("after " + booleanInputChangeState);
+      	}); */
       
       	$('input[type=radio][name=RadioButtonPolicyHolderCorrespondanceAddress]').change(function() {
       		if (this.value == 'home') {
@@ -130,7 +130,7 @@
       	checkboxAsRadioButton("CheckboxPolicyHolderSalary");
       	checkboxAsRadioButton("CheckboxPolicyHolderRevenue");
       	checkboxAsRadioButton("CheckboxPolicyHolderOtherIncome");
-      	
+      
       	// var objectContent = JSON.parse(jsonPolicyHolder);
       	// getFromDatabase(objectContent.result.readFromDB, stringPageTypeCurrent);
       });
@@ -141,7 +141,7 @@
     <!-- MAIN -->
     <main>
       <form>
-        <input id='ButtonSubmit' type='button' value='Submit'>
+        <!-- %input#ButtonSubmit{ :type => "button", :value => "Submit" } -->
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderCIN'>Nomor CIN</label>
         <input class='Medium Single PositionerLeft' id='TextPolicyHolderCIN' maxlength='7' required='true' type='text'>
         <br>
@@ -374,7 +374,7 @@
           <input class='Medium Single' id='CheckboxPolicyHolderInsurancePurposeOther' name='CheckboxPolicyHolderInsurancePurpose' required='true' type='checkbox' value='other'>
           <label class='Checkbox' for='CheckboxPolicyHolderInsurancePurposeOther'>Lainnya</label>
         </div>
-        <input class='Long Single PositionerLeft' id='TextPolicyHolderInsurancePurposeOther' type='text'>
+        <input class='Long Single PositionerLeft' data-validation='Tujuan pembelian asuransi lainnya' id='TextPolicyHolderInsurancePurposeOther' type='text'>
         <br>
         <label class='Medium Single PositionerLeft' for='TextPolicyHolderNPWP'>Nomor NPWP</label>
         <input class='Medium Single PositionerLeft' id='TextPolicyHolderNPWP' maxlength='16' type='text'>
@@ -721,12 +721,12 @@
             <br>
             <hr>
             <div class='Note'>
-              <h2>PERNYATAAN DAN KUASA</h2>
+              <h2>DECLARATION AND AUTHORIZATION</h2>
               <ol>
-                <li>Saya menyatakan dengan sebenarnya bahwa semua pernyataan dan jawaban di atas adalah lengkap dan sesuai dengan keadaan sebenarnya.</li>
-                <li>Saya memberi kuasa kepada setiap Dokter/ Rumah Sakit/ Klinik/ Puskesmas/ laboratorium, perusahaan asuransi atau perusahaan reasuransi, badan, instansi/ lembaga atau pihak lain yang mempunyai catatan riwayat kesehatan saya, untuk mengungkapkan kepada Penanggung semua keterangan tentang catatan riwayat kesehatan saya.</li>
-                <li>Kuasa ini merupakan hal yang tidak terpisahkan dari Surat Pengajuan Asuransi Jiwa dan akan mengikat saya, ahli waris, dan keluarga saya.</li>
-                <li>Kuasa ini tetap berlaku pada waktu saya masih hidup maupun sesudah saya meninggal.Salinan/ fotokopi dari surat kuasa ini sama sah berlakunya seperti dokumen asli.</li>
+                <li>I declare that all information and answers above are complete and true. I agree that if any of the statement above is not true, Insurer has the right to cancel the life insurance contract and is not liable to refund the premium paid or pay any claims or any other losses.</li>
+                <li>By purchasing this policy and signing, I represent that I am not a U.S. person  for purposes of U.S. federal income tax and that I am not acting for, or on behalf of a U.S. person.</li>
+                <li>A false statement or misrepresentation of tax status by a U.S. person could lead to penalties under U.S. law. If your tax status changes and you become a U.S. citizen, you must notify us within 30 days. (United States citizens or residents must strike out this clause and 		initial the change at the left side).</li>
+                <li>I agree to indemnify the Company in respect of any false or misleading information regarding my U.S.A. tax status. I agree that all information given in this additional form or any amendments attached with this policy will become part of the insurance contract as long as it is relevant to this policy.</li>
               </ol>
             </div>
           </fieldset>

@@ -117,9 +117,28 @@ h1, h2, h3, h4, h5, h6, p, mark, ol, ul, li
 
 form
 	fieldset
-		border-bottom-color: $theme_primary_color
+		border-top-color: $theme_primary_color
 		label, span, p
 			color: $theme_tertiary_color
+
+table
+	thead
+		tr
+			td, th
+				background-color: $theme_primary_color
+				color: $theme_quinary_color
+	tbody
+		tr:nth-child(odd)
+			td
+				background-color: $theme_quinary_color
+				color: $theme_senary_color
+		tr:nth-child(even)
+			td
+				background-color: $theme_quaternary_color
+				color: $theme_senary_color
+	tfoot
+		tr
+			td
 
 
 /* INPUT */
@@ -154,6 +173,9 @@ select
 // .Checkbox input[type="checkbox"]:checked + label.Checkbox
 // 	background-color: $theme_primary_color
 // 	color: $theme_quaternary_color
+
+input:read-only, textarea:read-only
+	background-color: $theme_quaternary_color
 
 
 /* NAVIGATION */

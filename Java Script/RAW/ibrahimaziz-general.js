@@ -351,16 +351,6 @@ function validateNumeric(stringInputValue)
 	return stringInputValue.test(regularExpressionNumeric);
 }
 
-function validateTelephone(stringInputValue)
-{
-	
-}
-
-function validateHandphone(stringInputValue)
-{
-	
-}
-
 function validateEmail(stringInputValue)
 {
 	return stringInputValue.test(regularExpressionEmail);
@@ -391,7 +381,6 @@ function validateBirthDate(stringInputValue)
     {
     	return false;
     }
-  });
 }
 
 
@@ -406,7 +395,7 @@ function setGeneralInputBasic(stringInputJavaScriptID, stringInputValue)
 
 /* FORM */
 
-function setGeneralTextForm(stringJavaScriptID, stringInputValue)
+function setGeneralTextForm(stringInputJavaScriptID, stringInputValue)
 {
     setGeneralInputBasic(stringInputJavaScriptID, stringInputValue)
 }
@@ -1091,7 +1080,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1100,7 +1089,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1146,7 +1135,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1155,7 +1144,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1164,7 +1153,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1201,7 +1190,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1210,7 +1199,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1219,7 +1208,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1256,7 +1245,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1265,7 +1254,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1274,7 +1263,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1311,7 +1300,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1320,7 +1309,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1329,7 +1318,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1366,7 +1355,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1375,7 +1364,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1384,7 +1373,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1421,7 +1410,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1430,7 +1419,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1439,7 +1428,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1476,7 +1465,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1485,7 +1474,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1494,7 +1483,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1531,7 +1520,7 @@ function getGeneralPageForm(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1540,7 +1529,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1549,7 +1538,7 @@ function getGeneralPageForm(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1617,7 +1606,7 @@ function getGeneralPagePDF(JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1626,7 +1615,7 @@ function getGeneralPagePDF(JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1635,7 +1624,7 @@ function getGeneralPagePDF(JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1825,7 +1814,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1834,7 +1823,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1843,7 +1832,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1880,7 +1869,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1889,7 +1878,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1898,7 +1887,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1935,7 +1924,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1944,7 +1933,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -1953,7 +1942,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -1990,7 +1979,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -1999,7 +1988,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -2008,7 +1997,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -2045,7 +2034,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -2054,7 +2043,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -2063,7 +2052,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -2100,7 +2089,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -2109,7 +2098,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -2118,7 +2107,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -2155,7 +2144,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -2164,7 +2153,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -2173,7 +2162,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -2210,7 +2199,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -2219,7 +2208,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -2228,7 +2217,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -2265,7 +2254,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -2274,7 +2263,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -2283,7 +2272,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -2322,7 +2311,7 @@ function getSpecificPageForm(stringLayoutJavaScriptID, JSONInput)
 
 /* PDF */
 
-function setSpecificPagePDF(stringLayoutJavaScriptID, JSONInput)
+function getSpecificPagePDF(stringLayoutJavaScriptID, JSONInput)
 {
 	var stringLayoutJQueryID = stringKres + stringLayoutJavaScriptID;
 	var JSONTemporary = [];
@@ -2350,7 +2339,7 @@ function setSpecificPagePDF(stringLayoutJavaScriptID, JSONInput)
 					stringErrorTitle = $(this).attr(stringDataErrorTitle);
 					stringErrorMessage = $(this).attr(stringDataErrorMessage);
 
-					if (stringErrorTitle == null)
+					if (stringErrorTitle == null | stringErrorTitle == undefined | stringErrorTitle == "")
 					{
 						stringErrorTitle = stringLegendTitle;
 					}
@@ -2359,7 +2348,7 @@ function setSpecificPagePDF(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					if (stringErrorMessage == null)
+					if (stringErrorMessage == null | stringErrorMessage == undefined | stringErrorMessage == "")
 					{
 						stringErrorMessage = stringLabelMessage;
 					}
@@ -2368,7 +2357,7 @@ function setSpecificPagePDF(stringLayoutJavaScriptID, JSONInput)
 						
 					}
 
-					messageError(stringTitleMessage, stringErrorMessage);
+					messageError(stringErrorTitle, stringErrorMessage);
 					booleanStateValidation = false;
 					return false;
 				}
@@ -2689,6 +2678,13 @@ function messageError(stringMessageTitle, stringMessageContent)
 	}
 	else
 	{
-		alert(stringMessageTitle + "\n" + stringMessageContent);
+		if (stringMessageTitle == null | stringMessageTitle == undefined | stringMessageTitle == "")
+		{
+			alert(stringMessageContent);
+		}
+		else
+		{
+			alert(stringMessageTitle + "\n" + stringMessageContent);
+		}
 	}
 }

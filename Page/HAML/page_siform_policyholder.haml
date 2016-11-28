@@ -20,9 +20,11 @@
 
 				// GENERATOR
 
-				fieldsetGenerator(JSONUnitlinkParse.si.unitlink.policyholder.fieldset, "FormPolicyholder");
-				questionGenerator(JSONUnitlinkParse.si.unitlink.policyholder.question);
-				inputGenerator(JSONUnitlinkParse.si.unitlink.policyholder.input);
+				//$(".RadioButtonSection").change(function()
+				//{
+					formGenerator(JSONUnitlinkParse.si.unitlink.policyholder, "MainForm");
+				//});
+
 
 
 				// SETTER & GETTER
@@ -41,10 +43,20 @@
 
 	%body#Main
 
+		%input#buttonSubmit{ :type => "button", :value => "done" }
+
+		%div.RadioButton
+			%input#RadioButtonPolicyholder{ :type => "radio", :value => "policyholder", :name => "RadioButtonSection" }
+			%label{ :for => "RadioButtonPolicyholder" } Policyholder
+			%input#RadioButtonProspectiveInsured{ :type => "radio", :value => "prospectiveinsured", :name => "RadioButtonSection" }
+			%label{ :for => "RadioButtonProspectiveInsured" } Prospective Insured
+			%input#RadioButtonBasicInsurance{ :type => "radio", :value => "basicinsurance", :name => "RadioButtonSection" }
+			%label{ :for => "RadioButtonBasicInsurance" } Basic Insurance
+			%input#RadioButtonMoneyAllocation{ :type => "radio", :value => "moneyallocation", :name => "RadioButtonSection" }
+			%label{ :for => "RadioButtonMoneyAllocation" } Money Allocation
+			%input#RadioButtonAdditionalInsurance{ :type => "radio", :value => "additionalinsurance", :name => "RadioButtonSection" }
+			%label{ :for => "RadioButtonAdditionalInsurance" } Additional Insurance
+
 		/ MAIN
 
-		%main
-
-			%input#buttonSubmit{ :type => "button", :value => "done" }
-
-			%form#FormPolicyholder
+		%main#MainForm

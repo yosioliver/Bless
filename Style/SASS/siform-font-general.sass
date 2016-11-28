@@ -11,15 +11,15 @@
 
 form
 	fieldset
-		padding-top: $general_space_tiny
+		padding-top: $general_space_tiny * 1.5
 		padding-left: 0px
 		padding-right: 0px
-		padding-bottom: $general_space_tiny * 1.5
-		border-top: none
+		padding-bottom: $general_space_tiny
+		border-top-style: solid
+		border-top-width: $size_border_thin
 		border-left: none
 		border-right: none
-		border-bottom-style: solid
-		border-bottom-width: $size_border_thin
+		border-bottom: none
 		ol, ul
 			margin: 0px
 			padding: 0px
@@ -39,8 +39,8 @@ form
 			font-size: $fontsize_label_field
 			vertical-align: middle
 			display: inline-block
-	fieldset:last-of-type
-		border-bottom: none
+	fieldset:first-of-type
+		border-top: none
 
 
 /* INDENT */
@@ -49,3 +49,29 @@ form
 	margin-left: $general_space_medium
 .IndentSecond
 	margin-left: $general_space_huge
+
+
+/* TABLE */
+
+table
+	margin-top: $general_space_medium
+	margin-bottom: $general_space_medium
+	width: 100%
+	border-collapse: collapse
+	thead, tbody, tfoot
+		tr
+			td, th
+				padding-top: $general_space_small
+				padding-left: $general_space_little
+				padding-right: $general_space_little
+				padding-bottom: $general_space_small
+	thead
+		tr
+			td, th
+				font-size: $fontsize_label_field
+	tbody
+		tr
+			td
+	tfoot
+		tr
+			td
