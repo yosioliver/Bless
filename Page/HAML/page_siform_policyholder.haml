@@ -20,11 +20,11 @@
 
 				// GENERATOR
 
-				//$(".RadioButtonSection").change(function()
-				//{
-					formGenerator(JSONUnitlinkParse.si.unitlink.policyholder, "MainForm");
-				//});
-
+				$("input[name='RadioButtonSection']").change(function()
+				{
+					formGenerator(eval("JSONUnitlinkParse.si.unitlink." + $(this).val()), "MainForm");
+					formulaGenerator(JSONUnitlinkParse.si.unitlink.formula);
+				});
 
 
 				// SETTER & GETTER
@@ -46,7 +46,7 @@
 		%input#buttonSubmit{ :type => "button", :value => "done" }
 
 		%div.RadioButton
-			%input#RadioButtonPolicyholder{ :type => "radio", :value => "policyholder", :name => "RadioButtonSection" }
+			%input#RadioButtonPolicyholder{ :type => "radio", :value => "policyholder", :name => "RadioButtonSection", :checked => "true" }
 			%label{ :for => "RadioButtonPolicyholder" } Policyholder
 			%input#RadioButtonProspectiveInsured{ :type => "radio", :value => "prospectiveinsured", :name => "RadioButtonSection" }
 			%label{ :for => "RadioButtonProspectiveInsured" } Prospective Insured

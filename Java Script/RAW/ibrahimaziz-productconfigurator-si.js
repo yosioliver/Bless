@@ -12,11 +12,44 @@ function formGenerator(JSONInput, stringLayoutJavaScriptID)
 	var elementMain = document.getElementById(stringLayoutJavaScriptID);
 	var stringHTMLForm = "<form id='formMain'></form>";
 	elementMain.innerHTML = stringHTMLForm;
+	var stringMessageTitle = "Form generator";
+	var stringMessageContent = "There is problem in the config file -> ";
 
-	fieldsetGenerator(JSONInput.fieldset, "formMain");
-	questionGenerator(JSONInput.question);
-	inputGenerator(JSONInput.input);
-	tableGenerator(JSONInput.table);
+	if (JSONInput.fieldset == undefined | JSONInput.fieldset == null | JSONInput.fieldset == "")
+	{
+		messageError(stringMessageTitle, stringMessageContent + "fieldset");
+	}
+	else
+	{
+		fieldsetGenerator(JSONInput.fieldset, "formMain");
+	}
+	
+	if (JSONInput.question == undefined | JSONInput.question == null | JSONInput.question == "")
+	{
+		messageError(stringMessageTitle, stringMessageContent + "question");
+	}
+	else
+	{
+		questionGenerator(JSONInput.question);
+	}
+	
+	if (JSONInput.input == undefined | JSONInput.input == null | JSONInput.input == "")
+	{
+		messageError(stringMessageTitle, stringMessageContent + "input");
+	}
+	else
+	{
+		inputGenerator(JSONInput.input);
+	}
+	
+	if (JSONInput.table == undefined | JSONInput.table == null | JSONInput.table == "")
+	{
+		messageError(stringMessageTitle, stringMessageContent + "table");
+	}
+	else
+	{
+		tableGenerator(JSONInput.table);
+	}
 }
 
 // GENERATE FIELDSET
@@ -305,7 +338,7 @@ function setInputStateAttribute(arrayJSONInputSelectedValue, arrayJSONInputValue
 
 // TABLE GENERATOR
 
-function tableGenerator(JSONInput, stringLayoutJavaScriptID)
+function tableGenerator(JSONInput)
 {
 	/* INITIALIZE */
 
@@ -320,6 +353,8 @@ function tableGenerator(JSONInput, stringLayoutJavaScriptID)
 	var stringHTMLTable = "";
 
 	JSONAttribute = JSONSort(JSONAttribute, "tableOrder");
+
+	/* TABLE THEAD, TBODY, TFOOT */
 
 	for (var i = 0; i < JSONAttribute.length; i++)
 	{
@@ -388,6 +423,8 @@ function tableRowGenerator(JSONInput)
 
 	JSONInput = JSONSort(JSONInput, "rowOrder");
 
+	/* TABLE TR */
+
 	for (var i = 0; i < JSONInput.length; i++)
 	{
 		stringJSONInputRowKey = JSONInput[i].rowKey;
@@ -424,6 +461,8 @@ function tableColumnGenerator(JSONInput)
 
 	JSONInput = JSONSort(JSONInput, "columnOrder");
 
+	/* TABLE TH / TD */
+
 	for (var i = 0; i < JSONInput.length; i++)
 	{
 		stringJSONInputColumnKey = JSONInput[i].columnKey;
@@ -438,6 +477,72 @@ function tableColumnGenerator(JSONInput)
 		{
 			stringHTMLColumn += "<td id='" + stringJSONInputRowKey + "' rowspan='" + stringJSONInputRowSpan + "' colspan='" + stringJSONInputColumnSpan + "'>" + stringJSONInputColumnValue + "</tr>";
 			$(stringKres + stringJSONInputRowKey).append(stringHTMLColumn);
+		}
+		else
+		{
+			
+		}
+	}
+}
+
+
+// FORMULA
+
+function formulaGenerator(JSONInput)
+{
+	/* INITIALIZE */
+
+	var stringJSONInputFormulaKey;
+	var stringJSONInputFormulaContent;
+	var stringJSONInputKey;
+	var stringJSONInputFormulaState;
+	var arrayFormulaContent;
+	var arrayFormulaValue;
+
+	/* READ JSON */
+
+	for (var i = 0; i < JSONInput.length; i++)
+	{
+		stringJSONInputFormulaKey = JSONInput[i].formulaKey;
+		stringJSONInputFormulaContent = JSONInput[i].formulaContent;
+		stringJSONInputKey = JSONInput[i].inputKey;
+		stringJSONInputFormulaState = JSONInput[i].formulaState;
+
+		if (stringJSONInputFormulaState == stringStateTrue)
+		{
+			arrayFormulaContent = stringJSONInputFormulaContent.split(stringJSONArraySeparator);
+			arrayFormulaValue = arrayFormulaContent;
+
+			/* FORMULA LISTENER */
+
+			for (var j = 0; j < arrayFormulaContent.length; j++)
+			{
+				if (indicatorPrefix(arrayFormulaContent[j]) == stringStateInput)
+				{
+					$(stringKres + arrayFormulaContent[j]).change(function()
+					{
+						var arrayFormulaValue = arrayFormulaContent;
+						for (var k = 0; k < arrayFormulaValue.length; k++)
+						{
+							if (indicatorPrefix(arrayFormulaValue[k]) == stringStateInput)
+							{
+								arrayFormulaValue[k] = $(stringKres + arrayFormulaValue[k]).val();
+								alert(arrayFormulaValue[k]);
+							}
+							else
+							{
+
+							}
+						}
+						// alert(arrayFormulaValue.join(" "));
+						// $(stringKres + stringJSONInputFormulaKey).val(eval(arrayFormulaValue.join(" ")));
+					});
+				}
+				else
+				{
+
+				}
+			}
 		}
 		else
 		{

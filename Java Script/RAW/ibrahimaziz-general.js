@@ -30,6 +30,8 @@ var stringStateChecked = "checked";
 var stringStateSelected = "selected";
 var stringStateDisable = "disabled";
 var stringStateRequired = "required";
+var stringStateInput = "input";
+var stringStateTable = "table";
 
 /* STRING */
 
@@ -2597,6 +2599,65 @@ function releaseInfix(stringInputJavaScriptID)
 	else if (stringInputJavaScriptID.substring(0, stringInfixBeneficiariesList.length) == stringInfixBeneficiariesList)
 	{
 		return stringInputJavaScriptID.substring(stringInfixBeneficiariesList.length, stringInputJavaScriptID.length);
+	}
+	else
+	{
+		
+	}
+}
+
+
+// INDICATOR
+
+function indicatorPrefix(stringInputJavaScriptID)
+{
+	if (stringInputJavaScriptID.substring(0, stringPrefixText.length) == stringPrefixText)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixDate.length) == stringPrefixDate)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixArea.length) == stringPrefixArea)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixNumber.length) == stringPrefixNumber)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixEmail.length) == stringPrefixEmail)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixTelephone.length) == stringPrefixTelephone)
+	{
+		return stringStateInput;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixTable.length) == stringPrefixTable)
+	{
+		return stringStateTable;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixRow.length) == stringPrefixRow)
+	{
+		return stringStateTable;
+	}
+	else if (stringInputJavaScriptID.substring(0, stringPrefixColumn.length) == stringPrefixColumn)
+	{
+		return stringStateTable;
 	}
 	else
 	{

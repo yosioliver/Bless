@@ -2866,11 +2866,11 @@ function getFromDatabase(objectContent, stringPageType)
 								{
 									if (stringValue == "female")
 									{
-										$(stringCellJQueryID).append("Perempuan");
+										$(stringCellJQueryID).append("P");
 									}
 									else
 									{
-										$(stringCellJQueryID).append("Laki - laki");
+										$(stringCellJQueryID).append("L");
 									}
 								}
 								else
