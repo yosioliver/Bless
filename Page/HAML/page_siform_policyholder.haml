@@ -16,14 +16,15 @@
 
 			$(document).ready(function()
 			{
-				var JSONUnitlinkParse = JSON.parse(JSONUnitlink);
+				var JSONConfigUnitlinkParse = JSON.parse(JSONConfigUnitlink);
+				var JSONConstantUnitlinkParse = JSON.parse(JSONConstantUnitlink);
 
 				// GENERATOR
 
 				$("input[name='RadioButtonSection']").change(function()
 				{
-					formGenerator(eval("JSONUnitlinkParse.si.unitlink." + $(this).val()), "MainForm");
-					formulaGenerator(JSONUnitlinkParse.si.unitlink.formula);
+					formGenerator(eval("JSONConfigUnitlinkParse.si.unitlink." + $(this).val()), "MainForm");
+					formulaGenerator(JSONConfigUnitlinkParse.si.unitlink.formula, JSONConstantUnitlinkParse.si.unitlink);
 				});
 
 
