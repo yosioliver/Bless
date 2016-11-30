@@ -2893,6 +2893,100 @@ function setSignatureImage(arrayImageSource)
 	});
 }
 
+function setTableValue(arrayHeader, JSONInput, stringTableJavaScriptID)
+{
+	/* INITIALIZE */
+
+	var stringJSONInputKey;
+	var stringJSONInputValue;
+	var stringKeyWithoutPrefix;
+	var stringKeyInfix;
+	var JSONTable = [];
+
+	/* JSON FILTER */
+
+	for (var i = 0; i < JSONInput.length; i++)
+	{
+		stringJSONInputKey = JSONInput[i].key;
+		stringJSONInputValue = JSONInput[i].value;
+
+		stringKeyWithoutPrefix = releasePrefix(stringJSONInputKey);
+		stringKeyInfix = getInfix(stringKeyWithoutPrefix);
+
+		if (stringKeyInfix == stringInfixBeneficiariesList)
+		{
+			JSONAdd(JSONTable, stringJSONInputKey, stringJSONInputValue);
+		}
+		else
+		{
+
+		}
+	}
+
+	/* GET LAST ID */
+
+	var intLastID = getLastID(JSONTable, stringPrefixText + stringInfixBeneficiariesList + arrayBeneficiariesListHeader[1]);
+
+	/* GENERATE TABLE */
+
+	var stringTableJQueryID = stringKres + stringTableJavaScriptID;
+	var stringRowJavaScriptID;
+	var stringRowJQueryID;
+
+	for (var i = 0; i < intLastID; i++)
+	{
+		$(stringTableJQueryID + " tbody").append("<tr id='" + stringPrefixRow + (i + 1) + "'></tr>");
+	}
+
+	$(stringTableJQueryID + " tbody tr").each(function(index)
+	{
+		stringRowJavaScriptID = $(this).attr("id");
+		stringRowJQueryID = stringKres + stringRowJavaScriptID;
+
+		for (var i = 0; i < arrayBeneficiariesListHeader.length; i++)
+		{
+			if (i == 0)
+			{
+				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + arrayBeneficiariesListHeader[i] + (index + 1) + "'>" + (index + 1) + "</td>");
+			}
+			else
+			{
+				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + arrayBeneficiariesListHeader[i] + (index + 1) + "'></td>");
+			}
+		}
+	});
+	
+	/* SET TABLE VALUE */
+
+	var stringJSONTableKey;
+	var stringJSONTableValue;
+	var stringKeySuffix;
+	var stringColumnJavaScriptID;
+
+	for (var i = 0; i < JSONTable.length; i++)
+	{
+		stringJSONTableKey = JSONTable[i].key;
+		stringJSONTableValue = JSONTable[i].value;
+
+		stringKeyWithoutPrefix = releasePrefix(stringJSONTableKey);
+		stringKeySuffix = releaseInfix(stringKeyWithoutPrefix);
+
+		$(stringTableJQueryID + " tbody td").each(function()
+		{
+			stringColumnJavaScriptID = $(this).attr("id");
+
+			if (stringColumnJavaScriptID == stringKeySuffix)
+			{
+				$(this).html(stringJSONTableValue);
+			}
+			else
+			{
+
+			}
+		});
+	}
+}
+
 
 // RELEASE
 
