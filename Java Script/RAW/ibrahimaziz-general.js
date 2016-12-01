@@ -2893,7 +2893,7 @@ function setSignatureImage(arrayImageSource)
 	});
 }
 
-function setTableValue(arrayHeader, JSONInput, stringTableJavaScriptID)
+function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 {
 	/* INITIALIZE */
 
