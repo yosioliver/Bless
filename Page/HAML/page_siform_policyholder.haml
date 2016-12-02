@@ -18,21 +18,24 @@
 			{
 				var JSONConfigUnitlinkParse = JSON.parse(JSONConfigUnitlink);
 				var JSONConstantUnitlinkParse = JSON.parse(JSONConstantUnitlink);
+				var JSONValueUnitlinkParse = JSON.parse(JSONValueUnitlink);
+				var arrayRiderHeader = ["RiderDescription", "SumAssured", "Term", "Premium", "ExtraPremiPerMille", "ExtraPremiPercent", "ExtraPremiPerMilleTerm", "ExtraPremiPercentTerm"];
 
 				// GENERATOR
 
 				$("input[name='RadioButtonSection']").change(function()
 				{
+					// FROM PRODUCT CONFIGURATOR
+
 					formGenerator(eval("JSONConfigUnitlinkParse.si.unitlink." + $(this).val()), "MainForm");
 					formulaGenerator(JSONConfigUnitlinkParse.si.unitlink.formula, JSONConstantUnitlinkParse.si.unitlink);
+
+					// SETTER
+
+					setGeneralPagePDF(eval("JSONValueUnitlinkParse.si.unitlink." + $(this).val()));
+					setTable(arrayRiderHeader, eval("JSONValueUnitlinkParse.si.unitlink." + $(this).val()), "TableRider");
+					formulaTableGenerator(JSONConfigUnitlinkParse.si.unitlink.formula, JSONConstantUnitlinkParse.si.unitlink);
 				});
-
-
-				// SETTER
-
-				// var JSONDummyParse = JSON.parse(JSONDummy);
-				// setGeneralPagePDF(JSONDummyParse.result.readFromDB);
-				// setTable(arrayBeneficiariesListHeader, JSONInput.result.readFromDB, "TableBeneficiariesList");
 
 				// GETTER
 

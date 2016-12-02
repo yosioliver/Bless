@@ -57,6 +57,7 @@ var stringPrefixRow = "Row";
 var stringPrefixColumn = "Column";
 
 var stringPrefixConstant = "Constant";
+var stringPrefixFormula = "Formula";
 
 var arrayPrefix = 
 [
@@ -72,7 +73,8 @@ var arrayPrefix =
 	stringPrefixTable,
 	stringPrefixRow, 
 	stringPrefixColumn, 
-	stringPrefixConstant
+	stringPrefixConstant, 
+	stringPrefixFormula
 ];
 
 /* INFIX */
@@ -83,6 +85,7 @@ var stringInfixBeneficiariesList = "BeneficiariesList";
 var stringInfixBasicInsurance = "BasicInsurance";
 var stringInfixMoneyAllocation = "MoneyAllocation";
 var stringInfixAdditionalInsurance = "AdditionalInsurance";
+var stringInfixRider = "Rider";
 
 var arrayInfix = 
 [
@@ -91,8 +94,13 @@ var arrayInfix =
 	stringInfixBeneficiariesList, 
 	stringInfixBasicInsurance, 
 	stringInfixMoneyAllocation, 
-	stringInfixAdditionalInsurance
+	stringInfixAdditionalInsurance, 
+	stringInfixRider
 ];
+
+/* SUFFIX */
+
+var stringSuffixBody = "Body";
 
 /* JSON */
 
@@ -2893,7 +2901,7 @@ function setSignatureImage(arrayImageSource)
 	});
 }
 
-function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
+function setTable(arrayTableHeader, JSONInput, stringTableJavaScriptID)
 {
 	/* INITIALIZE */
 
@@ -2902,6 +2910,7 @@ function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 	var stringKeyWithoutPrefix;
 	var stringKeyInfix;
 	var JSONTable = [];
+	var stringTableInfix = releasePrefix(stringTableJavaScriptID);
 
 	/* JSON FILTER */
 
@@ -2913,7 +2922,7 @@ function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 		stringKeyWithoutPrefix = releasePrefix(stringJSONInputKey);
 		stringKeyInfix = getInfix(stringKeyWithoutPrefix);
 
-		if (stringKeyInfix == stringInfixBeneficiariesList)
+		if (stringKeyInfix == stringTableInfix)
 		{
 			JSONAdd(JSONTable, stringJSONInputKey, stringJSONInputValue);
 		}
@@ -2925,7 +2934,7 @@ function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 
 	/* GET LAST ID */
 
-	var intLastID = getLastID(JSONTable, stringPrefixText + stringInfixBeneficiariesList + arrayBeneficiariesListHeader[1]);
+	var intLastID = getLastID(JSONTable, stringPrefixText + releasePrefix(stringTableJavaScriptID) + arrayTableHeader[1]);
 
 	/* GENERATE TABLE */
 
@@ -2935,7 +2944,7 @@ function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 
 	for (var i = 0; i < intLastID; i++)
 	{
-		$(stringTableJQueryID + " tbody").append("<tr id='" + stringPrefixRow + (i + 1) + "'></tr>");
+		$(stringTableJQueryID + " tbody").append("<tr id='" + stringPrefixRow + stringTableInfix + stringSuffixBody + (i + 1) + "'></tr>");
 	}
 
 	$(stringTableJQueryID + " tbody tr").each(function(index)
@@ -2943,15 +2952,15 @@ function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 		stringRowJavaScriptID = $(this).attr("id");
 		stringRowJQueryID = stringKres + stringRowJavaScriptID;
 
-		for (var i = 0; i < arrayBeneficiariesListHeader.length; i++)
+		for (var i = 0; i < arrayTableHeader.length; i++)
 		{
 			if (i == 0)
 			{
-				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + arrayBeneficiariesListHeader[i] + (index + 1) + "'>" + (index + 1) + "</td>");
+				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + stringPrefixColumn + stringTableInfix + arrayTableHeader[i] + (index + 1) + "'>" + (index + 1) + "</td>");
 			}
 			else
 			{
-				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + arrayBeneficiariesListHeader[i] + (index + 1) + "'></td>");
+				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + stringPrefixColumn + stringTableInfix + arrayTableHeader[i] + (index + 1) + "'></td>");
 			}
 		}
 	});
@@ -2960,7 +2969,7 @@ function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 
 	var stringJSONTableKey;
 	var stringJSONTableValue;
-	var stringKeySuffix;
+	var stringKeyTable;
 	var stringColumnJavaScriptID;
 
 	for (var i = 0; i < JSONTable.length; i++)
@@ -2969,13 +2978,13 @@ function setTable(arrayHeader, JSONInput, stringTableJavaScriptID)
 		stringJSONTableValue = JSONTable[i].value;
 
 		stringKeyWithoutPrefix = releasePrefix(stringJSONTableKey);
-		stringKeySuffix = releaseInfix(stringKeyWithoutPrefix);
+		stringKeyTable = stringPrefixColumn + stringKeyWithoutPrefix;
 
 		$(stringTableJQueryID + " tbody td").each(function()
 		{
 			stringColumnJavaScriptID = $(this).attr("id");
 
-			if (stringColumnJavaScriptID == stringKeySuffix)
+			if (stringColumnJavaScriptID == stringKeyTable)
 			{
 				$(this).html(stringJSONTableValue);
 			}
