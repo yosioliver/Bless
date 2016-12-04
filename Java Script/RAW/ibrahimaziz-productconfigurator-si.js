@@ -627,7 +627,7 @@ function formulaGenerator(JSONInput, JSONConstant)
 												{
 													arrayJSONConstantTableSelectedValue[m] = eval("JSONConstantTableSelected[" + l + "]." + arrayJSONConstantTableSelectedKey[m]);
 													
-													if (eval("arrayJSONConstantTableSelectedValue[" + m + "] " + arrayJSONConstantFormulaOperator[m] + " arrayJSONConstantFormulaValue[" + m + "]"))
+													if (eval("parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)"))
 													{
 														
 													}
@@ -703,6 +703,8 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 	var arrayJSONConstantTableSelectedKey = [];
 	var arrayJSONConstantTableSelectedValue = [];
 	var arrayJSONConstantFormulaValue = [];
+
+	var intColumnID;
 	
 	for (var i = 0; i < JSONFormula.length; i++)
 	{
@@ -712,31 +714,36 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 
 		if (stringJSONFormulaState == stringStateTrue && getPrefix(stringJSONFormulaKeyWithoutPrefix) == stringPrefixTable)
 		{
-			stringJSONFormulaContent = JSONFormula[i].formulaContent;
-			stringJSONFormulaInputKey = JSONFormula[i].inputKey;
-			arrayJSONFormulaContent = stringJSONFormulaContent.split(stringJSONArraySeparator);
-			arrayJSONFormulaValue = arrayJSONFormulaContent;
-			
 			$(stringKres + stringJSONFormulaKeyWithoutPrefix + " tbody tr").each(function()
 			{
+				stringJSONFormulaContent = JSONFormula[i].formulaContent;
+				stringJSONFormulaInputKey = JSONFormula[i].inputKey;
+				arrayJSONFormulaContent = stringJSONFormulaContent.split(stringJSONArraySeparator);
+				arrayJSONFormulaValue = arrayJSONFormulaContent;
 				stringRowJavaScriptID = $(this).attr("id");
-				alert(stringRowJavaScriptID);
-
+				intColumnID = stringRowJavaScriptID.substring("RowRiderBody".length, stringRowJavaScriptID.length);
+				
 				$(stringKres + stringRowJavaScriptID + " td").each(function()
 				{
 					stringColumnJavaScriptID = $(this).attr("id");
 
-					if (stringColumnJavaScriptID == stringJSONFormulaInputKey)
+					if (stringColumnJavaScriptID.substring(0, stringJSONFormulaInputKey.length) == stringJSONFormulaInputKey)
 					{
 						/* FORMULA LISTENER */
-
+						
 						for (var j = 0; j < arrayJSONFormulaContent.length; j++)
 						{
 							if (indicatorPrefix(arrayJSONFormulaContent[j]) == stringStateInput)
 							{
 								/* GET VALUE FROM UI */
-
+								
 								arrayJSONFormulaValue[j] = getGeneralInputForm(arrayJSONFormulaContent[j]);
+							}
+							else if (indicatorPrefix(arrayJSONFormulaContent[j]) == stringStateTable)
+							{
+								/* GET VALUE FROM TABLE */
+
+								arrayJSONFormulaValue[j] = $(this).text();
 							}
 							else if (indicatorPrefix(arrayJSONFormulaContent[j]) == stringStateConstant)
 							{
@@ -750,7 +757,7 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 									stringJSONConstantFormulaKey = JSONConstantFormula[k].formulaKey;
 									stringJSONConstantFormulaState = JSONConstantFormula[k].formulaState;
 
-									if (stringJSONConstantFormulaState == stringStateTrue && stringJSONConstantFormulaKey == arrayJSONInputFormulaContent[j])
+									if (stringJSONConstantFormulaState == stringStateTrue && stringJSONConstantFormulaKey == arrayJSONFormulaContent[j])
 									{
 										stringJSONConstantTableKey = JSONConstantFormula[k].tableKey;
 										stringJSONConstantTableHeader = JSONConstantFormula[k].tableHeader;
@@ -778,6 +785,10 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 												{
 													arrayJSONConstantFormulaValue[l] = getGeneralInputForm(arrayJSONConstantTableHeader[l]);
 												}
+												else if (indicatorPrefix(arrayJSONConstantTableHeader[l]) == stringStateTable)
+												{
+													arrayJSONConstantFormulaValue[l] = $(stringKres + arrayJSONConstantTableHeader[l] + intColumnID).text();
+												}
 												else
 												{
 
@@ -785,16 +796,16 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 											}
 
 											/* QUERY TABLE WITH KEY AND VALUE */
-
+											
 											for (var l = 0; l < JSONConstantTableSelected.length; l++)
 											{
 												var booleanEquals = true;
-												
+
 												for (var m = 0; m < arrayJSONConstantTableSelectedKey.length; m++)
 												{
 													arrayJSONConstantTableSelectedValue[m] = eval("JSONConstantTableSelected[" + l + "]." + arrayJSONConstantTableSelectedKey[m]);
-													
-													if (eval("arrayJSONConstantTableSelectedValue[" + m + "] " + arrayJSONConstantFormulaOperator[m] + " arrayJSONConstantFormulaValue[" + m + "]"))
+
+													if (eval("parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)"))
 													{
 														
 													}
@@ -824,12 +835,12 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 							}
 							else
 							{
-
+								
 							}
 						}
 
-						// alert(arrayJSONInputFormulaValue.join(" "));
-						$(stringKres + stringJSONInputKey).val(eval(arrayJSONInputFormulaValue.join(" ")));
+						// alert(arrayJSONFormulaValue.join(" "));
+						$(stringKres + stringJSONFormulaInputKey + intColumnID).text(eval(arrayJSONFormulaValue.join(" ")));
 					}
 					else
 					{

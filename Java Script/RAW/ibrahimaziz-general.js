@@ -2954,14 +2954,7 @@ function setTable(arrayTableHeader, JSONInput, stringTableJavaScriptID)
 
 		for (var i = 0; i < arrayTableHeader.length; i++)
 		{
-			if (i == 0)
-			{
-				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + stringPrefixColumn + stringTableInfix + arrayTableHeader[i] + (index + 1) + "'>" + (index + 1) + "</td>");
-			}
-			else
-			{
-				$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + stringPrefixColumn + stringTableInfix + arrayTableHeader[i] + (index + 1) + "'></td>");
-			}
+			$(stringTableJQueryID + " tbody tr" + stringRowJQueryID).append("<td id='" + stringPrefixColumn + stringTableInfix + arrayTableHeader[i] + (index + 1) + "'></td>");
 		}
 	});
 	
