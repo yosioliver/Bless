@@ -3177,3 +3177,19 @@ function messageError(stringMessageTitle, stringMessageContent)
 		}
 	}
 }
+
+
+// UI
+
+function generateSelectOption(stringSelectJavaScriptID, arrayOption)
+{
+	var stringSelectJQueryID = stringKres + stringSelectJavaScriptID;
+	var stringOptionAdded = "";
+	
+	for (var i = 0; i < arrayOption.length; i++)
+	{
+		stringOptionAdded += "<option value='" + arrayOption[i].value + "'>" + arrayOption[i].text + "</option>";
+	}
+
+	$(stringSelectJQueryID).html(stringOptionAdded);
+}
