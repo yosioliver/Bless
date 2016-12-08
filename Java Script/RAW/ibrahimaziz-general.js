@@ -1,7 +1,7 @@
 // IBRAHIM AZIZ 
 // BHIMBIM
 // http://www.ibrahimaziz.design
-// built for InfoConnect Sdn Bhd - BCA Life Bless
+// built for InfoConnect Sdn Bhd - BCA Life | Bless
 // http://www.infoconnect.com.my
 
 
@@ -16,6 +16,7 @@ var stringDot = ".";
 
 var stringJSONArraySeparator = ",";
 var stringJSONStateSeparator = "|";
+var arrayOperator = ["+", "-", "*", "/", "(", ")"];
 
 /* STATE */
 
@@ -33,6 +34,7 @@ var stringStateRequired = "required";
 var stringStateInput = "input";
 var stringStateTable = "table";
 var stringStateConstant = "constant";
+var stringStateOperator = "operator";
 
 /* STRING */
 
@@ -77,10 +79,27 @@ var arrayPrefix =
 	stringPrefixFormula
 ];
 
+var arrayPrefixInput = 
+[
+	stringPrefixText, 
+	stringPrefixRadioButton, 
+	stringPrefixSelect, 
+	stringPrefixCheckbox, 
+	stringPrefixDate, 
+	stringPrefixArea, 
+	stringPrefixNumber, 
+	stringPrefixEmail, 
+	stringPrefixTelephone
+];
+
+var arrayPrefixTable = [stringPrefixTable, stringPrefixRow, stringPrefixColumn];
+
+var arrayPrefixConstant = [stringPrefixConstant];
+
 /* INFIX */
 
 var stringInfixProspectiveInsured = "ProspectiveInsured";
-var stringInfixPolicyHolder = "PolicyHolder";
+var stringInfixPolicyholder = "Policyholder";
 var stringInfixBeneficiariesList = "BeneficiariesList";
 var stringInfixBasicInsurance = "BasicInsurance";
 var stringInfixMoneyAllocation = "MoneyAllocation";
@@ -89,7 +108,7 @@ var stringInfixRider = "Rider";
 
 var arrayInfix = 
 [
-	stringInfixPolicyHolder, 
+	stringInfixPolicyholder, 
 	stringInfixProspectiveInsured, 
 	stringInfixBeneficiariesList, 
 	stringInfixBasicInsurance, 
@@ -2883,6 +2902,42 @@ function getLastID(JSONInput, stringKeyFilter)
 	return intTemporaryID;
 }
 
+function getURLParameter() 
+{
+	var stringParameter = {};
+	var stringURL = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, 
+	function(m, key, value) 
+	{
+		stringParameter[key] = value;
+	});
+
+	return stringParameter;
+}
+
+function getJSONFromURL(stringJSONName, JSONDummy)
+{
+	var JSONPackage = [];
+	var JSONPackageTemporary = getURLParameter()[stringJSONName];
+	
+	if (JSONPackageTemporary == null | JSONPackageTemporary == undefined | JSONPackageTemporary == "")
+	{
+		if (JSONDummy == null | JSONDummy == undefined | JSONDummy == "")
+		{
+
+		}
+		else
+		{
+			JSONPackage = JSON.parse(JSONDummy);
+		}
+	}
+	else
+	{
+		JSONPackage = JSON.parse(unescape(JSONPackageTemporary));
+	}
+
+	return JSONPackage;
+}
+
 
 // SET EXTRA
 
@@ -3035,61 +3090,56 @@ function releaseInfix(stringInputJavaScriptID)
 
 function indicatorPrefix(stringInputJavaScriptID)
 {
-	if (stringInputJavaScriptID.substring(0, stringPrefixText.length) == stringPrefixText)
+	for (var i = 0; i < arrayPrefixInput.length; i++)
 	{
-		return stringStateInput;
+		if (stringInputJavaScriptID.substring(0, arrayPrefixInput[i].length) == arrayPrefixInput[i])
+		{
+			i = arrayPrefixInput.length;
+			return stringStateInput;
+		}
+		else
+		{
+			
+		}
 	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixRadioButton.length) == stringPrefixRadioButton)
+
+	for (var i = 0; i < arrayPrefixTable.length; i++)
 	{
-		return stringStateInput;
+		if (stringInputJavaScriptID.substring(0, arrayPrefixTable[i].length) == arrayPrefixTable[i])
+		{
+			i = arrayPrefixTable.length;
+			return stringStateTable;
+		}
+		else
+		{
+			
+		}
 	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixCheckbox.length) == stringPrefixCheckbox)
+
+	for (var i = 0; i < arrayPrefixConstant.length; i++)
 	{
-		return stringStateInput;
+		if (stringInputJavaScriptID.substring(0, arrayPrefixConstant[i].length) == arrayPrefixConstant[i])
+		{
+			i = arrayPrefix.length;
+			return stringStateConstant;
+		}
+		else
+		{
+			
+		}
 	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixSelect.length) == stringPrefixSelect)
+
+	for (var i = 0; i < arrayOperator.length; i++)
 	{
-		return stringStateInput;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixDate.length) == stringPrefixDate)
-	{
-		return stringStateInput;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixArea.length) == stringPrefixArea)
-	{
-		return stringStateInput;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixNumber.length) == stringPrefixNumber)
-	{
-		return stringStateInput;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixEmail.length) == stringPrefixEmail)
-	{
-		return stringStateInput;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixTelephone.length) == stringPrefixTelephone)
-	{
-		return stringStateInput;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixTable.length) == stringPrefixTable)
-	{
-		return stringStateTable;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixRow.length) == stringPrefixRow)
-	{
-		return stringStateTable;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixColumn.length) == stringPrefixColumn)
-	{
-		return stringStateTable;
-	}
-	else if (stringInputJavaScriptID.substring(0, stringPrefixConstant.length) == stringPrefixConstant)
-	{
-		return stringStateConstant;
-	}
-	else
-	{
-		
+		if (stringInputJavaScriptID.substring(0, arrayOperator[i].length) == arrayOperator[i])
+		{
+			i = arrayOperator.length;
+			return stringStateOperator;
+		}
+		else
+		{
+			
+		}
 	}
 }
 
