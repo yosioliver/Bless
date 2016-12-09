@@ -617,17 +617,29 @@ function formulaGenerator(JSONInput, JSONConstant)
 												}
 											}
 
+
 											/* QUERY TABLE WITH KEY AND VALUE */
+
 
 											for (var l = 0; l < JSONConstantTableSelected.length; l++)
 											{
 												var booleanEquals = true;
+												var stringEquation = "";
 												
 												for (var m = 0; m < arrayJSONConstantTableSelectedKey.length; m++)
 												{
 													arrayJSONConstantTableSelectedValue[m] = eval("JSONConstantTableSelected[" + l + "]." + arrayJSONConstantTableSelectedKey[m]);
-													
-													if (eval("parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)"))
+
+													if($.isNumeric(arrayJSONConstantFormulaValue[m]) == true && $.isNumeric(arrayJSONConstantTableSelectedValue[m]) == true)
+													{
+														stringEquation = "parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)";
+													}
+													else
+													{
+														stringEquation = "arrayJSONConstantFormulaValue[" + m + "] " + arrayJSONConstantFormulaOperator[m] + " arrayJSONConstantTableSelectedValue[" + m + "]";
+													}
+
+													if (eval(stringEquation))
 													{
 														
 													}
@@ -800,12 +812,22 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 											for (var l = 0; l < JSONConstantTableSelected.length; l++)
 											{
 												var booleanEquals = true;
+												var stringEquation = "";
 
 												for (var m = 0; m < arrayJSONConstantTableSelectedKey.length; m++)
 												{
 													arrayJSONConstantTableSelectedValue[m] = eval("JSONConstantTableSelected[" + l + "]." + arrayJSONConstantTableSelectedKey[m]);
 
-													if (eval("parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)"))
+													if($.isNumeric(arrayJSONConstantFormulaValue[m]) == true && $.isNumeric(arrayJSONConstantTableSelectedValue[m]) == true)
+													{
+														stringEquation = "parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)";
+													}
+													else
+													{
+														stringEquation = "arrayJSONConstantFormulaValue[" + m + "] " + arrayJSONConstantFormulaOperator[m] + " arrayJSONConstantTableSelectedValue[" + m + "]";
+													}
+
+													if (eval(stringEquation))
 													{
 														
 													}
