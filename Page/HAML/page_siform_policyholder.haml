@@ -16,26 +16,43 @@
 
 			$(document).ready(function()
 			{
-				var JSONConfigUnitlinkParse = JSON.parse(JSONConfigUnitlink);
-				var JSONConstantUnitlinkParse = JSON.parse(JSONConstantUnitlink);
-				var JSONValueUnitlinkParse = JSON.parse(JSONValueUnitlink);
+				// INITIALIZATION
+
+				var JSONLayoutRAWDummy = JSON.parse(JSONLayout);
+				var JSONLayoutSIDummy = JSONLayoutRAWDummy.si;
+				var JSONLayoutProductDummy = JSONFilterContentByKey(JSONLayoutSIDummy, "productKey", "unitlink", "productContent", "productState");
+
+				var JSONFormulaFromURL = [];
+				var JSONFormulaRAWDummy = JSON.parse(JSONFormula);
+				var JSONFormulaSIDummy = JSONFormulaRAWDummy.si;
+				var JSONFormulaProductDummy = JSONFilterContentByKey(JSONFormulaSIDummy, "productKey", "unitlink", "productContent", "productState");
+
+				var JSONValueRAWDummy = JSON.parse(JSONValue);
+				var JSONValueSIDummy = JSONValueRAWDummy.si;
+				var JSONValueProductDummy = JSONFilterContentByKey(JSONValueSIDummy, "productKey", "unitlink", "productContent", "productState");
+
 				var arrayRiderHeader = ["RiderDescription", "SumAssured", "Term", "Premium", "ExtraPremiPerMille", "ExtraPremiPercent", "ExtraPremiPerMilleTerm", "ExtraPremiPercentTerm"];
+
 
 				// GENERATOR
 
 				$("input[name='RadioButtonSection']").change(function()
 				{
-					// FROM PRODUCT CONFIGURATOR
+					var JSONLayoutSectionDummy = JSONFilterContentByKey(JSONLayoutProductDummy, "sectionKey", $(this).val(), "sectionContent", "sectionState");
+					var JSONValueSectionDummy = JSONFilterContentByKey(JSONValueProductDummy, "sectionKey", $(this).val(), "sectionContent", "sectionState");
 
-					formGenerator(eval("JSONConfigUnitlinkParse.si.unitlink." + $(this).val()), "MainForm");
-					formulaGenerator(JSONConfigUnitlinkParse.si.unitlink.formula, JSONConstantUnitlinkParse.si.unitlink);
+					/* FROM PRODUCT CONFIGURATOR */
 
-					// SETTER
+					formGenerator(JSONLayoutSectionDummy, "MainForm");
+					formulaGenerator(JSONFormulaProductDummy);
 
-					setGeneralPageForm(eval("JSONValueUnitlinkParse.si.unitlink." + $(this).val()));
-					setTable(arrayRiderHeader, eval("JSONValueUnitlinkParse.si.unitlink." + $(this).val()), "TableRider");
-					formulaTableGenerator(JSONConfigUnitlinkParse.si.unitlink.formula, JSONConstantUnitlinkParse.si.unitlink);
+					/* SETTER */
+
+					setGeneralPageForm(JSONValueSectionDummy);
+					setTable(arrayRiderHeader, JSONValueSectionDummy, "TableRider");
+					formulaTableGenerator(JSONFormulaProductDummy);
 				});
+
 
 				// GETTER
 

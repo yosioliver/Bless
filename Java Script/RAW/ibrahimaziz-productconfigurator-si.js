@@ -81,14 +81,14 @@ function fieldsetGenerator(JSONFieldset, stringLayoutJavaScriptID)
 
 		if (stringJSONFieldsetState == stringStateTrue)
 		{
-			if (stringJSONFieldsetLegend.length > 0)
-			{
-				stringHTMLFieldset += "<fieldset id='" + stringJSONFieldsetKey + "'><legend>" + stringJSONFieldsetLegend + "</legend><ul></ul></fieldset>";
-			}
-			else
-			{
+			// if (stringJSONFieldsetLegend.length > 0)
+			// {
+			// 	stringHTMLFieldset += "<fieldset id='" + stringJSONFieldsetKey + "'><legend>" + stringJSONFieldsetLegend + "</legend><ul></ul></fieldset>";
+			// }
+			// else
+			// {
 				stringHTMLFieldset += "<fieldset id='" + stringJSONFieldsetKey + "'><ul></ul></fieldset>";
-			}
+			// }
 		}
 		else
 		{
@@ -496,31 +496,32 @@ function tableColumnGenerator(JSONInput)
 
 // FORMULA
 
-function formulaGenerator(JSONInput, JSONConstant)
+function formulaGenerator(JSONFormulaRAW)
 {
 	/* INITIALIZE */
 
-	var stringJSONInputFormulaKey;
-	var stringJSONInputFormulaContent;
-	var stringJSONInputKey;
-	var stringJSONInputFormulaState;
-	var arrayJSONInputFormulaContent = [];
-	var arrayJSONInputFormulaValue = [];
+	var JSONFormula = JSONFormulaRAW.formula;
+	var stringJSONFormulaKey;
+	var stringJSONFormulaContent;
+	var stringJSONFormulaKey;
+	var stringJSONFormulaState;
+	var arrayJSONFormulaContent = [];
+	var arrayJSONFormulaValue = [];
 
-	var JSONConstantFormula;
-	var JSONConstantTable;
-	var stringJSONConstantFormulaKey;
+	var JSONConstant = JSONFormulaRAW.constant;
+	var stringJSONConstantKey;
 	var stringJSONConstantTableHeader;
 	var stringJSONConstantTableKey;
-	var stringJSONConstantFormulaOperator;
-	var stringJSONConstantFormulaState;
+	var stringJSONConstantOperator;
+	var stringJSONConstantState;
 	var arrayJSONConstantTableHeader = [];
 	var arrayJSONConstantInputValue = [];
 	var arrayJSONConstantFormulaOperator = [];
 
-	var JSONConstantTableSelected;
-	var arrayJSONConstantTableSelectedKey = [];
-	var arrayJSONConstantTableSelectedValue = [];
+	var JSONTable = JSONFormulaRAW.table;
+	var JSONTableSelected;
+	var arrayJSONTableSelectedKey = [];
+	var arrayJSONTableSelectedValue = [];
 	var arrayJSONConstantFormulaValue = [];
 
 
@@ -538,64 +539,77 @@ function formulaGenerator(JSONInput, JSONConstant)
 		{
 			$(this).change(function()
 			{
-				arrayJSONInputFormulaContent = [];
-				arrayJSONInputFormulaValue = [];
+				arrayJSONFormulaContent = [];
+				arrayJSONFormulaValue = [];
 				arrayJSONConstantTableHeader = [];
 				arrayJSONConstantInputValue = [];
 				arrayJSONConstantFormulaOperator = [];
-				arrayJSONConstantTableSelectedKey = [];
-				arrayJSONConstantTableSelectedValue = [];
+				arrayJSONTableSelectedKey = [];
+				arrayJSONTableSelectedValue = [];
 				arrayJSONConstantFormulaValue = [];
 
 				/* READ JSON */
 
-				for (var i = 0; i < JSONInput.length; i++)
+				for (var i = 0; i < JSONFormula.length; i++)
 				{
-					stringJSONInputFormulaKey = JSONInput[i].formulaKey;
-					stringJSONInputFormulaState = JSONInput[i].formulaState;
+					stringJSONFormulaKey = JSONFormula[i].formulaKey;
+					stringJSONFormulaState = JSONFormula[i].formulaState;
 
-					if (stringJSONInputFormulaState == stringStateTrue && stringJSONInputFormulaKey == stringFormulaKey)
+					if (stringJSONFormulaState == stringStateTrue && stringJSONFormulaKey == stringFormulaKey)
 					{
-						stringJSONInputFormulaContent = JSONInput[i].formulaContent;
-						stringJSONInputKey = JSONInput[i].inputKey;
-						arrayJSONInputFormulaContent = stringJSONInputFormulaContent.split(stringJSONArraySeparator);
-						arrayJSONInputFormulaValue = arrayJSONInputFormulaContent;
+						stringJSONFormulaContent = JSONFormula[i].formulaContent;
+						stringJSONFormulaKey = JSONFormula[i].inputKey;
+						arrayJSONFormulaContent = stringJSONFormulaContent.split(stringJSONArraySeparator);
+						arrayJSONFormulaValue = arrayJSONFormulaContent;
 
 						/* FORMULA LISTENER */
 
-						for (var j = 0; j < arrayJSONInputFormulaContent.length; j++)
+						for (var j = 0; j < arrayJSONFormulaContent.length; j++)
 						{
-							if (indicatorPrefix(arrayJSONInputFormulaContent[j]) == stringStateInput)
+							if (indicatorPrefix(arrayJSONFormulaContent[j]) == stringStateInput)
 							{
 								/* GET VALUE FROM UI */
 
-								arrayJSONInputFormulaValue[j] = getGeneralInputForm(arrayJSONInputFormulaContent[j]);
+								arrayJSONFormulaValue[j] = getGeneralInputForm(arrayJSONFormulaContent[j]);
 							}
-							else if (indicatorPrefix(arrayJSONInputFormulaContent[j]) == stringStateConstant)
+							else if (indicatorPrefix(arrayJSONFormulaContent[j]) == stringStateConstant)
 							{
 								/* GET VALUE FROM CONSTANT */
 
-								JSONConstantFormula = JSONConstant.formula;
-								JSONConstantTable = JSONConstant.table;
-
-								for (var k = 0; k < JSONConstantFormula.length; k++)
+								for (var k = 0; k < JSONConstant.length; k++)
 								{
-									stringJSONConstantFormulaKey = JSONConstantFormula[k].formulaKey;
-									stringJSONConstantFormulaState = JSONConstantFormula[k].formulaState;
+									stringJSONConstantKey = JSONConstant[k].constantKey;
+									stringJSONConstantState = JSONConstant[k].constantState;
 
-									if (stringJSONConstantFormulaState == stringStateTrue && stringJSONConstantFormulaKey == arrayJSONInputFormulaContent[j])
+									if (stringJSONConstantState == stringStateTrue && stringJSONConstantKey == arrayJSONFormulaContent[j])
 									{
-										stringJSONConstantTableKey = JSONConstantFormula[k].tableKey;
-										stringJSONConstantTableHeader = JSONConstantFormula[k].tableHeader;
-										stringJSONConstantFormulaOperator = JSONConstantFormula[k].formulaOperator;
+										stringJSONConstantTableKey = JSONConstant[k].tableKey;
+										stringJSONConstantTableHeader = JSONConstant[k].tableHeader;
+										stringJSONConstantOperator = JSONConstant[k].constantOperator;
 										
 										arrayJSONConstantTableHeader = stringJSONConstantTableHeader.split(stringJSONArraySeparator);
-										arrayJSONConstantFormulaOperator = stringJSONConstantFormulaOperator.split(stringJSONArraySeparator);
-										JSONConstantTableSelected = eval("JSONConstantTable." + stringJSONConstantTableKey);
+										arrayJSONConstantOperator = stringJSONConstantOperator.split(stringJSONArraySeparator);
 
-										/* SELECT TABLE */
+										/* TABLE FILTER */
+
+										for (var l = 0; l < JSONTable.length; l++)
+										{
+											stringJSONTableKey = JSONTable[l].tableKey;
+											stringJSONTableState = JSONTable[l].tableState;
+
+											if (stringJSONTableState == stringStateTrue && stringJSONTableKey == stringJSONConstantTableKey)
+											{
+												JSONTableSelected = JSONTable[l].tableContent;
+											}
+											else
+											{
+
+											}
+										}
+
+										/* SELECTED TABLE */
 										
-										if (JSONConstantTableSelected == null | JSONConstantTableSelected == undefined | JSONConstantTableSelected == "")
+										if (JSONTableSelected == null | JSONTableSelected == undefined | JSONTableSelected == "")
 										{
 
 										}
@@ -603,13 +617,13 @@ function formulaGenerator(JSONInput, JSONConstant)
 										{
 											/* GET INPUT VALUE AND TABLE KEY */
 											
-											for (var l = 0; l < arrayJSONConstantTableHeader.length; l++)
+											for (var m = 0; m < arrayJSONConstantTableHeader.length; m++)
 											{
-												arrayJSONConstantTableSelectedKey[l] = releaseInfix(releasePrefix(arrayJSONConstantTableHeader[l])).toLowerCase();
+												arrayJSONTableSelectedKey[m] = releaseInfix(releasePrefix(arrayJSONConstantTableHeader[m])).toLowerCase();
 
-												if (indicatorPrefix(arrayJSONConstantTableHeader[l]) == stringStateInput)
+												if (indicatorPrefix(arrayJSONConstantTableHeader[m]) == stringStateInput)
 												{
-													arrayJSONConstantFormulaValue[l] = getGeneralInputForm(arrayJSONConstantTableHeader[l]);
+													arrayJSONConstantFormulaValue[m] = getGeneralInputForm(arrayJSONConstantTableHeader[m]);
 												}
 												else
 												{
@@ -617,28 +631,26 @@ function formulaGenerator(JSONInput, JSONConstant)
 												}
 											}
 
-
 											/* QUERY TABLE WITH KEY AND VALUE */
 
-
-											for (var l = 0; l < JSONConstantTableSelected.length; l++)
+											for (var m = 0; m < JSONTableSelected.length; m++)
 											{
 												var booleanEquals = true;
 												var stringEquation = "";
 												
-												for (var m = 0; m < arrayJSONConstantTableSelectedKey.length; m++)
+												for (var n = 0; n < arrayJSONTableSelectedKey.length; n++)
 												{
-													arrayJSONConstantTableSelectedValue[m] = eval("JSONConstantTableSelected[" + l + "]." + arrayJSONConstantTableSelectedKey[m]);
+													arrayJSONTableSelectedValue[n] = eval("JSONTableSelected[" + m + "]." + arrayJSONTableSelectedKey[n]);
 
-													if($.isNumeric(arrayJSONConstantFormulaValue[m]) == true && $.isNumeric(arrayJSONConstantTableSelectedValue[m]) == true)
+													if($.isNumeric(arrayJSONConstantFormulaValue[n]) == true && $.isNumeric(arrayJSONTableSelectedValue[n]) == true)
 													{
-														stringEquation = "parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)";
+														stringEquation = "parseInt(arrayJSONConstantFormulaValue[" + n + "], 10) " + arrayJSONConstantOperator[n] + " parseInt(arrayJSONTableSelectedValue[" + n + "], 10)";
 													}
 													else
 													{
-														stringEquation = "arrayJSONConstantFormulaValue[" + m + "] " + arrayJSONConstantFormulaOperator[m] + " arrayJSONConstantTableSelectedValue[" + m + "]";
+														stringEquation = "arrayJSONConstantFormulaValue[" + n + "] " + arrayJSONConstantOperator[n] + " arrayJSONTableSelectedValue[" + n + "]";
 													}
-
+													
 													if (eval(stringEquation))
 													{
 														
@@ -651,8 +663,8 @@ function formulaGenerator(JSONInput, JSONConstant)
 
 												if (booleanEquals == true)
 												{
-													arrayJSONInputFormulaValue[j] = JSONConstantTableSelected[l].value;
-													l = JSONConstantTableSelected.length;
+													arrayJSONFormulaValue[j] = JSONTableSelected[m].value;
+													l = JSONTableSelected.length;
 												}
 												else
 												{
@@ -673,8 +685,8 @@ function formulaGenerator(JSONInput, JSONConstant)
 							}
 						}
 
-						// alert(arrayJSONInputFormulaValue.join(" "));
-						$(stringKres + stringJSONInputKey).val(eval(arrayJSONInputFormulaValue.join(" ")));
+						// alert(arrayJSONFormulaValue.join(" "));
+						$(stringKres + stringJSONFormulaKey).val(eval(arrayJSONFormulaValue.join(" ")));
 					}
 					else
 					{
@@ -686,10 +698,11 @@ function formulaGenerator(JSONInput, JSONConstant)
 	});
 }
 
-function formulaTableGenerator(JSONFormula, JSONConstant)
+function formulaTableGenerator(JSONFormulaRAW)
 {
 	/* INITIALIZE */
 
+	var JSONFormula = JSONFormulaRAW.formula;
 	var stringJSONFormulaKey;
 	var stringJSONFormulaContent;
 	var stringJSONFormulaInputKey;
@@ -700,20 +713,20 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 	var stringRowJavaScriptID;
 	var stringColumnJavaScriptID;
 
-	var JSONConstantFormula;
-	var JSONConstantTable;
-	var stringJSONConstantFormulaKey;
+	var JSONConstant = JSONFormulaRAW.constant;
+	var stringJSONConstantKey;
 	var stringJSONConstantTableHeader;
 	var stringJSONConstantTableKey;
-	var stringJSONConstantFormulaOperator;
-	var stringJSONConstantFormulaState;
+	var stringJSONConstantOperator;
+	var stringJSONConstantState;
 	var arrayJSONConstantTableHeader = [];
 	var arrayJSONConstantInputValue = [];
-	var arrayJSONConstantFormulaOperator = [];
+	var arrayJSONConstantOperator = [];
 
-	var JSONConstantTableSelected;
-	var arrayJSONConstantTableSelectedKey = [];
-	var arrayJSONConstantTableSelectedValue = [];
+	var JSONTable = JSONFormulaRAW.table;
+	var JSONTableSelected;
+	var arrayJSONTableSelectedKey = [];
+	var arrayJSONTableSelectedValue = [];
 	var arrayJSONConstantFormulaValue = [];
 
 	var intColumnID;
@@ -761,27 +774,40 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 							{
 								/* GET VALUE FROM CONSTANT */
 
-								JSONConstantFormula = JSONConstant.formula;
-								JSONConstantTable = JSONConstant.table;
-
-								for (var k = 0; k < JSONConstantFormula.length; k++)
+								for (var k = 0; k < JSONConstant.length; k++)
 								{
-									stringJSONConstantFormulaKey = JSONConstantFormula[k].formulaKey;
-									stringJSONConstantFormulaState = JSONConstantFormula[k].formulaState;
+									stringJSONConstantKey = JSONConstant[k].constantKey;
+									stringJSONConstantState = JSONConstant[k].constantState;
 
-									if (stringJSONConstantFormulaState == stringStateTrue && stringJSONConstantFormulaKey == arrayJSONFormulaContent[j])
+									if (stringJSONConstantState == stringStateTrue && stringJSONConstantKey == arrayJSONFormulaContent[j])
 									{
-										stringJSONConstantTableKey = JSONConstantFormula[k].tableKey;
-										stringJSONConstantTableHeader = JSONConstantFormula[k].tableHeader;
-										stringJSONConstantFormulaOperator = JSONConstantFormula[k].formulaOperator;
+										stringJSONConstantTableKey = JSONConstant[k].tableKey;
+										stringJSONConstantTableHeader = JSONConstant[k].tableHeader;
+										stringJSONConstantOperator = JSONConstant[k].constantOperator;
 										
 										arrayJSONConstantTableHeader = stringJSONConstantTableHeader.split(stringJSONArraySeparator);
-										arrayJSONConstantFormulaOperator = stringJSONConstantFormulaOperator.split(stringJSONArraySeparator);
-										JSONConstantTableSelected = eval("JSONConstantTable." + stringJSONConstantTableKey);
+										arrayJSONConstantOperator = stringJSONConstantOperator.split(stringJSONArraySeparator);
+										
+										/* TABLE FILTER */
+
+										for (var l = 0; l < JSONTable.length; l++)
+										{
+											stringJSONTableKey = JSONTable[l].tableKey;
+											stringJSONTableState = JSONTable[l].tableState;
+
+											if (stringJSONTableState == stringStateTrue && stringJSONTableKey == stringJSONConstantTableKey)
+											{
+												JSONTableSelected = JSONTable[l].tableContent;
+											}
+											else
+											{
+
+											}
+										}
 
 										/* SELECT TABLE */
 										
-										if (JSONConstantTableSelected == null | JSONConstantTableSelected == undefined | JSONConstantTableSelected == "")
+										if (JSONTableSelected == null | JSONTableSelected == undefined | JSONTableSelected == "")
 										{
 
 										}
@@ -789,17 +815,17 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 										{
 											/* GET INPUT VALUE AND TABLE KEY */
 											
-											for (var l = 0; l < arrayJSONConstantTableHeader.length; l++)
+											for (var m = 0; m < arrayJSONConstantTableHeader.length; m++)
 											{
-												arrayJSONConstantTableSelectedKey[l] = releaseInfix(releasePrefix(arrayJSONConstantTableHeader[l])).toLowerCase();
+												arrayJSONTableSelectedKey[m] = releaseInfix(releasePrefix(arrayJSONConstantTableHeader[m])).toLowerCase();
 
-												if (indicatorPrefix(arrayJSONConstantTableHeader[l]) == stringStateInput)
+												if (indicatorPrefix(arrayJSONConstantTableHeader[m]) == stringStateInput)
 												{
-													arrayJSONConstantFormulaValue[l] = getGeneralInputForm(arrayJSONConstantTableHeader[l]);
+													arrayJSONConstantFormulaValue[m] = getGeneralInputForm(arrayJSONConstantTableHeader[m]);
 												}
-												else if (indicatorPrefix(arrayJSONConstantTableHeader[l]) == stringStateTable)
+												else if (indicatorPrefix(arrayJSONConstantTableHeader[m]) == stringStateTable)
 												{
-													arrayJSONConstantFormulaValue[l] = $(stringKres + arrayJSONConstantTableHeader[l] + intColumnID).text();
+													arrayJSONConstantFormulaValue[m] = $(stringKres + arrayJSONConstantTableHeader[m] + intColumnID).text();
 												}
 												else
 												{
@@ -809,22 +835,22 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 
 											/* QUERY TABLE WITH KEY AND VALUE */
 											
-											for (var l = 0; l < JSONConstantTableSelected.length; l++)
+											for (var m = 0; m < JSONTableSelected.length; m++)
 											{
 												var booleanEquals = true;
 												var stringEquation = "";
 
-												for (var m = 0; m < arrayJSONConstantTableSelectedKey.length; m++)
+												for (var n = 0; n < arrayJSONTableSelectedKey.length; n++)
 												{
-													arrayJSONConstantTableSelectedValue[m] = eval("JSONConstantTableSelected[" + l + "]." + arrayJSONConstantTableSelectedKey[m]);
+													arrayJSONTableSelectedValue[n] = eval("JSONTableSelected[" + m + "]." + arrayJSONTableSelectedKey[n]);
 
-													if($.isNumeric(arrayJSONConstantFormulaValue[m]) == true && $.isNumeric(arrayJSONConstantTableSelectedValue[m]) == true)
+													if($.isNumeric(arrayJSONConstantFormulaValue[n]) == true && $.isNumeric(arrayJSONTableSelectedValue[n]) == true)
 													{
-														stringEquation = "parseInt(arrayJSONConstantFormulaValue[" + m + "], 10) " + arrayJSONConstantFormulaOperator[m] + " parseInt(arrayJSONConstantTableSelectedValue[" + m + "], 10)";
+														stringEquation = "parseInt(arrayJSONConstantFormulaValue[" + n + "], 10) " + arrayJSONConstantOperator[n] + " parseInt(arrayJSONTableSelectedValue[" + n + "], 10)";
 													}
 													else
 													{
-														stringEquation = "arrayJSONConstantFormulaValue[" + m + "] " + arrayJSONConstantFormulaOperator[m] + " arrayJSONConstantTableSelectedValue[" + m + "]";
+														stringEquation = "arrayJSONConstantFormulaValue[" + n + "] " + arrayJSONConstantOperator[n] + " arrayJSONTableSelectedValue[" + n + "]";
 													}
 
 													if (eval(stringEquation))
@@ -839,8 +865,8 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 
 												if (booleanEquals == true)
 												{
-													arrayJSONFormulaValue[j] = JSONConstantTableSelected[l].value;
-													l = JSONConstantTableSelected.length;
+													arrayJSONFormulaValue[j] = JSONTableSelected[m].value;
+													l = JSONTableSelected.length;
 												}
 												else
 												{
@@ -861,7 +887,7 @@ function formulaTableGenerator(JSONFormula, JSONConstant)
 							}
 						}
 
-						// alert(arrayJSONFormulaValue.join(" "));
+						alert(arrayJSONFormulaValue.join(" "));
 						$(stringKres + stringJSONFormulaInputKey + intColumnID).text(eval(arrayJSONFormulaValue.join(" ")));
 					}
 					else

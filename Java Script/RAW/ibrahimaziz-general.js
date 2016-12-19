@@ -1,7 +1,7 @@
 // IBRAHIM AZIZ 
 // BHIMBIM
 // http://www.ibrahimaziz.design
-// built for InfoConnect Sdn Bhd - BCA Life | Bless
+// built for InfoConnect Sdn Bhd - BCA Life | MPOS
 // http://www.infoconnect.com.my
 
 
@@ -58,6 +58,12 @@ var stringPrefixTable = "Table";
 var stringPrefixRow = "Row";
 var stringPrefixColumn = "Column";
 
+var stringPrefixProduct = "Product";
+var stringPrefixSection = "Section";
+var stringPrefixFieldset = "Fieldset";
+var stringPrefixQuestion = "Question";
+var stringPrefixLabel = "Label";
+var stringPrefixInput = "Input";
 var stringPrefixConstant = "Constant";
 var stringPrefixFormula = "Formula";
 
@@ -332,8 +338,6 @@ function JSONTransfer(JSONTemporary, JSONInput)
 	return JSONInput;
 }
 
-// JSON
-
 function JSONSort(JSONData, stringJSONDataKey) 
 {
     return JSONData.sort(function (stringJSONDataFirst, stringJSONDataSecond) 
@@ -342,6 +346,36 @@ function JSONSort(JSONData, stringJSONDataKey)
         var stringJSONDataValueSecond = stringJSONDataSecond[stringJSONDataKey];
         return ((stringJSONDataValueFirst < stringJSONDataValueSecond) ? -1 : ((stringJSONDataValueFirst > stringJSONDataValueSecond) ? 1 : 0));
     });
+}
+
+function JSONFilterContentByKey(JSONRAW, stringJSONKey, stringValueKey, stringJSONContent, stringJSONState)
+{
+	var stringJSONRAWKey;
+	var stringJSONRAWContent;
+	var stringJSONRAWState;
+
+	for (var i = 0; i < JSONRAW.length; i++)
+	{
+		stringJSONRAWKey = eval("JSONRAW[" + i + "]." + stringJSONKey);
+
+		if (stringJSONRAWKey == stringValueKey)
+		{
+			stringJSONRAWState = eval("JSONRAW[" + i + "]." + stringJSONState);
+
+			if (stringJSONRAWState == stringStateTrue)
+			{
+				return eval("JSONRAW[" + i + "]." + stringJSONContent);
+			}
+			else
+			{
+
+			}
+		}
+		else
+		{
+
+		}
+	}
 }
 
 
@@ -2834,7 +2868,7 @@ function getInfix(stringInputJavaScriptID)
 
 	for (var i = 0; i < arrayInfix.length; i++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayInfix[i].length) == arrayInfix[i])
+		if (stringInputJavaScriptID.substring(0, arrayInfix[i].length).toLowerCase() == arrayInfix[i].toLowerCase())
 		{
 			stringInfix = arrayInfix[i];
 			i = arrayInfix.length;
@@ -2854,7 +2888,7 @@ function getPrefix(stringInputJavaScriptID)
 
 	for (var i = 0; i < arrayPrefix.length; i++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayPrefix[i].length) == arrayPrefix[i])
+		if (stringInputJavaScriptID.substring(0, arrayPrefix[i].length).toLowerCase() == arrayPrefix[i].toLowerCase())
 		{
 			stringPrefix = arrayPrefix[i];
 			i = arrayPrefix.length;
@@ -2900,42 +2934,6 @@ function getLastID(JSONInput, stringKeyFilter)
 	}
 	
 	return intTemporaryID;
-}
-
-function getURLParameter() 
-{
-	var stringParameter = {};
-	var stringURL = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, 
-	function(m, key, value) 
-	{
-		stringParameter[key] = value;
-	});
-
-	return stringParameter;
-}
-
-function getJSONFromURL(stringJSONName, JSONDummy)
-{
-	var JSONPackage = [];
-	var JSONPackageTemporary = getURLParameter()[stringJSONName];
-	
-	if (JSONPackageTemporary == null | JSONPackageTemporary == undefined | JSONPackageTemporary == "")
-	{
-		if (JSONDummy == null | JSONDummy == undefined | JSONDummy == "")
-		{
-
-		}
-		else
-		{
-			JSONPackage = JSON.parse(JSONDummy);
-		}
-	}
-	else
-	{
-		JSONPackage = JSON.parse(unescape(JSONPackageTemporary));
-	}
-
-	return JSONPackage;
 }
 
 
@@ -3053,7 +3051,7 @@ function releasePrefix(stringInputJavaScriptID)
 
 	for (var i = 0; i < arrayPrefix.length; i++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayPrefix[i].length) == arrayPrefix[i])
+		if (stringInputJavaScriptID.substring(0, arrayPrefix[i].length).toLowerCase() == arrayPrefix[i].toLowerCase())
 		{
 			stringWithoutPrefix = stringInputJavaScriptID.substring(arrayPrefix[i].length, stringInputJavaScriptID.length);
 		}
@@ -3072,7 +3070,7 @@ function releaseInfix(stringInputJavaScriptID)
 
 	for (var i = 0; i < arrayInfix.length; i ++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayInfix[i].length) == arrayInfix[i])
+		if (stringInputJavaScriptID.substring(0, arrayInfix[i].length).toLowerCase() == arrayInfix[i].toLowerCase())
 		{
 			stringWithoutInfix = stringInputJavaScriptID.substring(arrayInfix[i].length, stringInputJavaScriptID.length);
 		}
@@ -3092,7 +3090,7 @@ function indicatorPrefix(stringInputJavaScriptID)
 {
 	for (var i = 0; i < arrayPrefixInput.length; i++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayPrefixInput[i].length) == arrayPrefixInput[i])
+		if (stringInputJavaScriptID.substring(0, arrayPrefixInput[i].length).toLowerCase() == arrayPrefixInput[i].toLowerCase())
 		{
 			i = arrayPrefixInput.length;
 			return stringStateInput;
@@ -3105,7 +3103,7 @@ function indicatorPrefix(stringInputJavaScriptID)
 
 	for (var i = 0; i < arrayPrefixTable.length; i++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayPrefixTable[i].length) == arrayPrefixTable[i])
+		if (stringInputJavaScriptID.substring(0, arrayPrefixTable[i].length).toLowerCase() == arrayPrefixTable[i].toLowerCase())
 		{
 			i = arrayPrefixTable.length;
 			return stringStateTable;
@@ -3118,7 +3116,7 @@ function indicatorPrefix(stringInputJavaScriptID)
 
 	for (var i = 0; i < arrayPrefixConstant.length; i++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayPrefixConstant[i].length) == arrayPrefixConstant[i])
+		if (stringInputJavaScriptID.substring(0, arrayPrefixConstant[i].length).toLowerCase() == arrayPrefixConstant[i].toLowerCase())
 		{
 			i = arrayPrefix.length;
 			return stringStateConstant;
@@ -3131,7 +3129,7 @@ function indicatorPrefix(stringInputJavaScriptID)
 
 	for (var i = 0; i < arrayOperator.length; i++)
 	{
-		if (stringInputJavaScriptID.substring(0, arrayOperator[i].length) == arrayOperator[i])
+		if (stringInputJavaScriptID.substring(0, arrayOperator[i].length).toLowerCase() == arrayOperator[i].toLowerCase())
 		{
 			i = arrayOperator.length;
 			return stringStateOperator;
