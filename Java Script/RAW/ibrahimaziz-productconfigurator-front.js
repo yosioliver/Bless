@@ -887,7 +887,7 @@ function formulaTableGenerator(JSONFormulaRAW)
 							}
 						}
 
-						alert(arrayJSONFormulaValue.join(" "));
+						// alert(arrayJSONFormulaValue.join(" "));
 						$(stringKres + stringJSONFormulaInputKey + intColumnID).text(eval(arrayJSONFormulaValue.join(" ")));
 					}
 					else
