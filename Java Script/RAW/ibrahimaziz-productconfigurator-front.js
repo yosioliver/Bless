@@ -422,7 +422,7 @@ function tableRowGenerator(JSONInput)
 	/* INITIALIZE */
 
 	var stringJSONInputRowKey;
-	var stringJSONInputSectionKey;
+	var stringJSONInputTableHeaderKey;
 	var stringJSONInputRowOrder;
 	var stringJSONInputRowState;
 	var stringHTMLRow;
@@ -434,7 +434,7 @@ function tableRowGenerator(JSONInput)
 	for (var i = 0; i < JSONInput.length; i++)
 	{
 		stringJSONInputRowKey = JSONInput[i].rowKey;
-		stringJSONInputSectionKey = JSONInput[i].sectionKey;
+		stringJSONInputTableHeaderKey = JSONInput[i].tableHeaderKey;
 		stringJSONInputRowOrder = JSONInput[i].rowOrder;
 		stringJSONInputTableState = JSONInput[i].rowState;
 		stringHTMLRow = "";
@@ -442,7 +442,7 @@ function tableRowGenerator(JSONInput)
 		if (stringJSONInputTableState == stringStateTrue)
 		{
 			stringHTMLRow = "<tr id='" + stringJSONInputRowKey + "'></tr>";
-			$(stringKres + stringJSONInputSectionKey).append(stringHTMLRow);
+			$(stringKres + stringJSONInputTableHeaderKey).append(stringHTMLRow);
 		}
 		else
 		{
