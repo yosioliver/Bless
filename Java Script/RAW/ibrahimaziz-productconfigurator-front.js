@@ -5,6 +5,16 @@
 // http://www.infoconnect.com.my
 
 
+// SCRIPT CHANGER
+
+function scriptJSON(stringModule, stringProduct)
+{
+	$("#ScriptJSONLayout").attr("src", "../../JavaScript/Minimized/layout" + stringFileScriptSeparator + stringModule + stringFileScriptSeparator + stringProduct + ".min.js");
+	$("#ScriptJSONFormula").attr("src", "../../JavaScript/Minimized/formula" + stringFileScriptSeparator + stringModule + stringFileScriptSeparator + stringProduct + ".min.js");
+	$("#ScriptJSONValue").attr("src", "../../JavaScript/Minimized/value" + stringFileScriptSeparator + stringModule + stringFileScriptSeparator + stringProduct + ".min.js");
+}
+
+
 // GENERATE FORM
 
 function formGenerator(JSONInput, stringLayoutJavaScriptID)

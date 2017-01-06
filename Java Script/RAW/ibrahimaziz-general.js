@@ -17,6 +17,8 @@ var stringDot = ".";
 var stringJSONArraySeparator = ",";
 var stringJSONStateSeparator = "|";
 var arrayOperator = ["+", "-", "*", "/", "(", ")"];
+var stringFileScriptSeparator = "-";
+var stringFileHTMLSeparator = "_";
 
 /* STATE */
 
