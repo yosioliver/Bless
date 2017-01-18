@@ -70,8 +70,8 @@ var stringPageSectionBeneficiariesList = "Beneficiaries List";
 var stringButtonViewPrefix = "ButtonView";
 var stringButtonDeletePrefix = "ButtonDelete";
 var stringSharePercentage = 0;
-var arrayBeneficiariesListTableHeader = ["FullName", stringIDDay, stringIDMonth, stringIDYear, "Sex", "Relationship", "Nationality"];
-var arrayBeneficiariesListPopUpHeader = ["FullName", "Birthday", "Sex", "Relationship", "Nationality"];
+var arrayBeneficiariesListTableHeader = ["FullName", stringIDDay, stringIDMonth, stringIDYear, "Sex", "Relationship", "Nationality", "BeneficiariesType"];
+var arrayBeneficiariesListPopUpHeader = ["FullName", "Birthday", "Sex", "Relationship", "Nationality", "BeneficiariesType"];
 var intSharePercentage = 0;
 var stringSharePercentageSuffix = "SharePercentage";
 var stringSPAJProposalInfix = "SPAJProposal";
@@ -1749,6 +1749,7 @@ function buttonPopUpBeneficiariesListGenerator()
 		}
 		
 		intBeneficiariesListRecentID = null;
+		previewArrayObject(arrayBeneficiariesList);
     });
 }
 

@@ -52,8 +52,17 @@ ol, ul
 
 ul.Checklist
 	list-style-type: none
+	li
+		margin-top: $general_space_tiny
+		margin-bottom: $general_space_tiny
 	li:before
+		float: left
+		margin-right: $general_space_tiny
 		content: "\2713"
+	li.Double:before
+		height: $list_height_double
+	li.Multiline:before
+		height: $list_height_multi
 
 main
 	form
@@ -295,15 +304,20 @@ div.TableItem
 		position: relative
 		display: block
 	span.Name
+		min-height: $general_space_medium
 		margin-bottom: $general_space_medium
 		padding-left: $general_space_small
 		padding-right: $general_space_small
 		font-size: $fontsize_signature_name
+		border-bottom-style: solid
+		border-bottom-width: thin
 	span.Name:before
 		float: left
+		margin-left: -$general_space_medium
 		content: '('
 	span.Name:after
 		float: right
+		margin-right: -$general_space_medium
 		content: ')'
 	span.Description
 		font-size: $fontsize_signature_description
@@ -452,5 +466,10 @@ footer
 	span.Header, span.Detail
 		margin: 0px !important
 		padding: 0px !important
+		font-size: $fontsize_footer_header
+		display: block
+
+section
+	span.Code
 		font-size: $fontsize_footer_header
 		display: block
