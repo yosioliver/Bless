@@ -3910,8 +3910,17 @@ function validateEmail(stringInputJavaScriptID)
 	}
 	else
 	{
-		// alert("Format validasi email salah !.");
-		ReplaceHTMLNameOnValidate("","Format validasi email salah !.");
+		if (stringEmail.length == 0 || stringEmail == null || stringEmail == "")
+		{
+			// alert("Harap isi email anda !.");
+			ReplaceHTMLNameOnValidate("","Harap isi email anda !.");
+		}
+		else
+		{
+			// alert("Format validasi email salah !.");
+			ReplaceHTMLNameOnValidate("","Format validasi email salah !.");
+		}
+		
 		return false;
 	}
 	
