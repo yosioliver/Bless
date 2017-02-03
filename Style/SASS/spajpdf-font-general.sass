@@ -267,6 +267,9 @@ main
 						font-size: $fontsize_signaturemedium_detail
 						text-align: center
 
+.FirstIndent
+	margin-left: $general_space_medium
+
 .SignatureImage
 	height: 100%
 	background-position: center
@@ -328,6 +331,12 @@ table.Square
 					line-height: $label_height_single
 					font-size: 1em
 					display: inline-block
+				.Number
+					float: left
+				.Content
+					float: left
+					margin-left: $general_space_small
+					width: 90%
 			td:first-child
 				text-align: left
 				white-space: normal

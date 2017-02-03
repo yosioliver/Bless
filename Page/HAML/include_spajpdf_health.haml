@@ -12,11 +12,13 @@
     %tbody
         %tr
             %td
-                1.  a. Tinggi Badan
-                %br
-                b. Berat Badan
-                %br
-                c. Apakah berat badan Anda mengalami penurunan atau kenaikan drastis (≥ 10% dalam 1 (satu) bulan) dalam 6 (enam) bulan terakhir?
+                .Number 1.
+                .Content
+                    a. Tinggi Badan
+                    %br
+                    b. Berat Badan
+                    %br
+                    c. Apakah berat badan Anda mengalami penurunan atau kenaikan drastis (≥ 10% dalam 1 (satu) bulan) dalam 6 (enam) bulan terakhir?
             %td
                 %table#TextProspectiveInsuredHeight.BoxSquare.PositionerCenter
                 %span.PositionerCenter Cm
@@ -45,9 +47,11 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderWeightChangeNo" } Tidak
         %tr
             %td
-                2. Apakah Anda merokok dalam 12 (dua belas) bulan terakhir (termasuk rokok elektronik atau produk tembakau lainnya)?
-                %br
-                Jika “Ya”, berapa batang per hari?
+                .Number 2.
+                .Content
+                    Apakah Anda merokok dalam 12 (dua belas) bulan terakhir (termasuk rokok elektronik atau produk tembakau lainnya)?
+                    %br
+                    Jika “Ya”, berapa batang per hari?
             %td
                 %input#RadioButtonProspectiveInsuredSmokeActivityYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredSmokeActivity", :value => "true" }
                 %div#RadioButtonProspectiveInsuredSmokeActivityYes.BoxRound.PositionerCenter
@@ -70,7 +74,8 @@
                 %span.PositionerCenter Batang
         %tr
             %td
-                3. Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
+                .Number 3.
+                .Content Apakah Anda memiliki kebiasaan atau pernah menggunakan narkotika, zat adiktif atau obat-obatan lainnya, minum alkohol secara berlebihan? Jika “Ya”, jelaskan jumlah serta frekuensi mengkonsumsinya. Serta jelaskan jika ada riwayat perawatan/mendapat terapi karena hal tersebut?
             %td
                 %input#RadioButtonProspectiveInsuredJunkieYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredJunkie", :value => "true" }
                 %div#RadioButtonProspectiveInsuredJunkieYes.BoxRound.PositionerCenter
@@ -87,7 +92,8 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderJunkieNo" } Tidak
         %tr
             %td
-                4. Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))? (Jika jawaban “Ya” mohon melengkapi kuesioner yang sesuai hobi/kegiatan/peker- jaan tersebut dan dilampirkan bersama SPAJ ini).
+                .Number 4.
+                .Content Apakah Anda memiliki hobi atau sewaktu-waktu melakukan kegiatan yang beresiko tinggi/bahaya atau masih aktif dalam pekerjaan beresiko tinggi (menyelam, panjat tebing, mendaki gunung, terjun payung, paralayang, balap motor/mobil, pertambangan, minyak dan gas bumi, Kelautan, TNI/Polri, penerbangan (selain dari penumpang resmi penerbangan terjadwal))? (Jika jawaban “Ya” mohon melengkapi kuesioner yang sesuai hobi/kegiatan/peker- jaan tersebut dan dilampirkan bersama SPAJ ini).
             %td
                 %input#RadioButtonProspectiveInsuredActivityYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredActivity", :value => "true" }
                 %div#RadioButtonProspectiveInsuredActivityYes.BoxRound.PositionerCenter
@@ -104,7 +110,8 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderActivityNo" } Tidak
         %tr
             %td
-                5. Apakah Anda dalam 12 bulan terakhir ini/mendatang Anda pernah/memiliki rencana bepergian/tinggal di luar negeri? Jika “Ya”, jelaskan kapan waktu bepergiannya, negara tujuan, lama tinggal, serta kepentingannya.
+                .Number 5.
+                .Content Apakah Anda dalam 12 bulan terakhir ini/mendatang Anda pernah/memiliki rencana bepergian/tinggal di luar negeri? Jika “Ya”, jelaskan kapan waktu bepergiannya, negara tujuan, lama tinggal, serta kepentingannya.
             %td
                 %input#RadioButtonProspectiveInsuredAbroadYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredAbroad", :value => "true" }
                 %div#RadioButtonProspectiveInsuredAbroadYes.BoxRound.PositionerCenter
@@ -121,7 +128,8 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderAbroadNo" } Tidak
         %tr
             %td
-                6. Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
+                .Number 6.
+                .Content Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
             %td
                 %input#RadioButtonProspectiveInsuredHealthDissorderYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "true" }
                 %div#RadioButtonProspectiveInsuredHealthDissorderYes.BoxRound.PositionerCenter
@@ -138,7 +146,9 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderHealthDissorderNo" } Tidak
         %tr
             %td
-                %span.FirstIndent a. Gangguan fungsi/sistem penglihatan dan gangguan pada mata lainnya?
+                .FirstIndent
+                    .Number a.
+                    .Content Gangguan fungsi/sistem penglihatan dan gangguan pada mata lainnya?
             %td
                 %input#RadioButtonProspectiveInsuredVisionYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredVision", :value => "true" }
                 %div#RadioButtonProspectiveInsuredVisionYes.BoxRound.PositionerCenter
@@ -155,7 +165,9 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderVisionNo" } Tidak
         %tr
             %td
-                %span.FirstIndent b. Gangguan fungsi/sistem pada Telinga, Hidung, Tenggorokan (THT)?
+                .FirstIndent
+                    .Number b.
+                    .Content Gangguan fungsi/sistem pada Telinga, Hidung, Tenggorokan (THT)?
             %td
                 %input#RadioButtonProspectiveInsuredENTYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredENT", :value => "true" }
                 %div#RadioButtonProspectiveInsuredENTYes.BoxRound.PositionerCenter
@@ -172,7 +184,9 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderENTNo" } Tidak
         %tr
             %td
-                %span.FirstIndent c. Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
+                .FirstIndent
+                    .Number c.
+                    .Content Gangguan fungsi/sistem Pernapasan, Paru-paru, Asma, Bronkitis, Tuberkulosis, Batuk Darah dan lainnya?
             %td
                 %input#RadioButtonProspectiveInsuredRespiratoryYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredRespiratory", :value => "true" }
                 %div#RadioButtonProspectiveInsuredRespiratoryYes.BoxRound.PositionerCenter
@@ -189,7 +203,9 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderRespiratoryNo" } Tidak
         %tr
             %td
-                %span.FirstIndent d. Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
+                .FirstIndent
+                    .Number d.
+                    .Content Gangguan fungsi/sistem Jantung dan Pembuluh Darah, Nyeri Dada, Serangan Jantung, Demam, Jantung, Rematik, Tekanan Darah Tinggi (Hipertensi)/Rendah, (Hipotensi), Hiperkolesterol, Penyempitan/Penyumbatan Pembuluh Darah Otak dan lainnya?
             %td
                 %input#RadioButtonProspectiveInsuredCardiacYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredCardiac", :value => "true" }
                 %div#RadioButtonProspectiveInsuredCardiacYes.BoxRound.PositionerCenter
