@@ -1919,7 +1919,7 @@ function tableBeneficiariesListGenerator(stringTableJavaScriptID, arrayContent)
 function initiateArrayRelationshipWithProspectiveInsured(objectContent)
 {
 	objectContent.push({ value: stringStateNotSelected, text: "Please Select" });
-	objectContent.push({ value: "self", text: "Diri Sendiri" });
+	// objectContent.push({ value: "self", text: "Diri Sendiri" });
 	objectContent.push({ value: "parent", text: "Orang Tua" });
 	objectContent.push({ value: "child", text: "Anak" });
 	objectContent.push({ value: "spouse", text: "Pasangan" });
