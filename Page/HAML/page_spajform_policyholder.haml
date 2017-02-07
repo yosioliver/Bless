@@ -13,14 +13,15 @@
 		:javascript
 
 			// INITIALIZATION
-
+			
 			var stringPageTypeCurrent = stringPageTypeForm;
 			var stringPageSectionCurrent = stringPageSectionForm;
-			var stringPageValidationCurrent = stringPageValidationIncome;
+			// var stringPageValidationCurrent = stringPageValidationIncome;
+			var stringPageValidationCurrent = 0;
 			var booleanInputChangeState = "false";
 			var stringPageInfixTypeCurrent = stringPolicyHolderPrefix;
 			var arrayForeigner = [];
-			var stringPageForeigner = true;
+			var stringPageForeigner = true;			
 
 			// var jsonPolicyHolder = '{"result":{"readFromDB":[{"elementID":"TextPolicyHolderFullName","Value":"Yosi Oliver"},{"elementID":"RadioButtonPolicyHolderAmerican","Value":"true"},{"elementID":"DatePolicyHolderActive","Value":"01/02/2016"},{"elementID":"RadioButtonPolicyHolderReligion","Value":"budha"}]}}'
 
@@ -45,8 +46,13 @@
 
 				radioButtonOtherGenerator("RadioButtonPolicyHolderIDType", "#TextPolicyHolderIDTypeOther", "OTHER");
 				radioButtonOtherGenerator("RadioButtonPolicyHolderRelationAssured", "#TextPolicyHolderRelationAssuredOther", "other");
-				checkboxOtherGenerator("CheckboxPolicyHolderInsurancePurposeOther", "#TextPolicyHolderInsurancePurposeOther", "other");
-
+				checkboxOtherGenerator("CheckboxPolicyHolderInsurancePurposeOther", "#TextPolicyHolderInsurancePurposeOther", "other");				
+				checkboxOtherGenerator("CheckboxPolicyHolderRoutineIncomeGrossSourceYearlyInvestment", "#TextPolicyHolderRoutineIncomeGrossSourceYearlyInvestment", "investment");
+				checkboxOtherGenerator("CheckboxPolicyHolderRoutineIncomeGrossSourceYearlyPrivate", "#TextPolicyHolderRoutineIncomeGrossSourceYearlyPrivate", "private");
+				checkboxOtherGenerator("CheckboxPolicyHolderRoutineIncomeGrossSourceYearlyOther", "#TextPolicyHolderRoutineIncomeGrossSourceYearlyOther", "other");
+				checkboxOtherGenerator("CheckboxPolicyHolderNonRoutineIncomeGrossSourceYearlyInvestment", "#TextPolicyHolderNonRoutineIncomeGrossSourceYearlyInvestment", "investment");
+				checkboxOtherGenerator("CheckboxPolicyHolderNonRoutineIncomeGrossSourceYearlyPrivate", "#TextPolicyHolderNonRoutineIncomeGrossSourceYearlyPrivate", "private");
+				checkboxOtherGenerator("CheckboxPolicyHolderNonRoutineIncomeGrossSourceYearlyOther", "#TextPolicyHolderNonRoutineIncomeGrossSourceYearlyOther", "other");      	
 				telephoneStripGenerator("TextPolicyHolderHomeTelephone");
 				telephoneStripGenerator("TextPolicyHolderOfficeTelephone");
 
@@ -115,17 +121,19 @@
 				%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDType" } Jenis Identitas Diri
 				%div.RadioButton.PositionerLeft
 					%input#RadioButtonPolicyHolderIDTypeKTP.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP", :required => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP (WNI)
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeSIM.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM", :required => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM
-					%div.Separator
+					-#
+						%input#RadioButtonPolicyHolderIDTypeSIM.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM", :required => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM
+						%div.Separator
 					%input#RadioButtonPolicyHolderIDTypePassport.Medium.Single{ :type => "radio", :name=>"RadioButtonPolicyHolderIDType", :value => "PASPOR", :required => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor
+					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor & KITAP (WNA)
 					%div.Separator
-					%input#RadioButtonPolicyHolderIDTypeKIMSKITAS.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS", :required => "true" }
-					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS/KITAS
-					%div.Separator
+					-#
+						%input#RadioButtonPolicyHolderIDTypeKIMSKITAS.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS", :required => "true" }
+						%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS/KITAS
+						%div.Separator
 					%input#RadioButtonPolicyHolderIDTypeOther.Medium.Single{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "OTHER", :required => "true" }
 					%label.RadioButton{ :for => "RadioButtonPolicyHolderIDTypeOther" } Lainnya
 				%input#TextPolicyHolderIDTypeOther.Long.Single.PositionerLeft{ :type => "text" }

@@ -70,8 +70,8 @@ var stringPageSectionBeneficiariesList = "Beneficiaries List";
 var stringButtonViewPrefix = "ButtonView";
 var stringButtonDeletePrefix = "ButtonDelete";
 var stringSharePercentage = 0;
-var arrayBeneficiariesListTableHeader = ["FullName", stringIDDay, stringIDMonth, stringIDYear, "Sex", "Relationship", "Nationality", "BeneficiariesType"];
-var arrayBeneficiariesListPopUpHeader = ["FullName", "Birthday", "Sex", "Relationship", "Nationality", "BeneficiariesType"];
+var arrayBeneficiariesListTableHeader = ["FullName", stringIDDay, stringIDMonth, stringIDYear, "Sex", "Relationship", "Nationality"];
+var arrayBeneficiariesListPopUpHeader = ["FullName", "Birthday", "Sex", "Relationship", "Nationality"];
 var intSharePercentage = 0;
 var stringSharePercentageSuffix = "SharePercentage";
 var stringSPAJProposalInfix = "SPAJProposal";
@@ -1749,7 +1749,7 @@ function buttonPopUpBeneficiariesListGenerator()
 		}
 		
 		intBeneficiariesListRecentID = null;
-		previewArrayObject(arrayBeneficiariesList);
+		// previewArrayObject(arrayBeneficiariesList);
     });
 }
 
@@ -3904,26 +3904,25 @@ function validateEmail(stringInputJavaScriptID)
 
 	var stringEmail = $(stringInputJQueryID).val();
 
-	if (stringEmail.indexOf("@") >= 0)
+	if (stringEmail == undefined || stringEmail == null || stringEmail == "")
 	{
-		return true;
+		// alert("Harap isi email anda !.");
+		ReplaceHTMLNameOnValidate("","Harap isi email anda !.");
+		return false;
 	}
 	else
-	{
-		if (stringEmail.length == 0 || stringEmail == null || stringEmail == "")
+	{		
+		if (stringEmail.indexOf("@") >= 0)
 		{
-			// alert("Harap isi email anda !.");
-			ReplaceHTMLNameOnValidate("","Harap isi email anda !.");
+			return true;
 		}
 		else
 		{
 			// alert("Format validasi email salah !.");
-			ReplaceHTMLNameOnValidate("","Format validasi email salah !.");
-		}
-		
-		return false;
-	}
-	
+			ReplaceHTMLNameOnValidate("","Format validasi email salah !.");				
+			return false;
+		}			
+	}	
 }
 
 function validateDateNotExceedToday(stringInputJavaScriptID)

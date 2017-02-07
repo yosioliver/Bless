@@ -6,28 +6,31 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCIN" } 1. Nomor CIN
 %table#TextPolicyHolderCIN.BoxSquare.PositionerLeft
-%span.Note.Single.PositionerLeft (Dilengkapi oleh bank)
+%span.Note.Single.PositionerLeft (Dilengkapi oleh Bank)
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderFullName" } 2. Nama Lengkap
 %table#TextPolicyHolderFullName.BoxSquare.PositionerLeft
 %br
-%span.Description.PositionerLeft (sesuai dengan identitas diri)
+%span.Description.PositionerLeft (sesuai dengan Identitas Diri)
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKTP" } 3. Jenis Identitas Diri
 %input#RadioButtonPolicyHolderIDTypeKTP{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KTP" }
 %div#RadioButtonPolicyHolderIDTypeKTP.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP
-%input#RadioButtonPolicyHolderIDTypeSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
-%div#RadioButtonPolicyHolderIDTypeSIM.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKTP" } KTP (WNI)
+
+-#
+	%input#RadioButtonPolicyHolderIDTypeSIM{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "SIM" }
+	%div#RadioButtonPolicyHolderIDTypeSIM.BoxRound.PositionerLeft
+	%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeSIM" } SIM
 %input#RadioButtonPolicyHolderIDTypePassport{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "PASPOR" }
 %div#RadioButtonPolicyHolderIDTypePassport.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor
-%input#RadioButtonPolicyHolderIDTypeKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
-%div#RadioButtonPolicyHolderIDTypeKIMSKITAS.BoxRound.PositionerLeft
-%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS / KITAS
+%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypePassport" } Paspor & KITAP (WNA)
+-#	
+	%input#RadioButtonPolicyHolderIDTypeKIMSKITAS{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "KIMSKITAS" }
+	%div#RadioButtonPolicyHolderIDTypeKIMSKITAS.BoxRound.PositionerLeft
+	%label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeKIMSKITAS" } KIMS / KITAS
 %input#RadioButtonPolicyHolderIDTypeOther{ :type => "radio", :name => "RadioButtonPolicyHolderIDType", :value => "OTHER" }
 %div#RadioButtonPolicyHolderIDTypeOther.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderIDTypeOther" } Lainnya, sebutkan
@@ -55,7 +58,7 @@
 %table#TextPolicyHolderAge.BoxSquare.PositionerLeft
 %span.Separator.Single.PositionerLeft Tahun
 %br
-%span.Note.PositionerLeft{ :style => "margin-top: -20px;" } (sesuai dengan indetitas diri)
+%span.Description.PositionerLeft{ :style => "margin-top: -20px;" } (sesuai dengan Identitas Diri)
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderForeigner" } 6. Kewarganegaraan
@@ -66,7 +69,7 @@
 %div#RadioButtonPolicyHolderForeignerWNA.BoxRound.PositionerLeft
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderForeignerWNA" } WNA, sebutkan
 %div#TextPolicyHolderWNA.LineDot.PositionerLeft
-%span.Note.PositionerLeft (Jika jawaban "WNA" mohon melampirkan fotokopi KITAS & Paspor dan melengkapi kuesioner WNA)
+%span.Note.PositionerLeft (Jika jawaban "WNA" mohon melampirkan fotokopi Paspor & KITAP serta melengkapi kuesioner WNA)
 %br
 
 %label.Wrap.Single.Plain.PositionerLeft{ :for => "RadioButtonPolicyHolderUSACitizenYes" } 7. Apakah Anda merupakan warga negara atau wajib pajak Amerika Serikat ?
@@ -97,7 +100,7 @@
 %label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatusMarried" } Menikah
 %input#RadioButtonPolicyHolderMaritalStatusWidower{ :type => "radio", :name => "RadioButtonPolicyHolderMaritalStatus", :value => "divorced" }
 %div#RadioButtonPolicyHolderMaritalStatusWidower.BoxRound.PositionerLeft
-%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatusWidower" } Janda / Duda
+%label.RadioButton.Medium.PositionerLeft{ :for => "RadioButtonPolicyHolderMaritalStatusWidower" } Janda/Duda
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderReligionIslam" } 10. Agama
@@ -127,7 +130,7 @@
 
 // QUICK FIX
 
-%section.SectionFooter{ :style => "margin-top: -2px" }
+%section.SectionFooter{ :style => "margin-top: 60px" }
 	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
 %section#SectionHeader1
@@ -155,7 +158,7 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderHomeAddress1" } 12. Alamat Tempat Tinggal
 %table#TextPolicyHolderHomeAddress1.BoxSquare.PositionerLeft
-%span.Note.Medium.Multi.Tight.PositionerLeft{ :style => "height: 60px;" } (Bila tidak sesuai kartu identitas Diri, diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Keluarahan & Kecamatan)
+%span.Note.Medium.Multi.Tight.PositionerLeft{ :style => "height: 60px;" } (Bila tidak sesuai kartu Identitas Diri, diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Kelurahan & Kecamatan)
 %table#TextPolicyHolderHomeAddress2.BoxSquare.PositionerLeft
 %label#LabelPolicyHolderHomeCity.Box.Single.PositionerLeft{ :for => "TextPolicyHolderHomeCity" } Kota
 %table#TextPolicyHolderHomeCity.BoxSquare.PositionerLeft
@@ -174,7 +177,10 @@
 %table#TextPolicyHolderHandphone2.BoxSquare.PositionerLeft
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderEmail" } 14. Alamat Email
+%label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderEmail" } 
+	14. Alamat 
+	%i 
+		e-mail
 %table#TextPolicyHolderEmail.BoxSquare.PositionerLeft
 %br
 
@@ -258,7 +264,7 @@
 %input#CheckboxPolicyHolderSalaryUSD{ :type => "checkbox", :name => "CheckboxPolicyHolderSalary", :value => "usd" }
 %div#CheckboxPolicyHolderSalaryUSD.BoxRound.PositionerLeft
 %label.Checkbox.PositionerLeft{ :for => "CheckboxPolicyHolderSalaryUSD" } USD
-%label.Checkbox.PositionerLeft{ :for => "TextPolicyHolderSalary" } Jumlah Penghasilan / tahun
+%label.Checkbox.PositionerLeft{ :for => "TextPolicyHolderSalary" } Jumlah Penghasilan/tahun
 %table#TextPolicyHolderSalary.BoxSquare.PositionerLeft
 %br
 
@@ -269,7 +275,7 @@
 %input#CheckboxPolicyHolderRevenueUSD{ :type => "checkbox", :name => "CheckboxPolicyHolderRevenue", :value => "usd" }
 %div#CheckboxPolicyHolderRevenueUSD.BoxRound.PositionerLeft
 %label.Checkbox.PositionerLeft{ :for => "CheckboxPolicyHolderRevenueUSD" } USD
-%label.Checkbox.PositionerLeft{ :for => "TextPolicyHolderRevenue" } Jumlah Penghasilan / tahun
+%label.Checkbox.PositionerLeft{ :for => "TextPolicyHolderRevenue" } Jumlah Penghasilan/tahun
 %table#TextPolicyHolderRevenue.BoxSquare.PositionerLeft
 %br
 
@@ -280,7 +286,7 @@
 %input#CheckboxPolicyHolderOtherIncomeUSD{ :type => "checkbox", :name => "CheckboxPolicyHolderOtherIncome", :value => "usd" }
 %div#CheckboxPolicyHolderOtherIncomeUSD.BoxRound.PositionerLeft
 %label.Checkbox.PositionerLeft{ :for => "CheckboxPolicyHolderOtherIncomeUSD" } USD
-%label.Checkbox.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Jumlah Penghasilan / tahun
+%label.Checkbox.PositionerLeft{ :for => "TextPolicyHolderOtherIncome" } Jumlah Penghasilan/tahun
 %table#TextPolicyHolderOtherIncome.BoxSquare.PositionerLeft
 %br
 
@@ -297,7 +303,6 @@
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyName" } 1. Nama Perusahaan
 %table#TextPolicyHolderCompanyName.BoxSquare.PositionerLeft
 %br
-
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyTypePT" } 2. Jenis Perusahaan
 %input#RadioButtonPolicyHolderCompanyTypePT{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyType", :value => "pt" }
 %div#RadioButtonPolicyHolderCompanyTypePT.BoxRound.PositionerLeft
@@ -391,7 +396,7 @@
 
 // QUICK FIX
 
-%section.SectionFooter{ :style => "margin-top: 170px" }
+%section.SectionFooter{ :style => "margin-top: 225px" }
 	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
 %section#SectionHeader2
@@ -423,7 +428,7 @@
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyAsset5" } >100 Miliar
 %br
 
-%label.Medium.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRevenue1" } 11. Aset Perusahaan (Rp)
+%label.Plain.Medium.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRevenue1" } 11. Jumlah Penghasilan (Rp): pertahun
 
 %input#RadioButtonPolicyHolderCompanyRevenue1{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRevenue", :value => "100juta" }
 %div#RadioButtonPolicyHolderCompanyRevenue1.BoxRound.PositionerLeft
