@@ -12,7 +12,7 @@
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredFullName" } 2. Nama Lengkap
 %table#TextProspectiveInsuredFullName.BoxSquare.PositionerLeft
 %br
-%span.Description.PositionerLeft (sesuai dengan Identitas Diri)
+%span.PositionerLeft{ :style => "font-size: 10px;" } &nbsp;&nbsp;&nbsp; (sesuai dengan Identitas Diri)
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredIDTypeKTP" } 3. Jenis Identitas Diri
@@ -38,12 +38,12 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredIDNumber" } 4. Nomor Identitas Diri
 %table#TextProspectiveInsuredIDNumber.BoxSquare.PositionerLeft
-%table#DateProspectiveInsuredActiveYear.BoxSquare.PositionerRight
+%table#DateProspectiveInsuredActiveYear.BoxSquare.PositionerRight{ :style => "margin-right: 30px;" }
 %label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredActiveYear" } /
 %table#DateProspectiveInsuredActiveMonth.BoxSquare.PositionerRight
 %label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredActiveMonth" } /
 %table#DateProspectiveInsuredActiveDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "DateProspectiveInsuredActiveDay" } Masa Berlaku
+%label.Wrap.Single.PositionerRight{ :for => "DateProspectiveInsuredActiveDay", :style => "width: 50px; margin-left: 30px;" } Masa Berlaku
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredBirthPlace" } 5. Tempat Tanggal Lahir
@@ -57,7 +57,7 @@
 %table#TextProspectiveInsuredAge.BoxSquare.PositionerLeft
 %span.Separator.Single.PositionerLeft Tahun
 %br
-%span.Description.PositionerLeft{ :style => "margin-top: -20px;" } (sesuai dengan Identitas Diri)
+%span.PositionerLeft{ :style => "font-size: 10px; margin-top: -20px;" } &nbsp;&nbsp;&nbsp; (sesuai dengan Identitas Diri)
 %br
 
 %label.Medium.Single.PositionerLeft{ :for => "RadioButtonProspectiveInsuredForeigner" } 6. Kewarganegaraan
@@ -123,7 +123,7 @@
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredReligionKongHuCu" } Kong Hu Chu
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredCompany" }11. a. Nama Perusahaan/Instansi/Sekolah
+%label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredCompany" } 11. a. Nama Perusahaan/Instansi/Sekolah
 %table#TextProspectiveInsuredCompany.BoxSquare.PositionerLeft{ :style => "margin-left: 7px;" }
 %br
 
@@ -149,7 +149,7 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredHomeAddress1" } 12. Alamat Tempat Tinggal
 %table#TextProspectiveInsuredHomeAddress1.BoxSquare.PositionerLeft
-%span.Note.Medium.Multi.Tight.PositionerLeft{ :style => "height: 60px;" } (Bila tidak sesuai kartu Identitas Diri, diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Kelurahan & Kecamatan)
+%span.Note.Medium.Multi.Tight.PositionerLeft{ :style => "height: auto; text-align: left; width: 114px;" } (Bila tidak sesuai kartu Identitas Diri, diisi dengan lengkap menginformasikan nomor rumah, RT, RW, Kelurahan & Kecamatan)
 %table#TextProspectiveInsuredHomeAddress2.BoxSquare.PositionerLeft
 %label#LabelProspectiveInsuredHomeCity.Box.Single.PositionerLeft{ :for => "TextProspectiveInsuredHomeCity" } Kota
 %table#TextProspectiveInsuredHomeCity.BoxSquare.PositionerLeft
@@ -175,7 +175,7 @@
 %table#TextProspectiveInsuredEmail.BoxSquare.PositionerLeft
 %br
 
-%section.SectionFooter{ :style => "margin-top: 150px;" }
+%section.SectionFooter{ :style => "margin-top: 180px;" }
 	= Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
 %section#SectionHeader3
@@ -203,7 +203,7 @@
 %label.RadioButton.PositionerLeft{ :for => "RadioButtonProspectiveInsuredCorrespondanceAddressOffice" } Alamat Kantor
 %br
 
-%label.Medium.Double.PositionerLeft{ :for => "RadioButtonProspectiveInsuredRelationAssuredSelf" } 17. Hubungan dengan Calon Pemegang Polis
+%label.Medium.Single.Plain.PositionerLeft{ :style => "width: 155px;" } 17. Hubungan dengan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calon Pemegang Polis 
 %input#RadioButtonProspectiveInsuredRelationAssuredSelf{ :type => "radio", :name => "RadioButtonProspectiveInsuredRelationAssured", :value => "self" }
 %div#RadioButtonProspectiveInsuredRelationAssuredSelf.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonProspectiveInsuredRelationAssuredSelf" } Diri Sendiri
@@ -222,7 +222,7 @@
 %div#TextProspectiveInsuredRelationAssuredOther.LineDot.PositionerLeft
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "CheckboxProspectiveInsuredInsurancePurpose" } 18. Tujuan Pembelian Asuransi
+%label.Medium.Single.Plain.PositionerLeft{ :style => "width: 155px; height: 40px;" } 18. Tujuan Pembelian &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asuransi
 %input#CheckboxProspectiveInsuredInsurancePurposeSavings{ :type => "checkbox", :name => "CheckboxProspectiveInsuredInsurancePurpose", :value => "savings" }
 %div#CheckboxProspectiveInsuredInsurancePurposeSavings.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "CheckboxProspectiveInsuredInsurancePurposeSavings" } Tabungan
@@ -243,12 +243,12 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextProspectiveInsuredNPWP" } 19. Nomor NPWP (jika ada)
 %table#TextProspectiveInsuredNPWP.BoxSquare.PositionerLeft
-%table#DateProspectiveInsuredNPWPActiveYear.BoxSquare.PositionerRight
+%table#DateProspectiveInsuredNPWPActiveYear.BoxSquare.PositionerRight{ :style => "margin-right: 30px;" }
 %label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredNPWPActiveYear" } /
 %table#DateProspectiveInsuredNPWPActiveMonth.BoxSquare.PositionerRight
 %label.Separator.Single.PositionerRight{ :for => "DateProspectiveInsuredNPWPActiveMonth" } /
 %table#DateProspectiveInsuredNPWPActiveDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "DateProspectiveInsuredNPWPActiveDay" } Tanggal Berlaku
+%label.Wrap.Single.Plain.PositionerRight{ :for => "DateProspectiveInsuredNPWPActiveDay", :style => "width: 45px; margin-left: 30px;" } Tanggal: Berlaku
 %br
 
 %label.Wrap.Single.PositionerLeft{ :for => "TextProspectiveInsuredSalaryIDR" } 20. Penghasilan Kotor Per Tahun

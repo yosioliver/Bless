@@ -3,7 +3,7 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyRepresentativeFullName" } 1. Nama Lengkap
 %table#TextPolicyHolderCompanyRepresentativeFullName.BoxSquare.PositionerLeft
-%span.Description.PositionerLeft (sesuai dengan Identitas Diri)
+%span.Description.PositionerLeft{ :style => "font-size: 10px; margin-top: -10px;" } &nbsp;&nbsp; (sesuai dengan Identitas Diri)
 %br
 
 %label.Wrap.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyRepresentativePosition" } 2. Jabatan/Pangkat/Golongan
@@ -12,15 +12,15 @@
 
 %label.Medium.Single.PositionerLeft{ :for => "TextPolicyHolderCompanyRepresentativeIDNumber" } 3. Nomor Identitas Diri
 %table#TextPolicyHolderCompanyRepresentativeIDNumber.BoxSquare.PositionerLeft
-%table#DatePolicyHolderCompanyRepresentativeIDExpiredYear.BoxSquare.PositionerRight
+%table#DatePolicyHolderCompanyRepresentativeIDExpiredYear.BoxSquare.PositionerRight{ :style => "margin-right: 30px;" }
 %label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderCompanyRepresentativeIDExpiredYear" } /
 %table#DatePolicyHolderCompanyRepresentativeIDExpiredMonth.BoxSquare.PositionerRight
 %label.Separator.Single.PositionerRight{ :for => "DatePolicyHolderCompanyRepresentativeIDExpiredMonth" } /
 %table#DatePolicyHolderCompanyRepresentativeIDExpiredDay.BoxSquare.PositionerRight
-%label.Wrap.Single.PositionerRight{ :for => "DatePolicyHolderCompanyRepresentativeIDExpiredDay" } Masa Berlaku
+%label.Wrap.Single.PositionerRight{ :for => "DatePolicyHolderCompanyRepresentativeIDExpiredDay", :style => "width: 50px; margin-left: 30px;" } Masa Berlaku
 %br
 
-%label.Plain.Medium.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague" } 4. Hubungan dengan Calon: Tertanggung
+%label.Plain.Medium.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague" } 4. Hubungan dengan Calon: &nbsp;&nbsp; Tertanggung
 %input#RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRepresentativeRelationship", :value => "perusahaankaryawan" }
 %div#RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague.BoxRound.PositionerLeft
 %label.RadioButton.Wrap.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRepresentativeRelationshipColleague" } Perusahaan / Karyawan
@@ -30,7 +30,7 @@
 %div#TextPolicyHolderCompanyRepresentativeRelationshipOther.LineDot.PositionerLeft
 %br
 
-%label.Wrap.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings" } 5. Tujuan Pembelian Asuransi
+%label.Wrap.Plain.Single.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings", :style => "width: 155px; line-height: 14px;" } 5. Tujuan Pembelian &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp; Asuransi
 %input#RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings{ :type => "radio", :name => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurpose", :value => "tabungan" }
 %div#RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings.BoxRound.PositionerLeft
 %label.RadioButton.Short.PositionerLeft{ :for => "RadioButtonPolicyHolderCompanyRepresentativeInsurancePurposeSavings" } Tabungan

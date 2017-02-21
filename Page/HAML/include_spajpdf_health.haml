@@ -6,9 +6,9 @@
 %table.Square
     %thead
         %tr
-            %th Pertanyaan Kesehatan
-            %th Calon Tertanggung
-            %th Calon Pemegang Polis
+            %th{ :style => "font-weight: normal;" } Pertanyaan Kesehatan
+            %th{ :style => "font-weight: normal;" } Calon Tertanggung
+            %th{ :style => "font-weight: normal;" } Calon Pemegang Polis
     %tbody
         %tr
             %td
@@ -134,7 +134,7 @@
             %td
                 .Number 6. 
                 .Content
-                    Apakah Anda pernah/sedang menderita penyakit atau menjalani                  pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
+                    Apakah Anda pernah/sedang menderita penyakit atau menjalani pemeriksaan/perawatan, pengobatan, operasi untuk penyakit/kelainan dibawah ini:
             %td
                 %input#RadioButtonProspectiveInsuredHealthDissorderYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHealthDissorder", :value => "true" }
                 %div#RadioButtonProspectiveInsuredHealthDissorderYes.BoxRound.PositionerCenter
@@ -399,11 +399,12 @@
         %tr
             %td.Child{ :colspan => "3" }
                 Jika pertanyaan nomor 6 dijawab "Ya" maka mohon agar melengkapi kolom dibawah ini
+                %br
                 %i
                     Apabila diperlukan dapat memberikan keterangan pada lembar tambahan. Lembar tambahan tersebut harus ditandatangani oleh Calon Pemegang Polis/Calon Tertanggung dan menjadi bagian yang tidak terpisahkan dari SPAJ ini.
                 %br
 
-%section.SectionFooter{ :style => "margin-top: 300px;" }
+%section.SectionFooter{ :style => "margin-top: 290px;" }
     = Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
 %section#SectionHeader5
@@ -423,39 +424,32 @@
                 %table#TableProspectiveInsuredIllness.Space
                     %thead
                         %tr
-                            %th No.
-                            %th Nama Penyakit
-                            %th Kapan Mulai Sakit
-                            %th Lama Sakit
-                            %th Nama Dokter
-                            %th Rumah Sakit / Klinik / Laboratorium / Puskesmas
-                            %th Alamat dan Nomor Telepon
+                            %th{ :style => "font-weight: normal;" } No.
+                            %th{ :style => "font-weight: normal;" } Nama Penyakit
+                            %th{ :style => "font-weight: normal;" } Kapan Mulai Sakit
+                            %th{ :style => "font-weight: normal;" } Lama Sakit
+                            %th{ :style => "font-weight: normal;" } Nama Dokter
+                            %th{ :style => "font-weight: normal;" } Rumah Sakit / Klinik / Laboratorium / Puskesmas
+                            %th{ :style => "font-weight: normal;" } Alamat dan Nomor Telepon
                 %h3 b. Calon Pemegang Polis
                 %table#TablePolicyHolderIllness.Space
                     %thead
                         %tr
-                            %th No.
-                            %th Nama Penyakit
-                            %th Kapan Mulai Sakit
-                            %th Lama Sakit
-                            %th Nama Dokter
-                            %th Rumah Sakit / Klinik / Laboratorium / Puskesmas
-                            %th Alamat dan Nomor Telepon
+                            %th{ :style => "font-weight: normal;" } No.
+                            %th{ :style => "font-weight: normal;" } Nama Penyakit
+                            %th{ :style => "font-weight: normal;" } Kapan Mulai Sakit
+                            %th{ :style => "font-weight: normal;" } Lama Sakit
+                            %th{ :style => "font-weight: normal;" } Nama Dokter
+                            %th{ :style => "font-weight: normal;" } Rumah Sakit / Klinik / Laboratorium / Puskesmas
+                            %th{ :style => "font-weight: normal;" } Alamat dan Nomor Telepon
         %tr
-            %td.Child
-                7. &nbsp; &nbsp; Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi 
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda
-                %br 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk 
-                %br               
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; apapun oleh perusahaan Asuransi Jiwa? Apabila jawaban “Ya” 
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maka mohon agar melengkapi kolom dibawah ini.
+            %td{ :style => "text-align: justify; width: 55%;" }
+                .Number 7. 
+                .Content
+                    Apakah Anda telah memiliki atau sedang mengajukan pertanggungan Asuransi Jiwa, kecelakaan, kesehatan, pemulihan polis? Serta apakah pengajuan Anda pernah ditolak/ ditangguhkan/dikenakan ekstra Premi diubah dalam bentuk apapun oleh perusahaan Asuransi Jiwa? Apabila jawaban “Ya”maka mohon agar melengkapi kolom dibawah ini.
             %td
-                %label.Plain.Wrap.PositionerCenter 
-                    %b
-                        Calon Tertanggung
+                %label.Plain.Wrap.PositionerCenter{ :style => "font-weight: normal;" }                     
+                    Calon Tertanggung
                 %br                
                 %input#RadioButtonProspectiveInsuredSPAJProposalYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredSPAJProposal", :value => "true" }
                 %div#RadioButtonProspectiveInsuredSPAJProposalYes.BoxRound.PositionerCenter
@@ -464,9 +458,8 @@
                 %div#RadioButtonProspectiveInsuredSPAJProposalNo.BoxRound.PositionerCenter
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonProspectiveInsuredSPAJProposalNo" } Tidak
             %td
-                %label.Plain.Wrap.PositionerCenter 
-                    %b
-                        Calon Pemegang Polis
+                %label.Plain.Wrap.PositionerCenter{ :style => "font-weight: normal;" }                     
+                    Calon Pemegang Polis
                 %br
                 %input#RadioButtonPolicyHolderSPAJProposalYes{ :type => "radio", :name => "RadioButtonPolicyHolderSPAJProposal", :value => "true" }
                 %div#RadioButtonPolicyHolderSPAJProposalYes.BoxRound.PositionerCenter
@@ -480,33 +473,32 @@
                 %table#TableProspectiveInsuredSPAJProposal.Space
                     %thead
                         %tr
-                            %th No.
-                            %th Nama Perusahaan
-                            %th Nomor Polis
-                            %th Jenis Manfaat
-                            %th Tanggal Diterbitkan
-                            %th Uang Pertanggungan
-                            %th Hasil Keputusan
+                            %th{ :style => "font-weight: normal;" } No.
+                            %th{ :style => "font-weight: normal;" } Nama Perusahaan
+                            %th{ :style => "font-weight: normal;" } Nomor Polis
+                            %th{ :style => "font-weight: normal;" } Jenis Manfaat
+                            %th{ :style => "font-weight: normal;" } Tanggal Diterbitkan
+                            %th{ :style => "font-weight: normal;" } Uang Pertanggungan
+                            %th{ :style => "font-weight: normal;" } Hasil Keputusan
                 %h3 b. Calon Pemegang Polis
                 %table#TablePolicyHolderSPAJProposal.Space
                     %thead
                         %tr
-                            %th No.
-                            %th Nama Perusahaan
-                            %th Nomor Polis
-                            %th Jenis Manfaat
-                            %th Tanggal Diterbitkan
-                            %th Uang Pertanggungan
-                            %th Hasil Keputusan
+                            %th{ :style => "font-weight: normal;" } No.
+                            %th{ :style => "font-weight: normal;" } Nama Perusahaan
+                            %th{ :style => "font-weight: normal;" } Nomor Polis
+                            %th{ :style => "font-weight: normal;" } Jenis Manfaat
+                            %th{ :style => "font-weight: normal;" } Tanggal Diterbitkan
+                            %th{ :style => "font-weight: normal;" } Uang Pertanggungan
+                            %th{ :style => "font-weight: normal;" } Hasil Keputusan
         %tr
             %td
-                8. &nbsp;&nbsp; Apakah Anda pernah mengajukan klaim ke perusahaan Asuransi Jiwa? Jika “Ya,
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mohon jelaskan alasannya pada kolom di bawah.
+                .Number 8. 
+                .Content
+                    Apakah Anda pernah mengajukan klaim ke perusahaan Asuransi Jiwa? Jika “Ya, mohon jelaskan alasannya pada kolom di bawah.
             %td
-                %label.Plain.Wrap.PositionerCenter 
-                    %b
-                        Calon Tertanggung
+                %label.Plain.Wrap.PositionerCenter                     
+                    Calon Tertanggung
                 %br
                 %input#RadioButtonProspectiveInsuredClaimYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredClaim", :value => "true" }
                 %div#RadioButtonProspectiveInsuredClaimYes.BoxRound.PositionerCenter
@@ -515,9 +507,8 @@
                 %div#RadioButtonProspectiveInsuredClaimNo.BoxRound.PositionerCenter
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonProspectiveInsuredClaimNo" } Tidak
             %td
-                %label.Plain.Wrap.PositionerCenter 
-                    %b
-                        Calon Pemegang Polis
+                %label.Plain.Wrap.PositionerCenter                     
+                    Calon Pemegang Polis
                 %br
                 %input#RadioButtonPolicyHolderClaimYes{ :type => "radio", :name => "RadioButtonPolicyHolderClaim", :value => "true" }
                 %div#RadioButtonPolicyHolderClaimYes.BoxRound.PositionerCenter
@@ -527,11 +518,9 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderClaimNo" } Tidak
         %tr
             %td
-                9. &nbsp;&nbsp; Apakah Anda pernah mendapatkan atau bermaksud menjalani pemeriksaan
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kesehatan diagnostik, seperti Sinar-X, USG, CT-scan, MRI, EKG, Treadmill,
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pemeriksaan darah, pemeriksaan urin, dan lain-lain?
+                .Number 9. 
+                .Content
+                    Apakah Anda pernah mendapatkan atau bermaksud menjalani pemeriksaan kesehatan diagnostik, seperti Sinar-X, USG, CT-scan, MRI, EKG, Treadmill, pemeriksaan darah, pemeriksaan urin, dan lain-lain?
             %td
                 %input#RadioButtonProspectiveInsuredDiagnosticYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredDiagnostic", :value => "true" }
                 %div#RadioButtonProspectiveInsuredDiagnosticYes.BoxRound.PositionerCenter
@@ -548,25 +537,27 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderDiagnosticNo" } Tidak
         %tr
             %td
-                10. Khusus Calon Tertanggung anak-anak (usia ≤ 5 (lima) tahun):
-                %br
-                %label.FirstIndent.PositionerLeft Waktu lahir
-                %input#RadioButtonProspectiveInsuredPregnancyNormal{ :type => "radio", :name => "RadioButtonProspectiveInsuredPregnancy", :value => "true" }
-                %div#RadioButtonProspectiveInsuredNormalPregnancy.BoxRound.PositionerCenter
-                %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonProspectiveInsuredPregnancyNormal" } Cukup Bulan
-                %input#BoxProspectiveInsuredPregnancyPremature{ :type => "radio", :name => "RadioButtonProspectiveInsuredPregnancy", :value => "false" }
-                %div#BoxProspectiveInsuredPregnancyPremature.BoxRound.PositionerCenter
-                %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPregnancyPremature" } Prematur
-                %br
-                %label.FirstIndent.PositionerLeft Panjang dan berat saat lahir
-                %table#TextProspectiveInsuredBabyHeight.BoxSquare.PositionerLeft
-                %span.PositionerLeft Cm
-                %table#TextProspectiveInsuredBabyWeight.BoxSquare.PositionerLeft
-                %span.PositionerLeft Kg
+                .Number 10. 
+                .Content
+                    Khusus Calon Tertanggung anak-anak (usia ≤ 5 (lima) tahun):
+                    %br
+                    Waktu lahir:
+                    %input#RadioButtonProspectiveInsuredPregnancyNormal{ :type => "radio", :name => "RadioButtonProspectiveInsuredPregnancy", :value => "true" }
+                    %div#RadioButtonProspectiveInsuredNormalPregnancy.BoxRound.PositionerCenter
+                    %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonProspectiveInsuredPregnancyNormal" } Cukup Bulan
+                    %input#BoxProspectiveInsuredPregnancyPremature{ :type => "radio", :name => "RadioButtonProspectiveInsuredPregnancy", :value => "false" }
+                    %div#BoxProspectiveInsuredPregnancyPremature.BoxRound.PositionerCenter
+                    %label.RadioButton.Wrap.PositionerCenter{ :for => "BoxProspectiveInsuredPregnancyPremature" } Prematur
+                    %br
+                    %span{ :style => "margin-top: 10px;" } Panjang dan berat saat lahir:
+                    %table#TextProspectiveInsuredBabyHeight.BoxSquare.PositionerCenter{ :style => "margin-top: 10px; margin-left: 22px;" }
+                    %span.PositionerCenter{ :style => "margin-top: 10px;" } Cm
+                    %table#TextProspectiveInsuredBabyWeight.BoxSquare.PositionerCenter{ :style => "margin-top: 10px;" }
+                    %span.PositionerCenter{ :style => "margin-top: 10px;" } Kg
             %td
             %td
 
-%section.SectionFooter{ :style => "margin-top: 110px;" }
+%section.SectionFooter{ :style => "margin-top: 130px;" }
     = Haml::Engine.new(File.read("footer_spajpdf_general.haml")).render
 
 %section#SectionHeader6
@@ -581,16 +572,16 @@
     %tbody
         %tr
             %td
-                11. Pertanyaan khusus untuk wanita:
+                .Number 11. 
+                .Content
+                    Pertanyaan khusus untuk wanita:
             %td
-                %label.Plain.Wrap.PositionerCenter 
-                    %b
-                        Calon Tertanggung
+                %label.Plain.Wrap.PositionerCenter                     
+                    Calon Tertanggung
                 %br
             %td
-                %label.Plain.Wrap.PositionerCenter 
-                    %b
-                        Calon Pemegang Polis
+                %label.Plain.Wrap.PositionerCenter                     
+                    Calon Pemegang Polis
                 %br
         %tr
             %td
@@ -613,7 +604,9 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderPregnantNo" } Tidak
         %tr
             %td
-                %span.FirstIndent b. Adakah komplikasi pada kehamilan termasuk persalinan secara sectio caesaria yang dilakukan karena menderita suatu penyakit (Darah Tinggi, Hepatitis, Diabetes dan lain-lain)?
+                .FirstIndent 
+                    .Number b. 
+                    .Content Adakah komplikasi pada kehamilan termasuk persalinan secara sectio caesaria yang dilakukan karena menderita suatu penyakit (Darah Tinggi, Hepatitis, Diabetes dan lain-lain)?
             %td
                 %input#RadioButtonProspectiveInsuredPregnancyIllnessYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredPregnancyIllness", :value => "true" }
                 %div#RadioButtonProspectiveInsuredPregnancyIllnessYes.BoxRound.PositionerCenter
@@ -630,13 +623,10 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderPregnancyIllnessNo" } Tidak
         %tr
             %td
-                %span.FirstIndent c. Apakah Anda mempunyai kelainan payudara/organ kewanitaan lainnya termasuk
-                %br 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; haid yang tidak teratur? Jika “Ya” jelaskan nama kelainan atau komplikasi dan nama
-                %br 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dokter yang merawat pada kolom (siapa, apa, kapan, bagaimana, di mana 
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pengobatan yang dilakukan) pada kolom di bawah.
+                .FirstIndent 
+                    .Number c. 
+                    .Content
+                        Apakah Anda mempunyai kelainan payudara/organ kewanitaan lainnya termasuk haid yang tidak teratur? Jika “Ya” jelaskan nama kelainan atau komplikasi dan nama dokter yang merawat pada kolom (siapa, apa, kapan, bagaimana, di mana pengobatan yang dilakukan) pada kolom di bawah.
             %td
                 %input#RadioButtonProspectiveInsuredFemaleAbnormalityYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredFemaleAbnormality", :value => "true" }
                 %div#RadioButtonProspectiveInsuredFemaleAbnormalityYes.BoxRound.PositionerCenter
@@ -653,11 +643,10 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderFemaleAbnormailtyNo" } Tidak
         %tr
             %td
-                %span.FirstIndent d. Apakah Anda pernah melakukan pemeriksaan Pap Smear dalam 1 (satu) tahun
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terakhir? Jika “Ya” jelaskan bagaimana hasilnya dan kapan dilakukan pemeriksaan 
-                %br
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tersebut pada kolom di bawah?
+                .FirstIndent 
+                    .Number d.
+                    .Content
+                        Apakah Anda pernah melakukan pemeriksaan Pap Smear dalam 1 (satu) tahun terakhir? Jika “Ya” jelaskan bagaimana hasilnya dan kapan dilakukan pemeriksaan tersebut pada kolom di bawah?
             %td
                 %input#RadioButtonProspectiveInsuredPapSmearYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredPapSmear", :value => "true" }
                 %div#RadioButtonProspectiveInsuredPapSmearYes.BoxRound.PositionerCenter
@@ -674,13 +663,9 @@
                 %label.RadioButton.Wrap.PositionerCenter{ :for => "RadioButtonPolicyHolderPapSmearNo" } Tidak
         %tr
             %td
-                12. &nbsp;&nbsp; Apakah ada anggota keluarga Anda (orang tua, anak, saudara kandung) yang
-                %br                 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; menderita/dinyatakan terdiagnosa mengidap kelainan Jantung Koroner, Stroke,
-                %br 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kencing Manis (Diabetes Melitus), Kanker atau penyakit keturunan lainnya? (Jika 
-                %br                                 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; “Ya” mohon agar dijelaskan pada kolom di bawah ini)
+                .Number 12. 
+                .Content
+                    Apakah ada anggota keluarga Anda (orang tua, anak, saudara kandung) yang menderita/dinyatakan terdiagnosa mengidap kelainan Jantung Koroner, Stroke, Kencing Manis (Diabetes Melitus), Kanker atau penyakit keturunan lainnya? (Jika “Ya” mohon agar dijelaskan pada kolom di bawah ini)
             %td
                 %input#RadioButtonProspectiveInsuredHeartDissorderYes{ :type => "radio", :name => "RadioButtonProspectiveInsuredHeartDissorder", :value => "true" }
                 %div#RadioButtonProspectiveInsuredHeartDissorderYes.BoxRound.PositionerCenter
